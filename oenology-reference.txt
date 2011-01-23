@@ -504,6 +504,26 @@ Used in the following template files:
 post-header.php
 
 ***********************
+file_exists()
+----------------------------------
+file_exists() is a PHP function.
+Codex reference: N/A
+PHP reference: http://php.net/manual/en/function.file-exists.php
+
+file_exists() is a boolean (returns TRUE or FALSE) conditional function that returns true if 
+the specified file exists.
+
+file_exists( $filepath ) accepts one argument:
+ - $filepath: (string) the filepath and filename, e.g. /path/to/my/file.ext
+
+Example:
+file_exists( get_theme_root() . '/twentyten/style.css' )
+ - returns TRUE if the file is found
+
+Used in the following template files:
+functions.php
+
+***********************
 filesize()
 ----------------------------------
 filesize() is a PHP function.
@@ -625,6 +645,22 @@ Example:
 <a href="<?php echo get_comment_link(); ?>">Comment</a>
 
 get_comment_link() must be used from within the Loop, unless the $comment parameter is used.
+
+Used in the following template files:
+comments.php
+
+***********************
+get_comments_number()
+----------------------------------
+get_comments_number() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Template_Tags/get_comments_number
+
+get_comments_number() is used to return the number (as a numeric value) of comments (including 
+comments, trackbacks, and pingbacks) on the current post.
+
+get_comments_number() accepts no arguments
+
+get_comments_number() must be used within the Loop.
 
 Used in the following template files:
 comments.php
@@ -784,6 +820,24 @@ get_post( $post, $output ) accepts two arguments
 
 Used in the following template files:
 functions.php
+
+***********************
+get_post_format()
+----------------------------------
+get_post_format() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_post_format
+
+get_post_format() is used to retrieve the Post Format of the current Post
+
+get_post_format() returns the Post Format type, as a string, if the current Post
+has a Post Format (other than "standard") selected; otherwise, it returns NULL.
+
+get_post_format( $postid ) accepts one argument:
+ - $postid: the ID of the post for which to return the Post Format type. Defaults to
+   the current post.
+
+Used in the following template files:
+loop.php
 
 ***********************
 get_posts()
@@ -988,6 +1042,22 @@ Displays the Post Title of the current post's parent post.
 
 Used in the following template files:
 functions.php, post-entry-image.php
+
+***********************
+get_theme_root()
+----------------------------------
+get_theme_root() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_theme_root
+
+get_theme_root() is used to retrieve the file path to the directory in which 
+Themes are installed (e.g. 'home/username/html/wp-content/themes').
+
+Note that the returned string has no trailing slash.
+
+get_theme_root() accepts no arguments.
+
+Used in the following template files:
+functions.php
 
 ***********************
 get_trackback_url()
@@ -2678,11 +2748,21 @@ Codex reference: http://codex.wordpress.org/Function_Reference/wp_link_pages
 
 wp_link_pages() is used to output page links for paginated posts. 
 
-wp_link_pages() accepts several arguments, in array format.
-To see the full list of arguments for wp_link_pages(), see the Codex.
+wp_link_pages( '&arg1=value1&arg2=value2' ) accepts several arguments, in array format.
+ - 'before': text string to display before the output. Default:'<p>Pages:'
+ - 'after':  text string to display after the output. Default: '</p>'
+ - 'link_before': text string to output before each link. Default: NULL 
+ - 'link_after': text string to output after each link. Default: NULL
+ - 'next_or_number': display either "Previous/Next" links ('next') or page numbers ('number'). Default: 'number'
+ - 'nextpagelink': text string to display for "Next" page link (if 'next_or_number' is 'next'. Default: 'Next page'
+ - 'previouspagelink':text string to display for "Previous" page link (if 'next_or_number' is 'next'. Default: 'Previous page'
+ - 'pagelink': text string to display for page numbers (if 'next_or_number' is 'number'), where % returns the page number. Default: '%'
+ - 'more_file': page to which the link points. Default: NULL (i.e. current post) 
+ - 'echo': (boolean) output (print/display) or return (for use in PHP) the output. Default: 1 (i.e. TRUE; print/display output)
 
 Example:
-wp_link_pages(); outputs e.g. "<p>Pages: 1 2 3</p>"
+wp_link_pages( 'before=<p class="link-pages">Page: ' ); 
+ - outputs e.g.: '<p class="link-pages">Pages: 1 2 3</p>'
 
 wp_link_pages() must be used within the Loop.
 

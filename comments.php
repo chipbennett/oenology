@@ -57,7 +57,9 @@
 	}
 ?>
 
-<h3>Comments</h3>
+<h3>Comments <?php if ( ! comments_open() ) { ?> <small>(Comments are closed)</small><?php } ?></h3>
+
+	
 
 <?php $i = 0; ?>
 	<span id="comments-responses" style="font-weight:bold;"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</span>
@@ -67,13 +69,15 @@
 				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' ); ?></div>
 				<div class="nav-next"><?php next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' ); ?></div>
 			</div> <!-- .navigation -->
-<?php endif; // check for comment navigation ?>
-
+<?php endif; // check for comment navigation 
+		
+		if ( get_comments_number() > '0' ) { ?>
 			<ol class="commentlist">
 				<?php	wp_list_comments( 'type=comment&avatar_size=40' ); ?>
 			</ol>
+		<?php }
 
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">
 				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' ); ?></div>
 				<div class="nav-next"><?php next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' ); ?></div>
@@ -81,15 +85,6 @@
 <?php endif; // check for comment navigation ?>
 
 <?php else : // or, if we don't have comments:
-
-	/* If there are no comments and comments are closed,
-	 * let's leave a little note, shall we?
-	 */
-	if ( ! comments_open() ) :
-?>
-	<p class="nocomments"><?php echo 'Comments are closed.'; ?></p>
-<?php 
-endif; // end ! comments_open() 
 
 endif; // end have_comments() 
 
@@ -173,6 +168,19 @@ Example:
 <a href="<?php echo get_comment_link(); ?>">Comment</a>
 
 get_comment_link() must be used from within the Loop, unless the $comment parameter is used.
+
+***********************
+get_comments_number()
+----------------------------------
+get_comments_number() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Template_Tags/get_comments_number
+
+get_comments_number() is used to return the number (as a numeric value) of comments (including 
+comments, trackbacks, and pingbacks) on the current post.
+
+get_comments_number() accepts no arguments
+
+get_comments_number() must be used within the Loop.
 
 ***********************
 get_comment_pages_count()
