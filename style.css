@@ -2,12 +2,12 @@
 Theme Name: Oenology
 Theme URI: http://www.chipbennett.net/themes/oenology
 Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
-Version: 0.9.2
+Version: 1.0
 Author: Chip Bennett
 Author URI: http://www.chipbennett.net/
 Tags: fixed-width, white, three-columns, custom-header, custom-background, custom-menu, editor-style, threaded-comments, sticky-post, left-sidebar, right-sidebar
-License:       GNU General Public License, v2 (or newer)
-License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
+License: GNU General Public License, v2 (or newer)
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
  *
  * Copyright (C) 2010 Chip Bennett
  *
@@ -23,20 +23,2091 @@ License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
 */
 
-@import url( css/fonts.css ); /* font-family declarations, as well as @font-face information for custom fonts */
-@import url( css/master.css ); /* main page structure */
-@import url( css/navigation.css ); /* site navigation style declaration */
-@import url( css/comments.css ); /* stylesheet for wp_list_comments() */
-@import url( css/oenology.css ); /* blog-specific style information */
-@import url( css/plugins.css ); /* plugin-specific style information */
-@import url( css/print.css ) print; /* custom style information for media:print */
+/* WordPress-Generated CSS Classes
+   -------------------------------------------------
+*/
+.aligncenter { /* defined below */ }
+.alignleft { /* defined below*/ }
+.alignnone { /* defined below */ }
+.alignright { /* defined below */ }
+.wp-caption { /* defined below */ }
+.wp-caption-text { /* defined below */ }
+.gallery-caption { /* defined below */ }
+.bypostauthor { /* defined below */ }
+.sticky { /* defined below */ }
 
-.aligncenter { /* defined in css/oenology.css */ }
-.alignleft { /* defined in css/oenology.css */ }
-.alignnone { /* defined in css/oenology.css */ }
-.alignright { /* defined in css/oenology.css */ }
-.wp-caption { /* defined in css/oenology.css */ }
-.wp-caption-text { /* defined in css/oenology.css */ }
-.gallery-caption { /* defined in css/oenology.css */ }
-.bypostauthor { /* defined in css/oenology.css */ }
-.sticky { /* defined in css/oenology.css */ }
+/* 
+   Table of Contents
+   -----------------------------------------------
+   0 - Font Style Specifications
+   1 - Master/Default Style Specifications
+   2 - Layout/Structure Style Specifications
+   3 -Section-Specific Style Specifications
+        3.1 - Header Section (#header) Style Specifications
+        3.2 - Main Content Section (#content) Style Specifications
+        3.3 - Left/Right Column (#leftcol/#rightcol) Style Specifications
+        3.4 - Center Column (#main) Style Specifications
+        3.5 - Right Column (#rightcol) Style Specifications
+        3.6 - Footer Section (#footer) Style Specifications
+   4 - Site Navigation Style Specifications
+   5 - Comments Style Specifications
+   6 - Print Style Specifications
+   ----------------------------------------------- 
+*/
+
+/* 
+   ============================================================================================= 
+   0 - Font Style Specifications
+   ============================================================================================= 
+*/
+
+/****************************************************************
+Font-Family Declarations
+Declare all fonts used in theme
+****************************************************************/
+/* Sans fonts 
+*****************************************************************/
+/* Century Gothic type font-family */
+.navmenu li a,
+.navmenu li a:link,
+.navmenu li a:visited,
+.navmenu li a:hover,
+.navmenu li a:active,
+#leftcol .subnavmenutest .current_page_item a,
+#leftcol .subnavmenutest .current_page_parent a,
+#leftcol .subnavmenutest .current_page_ancestor a,
+.post-entry blockquote,
+.post-entry blockquote p,
+#content #main .count,
+ol.bnc_related /* Plugin: Yet Another Related Posts Plugin */ {
+   font-family: 'Century Gothic', 'URW Gothic L', sans-serif;
+}
+/* Arial/Verdana type font-family */
+#header .postnav li,
+#leftcol .subnavmenutest .current_page_item li a,
+#leftcol .subnavmenutest .current_page_parent li a,
+#leftcol .subnavmenutest .current_page_parent .current_page_item li a,
+#leftcol .subnavmenutest .current_page_ancestor li a,
+#leftcol .subnavmenutest .current_page_ancestor .current_page_parent .current_page_item li a,
+#main .caption,
+#footer,
+.cat-description,
+.cat-subscribe-feed,
+.post-title .post-title-metadata,
+.post-title .post-title-category,
+.post-title .post-title-tags,
+.post-entry .update,
+.post-entry .caption,
+.post-entry .wp-caption,
+.post-entry .wp-caption-text,
+.post-entry .gallery-caption,
+.post-entry .def p,
+body.attachment dd,
+.post .clonetruth,
+.post .clonetruth a:link,
+.post .clonetruth a:visited,
+.post .clonetruth a:hover,
+.post .clonetruth a:active,
+.post .postmetadata,
+.post .postmetadata,
+.postpagenav,
+table.review,
+table.legend,
+.recipecarbs,
+#content #main .recipeingredients,
+#content #main .recipeequip,
+#content #main .recipe,
+.commentlist li .comment-meta,
+#commentform p,
+#comments h4,
+#comments-block dd.comment-timestamp,
+.ngg-imagebrowser-desc, /* Plugin: NextGen Gallery */
+#main .postpagenav ol.wp-paginate li, /* Plugin: wp-paginate */
+ol.trackbacklist /* Plugin: Trackback */ {
+	font-family: Verdana, Arial, sans-serif;
+}
+/* Serif fonts 
+*****************************************************************/
+/* Garamond/Palatino Linotype type font family */
+h1, h2, h3, h4, h5, h6,
+#home #navhome, 
+#pageforum #navforum,
+.navmenu .current_page_item a,
+.navmenu .current_page_ancestor a,
+.navmenu li a:hover,
+#leftcol .subnavmenutest .current_page_parent .current_page_item a,
+#leftcol .subnavmenutest .current_page_ancestor .current_page_parent .current_page_item a,
+.title,
+.widgettitle,
+.pagetitle,
+.post-title .post-date,
+.post-entry .downloadbutton li a,
+.post-entry .downloadbutton li a:link,
+.post-entry .downloadbutton li a:visited,
+.post-entry .downloadbutton li a:hover,
+.post-entry .downloadbutton li a:active {
+	font-family: 'Palatino Linotype', 'Palatino', 'URW Palladio L', serif;
+}
+#main,
+.post-entry,
+.post-entry li p,
+.commentlist li p {
+	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+/* Georgia type font-family */
+.cat-description em,
+.post-entry  p em,
+.post-entry li p em,
+.post-entry .update:before,
+.cat-description strong,
+.commentlist li div .authorresponse p {
+	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+/* Times New Roman type font family */
+#header p {
+	font-family: 'Nimbus Roman No9 L', 'Times New Roman', serif;
+}
+/* Slab-Serif */
+#header div {
+	font-family: slab-serif, serif;
+}
+/* Mono fonts
+*****************************************************************/
+/* Courier New type font family */
+.post-entry .code,
+.post-entry .code p,
+.commentlist li div p code,
+.commentlist li div blockquote p code,
+#commentform p code {
+	font-family: 'Nimbus Mono L', 'Courier New', monospace;
+}
+/* Script fonts
+*****************************************************************/
+/* Brush Script type font family */
+.post-entry blockquote .script {
+	font-family: 'URW Chancery L', 'Brush Script MT', cursive, serif;
+}
+/* Specialty fonts
+*****************************************************************/
+/* None currently defined */
+
+/* 
+   ============================================================================================= 
+   1 - Master/Default Style Specifications
+   ============================================================================================= 
+*/
+
+
+/* Global Reset
+   --------------------
+*/
+* {
+   padding:0;
+   margin:0;
+}
+/* Body Default Style Specifications
+   --------------------
+*/
+body,
+#extent,
+#content,
+#leftcol,
+#main,
+#rightcol {
+	color:#555;
+	background-color:#fff;
+  }
+html {
+	height:100%;
+}
+  body { 
+   width:1000px;
+   height:100%;
+   margin:0px auto;
+   background-image: none;
+   background-attachment: fixed;
+   background-repeat: repeat-y;
+   background-position: top left;
+   font-style: normal;
+   font-family: TeXGyreHerosRegular, Arial, Verdana, Trebuchet, sans-serif;
+   font-size: 8pt;
+   line-height:12pt;
+   letter-spacing:0em;
+   text-align:center;
+   counter-reset:update;
+}
+p + p, 
+ul + p,
+ol + p,
+dl + p {
+  margin-top:2em;
+  border:0;
+}
+p + ul, 
+p + ol,
+p + dl {
+  margin-top:1em;
+  border:0;
+}
+/* Headings Default Style Specifications
+   --------------------
+*/
+h1, h2, h3, h4, h5, h6 {
+	display:block;
+	clear:both;
+	width:100%;
+	margin-top: 20px;
+	margin-bottom:20px;
+	border:0;
+	height:auto;
+	letter-spacing:0em;
+	text-align:left;
+	color:#000;
+	font-weight:normal;
+}
+h1 {
+	clear:none;
+	width:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	font-style:normal;
+	font-size:19pt;
+	line-height:1em;
+}
+h2 {
+	font-style:normal;
+	font-size:19pt;
+	line-height:1em;
+}
+h3  {
+	font-size:17pt;
+	line-height:1em;
+}
+h4  {
+	font-size:15pt;
+	line-height:1em;
+}
+h5  {
+  font-size:13pt;
+  line-height:1em;
+  text-decoration:underline;
+}
+h6  {
+	font-size:12pt;
+	line-height:1em;
+	text-decoration:underline;
+}
+/* Links Default Style Specifications
+   --------------------
+*/
+a,
+a:link, 
+a:visited, 
+a:hover, 
+a:active { 
+   color:#58a; 
+   text-decoration: none; 
+}
+a:hover { 
+   background-color:#e8e8e8; 
+}
+
+/* Table Default Style Specifications
+   --------------------
+*/
+table { 
+   text-align: center;
+}
+th {
+   color: navy;
+}
+tr, td {
+   vertical-align: top;
+}
+/* Images Default Style Specifications
+   --------------------
+*/
+img {
+   border:0px solid black;
+}
+/* Lists Default Style Specifications
+   --------------------
+*/
+ul, ol, dl {
+   margin-left:10px;
+}
+dt {
+	text-decoration: underline;
+}
+dd {
+	margin-left:10px;
+	padding-left:10px;
+	border-left: 1px solid #777;
+	background-color: #f8f8f8;
+}
+/* 
+   ============================================================================================= 
+   2 - Layout/Structure Style Specifications
+   ============================================================================================= 
+*/
+#extent {
+  position:relative;
+  clear:both;
+  width:1000px;
+  height: auto !important;
+  min-height:100%;
+  margin:0px auto;
+  text-align:left;
+  }
+#header {
+  position:relative;
+  height: 198px; /* Set #header height to accommodate custom header images */
+  min-height: 198px;
+  margin:0px auto;
+  padding-bottom:0px;
+  text-align:center;
+  }
+#navbar {
+  display:block;
+  margin:0px auto;
+  width:100%;
+  }
+#content {
+  width:100%;
+  display:block;
+  clear:both;
+  overflow:auto;
+  margin:0px auto;
+  padding-top:10px;
+  padding-bottom: 25px;
+  vertical-align:top;
+  }
+#leftcol {
+  display:inline;
+  width:165px;
+  padding:0px;
+  padding-left:10px;
+  float:left;
+  text-align:left;
+  vertical-align:top;
+  }
+#page #leftcol {
+	margin-left:-830px;
+	padding-left:0px;
+ }
+#main {
+  display:inline;
+  width:660px;
+  padding:0px;
+  margin: 0px auto;
+  margin-left:0px;
+  float:left;
+  vertical-align:top;
+  border: 0px solid #ccc;
+  font-size:11pt;
+  line-height:17pt;
+  letter-spacing:0em;
+}
+body.attachment #main {
+	width: 1000px;
+}
+#page #main {
+	margin-left:170px;
+}
+#page.attachment #main {
+  margin-left:0;
+}
+#rightcol {
+  display:inline;
+  width:160px;
+  padding-left: 5px;
+  float:right;
+  vertical-align:top;
+}
+ #container {
+	padding-bottom:25px;
+}
+#footer {
+  position:absolute;
+  bottom:0;
+  width:1000px;
+  height:25px;
+  margin:auto;
+  text-align:center;
+  vertical-align:baseline;
+  border-top:1px solid #999;
+  border-bottom:1px solid #bbb;
+  background-color:#e9e9e9;
+  font-size:8pt;
+  line-height:16pt;
+  letter-spacing:0em;
+}
+/* 
+   ============================================================================================= 
+   3 - Section-Specific Style Specifications
+   ============================================================================================= 
+*/
+/* Site Header (#header) Class Specifications
+   --------------------
+*/
+#header div,
+#header p {
+  border:0;
+}
+#header div {
+  width:100%;
+  padding-top:10px;
+  padding-bottom:10px;
+  color:#666;
+  font-size: 28pt;
+  line-height:1.5em;
+  letter-spacing: 0.2em;
+  font-weight:normal;
+  text-transform:none;
+}
+#header p {
+  padding-top:0px;
+  padding-bottom:10px;
+  color:#777;
+  max-width:100%;
+  text-align:center;
+  font-size: 13pt; /* 16pt */
+  line-height:2.0em;
+  letter-spacing:0em;
+}  
+ 
+/* Infobar
+   --------------------
+*/
+#extent .postnav {
+  position:relative;
+  bottom:16pt;
+  list-style-type:none;
+  display:block;
+  width:1000px;
+  margin:0px;
+  margin-bottom:0px;
+  text-align:left;
+}
+#extent .postnav li {
+  position:relative;
+  bottom:0px;
+  display: block;
+  float:left;
+  border:0;
+  border-top: 1px solid silver;
+  border-bottom: 1px solid silver;
+  color: #777;
+  background-color:#e8e8f0;
+  font-size:7.5pt;
+  line-height:16pt;
+  height:16pt;
+  letter-spacing: 0em;
+  font-weight:normal;
+  text-align:left;
+}
+#extent .postnav #postnavlogin {
+	width:248px;
+	padding-right:3px;
+	padding-left:3px;
+	text-align:right;
+}
+
+#extent .postnav li a {
+     text-decoration:none;
+}
+/* Infobar Breadcrumb Links and Loop Footer Prev/Next Links
+  ------------------------------------------------------
+*/
+#extent .postnav #breadcrumbs {
+  width:540px;
+  min-width:540px;
+  padding-left:3px;
+  color: #888;
+} 
+#extent .postnav #breadcrumbs .crumbs {
+	display: inline;
+	float:left;
+}
+#extent .postnav #breadcrumbs strong {
+  color: #000;
+  text-shadow: 0px 1px 0px #fff;
+}
+#extent #breadcrumbs ol.wp-paginate,
+#extent #loop-footer ol.wp-paginate {  
+	display: inline;  
+	float:right;
+	margin:0px 0px;  
+	padding:0px 0px;  
+	border: 0; 
+	border-top: 0; 
+	border-bottom: 0; 
+	color: #777777;  
+	background: transparent; 
+	text-align:left;    
+}  
+#extent #loop-footer ol.wp-paginate {
+	float:none;
+}
+#extent #breadcrumbs ol.wp-paginate li,
+#extent #loop-footer ol.wp-paginate li {	
+	display: inline;
+	list-style: none;
+	margin:0px 0px; 
+	margin-right: 4px;
+	padding: 0px 0px;
+	border: 0; 
+	border-top: 0; 
+	border-bottom: 0;   
+	background: transparent; 
+	letter-spacing:0em;  
+	font-size: 7pt; 
+	font-weight:normal;  
+	text-align: center; 
+}  
+#extent #breadcrumbs ol.wp-paginate li .gap,
+#extent #breadcrumbs ol.wp-paginate li .current,
+#extent #breadcrumbs ol.wp-paginate li a,
+#extent #loop-footer ol.wp-paginate li .gap,
+#extent #loop-footer ol.wp-paginate li .current,
+#extent #loop-footer ol.wp-paginate li a {
+	margin: 0px 0px;
+	padding: 1px 3px; 
+	background: none; 
+	font-size:7pt;   
+	text-align:center; 
+	text-decoration:none;
+}
+#extent #breadcrumbs ol.wp-paginate li .gap,
+#extent #loop-footer ol.wp-paginate li .gap {  
+	padding: 3px 0px; 
+	color:#999;   
+}  
+#extent #breadcrumbs ol.wp-paginate li .current,
+#extent #loop-footer ol.wp-paginate li .current {
+	border:1px solid #89adcf;
+	color:#fff; 
+	background:#5f87ae; 
+}
+#breadcrumbs ol.wp-paginate li a,
+#loop-footer ol.wp-paginate li a {	
+	border:1px solid #ccc; 
+	color:#666; 
+	background-color: transparent; 
+}  
+#breadcrumbs ol.wp-paginate li a:hover,
+#breadcrumbs ol.wp-paginate li a:active,
+#loop-footer ol.wp-paginate li a:hover,
+#loop-footer ol.wp-paginate li a:active {	
+	border:1px solid #58a;	
+	background:#333;	
+	color:#fff;  
+}
+#extent .postnav #bottompostnav {
+  clear:both;
+  width:660px;
+  min-width:660px;
+  padding-left:3px;
+  color: #888;
+} 
+#extent #breadcrumbs .postsnavlinks,
+#extent #breadcrumbs .prevnextpostlinks {
+	display: inline;
+	float: right;
+	font-size: 16pt;
+}
+#extent #bottompostnav .postsnavlinks,
+#extent #bottompostnav .prevnextpostlinks {
+	display: inline;
+	float: none;
+	font-size: 16pt;
+}
+/* Infobar Prev/Next Post Links - Default 
+  ------------------------------------------------------
+*/
+#extent .postnav .postnavhome {
+  width:181px;
+  margin:0px auto;
+  text-align:center;
+}
+#extent .postnav .postnavnewer {
+  width:181px;
+  text-align:left;
+}
+#extent .postnav .postnavolder {
+  width:181px;
+  text-align:right;
+}
+/* Infobar Search
+   --------------------
+*/
+#extent .postnav #postnavsearch {
+	float:right;
+	width:200px;
+	margin:0;
+	padding:0;
+	padding-right:3px;
+	text-align:right;
+}
+#extent .postnav #postnavsearch #searchform {
+	margin:0;
+	padding:0;
+}
+#extent .postnav #postnavsearch form label {
+	display:none;
+}
+#extent .postnav #postnavsearch input {
+	margin-top:3px;
+	margin-bottom:3px;
+	font-size: 8pt;
+	font-weight: normal;
+}
+#postnavsearch input#s
+{
+  border: 1px solid #e0e0e0;
+  color: #000;
+  background-color: #fff;
+}
+#extent .postnav #postnavsearch #s {
+	width:145px;
+}
+#extent .postnav #postnavsearch #searchsubmit {
+	font-size: 7pt;
+	padding: 0;
+}
+#extent #postnavsearch input#searchsubmit {
+	height:15px;
+	padding:0;
+	margin:0;
+	border: 1px solid #000;
+	color: #5588aa;
+	background-color: #f0f0f0;
+}  
+/* 
+   5 - Left /RightColumn (#leftcol/#rightcol) Style Specifications
+   ----------------------------------------------- 
+*/
+/* Margins and Padding
+   --------------------
+*/
+#leftcol h2~h2,
+#leftcol p + h2,
+#rightcol h2 ~ h2,
+#rightcol p + h2 {
+  padding-top:10px;
+}
+/* Widget Titles
+   --------------------
+*/
+.title,
+.widgettitle {
+  clear:both;
+  width:100%;
+  margin: 0px auto;
+  border:0;
+  border-bottom: 1px dotted #999;
+  color: #999;
+  font-size:9pt;
+  line-height:12pt;
+  height:12pt;
+  letter-spacing:0em;
+  font-weight:normal;
+  text-align: center;
+}
+#rightcol .title,
+#rightcol .widgettitle {
+  margin-top:20px;
+}
+#rightcol .title:first-child,
+#rightcol .widgettitle:first-child {
+  margin-top:0px;
+}
+
+.widget {
+  margin-top:20px;
+}
+.widget:first-child {
+  margin-top:0px;
+}
+/* Links
+   --------------------
+*/
+#leftcol a:hover,
+#rightcol a:hover {
+   text-decoration: underline;
+}
+/* Lists
+   --------------------
+*/
+#leftcol ul,
+#rightcol ul {
+  margin-bottom:10px;
+  margin-left:5px;
+  list-style-type:none;
+}
+#rightcol ul {
+	line-height:1.3em;
+}
+#leftcol li,
+#rightcol li { /* #extent #content */
+  margin:0px;
+  margin-bottom:3px;
+  padding:0px;
+  padding-top:0.2em;
+  padding-bottom:0.2em;
+  text-indent:0px;
+  height:auto;
+  line-height:1.2em;
+}
+#leftcol li a { /* #extent #content */
+  height:1em;
+  line-height:1em;
+}
+
+#leftcol .leftcolcatlist li {
+  clear:both;
+  padding:0px;
+  margin:0px;
+  margin-bottom:0px;
+  height:1.5em;
+  line-height:1.5em;
+  border:0px solid black;
+}
+#leftcol .leftcolcatlist li a {
+  margin:0px;
+  padding:0px;
+  height:1em;
+  line-height:1em;
+}
+#leftcol .leftcolcatlist li a img {
+  clear:both;
+  float:left;
+  margin:0px;
+  padding:0px;
+  padding-right:5px;
+  height:1.5em;
+  line-height:1em;
+}
+.listarchives li {
+	padding:0px;
+}
+/* Calendar
+   --------------------
+*/
+#wp-calendar
+{
+  width:100%;
+  text-align:center;
+  font-size:8pt;
+}
+#wp-calendar th
+{
+  background-color: silver;
+  font-size:8pt;
+  color:#000000;
+}
+#wp-calendar td
+{
+  font-size:8pt;
+  width:14%;
+}
+#wp-calendar a
+{
+  border: 0px solid #58a;
+  background-color: white;
+  text-decoration: underline;
+  display: block;
+}
+#prev a, #next a
+{
+  border: 0;
+}
+#wp-calendar caption
+{
+  text-align: center;
+  width: 100%;
+  margin-bottom:5px;
+}
+#wp-calendar #today
+{
+  background-color:#f5f5f5; /* whitesmoke */
+  font-weight:bold;
+  border: 1px solid silver;
+}
+/* 
+   6 - Center Column (#main) Style Specifications
+   ----------------------------------------------- 
+*/
+/* Alignment
+   --------------------
+*/
+#content .centeralign,
+#content .aligncenter {
+   text-align: center;
+}
+#content .aligncenter {
+   float:none;
+   clear:both;
+   display:block;
+   margin:0px auto;
+}
+#content .alignleft {
+  float:left;
+}
+#content .alignright {
+  float:right;
+}
+#content .alignnone {
+	display:block;
+}
+/* Images
+   --------------------
+*/
+#main p img {
+   padding:10px;
+   padding-top:0px;
+}
+#content img {
+	max-width:635px;
+	height: auto;
+}
+body.attachment #content img {
+	max-width: 900px;
+}
+/* Margins and Padding
+   --------------------
+*/
+#main h4 + p {
+  margin-top:0px;
+  padding-top:0px;
+}
+#main ol {
+   margin-left:25px;
+}
+/* Miscellaneous
+   --------------------
+*/
+#content .symbol { 
+   font-family: symbol;
+}
+/* Loop Header Style Specifications
+     .pagetitle, .cat-description, .cat-subscribe-feed
+   --------------------
+*/
+.pagetitle {
+  display:inline;
+  float:left;
+  clear:none;
+  margin:0px;
+  width:520px;
+  padding:0px;
+  padding-top: 0px;
+  padding-bottom:6px;
+  border:0;
+  color:black;
+  font-size:16pt;
+  line-height:16pt;
+  height:16pt;
+  letter-spacing:0.2em;
+  font-weight:bold;
+  text-align:left;
+}
+.cat-description {
+  display:block;
+  float:none;
+  height:auto;
+  margin:0px;
+  padding:0px;
+  padding-bottom:5px;
+  border:0;
+  color:#555;
+  font-size:8pt;
+  line-height:2em;
+  letter-spacing:0;
+  text-align:left;
+  font-style:normal;
+  font-weight:bold;
+  text-transform:none;
+}
+.cat-description strong {
+  color:#777;
+  font-size:9pt;
+  line-height:1.3em;
+  font-weight:normal;
+}
+.cat-description em {
+  display:block;
+  clear:both;
+  padding-top:5px;
+  padding-bottom:5px;
+  color:#777;
+  font-size:9pt;
+  line-height:1.3em;
+  font-weight:normal;
+}
+.cat-subscribe-feed {
+  display:inline;
+  float:right;
+  width:120px;
+  padding:0px;
+  margin:0px;
+  margin-top:0pt;
+  margin-bottom:0px;
+  border:0;
+  border:0px solid navy;
+  font-size:7pt;
+  text-align:center;
+  letter-spacing:0;
+  font-style:normal;
+  font-weight:normal;
+  text-transform:none;
+}
+.cat-subscribe-feed a,
+.cat-subscribe-feed a:link,
+.cat-subscribe-feed a:visited,
+.cat-subscribe-feed a:hover,
+.cat-subscribe-feed a:active {
+  margin:0px;
+  padding:0px;
+  padding-left:5px;
+  padding-right:5px;
+  line-height:7pt;
+}
+.cat-subscribe-feed a:hover {
+  text-decoration:underline;
+  background-color:transparent;
+}
+/* Post/Page Entry Container
+     .post
+   --------------------
+*/
+.post {
+  display:block;
+  margin-bottom:20px;
+  padding:10px;
+  border:0;
+  text-align:left;
+  border: 1px solid #bbb;
+}
+body.home .post.sticky {
+	background-color:#f6f6f6;
+	border-color: #000;
+}
+/* Post/Page Title Container
+       .post-title
+   --------------------
+*/
+.post-title {
+  clear:both;
+  display:block;
+  height:auto;
+  margin:0px;
+  padding:0px;
+  padding-bottom:2px;
+  border:0;
+  border-bottom:2px solid #909090;
+}
+body.single .post .post-title,
+body.page .post .post-title {
+	border-top:0;
+	margin-top:0;
+	background-color:transparent;
+}
+/* Post/Page Title Heading
+       .post-title h1
+   --------------------
+*/
+.post-title h1  {
+  margin-left:55px;
+}
+body.page .post-title h1,
+body.error404 .post-title h1 {
+	margin-left:0;
+}
+body.attachment .post-title h1 {
+	margin-left: 100px;
+}
+.post-title h1 a,
+.post-title h1 a:link,
+.post-title h1 a:visited,
+.post-title h1 a:hover,
+.post-title h1 a:active {
+	margin-right:55px;
+	color: #000;
+	background-color:transparent;
+	text-decoration:none;
+}
+/* Post/Page Title Thumbnail
+       .post-title-thumbnail
+   --------------------
+*/
+.post-title .post-title-thumbnail {
+  float:right;
+  clear:none;
+  width:55px;
+}
+/* Post/Page Title Metadata
+       .post-title-metadata, .post-title-category, .post-title-tags
+   --------------------
+*/
+.post-title .post-title-metadata {
+	display:block;
+  margin:0px;
+  margin-left:55px;
+  padding:0px;
+  border:0px solid #b0b0b0;
+  color:#b0b0b0;
+  font-size:8pt;
+  line-height:14pt;
+  height:auto;
+  letter-spacing:0.1em;
+  font-style:normal;
+  font-weight:normal;
+  text-transform:none;
+  text-align:left;
+}
+body.attachment .post-title-metadata {
+	margin-left: 100px;
+}
+.page .post-title-metadata {
+	margin-left:0;
+}
+.post-title .post-title-category,
+.post-title .post-title-tags {
+  display:block;
+  margin:0px;
+  margin-left:55px;
+  padding:0px;
+  border:0;
+  color:#777;
+  font-size:8pt;
+  line-height:11pt;
+  height:auto;
+  letter-spacing:0em;
+  font-style:normal;
+  font-weight:normal;
+  text-transform:none;
+}
+/* Post/Page Date Container
+       .post-date
+   --------------------
+*/
+.post-title .post-date {
+  float:left;
+  width:48px;
+  margin:0px;
+  padding:0px;
+  border:1px solid #999;
+  text-align:center;
+}
+/* Post/Page Date 
+       .post-date-year, .post-date-weekday, .post-date-month, .post-date-day
+   --------------------
+*/
+.post-date .post-date-year {
+  display:block;
+  margin:0px;
+  padding:0px;
+  border-bottom:1px solid #999;
+  font-size:7pt;
+  line-height:8pt;
+  letter-spacing:0.2em;
+  background-color:#d0d0d0;
+}
+.post-date .post-date-weekday {
+  display:block;
+  margin:0px;
+  padding:0px;
+  padding-top:0px;
+  font-size:7pt;
+  line-height:8pt;
+  background-color:white;
+}
+.post-date .post-date-day {
+  display:block;
+  margin:0px;
+  padding:0px;
+  padding-top:0px;
+  padding-bottom:0px;
+  font-size:12pt;
+  line-height:12pt;
+  letter-spacing:0.1em;
+  background-color:white;
+}
+.post-date .post-date-month {
+  display:block;
+  margin:0px;
+  padding:0px;
+  padding-bottom:2px;
+  font-size:8pt;
+  line-height:8pt;
+  background-color:white;
+}
+/* Post Entry Container
+     .post-entry
+   -----------------------------
+*/
+.post-entry {
+	padding-top:10px;
+}
+body.attachment .post-entry {
+	padding-top: 0px;
+}
+#home .post-entry > p:first-child {
+  clear:both;
+  margin-top:0px;
+}
+/* Post Entry - Blockquotes
+   --------------------
+*/
+.post-entry h2+blockquote,
+.post-entry h3+blockquote,
+.post-entry blockquote+blockquote {
+	margin-top:20px;
+}
+.post-entry li blockquote {
+	line-height:1.1em;
+}
+.post-entry blockquote {
+  margin-top:0px;
+  margin-left:20px;
+  margin-right:40px;
+  margin-bottom:20px;
+  padding:10px;
+  border:0;
+  border-top:1px solid gray;
+  border-bottom: 1px solid silver;
+  background-color: #f4f4f4; /* whitesmoke */
+  text-align:justify;
+}
+.post-entry blockquote,
+.post-entry blockquote p {
+   font-size:10pt;
+   line-height:1.4em;
+   letter-spacing:0em;
+}
+.post-entry blockquote p {
+	margin:0;
+	margin-top:0;
+	margin-bottom:0;
+	padding:0;
+	padding-top:0;
+	padding-bottom:0;
+}
+.post-entry blockquote p + p {
+	padding-top:2em;
+}
+.post-entry blockquote a {
+  font-weight:bold;
+}
+.post-entry blockquote .script {
+	font-size:16pt;
+	line-height:20pt;
+}
+.post-entry .def {
+	padding-top:0px;
+	padding-bottom:0px;
+  border:0;
+  border-left: 3px solid #777;
+  background-color: #f8f8f8;
+}
+.post-entry .def p {
+	margin:0;
+	padding-top:10px;
+	padding-bottom:10px;
+  line-height:1.2em;
+  letter-spacing:0em;
+}
+.post-entry .code {
+  border:0;
+  border-left: 3px solid gray;
+  text-align:left;
+}
+.post-entry .code,
+.post-entry .code p {
+	color:#444;
+	font-size:10pt;
+	line-height:1em;
+	letter-spacing:0em;
+}
+.post-entry .code p + p {
+	padding-top: 1em;
+}
+.post-entry blockquote blockquote {
+  margin-left:20px;
+  padding-left:10px;
+  margin-right:20px;
+  padding-right:10px;
+  border:0px solid gray;
+  border-left:1px solid gray;
+}
+/* Post Entry - Captions
+   --------------------
+*/
+dl.gallery-item {
+   margin-left:0px;
+}
+dl.gallery-item dt {
+	text-decoration: none;
+}
+dl.gallery-item dd {
+	margin-left:0px;
+	padding-left:0px;
+	border-left: 0;
+	background-color: transparent;
+}
+.post-entry .caption,
+.post-entry p .caption,
+.post .post-entry p .caption,
+.post-entry .wp-caption,
+.post-entry .wp-caption-text,
+.post-entry .gallery-caption,
+#main .caption {
+   display:block;
+   margin:0px auto;
+   margin-bottom:2em;
+   padding-top:0px;
+   font-size:9pt;
+   line-height:1em;  
+   height:auto;
+   letter-spacing:0em;
+   text-align: center; 
+}
+.post-entry .gallery-caption {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.post-entry .wp-caption-text em,
+#main .caption em {
+   display:block;
+}
+.post-entry p .caption,
+#main .caption em {
+   display:inline;
+}
+#main .caption {
+   margin-top:-10px;
+}
+#main .wp-caption + .caption {
+	margin-top: 10px;
+}
+#main .caption .script {
+	line-height: 1.3em;
+}
+/* Post Entry - Galleries and Post Attachments
+   --------------------
+*/
+body.attachment .gallery-nav {
+	float:left;
+	width:100px;
+	margin:0;
+	padding:0;
+	font-size: 8pt;
+	line-height:1.3em;
+}
+body.attachment .gallery-nav dl {
+   margin-left:0px;
+}
+body.attachment .gallery-nav dl dt {
+	text-decoration: none;
+}
+body.attachment .gallery-nav dl dd {
+	margin-left:0px;
+	padding-left:0px;
+	border-left: 0;
+	background-color: transparent;
+}
+body.attachment .gallery-nav-home {
+	display:block;
+	clear:both;
+	width: 90px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align:center;
+}
+body.attachment .gallery-nav .gallery-nav-home a,
+body.attachment .gallery-nav .gallery-nav-home a:link,
+body.attachment .gallery-nav .gallery-nav-home a:visited,
+body.attachment .gallery-nav .gallery-nav-home a:hover,
+body.attachment .gallery-nav .gallery-nav-home a:active {
+	display:block;
+	text-decoration:none;
+	border:0;
+	text-align: center;
+}
+body.attachment .gallery-nav-prev,
+body.attachment .gallery-nav-next {
+	display:block;
+	float:left;
+	text-align: center;
+}
+body.attachment .gallery-nav-thumb {
+	width:45px;
+	min-width:45px;
+	max-width:45px;
+	height:45px;
+	min-height:45px;
+	max-height:45px;
+}
+body.attachment .gallery-nav .gallery-nav-caption a {
+	text-decoration: none;
+	border: 0;
+	text-align: center;
+}
+body.attachment .gallery-nav .gallery-nav-prev .gallery-nav-caption a:before {
+	content: "\21D0  ";
+	font-size: 10pt;
+}
+body.attachment .gallery-nav .gallery-nav-next .gallery-nav-caption a:after {
+	content: "\21D2  ";
+	font-size: 10pt;
+}
+
+body.attachment .gallery-photo {
+	float: left;
+	clear: none;
+	margin:0;
+	margin-bottom: 20px;
+	width:900px;
+	padding:0;
+	text-align:center;
+}
+body.attachment .gallery-photo img {
+	margin:0;
+	padding:0;
+	clear: none;
+}
+body.attachment .bigcaption {
+	clear:both;
+	text-align:center;
+}
+body.attachment .gallery-more {
+	float: left;
+	clear:none;
+	width: 90px;
+	margin:0;
+	padding:0;
+}
+body.attachment .gallery-more h3 {
+	clear:none;
+	width:100%;
+}
+body.attachment dl {
+	display:block;
+	float:left;
+	font-size: 9pt;
+	text-align: left;
+	line-height: 1.3em;
+}
+body.attachment dt,
+body.attachment dd {
+	display: block;
+	width:90px;
+	overflow: hidden;
+	float: none;
+	clear:both;
+}
+body.attachment dt {
+	padding-top: 10px;
+	clear:left;
+	font-weight:bold;
+}
+body.attachment dd {
+	font-size: 7pt;
+	text-align: left;
+}
+/* Post Entry - Headings
+   --------------------
+*/
+.post-entry h2,
+.post-entry h2:first-child,
+.post-entry h2 + p {
+	margin-top:20px;
+}
+/* Post Entry - Images
+   --------------------
+*/
+.post-entry img {
+  border:0px solid #ddd;
+  vertical-align:middle;
+  margin-bottom:0px;
+  padding-bottom:0px;
+}
+.post-entry p a img,
+.post-entry p a.post img,
+.post-entry p a.tt-flickr {
+  padding:0px;
+  text-decoration:none;
+}
+/* Post Entry - Links
+   --------------------
+*/
+.post-entry a:link,
+.post-entry a:visited,
+.post-entry a:hover,
+.post-entry a:active {
+  border-bottom: 1px dotted #58a;
+  font-weight:bold;
+  text-decoration: none;
+}
+.post-entry a:hover {
+  background-color:#e8e8e8;
+  border-bottom: 1px solid #58a;
+}
+.post-entry a.thickbox:hover {
+  background-color:transparent;
+  border-bottom: 0px solid #58a;
+}
+/* Post Entry - Lists
+   --------------------
+*/
+.post-entry li {
+   line-height:1.1em;
+   margin-left: 25px;
+}
+.post-entry li > li {
+	margin-top:1.0em;
+}
+/* Post Entry - Paragraphs
+   --------------------
+*/
+.post-entry,
+.post-entry li p {
+  font-size:13pt; /* 11pt */
+  line-height:1.4em; /* 1.6em */
+  letter-spacing:0em;
+  text-align:justify;
+}
+.post-entry li p {
+	line-height:1.1em;
+}
+.post-entry .update {
+  padding:3px;
+  padding-left:78px;
+  border:1px solid #d8d8d8;
+  line-height:12pt;
+  letter-spacing:0em;
+  text-indent:-75px;
+}
+.post-entry .update:before {
+  counter-increment:update;
+  content:"Update " counter(update, upper-roman) ": ";
+  font-size:10pt;
+  font-weight:bold;
+  letter-spacing:0.1em;
+  font-variant:small-caps;
+}
+/* Post Entry - Thumbnail
+   --------------------
+*/
+.post-entry .post-thumbnail {
+	float:right;
+}
+/* Post Footer Container
+    .post-footer
+   --------------------------------
+*/
+.post-footer {
+	clear:both;
+}
+/* Post Footer Metadata
+   --------------------
+*/
+.postmetadata,
+.postmetadata {
+	clear:both;
+	margin: 0px;
+	margin-top: 10px;
+	padding: 0px;
+	border-top: 1px solid #ddd;
+	color: #777;
+	font-size:7pt;
+	line-height:10pt;
+	letter-spacing:0.1em;
+	text-align: left;
+}
+.post .postmetadata .post-author-gravatar {
+  float:left;
+  margin:0px;
+  padding:0px;
+  padding-right:5px;
+}
+.post .postmetadata .postmetadata-author,
+.post .postmetadata .postmetadata-license {
+	display:block;
+	margin:0px;
+	padding:0px;
+	line-height:10px;
+	height:10px;
+}
+.post .alt,
+.post .alt {
+	border-bottom: 1px solid #ddd;
+}
+/* Posts Navigation
+   ----------------------
+*/
+.postpagenav {
+  display: block;
+  width:100%;
+  margin:10px auto;
+  padding-top:3px;
+  padding-bottom:3px;
+  border-top: 1px dotted #777777;
+  border-bottom: 1px dotted #777777;
+  color: #777777;
+  background-color: #e8e8e8;
+  height:16pt;
+  line-height:16pt;
+  letter-spacing:0;
+  font-weight:bold;
+  text-align: center;  
+}
+/* Post Query
+   --------------------
+*/
+.query {
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  color: #777;
+  font-size:7pt;
+  font-weight:normal;
+  letter-spacing:0;
+}
+/* Loop Footer Container
+     #loop-footer
+   --------------------
+*/
+#loop-footer {
+	clear:both;
+	margin:0px auto;
+	margin-bottom:10px;
+	text-align:center;
+}
+#extent #loop-footer li {
+  position:relative;
+  bottom:0px;
+  border-top: 1px solid silver;
+  border-bottom: 1px solid silver;
+  color: #777;
+  background-color:#e8e8f0;
+  font-size:7.5pt;
+  line-height:16pt;
+  height:16pt;
+  letter-spacing: 0em;
+  font-weight:normal;
+  text-align:center;
+}
+/* 
+   8 - Footer Section(#footer) Style Specifications
+   ----------------------------------------------- 
+*/
+#footer {
+  font-size:8pt;
+  letter-spacing:0.1em;
+}
+#footer hr {
+  display:inline;
+  color:white;
+}
+#footer p {
+  margin:0;
+  padding-top:15px;
+} 
+/* Footer Links
+   --------------------
+*/
+#footer a,
+#footer a:link,
+#footer a:visited,
+#footer a:hover,
+#footer a:active { 
+   text-decoration: none; 
+   font-weight: normal;
+}
+#footer a:hover {
+   text-decoration: underline;
+}
+/* 
+   ============================================================================================= 
+   4 - Site Navigation Style Specifications
+   ============================================================================================= 
+*/
+/*    4.1 - Main Navigation Style Specifications   
+----------------------------------------------- */
+.navmenu,
+.nav-header {
+     list-style-type:none;
+     margin:0px;
+	 margin-top:1px;
+     margin-bottom:0px;
+     padding:0px; 
+	 padding-bottom:30px;
+}
+.navmenu li,
+.nav-header li {
+     display: block;
+     float:left;
+     margin-left:0px;
+     padding:0px;
+     padding-left:0px;
+     text-align:center;
+	 overflow:hidden;
+}
+.navmenu li a,
+.navmenu li a:link,
+.navmenu li a:visited,
+.navmenu li a:hover,
+.navmenu li a:active,
+.nav-header li a,
+.nav-header li a:link,
+.nav-header li a:visited,
+.nav-header li a:hover,
+.nav-header li a:active {
+     display:block;
+     height: 18pt;
+     line-height: 18pt;
+     width: 98px; 
+	 border: 1px solid silver;
+     border-top: 1px solid #f5f5f5; /* whitesmoke */
+     border-left: 1px solid #f5f5f5; /* whitesmoke */
+     background: #fff;
+     color: #58a;
+     font-size:9pt;
+     letter-spacing:0.1em; 
+	 font-weight:normal;
+     text-decoration:none;
+}
+.navmenu li a:hover,
+.nav-header li a:hover {
+     border: 1px solid #58a;
+     border-top: 1px solid #f5f5f5; /* whitesmoke */
+     border-left: 1px solid #f5f5f5; /* whitesmoke */
+     font-size:9pt;
+     letter-spacing:0.15em;
+     font-weight:bold;
+}
+#home #navhome, 
+#pageforum #navforum,
+#nav .current_page_item a,
+#nav .current_page_ancestor a {
+     color:black;
+     border-bottom-color: black;
+	 border-right-color: black;
+     letter-spacing:0.15em;
+     font-weight:bold;
+     text-decoration:none;
+}
+/*    4.2 - Section Navigation Style Specifications   
+----------------------------------------------- */
+/* TOP LEVEL: Hide all top-level page menus */
+.subnavmenu li {
+	display:none;
+}
+/* TOP LEVEL: Display current page's second-level menu */
+.subnavmenu .current_page_item,
+.subnavmenu .current_page_item li,
+.subnavmenu .current_page_parent,
+.subnavmenu .current_page_parent li,
+.subnavmenu .current_page_ancestor,
+.subnavmenu .current_page_ancestor li {
+	display:block;
+}
+/* TOP LEVEL: Hide all third-level menus */
+.subnavmenu .current_page_item li li {
+	display:none;
+}
+/* SECOND LEVEL: Hide all second-level page menus */
+.subnavmenu .current_page_parent li li {
+	display:none;
+}
+/* SECOND LEVEL: Display current page's hierarchy */
+.subnavmenu .current_page_parent .current_page_item li {
+	display:block;
+}
+/* SECOND LEVEL: Hide all but current page's third-level menu */
+.subnavmenu .current_page_parent .current_page_item li li {
+	display:none;
+}
+/* THIRD LEVEL: Hide all third-level page menus */
+.subnavmenu .current_page_ancestor li li {
+	display:none;
+}
+/* THIRD LEVEL: Display current page's second-level menu */
+.subnavmenu .current_page_ancestor .current_page_parent li {
+	display:block;
+}
+/* THIRD LEVEL: Hide all fourth-level page menus */
+.subnavmenu .current_page_ancestor .current_page_parent li li {
+	display:none;
+}
+/* THIRD LEVEL: Display current page's fourth-level menu */
+.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li {
+	display:block;
+}
+/* FOURTH LEVEL: Display third-level menus */
+.subnavmenu .current_page_ancestor .current_page_ancestor li {
+	display:block;
+}
+/* FOURTH LEVEL: Hide all fourth-level-menus */
+.subnavmenu .current_page_ancestor .current_page_ancestor li li {
+	display:none;
+}
+/* FOURTHE LEVEL: Display only current page's fourth-level menu */
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li {
+	display:block;
+}
+/* TOP LEVEL: Clear all margins and padding */
+#leftcol .subnavmenu,
+#leftcol .subnavmenu ul,
+#leftcol .subnavmenu li {
+	margin:0;
+	padding:0;
+	text-align:center;
+	 overflow:hidden;
+}
+/* TOP LEVEL: Set menu top margin */
+#leftcol .subnavmenu {
+	margin-top:0px;
+}
+/* TOP LEVEL: Display top-level list items like .title */
+#leftcol .subnavmenu .current_page_item,
+#leftcol .subnavmenu .current_page_parent,
+#leftcol .subnavmenu .current_page_ancestor {
+	width:100%;
+	margin: 0px auto;
+	text-align: center;
+	border:0;
+	clear:both;
+}
+/* TOP LEVEL: Display top-level page links like .title */
+#leftcol .subnavmenu .current_page_item a,
+#leftcol .subnavmenu .current_page_parent a,
+#leftcol .subnavmenu .current_page_ancestor a {
+	display:block;
+	padding-bottom:5px;
+	color: #999;
+	background-color:transparent;
+	font-size:8pt;
+	line-height:12pt;
+	letter-spacing:0.1em;
+	text-transform:uppercase;
+	font-weight:normal;
+	text-decoration:none;
+	border-bottom: 1px dotted #999;
+}
+/* SECOND LEVEL: Display second-level list items like subnavmenu */
+#leftcol .subnavmenu .current_page_item li,
+#leftcol .subnavmenu .current_page_parent li,
+#leftcol .subnavmenu .current_page_ancestor li {
+	border-bottom:0;
+    background-color: #e0e0e0; /* whitesmoke */
+}
+#leftcol .subnavmenu .current_page_item li ul,
+#leftcol .subnavmenu .current_page_parent li ul,
+#leftcol .subnavmenu .current_page_ancestor li ul {
+	border-left: 1px solid silver;
+     border-right: 1px solid silver;
+}
+/* SECOND LEVEL: Display second-level page links like subnavmenu */
+#leftcol .subnavmenu .current_page_item li a,
+#leftcol .subnavmenu .current_page_parent li a,
+#leftcol .subnavmenu .current_page_parent .current_page_item li a,
+#leftcol .subnavmenu .current_page_ancestor li a {
+    font-size:9pt;
+     line-height: 1.75em; 
+	 height:1.35em;
+	 /*width: 159px; */
+     margin-bottom:0px;
+     padding-left:5px;
+     border: 1px solid silver;
+     border-top: 1px solid #f5f5f5; /* whitesmoke */
+	 color:#58a;
+     background: #fff;
+     font-weight:normal;
+     letter-spacing:0.1em;
+	 text-transform:none;
+     text-decoration:none;
+}
+#leftcol .subnavmenu .current_page_item li a:hover,
+#leftcol .subnavmenu .current_page_parent li a:hover,
+#leftcol .subnavmenu .current_page_ancestor li a:hover {
+     border: 1px solid #58a;
+}
+#leftcol .subnavmenu .current_page_parent .current_page_item a {
+     color:black;
+     border: 1px solid black;
+     border-top: 1px solid #f5f5f5; /* whitesmoke */
+     border-left: 1px solid silver;
+     font-size:8pt;
+     letter-spacing:0.1em;
+     font-weight:bold;
+     text-decoration:none;
+}
+/* THIRD LEVEL: Display third-level list items like subsubnavmenu */
+#leftcol .subnavmenu .current_page_parent .current_page_item li,
+#leftcol .subnavmenu .current_page_parent .current_page_item li ul,
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent li,
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent li ul,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor li,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor li ul {
+	border:0;
+}
+/* THIRD LEVEL: Display third-level page links like subsubnavmenu */
+#leftcol .subnavmenu .current_page_parent .current_page_item li a,
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent li a,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor li a {
+   height: 1.5em;
+     line-height: 1.5em;
+     width: 150px;
+     margin-left:6px;
+	 padding:0px;
+	 font-size:8pt;
+	 letter-spacing:0em;
+}
+#leftcol .subnavmenu .current_page_parent .current_page_item li a:hover {
+	border:1px solid #58a;
+}
+/* THIRD LEVEL: Set display for current_page_item */
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item a {
+     font-weight:normal;
+     color:black;
+     border: 1px solid black;
+     text-decoration:none;
+}
+/* THIRD LEVEL: Reset display for fourth-level page links */
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a {
+     border: 1px solid silver;
+     border-top: 1px solid #f5f5f5; /* whitesmoke */
+     border-left: 1px solid #f5f5f5; /* whitesmoke */
+	 color:#58a;
+     background: #fff;	
+}
+/* FOURTH LEVEL: Display fourth-level page links like subsubsubnavmenu */
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a {
+     height: 1.25em;
+     line-height: 1.25em;
+    width: 140px;
+     margin-left:11px;
+	 background:none;
+	 background-color:#f0f0f0;
+}
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a:hover,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a:hover,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a:hover {
+    border:1px solid #58a;
+}
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor .current_page_item a:hover {
+    border:1px solid black;
+}
+/* 
+   ============================================================================================= 
+   5 - Comments Style Specifications
+   ============================================================================================= 
+*/
+ /* Comments----------------------------------------------- 
+ * 
+ * http://wp-fun.co.uk/2008/12/10/27-comment-classes/
+ * 
+ */
+#main .commentlist,
+#main .commentlist .children {
+          border: 0px solid gray;
+          margin:0;
+          padding:0;
+          margin-left: 0px;
+          padding-left: 0px;
+		  padding-right:5px;
+          list-style-type: none;
+          list-style-position: inside;
+}
+#main .commentlist .children {
+	margin-left:20px;
+	margin-right:5px;
+}
+.commentlist li {
+          padding: 0px;
+          padding-left:0px;
+          padding-right:0px;
+          margin: 0px;
+          margin-left:0px;
+          margin-bottom:15px;
+	  background: white;
+          border: 1px solid #a8a8a8;
+}
+.commentlist .bypostauthor {
+       background-color: #e8e8e8;
+	   border-color: #808080;
+}
+
+.commentlist li .comment-author {
+	display:block;	
+	margin:0;	
+	padding:0;
+	font-style:normal;	
+	height:auto;	
+	background-color:#e8e8e8;
+}
+.commentlist .bypostauthor .comment-author {
+	background-color: #d8d8d8;
+}
+
+.commentlist li .comment-author img.avatar {
+        float:left;	
+	margin:0;
+	padding:0;
+	position:relative;		
+	left:-7px;	
+	top:-4px;
+	border: 1px solid #333;
+}
+
+.commentlist li .comment-meta {
+	display:block;	
+	margin:0;	
+	padding:0;
+	font-style:normal;	
+	height:auto;	
+	background-color:#e8e8e8;
+	border-bottom:1px solid #c8c8c8;
+	font-size:8pt;
+}
+.commentlist .bypostauthor .comment-meta {
+	background-color: #d8d8d8;
+	border-bottom-color: #808080;
+}
+
+.commentlist .comment-author .commentua {
+        float:right;
+		margin:0;
+		padding:0;
+		color: silver;
+}
+.commentlist .comment-author .commentua img {
+        border: 0px solid gray;
+} 
+
+ol.commentlist li div p {
+	margin:0;
+	margin-top:1em;
+	margin-bottom:1em;
+        padding:0;
+	padding-left:20px;
+	padding-right:20px;
+	font-size:10pt;
+	line-height:1.5em;
+	letter-spacing:0;
+}
+ol.commentlist li div blockquote {
+	border:0;
+	border-left:3px solid #c8c8c8;
+	margin-top:0;
+	margin-left:40px;
+	margin-bottom:0;
+	padding:0;
+	padding-left:5px;
+	color:#909090;
+	background-color:transparent;
+}
+ol.commentlist li div blockquote p {
+	margin:0;
+	padding:0;
+}
+ol.commentlist li div p code,
+ol.commentlist li div blockquote p code {
+	font-style:normal;
+	color:#707070;
+	background-color:#e8e8e8;
+}
+#commentform {
+	width: 660px;
+}
+#commentform p label {
+	display:block;
+	float:left;
+	width:90px;
+	text-align:right;
+}
+#commentform .required {
+	padding-left:3px;
+	padding-right:3px;
+	color:maroon;
+	font-size:16pt;
+	font-weight:bold;
+}
+#commentform input {
+	display:block;
+	float:left;
+	margin-left:10px;
+	padding-left:0;
+}
+#commentform textarea {
+	width:650px;
+	height:300px;
+}
+#commentform input:focus,
+#commentform textarea:focus {
+	border-color:#58a;
+}
+#commentform p {
+	margin:0;
+	padding:0;
+	font-size:8pt;
+	text-align:left;
+}
+#commentform .comment-form-author,
+#commentform .comment-form-email,
+#commentform .comment-form-url {
+	float:left;
+	clear:none;
+	width:500px;
+}
+#commentform .comment-form-comment {
+	clear:both;
+	width:100%;
+}
+#commentform p code {
+	font-style:normal;
+	color:#707070;
+	background-color:#e8e8e8;
+}
+#commentform .form-allowed-tags code {
+	display:block;
+	width:100%;
+}
+/* Comment CAPTCHA Plugin Style Specifications
+  ------------------------------------------------------------------ 
+*/
+#commentform .comment-form-captcha {
+	float:left;
+	clear:none;
+	width:500px;
+}
+/* 
+   ============================================================================================= 
+   6 - Print Style Specifications
+   ============================================================================================= 
+*/
+@media print {
+/* print media style specifications
+----------------------------------------------- */
+#header,
+#navbar,
+#extent .postnav,
+#leftcol,
+#rightcol {
+	display:none;
+}
+/* Content
+----------------------------------------------- */
+#header,
+#extent,
+#content,
+#main,
+#footer {
+  width:7.5in;
+  }
+} /* End @media print */

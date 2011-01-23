@@ -50,37 +50,39 @@ get_header();  // MUST come first. Calls the header PHP file. Used in all primar
 		</div>
 		<!-- End Main (div#main) -->
 
-		<!-- Begin Left Column (div#leftcol) -->
-		<div id="leftcol">
-		<?php 
+		<?php if ( ! is_attachment() ) { ?>
+			<!-- Begin Left Column (div#leftcol) -->
+			<div id="leftcol">
+			<?php 
 			/*
 			div#leftcol contains the left column content of the three-column layout. 
 			*/ 
-			get_sidebar('left'); 
+				get_sidebar('left'); 
 				/*
 				sidebar-left.php is the left column content. Used in all primary template page types (index.php, single.php, archive.php, search.php, page.php)
 				For index.php, sidebar-left and sidebar-right both appear to the right of the main content column.
 				For page.php, sidebar-left is to the left, and sidebar-right is to the right, with the main content column in the center.
 				*/ 
-		?>
-		</div>
-		<!-- End Left Column (div#leftcol) -->
+			?>
+			</div>
+			<!-- End Left Column (div#leftcol) -->
 
-		<!-- Begin Right Column (div#rightcol) -->
-		<div id="rightcol">
-		<?php 
+			<!-- Begin Right Column (div#rightcol) -->
+			<div id="rightcol">
+			<?php 
 			/*
 			div#rightcol contains the right column content of the three-column layout.
 			*/ 
-			get_sidebar('right'); 
+				get_sidebar('right'); 
 				/*
 				sidebar-right.php is the right column content. Used in all primary template page types (index.php, single.php, archive.php, search.php, page.php)
 				For index.php, sidebar-left and sidebar-right both appear to the right of the main content column.
 				For page.php, sidebar-left is to the left, and sidebar-right is to the right, with the main content column in the center.
 				*/
 			?>
-		</div>
-		<!-- End Right Column (div#rightcol) -->
+			</div>
+			<!-- End Right Column (div#rightcol) -->
+		<?php } ?>
 
 	</div>
 	<!-- End Content  (div#content)-->

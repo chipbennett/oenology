@@ -128,6 +128,7 @@ function_exists()
 ----------------------------------
 function_exists() is a boolean (returns TRUE or FALSE) conditional PHP function.
 Codex reference: N/A
+PHP reference: http://php.net/manual/en/function.function-exists.php
 
 function_exists( 'foo' ) returns TRUE if a function named foo() is found; otherwise, it returns FALSE.
 

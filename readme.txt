@@ -3,8 +3,8 @@ Contributors: Chip Bennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
 Tags: fixed-width, white, three-columns, custom-header, custom-background, custom-menu, editor-style, threaded-comments, sticky-post, left-sidebar, right-sidebar
 Requires at least: 3.0
-Tested up to: 3.0.1
-Stable tag: 0.9.2
+Tested up to: 3.0.3
+Stable tag: 1.0
 
 Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
 
@@ -112,13 +112,33 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 
 == Changelog ==
 
-= 0.9.2 =
+= 1.0 [2010.12.08] =
+* Maintenance Release
+* Moved all CSS declarations into style.css, and eliminated @import calls
+* Cleaned up un-needed CSS files in css\ and css\fonts\ directories; removed css\fonts\ directory.
+* Fixed a few minor bugs
+* Added Prev/Next page navigation in Loop Footer, to match Infobar navigation
+* Added default Widgets to appear in each sidebar if no widgets are defined by the user
+* Finished adding inline documentation for all functions used in the Theme, including functions.php
+* Added default "(Untitled)" text to appear in place of Title for Posts without a defined Post Title
+* Removed translation strings. Internationalization will be added in a later revision.
+
+= 0.9.2 [2010.11.04] =
 * Minor BugFix release
 * Fixed divide-by-zero PHP notice generated on the attachment page when the image metadata indicates a shutter speed of zero.
 * Fixed minor CSS image dimension bug
 * Updated Theme tags
 
+= 0.9.1 [2010.09.24] =
+Initial Release.
+
 == Upgrade Notice ==
+
+= 1.0 =
+Maintenance release. Completed inline documentation, added default Widgets, minor bugfixes, CSS clean-up, minor updates
+
+= 0.9.2 =
+Minor BugFix release
 
 = 0.9.1 =
 Initial Release.

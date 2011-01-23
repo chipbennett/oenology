@@ -28,7 +28,21 @@ Template Name: Sidebar-Left
 }
 if ( ! is_page() ) { // don't display the sidebar-left widget area on pages ?>
 <!-- Begin Left Column Widget Area-->
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-left') ) : ?><?php endif; ?>
+<?php if ( !dynamic_sidebar( 'sidebar-left' ) ) {
+
+$widgetsidebarleftargs = array(
+	'before_widget' => '<div class="widget">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="title widgettitle">',
+	'after_title' => '</div>'
+);
+
+the_widget( 'oenology_widget_recentposts' , 'title=Oenology Recent Posts' , $widgetsidebarleftargs );
+the_widget( 'oenology_widget_archives' , 'title=Oenology Recent Posts' , $widgetsidebarleftargs );
+the_widget( 'oenology_widget_categories' , 'title=Oenology Categories' , $widgetsidebarleftargs );
+the_widget( 'oenology_widget_tags' , 'title=Oenology Tags' , $widgetsidebarleftargs );
+
+} ?>
 <!-- End Left Column Widget Area--><?php } 
  /*
 Reference:
@@ -45,14 +59,6 @@ dynamic_sidebar() is used to insert widgetized areas ("sidebars") into a Theme.
 dynamic_sidebar( 'foo' ) will insert a dynamic sidebar named "foo".
 
 Dynamic sidebars must be defined and registered. Refer to functions.php for more information.
-
-***********************
-function_exists()
-----------------------------------
-function_exists() is a boolean (returns TRUE or FALSE) conditional PHP function.
-Codex reference: N/A
-
-function_exists( 'foo' ) returns TRUE if a function named foo() is found; otherwise, it returns FALSE.
 
 ***********************
 has_nav_menu()
@@ -78,6 +84,26 @@ a page ("page" post-type) is currently displayed.
 A page corresponds to the page.php Theme template file in the
 Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
 page will have class="page".
+
+***********************
+the_widget()
+----------------------------------
+the_widget() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_widget
+
+the_widget() is used to output a Widget anywhere within a Theme. This tag allows Widgets to be
+displayed outside of a Widgetized sidebar. The tag can also be used to output "default" Widgets that will 
+display in a defined Widgetized sidebar location if no Widgets are defined (by the user) to appear in
+the sidebar.
+
+the_widget( 'WP_Widget_Calendar' ) will display the Calendar Widget.
+
+the_widget( $widget, $instance, $args ) accepts 3 arguments:
+ - $widget: name of the Widget to be output (can be a core Widget, such as WP_Widget_Calendar, or a custom, Theme-defined Widget)
+ - $instance: Widget instance settings (e.g. Title)
+ - $args:  Widget arguments (before_widget, after_widget, before_title,after_title, etc.)
+
+the_widget() can be used anywhere within a template.
 
 ***********************
 wp_list_pages()

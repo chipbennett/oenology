@@ -137,15 +137,36 @@ next_post_link()
 next_post_link() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/next_post_link
 
-next_post_link() is used to display a link to the next (older) post in chronological order.
+next_post_link() is used to display the next post (older post) 
 
-next_post_link( $format, $link, $in_same_cat, $excluded_categories ) accepts four arguments:
- - $format: link string format. Defaults to '%link &raquo;', where %link corresponds to the "link" argument
- - $link: link text to display. Defaults to '%title' (Post Title)
- - $in_same_cat: display link to next post in the same category. Defaults to FALSE
- - $excluded_categories: exclude posts in the indicated categories, separated by 'and', such as '1 and 3 and 5'. Defaults to 'null'
+next_post_link() displays a fully-formed HTML link.
 
-next_post_link() must be used within the Loop.
+next_post_link( $format, $link, $in_same_cat, $exclude_categories ) accepts four arguments:
+ - $format: string format of the link, using the %link% placeholder for the HTML link. Default: "%link% &raquo;"
+ - $link: text (string) to display within the HTML link. Default: "%title%" (Post Title)
+ - $in_same_cat: boolean (TRUE/FALSE) value to specify if linked post must be in the same category as the
+ current post. Default: FALSE
+ - $exclude_categories: list of categories by ID, separated by 'and', to exclude. Default: none.
+
+Example:
+next_post_link( '%link', '&lArr; ' );
+Displays the link to the next post, with a left arrow as the link text.
+
+next_post_link() must be used from within the Loop.
+
+***********************
+oenology_breadcrumb()
+----------------------------------
+oenology_breadcrumb() is a custom Theme function.
+Codex reference: N/A
+Defined in: functions.php
+
+oenology_breadcrumb() is used to output breadcrumb links.
+
+oenology_breadcrumb() outputs a home link, followed by appropriate breadcrumb links,
+including categories (hierarchical), tags, search query, etc.
+
+oenology_breadcrumb() accepts no arguments.
 
 ***********************
 previous_post_link()
@@ -153,15 +174,22 @@ previous_post_link()
 previous_post_link() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/previous_post_link
 
-previous_post_link() is used to display a link to the previous (newer) post in chronological order.
+previous_post_link() is used to display the previous post (newer post) 
 
-previous_post_link( $format, $link, $in_same_cat, $excluded_categories ) accepts four arguments:
- - $format: link string format. Defaults to '%link &raquo;', where %link corresponds to the "link" argument
- - $link: link text to display. Defaults to '%title' (Post Title)
- - $in_same_cat: display link to next post in the same category. Defaults to FALSE
- - $excluded_categories: exclude posts in the indicated categories, separated by 'and', such as '1 and 3 and 5'. Defaults to 'null'
+previous_post_link() displays a fully-formed HTML link.
 
-previous_post_link() must be used within the Loop.
+previous_post_link( $format, $link, $in_same_cat, $exclude_categories ) accepts four arguments:
+ - $format: string format of the link, using the %link% placeholder for the HTML link. Default: "%link% &raquo;"
+ - $link: text (string) to display within the HTML link. Default: "%title%" (Post Title)
+ - $in_same_cat: boolean (TRUE/FALSE) value to specify if linked post must be in the same category as the
+ current post. Default: FALSE
+ - $exclude_categories: list of categories by ID, separated by 'and', to exclude. Default: none.
+
+Example:
+previous_post_link( '%link', '&rArr; ' );
+Displays the link to the next post, with a right arrow as the link text.
+
+previous_post_link() must be used from within the Loop.
 
 ***********************
 wp_get_current_user()

@@ -64,8 +64,8 @@
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // If the paged comments setting is enabled, and enough comments exisst to cause comments to be paged ?>
 			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'oenology' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'oenology' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' ); ?></div>
+				<div class="nav-next"><?php next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' ); ?></div>
 			</div> <!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
@@ -75,8 +75,8 @@
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'oenology' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'oenology' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' ); ?></div>
+				<div class="nav-next"><?php next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' ); ?></div>
 			</div><!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
@@ -87,7 +87,7 @@
 	 */
 	if ( ! comments_open() ) :
 ?>
-	<p class="nocomments"><?php _e( 'Comments are closed.', 'oenology' ); ?></p>
+	<p class="nocomments"><?php echo 'Comments are closed.'; ?></p>
 <?php 
 endif; // end ! comments_open() 
 
@@ -261,7 +261,7 @@ next_comments_link( $label, $max_page ) accepts two arguments:
  - $max_page: maximum number of comment pages on which to place the link. Defaults to '0' (no limit)
 
 Example:
-<?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'oenology' ) ); ?>
+<?php previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' ); ?>
 returns "<- Older Comments" (with an ASCII left-arrow symbol)
 
 next_comments_link() must be used from within the Loop.
@@ -299,7 +299,7 @@ previous_comments_link( $label, $max_page ) accepts two arguments:
  - $max_page: maximum number of comment pages on which to place the link. Defaults to '0' (no limit)
 
 Example:
-<?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'oenology' ) ); ?>
+<?php next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' ); ?>
 returns "Newer Comments ->" (with an ASCII right-arrow symbol)
 
 previous_comments_link() must be used from within the Loop.
