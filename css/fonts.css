@@ -1,0 +1,151 @@
+/****************************************************************
+Font-Family Declarations
+Declare all fonts used in theme
+****************************************************************/
+
+/* Sans fonts 
+*****************************************************************/
+
+/* Century Gothic type font-family */
+ul.navmenu li a,
+ul.navmenu li a:link,
+ul.navmenu li a:visited,
+ul.navmenu li a:hover,
+ul.navmenu li a:active,
+#leftcol ul.subnavmenutest li.current_page_item a,
+#leftcol ul.subnavmenutest li.current_page_parent a,
+#leftcol ul.subnavmenutest li.current_page_ancestor a,
+div.post-entry blockquote,
+div.post-entry blockquote p,
+#content #main .count,
+ol.bnc_related /* Plugin: Yet Another Related Posts Plugin */ {
+   font-family: 'Century Gothic', 'URW Gothic L', sans-serif;
+}
+
+/* Arial/Verdana type font-family */
+#header ul.postnav li,
+#leftcol ul.subnavmenutest li.current_page_item li a,
+#leftcol ul.subnavmenutest li.current_page_parent li a,
+#leftcol ul.subnavmenutest li.current_page_parent li.current_page_item li a,
+#leftcol ul.subnavmenutest li.current_page_ancestor li a,
+#leftcol ul.subnavmenutest li.current_page_ancestor li.current_page_parent li.current_page_item li a,
+#main .caption,
+#footer,
+div.cat-description,
+div.cat-subscribe-feed,
+div.post-title span.post-title-metadata,
+div.post-title span.post-title-category,
+div.post-title span.post-title-tags,
+div.post-entry p.update,
+div.post-entry p.caption,
+div.post-entry p .caption,
+div.post div.post-entry p span.caption,
+div.post-entry .wp-caption,
+div.post-entry .wp-caption-text,
+div.post-entry .gallery-caption,
+div.post-entry blockquote.def p,
+body.attachment dd,
+div.post p.clonetruth,
+div.post p.clonetruth a:link,
+div.post p.clonetruth a:visited,
+div.post p.clonetruth a:hover,
+div.post p.clonetruth a:active,
+div.post p.postmetadata,
+div.post div.postmetadata,
+div.postpagenav,
+table.review,
+table.legend,
+.recipecarbs,
+#content #main div.recipeingredients,
+#content #main div.recipeequip,
+#content #main div.recipe,
+.commentlist li div.comment-meta,
+#commentform p,
+#comments h4,
+#comments-block dd.comment-timestamp,
+.ngg-imagebrowser-desc, /* Plugin: NextGen Gallery */
+#main div.postpagenav ol.wp-paginate li, /* Plugin: wp-paginate */
+ol.trackbacklist /* Plugin: Trackback */ {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+/* Serif fonts 
+*****************************************************************/
+
+/* Garamond/Palatino Linotype type font family */
+h1, h2,
+#home #navhome, 
+#pageforum #navforum,
+ul.navmenu li.current_page_item a,
+ul.navmenu li.current_page_ancestor a,
+ul.navmenu li a:hover,
+#leftcol ul.subnavmenutest li.current_page_parent li.current_page_item a,
+#leftcol ul.subnavmenutest li.current_page_ancestor li.current_page_parent li.current_page_item a,
+div.title,
+div.pagetitle,
+div.post-title span.post-date,
+div.post-entry ul.downloadbutton li a,
+div.post-entry ul.downloadbutton li a:link,
+div.post-entry ul.downloadbutton li a:visited,
+div.post-entry ul.downloadbutton li a:hover,
+div.post-entry ul.downloadbutton li a:active {
+	font-family: 'Palatino Linotype', 'Palatino', 'URW Palladio L', serif;
+}
+
+h3, h4, h5, h6 {
+	font-family: 'Palatino Linotype', 'Palatino', 'URW Palladio L', serif;
+}
+
+#main,
+div.post-entry,
+div.post-entry li p,
+.commentlist li p {
+	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+
+/* Georgia type font-family */
+div.cat-description em,
+div.post-entry  p em,
+div.post-entry li p em,
+div.post-entry p.update:before {
+	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+
+ div.cat-description strong {
+	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+
+ .commentlist li div div.authorresponse p {
+	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+
+/* Times New Roman type font family */
+#header p {
+	font-family: 'Nimbus Roman No9 L', 'Times New Roman', serif;
+}
+
+/* Slab-Serif */
+#header div {
+	font-family: slab-serif, serif;
+}
+
+/* Mono fonts
+*****************************************************************/
+
+div.post-entry blockquote.code,
+div.post-entry blockquote.code p,
+.commentlist li div p code,
+.commentlist li div blockquote p code,
+#commentform p code {
+	font-family: 'Nimbus Mono L', 'Courier New', monospace;
+}
+
+/* Script fonts
+*****************************************************************/
+
+div.post-entry blockquote .script {
+	font-family: 'URW Chancery L', 'Brush Script MT', cursive, serif;
+}
+
+/* Specialty fonts
+*****************************************************************/

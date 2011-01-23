@@ -1,0 +1,21 @@
+#home #main div.post div.post-title h1, 
+#main div.post div.post-title h2,
+#main div.post div.post-title h3  {
+	position:relative;
+	top:-16px;
+}
+
+#home #main div.post div.post-title span.post-title-metadata {
+	position:relative;
+	top:-16px;
+}
+
+#home #main div.post div.post-title span.post-title-category {
+	margin-top:-16px;
+}
+
+#extent #main div.post div.post-entry p span.caption {
+	display:block;
+	position:relative;
+	top:10px;
+}

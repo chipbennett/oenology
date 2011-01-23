@@ -1,0 +1,6 @@
+/* Comment CAPTCHA Plugin Style Specifications----------------------------------------------- */
+#commentform p.comment-form-captcha {
+	float:left;
+	clear:none;
+	width:500px;
+}

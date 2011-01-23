@@ -1,0 +1,46 @@
+/*  
+Theme Name: Oenology
+Theme URI: http://www.chipbennett.net/themes/oenology
+Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
+Version: 0.9
+Author: Chip Bennett
+Author URI: http://www.chipbennett.net/
+Tags: fixed-width, white
+License:       GNU General Public License, v2 (or newer)
+License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
+ *
+ * Copyright (C) 2010 Chip Bennett
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+*/
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+@import url( css/fonts.css ); /* font-family declarations, as well as @font-face information for custom fonts */
+@import url( css/master.css ); /* main page structure */
+@import url( css/navigation.css ); /* site navigation style declaration */
+@import url( css/comments.css ); /* stylesheet for wp_list_comments() */
+@import url( css/oenology.css ); /* blog-specific style information */
+@import url( css/plugins.css ); /* plugin-specific style information */
+@import url( css/print.css ) print; /* custom style information for media:print */

@@ -1,0 +1,391 @@
+/*
+Used to style the TinyMCE editor.
+*/
+
+* {
+	margin:0;
+	padding:0;
+}
+
+html .mceContentBody {
+	width:660px;
+	color: #555;
+}
+
+img {
+	max-width:640px;
+}
+
+p + p, 
+p + ul, 
+ul + p,
+p + ol,
+ol + p {
+  margin-top:2em;
+  border:0;
+}
+
+/* Headings Default Style Specifications
+   --------------------
+*/
+
+h1, h2, h3, h4, h5, h6 {
+	display:block;
+	clear:both;
+	width:100%;
+	margin-top: 20px;
+	margin-bottom:20px;
+	border:0;
+	height:auto;
+	letter-spacing:0em;
+	text-align:left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color:#000;
+	font-weight:normal;
+  }
+
+  h1 {
+	clear:none;
+	width:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	font-style:normal;
+	font-size:19pt;
+	line-height:1em;
+}
+
+h2 {
+	font-style:normal;
+	font-size:19pt;
+	line-height:1em;
+}
+
+h3  {
+	font-size:17pt;
+	line-height:1em;
+  }
+
+h4  {
+	font-size:15pt;
+	line-height:1em;
+  }
+
+h5  {
+  font-size:13pt;
+  line-height:1em;
+  text-decoration:underline;
+  }
+
+h6  {
+	font-size:12pt;
+	line-height:1em;
+	text-decoration:underline;
+  }
+
+
+/* Table Default Style Specifications
+   --------------------
+*/
+
+
+table { 
+   text-align: center;
+}
+
+th {
+   color: navy;
+}
+
+tr, td {
+   vertical-align: top;
+}
+
+
+/* Images Default Style Specifications
+   --------------------
+*/
+
+img {
+   border:0px solid black;
+}
+
+
+/* Lists Default Style Specifications
+   --------------------
+*/
+
+ul, ol {
+   margin-left:10px;
+}
+
+/* Post Entry - Paragraphs
+   --------------------
+*/
+
+html .mceContentBody,
+html .mceContentBody li p {
+  font-size:11pt;
+  line-height:1.6em;
+  letter-spacing:0em;
+  text-align:justify;
+}
+html .mceContentBody li p {
+	line-height:1.1em;
+}
+
+html .mceContentBody p.update {
+  padding:3px;
+  padding-left:78px;
+  border:1px solid #d8d8d8;
+  line-height:12pt;
+  letter-spacing:0em;
+  text-indent:-75px;
+}
+html .mceContentBody p.update:before {
+  counter-increment:update;
+  content:"Update " counter(update, upper-roman) ": ";
+  font-size:10pt;
+  font-weight:bold;
+  letter-spacing:0.1em;
+  font-variant:small-caps;
+}
+
+/* Post Entry - Captions
+   --------------------
+*/
+
+html .mceContentBody p.caption,
+html .mceContentBody p .caption,
+div.post html .mceContentBody p span.caption,
+html .mceContentBody .wp-caption,
+html .mceContentBody .wp-caption-text,
+#main .caption,
+#mainalt .caption {
+   display:block;
+   margin:0px auto;
+   margin-bottom:2em;
+   padding-top:0px;
+   font-size:8pt;
+   line-height:1em;  
+   height:auto;
+   letter-spacing:0em;
+   text-align: center; 
+}
+html .mceContentBody .wp-caption-text em,
+#main .caption em,
+#mainalt .caption em {
+   display:block;
+}
+html .mceContentBody p span.caption,
+#main .caption em,
+#manialt .caption em {
+   display:inline;
+}
+#main .caption,
+#mainalt .caption {
+   margin-top:-10px;
+}
+
+#main div.wp-caption + p.caption {
+	margin-top: 10px;
+}
+
+#main .caption .script,
+#mainalt .caption .script {
+	line-height: 1.3em;
+}
+
+/* Post Entry - Lists
+   --------------------
+*/
+
+html .mceContentBody li {
+   line-height:1.1em;
+   margin-left: 25px;
+}
+html .mceContentBody li + li,
+html .mceContentBody li li {
+	margin-top:1.0em;
+}
+
+/* Post Entry - Images
+   --------------------
+*/
+
+html .mceContentBody img {
+  border:0px solid #ddd;
+  vertical-align:middle;
+  margin-bottom:0px;
+  padding-bottom:0px;
+  }
+
+html .mceContentBody p a img,
+html .mceContentBody p a.post img,
+html .mceContentBody p a.tt-flickr {
+  padding:0px;
+  text-decoration:none;
+}
+
+/* Post Entry - Links
+   --------------------
+*/
+
+html .mceContentBody a:link,
+html .mceContentBody a:visited,
+html .mceContentBody a:hover,
+html .mceContentBody a:active {
+  border-bottom: 1px dotted #58a;
+  font-weight:bold;
+  text-decoration: none;
+  color:#58a;
+}
+html .mceContentBody a:hover {
+  background-color:#e8e8e8;
+  border-bottom: 1px solid #58a;
+}
+html .mceContentBody a.thickbox:hover {
+  background-color:transparent;
+  border-bottom: 0px solid #58a;
+}
+
+/* Post Entry - Blockquotes
+   --------------------
+*/
+
+blockquote {
+  margin-top:0px;
+  margin-left:20px;
+  margin-right:40px;
+  margin-bottom:20px;
+  padding:10px;
+  border:0;
+}
+
+html .mceContentBody h2+blockquote,
+html .mceContentBody h3+blockquote,
+html .mceContentBody blockquote+blockquote {
+	margin-top:20px;
+}
+
+html .mceContentBody blockquote,
+html .mceContentBody blockquote.post {
+  border-top:1px solid gray;
+  border-bottom: 1px solid silver;
+  background-color: #f4f4f4; /* whitesmoke */
+  text-align:justify;
+}
+html .mceContentBody blockquote,
+html .mceContentBody blockquote p {
+   font-size:10pt;
+   line-height:1.4em;
+   letter-spacing:0em;
+}
+html .mceContentBody li blockquote {
+	line-height:1.1em;
+}
+
+html .mceContentBody blockquote p {
+	margin:0;
+	margin-top:0;
+	margin-bottom:0;
+	padding:0;
+	padding-top:0;
+	padding-bottom:0;
+}
+html .mceContentBody blockquote p + p {
+	padding-top:2em;
+}
+
+html .mceContentBody blockquote a {
+  font-weight:bold;
+  }
+
+html .mceContentBody blockquote .script {
+	font-size:16pt;
+	line-height:20pt;
+}
+  
+html .mceContentBody blockquote.def {
+	padding-top:0px;
+	padding-bottom:0px;
+  border:0;
+  border-left: 3px solid #777;
+  background-color: #f8f8f8;
+}
+html .mceContentBody blockquote.def p {
+	margin:0;
+	padding-top:10px;
+	padding-bottom:10px;
+  line-height:1.2em;
+  letter-spacing:0em;
+}
+html .mceContentBody blockquote.code {
+  border:0;
+  border-left: 3px solid gray;
+  text-align:left;
+  }
+html .mceContentBody blockquote.code,
+html .mceContentBody blockquote.code p {
+	color:#444;
+	font-size:10pt;
+	line-height:1em;
+	letter-spacing:0em;
+}
+html .mceContentBody blockquote.code p + p {
+	padding-top: 1em;
+}
+
+html .mceContentBody blockquote blockquote {
+  margin-left:20px;
+  padding-left:10px;
+  margin-right:20px;
+  padding-right:10px;
+  border:0px solid gray;
+  border-left:1px solid gray;
+}
+
+
+html .mceContentBody blockquote,
+html .mceContentBody blockquote p {
+   font-family: 'Century Gothic', 'URW Gothic L', sans-serif;
+}
+
+html .mceContentBody p.caption,
+html .mceContentBody p .caption,
+div.post html .mceContentBody p span.caption,
+html .mceContentBody .wp-caption,
+html .mceContentBody .wp-caption-text,
+html .mceContentBody blockquote.def p {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+h1, h2 {
+	font-family: 'Palatino Linotype', 'Palatino', 'URW Palladio L', serif;
+}
+
+h3, h4, h5, h6 {
+	font-family: 'Palatino Linotype', 'Palatino', 'URW Palladio L', serif;
+}
+
+html .mceContentBody,
+html .mceContentBody li p {
+	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+
+html .mceContentBody  p em,
+html .mceContentBody li p em,
+html .mceContentBody p.update:before {
+	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+
+ 
+html .mceContentBody blockquote.code,
+html .mceContentBody blockquote.code p {
+	font-family: 'Nimbus Mono L', 'Courier New', monospace;
+}
+
+html .mceContentBody blockquote .script {
+	font-family: 'URW Chancery L', 'Brush Script MT', cursive, serif;
+}

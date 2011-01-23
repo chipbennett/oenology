@@ -1,0 +1,1579 @@
+Reference:
+=============================================================================
+The following functions, tags, and hooks are used (or referenced) in this Theme template file:
+
+***********************
+$_SERVER[]
+----------------------------------
+$_SERVER[] is a PHP function that returns various server variables.
+Codex reference: N/A
+
+Example:
+$_SERVER['PHP_SELF'] - returns the name of the current file
+
+Used in the following template files:
+
+
+***********************
+bloginfo()
+----------------------------------
+bloginfo() is a WordPress template tag.  
+Codex reference: http://codex.wordpress.org/Function_Reference/bloginfo
+
+bloginfo() can be used to print several useful WordPress-related parameters. For example:
+
+	charset = (character set defined for the blog (see wp-config.php); usually UTF-8)
+	description =  (blog description, as defined on the General Settings page in the administration panel)
+	html_type =  (HTML type, as defined on the General Settings page in the administration panel. Usually "text/html")
+	name =  (blog name, as defined on the General Settings page in the administration panel)
+	template_directory = (url of the directory that contains the currently active theme)
+	version = (version of WordPress installed)
+	
+For the full list of parameters returned by bloginfo(), see the Codex.
+
+bloginfo() prints (displays/outputs) the data requested. To get, but not display/output the data, use get_bloginfo() instead.
+
+Used in the following template files:
+footer.php, header.php, loop-header.php, site-header.php
+
+***********************
+body_class()
+----------------------------------
+body_class() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Template_Tags/body_class
+
+body_class() is added inside the HTML <body> tag, and outputs various CSS class
+declarations, depending on which page is currently being displayed.
+
+For the full list of CSS classes returned by body_class(), see the Codex.
+
+Used in the following template files:
+404.php, index.php, page.php
+
+***********************
+category_description()
+----------------------------------
+category_description() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/category_description
+
+category_description() is used to display the description for the current category.
+
+category_description( $cat ) accepts one argument:
+ - $cat: category (ID) for which to display the description. Defaults to current category.
+
+ category_description() must be used within the Loop, unless given a category ID 
+ using the $cat argument.
+ 
+ Used in the following template files:
+ loop-header.php
+
+***********************
+comment_form()
+----------------------------------
+comment_form() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Template_Tags/comment_form
+
+comment_form() is used to output the comment reply form in the comments section
+of a Post or Page.
+
+comment_form() accepts two arguments:
+ - $args: ampersand (&) joined list of arguments. See the Codex reference for full list. 
+ - $postid: PostID of the post to which the comment form should post comments. 
+    Defaults to the current post.
+
+Example:
+<?php comment_form(); ?>
+
+comment_form() must be used from within the Loop, unless the $postid parameter is used.
+
+Used in the following template files:
+comments.php
+
+***********************
+comments_link()
+----------------------------------
+comments_link() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Template_Tags/comments_link
+
+comments_link() is used to display the URL to the current post's comments. This tag
+returns the URL only, rather than the full HTML anchor-tag link.
+
+comments_link() accepts no arguments.
+
+Example:
+<a href="<?php comments_link(); ?>">Comments</a>
+
+comments_link() must be used within the Loop.
+
+Used in the following template files:
+post-header.php
+
+***********************
+comments_number()
+----------------------------------
+comments_number() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/comments_number
+
+comments_number() is used to display the number of comments (including 
+comments, trackbacks, and pingbacks) on the current post.
+
+comments_number( $a, $b, $c ) accepts three arguments:
+ - $a: what to display for 0 comments
+ - $b: what to display for 1 comment
+ - $c: what to display for multiple comments
+ 
+Example:
+<?php comments_number('0','1','%'); ?> displays:
+  - '0' if 0 comments
+  - '1' if 1 comment
+  - '#' (actual number of comments) if multiple comments
+
+comments_number() must be used within the Loop.
+
+Used in the following template files:
+comments.php, post-header.php
+
+***********************
+comments_open()
+----------------------------------
+comments_open() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/comments_open
+
+comments_open() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+comments are open for the current post.
+
+comments_open( $postid ) accepts one argument:
+ - $postid: PostID of the post being checked. Defaults to the current post.
+
+comments_open() must be used from within the Loop, unless the $postid parameter is used.
+
+Used in the following template files:
+comments.php, loop.php
+
+***********************
+date()
+----------------------------------
+date() is a PHP function that returns the current date.
+Codex reference: N/A
+PHP reference: http://php.net/manual/en/function.date.php
+
+date() accepts one argument: a string indicating the date format.
+
+Used in the following template files:
+footer.php
+
+***********************
+dynamic_sidebar()
+----------------------------------
+dynamic_sidebar() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/dynamic_sidebar
+
+dynamic_sidebar() is used to insert widgetized areas ("sidebars") into a Theme.
+dynamic_sidebar( 'foo' ) will insert a dynamic sidebar named "foo".
+
+Dynamic sidebars must be defined and registered. Refer to functions.php for more information.
+
+Used in the following template files:
+sidebar-left.php, sidebar-right.php
+
+***********************
+edit_post_link()
+----------------------------------
+edit_post_link() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/edit_post_link
+
+edit_post_link() is used to display a link to edit the current post. This link only
+displays if the current user is logged in and has the edit_post capability
+(typically, Admins, Editors, and Authors). 
+
+This tag returns the full HTML anchor tag, rather than just the URL of the edit-post
+link. To retrieve just the URL, use get_edit_post_link().
+
+edit_post_link( $link, $before, $after, $id ) accepts four arguments:
+- $link: link text to display. Defaults to "Edit This"
+- $before: text to display before link. Defaults to no text.
+- $after: text to display after link. Defaults to no text.
+- $id: ID of post to be edited. Defaults to ID of current post.
+
+Example:
+<?php edit_post_link( 'Edit' ); ?> displays: "<a href='[link to post edit screen]'>Edit</a>"
+
+edit_post_link() must be used within the Loop, unless the $id argument is specified.
+
+Used in the following template files:
+post-header.php
+
+***********************
+function_exists()
+----------------------------------
+function_exists() is a boolean (returns TRUE or FALSE) conditional PHP function.
+Codex reference: N/A
+
+function_exists( 'foo' ) returns TRUE if a function named foo() is found; otherwise, it returns FALSE.
+
+Used in the following template files:
+404.php, loop-footer.php, post-entry.php, sidebar-left.php, sidebar-right.php
+
+***********************
+get_avatar()
+----------------------------------
+get_avatar() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_avatar
+
+get_avatar() is used to display the Post ID for the current post.
+
+get_avatar( $id_or_email, $size, $default, $alt );  accepts four arguments:
+ - $id_or_email: UserID or email address;
+ - $size: width/height (in pixels) of the displayed avatar. Defaults to '96'.
+ - $default: URL for default image to display if the user has no defined avatar. Defaults to "Mystery Man"
+ - $alt: alt text to display for avatar image. Defaults to no alt text.
+
+Example:
+<?php echo get_avatar( get_the_author_meta('email'), $size = '20'); ?> displays a 20x20px avatar for the post author.
+
+To get the Avatar without displaying it, omit "echo" in the function call for get_avatar().
+
+Used in the following template files:
+post-footer.php
+
+***********************
+get_comment_link()
+----------------------------------
+get_comment_link() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_comment_link
+
+get_comment_link() is used to get the permalink to a given comment
+
+get_comment_link() accepts two arguments:
+ - $comment: Id for comment for which to output link. Defaults to current comment.
+ - $args: ampersand (&) linked array of options. See Codex for full list.
+
+Example:
+<a href="<?php echo get_comment_link(); ?>">Comment</a>
+
+get_comment_link() must be used from within the Loop, unless the $comment parameter is used.
+
+Used in the following template files:
+comments.php
+
+***********************
+get_comment_pages_count()
+----------------------------------
+get_comment_pages_count() is a WordPress function.
+Codex reference: N/A
+
+get_comment_pages_count() is used to return the number of comment pages for a given post. Generally,
+it is used as part a conditional, to display comment-page navigation links only if more than one comment
+page exists.
+
+get_comment_pages_count() accepts no arguments.
+
+Examples:
+ - get_comment_pages_count() returns a number equal to the number of comment pages, e.g. '1', '2', etc.
+
+ - if (get_comment_pages_count() > 1 )  will return true if more than one comment page exists.
+
+get_comment_pages_count() must be used from within the Loop.
+
+Used in the following template files:
+comments.php
+
+***********************
+get_comment_type()
+----------------------------------
+get_comment_type() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/comment_type
+
+get_comment_type() is used to return (not output or print) the type of a given comment:
+'comment', 'pingback', or 'trackback. To output this value, use comment_type().
+
+get_comment_type() accepts no arguments.
+
+Examples:
+ - get_comment_type() will return either 'comment', 'pingback', or 'trackback'
+
+ - if ( get_comment_type() != "comment" ) will return true if the current comment type is 
+    'pingback' or 'trackback'
+
+get_comment_type() must be used from within the Loop.
+
+Used in the following template files:
+comments.php
+
+***********************
+get_footer()
+----------------------------------
+get_footer() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_footer
+
+get_footer() is used to include the footer Theme template file (footer.php) within another. This function facilitates
+re-use of Theme template files, and also facilitates child Theme template files to take precedence
+over parent Theme template files.
+
+get_footer( $foo ) will attempt to include footer-foo.php. If it doesn't exist, the default footer.php will be used.
+
+Used in the following template files:
+404.php, index.php, page.php
+
+***********************
+get_header()
+----------------------------------
+get_header() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_header
+
+get_template_part() is used to include the header Theme template file (header.php) within another. This function facilitates
+re-use of Theme template files, and also facilitates child Theme template files to take precedence
+over parent Theme template files.
+
+get_header( $foo ) will attempt to include header-foo.php. If it doesn't exist, the default header.php will be used.
+
+Used in the following template files:
+404.php, index.php, page.php
+	
+***********************
+get_option()
+----------------------------------
+get_option() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_option
+
+get_option() is used to return the value of a specified database option.
+If the option does not exist or has no value, the function returns FALSE.
+
+get_option() returns, but does not print (output/display) the value requested. To 
+print this value, use 'echo get_option()'.
+
+get_option( $show, $default ) accepts two arguments
+ - $show: the database option for which to return a value
+     - See this Codex reference for full list of options: http://codex.wordpress.org/Option_Reference
+ - $default: the value to return if the option does not exist, or has no value. Default is FALSE
+
+Examples:
+ - if ( get_option( 'show_on_front' ) == 'posts' ) returns TRUE if the "Show On Front" option is set to display blog posts, and
+   returns FALSE if the "Show On Front" option is set to display a static page
+   
+ - get_option( 'page_comments' ) returns TRUE is the "Paged Comments" option is true; otherwise returns FALSE
+
+Used in the following template files:
+comments.php, header.php, site-navigation.php
+
+***********************
+get_permalink()
+----------------------------------
+get_permalink() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_permalink
+
+get_permalink() is used to return the permalink URL for the current post. This tag
+returns only the permalink URL, not a fully formed HTML anchor tag.
+
+get_permalink() returns, but does not display, the requested post permalink.
+
+get_permalink( $id ) accepts one argument:
+ - $id: ID of the post for which to return the permalink
+
+Example:
+<?php echo get_permalink($post->post_parent); ?>
+Displays the URL to the post parent of the current post.
+
+Used in the following template files:
+post-entry-image.php
+
+***********************
+get_search_form()
+----------------------------------
+get_search_form() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_search_form
+
+get_search_form() is used to display the search form. If the Theme includes a
+searchform.php template file, it will be used. Otherwise, the built-in search form
+will be used.
+
+get_search_form() accepts no arguments.
+
+Used in the following template files:
+infobar.php
+
+***********************
+get_sidebar()
+----------------------------------
+get_sidebar() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
+
+get_sidebar() is used to include a sidebar template file within another. This function facilitates
+re-use of Theme template files, and also facilitates child Theme template files to take precedence
+over parent Theme template files.
+
+get_sidebar( $name ) will attempt to include sidebar-name.php. The function will attempt to 
+include files in the following order, until it finds one that exists:
+ - the Theme's sidebar-name.php
+ - the Theme's sidebar.php
+ - the parent Theme's sidebar-name.php
+ - the parent Theme's sidebar.php
+
+get_sidebar() with no argument passed will attempt to include sidebar.php. The function will
+attempt to include files in the following order, until it finds one that exists:
+ - the Theme's sidebar.php
+ - the parent Theme's sidebar.php
+
+Used in the following template files:
+404.php, index.php, page.php
+	
+***********************
+get_stylesheet_uri()
+----------------------------------
+get_stylesheet_uri() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_stylesheet_uri
+
+get_stylesheet_uri() is used to get the value for the URI of the Theme
+style sheet (style.css).
+
+get_stylesheet_uri() accepts no arguments.
+
+get_option() returns, but does not print (output/display) the value requested. To 
+print this value, use 'echo get_option()'.
+
+Example:
+<?php echo get_stylesheet_uri(); ?> returns e.g. "http://www.mydomain.tld/wp-content/themes/my-theme/style.css"
+
+Used in the following template files:
+header.php
+
+***********************
+get_tag_feed_link()
+----------------------------------
+get_tag_feed_link() is a WordPress template tag.
+Codex reference: N/A
+
+get_tag_feed_link() returns the link for the RSS feed for the specified tag.
+
+get_tag_feed_link( $tagid, $feed ) accepts two arguments:
+ - $tagid: ID of the tag for which to display the RSS feed.
+ - $feed: feed format ('rss', 'rss2', 'atom'). Defaults to user-defined default.
+
+Example:
+get_tag_feed_link( $wp_query->get( 'tag_id' ) ); returns the default RSS feed for the
+current tag (e.g. when on a tag page).
+
+get_tag_feed_link() must be used outside the Loop.
+
+Used in the following template files:
+loop-header.php
+
+***********************
+get_template_part()
+----------------------------------
+get_template_part() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_template_part
+
+get_template_part() is used to include a Theme template file within another. This function facilitates
+re-use of Theme template files, and also facilitates child Theme template files to take precedence
+over parent Theme template files.
+
+get_template_part( $file ) will attempt to include file.php. The function will attempt to 
+include files in the following order, until it finds one that exists:
+ - the Theme's file.php
+ - the parent theme's file.php
+
+get_template_part( $file , $foo ) will attempt to include file-foo.php. The function will
+attempt to include files in the following order, until it finds one that exists:
+ - the Theme's file-foo.php
+ - the Theme's file.php
+ - the parent theme's file-foo.php
+ - the parent theme-s file.php
+
+Used in the following template files:
+404.php, index.php, loop.php, page.php, post-entry.php, site-header.php
+
+***********************
+get_the_author_meta()
+----------------------------------
+get_the_author_meta() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_author_meta
+
+get_the_author_meta() is used to display the Post Author for the current post.
+
+get_the_author_meta( $field, $userID )  accepts two arguments:
+ - $field: field name for data item to be displayed. See the Codex for full list.
+ - $userID: UserID for whom data item is displayed. Defaults to Post Author.
+
+Example:
+<?php get_the_author_meta( 'email' ); ?> returns the Post Author's email address.
+
+To display the author meta information, use 'echo" in the function call
+for get_the_author_meta(), or use the_author_meta() instead.
+
+get_the_author_meta()  must be used within the Loop, unless the $userID argument is used.
+
+Used in the following template files:
+post-footer.php
+
+***********************
+get_the_category()
+----------------------------------
+get_the_category() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_the_category
+
+get_the_category() returns an array of categories for the current page. The returned 
+array includes the following variables:
+ - $cat[n]->cat_ID: the ID of category 'n'
+ - $cat[n]->cat_name: the name of category 'n'
+ - $cat[n]->category_nicename: the nicename (slug) of category 'n'
+ - $cat[n]->category_description: the description of category 'n'
+ - $cat[n]->category_parent: the name of the parent category of category 'n'
+ - $cat[n]->category_count: the count of posts included in category 'n'
+
+get_the_category( $id ) accepts one argument:
+ - $id: post ID for which to return the category array. Defaults to current post ID.
+
+Example:
+<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename;?>
+displays the nicename (slug) of the first category returned in the category array.
+
+get_the_category() must be used inside the loop, unless a post ID is passed 
+using the $id argument.
+
+Used in the following template files:
+loop-header.php
+
+***********************
+get_the_title()
+----------------------------------
+get_the_title() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/get_the_title
+
+get_the_title() is used to display the Post Title of the current post.
+
+get_the_title( $id ) accepts one argument:
+ - $id: ID of the post for which to return the Post Title
+
+Example:
+<?php echo get_the_title($post->post_parent); ?> 
+Displays the Post Title of the current post's parent post. 
+
+Used in the following template files:
+post-entry-image.php
+
+***********************
+get_trackback_url()
+----------------------------------
+get_trackback_url() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/trackback_url
+
+get_trackback_url() is used to display the URL to the current post's trackback URL. This tag
+returns the URL only, rather than a full HTML anchor-tag link.
+
+get_trackback_url() accepts no arguments.
+
+Example:
+<a href="<?php get_trackback_url(); ?>">Trackback</a>
+
+get_trackback_url() must be used within the Loop.
+
+Used in the following template files:
+post-header.php
+
+***********************
+has_nav_menu()
+----------------------------------
+has_nav_menu() is a WordPress template conditional tag.
+Codex reference: N/A
+
+has_nav_menu( $menu ) is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+a nav_menu named $menu has been configured by the user; otherwise it returns false.
+
+has_nav_menu() is useful for defining a fallback option for a navigation menu, in case the
+user does not define a particular nav menu in the Menus administration panel.
+
+Used in the following template files:
+sidebar-left.php, site-navigation.php
+
+***********************
+have_comments()
+----------------------------------
+have_comments() is a WordPress conditional tag.
+Codex reference: N/A
+
+have_comments() is a conditional that returns TRUE if the current post has comments
+associated with it; otherwise, it returns FALSE. The most typical use of this conditional
+is within the comments template, as part of the comments "Loop".
+
+have_comments() accepts no arguments.
+
+Example:
+if ( have_comments() ) is used to begin the comments "Loop", which displays only if the current
+post has comments.
+
+have_comments() must be used from within the Loop.
+
+Used in the following template files:
+comments.php
+
+***********************
+have_posts()
+----------------------------------
+have_posts() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/User:Samsm/have_posts
+
+have_posts() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+the current query has posts available. It is primarily used in conjunction with the_post() 
+as part of the call to the Loop.
+
+Example (the Loop):
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+Used in the following template files:
+loop.php
+
+***********************
+home_url()
+----------------------------------
+home_url() is a WordPress function
+Codex reference: http://codex.wordpress.org/Function_Reference/home_url
+
+home_url() is used to return the home URL (the 'home' option), using the appropriate protocol 
+(http or https), based on value of is_ssl().
+
+home_url() accepts no arguments.
+
+Example:
+home_url(); returns e.g. "http://www.domain.tld"
+
+Used in the following template files:
+footer.php, infobar.php, site-navigation.php
+
+***********************
+is_archive()
+----------------------------------
+is_archive() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_archive
+
+is_archive() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+an archive page is currently displayed.
+
+An archive page corresponds to the archive.php Theme template file in the
+Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
+page will have class="archive".
+
+Used in the following template files:
+loop-header.php
+
+***********************
+is_attachment()
+----------------------------------
+is_attachment() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_attachment
+
+is_attachment() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+an attachment post ("attachment" post-type) is currently displayed.
+
+An attachment post corresponds to the attachment.php Theme template file in the
+Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
+attachment post will have class="attachment".
+
+Used in the following template files:
+post-entry.php
+
+***********************
+is_category()
+----------------------------------
+is_category() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_category
+
+is_category() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+a category page is currently displayed.
+
+A category page corresponds to the category.php Theme template file in the
+Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
+page will have class="category".
+
+is_category( $category ) accepts one optional argument:
+ - $category: category ID, slug, or nicename. If used, will return TRUE if the current
+  page corresponds to the indicated category.
+
+Used in the following template files:
+loop-header.php
+
+***********************
+is_home()
+----------------------------------
+is_home() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_home
+
+is_home() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+the home page is currently displayed.
+
+The home page corresponds to the index.php Theme template file in the
+Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
+page will have class="home".
+
+Used in the following template files:
+post-entry.php
+
+***********************
+is_page()
+----------------------------------
+is_page() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_page
+
+is_page() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+a page ("page" post-type) is currently displayed.
+
+A page corresponds to the page.php Theme template file in the
+Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
+page will have class="page".
+
+Used in the following template files:
+loop.php, post-entry.php, post-footer.php, post-header.php, sidebar-left.php
+
+***********************
+is_search()
+----------------------------------
+is_search() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_search
+
+is_search() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+a search results page is currently displayed.
+
+A search results page corresponds to the search.php Theme template file in the
+Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
+page will have class="search".
+
+Used in the following template files:
+loop-header.php
+
+***********************
+is_single()
+----------------------------------
+is_single() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_single
+
+is_single() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+a single post ("post" post-type, i.e. a single blog post) is currently displayed.
+
+A single post corresponds to the single.php Theme template file in the
+Theme hierarchy, and if the body_class() hook is used, the <body> tag of a 
+single post will have class="single".
+
+Used in the following template files:
+loop.php, post-entry.php, post-footer.php, post-header.php
+
+***********************
+is_singular()
+----------------------------------
+is_singular() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_singular
+
+is_singular() is a boolean (returns TRUE or FALSE) conditional tag that returns true if any of the following are true:
+
+	is_single() - a single post ("post" post-type, i.e. a single blog post) is displayed
+	is_page() - a page ("page" post-type) is displayed
+	is_attachment() - an attachment 
+
+Used in the following template files:
+header.php, loop-footer.php
+
+***********************
+is_tag()
+----------------------------------
+is_tag() is a WordPress template conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_tag
+
+is_tag() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+a tag page is currently displayed.
+
+A tag page corresponds to the tag.php Theme template file in the
+Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
+page will have class="tag".
+
+is_tag( $tag ) accepts one optional argument:
+ - $tag: tag ID, slug, or nicename. If used, will return TRUE if the current
+  page corresponds to the indicated tag.
+
+Used in the following template files:
+loop-header.php
+
+***********************
+is_user_logged_in()
+----------------------------------
+is_user_logged_in() is a WordPress conditional tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/is_user_logged_in
+
+is_user_logged_in() is a boolean (returns TRUE or FALSE) conditional tag that returns
+true if the current user is logged in; otherwise it returns false.
+
+is_user_logged_in() accepts no arguments.
+
+Used in the following template files:
+infobar.php
+
+***********************
+language_attributes()
+----------------------------------
+language_attributes() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/language_attributes
+
+language_attributes() is added inside the HTML <html> tag, and outputs various HTML
+language attributes, such as language and text-direction.
+
+Used in the following template files:
+header.php
+
+***********************
+next_comments_link()
+----------------------------------
+next_comments_link() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Template_Tags/next_comments_link
+Codex reference: http://codex.wordpress.org/Function_Reference/next_comments_link
+
+next_comments_link() is used to display the next page of comments (older comments)
+
+next_comments_link( $label, $max_page ) accepts two arguments:
+ - $label: text label for the link text. Defaults to '' (no label).
+ - $max_page: maximum number of comment pages on which to place the link. Defaults to '0' (no limit)
+
+Example:
+<?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'oenology' ) ); ?>
+returns "<- Older Comments" (with an ASCII left-arrow symbol)
+
+next_comments_link() must be used from within the Loop.
+
+Used in the following template files:
+comments.php
+
+***********************
+next_post_link()
+----------------------------------
+next_post_link() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/next_post_link
+
+next_post_link() is used to display a link to the next (older) post in chronological order.
+
+next_post_link( $format, $link, $in_same_cat, $excluded_categories ) accepts four arguments:
+ - $format: link string format. Defaults to '%link &raquo;', where %link corresponds to the "link" argument
+ - $link: link text to display. Defaults to '%title' (Post Title)
+ - $in_same_cat: display link to next post in the same category. Defaults to FALSE
+ - $excluded_categories: exclude posts in the indicated categories, separated by 'and', such as '1 and 3 and 5'. Defaults to 'null'
+
+next_post_link() must be used within the Loop.
+
+Used in the following template files:
+infobar.php
+
+***********************
+oenology_404_handler()
+----------------------------------
+oenology_404_handler() is a custom Theme function.
+Codex reference: N/A
+
+oenology_404_handler() is used to generate suggested site content when a user is sent to
+the 404 page due to a server 404 "file not found" error.
+
+oenology_404_handler() is defined in functions.php.
+
+Used in the following template files:
+404.php
+
+***********************
+oenology_copyright()
+----------------------------------
+oenology_copyright() is a custom Theme function.
+Codex reference: N/A
+
+oenology_copyright() is used to output the copyright date range, in the format 'XXXX - YYYY',
+where 'XXXX' is the year the oldest post was published, and'YYYY' is the current year.
+
+oenology_copyright() is defined in functions.php.
+
+Used in the following template files:
+footer.php
+
+***********************
+oenology_gallery_image_meta()
+----------------------------------
+oenology_gallery_image_meta() is a custom Theme function.
+Codex reference: N/A
+
+oenology_gallery_image_meta() is used to output various metadata related to
+gallery images. The function outputs an array containing the
+following values:
+ - $image_meta['image']: image output, using wp_get_attachment_image()
+ - $image_meta['url']: image attachment url, using wp_get_attachment_url()
+ - $image_meta['width']: image width, in px
+ - $image_meta['height']: image height, in px
+ - $image_meta['dimensions']: image width/height dimensions, in px, displayed as "# x # px"
+ - $image_meta['filesize']: image filesize, converted to human-readable size format, displayed as e.g. "### kb"
+ - $image_meta['created_timestamp']: image metadata - date/time image taken, displayed as "D MMM YYYY"
+ - $image_meta['copyright']: image metadata - copyright statement
+ - $image_meta['credit']: image metadata - photographer
+ - $image_meta['aperture']: image metadata - camera aperture setting
+ - $image_meta['focal_length']: image metadata - camera focal length setting, displayed as "f/###"
+ - $image_meta['iso']: image metadata - camera ISO setting
+ - $image_meta['shutter_speed']: image metadata - camera shutter speed setting, displayed as e.g. "1/### sec"
+ - $image_meta['camera']: image metadata - camera type
+ - $image_meta['caption']: the image caption, as defined in image settings
+
+oenology_gallery_image_meta() is defined in functions.php.
+
+Used in the following template files:
+post-entry-image.php
+
+***********************
+oenology_gallery_links()
+----------------------------------
+oenology_gallery_links() is a custom Theme function.
+Codex reference: N/A
+
+oenology_gallery_links() is used to output "previous" and "next" links with both text and
+thumbnail images, for use with gallery images. The function outputs an array containing the
+following values:
+ - $links['prevlink']: text link to previous gallery image
+ - $links['prevthumb']: thumbnail of previous gallery image
+ - $links['nextlink']: text link to next gallery image
+ - $links['nextthumb']: thumbnail of next gallery image
+
+oenology_gallery_links() is defined in functions.php.
+
+Used in the following template files:
+post-entry-image.php
+
+***********************
+post_class()
+----------------------------------
+post_class() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Template_Tags/post_class
+
+post_class() is added inside the HTML <div> or <span> tag that contains the post, 
+and outputs various CSS class declarations, depending on which post is currently 
+being displayed.
+
+For the full list of CSS classes returned by post_class(), see the Codex.
+
+Used in the following template files:
+404.php, loop.php
+
+***********************
+post_password_required()
+----------------------------------
+post_password_required() is a WordPress conditional tag.
+Codex reference: N/A
+
+post_password_required() is a conditional that returns TRUE if the current post is password-protected; 
+otherwise, it returns FALSE. The most typical use of this conditional is within the comments template, as 
+part of the comments "Loop".
+
+post_password_required() accepts no arguments.
+
+Example:
+if ( post_password_required() ) is used to display a "password required" message, and prevents post
+comments from displaying, if the post is password-protected.
+
+post_password_required() must be used from within the Loop.
+
+Used in the following template files:
+comments.php
+
+***********************
+posts_nav_link()
+----------------------------------
+posts_nav_link() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/posts_nav_link
+
+posts_nav_link() is used to display Previous/Next links for paginated lists of posts
+(e.g. index.php, archive.php, category.php, tag.php).
+
+Note: the "Previous" link indicates *newer* posts; the "Next" link indicates *older* posts.
+Thus, "Previous" and "Next" indicate the reverse-chronological nature of blog posts;
+i.e. Previous in time (more recent) and Next in time (older).
+
+posts_nav_link( $sep, $prelabel, $nxtlabel ) accepts 3 arguments:
+ - $sep: text displayed between "Previous" and "Next" links. Defaults to ' :: '.
+ - $prelabel: Link text displayed for "Previous" link. Defaults to '<< Previous Page'.
+ - $nxtlabel:  Link text displayed for "Next" link. Defaults to 'Next Page >>'.
+
+Example:
+<?php posts_nav_link('&nbsp;&diams;&nbsp;','&laquo;&laquo; Newer Posts','Older Posts &raquo;&raquo;'); ?>
+Displays '<< Newer Posts' and 'Older Posts >>', with diamonds as a separator.
+
+posts_nav_link() must be used within the Loop.
+
+Used in the following template files:
+loop-footer.php
+
+***********************
+previous_comments_link()
+----------------------------------
+previous_comments_link() is a WordPress template tag.
+
+Codex reference: http://codex.wordpress.org/Template_Tags/previous_comments_link
+Codex reference: http://codex.wordpress.org/Function_Reference/previous_comments_link
+
+previous_comments_link() is used to display the previous page of comments (newer comments)
+
+previous_comments_link( $label, $max_page ) accepts two arguments:
+ - $label: text label for the link text. Defaults to '' (no label).
+ - $max_page: maximum number of comment pages on which to place the link. Defaults to '0' (no limit)
+
+Example:
+<?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'oenology' ) ); ?>
+returns "Newer Comments ->" (with an ASCII right-arrow symbol)
+
+previous_comments_link() must be used from within the Loop.
+
+Used in the following template files:
+comments.php.
+
+***********************
+previous_post_link()
+----------------------------------
+previous_post_link() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/previous_post_link
+
+previous_post_link() is used to display a link to the previous (newer) post in chronological order.
+
+previous_post_link( $format, $link, $in_same_cat, $excluded_categories ) accepts four arguments:
+ - $format: link string format. Defaults to '%link &raquo;', where %link corresponds to the "link" argument
+ - $link: link text to display. Defaults to '%title' (Post Title)
+ - $in_same_cat: display link to next post in the same category. Defaults to FALSE
+ - $excluded_categories: exclude posts in the indicated categories, separated by 'and', such as '1 and 3 and 5'. Defaults to 'null'
+
+previous_post_link() must be used within the Loop.
+
+Used in the following template files:
+infobar.php
+
+***********************
+single_cat_title()
+----------------------------------
+single_cat_title() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/single_cat_title
+
+single_cat_title() is used to display the title for the current category when displaying
+the category page.
+
+single_cat_title( $prefix, $display ) accepts one argument:
+ - $prefix: string to display before the category title. Defaults to 'null'
+ - $display: boolean (TRUE or FALSE) display value. Defaults to 'true' (display)
+
+single_cat_title() must be used outside the Loop.
+
+Used in the following template files:
+loop-header.php
+
+***********************
+single_tag_title()
+----------------------------------
+single_tag_title() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/single_tag_title
+
+single_tag_title() is used to display the title for the current tag when displaying
+the tag page.
+
+single_tag_title( $prefix, $display ) accepts one argument:
+ - $prefix: string to display before the category title. Defaults to 'null'
+ - $display: boolean (TRUE or FALSE) display value. Defaults to 'true' (display)
+
+single_tag_title() must be used outside the Loop.
+
+Used in the following template files:
+loop-header.php
+
+***********************
+the_author()
+----------------------------------
+the_author() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_author
+
+the_author() is used to display the Post Author for the current post.
+
+the_author()  accepts no arguments.
+
+Example:
+<?php the_author(); ?>
+
+To get the Post Author without displaying it, use get_the_author().
+
+the_author()  must be used within the Loop.
+
+Used in the following template files:
+post-footer.php
+
+***********************
+the_category()
+----------------------------------
+the_category() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_category
+
+the_category() is used to display a list of links to categories to which the post belongs.
+
+the_category( $separator, $parents, $postid ) accepts three arguments:
+ - $separator: separator list between categories. Defaults to placing categories in an unordered list (<ul>)
+ - $parents: accepts 'multiple' or 'single':
+      - 'multiple': Display separate links to parent/child categories, exhibiting parent/child relationship
+	  - 'single': Display link to child categories only (default)
+ - $postid: ID of post for which categories to list. Defaults to ID of current post.
+
+Example:
+<?php the_category( ', '); ?> displays: "Category1, Category2, Category3"
+
+the_category() must be used within the Loop, unless the $postid argument is specified.
+
+Used in the following template files:
+post-header.php
+
+***********************
+the_content()
+----------------------------------
+the_content() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_content
+
+the_content() is used to display the Post Content for the current post.
+
+the_content( $more_link_text, $strip_teaser )  accepts two arguments:
+ - $more_link_text: string to display for the "read more" link, if <!--more--> is used in the post. Defaults to '(more...)'.
+ - $strip_teaser: boolean (true/false); 'false' displays the content before <!--more-->; 'false' hides this content on single.php. Defaults to 'false'
+
+Example:
+<?php the_content(); ?>
+
+To get the Post Content without displaying it, use get_the_content().
+
+the_content()  must be used within the Loop.
+
+Used in the following template files:
+post-entry.php
+
+***********************
+the_date()
+----------------------------------
+the_date() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_date
+
+the_date() is used to display the Post Date.
+
+the_date( $d ) accepts one argument:
+ -$d: date format (per PHP date() function). Defaults to time format configured in General Settings
+
+Example:
+<?php the_date( 'Y' ); ?> displays the year the post was published, e.g. '2010'.
+
+the_date() must be used within the Loop.
+
+Used in the following template files:
+post-footer.php
+
+***********************
+the_excerpt()
+----------------------------------
+the_excerpt() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_excerpt
+
+the_excerpt() is used to display the Post Excerpt for the current post.
+
+the_excerpt()  accepts no arguments.
+
+Example:
+<?php the_excerpt(); ?>
+
+To get the Post Excerpt without displaying it, use get_the_excerpt().
+
+the_excerpt()  must be used within the Loop.
+
+Used in the following template files:
+post-entry.php, post-entry-image
+
+***********************
+the_ID()
+----------------------------------
+the_ID() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_ID
+
+the_ID() is used to display the Post ID for the current post.
+
+the_ID()  accepts no arguments.
+
+Example:
+<?php the_ID(); ?>
+
+To get the Post ID without displaying it, use get_the_ID().
+
+the_ID()  must be used within the Loop.
+
+Used in the following template files:
+post-header.php
+
+***********************
+the_permalink()
+----------------------------------
+the_permalink() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_permalink
+
+the_permalink() is used to display the permalink URL for the current post. This tag
+returns only the permalink URL, not a fully formed HTML anchor tag.
+
+the_permalink() accepts no arguments.
+
+Example:
+<a href="<?php the_permalink(); ?>">Permalink</a>
+
+the_permalink() must be used within the Loop.
+
+Used in the following template files:
+post-header.php
+
+***********************
+the_post()
+----------------------------------
+the_post() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/User:Jefte/the_post
+
+the_post() is used to output the content of each post. It is primarily used in conjunction
+with have_posts() as part of the call to the Loop.
+
+Example (the Loop):
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+Used in the following template files:
+loop.php
+
+***********************
+the_post_thumbnail()
+----------------------------------
+the_post_thumbnail() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_post_thumbnail
+
+the_post_thumbnail() is used to display the post thumbnail for the current post.
+
+the_post_thumbnail( $size, $attr ) accepts two arguments:
+ - $size: size of the thumbnail image:
+     - 'thumbnail' (default)
+	 - 'medium'
+	 - 'large'
+	 - 'full'
+	 - array( 'W', 'H' , $crop )
+	      - 'W': width, in pixels
+		  - 'H': height, in pixels
+		  - $crop: boolean (true/false) forced-cropping of image to specified dimensions. Defaults to 'false'
+ - $attr: used to override default attributes, such as src, alt, title, or class
+
+Example:
+<?php the_post_thumbnail(); ?>
+
+the_post_thumbnail() must be used within the Loop.
+
+Post Thumbnails support must be defined and configured. Refer to functions.php for more information.
+
+Used in the following template files:
+post-entry.php, post-header.php
+
+***********************
+the_search_query()
+----------------------------------
+the_search_query() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_search_query
+
+the_search_query() displays the current search query entered via the search form.
+
+the_search_query() accepts no arguments.
+
+Example:
+'Search results for "<?php the_search_query(); ?>" search' will display (assuming
+the user entered 'lorem ipsum' as the search query): 'Search results for "lorem ipsum" search'
+
+Used in the following template files:
+loop-header.php
+
+***********************
+the_shortlink()
+----------------------------------
+the_shortlink() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_shortlink
+
+the_shortlink() is used to display the Shortlink for the current post.
+
+This tag returns the full HTML anchor tag, rather than just the URL of the Shortlink. To retrieve just 
+the URL, use wp_get_shortlink().
+
+the_shortlink( $text, $title, $before, $after ) accepts four arguments:
+ - $text: Link text to display. Defaults to 'This is the shortlink'.
+ - $title: HTML anchor tag title attribute text (displays in tooltip on hover). Defaults to Post Title.
+ - $before: string to display before the Shortlink. Defaults to no text.
+ - $after: string to display after the Shortlink. Defaults to no text.
+
+Example:
+<?php the_shortlink( 'Shortlink' ); ?> displays: <a href="[shortlink URL]" title="[Post Title]">Shortlink</a>.
+
+the_shortlink() must be used within the Loop.
+
+Used in the following template files:
+post-header.php
+
+***********************
+the_tags()
+----------------------------------
+the_tags() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_tags
+
+the_tags() is used to display a list of links to tags to which the post belongs.
+
+the_tags( $before, $separator, $after ) accepts three arguments:
+ - $before: string to display before the tag list. Defaults to "Tags: ".
+ - $separator: string/character to display between tags. Defaults to ", ".
+ - $after: string to display after the tag list. Defaults to no text.
+
+Example:
+<?php the_tags(); ?>
+
+the_tags() must be used within the Loop.
+
+Used in the following template files:
+post-header.php
+
+***********************
+the_time()
+----------------------------------
+the_time() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_time
+
+the_time() is used to display the Post Time.
+
+the_time( $d ) accepts one argument:
+ -$d: time format (per PHP date() function). Defaults to time format configured in General Settings
+
+Example:
+<?php the_time( 'Y' ); ?> displays the year the post was published, e.g. '2010'.
+
+the_time() must be used within the Loop.
+
+Used in the following template files:
+post-footer.php, post-header.php
+
+***********************
+the_title()
+----------------------------------
+the_title() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/the_title
+
+the_title() is used to display the Post Title of the current post.
+
+the_title( $before, $after, $echo ) accepts three arguments:
+ - $before: text string to display before the title. Defaults to no text.
+ - $after:text string to display after the title. Defautls to no text.
+ - $echo: boolean (true/false). 'True' displays the title; 'false' does not (for use in functions, etc.). Defaults to 'true'.
+
+Example:
+<?php the_title(); ?>
+
+the_title() must be used within the Loop.
+
+Used in the following template files:
+comments.php, post-header.php
+
+***********************
+wp_attachment_is_image()
+----------------------------------
+wp_attachment_is_image() is a WordPress template conditional tag
+Codex reference: http://codex.wordpress.org/Function_Reference/is_attachment
+
+wp_attachment_is_image() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
+the current post's attachment is an image.
+
+Used in the following template files:
+post-entry.php
+
+***********************
+wp_enqueue_script()
+----------------------------------
+wp_enqueue_script() is a WordPress filter hook.
+Codex reference: http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+
+wp_enqueue_script() is used as a safe way to add JavaScript to displayed pages. WordPress 
+maintains a "queue" of javascript files to load when a page is displayed. The wp_enqueue_script()
+filter enables a Theme or Plugin to add its own javascript files to this queue. 
+
+Using wp_enqueue_script() facilitates the addition of javascript files only on pages where they
+are needed, and will ensure that the same javascript file (e.g. jQuery) is not loaded multiple times.
+
+Used in the following template files:
+header.php
+
+***********************
+wp_footer()
+----------------------------------
+wp_footer() is a WordPress action hook.
+Codex reference: http://codex.wordpress.org/Plugin_API/Action_Reference/wp_footer
+
+wp_footer() is used by themes/plugins, usually to insert content into the WordPress Theme footer.
+
+Used in the following template files:
+404.php, index.php, page.php
+
+***********************
+wp_get_current_user()
+----------------------------------
+wp_get_current_user() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/wp_get_current_user
+
+wp_get_current_user() is used to retrieve the information contained in the 
+$current_user global variable.
+
+wp_get_current_user() accepts no arguments.
+
+Example:
+wp_get_current_user();
+echo $current_user->display_name; will display e.g. "John Smith"
+
+Used in the following template files:
+infobar.php
+
+***********************
+wp_head()
+----------------------------------
+wp_head() is a WordPress action hook.
+Codex reference: http://codex.wordpress.org/Hook_Reference/wp_head
+
+wp_head() is used by themes/plugins, usually to insert content into the HTML <head>.
+
+Used in the following template files:
+header.php
+
+***********************
+wp_link_pages()
+----------------------------------
+wp_link_pages() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/wp_link_pages
+
+wp_link_pages() is used to output page links for paginated posts. 
+
+wp_link_pages() accepts several arguments, in array format.
+To see the full list of arguments for wp_link_pages(), see the Codex.
+
+Example:
+wp_link_pages(); outputs e.g. "<p>Pages: 1 2 3</p>"
+
+wp_link_pages() must be used within the Loop.
+
+Used in the following template files:
+post-entry.php
+
+***********************
+wp_list_comments()
+----------------------------------
+wp_list_comments() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/wp_list_comments
+
+wp_list_comments() is used to display the comments associated with a given post.
+
+wp_list_comments( array( 'arg1' => 'value' , 'arg2' => 'value' ) ) accepts several arguments, in the form of an array. Some of the more useful arguments:
+ - max_depth: for threaded comments, the maximum thread depth. Defaults to user-configured setting in Settings -> Discussion.
+ - style: HTML structure for the comment list. Can be 'ul', 'ol', or 'div'. Defaults to 'ul'.
+     - Note: if using 'div' or 'ol', wp_list_comments() must be wrapped in a containing element of the specified type (i.e. <div></div> or <ol></ol>)
+ - type: comment type to include. Can be 'all', 'comment', 'trackback', 'pingback', or 'pings' (both trackbacks and pingbacks). Defaults to 'all'
+ - avatar_size: size (px) of the user avatar. Can be any interger value between '1' and '512'. Defaults to '32'.
+ - per_page: number of comments to display per comments page. Defaults to user-configured setting in Settings -> Discussion.
+ - reverse_top_level: if TRUE, will display the newest comments first. Defaults to user-configured setting in Settings -> Discussion.
+ 
+Example:
+<?php	wp_list_comments( 'type=comment&avatar_size=40' ); ?> displays comments that are "comment" type (no pingbacks or trackbacks),
+with an avatar size of 40px.
+
+wp_list_comments() must be used from within the Loop.
+
+Used in the following template files:
+comments.php
+
+***********************
+wp_list_pages()
+----------------------------------
+wp_list_pages() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/wp_list_pages
+
+wp_list_pages() is used to output a list of pages (as links). This function is
+extremely powerful,  with several available arguments, including depth of
+hierarchy to display, pages (or hierarchies) to include/exclude, display order
+(ascending/descending/menu order).
+
+To see the full list of arguments for wp_list_pages(), see the Codex.
+
+Used in the following template files:
+sidebar-left.php, site-navigation.php
+
+***********************
+wp_loginout()
+----------------------------------
+wp_loginout() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/wp_loginout
+
+wp_loginout() displays a login link if user is logged out, or a logout link if user is logged in.
+
+wp_loginout() accepts 1 argument:
+ - $redirect: redirect location after login/out. Defaults to no redirect (current location)
+
+Used in the following template files:
+infobar.php
+
+***********************
+wp_nav_menu()
+----------------------------------
+get_template_part() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Function_Reference/wp_nav_menu
+
+wp_nav_menu( $menu ) is used to output a nav menu named $menu. This menu must be configured
+in the Menus administration panel.
+
+wp_nav_menu() (note: no argument for a specific menu) is used to output the default nav menu. This
+menu must be configured in the Menus administration panel.
+
+Used in the following template files:
+sidebar-left.php, site-navigation.php
+
+***********************
+wp_paginate()
+----------------------------------
+wp_paginate() is a custom function for the WP-Paginate plugin
+Codex reference: N/A
+Plugin reference: http://wordpress.org/extend/plugins/wp-paginate/
+
+wp_paginate() accepts one argument, that can be used to override default settings.
+Refer to the plugin reference for more information.
+
+wp_paginate() is used to output page numbers, in place of Previous/Next Post links.
+
+wp_paginate() must be used within the Loop.
+
+Used in the following template files:
+loop-footer.php
+
+***********************
+wp_register()
+----------------------------------
+wp_register() is a WordPress function.
+Codex reference: http://codex.wordpress.org/Function_Reference/wp_register
+
+wp_register() displays a registration link if user is logged out and user registration is 
+permitted; otherwise, displays a link to site admin (Dashboard) if user is logged in.
+
+wp_register() accepts 3 arguments:
+ - $before: string to display before link. Defaults to '<li>'
+ - $after:  string to display after link. Defaults to '</li>'
+ - $echo: return result boolean (true/false). Defaults to 'true'
+
+Example:
+<?php wp_register( '' , '' ); ?> returns the Registration or Site Admin link, without wrapping
+in <li></li> tags.
+
+Used in the following template files:
+infobar.php
+
+***********************
+wp_title
+----------------------------------
+wp_title() is a WordPress template tag.
+Codex reference: http://codex.wordpress.org/Template_Tags/wp_title
+	
+wp_title() is a WordPress template tag used to display the title of a page:
+
+	(Post Name for single.php, Date for date-based archive, Category for category archive, etc.)
+
+Used in the following template files:
+header.php
+
+=============================================================================	
