@@ -6,10 +6,29 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 	<div <?php post_class(); ?>>	
 		
-		<?php
-		// Post Formats: Standard, Gallery, Aside
-		get_template_part( 'post', get_post_format() );
-		?>
+		<div class="post-title">
+		
+			<!-- Post Header Begin -->
+			<?php get_template_part('post-header'); // post-header.php contains the Post TItle and other post meta information ?>
+			<!-- Post Header End -->
+	
+		</div>
+
+		<div class="post-entry">
+		
+			<!-- Post Entry Begin -->
+			<?php get_template_part('post-entry'); // post-entry.php contains the post content ?>
+			<!-- Post Entry End -->
+			
+		</div>
+
+		<div class="post-footer">
+			
+			<!-- Post footer Begin -->
+			<?php get_template_part('post-footer'); // post-footer.php contains post timestamp and copyright information ?>
+			<!-- Post Footer End -->
+			
+		</div>
 
 	</div>
 
@@ -50,21 +69,6 @@ comments_open( $postid ) accepts one argument:
  - $postid: PostID of the post being checked. Defaults to the current post.
 
 comments_open() must be used from within the Loop, unless the $postid parameter is used.
-
-***********************
-get_post_format()
-----------------------------------
-get_post_format() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_post_format
-
-get_post_format() is used to retrieve the Post Format of the current Post
-
-get_post_format() returns the Post Format type, as a string, if the current Post
-has a Post Format (other than "standard") selected; otherwise, it returns NULL.
-
-get_post_format( $postid ) accepts one argument:
- - $postid: the ID of the post for which to return the Post Format type. Defaults to
-   the current post.
 
 ***********************
 get_template_part()

@@ -41,7 +41,6 @@ the_widget( 'oenology_widget_recentposts' , 'title=Oenology Recent Posts' , $wid
 the_widget( 'oenology_widget_archives' , 'title=Oenology Recent Posts' , $widgetsidebarleftargs );
 the_widget( 'oenology_widget_categories' , 'title=Oenology Categories' , $widgetsidebarleftargs );
 the_widget( 'oenology_widget_tags' , 'title=Oenology Tags' , $widgetsidebarleftargs );
-the_widget( 'oenology_widget_post_formats' , 'title=Oenology Post Formats' , $widgetsidebarleftargs );
 
 } ?>
 <!-- End Left Column Widget Area--><?php } 

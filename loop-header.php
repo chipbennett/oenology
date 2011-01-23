@@ -1,10 +1,9 @@
  <?php if(is_archive()) { 
 	$post = $posts[0]; // Hack. Set $post so that the_date() works.
-	$rssimageurl = get_template_directory_uri() . '/images/subscribewide.jpg';
 	if (is_category()) { // If this is a category archive  ?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo home_url(); ?>/category/<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename;?>/feed/">
-				<img src="<?php echo $rssimageurl; ?>" width="120px" height="29" alt="Subscribe to the <?php echo single_cat_title(); ?> category feed" />
+				<img src="<?php echo get_template_directory_uri(); ?>/images/subscribewide.jpg" width="120px" height="29" alt="Subscribe to the <?php echo single_cat_title(); ?> category feed" />
 				<?php echo single_cat_title(); ?> category feed</a>
 		</div>
 		<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2>
@@ -19,7 +18,7 @@
 	<?php }  elseif (is_tag()) { // If this is a tag archive  ?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo get_tag_feed_link( $wp_query->get( 'tag_id' ) ); ?>">
-				<img src="<?php echo $rssimageurl; ?>" width="120px" height="29" alt="Subscribe to the <?php echo single_tag_title(); ?> tag feed" />
+				<img src="<?php echo get_template_directory_uri(); ?>/images/subscribewide.jpg" width="120px" height="29" alt="Subscribe to the <?php echo single_tag_title(); ?> tag feed" />
 				<?php echo single_tag_title(); ?> tag feed</a>					
 		</div>
 		<h2 class="pagetitle"><?php echo single_tag_title(); ?></h2>
@@ -30,46 +29,6 @@
 				echo 'Posts tagged as ';
 				echo single_tag_title(); 
 			}?>
-			</div>		
-	<?php }  elseif ( is_tax( '', get_post_format() )) { // If this is a Post Format archive
-			$termslug = get_post_format();
-			$termname = get_post_format_string( $termslug );
-			$termlink = get_post_format_link( $termslug );   ?>
-		<div class="cat-subscribe-feed">
-			<a href="<?php echo $termlink . '/feed/'; ?>">
-				<img src="<?php echo $rssimageurl; ?>" width="120px" height="29" alt="Subscribe to the <?php echo $termname; ?> Post Format feed" />
-				<?php echo $termname; ?> Post Format feed</a>					
-		</div>
-		<h2 class="pagetitle"><?php echo $termname; ?></h2>
-			<div class="cat-description">
-				<p><strong><?php echo $termname; ?></strong>
-				<?php switch ( $termslug ) {
-					case ( 'aside' ):
-						echo '<em>An incidental remark; digression: a message that departs from the main subject.</em>';
-						break;
-					case ( 'audio' ):
-						echo '<em>A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction.</em>';
-						break;
-					case ( 'chat' ):
-						echo '<em>Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat.</em>';
-						break;
-					case ( 'gallery' ):
-						echo '<em>A collection of art for exhibition.</em>';
-						break;
-					case ( 'image' ):
-						echo '<em>picture: A visual representation (of an object or scene or person or abstraction) produced on a surface.</em>';
-						break;
-					case ( 'link' ):
-						echo '<em>A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document.</em>';
-						break;
-					case ( 'quote' ):
-						echo '<em>A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else.</em>';
-						break;
-					case ( 'video' ):
-						echo '<em>A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.</em>';
-						break;
-				}?>
-				</p>
 			</div>		
 	<?php }
 } elseif ( is_search() ) { // If this is a search results page ?>

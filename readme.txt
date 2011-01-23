@@ -2,20 +2,20 @@
 Contributors: Chip Bennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
 Tags: fixed-width, white, three-columns, custom-header, custom-background, custom-menu, editor-style, threaded-comments, sticky-post, left-sidebar, right-sidebar
-Requires at least: 3.1
-Tested up to: 3.1
-Stable tag: 1.1
+Requires at least: 3.0
+Tested up to: 3.0.3
+Stable tag: 1.0
 
-Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.1.</strong>
+Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
 
 == Description ==
 
 Oenology is the study of all aspects of wine-making. Much like wine-making, WordPress Theme development is both a science and an art. 
-
-Much like wine-making, WordPress Theme development is the result of a fermentation process that transforms something simple into something beautiful and complex. Much like wine-making, WordPress Theme development involves an understanding of both the "indoor" (the back-end data management) and the "outdoor" (website design) elements of the process. Much like a fine wine, a great WordPress Theme is often the result of years of study by a passionate developer.
+Much like wine-making, WordPress Theme development is the result of a fermentation process that transforms something simple into something beautiful and complex.
+Much like wine-making, WordPress Theme development involves an understanding of both the "indoor" (the back-end data management) and the "outdoor" (website design) elements of the process.
+Much like a fine wine, a great WordPress Theme is often the result of years of study by a passionate developer.
 
 Oenology doesn't purport to be a fine wine or even a great WordPress Theme. Rather, Oenology is designed to help others learn the art and science of WordPress Theme development.  
-
 Consider Oenology as the fertile soil from which your own enjoyment and passion for WordPress Theme development can grow.
 
 You, too, can become an Oenologist!
@@ -62,17 +62,12 @@ The Theme fully supports WordPress core Custom Header Image functionality. The T
 
 The Theme fully supports WordPress core Custom Background functionality. Background image or color is applied to the BODY tag, and will appear outside the Theme content.
 
-=== Post Formats Functionality ===
-
-The Theme fully supports WordPress core Post Formats functionality. Custom layout and style are applied for each of the core Post Format types: Aside, Audio, Chat, Gallery, Image, Link, Status, and Video. Post Format archive pages are linked in the post footer of each post that uses a Post Format other than "standard". Also, the Theme includes a custom Widget to display a list of Post Format types, similar to the Category list or Tag list.
-
 === Widgets ===
 
 The Theme includes some custom Widgets, that can take the place of their built-in counterparts. In fact, the custom Widgets are essentially identical to the core Widgets, except that the custom Widgets are collapsible. The following Widgets are available:
   * Archives
   * Categories
   * Linkroll by Cat
-  * Post Formats
   * Recent Posts
   * Tags
 
@@ -93,7 +88,7 @@ Oenology is likely broken down into more template parts than the average Theme. 
 
 = What's in store for the future? =
 
-First and foremost, since Oenology is intended to be a learning tool, the inline and reference documentation will be a continual work-in-progress, based upon user feedback. This documentation is complete as of Oenology Version 1.0, but will continue to be updated and improved.
+First and foremost, since Oenology is intended to be a learning tool, the inline and reference documentation will be a continual work-in-progress, based upon user feedback. This documentation is complete, except for functions.php, which will be included in the next major version release.
 
 Other features that may be added in the future:
  - Internationalization
@@ -116,13 +111,6 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 1. Standard Theme Screenshot
 
 == Changelog ==
-
-= 1.1 [2011.01.DD] =
-* Maintenance Release
-* Added support for Post Formats (introduced in WordPress 3.1)
-* Added check to ensure TwentyTen header images are registered only if TwentyTen is installed
-* Minor tweak/bugfix to ensure floats are cleared properly on paginated posts
-* Minor tweaks to comments.php
 
 = 1.0 [2010.12.08] =
 * Maintenance Release

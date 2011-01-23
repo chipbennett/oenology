@@ -10,18 +10,8 @@ Template Name: Posts Footer
 				<span class="post-author-gravatar">
                                    <?php echo get_avatar( get_the_author_meta('email'), $size = '20'); // display a 20px avatar, to fit inside the post footer ?>
 				</span>
-<?php $cbnet_post_format_type = ( get_post_format() ? '<a href="' . get_post_format_link( get_post_format() ) . '">' . get_post_format_string( get_post_format() ) . '</a>' : 'Posted' ); ?>
-<span class="postmetadata-author">
-<?php echo $cbnet_post_format_type; ?> by <?php the_author(); ?> <?php
-if ( has_post_format( 'aside' ) || has_post_format( 'link' ) || has_post_format( 'quote' ) || has_post_format( 'status' ) ) { ?>
-<a href="<?php the_permalink(); ?>"><?php the_date( get_option( 'date_format' ) ); ?> at <?php the_time( get_option( 'time_format' ) ); ?></a> (<?php comments_number('0','1','%'); // Display total number of post comments ?>) <?php edit_post_link('Edit','',''); // Display "Edit" link for logged-in Admin users ?>
-<?php } else { 
-the_date(); ?> at <?php the_time(); 
-} ?>
-</span>
-<?php } else { ?>
-<span class="postmetadata-license">&copy; <?php bloginfo('name'); ?></span>
-<?php } ?>
+<span class="postmetadata-author">Posted by <?php the_author() ?> <?php the_date(); ?> at <?php the_time(); ?></span><?php } // use the user-defined formats to display Post Date and Time ?>
+<span class="postmetadata-license">&copy; <?php the_time('Y'); ?></span>
 </div>
 <?php /*
 Reference:

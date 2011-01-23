@@ -47,7 +47,7 @@
 		<!-- End Main (div#main) -->
 
 		<!-- Begin Left Column (div#leftcol) -->
-		<?php if ( is_home() || ( is_single() && ! is_attachment() && ! has_post_format( 'image' ) ) || is_archive() ) { ?>
+		<?php if ( ! is_attachment() ) { ?>
 		<div id="leftcol">
 		<?php 
 			/*

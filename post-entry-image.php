@@ -1,15 +1,8 @@
 <?php 
-$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
-
-$total_images = ( $images ? count( $images ) : '0' );
-
-if ( is_attachment() || $images ) { ?>
-<div class="gallery-nav"> <!-- Head navigation -->
-<?php 
+$gallery_links = oenology_gallery_links(); 
 $gallery_image_meta = oenology_gallery_image_meta();
-$gallery_links = oenology_gallery_links();
-if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format should only have one image attachment
 ?>
+<div class="gallery-nav"> <!-- Head navigation -->
 	<dl>
 	<dt>Gallery</dt>
 	<dd class="gallery-nav-home">
@@ -34,7 +27,6 @@ if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format s
 	</div>
 	</dd>
 	</dl>
-<?php } ?>
 	
 	<div class="gallery-more">
 
@@ -76,12 +68,6 @@ if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format s
 	<?php if ( $gallery_image_meta['camera'] ) { // if image camera is defined, display it ?>
 		<dt>Camera</dt>
 		<dd><?php echo $gallery_image_meta['camera']; ?></dd>
-	<?php }
-	if ( ! is_attachment() ) { ?>
-		<dt>Filed Under:</dt>
-		<dd><?php the_category(', '); ?></dd>
-		<dt>Tags:</dt>
-		<dd><?php the_tags( '', ',<br />', '' ); ?></dd>
 	<?php } ?>
 	</dl>
 
@@ -94,27 +80,7 @@ if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format s
 	<div class="gallery-caption bigcaption">
 		<?php echo $gallery_image_meta['caption']; ?>
 	</div>
-</div>
-
-<?php } else { ?>
-<div class="gallery-nav">
-  <div class="gllery-more">
-      <dl class="photo-tech">
-	<?php if ( ! is_attachment() ) { ?>
-		<dt>Filed Under:</dt>
-		<dd><?php the_category(', '); ?></dd>
-		<dt>Tags:</dt>
-		<dd><?php the_tags( '', ',<br />', '' ); ?></dd>
-	<?php } ?>
-      </dl>
-  </div>
-</div>
-<div class="gallery-photo">
-	<?php the_content(); ?> 
-</div>
-<?php } ?>
-	<!-- Post Entry End -->
-<?php
+</div><?php
 /*
 Reference:
 =============================================================================
