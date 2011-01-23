@@ -17,11 +17,16 @@ img {
 }
 
 p + p, 
-p + ul, 
 ul + p,
-p + ol,
-ol + p {
+ol + p,
+dl + p {
   margin-top:2em;
+  border:0;
+}
+p + ul, 
+p + ol,
+p + dl {
+  margin-top:1em;
   border:0;
 }
 
@@ -205,8 +210,7 @@ html .mceContentBody li {
    line-height:1.1em;
    margin-left: 25px;
 }
-html .mceContentBody li + li,
-html .mceContentBody li li {
+html .mceContentBody li > li {
 	margin-top:1.0em;
 }
 

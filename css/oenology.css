@@ -652,8 +652,7 @@ div.post-entry li {
    line-height:1.1em;
    margin-left: 25px;
 }
-div.post-entry li + li,
-div.post-entry li li {
+div.post-entry li > li {
 	margin-top:1.0em;
 }
 

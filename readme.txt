@@ -1,10 +1,10 @@
 === Oenology ===
 Contributors: Chip Bennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
-Tags: fixed-width, white
+Tags: fixed-width, white, three-columns, custom-header, custom-background, custom-menu, editor-style, threaded-comments, sticky-post, left-sidebar, right-sidebar
 Requires at least: 3.0
-Tested up to: 3.0
-Stable tag: 0.9.1
+Tested up to: 3.0.1
+Stable tag: 0.9.2
 
 Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
 
@@ -88,7 +88,7 @@ Oenology is likely broken down into more template parts than the average Theme. 
 
 = What's in store for the future? =
 
-First and foremost, since Oenology is intended to be a learning tool, the inline and reference documentation will be a continual work-in-progress, based upon user feedback. This documentation is complete, except for functions.php, which will be included in the next version release.
+First and foremost, since Oenology is intended to be a learning tool, the inline and reference documentation will be a continual work-in-progress, based upon user feedback. This documentation is complete, except for functions.php, which will be included in the next major version release.
 
 Other features that may be added in the future:
  - Internationalization
@@ -112,10 +112,13 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 
 == Changelog ==
 
-= 1.0 =
-* Initial Release
+= 0.9.2 =
+* Minor BugFix release
+* Fixed divide-by-zero PHP notice generated on the attachment page when the image metadata indicates a shutter speed of zero.
+* Fixed minor CSS image dimension bug
+* Updated Theme tags
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 0.9.1 =
 Initial Release.

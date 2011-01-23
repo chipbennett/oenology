@@ -2,10 +2,10 @@
 Theme Name: Oenology
 Theme URI: http://www.chipbennett.net/themes/oenology
 Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
-Version: 0.9.1
+Version: 0.9.2
 Author: Chip Bennett
 Author URI: http://www.chipbennett.net/
-Tags: fixed-width, white
+Tags: fixed-width, white, three-columns, custom-header, custom-background, custom-menu, editor-style, threaded-comments, sticky-post, left-sidebar, right-sidebar
 License:       GNU General Public License, v2 (or newer)
 License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
  *
@@ -31,16 +31,12 @@ License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 @import url( css/plugins.css ); /* plugin-specific style information */
 @import url( css/print.css ) print; /* custom style information for media:print */
 
-.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
-}
+.aligncenter { /* defined in css/oenology.css */ }
+.alignleft { /* defined in css/oenology.css */ }
+.alignnone { /* defined in css/oenology.css */ }
+.alignright { /* defined in css/oenology.css */ }
+.wp-caption { /* defined in css/oenology.css */ }
+.wp-caption-text { /* defined in css/oenology.css */ }
+.gallery-caption { /* defined in css/oenology.css */ }
+.bypostauthor { /* defined in css/oenology.css */ }
+.sticky { /* defined in css/oenology.css */ }

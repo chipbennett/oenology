@@ -45,7 +45,7 @@ if ( ! isset( $content_width ) ) {
 
 // Your changeable header business starts here
 define( 'HEADER_TEXTCOLOR', '000000' ); // Hex color value, without leading octothorpe (#)
-define('HEADER_IMAGE', get_bloginfo('stylesheet_directory') . '/images/headers/pxwhite.jpg'); // Default header image to use
+define('HEADER_IMAGE', get_stylesheet_directory_uri() . '/images/headers/pxwhite.jpg'); // Default header image to use
 define( 'HEADER_IMAGE_WIDTH', apply_filters( 'oenology_header_image_width', 1000 ) ); // Width to which WordPress will crop uploaded header images
 define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'oenology_header_image_height', 198 ) ); // Height to which WordPress will crop uploaded header images
 define( 'NO_HEADER_TEXT', false ); // Allow text inside the header image.
@@ -310,7 +310,7 @@ function oenology_gallery_image_meta() {
 		$image_meta['aperture'] = 'f/' . $m['image_meta']['aperture'];
 	}
 	// shutter speed handler
-	if ((1 / $m['image_meta']['shutter_speed']) > 1) {
+	if ( ( $m['image_meta']['shutter_speed'] != '0' ) && ( ( 1 / $m['image_meta']['shutter_speed'] ) > 1 ) ) {
 	$image_meta['shutter_speed'] =  "1/";
 		if (number_format((1 / $m['image_meta']['shutter_speed']), 1) ==  number_format((1 / $m['image_meta']['shutter_speed']), 0)) {
 			$image_meta['shutter_speed'] = $image_meta['shutter_speed'] . number_format((1 / $m['image_meta']['shutter_speed']), 0, '.', '') . ' sec';
@@ -527,7 +527,7 @@ function oenology_breadcrumb() {
 
 // Output the Base Link	
     global $post;
-    $home = get_bloginfo('url');
+    $home = home_url('/');
     $baseLink =  '<a href="' . $home . '">' . $name . '</a>';
 	echo $baseLink; 
  
@@ -817,11 +817,11 @@ class oenology_widget_categories extends WP_Widget {
 
 		<?php
 		 $catrssimg = "/images/rss.png";
-		 $catrssurl = get_bloginfo('template_directory') . $catrssimg;
+		 $catrssurl = get_template_directory_uri() . $catrssimg;
 		 $customcatlist ='';
 		 $customcats=  get_categories();
 		 foreach($customcats as $customcat) {
-		 	$customcatlist = '<li><a title="Subscribe to the '.$customcat->name.' news feed" href="'.get_bloginfo('url').'/category/'.$customcat->category_nicename.'/feed/"><img src="'.$catrssurl.'" alt="feed" /></a><a href="'.get_bloginfo('url').'/category/'.$customcat->category_nicename.'/">'.$customcat->name.'</a> ('.$customcat->count.')</li>';
+		 	$customcatlist = '<li><a title="Subscribe to the '.$customcat->name.' news feed" href="'.home_url().'/category/'.$customcat->category_nicename.'/feed/"><img src="'.$catrssurl.'" alt="feed" /></a><a href="'.home_url().'/category/'.$customcat->category_nicename.'/">'.$customcat->name.'</a> ('.$customcat->count.')</li>';
 			echo $customcatlist;
 		 }
 		?>
@@ -877,11 +877,11 @@ class oenology_widget_tags extends WP_Widget {
 
 	<?php
 		 $tagrssimg = "/images/rss.png";
-		 $tagrssurl = get_bloginfo('template_directory') . $tagrssimg;
+		 $tagrssurl = get_template_directory_uri() . $tagrssimg;
 		 $customtaglist ='';
 		 $customtags =  get_tags();
 		 foreach($customtags as $customtag) {
-		 	$customtaglist = '<li><a title="Subscribe to the '.$customtag->name.' feed" href="'.get_bloginfo('url').'/tag/'.$customtag->slug.'/feed/"><img src="'.$tagrssurl.'" alt="feed" /></a><a href="'.get_bloginfo('url').'/tag/'.$customtag->slug.'/">'.$customtag->name.'</a> ('.$customtag->count.')</li>';
+		 	$customtaglist = '<li><a title="Subscribe to the '.$customtag->name.' feed" href="'.home_url().'/tag/'.$customtag->slug.'/feed/"><img src="'.$tagrssurl.'" alt="feed" /></a><a href="'.home_url().'/tag/'.$customtag->slug.'/">'.$customtag->name.'</a> ('.$customtag->count.')</li>';
 			echo $customtaglist;
 		 } 
 	?>

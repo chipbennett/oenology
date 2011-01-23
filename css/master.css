@@ -58,13 +58,16 @@ body {
      }
 
 p + p, 
-p + ul, 
 ul + p,
-p + ol,
 ol + p,
-p + dl,
 dl + p {
   margin-top:2em;
+  border:0;
+}
+p + ul, 
+p + ol,
+p + dl {
+  margin-top:1em;
   border:0;
 }
 
@@ -648,7 +651,6 @@ div.post-entry blockquote {
 
 #content img {
 	max-width:635px;
-	width: auto;
 	height: auto;
 }
 body.attachment #content img {

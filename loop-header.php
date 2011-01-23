@@ -3,7 +3,7 @@
 	if (is_category()) { // If this is a category archive  ?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo home_url(); ?>/category/<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename;?>/feed/">
-				<img src="<?php bloginfo('template_directory'); ?>/images/subscribewide.jpg" width="120px" height="29" alt="Subscribe to the <?php echo single_cat_title(); ?> category feed" />
+				<img src="<?php echo get_template_directory_uri(); ?>/images/subscribewide.jpg" width="120px" height="29" alt="Subscribe to the <?php echo single_cat_title(); ?> category feed" />
 				<?php echo single_cat_title(); ?> category feed</a>
 		</div>
 		<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2>
@@ -18,7 +18,7 @@
 	<?php }  elseif (is_tag()) { // If this is a tag archive  ?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo get_tag_feed_link( $wp_query->get( 'tag_id' ) ); ?>">
-				<img src="<?php bloginfo('template_directory'); ?>/images/subscribewide.jpg" width="120px" height="29" alt="Subscribe to the <?php echo single_tag_title(); ?> tag feed" />
+				<img src="<?php echo get_template_directory_uri(); ?>/images/subscribewide.jpg" width="120px" height="29" alt="Subscribe to the <?php echo single_tag_title(); ?> tag feed" />
 				<?php echo single_tag_title(); ?> tag feed</a>					
 		</div>
 		<h2 class="pagetitle"><?php echo single_tag_title(); ?></h2>

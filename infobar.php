@@ -12,7 +12,7 @@
       </li>
       <li class="postnavhome">
 	<!--&diams; &nbsp;&nbsp;&nbsp;-->
-        <a href="<?php bloginfo('wpurl'); ?>">Home</a>
+        <a href="<?php echo site_url(); ?>">Home</a>
         <!--&nbsp;&nbsp;&nbsp; &diams;-->
       </li>
       <li class="postnavolder">
