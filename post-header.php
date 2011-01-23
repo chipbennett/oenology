@@ -23,7 +23,7 @@ if ( ( ! ( is_home() || is_single() || is_page() || is_attachment() ) ) && funct
 	<span id="post-<?php the_ID(); // unique ID for CSS purposes ?>">
 		<a href="<?php the_permalink(); // link to post permalink ?>" rel="bookmark" title="Permanent Link to <?php the_title(); // display Post Title in tooltip on hover ?>"> Permalink</a>
 	</span>	
-	<?php if ( ! is_attachment() ) { // shortlink isn't generated for attachmets ?>
+	<?php if ( ! is_attachment() && ! is_page() ) { // shortlink isn't generated for attachmets or pages ?>
 	<strong>|</strong>
 	<span id="post-<?php the_ID(); // unique ID for CSS purposes ?>-shortlink">
 		<?php the_shortlink( 'Shortlink' ); // link to post shortlink ?>

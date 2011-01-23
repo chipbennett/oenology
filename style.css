@@ -1,8 +1,8 @@
 /*  
 Theme Name: Oenology
 Theme URI: http://www.chipbennett.net/themes/oenology
-Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
-Version: 1.0
+Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.1.</strong>
+Version: 1.1
 Author: Chip Bennett
 Author URI: http://www.chipbennett.net/
 Tags: fixed-width, white, three-columns, custom-header, custom-background, custom-menu, editor-style, threaded-comments, sticky-post, left-sidebar, right-sidebar
@@ -78,6 +78,7 @@ Declare all fonts used in theme
 #leftcol .subnavmenutest .current_page_ancestor a,
 .post-entry blockquote,
 .post-entry blockquote p,
+.post-entry .link-pages,
 #content #main .count,
 ol.bnc_related /* Plugin: Yet Another Related Posts Plugin */ {
    font-family: 'Century Gothic', 'URW Gothic L', sans-serif;
@@ -100,7 +101,9 @@ ol.bnc_related /* Plugin: Yet Another Related Posts Plugin */ {
 .post-entry .caption,
 .post-entry .wp-caption,
 .post-entry .wp-caption-text,
+.post-entry .audiovideo-meta,
 .post-entry .gallery-caption,
+.post-entry .gallery-meta,
 .post-entry .def p,
 body.attachment dd,
 .post .clonetruth,
@@ -174,6 +177,7 @@ h1, h2, h3, h4, h5, h6,
 /* Mono fonts
 *****************************************************************/
 /* Courier New type font family */
+.post.format-chat .post-entry *,
 .post-entry .code,
 .post-entry .code p,
 .commentlist li div p code,
@@ -408,13 +412,15 @@ dd {
   line-height:17pt;
   letter-spacing:0em;
 }
-body.attachment #main {
+body.attachment #main,
+body.single-format-image #main {
 	width: 1000px;
 }
 #page #main {
 	margin-left:170px;
 }
-#page.attachment #main {
+#page.attachment #main,
+body.single-format-image #main {
   margin-left:0;
 }
 #rightcol {
@@ -455,6 +461,7 @@ body.attachment #main {
   border:0;
 }
 #header div {
+  clear:both;
   width:100%;
   padding-top:10px;
   padding-bottom:10px;
@@ -871,7 +878,12 @@ body.attachment #main {
 	max-width:635px;
 	height: auto;
 }
-body.attachment #content img {
+#content .format-image .gallery-thumb img {
+	max-width:150px;
+}
+body.attachment #content img,
+body.term-post-format-image #content img,
+body.single-format-image #content img {
 	max-width: 900px;
 }
 /* Margins and Padding
@@ -989,9 +1001,86 @@ body.attachment #content img {
   text-align:left;
   border: 1px solid #bbb;
 }
+body.single-format-image .post {
+  padding: 0;
+  border: 0;
+}
 body.home .post.sticky {
 	background-color:#f6f6f6;
 	border-color: #000;
+}
+.post.format-aside,
+.post.format-link,
+.post.format-quote,
+.post.format-status {
+	margin-left: 50px;
+	margin-right:50px;
+	padding-top:0px;
+	border: 0;
+}
+.post.format-aside {
+	text-align: right;
+}
+.post.format-aside .post-entry:before {
+	content: "\007B";
+	float:left;
+	position: relative;
+	left: -50px;
+	top: 70px;
+	color: #bbb;
+	font-size:72pt;
+}
+.post.format-aside .post-entry {
+	margin-top:-30px;
+}
+.post.format-chat .post-entry {
+	margin:10px;
+	padding:10px;
+	background-color: #f0f0f0;
+	letter-spacing:0.1em;
+}
+.post.format-chat .post-entry * {
+	margin:0px;
+	font-size: 11pt;
+	line-height:1.7em;
+	text-align:left;
+}
+.post.format-link .post-entry:before {
+	content: "\221E"; 
+	float:left;
+	position: relative;
+	left: -35px;
+	top: 40px;
+	color: #bbb;
+	font-size:32pt;
+}
+.post.format-link,
+.post.format-link * {
+	text-align: center;
+}
+.post.format-link .post-entry {
+	margin-top:-30px;
+}
+.post.format-quote .post-entry:before {
+	content: "\201C"; 
+	float:left;
+	position: relative;
+	left: -50px;
+	top: 40px;
+	color: #bbb;
+	font-size:72pt;
+}
+.post.format-status {
+	/*border-left: 5px solid #bbb;*/
+}
+.post.format-status .post-entry:before {
+	content: "\0023"; 
+	float:left;
+	position: relative;
+	left: -40px;
+	top: 40px;
+	color: #bbb;
+	font-size:32pt;
 }
 /* Post/Page Title Container
        .post-title
@@ -1021,11 +1110,15 @@ body.page .post .post-title {
   margin-left:55px;
 }
 body.page .post-title h1,
-body.error404 .post-title h1 {
+body.error404 .post-title h1,
+body.attachment .post-title h1,
+.post.format-audio .post-title h1,
+body.term-post-format-audio .post-title h1 ,
+.post.format-image .post-title h1,
+body.term-post-format-image .post-title h1,
+.post.format-video .post-title h1,
+body.term-post-format-video .post-title h1 {
 	margin-left:0;
-}
-body.attachment .post-title h1 {
-	margin-left: 100px;
 }
 .post-title h1 a,
 .post-title h1 a:link,
@@ -1066,8 +1159,9 @@ body.attachment .post-title h1 {
   text-transform:none;
   text-align:left;
 }
-body.attachment .post-title-metadata {
-	margin-left: 100px;
+body.attachment .post-title-metadata,
+body.term-post-format-image .post-title-metadata {
+	margin-left: 0;
 }
 .page .post-title-metadata {
 	margin-left:0;
@@ -1150,12 +1244,113 @@ body.attachment .post-title-metadata {
 .post-entry {
 	padding-top:10px;
 }
-body.attachment .post-entry {
+.post.format-aside .post-entry,
+.post.format-link .post-entry,
+.post.format-status .post-entry {
+	padding-top:0px;
+}
+body.attachment .post-entry,
+body.term-post-format-image .post-entry {
 	padding-top: 0px;
 }
 #home .post-entry > p:first-child {
   clear:both;
   margin-top:0px;
+}
+/* Post Entry - Post Formats
+   --------------------
+*/
+#content .format-audio ul.audiovideo-meta,
+#content .format-video ul.audiovideo-meta {
+	float:none;
+	clear:both;
+	width:auto;
+	margin:10px auto;
+	padding:3px;
+	background-color:#f0f0f0;
+	list-style-type:none;
+	font-size: 8pt;
+	letter-spacing:0;
+	text-align:center;
+}
+#content .format-audio ul.audiovideo-meta li:first-child,
+#content .format-video ul.audiovideo-meta li:first-child {
+	margin-bottom:5px;
+}
+.format-audio .audiovideo-meta li,
+.format-video .audiovideo-meta li {
+	margin-left:0;
+	text-align:left;
+}
+#content .format-audio .post-entry ul.audiovideo-meta a,
+#content .format-video .post-entry ul.audiovideo-meta a {
+	font-weight:normal;
+	border:0;
+}
+.format-image .gallery-thumb span {
+	display: block;
+	min-width:150px;
+	max-width:150px;
+	min-height:150px;
+	max-height:150px;
+	text-align:center;
+	line-height:75px;
+}
+.format-gallery .size-thumbnail img,
+.format-image .size-thumbnail img,
+.format-image .gallery-thumb span {
+	border: 10px solid #f1f1f1;
+	margin-bottom: 10px;
+	max-width:150px;
+	max-height:150px;
+}
+.format-gallery .gallery-thumb,
+.format-image .gallery-thumb {
+	float: left;
+	clear:none;
+	display:inline;
+	margin-right: 20px;
+}
+#content .format-image h2.gallery-title,
+#content .format-gallery h2.gallery-title {
+	float:left;
+	display:block;
+	margin:0;
+	clear:right;
+	width:440px;
+	line-height:2em;
+}
+#content .format-image p.gallery-description,
+#content .format-gallery p.gallery-description {
+	float:left;
+	width:440px;
+	margin:0;
+	display:block;
+	text-align:left;
+}
+#content .format-image ul.gallery-meta,
+#content .format-gallery ul.gallery-meta {
+	float:left;
+	margin-bottom:10px;
+	padding:3px;
+	background-color:#f0f0f0;
+	list-style-type:none;
+	font-size: 8pt;
+	letter-spacing:0;
+}
+#content .format-image ul.gallery-meta li:first-child,
+#content .format-gallery ul.gallery-meta li:first-child {
+	margin-bottom:5px;
+}
+.format-image .gallery-meta li,
+.format-gallery .gallery-meta li {
+	margin-left:0;
+	text-align:left;
+}
+#content .format-image .post-entry ul.gallery-meta a,
+#content .format-gallery .post-entry ul.gallery-meta a {
+	font-weight:normal;
+	border:0;
 }
 /* Post Entry - Blockquotes
    --------------------
@@ -1297,7 +1492,9 @@ dl.gallery-item dd {
 /* Post Entry - Galleries and Post Attachments
    --------------------
 */
-body.attachment .gallery-nav {
+body.attachment .gallery-nav,
+body.term-post-format-image .gallery-nav,
+body.single-format-image .gallery-nav {
 	float:left;
 	width:100px;
 	margin:0;
@@ -1305,13 +1502,19 @@ body.attachment .gallery-nav {
 	font-size: 8pt;
 	line-height:1.3em;
 }
-body.attachment .gallery-nav dl {
+body.attachment .gallery-nav dl,
+body.term-post-format-image .gallery-nav dl,
+body.single-format-image .gallery-nav dl{
    margin-left:0px;
 }
-body.attachment .gallery-nav dl dt {
+body.attachment .gallery-nav dl dt,
+body.term-post-format-image .gallery-nav dl dt,
+body.single-format-image .gallery-nav dl dt {
 	text-decoration: none;
 }
-body.attachment .gallery-nav dl dd {
+body.attachment .gallery-nav dl dd,
+body.term-post-format-image .gallery-nav dl dd,
+body.single-format-image .gallery-nav dl dd {
 	margin-left:0px;
 	padding-left:0px;
 	border-left: 0;
@@ -1363,7 +1566,8 @@ body.attachment .gallery-nav .gallery-nav-next .gallery-nav-caption a:after {
 	font-size: 10pt;
 }
 
-body.attachment .gallery-photo {
+body.attachment .gallery-photo,
+body.single-format-image .gallery-photo {
 	float: left;
 	clear: none;
 	margin:0;
@@ -1372,27 +1576,37 @@ body.attachment .gallery-photo {
 	padding:0;
 	text-align:center;
 }
-body.attachment .gallery-photo img {
+body.attachment .gallery-photo img,
+body.term-post-format-image .gallery-photo img,
+body.single-format-image .gallery-photo img {
 	margin:0;
 	padding:0;
 	clear: none;
 }
-body.attachment .bigcaption {
+body.attachment .bigcaption,
+body.term-post-format-image .bigcaption,
+body.single-format-image .bigcaption {
 	clear:both;
 	text-align:center;
 }
-body.attachment .gallery-more {
+body.attachment .gallery-more,
+body.term-post-format-image .gallery-more,
+body.single-format-image .gallery-more {
 	float: left;
 	clear:none;
 	width: 90px;
 	margin:0;
 	padding:0;
 }
-body.attachment .gallery-more h3 {
+body.attachment .gallery-more h3,
+body.term-post-format-image .gallery-more h3,
+body.single-format-image .gallery-more h3 {
 	clear:none;
 	width:100%;
 }
-body.attachment dl {
+body.attachment dl,
+body.term-post-format-image dl,
+body.single-format-image dl {
 	display:block;
 	float:left;
 	font-size: 9pt;
@@ -1400,19 +1614,27 @@ body.attachment dl {
 	line-height: 1.3em;
 }
 body.attachment dt,
-body.attachment dd {
+body.attachment dd,
+body.term-post-format-image dt,
+body.term-post-format-image dd,
+body.single-format-image dt,
+body.single-format-image dd {
 	display: block;
 	width:90px;
 	overflow: hidden;
 	float: none;
 	clear:both;
 }
-body.attachment dt {
+body.attachment dt,
+body.term-post-format-image dt,
+body.single-format-image dt {
 	padding-top: 10px;
 	clear:left;
 	font-weight:bold;
 }
-body.attachment dd {
+body.attachment dd,
+body.term-post-format-image dd,
+body.single-format-image dd {
 	font-size: 7pt;
 	text-align: left;
 }
@@ -1497,6 +1719,16 @@ body.attachment dd {
   letter-spacing:0.1em;
   font-variant:small-caps;
 }
+.post-entry .link-pages {
+	clear:both;
+	font-size:10pt;
+	text-align:center;
+}
+.post-entry .link-pages a {
+	border: 1px solid #58a;
+	margin: 0px 3px 0px 3px;
+	padding: 0px 3px 0px 3px;
+}
 /* Post Entry - Thumbnail
    --------------------
 */
@@ -1513,7 +1745,6 @@ body.attachment dd {
 /* Post Footer Metadata
    --------------------
 */
-.postmetadata,
 .postmetadata {
 	clear:both;
 	margin: 0px;
@@ -1526,23 +1757,46 @@ body.attachment dd {
 	letter-spacing:0.1em;
 	text-align: left;
 }
+.post.format-aside .postmetadata,
+.post.format-link .postmetadata,
+.post.format-quote .postmetadata,
+.post.format-status .postmetadata {
+	margin-top: 10px;
+	border-top: 0;
+}
 .post .postmetadata .post-author-gravatar {
   float:left;
   margin:0px;
   padding:0px;
   padding-right:5px;
 }
+.post.format-aside .postmetadata .post-author-gravatar,
+.post.format-link .postmetadata .post-author-gravatar,
+.post.format-quote .postmetadata .post-author-gravatar {
+  float:right;
+  padding-left: 5px;
+}
 .post .postmetadata .postmetadata-author,
 .post .postmetadata .postmetadata-license {
 	display:block;
 	margin:0px;
 	padding:0px;
-	line-height:10px;
-	height:10px;
+	line-height:20px;
+	height:20px;
 }
-.post .alt,
+.post.format-aside .postmetadata-author,
+.post.format-link .postmetadata-author,
+.post.format-quote .postmetadata-author {
+  float:right;
+}
 .post .alt {
 	border-bottom: 1px solid #ddd;
+}
+.post.format-aside .alt,
+.post.format-link .alt,
+.post.format-quote .alt,
+.post.format-status .alt {
+	border-bottom: 0;
 }
 /* Posts Navigation
    ----------------------

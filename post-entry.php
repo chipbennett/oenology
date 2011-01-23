@@ -1,15 +1,17 @@
-<?php if ( ( is_home() || is_single() || is_page() ) && ! is_attachment() ) { // only display the full post content on the blog home page, single blog posts, and Pages
-	the_content('Read the rest of this entry &raquo;'); // if a blog post or Page uses the <!--more--> tag, display "Read the rest of this entry" on the blog home page.
-	wp_link_pages(); // if the blog post or Page is paginated, display page links
-	} else if ( is_attachment() ) { // display custom image content for image attachment 
-		if ( wp_attachment_is_image() ) {
-			get_template_part( 'post-entry-image' ); 
-		} else {
-			the_content('Read the rest of this entry &raquo;');
-		}
-	} else { // otherwise (i.e. if an archive/category/tag or search page is displayed) only show the post thumbnail and excerpt
-		the_excerpt(); 
+<?php 
+// only display the full post content on the blog home page, single blog posts, and Pages
+if ( ( is_home() || is_single() || is_page() || get_post_format() ) && ! is_attachment() ) { 
+	the_content('Read the rest of this entry &raquo;'); 
+	wp_link_pages( 'before=<p class="link-pages">Page: ' ); // if the blog post or Page is paginated, display page links
+} else if ( is_attachment() ) { // display custom image content for image attachment 
+	if ( wp_attachment_is_image() ) {
+		get_template_part( 'post-entry-image' ); 
+	} else {
+		the_content('Read the rest of this entry &raquo;');
 	}
+} else { // otherwise (i.e. if an archive/category/tag or search page is displayed) only show the post thumbnail and excerpt
+	the_excerpt(); 
+}
 /*
 Reference:
 =============================================================================
@@ -178,11 +180,21 @@ Codex reference: http://codex.wordpress.org/Function_Reference/wp_link_pages
 
 wp_link_pages() is used to output page links for paginated posts. 
 
-wp_link_pages() accepts several arguments, in array format.
-To see the full list of arguments for wp_link_pages(), see the Codex.
+wp_link_pages( '&arg1=value1&arg2=value2' ) accepts several arguments, in array format.
+ - 'before': text string to display before the output. Default:'<p>Pages:'
+ - 'after':  text string to display after the output. Default: '</p>'
+ - 'link_before': text string to output before each link. Default: NULL 
+ - 'link_after': text string to output after each link. Default: NULL
+ - 'next_or_number': display either "Previous/Next" links ('next') or page numbers ('number'). Default: 'number'
+ - 'nextpagelink': text string to display for "Next" page link (if 'next_or_number' is 'next'. Default: 'Next page'
+ - 'previouspagelink':text string to display for "Previous" page link (if 'next_or_number' is 'next'. Default: 'Previous page'
+ - 'pagelink': text string to display for page numbers (if 'next_or_number' is 'number'), where % returns the page number. Default: '%'
+ - 'more_file': page to which the link points. Default: NULL (i.e. current post) 
+ - 'echo': (boolean) output (print/display) or return (for use in PHP) the output. Default: 1 (i.e. TRUE; print/display output)
 
 Example:
-wp_link_pages(); outputs e.g. "<p>Pages: 1 2 3</p>"
+wp_link_pages( 'before=<p class="link-pages">Page: ' ); 
+ - outputs e.g.: '<p class="link-pages">Pages: 1 2 3</p>'
 
 wp_link_pages() must be used within the Loop.
 
