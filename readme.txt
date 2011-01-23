@@ -1,10 +1,10 @@
 === Oenology ===
 Contributors: Chip Bennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
-Tags: cbnet, theme, fixed-width, three-column, white, minimalist
+Tags: fixed-width, white
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 0.9
+Stable tag: 0.9.1
 
 Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
 

@@ -2,7 +2,7 @@
 Theme Name: Oenology
 Theme URI: http://www.chipbennett.net/themes/oenology
 Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins.
-Version: 0.9
+Version: 0.9.1
 Author: Chip Bennett
 Author URI: http://www.chipbennett.net/
 Tags: fixed-width, white
@@ -23,6 +23,14 @@ License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
 */
 
+@import url( css/fonts.css ); /* font-family declarations, as well as @font-face information for custom fonts */
+@import url( css/master.css ); /* main page structure */
+@import url( css/navigation.css ); /* site navigation style declaration */
+@import url( css/comments.css ); /* stylesheet for wp_list_comments() */
+@import url( css/oenology.css ); /* blog-specific style information */
+@import url( css/plugins.css ); /* plugin-specific style information */
+@import url( css/print.css ) print; /* custom style information for media:print */
+
 .aligncenter {
 	display: block;
 	margin-left: auto;
@@ -36,11 +44,3 @@ License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 .alignright {
 	float: right;
 }
-
-@import url( css/fonts.css ); /* font-family declarations, as well as @font-face information for custom fonts */
-@import url( css/master.css ); /* main page structure */
-@import url( css/navigation.css ); /* site navigation style declaration */
-@import url( css/comments.css ); /* stylesheet for wp_list_comments() */
-@import url( css/oenology.css ); /* blog-specific style information */
-@import url( css/plugins.css ); /* plugin-specific style information */
-@import url( css/print.css ) print; /* custom style information for media:print */
