@@ -120,6 +120,7 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 = 1.1 [2011.01.DD] =
 * Maintenance Release
 * Added support for Post Formats (introduced in WordPress 3.1)
+* Added basic Theme options
 * Added check to ensure TwentyTen header images are registered only if TwentyTen is installed
 * Minor tweak/bugfix to ensure floats are cleared properly on paginated posts
 * Minor tweaks to comments.php
@@ -145,6 +146,9 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 Initial Release.
 
 == Upgrade Notice ==
+
+= 1.1 =
+Maintenance release. Post Formats support; Theme options; bugfixes
 
 = 1.0 =
 Maintenance release. Completed inline documentation, added default Widgets, minor bugfixes, CSS clean-up, minor updates
