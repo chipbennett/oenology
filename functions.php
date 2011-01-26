@@ -27,7 +27,7 @@ require_once( 'functions/functions-widgets.php' );
 // Register/Initialize Theme Options
 // Admin Settings Page
 // Contextual Help
-//require_once( TEMPLATEPATH . '/functions/functions-options.php' );
+require_once( '/functions/functions-options.php' );
 
 
 /*

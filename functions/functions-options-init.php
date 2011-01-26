@@ -46,8 +46,8 @@ function oenology_setting_header_nav_menu_position() {
 		<label for="oenology_header_nav_menu_position">
 			Display header navigation menu above or below the site title/description?<br />
 			<select name="theme_oenology_options[header_nav_menu_position]">
-				<option <?php if ( 'above' == $oenology_options['header_nav_menu_position'] ) echo 'selected="selected"'; ?> value="above">Above</option>
-				<option <?php if ( 'below' == $oenology_options['header_nav_menu_position'] ) echo 'selected="selected"'; ?> value="below">Below</option>
+				<option <?php selected( 'above' == $oenology_options['header_nav_menu_position'] ); ?> value="above">Above</option>
+				<option <?php selected( 'below' == $oenology_options['header_nav_menu_position'] ); ?> value="below">Below</option>
 			</select>
 		</label>
 	</p>
@@ -60,8 +60,8 @@ function oenology_setting_footer_credit() {
 		<label for="oenology_footer_credit">
 			Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it.<br />
 			<select name="theme_oenology_options[footer_credit]">
-				<option <?php if ( true == $oenology_options['footer_credit'] ) echo 'selected="selected"'; ?> value="true">Do Not Display</option>
-				<option <?php if ( false == $oenology_options['footer_credit'] ) echo 'selected="selected"'; ?> value="false">Display</option>
+				<option <?php selected( false == $oenology_options['footer_credit'] ); ?> value="false">Do Not Display</option>
+				<option <?php selected( true == $oenology_options['footer_credit'] ); ?> value="true">Display</option>
 			</select>
 		</label>
 	</p>
@@ -77,7 +77,7 @@ function oenology_options_validate( $input ) {
 
 	$valid_input = $oenology_options;	
 	
-	$valid_input['header_nav_menu_location'] = ( 'below' == $input['header_nav_menu_location'] ? 'below' : 'above' );
+	$valid_input['header_nav_menu_position'] = ( 'below' == $input['header_nav_menu_position'] ? 'below' : 'above' );
 	$valid_input['footer_credit'] = ( 'true' == $input['footer_credit'] ? true : false );	
 	
 	return $valid_input;

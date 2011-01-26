@@ -4,12 +4,22 @@ Site header content (main navigation menu, blog title, and description) is conta
 This content is the same for all primary template page types (index.php, single.php, archive.php, page.php). 
 */ 
 ?>
-<!-- Begin Nav Bar -->
-<?php get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. ?>
-<!-- End Nav Bar -->
+
+<?php 
+echo 'Header Nav Menu Position: ' . $oenology_options['header_nav_menu_position'];
+if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
+	get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. 
+}
+?>
 
 <div><?php bloginfo('name'); // Displays the blog name, as defined on the General Settings page in the administration panel ?></div>
 <p><?php bloginfo('description'); // Displays the blog description, as defined on the General Settings page in the administration panel ?></p>
+
+<?php 
+if ( 'below' == $oenology_options['header_nav_menu_position'] ) { 
+	get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. ?
+}
+?>
 
 <?php /*
 Reference:

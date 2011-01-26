@@ -16,7 +16,7 @@ global $oenology_admin_options_hook;
 *******************************************************************************************/
 global $oenology_options_default;
 $oenology_options_default = array(
-		'header_nav_menu_position' => 'top',
+		'header_nav_menu_position' => 'above',
 		'display_footer_credit' => false,
 		'theme_version' => '1.1'
 );
@@ -34,8 +34,9 @@ function oenology_options_init() {
 	$oenology_options = get_option( 'theme_oenology_options' );
 	
 	if ( false === $oenology_options ) {
-		$oenology_options_initial = $oenology_options_default;
+		$oenology_options = $oenology_options_default;
 	}
+	update_option( 'theme_oenology_options', $oenology_options );
 }
 // Initialize Theme options
 add_action('after_setup_theme', 'oenology_options_init', 9 );
@@ -48,7 +49,7 @@ add_action('after_setup_theme', 'oenology_options_init', 9 );
 // Add "Theme Options" link to the "Appearance" menu
 function oenology_menu() {
 	global $oenology_admin_options_hook;
-	$oenology_admin_options_hook = add_theme_page('Theme Options', 'oenology', 'edit_theme_options', 'oenology', 'oenology_admin_options_page');
+	$oenology_admin_options_hook = add_theme_page('Theme Options', 'Oenology Options', 'edit_theme_options', 'oenology', 'oenology_admin_options_page');
 }
 // Load the Admin Options page
 add_action('admin_menu', 'oenology_menu');

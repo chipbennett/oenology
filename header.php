@@ -21,7 +21,10 @@
 
 <!-- End HTML Header -->
 
-<?php /*
+<?php
+global $oenology_options;
+$oenology_options = get_option( 'theme_oenology_options' );
+/*
 Reference:
 =============================================================================
 The following functions, tags, and hooks are used (or referenced) in this Theme template file:
