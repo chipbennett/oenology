@@ -24,7 +24,7 @@ add_settings_section('oenology_settings_general', 'General Options', 'oenology_s
 // Add Header Navigation Menu Position setting to the General section
 add_settings_field('oenology_setting_header_nav_menu_position', 'Header Nav Menu Position', 'oenology_setting_header_nav_menu_position', 'oenology', 'oenology_settings_general');
 // Add Footer Credit Link setting to the General section
-add_settings_field('oenology_setting_footer_credit', 'Footer Credit', 'oenology_setting_footer_credit', 'oenology', 'oenology_settings_general');
+add_settings_field('oenology_setting_display_footer_credit', 'Footer Credit', 'oenology_setting_display_footer_credit', 'oenology', 'oenology_settings_general');
 
 /*****************************************************************************************
 * Add Section Text for Each Form Section
@@ -54,14 +54,14 @@ function oenology_setting_header_nav_menu_position() {
 <?php }
 
 // Display Footer Credit Setting
-function oenology_setting_footer_credit() {
+function oenology_setting_display_footer_credit() {
 	$oenology_options = get_option( 'theme_oenology_options' ); ?>
 	<p>
-		<label for="oenology_footer_credit">
+		<label for="oenology_display_footer_credit">
 			Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it.<br />
-			<select name="theme_oenology_options[footer_credit]">
-				<option <?php selected( false == $oenology_options['footer_credit'] ); ?> value="false">Do Not Display</option>
-				<option <?php selected( true == $oenology_options['footer_credit'] ); ?> value="true">Display</option>
+			<select name="theme_oenology_options[display_footer_credit]">
+				<option <?php selected( false == $oenology_options['display_footer_credit'] ); ?> value="false">Do Not Display</option>
+				<option <?php selected( true == $oenology_options['display_footer_credit'] ); ?> value="true">Display</option>
 			</select>
 		</label>
 	</p>
@@ -78,7 +78,7 @@ function oenology_options_validate( $input ) {
 	$valid_input = $oenology_options;	
 	
 	$valid_input['header_nav_menu_position'] = ( 'below' == $input['header_nav_menu_position'] ? 'below' : 'above' );
-	$valid_input['footer_credit'] = ( 'true' == $input['footer_credit'] ? true : false );	
+	$valid_input['display_footer_credit'] = ( 'true' == $input['display_footer_credit'] ? true : false );	
 	
 	return $valid_input;
 }

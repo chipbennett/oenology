@@ -515,4 +515,14 @@ function oenology_breadcrumb() {
     echo $containerAfter; // End of Container
 
 }
+
+
+/*****************************************************************************************
+* Display a Theme credit link in the site footer
+*******************************************************************************************/
+
+// This option is disabled by default
+function oenology_footer_credit() {
+	echo ' | <a href="http://www.chipbennett.net/themes/oenology">Oenology Theme</a>';
+}
 ?>

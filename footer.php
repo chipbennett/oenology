@@ -6,6 +6,10 @@ if ( function_exists( 'oenology_copyright' ) ) { // if the oenology_copyright() 
 	&copy;  
 	<?php echo date('Y');  // current year
 } ?>  | Powered by <a href="http://wordpress.org" target="_new">WordPress <?php bloginfo('version'); ?></a><?php 
+global $oenology_options;
+if ( 'true' == $oenology_options['display_footer_credit'] ) { // Disabled by default 
+	oenology_footer_credit();  
+}
 	/*
 Reference:
 =============================================================================

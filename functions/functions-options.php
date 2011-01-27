@@ -21,6 +21,17 @@ $oenology_options_default = array(
 		'theme_version' => '1.1'
 );
 
+function oenology_get_default_options() {
+
+    $options = array(
+        'header_nav_menu_position' => 'top',
+        'display_footer_credit' => false,
+        'theme_version' => '1.1'
+    );
+    return $options;
+}
+
+
 
 /*****************************************************************************************
 * Setup initial Theme options
@@ -29,12 +40,11 @@ $oenology_options_default = array(
 function oenology_options_init() {
 
 	// set options equal to defaults
-	global $oenology_options_default;
 	global $oenology_options;
 	$oenology_options = get_option( 'theme_oenology_options' );
 	
 	if ( false === $oenology_options ) {
-		$oenology_options = $oenology_options_default;
+		$oenology_options = oenology_get_default_options();
 	}
 	update_option( 'theme_oenology_options', $oenology_options );
 }

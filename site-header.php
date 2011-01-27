@@ -6,7 +6,7 @@ This content is the same for all primary template page types (index.php, single.
 ?>
 
 <?php 
-echo 'Header Nav Menu Position: ' . $oenology_options['header_nav_menu_position'];
+global $oenology_options;
 if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
 	get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. 
 }
@@ -16,6 +16,7 @@ if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
 <p><?php bloginfo('description'); // Displays the blog description, as defined on the General Settings page in the administration panel ?></p>
 
 <?php 
+$oenology_options = get_option( 'theme_oenology_options' );
 if ( 'below' == $oenology_options['header_nav_menu_position'] ) { 
 	get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. ?
 }

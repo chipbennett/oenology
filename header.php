@@ -23,7 +23,6 @@
 
 <?php
 global $oenology_options;
-$oenology_options = get_option( 'theme_oenology_options' );
 /*
 Reference:
 =============================================================================
