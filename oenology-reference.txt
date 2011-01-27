@@ -1697,7 +1697,7 @@ oenology_admin_header_style() is used to define the CSS to apply to the header i
 on the Custom Header admin option page, as part of the Custom Image Header feature
 
 Used in the following template files:
-functions.php
+functions/functions-theme-setup.php
 
 ***********************
 oenology_breadcrumb()
@@ -1729,7 +1729,7 @@ comments (excluding trackbacks/pingbacks)
 oenology_comment_count() hooks into the get_comments_number() filter hook
 
 Used in the following template files:
-functions.php
+functions/functions-custom.php
 
 ***********************
 oenology_copyright()
@@ -1759,7 +1759,7 @@ according to current location (search query, single post, etc.)
 oenology_filter_wp_title() hooks into the wp_title filter hook
 
 Used in the following template files:
-functions.php
+functions/functions-custom.php
 
 ***********************
 oenology_gallery_image_meta()
@@ -1823,7 +1823,7 @@ oenology_header_style() is used to define the CSS to apply to the header image, 
 of the Custom Image Header feature
 
 Used in the following template files:
-functions.php
+functions/functions-theme-setup.php
 
 ***********************
 oenology_load_widgets()
@@ -1837,7 +1837,7 @@ oenology_load_widgets() is used to register the custom Theme Widgets.
 oenology_load_widgets() hooks into the widgets_init action hook
 
 Used in the following template files:
-functions.php
+functions/functions-widgets.php
 
 ***********************
 oenology_setup()
@@ -1853,7 +1853,7 @@ by a Child Theme, if necessary.
 oenology_setup() hooks into the after_setup_theme action hook
 
 Used in the following template files:
-functions.php
+functions/functions-theme-setup.php
 
 ***********************
 oenology_setup_widgets()
@@ -1868,7 +1868,7 @@ designed to be over-ridden by a Child Theme, if necessary.
 oenology_setup_widgets() hooks into the after_theme_setup action hook
 
 Used in the following template files:
-functions.php
+functions/functions-widgets.php
 
 ***********************
 oenology_show_current_cat_on_single()
@@ -1883,7 +1883,7 @@ oenology_show_current_cat_on_single() is used to add a "current-cat" CSS class, 
 oenology_show_current_cat_on_single() hooks into the wp_list_categories filter hook
 
 Used in the following template files:
-functions.php
+functions/functions-custom.php
 
 ***********************
 oenology_widget_archives()
@@ -1896,7 +1896,7 @@ oenology_widget_archives() outputs the default "Archives" Widget, but adds a "sh
 toggle to the Widget output.
 
 Used in the following template files:
-functions.php
+functions/functions-widgets.php
 
 ***********************
 oenology_widget_categories()
@@ -1909,7 +1909,7 @@ oenology_widget_categories() outputs the default "Categories" Widget, but adds a
 toggle to the Widget output. 
 
 Used in the following template files:
-functions.php
+functions/functions-widgets.php
 
 ***********************
 oenology_widget_linkrollbycat()
@@ -1922,7 +1922,7 @@ oenology_widget_linkrollbycat() outputs the default "Linkroll" Widget, but adds 
 toggle to the Widget output. 
 
 Used in the following template files:
-functions.php
+functions/functions-widgets.php
 
 ***********************
 oenology_widget_recentposts()
@@ -1935,7 +1935,7 @@ oenology_widget_recentposts() outputs the default "Recent Posts" Widget, but add
 toggle to the Widget output. 
 
 Used in the following template files:
-functions.php
+functions/functions-widgets.php
 
 ***********************
 oenology_widget_tags()
@@ -1948,7 +1948,7 @@ oenology_widget_tags() outputs the default "Tags" Widget, but adds a "show/hide"
 toggle to the Widget output. 
 
 Used in the following template files:
-functions.php
+functions/functions-widgets.php
 
 ***********************
 post_class()
@@ -2152,6 +2152,27 @@ register_widget( $widget ) accepts one argument:
 
 Used in the following template files:
 functions.php
+
+***********************
+require_once()
+----------------------------------
+require_once() is a PHP function.
+Codex reference: N/A
+PHP reference: http://php.net/manual/en/function.require-once.php
+
+require_once( $file ) will include the file specified by the $file argument
+
+require_once() will return a fatal error if the specified file cannot be included. Also, if theme
+specified file has already been included, require_once() will not attempt to include it again.
+
+require_once( $file ) accepts one argument:
+ - $file (string): file to be included.
+
+require_once( 'foo.php' )
+ - will include the file "foo.php".
+ 
+Used in the following template files:
+functions.php, functions/functions-options.php, functions/functions-options-init.php
 
 ***********************
 set_post_thumbnail_size()
@@ -2922,3 +2943,20 @@ Used in the following template files:
 functions.php
 
 =============================================================================	
+
+Hooks
+/*
+after_setup_theme
+get_comments_number
+widgets_init
+wp_list_categories
+wp_title
+*/
+
+Global Variables
+/*
+$page
+$paged
+$post
+$wpdb
+*/

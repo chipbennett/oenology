@@ -69,6 +69,7 @@ add_action('admin_menu', 'oenology_menu');
 
 
 // Define Settings Page Tabs
+// http://www.onedesigns.com/tutorials/separate-multiple-theme-options-pages-using-tabs
 function oenology_admin_options_page_tabs( $current = 'general' ) {
 
     if ( isset ( $_GET['tab'] ) ) :
