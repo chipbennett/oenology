@@ -36,13 +36,15 @@ Installation using "Add New Theme"
 Activiation and Use
 
 1. Activate the Theme through the 'Themes' menu in WordPress
-2. The Theme requires no configuration.
+2. See Appearance -> Oenology Options for Theme Options
 
 == Theme Notes ==
 
 === Menu Functionality ===
 
 The Theme fully supports WordPress core Navigation Menu functionality. The main site navigation menu is called "Header Navigation", and the left sidebar page navigation is called "Sidebar Navigation".
+
+The Header Navigation menu can optionally be set to display either above or below the Site Title and Description. By default, the Header Navigation menu displays above the Site Title/Description. To change this setting, see Appearance -> Oenology Options.
 
 The Theme defaults to using wp_list_pages() for these menus, which means that you do not have to create your own menus. With the Theme-default functionality, any time you add pages, they will automatically appear in the menus.
 
@@ -117,10 +119,10 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 
 == Changelog ==
 
-= 1.1 [2011.01.DD] =
+= 1.1 [2011.02.DD] =
 * Maintenance Release
 * Added support for Post Formats (introduced in WordPress 3.1)
-* Added basic Theme options
+* Added basic Theme options: Header Navigation Menu Position, disabled-by-default footer credit link
 * Added check to ensure TwentyTen header images are registered only if TwentyTen is installed
 * Minor tweak/bugfix to ensure floats are cleared properly on paginated posts
 * Minor tweaks to comments.php

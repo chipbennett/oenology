@@ -14,21 +14,24 @@ global $oenology_admin_options_hook;
 /*****************************************************************************************
 * Define the default options
 *******************************************************************************************/
-global $oenology_options_default;
-$oenology_options_default = array(
-		'header_nav_menu_position' => 'above',
-		'display_footer_credit' => false,
-		'theme_version' => '1.1'
-);
 
 function oenology_get_default_options() {
 
     $options = array(
         'header_nav_menu_position' => 'top',
         'display_footer_credit' => false,
+	'varietal' => 'cuvee',
         'theme_version' => '1.1'
     );
     return $options;
+}
+
+function oenology_get_valid_varietals() {
+
+    $varietals = array(
+        'cuvee'
+    );
+    return $varietals;
 }
 
 
@@ -65,11 +68,48 @@ function oenology_menu() {
 add_action('admin_menu', 'oenology_menu');
 
 
+// Define Settings Page Tabs
+function oenology_admin_options_page_tabs( $current = 'general' ) {
+
+    if ( isset ( $_GET['tab'] ) ) :
+        $current = $_GET['tab'];
+    else:
+        $current = 'general';
+    endif;
+    
+    $tabs = array( 
+        'general' => 'General',
+        'varietals' => 'Varietals'
+    );
+    
+    $links = array();
+    
+    foreach( $tabs as $tab => $name ) :
+        if ( $tab == $current ) :
+            $links[] = "<a class='nav-tab nav-tab-active' href='?page=oenology&tab=$tab'>$name</a>";
+        else :
+            $links[] = "<a class='nav-tab' href='?page=oenology&tab=$tab'>$name</a>";
+        endif;
+    endforeach;
+    
+    echo '<h2>';
+    foreach ( $links as $link )
+        echo $link;
+    echo '</h2>';
+    
+}
+
+
 // Admin settings page markup 
 function oenology_admin_options_page() { ?>
+
 	<div>
+		<?php if ( isset( $_GET['settings-updated'] ) ) {
+    			echo "<div class='updated'><p>Theme settings updated successfully.</p></div>";
+		} ?>
 		<h2>Oenology Theme Options</h2>
 		<p>Manage options for the Oenology Theme</p>
+		<?php oenology_admin_options_page_tabs(); ?>
 		<form action="options.php" method="post">
 			<?php 
 			settings_fields('theme_oenology_options');
