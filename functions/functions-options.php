@@ -29,7 +29,7 @@ function oenology_get_default_options() {
 function oenology_get_valid_varietals() {
 
     $varietals = array(
-        'cuvee'
+        'cuvee' => 'Cuvee'
     );
     return $varietals;
 }
@@ -93,7 +93,7 @@ function oenology_admin_options_page_tabs( $current = 'general' ) {
         endif;
     endforeach;
     
-    echo '<h2>';
+    echo '<h2 class="nav-tab-wrapper">';
     foreach ( $links as $link )
         echo $link;
     echo '</h2>';
@@ -116,8 +116,9 @@ function oenology_admin_options_page() { ?>
 			settings_fields('theme_oenology_options');
 			do_settings_sections('oenology');
 			?>
-			<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
-			<input name="theme_oenology_options[reset]" type="submit" value="<?php esc_attr_e('Reset Defaults'); ?>" />
+			<?php $tab = ( isset( $_GET['tab'] ) ? $_GET['tab'] : 'general' ); ?>
+			<input name="theme_oenology_options[submit-<?php echo $tab; ?>]" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
+			<input name="theme_oenology_options[reset-<?php echo $tab; ?>]" type="submit" value="<?php esc_attr_e('Reset Defaults'); ?>" />
 		</form>
 	</div>
 <?php }

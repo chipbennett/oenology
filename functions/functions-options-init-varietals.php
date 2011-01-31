@@ -33,7 +33,11 @@ function oenology_setting_varietal() {
 		<label for="oenology_varietal">
 			Select a varietal<br />
 			<select name="theme_oenology_options[varietal]">
-				<option <?php selected( 'default' == $oenology_options['varietal'] ); ?> value="cuvee">Cuvee</option>
+				<?php
+				$oenology_varietals = oenology_get_valid_varietals();
+				foreach ( $oenology_varietals as $varietal => $name ) { ?>
+					<option <?php selected( $varietal == $oenology_options['varietal'] ); ?> value="<?php echo $varietal; ?>"><?php echo $name; ?></option>
+				<? } ?>
 			</select>
 		</label>
 	</p>
