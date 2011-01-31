@@ -117,6 +117,7 @@ function oenology_admin_options_page() { ?>
 			do_settings_sections('oenology');
 			?>
 			<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
+			<input name="theme_oenology_options[reset]" type="submit" value="<?php esc_attr_e('Reset Defaults'); ?>" />
 		</form>
 	</div>
 <?php }

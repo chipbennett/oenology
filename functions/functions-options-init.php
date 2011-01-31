@@ -16,7 +16,7 @@ register_setting( 'theme_oenology_options', 'theme_oenology_options', 'oenology_
 *******************************************************************************************/
 
 global $pagenow;
-if ( 'themes.php' == $pagenow && 'oenology' == $_GET['page'] ) :
+if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology' == $_GET['page'] ) :
     if ( isset ( $_GET['tab'] ) ) :
         $tab = $_GET['tab'];
     else:
@@ -38,17 +38,31 @@ endif;
 *******************************************************************************************/
 function oenology_options_validate( $input ) {
 
-	global $pagenow;
+	$reset_submit = $input['reset'];
 	
-	$oenology_options = get_option( 'theme_oenology_options' );
-
-	$valid_input = $oenology_options;
+	if ( ! empty( $reset_submit ) ) {
+	  
+	      $default_options = oenology_get_default_options();
+		  
+		  foreach ( $default_options as $option => $value ) {
+			$valid_input[$option] = $value;
+		  }
 	
-	if ( isset ( $_GET['tab'] ) ) {
-        	$tab = $_GET['tab'];
+	      return $valid_input;
+	  
 	} else {
+
+		global $pagenow;
+	
+		$oenology_options = get_option( 'theme_oenology_options' );
+
+		$valid_input = $oenology_options;
+	
+		if ( isset ( $_GET['tab'] ) ) {
+        	$tab = $_GET['tab'];
+		} else {
         	$tab = 'general';
-	}
+		}
     	switch ( $tab ) {
         	case 'general' :
             		$valid_input['header_nav_menu_position'] = ( 'below' == $input['header_nav_menu_position'] ? 'below' : 'above' );
@@ -58,8 +72,10 @@ function oenology_options_validate( $input ) {
             		$valid_varietals = oenology_get_valid_varietals();
             		$valid_input['varietal'] = ( in_array( $input['varietal'], $valid_varietals ) ? $input['varietal'] : $valid_input['varietal'] );
             		break;
-	}
+		}
 	
-	return $valid_input;
+		return $valid_input;
+	
+	}
 }
 ?>
