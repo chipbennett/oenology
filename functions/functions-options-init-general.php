@@ -4,7 +4,7 @@
 *******************************************************************************************/
 	
 // Add a form section for the General theme settings
-add_settings_section('oenology_settings_general', 'General Options', 'oenology_settings_general_section_text', 'oenology');
+add_settings_section('oenology_settings_general', 'Oenelogy Theme General Options', 'oenology_settings_general_section_text', 'oenology');
 	
 /*****************************************************************************************
 * Add Form Fields to General Settings Section
@@ -21,7 +21,7 @@ add_settings_field('oenology_setting_display_footer_credit', 'Footer Credit', 'o
 
 // General Settings Section
 function oenology_settings_general_section_text() { ?>
-	<p><?php _e( 'Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' ); ?></p>
+	<p><?php _e( 'Manage general options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' ); ?></p>
 <?php }
 
 /*****************************************************************************************

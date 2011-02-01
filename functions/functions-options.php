@@ -93,6 +93,7 @@ function oenology_admin_options_page_tabs( $current = 'general' ) {
         endif;
     endforeach;
     
+    echo '<div id="icon-themes" class="icon32"><br /></div>';
     echo '<h2 class="nav-tab-wrapper">';
     foreach ( $links as $link )
         echo $link;
@@ -104,12 +105,10 @@ function oenology_admin_options_page_tabs( $current = 'general' ) {
 // Admin settings page markup 
 function oenology_admin_options_page() { ?>
 
-	<div>
+	<div class="wrap">
 		<?php if ( isset( $_GET['settings-updated'] ) ) {
     			echo "<div class='updated'><p>Theme settings updated successfully.</p></div>";
 		} ?>
-		<h2>Oenology Theme Options</h2>
-		<p>Manage options for the Oenology Theme</p>
 		<?php oenology_admin_options_page_tabs(); ?>
 		<form action="options.php" method="post">
 			<?php 
@@ -117,8 +116,8 @@ function oenology_admin_options_page() { ?>
 			do_settings_sections('oenology');
 			?>
 			<?php $tab = ( isset( $_GET['tab'] ) ? $_GET['tab'] : 'general' ); ?>
-			<input name="theme_oenology_options[submit-<?php echo $tab; ?>]" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
-			<input name="theme_oenology_options[reset-<?php echo $tab; ?>]" type="submit" value="<?php esc_attr_e('Reset Defaults'); ?>" />
+			<input name="theme_oenology_options[submit-<?php echo $tab; ?>]" type="submit" class="button-primary" value="<?php esc_attr_e('Save Settings'); ?>" />
+			<input name="theme_oenology_options[reset-<?php echo $tab; ?>]" type="submit" class="button-secondary" value="<?php esc_attr_e('Reset Defaults'); ?>" />
 		</form>
 	</div>
 <?php }
