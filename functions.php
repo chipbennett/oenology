@@ -4,7 +4,7 @@
 // add_theme_support()
 // $content_width
 // Define custom image sizes, custom headers, nav menus
-require_once( 'functions/functions-theme-setup.php' );
+require( 'functions/functions-theme-setup.php' );
 
 // functions-custom.php includes all of the Theme's custom functions
 // filter wp_title
@@ -14,20 +14,20 @@ require_once( 'functions/functions-theme-setup.php' );
 // 404 error handling
 // current-cat CSS class
 // navigation breadcrumb
-require_once( 'functions/functions-custom.php' );
+require( 'functions/functions-custom.php' );
 
 // functions-widgets.php includes the Theme's Widgetized sidebars and custom Widgets
 // register_sidebar
 // define custom widgets
 // register_widget
-require_once( 'functions/functions-widgets.php' );
+require( 'functions/functions-widgets.php' );
 
 // functions-options.php includes the Theme options and Admin Settings page
 // Define default Theme Options
 // Register/Initialize Theme Options
 // Admin Settings Page
 // Contextual Help
-require_once( 'functions/functions-options.php' );
+require( 'functions/functions-options.php' );
 
 
 /*

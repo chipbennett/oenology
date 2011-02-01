@@ -24,10 +24,10 @@ if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology' == $_GET['
     endif;
     switch ( $tab ) :
         case 'general' :
-            require_once( 'functions-options-init-general.php' );
+            require( 'functions-options-init-general.php' );
             break;
         case 'varietals' :
-            require_once( 'functions-options-init-varietals.php' );
+            require( 'functions-options-init-varietals.php' );
             break;
     endswitch;
 endif;

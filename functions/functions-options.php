@@ -29,7 +29,11 @@ function oenology_get_default_options() {
 function oenology_get_valid_varietals() {
 
     $varietals = array(
-        'cuvee' => 'Cuvee'
+        'cuvee' => array(
+	      'slug' => 'cuvee',
+	      'name' => 'Cuvee',
+	      'description' => 'A cuvee is the French term for a wine vat, and is often used by wineries to describe a particularly high-quality batch or vat of wine. Cuvee is the base style for Oenology, from which all other styles are derived.'
+	      )
     );
     return $varietals;
 }
@@ -127,7 +131,7 @@ function oenology_admin_options_page() { ?>
 // Reference: http://ottopress.com/2009/wordpress-settings-api-tutorial/
 // Reference: http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/
 function oenology_admin_init(){
-	include_once( 'functions-options-init.php' );
+	require( 'functions-options-init.php' );
 }
 // Settings API options initilization and validation
 add_action('admin_init', 'oenology_admin_init');
@@ -141,7 +145,7 @@ add_action('admin_init', 'oenology_admin_init');
 // Separate file for ease of management
 function oenology_contextual_help( $contextual_help, $screen_id, $screen ) {		
 	global $oenology_admin_options_hook;
-	include_once( 'functions-options-help.php' );
+	require( 'functions-options-help.php' );
 	if ( $screen_id == $oenology_admin_options_hook ) {
 		$contextual_help = $text;
 	}

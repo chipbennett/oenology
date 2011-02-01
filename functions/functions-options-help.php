@@ -18,10 +18,13 @@ switch ( $tab ) {
        	case 'varietals' :
        		$text .= "<h2>" . __( 'Varietals', 'oenology' ) . "</h2>";
        		$text .= "<p>" . __('"Varietals" are the "skins" or styles applied to Oenology.', 'oenology') . "</p>";
-       		$text .= "<dl>";
-       		$text .= "<dt>" . __( 'Cuvee', 'oenology' ) . "</dt>";
-       		$text .= "<dd>" . __('Cuvee is the default varietal for Oenology. A cuvee is the French term for a wine vat, and is often used by wineries to describe a particularly high-quality batch or vat of wine. Cuvee is the base style for Oenology, from which all other styles are derived.', 'oenology') . "</dd>";
-       		$text .= "</dl>";
+       		$oenology_varietals = oenology_get_valid_varietals();
+       		foreach ( $oenology_varietals as $varietal ) {
+		      $text .= "<dl>";
+		      $text .= "<dt><strong>" . $varietal['name'] . "</strong></dt>";
+		      $text .= "<dd>" . $varietal['description'] . "</dd>";
+		      $text .= "</dl>";
+       		}
        		break;
 }
 
