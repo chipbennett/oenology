@@ -33,11 +33,15 @@ function oenology_get_valid_varietals() {
 	      'slug' => 'cuvee',
 	      'name' => 'Cuvee',
 	      'description' => 'A cuvee is the French term for a wine vat, and is often used by wineries to describe a particularly high-quality batch or vat of wine. Cuvee is the base style for Oenology, from which all other styles are derived.'
+	      ),
+        'syrah' => array(
+	      'slug' => 'syrah',
+	      'name' => 'Syrah',
+	      'description' => 'Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma.'
 	      )
     );
     return $varietals;
 }
-
 
 
 /*****************************************************************************************
@@ -57,6 +61,24 @@ function oenology_options_init() {
 }
 // Initialize Theme options
 add_action('after_setup_theme', 'oenology_options_init', 9 );
+
+
+/*****************************************************************************************
+* Enqueue Varietal Stylesheet
+*******************************************************************************************/
+
+function oenology_enqueue_varietal_style() {
+
+	// define varietal stylesheet
+	global $oenology_options;
+	$oenology_options = get_option( 'theme_oenology_options' );
+	$varietal_handle = 'oenology_' . $oenology_options['varietal'] . '_stylesheet';
+	$varietal_stylesheet = get_template_directory_uri() . '/varietals/' . $oenology_options['varietal'] . '.css';
+	
+	wp_enqueue_style( $varietal_handle, $varietal_stylesheet );
+}
+// Enqueue Varietal Stylesheet at wp_head()
+add_action('wp_print_styles', 'oenology_enqueue_varietal_style', 11 );
 
 
 /*****************************************************************************************

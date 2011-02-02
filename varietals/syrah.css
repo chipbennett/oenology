@@ -1,0 +1,147 @@
+/* Body Default Style Specifications
+   --------------------
+*/
+body,
+#extent,
+#content,
+#leftcol,
+#main,
+#rightcol {
+	color:#bbb;
+	background-color:#333;
+  } 
+#footer {
+  border-top:1px solid #999;
+  border-bottom:1px solid #bbb;
+  background-color:#282828;
+}
+h1, h2, h3, h4, h5, h6 {
+	color:#fff;
+}
+a:hover { 
+   background-color:#111; 
+}
+dd {
+	background-color: #444;
+}
+.navmenu li a,
+.navmenu li a:link,
+.navmenu li a:visited,
+.navmenu li a:hover,
+.navmenu li a:active,
+.nav-header li a,
+.nav-header li a:link,
+.nav-header li a:visited,
+.nav-header li a:hover,
+.nav-header li a:active {
+	 border: 1px solid #666;
+     border-bottom: 1px solid #000; 
+     border-right: 1px solid #000;
+     background: #333;
+}
+#home #navhome, 
+#pageforum #navforum,
+#nav .current_page_item a,
+#nav .current_page_ancestor a {
+     color:#bbb;
+     border-bottom-color: #333;
+	 border-right-color: #333;
+}
+#extent .postnav li {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  color: #777;
+  background-color:#282828;
+}
+#extent .postnav #breadcrumbs strong {
+  color: #fff;
+  text-shadow: 0px 1px 0px #999;
+}
+#postnavsearch input#s {
+  border: 1px solid #e0e0e0;
+  color: #000;
+  background-color: #bbb;
+}
+#wp-calendar th
+{
+  background-color: #000;
+  color:#bbb;
+}
+#wp-calendar a {
+  border: 1px solid #000;
+  background-color: #333;
+}
+#wp-calendar #today
+{
+  background-color:#666; 
+  border: 1px solid silver;
+}
+body.home .post.sticky {
+	background-color:#282828;
+	border-color: #000;
+}
+.post-title h1 a,
+.post-title h1 a:link,
+.post-title h1 a:visited,
+.post-title h1 a:hover,
+.post-title h1 a:active {
+	color: #fff;
+}
+.post-date .post-date-year {
+  border-bottom:1px solid #999;
+  color:#fff;
+  background-color:#000;
+}
+.post-date .post-date-weekday {
+  color:#ddd;
+  background-color:#666;
+}
+.post-date .post-date-day {
+  color:#ddd;
+  background-color:#666;
+}
+.post-date .post-date-month {
+  color:#ddd;
+  background-color:#666;
+}
+.format-gallery .size-thumbnail img,
+.format-image .size-thumbnail img,
+.format-image .gallery-thumb span {
+	border-color: #000;
+}
+.post-entry blockquote {
+  border-top:1px solid silver;
+  border-bottom: 1px solid gray;
+  background-color: #282828; 
+}
+#content .format-image ul.gallery-meta,
+#content .format-gallery ul.gallery-meta,
+#content .format-audio ul.audiovideo-meta,
+#content .format-video ul.audiovideo-meta {
+	background-color:#282828;
+}
+.post.format-chat .post-entry {
+	background-color: #282828;
+}
+#extent #loop-footer li {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  color: #777;
+  background-color:#282828;
+}
+.commentlist li {
+	  background: #444;
+          border: 1px solid #a8a8a8;
+}
+.commentlist .bypostauthor {
+       background-color: #282828;
+	   border-color: #000;
+}
+.commentlist li .comment-author,
+.commentlist li .comment-meta{
+	background-color:#282828;
+}
+.commentlist .bypostauthor .comment-author,
+.commentlist .bypostauthor .comment-meta{
+	background-color: #000;
+}

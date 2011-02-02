@@ -346,6 +346,7 @@ dt {
 dd {
 	margin-left:10px;
 	padding-left:10px;
+	padding-right:10px;
 	border-left: 1px solid #777;
 	background-color: #f8f8f8;
 }
