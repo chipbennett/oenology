@@ -11,12 +11,13 @@ body,
 	background-color:#333;
   } 
 #footer {
-  border-top:1px solid #999;
-  border-bottom:1px solid #bbb;
+  border-top-color:#444;
+  border-bottom-color:#000;
   background-color:#282828;
+  background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#000000), color-stop(1, #000000));
 }
 h1, h2, h3, h4, h5, h6 {
-	color:#fff;
+	color:#ddd;
 }
 a:hover { 
    background-color:#111; 
@@ -24,6 +25,12 @@ a:hover {
 dd {
 	background-color: #444;
 }
+#header div {
+  color:#ddd;
+}
+#header p {
+  color:#ccc;
+}  
 .navmenu li a,
 .navmenu li a:link,
 .navmenu li a:visited,
@@ -34,24 +41,33 @@ dd {
 .nav-header li a:visited,
 .nav-header li a:hover,
 .nav-header li a:active {
-	 border: 1px solid #666;
+	 border: 1px solid #444;
      border-bottom: 1px solid #000; 
      border-right: 1px solid #000;
      background: #333;
+     background: url(menu-syrah.gif) #333 top left repeat-x;
+     background: -webkit-gradient(linear, left bottom, left top, from(#333333), to(#000000), color-stop(0.9, #000000));
+}
+.navmenu li a:hover,
+.nav-header li a:hover {
+     border: 1px solid #58a;
+     border-bottom-color: #000;
+     border-right-color: #000;
 }
 #home #navhome, 
 #pageforum #navforum,
 #nav .current_page_item a,
 #nav .current_page_ancestor a {
      color:#bbb;
-     border-bottom-color: #333;
-	 border-right-color: #333;
+     border-top-color: #bbb;
+	 border-left-color: #bbb;
 }
 #extent .postnav li {
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  color: #777;
+  border-top-color:#444;
+  border-bottom-color:#000;
+  color:#777;
   background-color:#282828;
+  background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#000000), color-stop(1, #000000));
 }
 #extent .postnav #breadcrumbs strong {
   color: #fff;
@@ -59,9 +75,13 @@ dd {
 }
 #postnavsearch input#s {
   border: 1px solid #e0e0e0;
-  color: #000;
-  background-color: #bbb;
+  color: #fff;
+  background-color: #333;
 }
+#extent #postnavsearch input#searchsubmit {
+	border-color: #777;
+	background-color: #333;
+}  
 #wp-calendar th
 {
   background-color: #000;
@@ -76,6 +96,7 @@ dd {
   background-color:#666; 
   border: 1px solid silver;
 }
+div.post { -webkit-border-radius: 9px; -moz-border-radius: 9px; border-radius: 9px; }
 body.home .post.sticky {
 	background-color:#282828;
 	border-color: #000;
@@ -144,4 +165,13 @@ body.home .post.sticky {
 .commentlist .bypostauthor .comment-author,
 .commentlist .bypostauthor .comment-meta{
 	background-color: #000;
+}
+#commentform input,
+#commentform textarea {
+	color:#fff;
+	background-color:#282828;
+}
+#commentform p code {
+	color:#bbb;
+	background-color:#282828;
 }

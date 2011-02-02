@@ -59,10 +59,8 @@ function oenology_setting_varietal() {
 				$oenology_varietals = oenology_get_valid_varietals();
 				foreach ( $oenology_varietals as $varietal ) { ?>
 					<option <?php selected( $varietal['slug'] == $oenology_options['varietal'] ); ?> value="<?php echo $varietal['slug']; ?>"><?php echo $varietal['name']; ?></option>
-				<? } ?>
+				<?php } ?>
 			</select>
 		</label>
 	</p>
-<?php }
-
-?>
+<?php } ?>
