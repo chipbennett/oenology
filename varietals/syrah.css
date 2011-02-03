@@ -1,6 +1,8 @@
 /* Body Default Style Specifications
    --------------------
 */
+/* Site Layout
+  -------------------------------------------- */
 body,
 #extent,
 #content,
@@ -16,6 +18,8 @@ body,
   background-color:#282828;
   background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#000000), color-stop(1, #000000));
 }
+/* HTML Tags
+  -------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
 	color:#ddd;
 }
@@ -25,12 +29,16 @@ a:hover {
 dd {
 	background-color: #444;
 }
+/* Site Header
+  -------------------------------------------- */
 #header div {
   color:#ddd;
 }
 #header p {
   color:#ccc;
 }  
+/* Site Navigation
+  -------------------------------------------- */
 .navmenu li a,
 .navmenu li a:link,
 .navmenu li a:visited,
@@ -41,19 +49,73 @@ dd {
 .nav-header li a:visited,
 .nav-header li a:hover,
 .nav-header li a:active {
-	 border: 1px solid #444;
-     border-bottom: 1px solid #000; 
-     border-right: 1px solid #000;
+	 border-color: #444;
+     border-bottom-color: #000; 
+     border-right-color: #000;
      background: #333;
      background: url(menu-syrah.gif) #333 top left repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#555555), to(#000000), color-stop(0.9, #000000));
 }
 .navmenu li a:hover,
 .nav-header li a:hover {
-     border: 1px solid #58a;
+     border-color: #58a;
      border-bottom-color: #000;
      border-right-color: #000;
 }
+/* Sidebar Navigation
+  -------------------------------------------- */
+/* SECOND LEVEL: Display second-level list items like subnavmenu */
+#leftcol .subnavmenu .current_page_item li,
+#leftcol .subnavmenu .current_page_parent li,
+#leftcol .subnavmenu .current_page_ancestor li {
+	border-bottom:0;
+    background-color: #777; 
+}
+#leftcol .subnavmenu .current_page_item li ul,
+#leftcol .subnavmenu .current_page_parent li ul,
+#leftcol .subnavmenu .current_page_ancestor li ul {
+	border-left-color: #444;
+     border-right-color: #444;
+}
+/* SECOND LEVEL: Display second-level page links like subnavmenu */
+#leftcol .subnavmenu .current_page_item li a,
+#leftcol .subnavmenu .current_page_parent li a,
+#leftcol .subnavmenu .current_page_parent .current_page_item li a,
+#leftcol .subnavmenu .current_page_ancestor li a {
+     border-color: #444;
+     border-top-color: #444; 
+     background: url(menu-syrah.gif) #333 top left repeat-x;
+     background: -webkit-gradient(linear, left bottom, left top, from(#555555), to(#000000), color-stop(0.9, #000000));
+}
+#leftcol .subnavmenu .current_page_parent .current_page_item a,
+#leftcol .subnavmenu .current_page_parent .current_page_item a:hover {
+     color:#fff;
+	 border-color:#444;
+     border-bottom-color: #fff;	 
+     border-right-color: #fff;
+}
+/* THIRD LEVEL: Set display for current_page_item */
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item a {
+     color:#fff;
+     border-color: #fff;
+}
+/* THIRD LEVEL: Reset display for fourth-level page links */
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a {
+     border-color: #444;
+     background: #000;	
+}
+/* FOURTH LEVEL: Display fourth-level page links like subsubsubnavmenu */
+#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a {
+	 background:none;
+	 background-color:#282828;
+}
+#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor .current_page_item a:hover {
+    border-color:1px solid #fff;
+}
+/* Infobar
+  -------------------------------------------- */
 #home #navhome, 
 #pageforum #navforum,
 #nav .current_page_item a,
@@ -74,7 +136,7 @@ dd {
   text-shadow: 0px 1px 0px #999;
 }
 #postnavsearch input#s {
-  border: 1px solid #e0e0e0;
+  border-color: #e0e0e0;
   color: #fff;
   background-color: #333;
 }
@@ -82,6 +144,8 @@ dd {
 	border-color: #777;
 	background-color: #333;
 }  
+/* Sidebar: Calendar
+  -------------------------------------------- */
 #wp-calendar th
 {
   background-color: #000;
@@ -96,6 +160,8 @@ dd {
   background-color:#666; 
   border-color: silver;
 }
+/* Loop Header
+  -------------------------------------------- */
 .pagetitle {
   color:#ccc;
 }
@@ -108,6 +174,8 @@ dd {
 .cat-description em {
   color:#bbb;
 }
+/* Post
+  -------------------------------------------- */
 div.post {
 	border-color:#000;
 	-webkit-border-radius: 9px; 
@@ -117,6 +185,8 @@ body.home .post.sticky {
 	background-color:#282828;
 	border-color: #000;
 }
+/* Post Meta: Title
+  -------------------------------------------- */
 .post-title h1 a,
 .post-title h1 a:link,
 .post-title h1 a:visited,
@@ -124,6 +194,8 @@ body.home .post.sticky {
 .post-title h1 a:active {
 	color: #fff;
 }
+/* Post Meta: Date
+  -------------------------------------------- */
 .post-date .post-date-year {
   border-bottom:1px solid #999;
   color:#fff;
@@ -141,11 +213,8 @@ body.home .post.sticky {
   color:#ddd;
   background-color:#666;
 }
-.format-gallery .size-thumbnail img,
-.format-image .size-thumbnail img,
-.format-image .gallery-thumb span {
-	border-color: #181818;
-}
+/* Post Entry
+  -------------------------------------------- */
 .post-entry a:hover {
   background-color:#111;
 }
@@ -153,6 +222,13 @@ body.home .post.sticky {
   border-top:1px solid silver;
   border-bottom: 1px solid gray;
   background-color: #282828; 
+}
+/* Post Formats
+  -------------------------------------------- */
+.format-gallery .size-thumbnail img,
+.format-image .size-thumbnail img,
+.format-image .gallery-thumb span {
+	border-color: #181818;
 }
 #content .format-image ul.gallery-meta,
 #content .format-gallery ul.gallery-meta,
@@ -163,19 +239,23 @@ body.home .post.sticky {
 .post.format-chat .post-entry {
 	background-color: #282828;
 }
+/* Loop Footer
+  -------------------------------------------- */
 #extent #loop-footer li {
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   color: #777;
   background-color:#282828;
 }
+/* Comments and Comment Form
+  -------------------------------------------- */
 .commentlist li {
-	  background: #444;
-          border: 1px solid #a8a8a8;
+	background: #444;
+    border-color: #a8a8a8;
 }
 .commentlist .bypostauthor {
-       background-color: #282828;
-	   border-color: #000;
+    background-color: #282828;
+	border-color: #000;
 }
 .commentlist li .comment-author,
 .commentlist li .comment-meta{
