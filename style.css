@@ -925,6 +925,9 @@ body.single-format-image #content img {
   font-weight:bold;
   text-align:left;
 }
+body.search-results .pagetitle {
+  width:100%;
+}
 .cat-description {
   display:block;
   float:none;

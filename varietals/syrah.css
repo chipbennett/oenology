@@ -46,7 +46,7 @@ dd {
      border-right: 1px solid #000;
      background: #333;
      background: url(menu-syrah.gif) #333 top left repeat-x;
-     background: -webkit-gradient(linear, left bottom, left top, from(#333333), to(#000000), color-stop(0.9, #000000));
+     background: -webkit-gradient(linear, left bottom, left top, from(#555555), to(#000000), color-stop(0.9, #000000));
 }
 .navmenu li a:hover,
 .nav-header li a:hover {
@@ -94,9 +94,25 @@ dd {
 #wp-calendar #today
 {
   background-color:#666; 
-  border: 1px solid silver;
+  border-color: silver;
 }
-div.post { -webkit-border-radius: 9px; -moz-border-radius: 9px; border-radius: 9px; }
+.pagetitle {
+  color:#ccc;
+}
+.cat-description {
+  color:#ddd;
+}
+.cat-description strong {
+  color:#bbb;
+}
+.cat-description em {
+  color:#bbb;
+}
+div.post {
+	border-color:#000;
+	-webkit-border-radius: 9px; 
+	-moz-border-radius: 9px; 
+	border-radius: 9px; }
 body.home .post.sticky {
 	background-color:#282828;
 	border-color: #000;
@@ -128,7 +144,10 @@ body.home .post.sticky {
 .format-gallery .size-thumbnail img,
 .format-image .size-thumbnail img,
 .format-image .gallery-thumb span {
-	border-color: #000;
+	border-color: #181818;
+}
+.post-entry a:hover {
+  background-color:#111;
 }
 .post-entry blockquote {
   border-top:1px solid silver;

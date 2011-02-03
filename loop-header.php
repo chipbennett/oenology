@@ -1,6 +1,6 @@
  <?php if(is_archive()) { 
 	$post = $posts[0]; // Hack. Set $post so that the_date() works.
-	$rssimageurl = get_template_directory_uri() . '/images/subscribewide.jpg';
+	$rssimageurl = get_template_directory_uri() . '/images/subscribewide.png';
 	if (is_category()) { // If this is a category archive  ?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo home_url(); ?>/category/<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename;?>/feed/">
