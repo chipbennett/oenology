@@ -38,6 +38,11 @@ function oenology_get_valid_varietals() {
 	      'slug' => 'syrah',
 	      'name' => 'Syrah',
 	      'description' => 'Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma.'
+	      ),
+        'seyval-blanc' => array(
+	      'slug' => 'seyval-blanc',
+	      'name' => 'Seyval Blanc',
+	      'description' => 'Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral.'
 	      )
     );
     return $varietals;
