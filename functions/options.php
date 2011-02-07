@@ -153,12 +153,13 @@ function oenology_admin_options_page() { ?>
 	</div>
 <?php }
 
+// Admin settings page Form Fields markup
+// 
 // Codex Reference: http://codex.wordpress.org/Settings_API
-// Codex Reference: http://codex.wordpress.org/Data_Validation
 // Reference: http://ottopress.com/2009/wordpress-settings-api-tutorial/
 // Reference: http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/
 function oenology_admin_init(){
-	require( 'functions-options-init.php' );
+	require( get_template_directory() . '/functions/options-init.php' );
 }
 // Settings API options initilization and validation
 add_action('admin_init', 'oenology_admin_init');
@@ -172,7 +173,7 @@ add_action('admin_init', 'oenology_admin_init');
 // Separate file for ease of management
 function oenology_contextual_help( $contextual_help, $screen_id, $screen ) {		
 	global $oenology_admin_options_hook;
-	require( 'functions-options-help.php' );
+	require( get_template_directory() . '/functions/options-help.php' );
 	if ( $screen_id == $oenology_admin_options_hook ) {
 		$contextual_help = $text;
 	}

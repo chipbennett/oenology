@@ -1,12 +1,12 @@
 <?php
 
-// functions-theme-setup.php includes all of the various Theme setup:
+// theme-setup.php includes all of the various Theme setup:
 // add_theme_support()
 // $content_width
 // Define custom image sizes, custom headers, nav menus
-require( 'functions/functions-theme-setup.php' );
+require( get_template_directory() . '/functions/theme-setup.php' );
 
-// functions-custom.php includes all of the Theme's custom functions
+// custom.php includes all of the Theme's custom functions
 // filter wp_title
 // filter comment_count
 // Custom footer copyright notice
@@ -14,20 +14,20 @@ require( 'functions/functions-theme-setup.php' );
 // 404 error handling
 // current-cat CSS class
 // navigation breadcrumb
-require( 'functions/functions-custom.php' );
+require( get_template_directory() . '/functions/custom.php' );
 
 // functions-widgets.php includes the Theme's Widgetized sidebars and custom Widgets
 // register_sidebar
 // define custom widgets
 // register_widget
-require( 'functions/functions-widgets.php' );
+require( get_template_directory() . '/functions/widgets.php' );
 
 // functions-options.php includes the Theme options and Admin Settings page
 // Define default Theme Options
 // Register/Initialize Theme Options
 // Admin Settings Page
 // Contextual Help
-require( 'functions/functions-options.php' );
+require( get_template_directory() . '/functions/options.php' );
 
 
 /*
