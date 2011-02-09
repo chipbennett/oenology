@@ -32,7 +32,7 @@ function oenology_get_valid_varietals() {
         'cuvee' => array(
 	      'slug' => 'cuvee',
 	      'name' => 'Cuvee',
-	      'description' => 'A cuvee is the French term for a wine vat, and is often used by wineries to describe a particularly high-quality batch or vat of wine. Cuvee is the base style for Oenology, from which all other styles are derived.'
+	      'description' => '"Cuvee" is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is the base style for Oenology.'
 	      ),
         'syrah' => array(
 	      'slug' => 'syrah',
