@@ -12,11 +12,11 @@ register_setting( 'theme_oenology_options', 'theme_oenology_options', 'oenology_
 
 
 /*****************************************************************************************
-* Load Settings Page Tab Content
+* Register Settings Per Tab Content
 *******************************************************************************************/
 
 global $pagenow;
-if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology' == $_GET['page'] ) :
+if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology-settings' == $_GET['page'] ) :
     if ( isset ( $_GET['tab'] ) ) :
         $tab = $_GET['tab'];
     else:
@@ -24,10 +24,10 @@ if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology' == $_GET['
     endif;
     switch ( $tab ) :
         case 'general' :
-            require( get_template_directory() . '/functions/options-init-general.php' );
+            require( get_template_directory() . '/functions/options-register-general.php' );
             break;
         case 'varietals' :
-            require( get_template_directory() . '/functions/options-init-varietals.php' );
+            require( get_template_directory() . '/functions/options-register-varietals.php' );
             break;
     endswitch;
 endif;

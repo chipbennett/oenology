@@ -1,43 +1,253 @@
-Reference:
-=============================================================================
-The following functions, tags, and hooks are used (or referenced) in this Theme template file:
+<?php 
 
-***********************
-$_SERVER[]
-----------------------------------
-$_SERVER[] is a PHP function that returns various server variables.
-Codex reference: N/A
+/* Load Settings Page Tab Content
+*******************************************************************************************/
+
+global $pagenow;
+if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology-reference' == $_GET['page'] ) :
+    if ( isset ( $_GET['tab'] ) ) :
+        $tab = $_GET['tab'];
+    else:
+        $tab = 'general';
+    endif;
+    switch ( $tab ) :
+        case 'general' :
+            oenology_reference_page_general();
+            break;
+        case 'faq' :
+            oenology_reference_page_faq();
+            break;
+        case 'coderef' :
+            oenology_reference_page_coderef();
+            break;
+        case 'changelog' :
+            oenology_reference_page_changelog();
+            break;
+    endswitch;
+endif;
+
+
+/* Reference Page Tab Content
+*******************************************************************************************/
+
+// Changelog Tab
+function oenology_reference_page_changelog() { ?>
+	
+	<h3>1.1 [2011.02.DD]</h3>
+	<p>Update Release</p>
+	<ol>
+	<li>New Features:
+		<ol>
+		<li>Added support for Post Formats (introduced in WordPress 3.1)</li>
+		<li>Added basic Theme options: Header Navigation Menu Position, disabled-by-default footer credit link</li>
+		<li>Added Theme color schemes ("Varietals"): Syrah, Seyval Blanc</li>
+		</ol>
+	</li>
+	<li>Maintenance/Bugfixes:
+		<ol>
+		<li>Added check to ensure TwentyTen header images are registered only if TwentyTen is installed</li>
+		<li>Minor tweak/bugfix to ensure floats are cleared properly on paginated posts</li>
+		<li>Minor tweaks to comments.php</li>
+		</ol>
+	</li>
+	</ol>
+
+	<h3>1.0 [2010.12.08]</h3>
+	<p>Maintenance Release</p>
+	<ol>
+	<li>Moved all CSS declarations into style.css, and eliminated @import calls</li>
+	<li>Cleaned up un-needed CSS files in css\ and css\fonts\ directories; removed css\fonts\ directory.</li>
+	<li>Fixed a few minor bugs</li>
+	<li>Added Prev/Next page navigation in Loop Footer, to match Infobar navigation</li>
+	<li>Added default Widgets to appear in each sidebar if no widgets are defined by the user</li>
+	<li>Finished adding inline documentation for all functions used in the Theme, including functions.php</li>
+	<li>Added default "(Untitled)" text to appear in place of Title for Posts without a defined Post Title</li>
+	<li>Removed translation strings. Internationalization will be added in a later revision.</li>
+	</ol>
+
+	<h3>0.9.2 [2010.11.04]</h3>
+	<p>Minor BugFix release</p>
+	<ol>
+	<li>Fixed divide-by-zero PHP notice generated on the attachment page when the image metadata indicates 
+	a shutter speed of zero.</li>
+	<li>Fixed minor CSS image dimension bug</li>
+	<li>Updated Theme tags</li>
+	</ol>
+
+	<h3>0.9.1 [2010.09.24]</h3>
+	<p>Initial Release.</p>
+	
+<?php }
+
+// Changelog Tab
+function oenology_reference_page_general() { ?>
+	
+	<h3>Menu Functionality</h3>
+
+	<p>The Theme fully supports WordPress core Navigation Menu functionality. The main site navigation menu 
+	is called "Header Navigation", and the left sidebar page navigation is called "Sidebar Navigation".</p>
+
+	<p>The Header Navigation menu can optionally be set to display either above or below the Site Title and 
+	Description. By default, the Header Navigation menu displays above the Site Title/Description. To change 
+	this setting, see Appearance -> Oenology Options.</p>
+
+	<p>The Theme defaults to using wp_list_pages() for these menus, which means that you do not have to create 
+	your own menus. With the Theme-default functionality, any time you add pages, they will automatically appear 
+	in the menus.</p>
+
+	<p>The Header Navigation menu shows only top-level Pages. The Sidebar Navigation shows up to four levels of 
+	Child Pages, and shows the current Page and its Child Pages. Second-level Child Pages show from the first level, 
+	third-level Child Pages show from the second level, and fourth-level Child Pages show from the third level.</p>
+
+	<p>Menus are displayed as lists, with each list item being a link displaying a Page Title. The list items are 
+	styled so that overly long Page Titles will not break the layout. Long Page Titles will be cut off, and the full 
+	Page Title will appear in the tooltip when hovering over the link.</p>
+
+	<h3>Post Thumbnail Functionality</h3>
+
+	<p>The Theme fully supports WordPress core Post Thumbnail functionality. By default, Post Thumbnails will appear 
+	in the Post Title for Archive, Taxonomy (Category/Tag), and Search pages.</p>
+
+	<h3>Custom Header Image Functionality</h3>
+
+	<p>The Theme fully supports WordPress core Custom Header Image functionality. The Theme is configured to make the 
+	TwentyTen header images available if TwentyTen is installed. Custom images will be cropped to 1000x198px when uploaded.</p>
+
+	<h3>Custom Background Functionality</h3>
+
+	<p>The Theme fully supports WordPress core Custom Background functionality. Background image or color is applied to 
+	the BODY tag, and will appear outside the Theme content.</p>
+
+	<h3>Post Formats Functionality</h3>
+
+	<p>The Theme fully supports WordPress core Post Formats functionality. Custom layout and style are applied for each of 
+	the core Post Format types: Aside, Audio, Chat, Gallery, Image, Link, Status, and Video. Post Format archive pages are 
+	linked in the post footer of each post that uses a Post Format other than "standard". Also, the Theme includes a custom 
+	Widget to display a list of Post Format types, similar to the Category list or Tag list.</p>
+
+	<h3>Widgets</h3>
+
+	<p>The Theme includes some custom Widgets, that can take the place of their built-in counterparts. In fact, the custom 
+	Widgets are essentially identical to the core Widgets, except that the custom Widgets are collapsible. The following 
+	Widgets are available:</p>
+	<ol>
+		<li>Archives</li>
+		<li>Categories</li>
+		<li>Linkroll by Cat</li>
+		<li>Post Formats</li>
+		<li>Recent Posts</li>
+		<li>Tags</li>
+	</ol>
+	
+<?php }
+
+// FAQ Tab
+function oenology_reference_page_faq() { ?>
+	
+	<h3>So, how do I learn from Oenology?</h3>
+
+	<p>Each Theme template file includes a considerable amount of inline documentation, explaining the code 
+	use. Also, each template file includes a function reference, that lists each function, hook, and tag 
+	used in the file, along with a WordPress Codex reference, an explanation of the function, and example usage.</p>
+
+	<h3>What is oenology-reference.txt?</h3>
+
+	<p>oenology-reference.txt is the master cross-reference file, that contains all of the functions, template tags, 
+	and hooks used in the Theme.</p>
+
+	<h3>Why so many template files?</h3>
+
+	<p>Oenology is likely broken down into more template parts than the average Theme. This deconstruction is by 
+	design, in order to facilitate easier Child-Theming.</p>
+
+	<h3>What's in store for the future?</h3>
+
+	<p>First and foremost, since Oenology is intended to be a learning tool, the inline and reference documentation 
+	will be a continual work-in-progress, based upon user feedback. This documentation is complete as of Oenology 
+	Version 1.0, but will continue to be updated and improved.</p>
+
+	<p>Other features that may be added in the future:</p>
+	<ol>
+	<li>Internationalization</li>
+	<li>Theme Options</li>
+	<li>others, as determined by user feedback and demand</li>
+	</ol>
+
+	<h3>What About SEO?</h3>
+ 
+	<p>I am a firm believer that the single, most important criterion for SEO is good content. That said, the Theme 
+	does take apply some SEO considerations:</p>
+	<ol>
+	<li>The Theme assumes that the H1 heading tag will only be applied to the Post Title, and not to any post-entry 
+	content. Accordingly, if you use an H1 heading in the post-entry content, you'll find that it is styled rather 
+	similarly to the H2 heading tag.</li>
+	<li>The Theme template files ensure that the most important content - the post-entry content - is rendered 
+	as early as possible. The loop.php template file is called first, and the sidebar-left.php and sidebar-right.php 
+	files are called second.</li>
+	<li>The Theme supplies a default breadcrumb navigation function.</li>
+	<li>The Theme includes plug-and-play support for the following plugins: WP-Paginate, Yoast Breadcrumbs</li>
+	</ol>
+
+	<p>Most of the rest is really up to the user. The Theme is intended to be SEO-neutral: neither hurting your SEO, 
+	nor going out of its way (and adding considerable bloat that is better added via the many good plugins available) 
+	to improve it.</p>
+	
+<?php }
+
+// Code Ref Tab
+function oenology_reference_page_coderef() { ?>
+
+<div class="updated"><p><strong>Please note: this page is a work-in-progress! For the time being, refer to the <em>oenology-reference.txt</em>
+file in the Theme root directory for a better-formatted version of this information.</strong></p></div>
+
+<p>The following functions, tags, and hooks are used (or referenced) in Oenology:</p>
+
+<h3>$_SERVER[]</h3>
+<p><code>$_SERVER[]</code> is a PHP function that returns various server variables.</p>
+<ul style="list-style:disc inside;margin-left:25px;">
+<li>Codex reference: N/A</li>
+<li>PHP reference: <a href="http://php.net/manual/en/reserved.variables.server.php">$_SERVER</a></li>
+</ul>
+
+<p>Example:</p>
+<ul style="list-style:disc inside;margin-left:25px;">
+<li><code>$_SERVER['PHP_SELF']</code><br />Returns the name of the current file</li>
+</ul>
+
+<p>Used in the following template files:</p>
+<ul style="list-style:disc inside;margin-left:25px;">
+<li>(tbd)</li>
+</ul>
+
+
+<h3>add_action()</h3>
+<p><code>add_action()</code> is a WordPress function.</p>
+<ul style="list-style:disc inside;margin-left:25px;">
+<li>Codex reference: http://codex.wordpress.org/Function_Reference/add_action</li>
+</ul>
+
+<p><code>add_action()</code> is used to hook a function into a WordPress action</p>
+
+<p><code>add_action( $tag, $function_to_add, $priority, $accepted_args )</code> accepts four arguments:</p>
+<ul style="list-style:disc inside;margin-left:25px;">
+<li><code>$tag:</code> WordPress action into which to hook the function.<br />Default: none</li>
+<li><code>$function_to_add:</code> function to hook into the WordPress action.<br />Default: none</li>
+<li><code>$priority:</code> relative priority (order of execution, lower numbers execute sooner) of function.<br />Default: 10</li>
+<li><code>$accepted_args:</code> number of arguments accepted by function being hooked.<br />Default: 1</li>
+</ul>
 
 Example:
-$_SERVER['PHP_SELF'] - returns the name of the current file
+<ul style="list-style:disc inside;margin-left:25px;">
+<li><code>add_action( 'after_setup_theme', 'oenology_setup', 10 );</code>
+Hooks custom function oenology_setup() into the "after_setup_theme" action, with the default priority</li>
+</ul>
 
-Used in the following template files:
+<p>Used in the following template files:</p>
+<ul style="list-style:disc inside;margin-left:25px;">
+<li>functions.php</li>
+</ul>
 
-
-***********************
-add_action()
-----------------------------------
-add_action() is a WordPress function.
-Codex reference: http://codex.wordpress.org/Function_Reference/add_action
-
-add_action() is used to hook a function into a WordPress action
-
-add_action( $tag, $function_to_add, $priority, $accepted_args ) accepts four arguments:
- - $tag: WordPress action into which to hook the function. Default: none
- - $function_to_add: function to hook into the WordPress action. Default: none
- - $priority: relative priority (order of execution, lower numbers execute sooner) of function. Default: 10
- - $accepted_args: number of arguments accepted by function being hooked. Default: 1
-
-Example:
-add_action( 'after_setup_theme', 'oenology_setup', 10 );
-Hooks custom function oenology_setup() into the "after_setup_theme" action, with the default priority
-
-Used in the following template files:
-functions.php
-
-***********************
-add_custom_background()
-----------------------------------
+<h3>add_custom_background()</h3>
 add_custom_background() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/add_custom_background
 
@@ -55,9 +265,7 @@ Adds custom background support to Theme, with no default background image define
 Used in the following template files:
 functions.php
 
-***********************
-add_custom_image_header()
-----------------------------------
+<h3>add_custom_image_header()</h3>
 add_custom_image_header() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/add_custom_image_header
 
@@ -76,9 +284,7 @@ oenology_admin_header_style().
 Used in the following template files:
 functions.php
 
-***********************
-add_editor_style()
-----------------------------------
+<h3>add_editor_style()</h3>
 add_editor_style() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/add_editor_style
 
@@ -95,9 +301,7 @@ Adds custom visual editor style support to Theme, with styles defined in CSS fil
 Used in the following template files:
 functions.php
 
-***********************
-add_filter()
-----------------------------------
+<h3>add_filter()</h3>
 add_filter() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/add_filter
 
@@ -116,9 +320,7 @@ Hooks custom function oenology_comment_count() into the "get_comment_count" filt
 Used in the following template files:
 functions.php
 
-***********************
-add_image_size()
-----------------------------------
+<h3>add_image_size()</h3>
 add_image_size() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/add_image_size
 
@@ -140,9 +342,7 @@ Adds a custom image size "attachment-nav-thumbnail", 45px wide, 45px in height, 
 Used in the following template files:
 functions.php
 
-***********************
-add_theme_support()
-----------------------------------
+<h3>add_theme_support()</h3>
 add_theme_support() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/add_theme_support
 
@@ -160,9 +360,7 @@ Adds Theme support for core WordPress Post Thumbnails feature
 Used in the following template files:
 functions.php
 
-***********************
-apply_filters()
-----------------------------------
+<h3>apply_filters()</h3>
 apply_filters() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/apply_filters
 
@@ -181,9 +379,7 @@ $title = apply_filters( 'widget_title', empty($instance['title']) ? 'oenology Re
 Used in the following template files:
 functions.php
 
-***********************
-array_map()
-----------------------------------
+<h3>array_map()</h3>
 array_map() is a PHP function.
 PHP reference: http://php.net/manual/en/function.array-map.php
 
@@ -199,9 +395,7 @@ array_map( $callback, $array ) accepts two arguments:
 Used in the following template files:
 functions.php
 
-***********************
-array_reverse()
-----------------------------------
+<h3>array_reverse()</h3>
 array_reverse() is a PHP function.
 PHP reference: http://php.net/manual/en/function.array-reverse.php
 
@@ -221,9 +415,7 @@ Reverses the order of elements in the $breadcrumb array (containing a list of Pa
 Used in the following template files:
 functions.php
 
-***********************
-array_values()
-----------------------------------
+<h3>array_values()</h3>
 array_values() is a PHP function.
 PHP reference: http://php.net/manual/en/function.array-values.php
 
@@ -238,9 +430,7 @@ array_values( $array ) accepts one argument:
 Used in the following template files:
 functions.php
 
-***********************
-basename()
-----------------------------------
+<h3>basename()</h3>
 basename() is a PHP function.
 PHP reference: http://php.net/manual/en/function.basename.php
 
@@ -253,9 +443,7 @@ basename( $path, $ext ) accepts two arguments:
 Used in the following template files:
 functions.php
 
-***********************
-bloginfo()
-----------------------------------
+<h3>bloginfo()</h3>
 bloginfo() is a WordPress template tag.  
 Codex reference: http://codex.wordpress.org/Function_Reference/bloginfo
 
@@ -275,9 +463,7 @@ bloginfo() prints (displays/outputs) the data requested. To get, but not display
 Used in the following template files:
 footer.php, functions.php, header.php, loop-header.php, site-header.php
 
-***********************
-body_class()
-----------------------------------
+<h3>body_class()</h3>
 body_class() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Template_Tags/body_class
 
@@ -289,9 +475,7 @@ For the full list of CSS classes returned by body_class(), see the Codex.
 Used in the following template files:
 404.php, index.php, page.php
 
-***********************
-category_description()
-----------------------------------
+<h3>category_description()</h3>
 category_description() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/category_description
 
@@ -306,9 +490,7 @@ category_description( $cat ) accepts one argument:
  Used in the following template files:
  loop-header.php
 
-***********************
-comment_form()
-----------------------------------
+<h3>comment_form()</h3>
 comment_form() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Template_Tags/comment_form
 
@@ -328,9 +510,7 @@ comment_form() must be used from within the Loop, unless the $postid parameter i
 Used in the following template files:
 comments.php
 
-***********************
-comments_link()
-----------------------------------
+<h3>comments_link()</h3>
 comments_link() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Template_Tags/comments_link
 
@@ -347,9 +527,7 @@ comments_link() must be used within the Loop.
 Used in the following template files:
 post-header.php
 
-***********************
-comments_number()
-----------------------------------
+<h3>comments_number()</h3>
 comments_number() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/comments_number
 
@@ -372,9 +550,7 @@ comments_number() must be used within the Loop.
 Used in the following template files:
 comments.php, post-header.php
 
-***********************
-comments_open()
-----------------------------------
+<h3>comments_open()</h3>
 comments_open() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/comments_open
 
@@ -389,9 +565,7 @@ comments_open() must be used from within the Loop, unless the $postid parameter 
 Used in the following template files:
 comments.php, loop.php
 
-***********************
-count()
-----------------------------------
+<h3>count()</h3>
 count() is a PHP function.
 PHP reference: http://php.net/manual/en/function.count.php
 
@@ -411,9 +585,7 @@ Returns the number of comments of type 'comment' (rather than 'trackback' or 'pi
 Used in the following template files:
 functions.php
 
-***********************
-create_function()
-----------------------------------
+<h3>create_function()</h3>
 create_function() is a WordPress function.
 PHP reference: http://php.net/manual/en/function.create-function.php
 
@@ -427,9 +599,7 @@ create_function( $args, $code ) accepts two arguments:
 Used in the following template files:
 functions.php
 
-***********************
-date()
-----------------------------------
+<h3>date()</h3>
 date() is a PHP function that returns the current date.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.date.php
@@ -439,9 +609,7 @@ date() accepts one argument: a string indicating the date format.
 Used in the following template files:
 footer.php
 
-***********************
-define()
-----------------------------------
+<h3>define()</h3>
 define() is a PHP function.
 PHP reference: http://php.net/manual/en/function.define.php
 
@@ -462,9 +630,7 @@ Defines the "HEADER_TEXTCOLOR" constant, with a value of "000000" (the HEX value
 Used in the following template files:
 functions.php
 
-***********************
-dynamic_sidebar()
-----------------------------------
+<h3>dynamic_sidebar()</h3>
 dynamic_sidebar() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/dynamic_sidebar
 
@@ -476,9 +642,7 @@ Dynamic sidebars must be defined and registered. Refer to functions.php for more
 Used in the following template files:
 sidebar-left.php, sidebar-right.php
 
-***********************
-edit_post_link()
-----------------------------------
+<h3>edit_post_link()</h3>
 edit_post_link() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/edit_post_link
 
@@ -503,9 +667,7 @@ edit_post_link() must be used within the Loop, unless the $id argument is specif
 Used in the following template files:
 post-header.php
 
-***********************
-file_exists()
-----------------------------------
+<h3>file_exists()</h3>
 file_exists() is a PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.file-exists.php
@@ -523,9 +685,7 @@ file_exists( get_theme_root() . '/twentyten/style.css' )
 Used in the following template files:
 functions.php
 
-***********************
-filesize()
-----------------------------------
+<h3>filesize()</h3>
 filesize() is a PHP function.
 PHP reference: http://php.net/manual/en/function.filesize.php
 
@@ -537,9 +697,7 @@ filesize( $file ) accepts arguments:
 Used in the following template files:
 functions.php
 
-***********************
-function_exists()
-----------------------------------
+<h3>function_exists()</h3>
 function_exists() is a boolean (returns TRUE or FALSE) conditional PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.function-exists.php
@@ -549,9 +707,7 @@ function_exists( 'foo' ) returns TRUE if a function named foo() is found; otherw
 Used in the following template files:
 404.php, functions.php, loop-footer.php, post-entry.php
 
-***********************
-get_avatar()
-----------------------------------
+<h3>get_avatar()</h3>
 get_avatar() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_avatar
 
@@ -572,25 +728,19 @@ Used in the following template files:
 post-footer.php
 
 
-***********************
-get_bloginfo()
-----------------------------------
+<h3>get_bloginfo()</h3>
 See: bloginfo()
 
 Used in the following template files:
 functions.php
 
-***********************
-get_category()
-----------------------------------
+<h3>get_category()</h3>
 See: the_category()
 
 Used in the following template files:
 functions.php
 
-***********************
-get_category_parents()
-----------------------------------
+<h3>get_category_parents()</h3>
 get_category_parents() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_category_parents
 
@@ -612,9 +762,7 @@ get_category_parents( $category, $displaylink, $separator, $nicename ) accepts f
 Used in the following template files:
 functions.php
 
-***********************
-get_children()
-----------------------------------
+<h3>get_children()</h3>
 get_children() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_children
 
@@ -629,9 +777,7 @@ get_children( $args[string] ) accepts multiple arguments. See the Codex for full
 Used in the following template files:
 functions.php
 
-***********************
-get_comment_link()
-----------------------------------
+<h3>get_comment_link()</h3>
 get_comment_link() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_comment_link
 
@@ -649,9 +795,7 @@ get_comment_link() must be used from within the Loop, unless the $comment parame
 Used in the following template files:
 comments.php
 
-***********************
-get_comments_number()
-----------------------------------
+<h3>get_comments_number()</h3>
 get_comments_number() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Template_Tags/get_comments_number
 
@@ -665,9 +809,7 @@ get_comments_number() must be used within the Loop.
 Used in the following template files:
 comments.php
 
-***********************
-get_comment_pages_count()
-----------------------------------
+<h3>get_comment_pages_count()</h3>
 get_comment_pages_count() is a WordPress function.
 Codex reference: N/A
 
@@ -687,9 +829,7 @@ get_comment_pages_count() must be used from within the Loop.
 Used in the following template files:
 comments.php
 
-***********************
-get_comment_type()
-----------------------------------
+<h3>get_comment_type()</h3>
 get_comment_type() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/comment_type
 
@@ -709,9 +849,7 @@ get_comment_type() must be used from within the Loop.
 Used in the following template files:
 comments.php
 
-***********************
-get_footer()
-----------------------------------
+<h3>get_footer()</h3>
 get_footer() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_footer
 
@@ -724,9 +862,7 @@ get_footer( $foo ) will attempt to include footer-foo.php. If it doesn't exist, 
 Used in the following template files:
 404.php, index.php, page.php
 
-***********************
-get_header()
-----------------------------------
+<h3>get_header()</h3>
 get_header() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_header
 
@@ -739,9 +875,7 @@ get_header( $foo ) will attempt to include header-foo.php. If it doesn't exist, 
 Used in the following template files:
 404.php, index.php, page.php
 
-***********************
-get_month_link()
-----------------------------------
+<h3>get_month_link()</h3>
 get_month_link() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_month_link
 
@@ -757,9 +891,7 @@ get_month_link( $year, $month ) accepts two arguments:
 Used in the following template files:
 functions.php
 	
-***********************
-get_option()
-----------------------------------
+<h3>get_option()</h3>
 get_option() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_option
 
@@ -783,9 +915,7 @@ Examples:
 Used in the following template files:
 comments.php, header.php, site-navigation.php
 
-***********************
-get_permalink()
-----------------------------------
+<h3>get_permalink()</h3>
 get_permalink() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_permalink
 
@@ -804,9 +934,7 @@ Displays the URL to the post parent of the current post.
 Used in the following template files:
 post-entry-image.php
 
-***********************
-get_post()
-----------------------------------
+<h3>get_post()</h3>
 get_post() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_post
 
@@ -821,9 +949,7 @@ get_post( $post, $output ) accepts two arguments
 Used in the following template files:
 functions.php
 
-***********************
-get_post_format()
-----------------------------------
+<h3>get_post_format()</h3>
 get_post_format() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_post_format
 
@@ -839,9 +965,7 @@ get_post_format( $postid ) accepts one argument:
 Used in the following template files:
 loop.php
 
-***********************
-get_posts()
-----------------------------------
+<h3>get_posts()</h3>
 get_posts() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_posts
 
@@ -852,9 +976,7 @@ get_posts( 'arguments' ) accepts various arguments. See the Codex for the comple
 Used in the following template files:
 functions.php
 
-***********************
-get_search_form()
-----------------------------------
+<h3>get_search_form()</h3>
 get_search_form() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_search_form
 
@@ -867,9 +989,7 @@ get_search_form() accepts no arguments.
 Used in the following template files:
 infobar.php
 
-***********************
-get_sidebar()
-----------------------------------
+<h3>get_sidebar()</h3>
 get_sidebar() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
 
@@ -892,9 +1012,7 @@ attempt to include files in the following order, until it finds one that exists:
 Used in the following template files:
 404.php, index.php, page.php
 	
-***********************
-get_stylesheet_uri()
-----------------------------------
+<h3>get_stylesheet_uri()</h3>
 get_stylesheet_uri() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_stylesheet_uri
 
@@ -912,9 +1030,7 @@ echo get_stylesheet_uri(); returns e.g. "http://www.mydomain.tld/wp-content/them
 Used in the following template files:
 header.php
 
-***********************
-get_tag_feed_link()
-----------------------------------
+<h3>get_tag_feed_link()</h3>
 get_tag_feed_link() is a WordPress template tag.
 Codex reference: N/A
 
@@ -933,9 +1049,7 @@ get_tag_feed_link() must be used outside the Loop.
 Used in the following template files:
 loop-header.php
 
-***********************
-get_template_part()
-----------------------------------
+<h3>get_template_part()</h3>
 get_template_part() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_template_part
 
@@ -958,9 +1072,7 @@ attempt to include files in the following order, until it finds one that exists:
 Used in the following template files:
 404.php, index.php, loop.php, page.php, post-entry.php, site-header.php
 
-***********************
-get_the_author_meta()
-----------------------------------
+<h3>get_the_author_meta()</h3>
 get_the_author_meta() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_author_meta
 
@@ -981,9 +1093,7 @@ get_the_author_meta()  must be used within the Loop, unless the $userID argument
 Used in the following template files:
 post-footer.php
 
-***********************
-get_the_category()
-----------------------------------
+<h3>get_the_category()</h3>
 get_the_category() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_the_category
 
@@ -1009,25 +1119,19 @@ using the $id argument.
 Used in the following template files:
 loop-header.php
 
-***********************
-get_the_excerpt()
-----------------------------------
+<h3>get_the_excerpt()</h3>
 See: the_excerpt()
 
 Used in the following template files:
 functions.php
 
-***********************
-get_the_time()
-----------------------------------
+<h3>get_the_time()</h3>
 See: the_time()
 
 Used in the following template files:
 functions.php
 
-***********************
-get_the_title()
-----------------------------------
+<h3>get_the_title()</h3>
 get_the_title() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_the_title
 
@@ -1043,9 +1147,7 @@ Displays the Post Title of the current post's parent post.
 Used in the following template files:
 functions.php, post-entry-image.php
 
-***********************
-get_theme_root()
-----------------------------------
+<h3>get_theme_root()</h3>
 get_theme_root() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_theme_root
 
@@ -1059,9 +1161,7 @@ get_theme_root() accepts no arguments.
 Used in the following template files:
 functions.php
 
-***********************
-get_trackback_url()
-----------------------------------
+<h3>get_trackback_url()</h3>
 get_trackback_url() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/trackback_url
 
@@ -1078,9 +1178,7 @@ get_trackback_url() must be used within the Loop.
 Used in the following template files:
 post-header.php
 
-***********************
-get_queried_object()
-----------------------------------
+<h3>get_queried_object()</h3>
 get_queried_object() is a property of the WordPress WP_Query class.
 Codex reference: http://codex.wordpress.org/Function_Reference/WP_Query
 
@@ -1098,9 +1196,7 @@ returns object $my_obj that contains the specified information from $wp_query.
 Used in the following template files:
 functions.php
 
-***********************
-get_query_var()
-----------------------------------
+<h3>get_query_var()</h3>
 get_query_var() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_query_var
 
@@ -1118,9 +1214,7 @@ get_query_var('page');
 Used in the following template files:
 functions.php
 
-***********************
-get_search_query()
-----------------------------------
+<h3>get_search_query()</h3>
 get_search_query() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_search_query
 
@@ -1138,9 +1232,7 @@ If e.g. "lorem ipsum" was entered as the search query, returns the string "lorem
 Used in the following template files:
 functions.php
 
-***********************
-get_userdata()
-----------------------------------
+<h3>get_userdata()</h3>
 get_userdata() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_userdata
 
@@ -1167,9 +1259,7 @@ Returns the following object values (not inclusive):
 Used in the following template files:
 functions.php
 
-***********************
-get_year_link()
-----------------------------------
+<h3>get_year_link()</h3>
 get_year_link() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/get_year_link
 
@@ -1181,9 +1271,7 @@ get_year_link( $year ) accepts one argument:
 Used in the following template files:
 functions.php
 
-***********************
-has_nav_menu()
-----------------------------------
+<h3>has_nav_menu()</h3>
 has_nav_menu() is a WordPress template conditional tag.
 Codex reference: N/A
 
@@ -1196,9 +1284,7 @@ user does not define a particular nav menu in the Menus administration panel.
 Used in the following template files:
 sidebar-left.php, site-navigation.php
 
-***********************
-have_comments()
-----------------------------------
+<h3>have_comments()</h3>
 have_comments() is a WordPress conditional tag.
 Codex reference: N/A
 
@@ -1217,9 +1303,7 @@ have_comments() must be used from within the Loop.
 Used in the following template files:
 comments.php
 
-***********************
-have_posts()
-----------------------------------
+<h3>have_posts()</h3>
 have_posts() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/User:Samsm/have_posts
 
@@ -1233,9 +1317,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 Used in the following template files:
 loop.php
 
-***********************
-header_image()
-----------------------------------
+<h3>header_image()</h3>
 header_image() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/header_image
 
@@ -1246,9 +1328,7 @@ header_image() accepts no arguments.
 Used in the following template files:
 functions.php
 
-***********************
-home_url()
-----------------------------------
+<h3>home_url()</h3>
 home_url() is a WordPress function
 Codex reference: http://codex.wordpress.org/Function_Reference/home_url
 
@@ -1263,9 +1343,7 @@ home_url(); returns e.g. "http://www.domain.tld"
 Used in the following template files:
 footer.php, infobar.php, site-navigation.php
 
-***********************
-is_404()
-----------------------------------
+<h3>is_404()</h3>
 is_404() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_404
 
@@ -1279,9 +1357,7 @@ page will have class="error404".
 Used in the following template files:
 functions.php
 
-***********************
-is_archive()
-----------------------------------
+<h3>is_archive()</h3>
 is_archive() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_archive
 
@@ -1295,9 +1371,7 @@ page will have class="archive".
 Used in the following template files:
 loop-header.php
 
-***********************
-is_array()
-----------------------------------
+<h3>is_array()</h3>
 is_array() is a PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.is-array.php
@@ -1310,9 +1384,7 @@ is_array() accepts one argument: the variable to be evaluated
 Used in the following template files:
 functions.php
 
-***********************
-is_attachment()
-----------------------------------
+<h3>is_attachment()</h3>
 is_attachment() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_attachment
 
@@ -1326,9 +1398,7 @@ attachment post will have class="attachment".
 Used in the following template files:
 functions.php, post-entry.php
 
-***********************
-is_author()
-----------------------------------
+<h3>is_author()</h3>
 is_author() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_author
 
@@ -1342,9 +1412,7 @@ attachment post will have class="author".
 Used in the following template files:
 functions.php
 
-***********************
-is_category()
-----------------------------------
+<h3>is_category()</h3>
 is_category() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_category
 
@@ -1362,9 +1430,7 @@ is_category( $category ) accepts one optional argument:
 Used in the following template files:
 functions.php, loop-header.php
 
-***********************
-is_day()
-----------------------------------
+<h3>is_day()</h3>
 is_day() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_day
 
@@ -1378,9 +1444,7 @@ page will have class="date".
 Used in the following template files:
 functions.php
 
-***********************
-is_feed()
-----------------------------------
+<h3>is_feed()</h3>
 is_feed() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_feed
 
@@ -1392,9 +1456,7 @@ A feed does not correspond to any template files in the Theme hierarchy.
 Used in the following template files:
 functions.php
 
-***********************
-is_home()
-----------------------------------
+<h3>is_home()</h3>
 is_home() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_home
 
@@ -1408,9 +1470,7 @@ page will have class="blog".
 Used in the following template files:
 post-entry.php
 
-***********************
-is_month()
-----------------------------------
+<h3>is_month()</h3>
 is_month() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_month
 
@@ -1424,9 +1484,7 @@ page will have class="date".
 Used in the following template files:
 functions.php
 
-***********************
-is_page()
-----------------------------------
+<h3>is_page()</h3>
 is_page() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_page
 
@@ -1440,9 +1498,7 @@ page will have class="page".
 Used in the following template files:
 functions.php, loop.php, post-entry.php, post-footer.php, post-header.php, sidebar-left.php
 
-***********************
-is_search()
-----------------------------------
+<h3>is_search()</h3>
 is_search() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_search
 
@@ -1456,9 +1512,7 @@ page will have class="search".
 Used in the following template files:
 functions.php, loop-header.php
 
-***********************
-is_single()
-----------------------------------
+<h3>is_single()</h3>
 is_single() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_single
 
@@ -1472,9 +1526,7 @@ single post will have class="single".
 Used in the following template files:
 functions.php, loop.php, post-entry.php, post-footer.php, post-header.php
 
-***********************
-is_singular()
-----------------------------------
+<h3>is_singular()</h3>
 is_singular() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_singular
 
@@ -1487,9 +1539,7 @@ is_singular() is a boolean (returns TRUE or FALSE) conditional tag that returns 
 Used in the following template files:
 functions.php, header.php, loop-footer.php
 
-***********************
-is_tag()
-----------------------------------
+<h3>is_tag()</h3>
 is_tag() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_tag
 
@@ -1507,9 +1557,7 @@ is_tag( $tag ) accepts one optional argument:
 Used in the following template files:
 loop-header.php
 
-***********************
-is_user_logged_in()
-----------------------------------
+<h3>is_user_logged_in()</h3>
 is_user_logged_in() is a WordPress conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_user_logged_in
 
@@ -1521,9 +1569,7 @@ is_user_logged_in() accepts no arguments.
 Used in the following template files:
 infobar.php
 
-***********************
-is_year()
-----------------------------------
+<h3>is_year()</h3>
 is_year() is a WordPress template conditional tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/is_year
 
@@ -1537,9 +1583,7 @@ page will have class="date".
 Used in the following template files:
 functions.php
 
-***********************
-isset()
-----------------------------------
+<h3>isset()</h3>
 isset() is a PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.isset.php
@@ -1565,9 +1609,7 @@ set, then it is set to a value of "640".
 Used in the following template files:
 functions.php
 
-***********************
-language_attributes()
-----------------------------------
+<h3>language_attributes()</h3>
 language_attributes() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/language_attributes
 
@@ -1577,9 +1619,7 @@ language attributes, such as language and text-direction.
 Used in the following template files:
 header.php
 
-***********************
-max()
-----------------------------------
+<h3>max()</h3>
 max() is a PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.max.php
@@ -1604,9 +1644,7 @@ Will return the higher value between $paged (index page number) and $page (singl
 Used in the following template files:
 functions.php
 
-***********************
-next_comments_link()
-----------------------------------
+<h3>next_comments_link()</h3>
 next_comments_link() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Template_Tags/next_comments_link
 Codex reference: http://codex.wordpress.org/Function_Reference/next_comments_link
@@ -1626,9 +1664,7 @@ next_comments_link() must be used from within the Loop.
 Used in the following template files:
 comments.php
 
-***********************
-next_post_link()
-----------------------------------
+<h3>next_post_link()</h3>
 next_post_link() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/next_post_link
 
@@ -1652,9 +1688,7 @@ next_post_link() must be used from within the Loop.
 Used in the following template files:
 functions.php, infobar.php
 
-***********************
-number_format()
-----------------------------------
+<h3>number_format()</h3>
 number_format() is a PHP function.
 Codex reference: N/A
 PHP reference: http://us.php.net/manual/en/function.number-format.php
@@ -1671,9 +1705,7 @@ number_format( $number, $decimals, $dec_point, $thousands_sep ) accepts one, two
 Used in the following template files:
 functions.php
 
-***********************
-oenology_404_handler()
-----------------------------------
+<h3>oenology_404_handler()</h3>
 oenology_404_handler() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1686,9 +1718,7 @@ oenology_404_handler() is defined in functions.php.
 Used in the following template files:
 404.php
 
-***********************
-oenology_admin_header_style()
-----------------------------------
+<h3>oenology_admin_header_style()</h3>
 oenology_admin_header_style() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1699,9 +1729,7 @@ on the Custom Header admin option page, as part of the Custom Image Header featu
 Used in the following template files:
 functions/functions-theme-setup.php
 
-***********************
-oenology_breadcrumb()
-----------------------------------
+<h3>oenology_breadcrumb()</h3>
 oenology_breadcrumb() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1716,9 +1744,7 @@ oenology_breadcrumb() accepts no arguments.
 Used in the following template files:
 infobar.php
 
-***********************
-oenology_comment_count()
-----------------------------------
+<h3>oenology_comment_count()</h3>
 oenology_comment_count() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1731,9 +1757,7 @@ oenology_comment_count() hooks into the get_comments_number() filter hook
 Used in the following template files:
 functions/functions-custom.php
 
-***********************
-oenology_copyright()
-----------------------------------
+<h3>oenology_copyright()</h3>
 oenology_copyright() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1746,9 +1770,7 @@ oenology_copyright() is defined in functions.php.
 Used in the following template files:
 footer.php
 
-***********************
-oenology_filter_wp_title()
-----------------------------------
+<h3>oenology_filter_wp_title()</h3>
 oenology_filter_wp_title() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1761,9 +1783,7 @@ oenology_filter_wp_title() hooks into the wp_title filter hook
 Used in the following template files:
 functions/functions-custom.php
 
-***********************
-oenology_gallery_image_meta()
-----------------------------------
+<h3>oenology_gallery_image_meta()</h3>
 oenology_gallery_image_meta() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1792,9 +1812,7 @@ oenology_gallery_image_meta() is defined in functions.php.
 Used in the following template files:
 post-entry-image.php
 
-***********************
-oenology_gallery_links()
-----------------------------------
+<h3>oenology_gallery_links()</h3>
 oenology_gallery_links() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1812,9 +1830,7 @@ oenology_gallery_links() is defined in functions.php.
 Used in the following template files:
 post-entry-image.php
 
-***********************
-oenology_header_style()
-----------------------------------
+<h3>oenology_header_style()</h3>
 oenology_header_style() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1825,9 +1841,7 @@ of the Custom Image Header feature
 Used in the following template files:
 functions/functions-theme-setup.php
 
-***********************
-oenology_load_widgets()
-----------------------------------
+<h3>oenology_load_widgets()</h3>
 oenology_load_widgets() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1839,9 +1853,7 @@ oenology_load_widgets() hooks into the widgets_init action hook
 Used in the following template files:
 functions/functions-widgets.php
 
-***********************
-oenology_setup()
-----------------------------------
+<h3>oenology_setup()</h3>
 oenology_setup() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1855,9 +1867,7 @@ oenology_setup() hooks into the after_setup_theme action hook
 Used in the following template files:
 functions/functions-theme-setup.php
 
-***********************
-oenology_setup_widgets()
-----------------------------------
+<h3>oenology_setup_widgets()</h3>
 oenology_setup_widgets() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1870,9 +1880,7 @@ oenology_setup_widgets() hooks into the after_theme_setup action hook
 Used in the following template files:
 functions/functions-widgets.php
 
-***********************
-oenology_show_current_cat_on_single()
-----------------------------------
+<h3>oenology_show_current_cat_on_single()</h3>
 oenology_show_current_cat_on_single() is a custom Theme function.
 Codex reference: N/A
 Defined in: functions.php
@@ -1885,9 +1893,7 @@ oenology_show_current_cat_on_single() hooks into the wp_list_categories filter h
 Used in the following template files:
 functions/functions-custom.php
 
-***********************
-oenology_widget_archives()
-----------------------------------
+<h3>oenology_widget_archives()</h3>
 oenology_widget_archives() is a custom Theme Widget.
 Codex reference: N/A
 Defined in: functions.php
@@ -1898,9 +1904,7 @@ toggle to the Widget output.
 Used in the following template files:
 functions/functions-widgets.php
 
-***********************
-oenology_widget_categories()
-----------------------------------
+<h3>oenology_widget_categories()</h3>
 oenology_widget_categories() is a custom Theme Widget.
 Codex reference: N/A
 Defined in: functions.php
@@ -1911,9 +1915,7 @@ toggle to the Widget output.
 Used in the following template files:
 functions/functions-widgets.php
 
-***********************
-oenology_widget_linkrollbycat()
-----------------------------------
+<h3>oenology_widget_linkrollbycat()</h3>
 oenology_widget_linkrollbycat() is a custom Theme Widget.
 Codex reference: N/A
 Defined in: functions.php
@@ -1924,9 +1926,7 @@ toggle to the Widget output.
 Used in the following template files:
 functions/functions-widgets.php
 
-***********************
-oenology_widget_recentposts()
-----------------------------------
+<h3>oenology_widget_recentposts()</h3>
 oenology_widget_recentposts() is a custom Theme Widget.
 Codex reference: N/A
 Defined in: functions.php
@@ -1937,9 +1937,7 @@ toggle to the Widget output.
 Used in the following template files:
 functions/functions-widgets.php
 
-***********************
-oenology_widget_tags()
-----------------------------------
+<h3>oenology_widget_tags()</h3>
 oenology_widget_tags() is a custom Theme Widget.
 Codex reference: N/A
 Defined in: functions.php
@@ -1950,9 +1948,7 @@ toggle to the Widget output.
 Used in the following template files:
 functions/functions-widgets.php
 
-***********************
-post_class()
-----------------------------------
+<h3>post_class()</h3>
 post_class() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Template_Tags/post_class
 
@@ -1965,9 +1961,7 @@ For the full list of CSS classes returned by post_class(), see the Codex.
 Used in the following template files:
 404.php, loop.php
 
-***********************
-post_password_required()
-----------------------------------
+<h3>post_password_required()</h3>
 post_password_required() is a WordPress conditional tag.
 Codex reference: N/A
 
@@ -1986,9 +1980,7 @@ post_password_required() must be used from within the Loop.
 Used in the following template files:
 comments.php
 
-***********************
-posts_nav_link()
-----------------------------------
+<h3>posts_nav_link()</h3>
 posts_nav_link() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/posts_nav_link
 
@@ -2013,9 +2005,7 @@ posts_nav_link() must be used within the Loop.
 Used in the following template files:
 functions.php, loop-footer.php
 
-***********************
-preg_replace()
-----------------------------------
+<h3>preg_replace()</h3>
 preg_replace() is a PHP function.
 Codex reference: N/A
 PHP reference: http://us.php.net/manual/en/function.preg-replace.php
@@ -2033,9 +2023,7 @@ preg_replace( $pattern, $replacement, $subject ) accepts arguments:
 Used in the following template files:
 functions.php
 
-***********************
-previous_comments_link()
-----------------------------------
+<h3>previous_comments_link()</h3>
 previous_comments_link() is a WordPress template tag.
 
 Codex reference: http://codex.wordpress.org/Template_Tags/previous_comments_link
@@ -2056,9 +2044,7 @@ previous_comments_link() must be used from within the Loop.
 Used in the following template files:
 comments.php.
 
-***********************
-previous_post_link()
-----------------------------------
+<h3>previous_post_link()</h3>
 previous_post_link() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/previous_post_link
 
@@ -2082,9 +2068,7 @@ previous_post_link() must be used from within the Loop.
 Used in the following template files:
 functions.php, infobar.php
 
-***********************
-register_default_headers()
-----------------------------------
+<h3>register_default_headers()</h3>
 register_default_headers() is a WordPress function.
 Codex reference: 
 
@@ -2100,9 +2084,7 @@ register_default_headers( $array ) accepts one argument, as an array-of-arrays:
 Used in the following template files:
 functions.php
 
-***********************
-register_nav_menus()
-----------------------------------
+<h3>register_nav_menus()</h3>
 register_nav_menus() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/register_nav_menus
 
@@ -2117,9 +2099,7 @@ register_nav_menus( $array ) accept one argument, as an array:
 Used in the following template files:
 functions.php
 
-***********************
-register_sidebar()
-----------------------------------
+<h3>register_sidebar()</h3>
 register_sidebar() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/register_sidebar
 
@@ -2139,9 +2119,7 @@ register_sidebar( $array ) accepts one argument, as an array:
 Used in the following template files:
 functions.php
 
-***********************
-register_widget()
-----------------------------------
+<h3>register_widget()</h3>
 register_widget() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/register_widget
 
@@ -2153,9 +2131,7 @@ register_widget( $widget ) accepts one argument:
 Used in the following template files:
 functions.php
 
-***********************
-require_once()
-----------------------------------
+<h3>require_once()</h3>
 require_once() is a PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.require-once.php
@@ -2174,9 +2150,7 @@ require_once( 'foo.php' )
 Used in the following template files:
 functions.php, functions/functions-options.php, functions/functions-options-init.php
 
-***********************
-set_post_thumbnail_size()
-----------------------------------
+<h3>set_post_thumbnail_size()</h3>
 set_post_thumbnail_size() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_post_thumbnail
 
@@ -2193,9 +2167,7 @@ set_post_thumbnail_size( $width, $height, $crop ) accepts arguments:
 Used in the following template files:
 functions.php
 
-***********************
-single_cat_title()
-----------------------------------
+<h3>single_cat_title()</h3>
 single_cat_title() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/single_cat_title
 
@@ -2211,9 +2183,7 @@ single_cat_title() must be used outside the Loop.
 Used in the following template files:
 functions.php, loop-header.php
 
-***********************
-single_tag_title()
-----------------------------------
+<h3>single_tag_title()</h3>
 single_tag_title() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/single_tag_title
 
@@ -2229,9 +2199,7 @@ single_tag_title() must be used outside the Loop.
 Used in the following template files:
 functions.php, loop-header.php
 
-***********************
-size_format()
-----------------------------------
+<h3>size_format()</h3>
 size_format() is a WordPress function.
 Codex reference: N/A
 
@@ -2252,9 +2220,7 @@ size_format( '1048576' );
 Used in the following template files:
 functions.php
 
-***********************
-sprintf()
-----------------------------------
+<h3>sprintf()</h3>
 sprintf() is a PHP function.
 Codex reference: N/A
 PHP reference: http://us.php.net/manual/en/function.sprintf.php
@@ -2265,9 +2231,7 @@ defined formatting string format. See the PHP reference for more information.
 Used in the following template files:
 functions.php
 
-***********************
-str_replace()
-----------------------------------
+<h3>str_replace()</h3>
 str_replace() is a PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.str-replace.php
@@ -2287,9 +2251,7 @@ str_replace( $search, $replace, $subject, $count ) accepts arguments:
 Used in the following template files:
 functions.php
 
-***********************
-the_author()
-----------------------------------
+<h3>the_author()</h3>
 the_author() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_author
 
@@ -2307,9 +2269,7 @@ the_author()  must be used within the Loop.
 Used in the following template files:
 post-footer.php
 
-***********************
-the_category()
-----------------------------------
+<h3>the_category()</h3>
 the_category() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_category
 
@@ -2332,9 +2292,7 @@ the_category() must be used within the Loop, unless the $postid argument is spec
 Used in the following template files:
 functions.php, post-header.php
 
-***********************
-the_content()
-----------------------------------
+<h3>the_content()</h3>
 the_content() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_content
 
@@ -2354,9 +2312,7 @@ the_content()  must be used within the Loop.
 Used in the following template files:
 post-entry.php
 
-***********************
-the_date()
-----------------------------------
+<h3>the_date()</h3>
 the_date() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_date
 
@@ -2373,9 +2329,7 @@ the_date() must be used within the Loop.
 Used in the following template files:
 post-footer.php
 
-***********************
-the_excerpt()
-----------------------------------
+<h3>the_excerpt()</h3>
 the_excerpt() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_excerpt
 
@@ -2393,9 +2347,7 @@ the_excerpt()  must be used within the Loop.
 Used in the following template files:
 post-entry.php, post-entry-image
 
-***********************
-the_ID()
-----------------------------------
+<h3>the_ID()</h3>
 the_ID() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_ID
 
@@ -2413,9 +2365,7 @@ the_ID()  must be used within the Loop.
 Used in the following template files:
 post-header.php
 
-***********************
-the_permalink()
-----------------------------------
+<h3>the_permalink()</h3>
 the_permalink() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_permalink
 
@@ -2432,9 +2382,7 @@ the_permalink() must be used within the Loop.
 Used in the following template files:
 post-header.php
 
-***********************
-the_post()
-----------------------------------
+<h3>the_post()</h3>
 the_post() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/User:Jefte/the_post
 
@@ -2447,9 +2395,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 Used in the following template files:
 loop.php
 
-***********************
-the_post_thumbnail()
-----------------------------------
+<h3>the_post_thumbnail()</h3>
 the_post_thumbnail() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_post_thumbnail
 
@@ -2477,9 +2423,7 @@ Post Thumbnails support must be defined and configured. Refer to functions.php f
 Used in the following template files:
 post-entry.php, post-header.php
 
-***********************
-the_search_query()
-----------------------------------
+<h3>the_search_query()</h3>
 the_search_query() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_search_query
 
@@ -2494,9 +2438,7 @@ the user entered 'lorem ipsum' as the search query): 'Search results for "lorem 
 Used in the following template files:
 loop-header.php
 
-***********************
-the_shortlink()
-----------------------------------
+<h3>the_shortlink()</h3>
 the_shortlink() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_shortlink
 
@@ -2519,9 +2461,7 @@ the_shortlink() must be used within the Loop.
 Used in the following template files:
 post-header.php
 
-***********************
-the_tags()
-----------------------------------
+<h3>the_tags()</h3>
 the_tags() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_tags
 
@@ -2540,9 +2480,7 @@ the_tags() must be used within the Loop.
 Used in the following template files:
 post-header.php
 
-***********************
-the_time()
-----------------------------------
+<h3>the_time()</h3>
 the_time() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_time
 
@@ -2561,9 +2499,7 @@ the_time() must be used within the Loop.
 Used in the following template files:
 post-footer.php, post-header.php
 
-***********************
-the_title()
-----------------------------------
+<h3>the_title()</h3>
 the_title() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_title
 
@@ -2582,9 +2518,7 @@ the_title() must be used within the Loop.
 Used in the following template files:
 comments.php, post-header.php
 
-***********************
-the_widget()
-----------------------------------
+<h3>the_widget()</h3>
 the_widget() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/the_widget
 
@@ -2605,9 +2539,7 @@ the_widget() can be used anywhere within a template.
 Used in the following template files:
 sidebar-left.php, sidebar-right.php
 
-***********************
-trim()
-----------------------------------
+<h3>trim()</h3>
 trim() is a PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.trim.php
@@ -2621,9 +2553,7 @@ trim( $string ) accepts arguments:
 Used in the following template files:
 functions.php
 
-***********************
-urldecode()
-----------------------------------
+<h3>urldecode()</h3>
 urldecode() is a PHP function.
 Codex reference: N/A
 PHP reference: http://php.net/manual/en/function.urlencode.php
@@ -2642,9 +2572,7 @@ urldecode( $string ) accepts arguments:
 Used in the following template files:
 functions.php
 
-***********************
-wp_attachment_is_image()
-----------------------------------
+<h3>wp_attachment_is_image()</h3>
 wp_attachment_is_image() is a WordPress template conditional tag
 Codex reference: http://codex.wordpress.org/Function_Reference/is_attachment
 
@@ -2654,9 +2582,7 @@ the current post's attachment is an image.
 Used in the following template files:
 post-entry.php
 
-***********************
-wp_enqueue_script()
-----------------------------------
+<h3>wp_enqueue_script()</h3>
 wp_enqueue_script() is a WordPress filter hook.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 
@@ -2670,9 +2596,7 @@ are needed, and will ensure that the same javascript file (e.g. jQuery) is not l
 Used in the following template files:
 header.php
 
-***********************
-wp_footer()
-----------------------------------
+<h3>wp_footer()</h3>
 wp_footer() is a WordPress action hook.
 Codex reference: http://codex.wordpress.org/Plugin_API/Action_Reference/wp_footer
 
@@ -2681,9 +2605,7 @@ wp_footer() is used by themes/plugins, usually to insert content into the WordPr
 Used in the following template files:
 404.php, index.php, page.php
 
-***********************
-wp_get_attachment_image()
-----------------------------------
+<h3>wp_get_attachment_image()</h3>
 wp_get_attachment_image() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_get_attachment_image
 
@@ -2697,9 +2619,7 @@ wp_get_attachment_image( $id, $size, $icon ) accepts arguments:
 Used in the following template files:
 functions.php
 
-***********************
-wp_get_attachment_link()
-----------------------------------
+<h3>wp_get_attachment_link()</h3>
 wp_get_attachment_link() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_get_attachment_link
 
@@ -2715,9 +2635,7 @@ wp_get_attachment_link( $id, $size, $permalink, $icon ) accepts four arguments:
 Used in the following template files:
 functions.php
 
-***********************
-wp_get_current_user()
-----------------------------------
+<h3>wp_get_current_user()</h3>
 wp_get_current_user() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_get_current_user
 
@@ -2733,9 +2651,7 @@ echo $current_user->display_name; will display e.g. "John Smith"
 Used in the following template files:
 infobar.php
 
-***********************
-wp_get_post_categories()
-----------------------------------
+<h3>wp_get_post_categories()</h3>
 wp_get_post_categories() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_get_post_categories
 
@@ -2750,9 +2666,7 @@ wp_get_post_categories( $id, $args ) accepts arguments:
 Used in the following template files:
 functions.php
 
-***********************
-wp_head()
-----------------------------------
+<h3>wp_head()</h3>
 wp_head() is a WordPress action hook.
 Codex reference: http://codex.wordpress.org/Hook_Reference/wp_head
 
@@ -2761,9 +2675,7 @@ wp_head() is used by themes/plugins, usually to insert content into the HTML <he
 Used in the following template files:
 header.php
 
-***********************
-wp_link_pages()
-----------------------------------
+<h3>wp_link_pages()</h3>
 wp_link_pages() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_link_pages
 
@@ -2790,9 +2702,7 @@ wp_link_pages() must be used within the Loop.
 Used in the following template files:
 post-entry.php
 
-***********************
-wp_list_comments()
-----------------------------------
+<h3>wp_list_comments()</h3>
 wp_list_comments() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_list_comments
 
@@ -2816,9 +2726,7 @@ wp_list_comments() must be used from within the Loop.
 Used in the following template files:
 comments.php
 
-***********************
-wp_list_pages()
-----------------------------------
+<h3>wp_list_pages()</h3>
 wp_list_pages() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_list_pages
 
@@ -2832,9 +2740,7 @@ To see the full list of arguments for wp_list_pages(), see the Codex.
 Used in the following template files:
 sidebar-left.php, site-navigation.php
 
-***********************
-wp_loginout()
-----------------------------------
+<h3>wp_loginout()</h3>
 wp_loginout() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_loginout
 
@@ -2846,9 +2752,7 @@ wp_loginout() accepts 1 argument:
 Used in the following template files:
 infobar.php
 
-***********************
-wp_nav_menu()
-----------------------------------
+<h3>wp_nav_menu()</h3>
 get_template_part() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_nav_menu
 
@@ -2861,9 +2765,7 @@ menu must be configured in the Menus administration panel.
 Used in the following template files:
 sidebar-left.php, site-navigation.php
 
-***********************
-wp_paginate()
-----------------------------------
+<h3>wp_paginate()</h3>
 wp_paginate() is a custom function for the WP-Paginate plugin
 Codex reference: N/A
 Plugin reference: http://wordpress.org/extend/plugins/wp-paginate/
@@ -2878,9 +2780,7 @@ wp_paginate() must be used within the Loop.
 Used in the following template files:
 functions.php, loop-footer.php
 
-***********************
-wp_register()
-----------------------------------
+<h3>wp_register()</h3>
 wp_register() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_register
 
@@ -2899,9 +2799,7 @@ in <li></li> tags.
 Used in the following template files:
 infobar.php
 
-***********************
-wp_title
-----------------------------------
+<h3>wp_title</h3>
 wp_title() is a WordPress template tag.
 Codex reference: http://codex.wordpress.org/Template_Tags/wp_title
 	
@@ -2912,9 +2810,7 @@ wp_title() is a WordPress template tag used to display the title of a page:
 Used in the following template files:
 header.php
 
-***********************
-wp_upload_dir()
-----------------------------------
+<h3>wp_upload_dir()</h3>
 wp_upload_dir() is a WordPress function.
 Codex reference: http://codex.wordpress.org/Function_Reference/wp_upload_dir
 
@@ -2960,3 +2856,6 @@ $paged
 $post
 $wpdb
 */
+
+<?php }
+?>

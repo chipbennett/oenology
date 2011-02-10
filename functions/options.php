@@ -12,7 +12,7 @@ global $oenology_options;
 global $oenology_admin_options_hook;
 
 /*****************************************************************************************
-* Define the default options
+* Helper Functions
 *******************************************************************************************/
 
 function oenology_get_default_options() {
@@ -46,6 +46,15 @@ function oenology_get_valid_varietals() {
 	      )
     );
     return $varietals;
+}
+
+function oenology_get_settings_page_tabs() {
+	
+	$tabs = array( 
+        'general' => 'General',
+        'varietals' => 'Varietals'
+    );
+	return $tabs;
 }
 
 
@@ -90,13 +99,13 @@ add_action('wp_print_styles', 'oenology_enqueue_varietal_style', 11 );
 * Setup the Theme Admin Settings Page
 *******************************************************************************************/
 
-// Add "Theme Options" link to the "Appearance" menu
-function oenology_menu() {
+// Add "Oenology Options" link to the "Appearance" menu
+function oenology_menu_options() {
 	global $oenology_admin_options_hook;
-	$oenology_admin_options_hook = add_theme_page('Theme Options', 'Oenology Options', 'edit_theme_options', 'oenology', 'oenology_admin_options_page');
+	$oenology_admin_options_hook = add_theme_page('Oenology Options', 'Oenology Options', 'edit_theme_options', 'oenology-settings', 'oenology_admin_options_page');
 }
 // Load the Admin Options page
-add_action('admin_menu', 'oenology_menu');
+add_action('admin_menu', 'oenology_menu_options');
 
 
 // Define Settings Page Tabs
@@ -109,18 +118,15 @@ function oenology_admin_options_page_tabs( $current = 'general' ) {
         $current = 'general';
     endif;
     
-    $tabs = array( 
-        'general' => 'General',
-        'varietals' => 'Varietals'
-    );
+    $tabs = oenology_get_settings_page_tabs();
     
     $links = array();
     
     foreach( $tabs as $tab => $name ) :
         if ( $tab == $current ) :
-            $links[] = "<a class='nav-tab nav-tab-active' href='?page=oenology&tab=$tab'>$name</a>";
+            $links[] = "<a class='nav-tab nav-tab-active' href='?page=oenology-settings&tab=$tab'>$name</a>";
         else :
-            $links[] = "<a class='nav-tab' href='?page=oenology&tab=$tab'>$name</a>";
+            $links[] = "<a class='nav-tab' href='?page=oenology-settings&tab=$tab'>$name</a>";
         endif;
     endforeach;
     
@@ -132,15 +138,14 @@ function oenology_admin_options_page_tabs( $current = 'general' ) {
     
 }
 
-
 // Admin settings page markup 
 function oenology_admin_options_page() { ?>
 
 	<div class="wrap">
+		<?php oenology_admin_options_page_tabs(); ?>
 		<?php if ( isset( $_GET['settings-updated'] ) ) {
     			echo "<div class='updated'><p>Theme settings updated successfully.</p></div>";
 		} ?>
-		<?php oenology_admin_options_page_tabs(); ?>
 		<form action="options.php" method="post">
 			<?php 
 			settings_fields('theme_oenology_options');
@@ -158,11 +163,11 @@ function oenology_admin_options_page() { ?>
 // Codex Reference: http://codex.wordpress.org/Settings_API
 // Reference: http://ottopress.com/2009/wordpress-settings-api-tutorial/
 // Reference: http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/
-function oenology_admin_init(){
-	require( get_template_directory() . '/functions/options-init.php' );
+function oenology_register_options(){
+	require( get_template_directory() . '/functions/options-register.php' );
 }
 // Settings API options initilization and validation
-add_action('admin_init', 'oenology_admin_init');
+add_action('admin_init', 'oenology_register_options');
 
 
 /*****************************************************************************************
@@ -171,7 +176,7 @@ add_action('admin_init', 'oenology_admin_init');
 
 // Admin settings page contextual help markup
 // Separate file for ease of management
-function oenology_contextual_help( $contextual_help, $screen_id, $screen ) {		
+function oenology_contextual_help_options( $contextual_help, $screen_id, $screen ) {		
 	global $oenology_admin_options_hook;
 	require( get_template_directory() . '/functions/options-help.php' );
 	if ( $screen_id == $oenology_admin_options_hook ) {
@@ -180,5 +185,7 @@ function oenology_contextual_help( $contextual_help, $screen_id, $screen ) {
 	return $contextual_help;
 }
 // Add contextual help to Admin Options page
-add_action('contextual_help', 'oenology_contextual_help', 10, 3);
+add_action('contextual_help', 'oenology_contextual_help_options', 10, 3);
+
+
 ?>

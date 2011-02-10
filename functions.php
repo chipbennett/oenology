@@ -16,18 +16,25 @@ require( get_template_directory() . '/functions/theme-setup.php' );
 // navigation breadcrumb
 require( get_template_directory() . '/functions/custom.php' );
 
-// functions-widgets.php includes the Theme's Widgetized sidebars and custom Widgets
+// widgets.php includes the Theme's Widgetized sidebars and custom Widgets
 // register_sidebar
 // define custom widgets
 // register_widget
 require( get_template_directory() . '/functions/widgets.php' );
 
-// functions-options.php includes the Theme options and Admin Settings page
+// options.php includes the Theme options and Admin Settings page
 // Define default Theme Options
 // Register/Initialize Theme Options
 // Admin Settings Page
 // Contextual Help
 require( get_template_directory() . '/functions/options.php' );
+
+// reference.php includes the Theme Admin Reference page
+// General Theme Notes
+// FAQ
+// Code Reference
+// Changelog
+require( get_template_directory() . '/functions/reference.php' );
 
 
 /*
