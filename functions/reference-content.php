@@ -202,48 +202,249 @@ file in the Theme root directory for a better-formatted version of this informat
 
 <p>The following functions, tags, and hooks are used (or referenced) in Oenology:</p>
 
-<h3>$_SERVER[]</h3>
+<ul style="clear:both;">
+<li style="display:inline;float:left;width:25%;">
+<h5>WordPress Functions</h5>
+<ul style="font-size:8pt;">
+<li><a href="#add_action">add_action()</a></li>
+<li><a href="#add_custom_background">add_custom_background()</a></li>
+<li><a href="#add_custom_image_header">add_custom_image_header()</a></li>
+<li><a href="#add_editor_style">add_editor_style()</a></li>
+<li><a href="#add_filter">add_filter()</a></li>
+<li><a href="#add_image_size">add_image_size()</a></li>
+<li><a href="#add_theme_support">add_theme_support()</a></li>
+<li><a href="#apply_filters">apply_filters()</a></li>
+<li><a href="#dynamic_sidebar">dynamic_sidebar()</a></li>
+<li><a href="#get_bloginfo">get_bloginfo()</a> /<br /><a href="#bloginfo">bloginfo()</a></li>
+<li><a href="#get_footer">get_footer()</a></li>
+<li><a href="#get_header">get_header()</a></li>
+<li><a href="#get_option">get_option()</a></li>
+<li><a href="#get_queried_object">get_queried_object()</a></li>
+<li><a href="#get_query_var">get_query_var()</a></li>
+<li><a href="#get_search_form">get_search_form()</a></li>
+<li><a href="#get_sidebar">get_sidebar()</a></li>
+<li><a href="#get_stylesheet_uri">get_stylesheet_uri()</a></li>
+<li><a href="#get_theme_root">get_theme_root()</a></li>
+<li><a href="#get_userdata">get_userdata()</a></li>
+<li><a href="#header_image">header_image()</a></li>
+<li><a href="#home_url">home_url()</a></li>
+<li><a href="#register_default_headers">register_default_headers()</a></li>
+<li><a href="#register_nav_menus">register_nav_menus()</a></li>
+<li><a href="#register_sidebar">register_sidebar()</a></li>
+<li><a href="#register_widget">register_widget()</a></li>
+<li><a href="#set_post_thumbnail_size">set_post_thumbnail_size()</a></li>
+<li><a href="#size_format">size_format()</a></li>
+<li><a href="#wp_upload_dir">wp_upload_dir()</a></li>
+</ul>
+</li>
+<li style="display:inline;float:left;width:25%;">
+<h5>WordPress Template Tags</h5>
+<ul style="font-size:8pt;">
+<li><a href="#body_class">body_class()</a></li>
+<li><a href="#category_description">category_description()</a></li>
+<li><a href="#comment_form">comment_form()</a></li>
+<li><a href="#comments_link">comments_link()</a></li>
+<li><a href="#comments_number">comments_number()</a></li>
+<li><a href="#edit_post_link">edit_post_link()</a></li>
+<li><a href="#get_avatar">get_avatar()</a></li>
+<li><a href="#get_category">get_category()</a> /<br /><a href="#the_category">the_category()</a></li>
+<li><a href="#get_category_parents">get_category_parents()</a></li>
+<li><a href="#get_children">get_children()</a></li>
+<li><a href="#get_comment_link">get_comment_link()</a></li>
+<li><a href="#get_comments_number">get_comments_number()</a></li>
+<li><a href="#get_comment_pages_count">get_comment_pages_count()</a></li>
+<li><a href="#get_comment_type">get_comment_type()</a></li>
+<li><a href="#get_month_link">get_month_link()</a></li>
+<li><a href="#get_permalink">get_permalink()</a> /<br /><a href="#get_permalink">the_permalink()</a></li>
+<li><a href="#get_post">get_post()</a> /<br /><a href="#get_post">the_post()</a> /<br /></li>
+<li><a href="#get_post_format">get_post_format()</a></li>
+<li><a href="#get_posts">get_posts()</a></li>
+<li><a href="#get_search_query">get_search_query()</a> /<br /><a href="#get_search_query">the_search_query()</a></li>
+<li><a href="#get_tag_feed_link">get_tag_feed_link()</a></li>
+<li><a href="#get_template_part">get_template_part()</a></li>
+<li><a href="#get_the_author">get_the_author()</a> /<br /><a href="#get_the_author">the_author()</a></li>
+<li><a href="#get_the_author_meta">get_the_author_meta()</a> /<br /><a href="#get_the_author_meta">the_author_meta()</a></li>
+<li><a href="#get_the_category">get_the_category()</a> /<br /><a href="#get_the_category">the_category()</a></li>
+<li><a href="#get_the_content">get_the_content()</a> /<br /><a href="#get_the_content">the_content()</a></li>
+<li><a href="#get_the_date">get_the_date()</a> /<br /><a href="#get_the_date">the_date()</a></li>
+<li><a href="#get_the_excerpt">get_the_excerpt()</a> /<br /><a href="#get_the_excerpt">the_excerpt()</a></li>
+<li><a href="#get_the_ID">get_the_ID()</a> /<br /><a href="#get_the_ID">the_ID()</a></li>
+<li><a href="#get_the_post_thumbnail">get_the_post_thumbnail()</a> /<br /><a href="#get_the_post_thumbnail">the_post_thumbnail()</a></li>
+<li><a href="#get_the_time">get_the_time()</a> /<br /><a href="#get_the_time">the_time()</a></li>
+<li><a href="#get_the_title">get_the_title()</a> /<br /><a href="#get_the_title">the_title()</a></li>
+<li><a href="#get_trackback_url">get_trackback_url()</a> /<br /><a href="#get_trackback_url">trackback_url()</a></li>
+<li><a href="#get_year_link">get_year_link()</a></li>
+<li><a href="#language_attributes">language_attributes()</a></li>
+<li><a href="#next_comments_link">next_comments_link()</a> /<br /><a href="#next_comments_link">previous_comments_link()</a></li>
+<li><a href="#next_post_link">next_post_link()</a> /<br /><a href="#next_post_link">previous_post_link()</a></li>
+<li><a href="#post_class">post_class()</a></li>
+<li><a href="#posts_nav_link">posts_nav_link()</a></li>
+<li><a href="#single_cat_title">single_cat_title()</a></li>
+<li><a href="#single_tag_title">single_tag_title()</a></li>
+<li><a href="#wp_get_shortlink">wp_get_shortlink()</a> /<br /><a href="#wp_get_shortlink">the_shortlink()</a></li>
+<li><a href="#the_tags">the_tags()</a></li>
+<li><a href="#the_widget">the_widget()</a></li>
+<li><a href="#wp_get_attachment_image">wp_get_attachment_image()</a></li>
+<li><a href="#wp_get_attachment_link">wp_get_attachment_link()</a></li>
+<li><a href="#wp_get_current_user">wp_get_current_user()</a></li>
+<li><a href="#wp_get_post_categories">wp_get_post_categories()</a></li>
+<li><a href="#wp_link_pages">wp_link_pages()</a></li>
+<li><a href="#wp_list_comments">wp_list_comments()</a></li>
+<li><a href="#wp_list_pages">wp_list_pages()</a></li>
+<li><a href="#wp_loginout">wp_loginout()</a></li>
+<li><a href="#wp_nav_menu">wp_nav_menu()</a></li>
+<li><a href="#wp_register">wp_register()</a></li>
+<li><a href="#wp_title">wp_title()</a></li>
+</ul>
+</li>
+<li style="display:inline;float:left;width:25%;">
+<h5>WordPress Conditional Tags</h5>
+<ul style="font-size:8pt;">
+<li><a href="#comments_open">comments_open()</a></li>
+<li><a href="#has_nav_menu">has_nav_menu()</a></li>
+<li><a href="#have_comments">have_comments()</a></li>
+<li><a href="#have_posts">have_posts()</a></li>
+<li><a href="#is_404">is_404()</a></li>
+<li><a href="#is_archive">is_archive()</a></li>
+<li><a href="#is_author">is_author()</a></li>
+<li><a href="#is_category">is_category()</a></li>
+<li><a href="#is_day">is_day()</a></li>
+<li><a href="#is_feed">is_feed()</a></li>
+<li><a href="#is_home">is_home()</a></li>
+<li><a href="#is_month">is_month()</a></li>
+<li><a href="#is_page">is_page()</a></li>
+<li><a href="#is_search">is_search()</a></li>
+<li><a href="#is_single">is_single()</a></li>
+<li><a href="#is_singular">is_singular()</a></li>
+<li><a href="#is_tag">is_tag()</a></li>
+<li><a href="#is_user_logged_in">is_user_logged_in()</a></li>
+<li><a href="#is_year">is_year()</a></li>
+<li><a href="#post_password_required">post_password_required()</a></li>
+<li><a href="#wp_attachment_is_image">wp_attachment_is_image()</a></li>
+</ul>
+<h5>WordPress Hooks</h5>
+<ul style="font-size:8pt;">
+<li><a href="#hook_after_setup_theme">after_setup_theme</a></li>
+<li><a href="#hook_get_comments_number">get_comments_number</a></li>
+<li><a href="#hook_widgets_init">widgets_init</a></li>
+<li><a href="#hook_wp_enqueue_script">wp_enqueue_script</a></li>
+<li><a href="#hook_wp_footer">wp_footer</a></li>
+<li><a href="#hook_wp_footer">wp_footer</a></li>
+<li><a href="#hook_wp_head">wp_head</a></li>
+<li><a href="#hook_wp_title">wp_title</a></li>
+</ul>
+<h5>WordPress Variables</h5>
+<ul style="font-size:8pt;">
+<li><a href="#var_page">$page</a></li>
+<li><a href="#var_paged">$paged</a></li>
+<li><a href="#var_post">$post</a></li>
+<li><a href="#var_wpdb">$wpdb</a></li>
+</ul>
+<h5>WordPress Constants</h5>
+<ul style="font-size:8pt;">
+<li><a href="#"></a></li>
+</ul>
+</li>
+<li style="display:inline;float:left;width:25%;">
+<h5>PHP Functions</h5>
+<ul style="font-size:8pt;">
+<li><a href="#_server">$_SERVER[]</a></li>
+<li><a href="#array_map">array_map()</a></li>
+<li><a href="#array_reverse">array_reverse()</a></li>
+<li><a href="#array_values">array_values()</a></li>
+<li><a href="#basename">basename()</a></li>
+<li><a href="#count">count()</a></li>
+<li><a href="#create_function">create_function()</a></li>
+<li><a href="#date">date()</a></li>
+<li><a href="#define">define()</a></li>
+<li><a href="#max">max()</a></li>
+<li><a href="#number_format">number_format()</a></li>
+<li><a href="#preg_replace">preg_replace()</a></li>
+<li><a href="#require">require()</a> /<br /><a href="#require">require_once()</a></li>
+<li><a href="#sprintf">sprintf()</a></li>
+<li><a href="#str_replace">str_replace()</a></li>
+<li><a href="#trim">trim()</a></li>
+<li><a href="#urldecode">urldecode()</a></li>
+</ul>
+<h5>PHP Conditionals</h5>
+<ul style="font-size:8pt;">
+<li><a href="#file_exists">file_exists()</a></li>
+<li><a href="#filesize">filesize()</a></li>
+<li><a href="#function_exists">function_exists()</a></li>
+<li><a href="#is_array">is_array()</a></li>
+<li><a href="#isset">isset()</a></li>
+</ul>
+<h5>Oenology Custom Functions</h5>
+<ul style="font-size:8pt;">
+<li><a href="#oenology_404_handler">oenology_404_handler()</a></li>
+<li><a href="#oenology_admin_header_style">oenology_admin_header_style()</a></li>
+<li><a href="#oenology_breadcrumb">oenology_breadcrumb()</a></li>
+<li><a href="#oenology_comment_count">oenology_comment_count()</a></li>
+<li><a href="#oenology_copyright">oenology_copyright()</a></li>
+<li><a href="#oenology_filter_wp_title">oenology_filter_wp_title()</a></li>
+<li><a href="#oenology_gallery_image_meta">oenology_gallery_image_meta()</a></li>
+<li><a href="#oenology_gallery_links">oenology_gallery_links()</a></li>
+<li><a href="#oenology_header_style">oenology_header_style()</a></li>
+<li><a href="#oenology_load_widgets">oenology_load_widgets()</a></li>
+<li><a href="#oenology_setup">oenology_setup()</a></li>
+<li><a href="#oenology_setup_widgets">oenology_setup_widgets()</a></li>
+<li><a href="#oenology_show_current_cat_on_single">oenology_show_current_cat<br />_on_single()</a></li>
+<li><a href="#oenology_widget_archives">oenology_widget_archives()</a></li>
+<li><a href="#oenology_widget_categories">oenology_widget_categories()</a></li>
+<li><a href="#oenology_widget_linkrollbycat">oenology_widget_linkrollbycat()</a></li>
+<li><a href="#oenology_widget_recentposts">oenology_widget_recentposts()</a></li>
+<li><a href="#oenology_widget_tags">oenology_widget_tags()</a></li>
+</ul>
+<h5>Other Custom Functions</h5>
+<ul style="font-size:8pt;">
+<li><a href="#wp_paginate">wp_paginate()</a></li>
+</ul>
+</li>
+</ul>
+
+<hr style="clear:both;" />
+
+<h3 id="_server">$_SERVER[]</h3>
 <p><code>$_SERVER[]</code> is a PHP function that returns various server variables.</p>
-<ul style="list-style:disc inside;margin-left:25px;">
-<li>Codex reference: N/A</li>
+<ul style="list-style-type:disc;margin-left:25px;">
 <li>PHP reference: <a href="http://php.net/manual/en/reserved.variables.server.php">$_SERVER</a></li>
 </ul>
 
 <p>Example:</p>
-<ul style="list-style:disc inside;margin-left:25px;">
+<ul style="list-style-type:disc;margin-left:25px;">
 <li><code>$_SERVER['PHP_SELF']</code><br />Returns the name of the current file</li>
 </ul>
 
 <p>Used in the following template files:</p>
-<ul style="list-style:disc inside;margin-left:25px;">
+<ul style="list-style-type:disc;margin-left:25px;">
 <li>(tbd)</li>
 </ul>
 
 
-<h3>add_action()</h3>
+<h3 id="add_action">add_action()</h3>
 <p><code>add_action()</code> is a WordPress function.</p>
-<ul style="list-style:disc inside;margin-left:25px;">
+<ul style="list-style-type:disc;margin-left:25px;">
 <li>Codex reference: http://codex.wordpress.org/Function_Reference/add_action</li>
 </ul>
 
 <p><code>add_action()</code> is used to hook a function into a WordPress action</p>
 
 <p><code>add_action( $tag, $function_to_add, $priority, $accepted_args )</code> accepts four arguments:</p>
-<ul style="list-style:disc inside;margin-left:25px;">
-<li><code>$tag:</code> WordPress action into which to hook the function.<br />Default: none</li>
-<li><code>$function_to_add:</code> function to hook into the WordPress action.<br />Default: none</li>
-<li><code>$priority:</code> relative priority (order of execution, lower numbers execute sooner) of function.<br />Default: 10</li>
-<li><code>$accepted_args:</code> number of arguments accepted by function being hooked.<br />Default: 1</li>
+<ul style="list-style-type:disc;margin-left:25px;">
+<li><code>$tag:</code> WordPress action into which to hook the function.<br />Default: <code>null</code></li>
+<li><code>$function_to_add:</code> function to hook into the WordPress action.<br />Default: <code>null</code></li>
+<li><code>$priority:</code> relative priority (order of execution, lower numbers execute sooner) of function.<br />Default: <code>10</code></li>
+<li><code>$accepted_args:</code> number of arguments accepted by function being hooked.<br />Default: <code>1</code></li>
 </ul>
 
 Example:
-<ul style="list-style:disc inside;margin-left:25px;">
+<ul style="list-style-type:disc;margin-left:25px;">
 <li><code>add_action( 'after_setup_theme', 'oenology_setup', 10 );</code>
 Hooks custom function oenology_setup() into the "after_setup_theme" action, with the default priority</li>
 </ul>
 
 <p>Used in the following template files:</p>
-<ul style="list-style:disc inside;margin-left:25px;">
+<ul style="list-style-type:disc;margin-left:25px;">
 <li>functions.php</li>
 </ul>
 
