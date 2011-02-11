@@ -3,27 +3,40 @@
 * Add Theme Settings Form Sections
 *******************************************************************************************/
 	
-// Add a form section for the General theme settings
-add_settings_section('oenology_settings_general', 'Oenelogy Theme General Options', 'oenology_settings_general_section_text', 'oenology');
+// Add a form section for the Header settings
+add_settings_section('oenology_settings_general_header', 'Header Options', 'oenology_settings_general_header_section_text', 'oenology');
+	
+// Add a form section for the Footer settings
+add_settings_section('oenology_settings_general_footer', 'Footer Options', 'oenology_settings_general_footer_section_text', 'oenology');
 	
 /*****************************************************************************************
-* Add Form Fields to General Settings Section
+* Add Form Fields to Header Settings Section
 *******************************************************************************************/
 	
 // Add Header Navigation Menu Position setting to the General section
-add_settings_field('oenology_setting_header_nav_menu_position', 'Header Nav Menu Position', 'oenology_setting_header_nav_menu_position', 'oenology', 'oenology_settings_general');	
+add_settings_field('oenology_setting_header_nav_menu_position', 'Header Nav Menu Position', 'oenology_setting_header_nav_menu_position', 'oenology', 'oenology_settings_general_header');	
 // Add Header Navigation Menu Depth setting to the General section
-add_settings_field('oenology_setting_header_nav_menu_depth', 'Header Nav Menu Depth', 'oenology_setting_header_nav_menu_depth', 'oenology', 'oenology_settings_general');
+add_settings_field('oenology_setting_header_nav_menu_depth', 'Header Nav Menu Depth', 'oenology_setting_header_nav_menu_depth', 'oenology', 'oenology_settings_general_header');
+	
+/*****************************************************************************************
+* Add Form Fields to Footer Settings Section
+*******************************************************************************************/	
+
 // Add Footer Credit Link setting to the General section
-add_settings_field('oenology_setting_display_footer_credit', 'Footer Credit', 'oenology_setting_display_footer_credit', 'oenology', 'oenology_settings_general');
+add_settings_field('oenology_setting_display_footer_credit', 'Footer Credit', 'oenology_setting_display_footer_credit', 'oenology', 'oenology_settings_general_footer');
 
 /*****************************************************************************************
 * Add Section Text for Each Form Section
 *******************************************************************************************/
 
-// General Settings Section
-function oenology_settings_general_section_text() { ?>
-	<p><?php _e( 'Manage general options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' ); ?></p>
+// Header Settings Section
+function oenology_settings_general_header_section_text() { ?>
+	<p><?php _e( 'Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' ); ?></p>
+<?php }
+
+// Footer Settings Section
+function oenology_settings_general_footer_section_text() { ?>
+	<p><?php _e( 'Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' ); ?></p>
 <?php }
 
 /*****************************************************************************************
