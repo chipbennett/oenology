@@ -73,6 +73,11 @@ Declare all fonts used in theme
 .navmenu li a:visited,
 .navmenu li a:hover,
 .navmenu li a:active,
+.nav-header li a,
+.nav-header li a:link,
+.nav-header li a:visited,
+.nav-header li a:hover,
+.nav-header li a:active,
 #leftcol .subnavmenutest .current_page_item a,
 #leftcol .subnavmenutest .current_page_parent a,
 #leftcol .subnavmenutest .current_page_ancestor a,
@@ -138,6 +143,9 @@ h1, h2, h3, h4, h5, h6,
 .navmenu .current_page_item a,
 .navmenu .current_page_ancestor a,
 .navmenu li a:hover,
+.nav-header .current_page_item a,
+.nav-header .current_page_ancestor a,
+.nav-header li a:hover,
 #leftcol .subnavmenutest .current_page_parent .current_page_item a,
 #leftcol .subnavmenutest .current_page_ancestor .current_page_parent .current_page_item a,
 .title,
@@ -1726,12 +1734,12 @@ body.single-format-image dd {
 .navmenu li,
 .nav-header li {
      display: inline;
+	 position:relative;
      float:left;
      margin-left:0px;
      padding:0px;
      padding-left:0px;
      text-align:center;
-	 overflow:hidden;
 }
 .navmenu li a,
 .navmenu li a:link,
@@ -1744,6 +1752,7 @@ body.single-format-image dd {
 .nav-header li a:hover,
 .nav-header li a:active {
      display:block;
+	 overflow:hidden;
      height: 18pt;
      line-height: 18pt;
      width: 98px; 
@@ -1766,6 +1775,40 @@ body.single-format-image dd {
      font-weight:bold;
      text-decoration:none;
 }
+#nav ul {
+	display:none;
+	position: absolute;
+	top: 18pt;
+	left: 0;
+	width: 110px;
+    list-style-type:none;
+    margin:0px;
+	margin-top:2px;
+    margin-bottom:0px;
+    padding-top:5px;
+	padding-bottom:5px;
+	z-index: 99999;
+}
+#nav ul li {
+	position:static;
+	padding-left:5px;
+	padding-right:5px;
+}
+#nav ul ul {
+	left:100%;
+	top:0;
+	width: 105px;
+	margin-top:0px;
+	margin-left:0px;
+}
+#nav li:hover > ul {
+	display: block;
+}
+#nav ul ul li {
+	padding-left:0px;
+	padding-right:5px;
+}
+
 /*    4.2 - Section Navigation Style Specifications   
 ----------------------------------------------- */
 /* TOP LEVEL: Hide all top-level page menus */

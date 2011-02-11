@@ -11,7 +11,9 @@ add_settings_section('oenology_settings_general', 'Oenelogy Theme General Option
 *******************************************************************************************/
 	
 // Add Header Navigation Menu Position setting to the General section
-add_settings_field('oenology_setting_header_nav_menu_position', 'Header Nav Menu Position', 'oenology_setting_header_nav_menu_position', 'oenology', 'oenology_settings_general');
+add_settings_field('oenology_setting_header_nav_menu_position', 'Header Nav Menu Position', 'oenology_setting_header_nav_menu_position', 'oenology', 'oenology_settings_general');	
+// Add Header Navigation Menu Depth setting to the General section
+add_settings_field('oenology_setting_header_nav_menu_depth', 'Header Nav Menu Depth', 'oenology_setting_header_nav_menu_depth', 'oenology', 'oenology_settings_general');
 // Add Footer Credit Link setting to the General section
 add_settings_field('oenology_setting_display_footer_credit', 'Footer Credit', 'oenology_setting_display_footer_credit', 'oenology', 'oenology_settings_general');
 
@@ -37,6 +39,21 @@ function oenology_setting_header_nav_menu_position() {
 			<select name="theme_oenology_options[header_nav_menu_position]">
 				<option <?php selected( 'above' == $oenology_options['header_nav_menu_position'] ); ?> value="above">Above</option>
 				<option <?php selected( 'below' == $oenology_options['header_nav_menu_position'] ); ?> value="below">Below</option>
+			</select>
+		</label>
+	</p>
+<?php }
+
+// Navigation Menu Position Depth
+function oenology_setting_header_nav_menu_depth() {
+	$oenology_options = get_option( 'theme_oenology_options' ); ?>
+	<p>
+		<label for="oenology_header_nav_menu_depth">
+			How many levels of Page hierarchy should the Header Navigation Menu display?<br />
+			<select name="theme_oenology_options[header_nav_menu_depth]">
+				<option <?php selected( 1 == $oenology_options['header_nav_menu_depth'] ); ?> value="1">One</option>
+				<option <?php selected( 2 == $oenology_options['header_nav_menu_depth'] ); ?> value="2">Two</option>
+				<option <?php selected( 3 == $oenology_options['header_nav_menu_depth'] ); ?> value="3">Three</option>
 			</select>
 		</label>
 	</p>

@@ -2,6 +2,7 @@
   -------------------------------------------- */
 body,
 #extent,
+#nav,
 #content,
 #leftcol,
 #main,
@@ -37,10 +38,16 @@ dd {
 }  
 /* Site Navigation
   -------------------------------------------- */
-.navmenu {
+.navmenu,
+.nav-header {
 	background-color: #333;
 }
-.navmenu li {
+.navmenu li,
+.nav-header li,
+.navmenu ul,
+.nav-header ul,
+.navmenu ul li,
+.nav-header ul li {
 	background-color: #333;
 }
 .navmenu li a,
@@ -73,6 +80,16 @@ dd {
      color:#bbb;
      border-top-color: #bbb;
 	 border-left-color: #bbb;
+}
+#nav ul {
+	border-left: 1px solid #444;
+	border-bottom: 1px solid #444;
+	box-shadow: 3px 3px 3px #444;
+	-moz-box-shadow: 3px 3px 3px #444;
+	-webkit-box-shadow: 3px 3px 3px #444;
+}
+#nav ul ul {
+	border-left:0;
 }
 /* Sidebar Navigation
   -------------------------------------------- */

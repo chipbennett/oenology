@@ -5,6 +5,7 @@
   -------------------------------------------- */
 body,
 #extent,
+#nav,
 #content,
 #leftcol,
 #main,
@@ -39,10 +40,16 @@ dd {
 }  
 /* Site Navigation
   -------------------------------------------- */
-.navmenu {
+.navmenu,
+.nav-header {
 	background-color: #f0f0e0;
 }
-.navmenu li {
+.navmenu li,
+.nav-header li,
+.navmenu ul,
+.nav-header ul,
+.navmenu ul li,
+.nav-header ul li {
 	background-color: #f0f0e0;
 }
 .navmenu li a,
@@ -75,6 +82,16 @@ dd {
     color:#000;
     border-bottom-color: #000;
     border-right-color: #000;
+}
+#nav ul {
+	border-left: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+	box-shadow: 3px 3px 3px #bbb;
+	-moz-box-shadow: 3px 3px 3px #bbb;
+	-webkit-box-shadow: 3px 3px 3px #bbb;
+}
+#nav ul ul {
+	border-left:0;
 }
 /* Sidebar Navigation
   -------------------------------------------- */

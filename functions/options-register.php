@@ -52,12 +52,14 @@ function oenology_options_validate( $input ) {
 	if ( $submit_general ) { // if General Settings Submit
 	
 		$valid_input['header_nav_menu_position'] = ( 'below' == $input['header_nav_menu_position'] ? 'below' : 'above' );
+		$valid_input['header_nav_menu_depth'] = ( ( 1 || 2 || 3 ) == $input['header_nav_menu_depth'] ? $input['header_nav_menu_depth'] : $valid_input['header_nav_menu_depth'] );
 		$valid_input['display_footer_credit'] = ( 'true' == $input['display_footer_credit'] ? true : false );
 		
 	} elseif ( $reset_general ) { // if General Settings Reset Defaults
 	
 		$oenology_default_options = oenology_get_default_options();
 		$valid_input['header_nav_menu_position'] = $oenology_default_options['header_nav_menu_position'];
+		$valid_input['header_nav_menu_depth'] = $oenology_default_options['header_nav_menu_depth'];
 		$valid_input['display_footer_credit'] = $oenology_default_options['display_footer_credit'];
 		
 	} elseif ( $submit_varietals ) { // if Varietals Settings Submit

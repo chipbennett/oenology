@@ -19,6 +19,7 @@ function oenology_get_default_options() {
 
     $options = array(
         'header_nav_menu_position' => 'top',
+		'header_nav_menu_depth' => 1,
         'display_footer_credit' => false,
 	'varietal' => 'cuvee',
         'theme_version' => '1.1'

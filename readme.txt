@@ -1,7 +1,7 @@
 === Oenology ===
 Contributors: Chip Bennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
-Tags: fixed-width, white, three-columns, custom-header, custom-background, custom-menu, editor-style, threaded-comments, sticky-post, left-sidebar, right-sidebar
+Tags: fixed-width, white, black, tan, three-columns, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
 Requires at least: 3.1
 Tested up to: 3.1
 Stable tag: 1.1
@@ -120,12 +120,18 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 == Changelog ==
 
 = 1.1 [2011.02.DD] =
-* Maintenance Release
-* Added support for Post Formats (introduced in WordPress 3.1)
-* Added basic Theme options: Header Navigation Menu Position, disabled-by-default footer credit link
-* Added check to ensure TwentyTen header images are registered only if TwentyTen is installed
-* Minor tweak/bugfix to ensure floats are cleared properly on paginated posts
-* Minor tweaks to comments.php
+* Update Release
+* New Features
+  * Added support for Post Formats (introduced in WordPress 3.1)
+  * Added basic Theme options: 
+    * Header Navigation Menu Position
+    * Header Navigation Menu Depth (up to three levels)
+    * Footer Credit Link (disabled by default)
+  * Added Theme color schemes ("Varietals"): Syrah, Seyval Blanc
+* Maintenance/Bugfixes
+  * Added check to ensure TwentyTen header images are registered only if TwentyTen is installed
+  * Minor tweak/bugfix to ensure floats are cleared properly on paginated posts
+  * Minor tweaks to comments.php
 
 = 1.0 [2010.12.08] =
 * Maintenance Release

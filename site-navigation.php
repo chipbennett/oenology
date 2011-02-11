@@ -5,6 +5,7 @@ Template Name: Main Navigation Bar
 ?>
 
 <?php 
+	global $oenology_options;
 	if ( has_nav_menu( 'nav-header' ) ) { // If a nav menu named 'nav-header' is configured, output it
 		wp_nav_menu( array( 
 			'container' => '',
@@ -12,15 +13,15 @@ Template Name: Main Navigation Bar
 			'menu_id' => 'nav', 
 			'menu_class' => 'nav-header', 
 			'fallback_cb' => '', 
-			'depth' => 1, 
+			'depth' => $oenology_options['header_nav_menu_depth'], 
 			'theme_location' => 'nav-header' 
 		) ); 
 		} else { // otherwise, output the top-level hierarchy list of pages ?>
-			<ul id="nav" class="navmenu">
+			<ul id="nav" class="nav-header">
 				<?php if ( get_option( 'show_on_front' ) == 'posts' ) { // if posts, and not a static page, are being used as the site home page, display a link to HOME ?>
 					<li><a id="navhome" href="<?php echo home_url(); ?>">Home</a></li>
 				<?php }
-				wp_list_pages('depth=1&sort_column=menu_order&title_li='); 
+				wp_list_pages( array( 'depth' => $oenology_options['header_nav_menu_depth'], 'sort_column' => 'menu_order', 'title_li' => '' ) ); 
 				// depth=1 indicates that only the top-level hierarchy of pages (i.e. no child pages) will be displayed
 				// sort_column=menu_order indicates that the pages will be sorted as defined by the user in the Pages administration panel
 				// title_li= (blank) indicates that the list will not be wrapped in <ul> tags, and the <li> tags will not be given a title

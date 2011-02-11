@@ -39,7 +39,13 @@ function oenology_reference_page_changelog() { ?>
 	<li>New Features:
 		<ol>
 		<li>Added support for Post Formats (introduced in WordPress 3.1)</li>
-		<li>Added basic Theme options: Header Navigation Menu Position, disabled-by-default footer credit link</li>
+		<li>Added basic Theme options:
+			<ol>
+			<li>Header Navigation Menu Position</li>
+			<li>Header Navigation Menu Depth (up to three levels)</li>
+			<li>Footer Credit Link (disabled-by-default)</li>
+			</ol>
+		</li>
 		<li>Added Theme color schemes ("Varietals"): Syrah, Seyval Blanc</li>
 		</ol>
 	</li>
