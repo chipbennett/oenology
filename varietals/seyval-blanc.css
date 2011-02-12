@@ -3,13 +3,7 @@
 */
 /* Site Layout
   -------------------------------------------- */
-body,
-#extent,
-#nav,
-#content,
-#leftcol,
-#main,
-#rightcol {
+body {
 	color: #666;
 	background-color: #f0f0e0;
   } 
@@ -289,7 +283,11 @@ div.post {
 	border: 1px solid #bbb;
 	-webkit-border-radius: 9px; 
 	-moz-border-radius: 9px; 
-	border-radius: 9px; }
+	border-radius: 9px;
+	box-shadow: 3px 3px 5px #777;
+	-moz-box-shadow: 3px 3px 5px #777;
+	-webkit-box-shadow: 3px 3px 5px #777;
+}
 body.home .post.sticky {
 	border-color: #777;
 	background-color:#f8f8e0;
@@ -300,6 +298,9 @@ body.single-format-image .post,
 .post.format-quote,
 .post.format-status {
   border: 0;
+	box-shadow: 0px 0px 0px #444;
+	-moz-box-shadow: 0px 0px 0px #444;
+	-webkit-box-shadow: 0px 0px 0px #444;
 }
 .post.format-aside .post-entry:before,
 .post.format-link .post-entry:before,

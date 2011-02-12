@@ -1,12 +1,6 @@
 /* Site Layout
   -------------------------------------------- */
-body,
-#extent,
-#nav,
-#content,
-#leftcol,
-#main,
-#rightcol {
+body {
 	color: #bbb;
 	background-color: #333;
   } 
@@ -304,10 +298,16 @@ div.post {
 	-webkit-border-radius: 9px; 
 	-moz-border-radius: 9px; 
 	border-radius: 9px; 
+	box-shadow: 3px 3px 5px #777;
+	-moz-box-shadow: 3px 3px 5px #777;
+	-webkit-box-shadow: 3px 3px 5px #777;
 }
 body.home .post.sticky {
 	background-color:#282828;
 	border-color: #000;
+	box-shadow: 3px 3px 5px #bbb;
+	-moz-box-shadow: 3px 3px 5px #bbb;
+	-webkit-box-shadow: 3px 3px 5px #bbb;
 }
 body.single-format-image .post,
 .post.format-aside,
@@ -315,6 +315,9 @@ body.single-format-image .post,
 .post.format-quote,
 .post.format-status {
   border: 0;
+	box-shadow: 0px 0px 0px #444;
+	-moz-box-shadow: 0px 0px 0px #444;
+	-webkit-box-shadow: 0px 0px 0px #444;
 }
 .post.format-aside .post-entry:before,
 .post.format-link .post-entry:before,
