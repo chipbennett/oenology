@@ -208,10 +208,10 @@ file in the Theme root directory for a better-formatted version of this informat
 
 <p>The following functions, tags, and hooks are used (or referenced) in Oenology:</p>
 
-<ul style="clear:both;">
-<li style="display:inline;float:left;width:25%;">
+<ul class="codereflinklist">
+<li>
 <h5>WordPress Functions</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#add_action">add_action()</a></li>
 <li><a href="#add_custom_background">add_custom_background()</a></li>
 <li><a href="#add_custom_image_header">add_custom_image_header()</a></li>
@@ -243,9 +243,9 @@ file in the Theme root directory for a better-formatted version of this informat
 <li><a href="#wp_upload_dir">wp_upload_dir()</a></li>
 </ul>
 </li>
-<li style="display:inline;float:left;width:25%;">
+<li>
 <h5>WordPress Template Tags</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#body_class">body_class()</a></li>
 <li><a href="#category_description">category_description()</a></li>
 <li><a href="#comment_form">comment_form()</a></li>
@@ -303,9 +303,9 @@ file in the Theme root directory for a better-formatted version of this informat
 <li><a href="#wp_title">wp_title()</a></li>
 </ul>
 </li>
-<li style="display:inline;float:left;width:25%;">
+<li>
 <h5>WordPress Conditional Tags</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#comments_open">comments_open()</a></li>
 <li><a href="#has_nav_menu">has_nav_menu()</a></li>
 <li><a href="#have_comments">have_comments()</a></li>
@@ -329,7 +329,7 @@ file in the Theme root directory for a better-formatted version of this informat
 <li><a href="#wp_attachment_is_image">wp_attachment_is_image()</a></li>
 </ul>
 <h5>WordPress Hooks</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#hook_after_setup_theme">after_setup_theme</a></li>
 <li><a href="#hook_get_comments_number">get_comments_number</a></li>
 <li><a href="#hook_widgets_init">widgets_init</a></li>
@@ -340,20 +340,20 @@ file in the Theme root directory for a better-formatted version of this informat
 <li><a href="#hook_wp_title">wp_title</a></li>
 </ul>
 <h5>WordPress Variables</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#var_page">$page</a></li>
 <li><a href="#var_paged">$paged</a></li>
 <li><a href="#var_post">$post</a></li>
 <li><a href="#var_wpdb">$wpdb</a></li>
 </ul>
 <h5>WordPress Constants</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#"></a></li>
 </ul>
 </li>
-<li style="display:inline;float:left;width:25%;">
+<li>
 <h5>PHP Functions</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#_server">$_SERVER[]</a></li>
 <li><a href="#array_map">array_map()</a></li>
 <li><a href="#array_reverse">array_reverse()</a></li>
@@ -373,7 +373,7 @@ file in the Theme root directory for a better-formatted version of this informat
 <li><a href="#urldecode">urldecode()</a></li>
 </ul>
 <h5>PHP Conditionals</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#file_exists">file_exists()</a></li>
 <li><a href="#filesize">filesize()</a></li>
 <li><a href="#function_exists">function_exists()</a></li>
@@ -381,7 +381,7 @@ file in the Theme root directory for a better-formatted version of this informat
 <li><a href="#isset">isset()</a></li>
 </ul>
 <h5>Oenology Custom Functions</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#oenology_404_handler">oenology_404_handler()</a></li>
 <li><a href="#oenology_admin_header_style">oenology_admin_header_style()</a></li>
 <li><a href="#oenology_breadcrumb">oenology_breadcrumb()</a></li>
@@ -402,7 +402,7 @@ file in the Theme root directory for a better-formatted version of this informat
 <li><a href="#oenology_widget_tags">oenology_widget_tags()</a></li>
 </ul>
 <h5>Other Custom Functions</h5>
-<ul style="font-size:8pt;">
+<ul>
 <li><a href="#wp_paginate">wp_paginate()</a></li>
 </ul>
 </li>

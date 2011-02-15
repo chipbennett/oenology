@@ -3,14 +3,14 @@
 * Add Theme Settings Form Sections
 *******************************************************************************************/
 	
-// Add a form section for the General theme settings
+// Add a form section for the Varietal theme settings
 add_settings_section('oenology_settings_varietal', 'Oenology Theme Varietals', 'oenology_settings_varietal_section_text', 'oenology');
 	
 /*****************************************************************************************
-* Add Form Fields to General Settings Section
+* Add Form Fields to Varietal Settings Section
 *******************************************************************************************/
 	
-// Add Header Navigation Menu Position setting to the General section
+// Add Varietal setting to the Varietal section
 add_settings_field('oenology_setting_varietal', 'Available Varietals', 'oenology_setting_varietal', 'oenology', 'oenology_settings_varietal');
 
 /*****************************************************************************************

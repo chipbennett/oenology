@@ -13,16 +13,16 @@ add_settings_section('oenology_settings_general_footer', 'Footer Options', 'oeno
 * Add Form Fields to Header Settings Section
 *******************************************************************************************/
 	
-// Add Header Navigation Menu Position setting to the General section
+// Add Header Navigation Menu Position setting to the Header section
 add_settings_field('oenology_setting_header_nav_menu_position', 'Header Nav Menu Position', 'oenology_setting_header_nav_menu_position', 'oenology', 'oenology_settings_general_header');	
-// Add Header Navigation Menu Depth setting to the General section
+// Add Header Navigation Menu Depth setting to the Header section
 add_settings_field('oenology_setting_header_nav_menu_depth', 'Header Nav Menu Depth', 'oenology_setting_header_nav_menu_depth', 'oenology', 'oenology_settings_general_header');
 	
 /*****************************************************************************************
 * Add Form Fields to Footer Settings Section
 *******************************************************************************************/	
 
-// Add Footer Credit Link setting to the General section
+// Add Footer Credit Link setting to the Footer section
 add_settings_field('oenology_setting_display_footer_credit', 'Footer Credit', 'oenology_setting_display_footer_credit', 'oenology', 'oenology_settings_general_footer');
 
 /*****************************************************************************************

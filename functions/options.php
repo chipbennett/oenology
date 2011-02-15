@@ -92,7 +92,7 @@ function oenology_enqueue_varietal_style() {
 	
 	wp_enqueue_style( $varietal_handle, $varietal_stylesheet );
 }
-// Enqueue Varietal Stylesheet at wp_head()
+// Enqueue Varietal Stylesheet at wp_print_styles()
 add_action('wp_print_styles', 'oenology_enqueue_varietal_style', 11 );
 
 
@@ -102,8 +102,7 @@ add_action('wp_print_styles', 'oenology_enqueue_varietal_style', 11 );
 
 // Add "Oenology Options" link to the "Appearance" menu
 function oenology_menu_options() {
-	global $oenology_admin_options_hook;
-	$oenology_admin_options_hook = add_theme_page('Oenology Options', 'Oenology Options', 'edit_theme_options', 'oenology-settings', 'oenology_admin_options_page');
+	add_theme_page('Oenology Options', 'Oenology Options', 'edit_theme_options', 'oenology-settings', 'oenology_admin_options_page');
 }
 // Load the Admin Options page
 add_action('admin_menu', 'oenology_menu_options');
@@ -148,11 +147,12 @@ function oenology_admin_options_page() { ?>
     			echo "<div class='updated'><p>Theme settings updated successfully.</p></div>";
 		} ?>
 		<form action="options.php" method="post">
-			<?php 
+		<?php 
 			settings_fields('theme_oenology_options');
 			do_settings_sections('oenology');
-			?>
-			<?php $tab = ( isset( $_GET['tab'] ) ? $_GET['tab'] : 'general' ); ?>
+			
+			$tab = ( isset( $_GET['tab'] ) ? $_GET['tab'] : 'general' );
+		?>
 			<input name="theme_oenology_options[submit-<?php echo $tab; ?>]" type="submit" class="button-primary" value="<?php esc_attr_e('Save Settings', 'oenology'); ?>" />
 			<input name="theme_oenology_options[reset-<?php echo $tab; ?>]" type="submit" class="button-secondary" value="<?php esc_attr_e('Reset Defaults', 'oenology'); ?>" />
 		</form>
@@ -172,21 +172,40 @@ add_action('admin_init', 'oenology_register_options');
 
 
 /*****************************************************************************************
+* Enqueue Custom Admin Page Stylesheet
+*******************************************************************************************/
+
+function oenology_enqueue_admin_style() {
+
+	// define admin stylesheet
+	$admin_handle = 'oenology_admin_stylesheet';
+	$admin_stylesheet = get_template_directory_uri() . '/functions/oenology-admin.css';
+	
+	wp_enqueue_style( $admin_handle, $admin_stylesheet );
+}
+// Enqueue Admin Stylesheet at admin_print_styles()
+add_action('admin_print_styles-appearance_page_oenology-settings', 'oenology_enqueue_admin_style', 11 );
+add_action('admin_print_styles-appearance_page_oenology-reference', 'oenology_enqueue_admin_style', 11 );
+
+
+/*****************************************************************************************
 * Setup the Theme Admin Settings Page Contextual help
 *******************************************************************************************/
 
 // Admin settings page contextual help markup
 // Separate file for ease of management
-function oenology_contextual_help_options( $contextual_help, $screen_id, $screen ) {		
-	global $oenology_admin_options_hook;
+function oenology_get_contextual_help_text() {
 	require( get_template_directory() . '/functions/options-help.php' );
-	if ( $screen_id == $oenology_admin_options_hook ) {
-		$contextual_help = $text;
-	}
-	return $contextual_help;
+	return $tabtext;
+}
+
+function oenology_contextual_help() {
+	$oenology_contextual_help_text = oenology_get_contextual_help_text();
+	add_contextual_help( 'appearance_page_oenology-settings', $oenology_contextual_help_text  );
+	add_contextual_help( 'appearance_page_oenology-reference', $oenology_contextual_help_text  );
 }
 // Add contextual help to Admin Options page
-add_action('contextual_help', 'oenology_contextual_help_options', 10, 3);
+add_action('admin_init', 'oenology_contextual_help', 10, 3);
 
 
 ?>

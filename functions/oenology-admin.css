@@ -1,0 +1,19 @@
+/* Admin CSS
+  -------------------------------------------- */
+
+#wpbody .wrap ul.codereflinklist {
+      clear:both;
+}
+#wpbody .wrap ul.codereflinklist li {
+      display:inline;
+      float:left;
+      width:25%;
+}
+#wpbody .wrap ul.codereflinklist li ul {
+      font-size:8pt;
+}
+#wpbody .wrap ul.codereflinklist li ul li {
+      display:block;
+      float:none;
+      width:auto;
+}

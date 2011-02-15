@@ -1,7 +1,5 @@
 <?php
 
-global $text;
-
 if ( isset ( $_GET['tab'] ) ) {
        	$tab = $_GET['tab'];
 } else {
@@ -10,11 +8,9 @@ if ( isset ( $_GET['tab'] ) ) {
 switch ( $tab ) {
        	case 'general' :
        		$tabtext = oenology_get_contextual_help_options_general();
-			$text .= $tabtext;
        		break;
        	case 'varietals' :
        		$tabtext = oenology_get_contextual_help_options_varietals();
-			$text .= $tabtext;
        		break;
 }
 
