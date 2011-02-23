@@ -119,7 +119,7 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 
 == Changelog ==
 
-= 1.1 [2011.02.DD] =
+= 1.1 [2011.02.23] =
 * Update Release
 * New Features
   * Added support for Post Formats (introduced in WordPress 3.1)
@@ -128,6 +128,7 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
     * Header Navigation Menu Depth (up to three levels)
     * Footer Credit Link (disabled by default)
   * Added Theme color schemes ("Varietals"): Syrah, Seyval Blanc
+  * Added Theme Reference Admin page (General Information, FAQ, Code Reference, Change Log)
 * Maintenance/Bugfixes
   * Added check to ensure TwentyTen header images are registered only if TwentyTen is installed
   * Minor tweak/bugfix to ensure floats are cleared properly on paginated posts
