@@ -29,7 +29,7 @@ add_action( $tag, $function_to_add, $priority, $accepted_args ) accepts four arg
  - $accepted_args: number of arguments accepted by function being hooked. Default: 1
 
 Example:
-add_action( 'after_setup_theme', 'oenology_setup', 10 );
+<?php add_action( 'after_setup_theme', 'oenology_setup', 10 ); ?>
 Hooks custom function oenology_setup() into the "after_setup_theme" action, with the default priority
 
 Used in the following template files:
@@ -49,7 +49,7 @@ add_custom_background( $header_callback, $admin_header_callback, $admin_image_di
  - $admin_image_div_callback: Output a custom background image div on Custom Background admin screen. Default: none
 
 Example:
-add_custom_background();
+<?php add_custom_background(); ?>
 Adds custom background support to Theme, with no default background image defined.
 
 Used in the following template files:
@@ -68,7 +68,7 @@ add_custom_image_header( $header_callback, $admin_header_callback ) accepts two 
  - $admin_header_callback: Callback to add to Custom Image Header admin screen. Default: none.
 
 Example:
-add_custom_image_header( 'oenology_header_style', 'oenology_admin_header_style' );
+<?php add_custom_image_header( 'oenology_header_style', 'oenology_admin_header_style' ); ?>
 Adds custom image header support to Theme, using header style defined in custom function
 oenology_header_style(), and Custom Image Header admin screen style defined in custom function
 oenology_admin_header_style().
@@ -89,7 +89,7 @@ add_editor_style( $stylesheet ) accepts one argument:
  definitions. Default: editor-style.css ('editor-style')
 
 Example:
-add_editor_style();
+<?php add_editor_style(); ?>
 Adds custom visual editor style support to Theme, with styles defined in CSS file editor-style.css.
 
 Used in the following template files:
@@ -110,7 +110,7 @@ add_filter( $tag, $function_to_add, $priority, $accepted_args ) accepts four arg
  - $accepted_args: number of arguments accepted by function being hooked. Default: 1
 
 Example:
-add_filter('get_comments_number', 'oenology_comment_count', 0);
+<?php add_filter('get_comments_number', 'oenology_comment_count', 0); ?>
 Hooks custom function oenology_comment_count() into the "get_comment_count" filter, with the highest priority (0)
 
 Used in the following template files:
@@ -134,7 +134,7 @@ add_image_size( $name, $width, $height, $crop ) accepts four arguments:
   - FALSE: soft (proportional) crop mode
 
 Example:
-add_image_size( 'attachment-nav-thumbnail', 45, 45, true );
+<?php add_image_size( 'attachment-nav-thumbnail', 45, 45, true ); ?>
 Adds a custom image size "attachment-nav-thumbnail", 45px wide, 45px in height, hard-cropped.
 
 Used in the following template files:
@@ -154,7 +154,7 @@ add_theme_support( $feature ) accepts one argument:
   - Default: none
 
 Example:
-add_theme_support( 'post-thumbnails' );
+<?php add_theme_support( 'post-thumbnails' ); ?>
 Adds Theme support for core WordPress Post Thumbnails feature
 
 Used in the following template files:
@@ -321,7 +321,7 @@ comment_form() accepts two arguments:
     Defaults to the current post.
 
 Example:
-comment_form();
+<?php comment_form(); ?>
 
 comment_form() must be used from within the Loop, unless the $postid parameter is used.
 
@@ -340,7 +340,7 @@ returns the URL only, rather than the full HTML anchor-tag link.
 comments_link() accepts no arguments.
 
 Example:
-<a href="comments_link();">Comments</a>
+<a href="<?php comments_link(); ?>">Comments</a>
 
 comments_link() must be used within the Loop.
 
@@ -362,7 +362,7 @@ comments_number( $a, $b, $c ) accepts three arguments:
  - $c: what to display for multiple comments
  
 Example:
-comments_number('0','1','%'); displays:
+<?php comments_number('0','1','%'); ?> displays:
   - '0' if 0 comments
   - '1' if 1 comment
   - '#' (actual number of comments) if multiple comments
@@ -496,7 +496,7 @@ edit_post_link( $link, $before, $after, $id ) accepts four arguments:
 - $id: ID of post to be edited. Defaults to ID of current post.
 
 Example:
-edit_post_link( 'Edit' ); displays: "<a href='[link to post edit screen]'>Edit</a>"
+<?php edit_post_link( 'Edit' ); ?> displays: "<a href='[link to post edit screen]'>Edit</a>"
 
 edit_post_link() must be used within the Loop, unless the $id argument is specified.
 
@@ -564,7 +564,7 @@ get_avatar( $id_or_email, $size, $default, $alt );  accepts four arguments:
  - $alt: alt text to display for avatar image. Defaults to no alt text.
 
 Example:
-echo get_avatar( get_the_author_meta('email'), $size = '20'); displays a 20x20px avatar for the post author.
+<?php echo get_avatar( get_the_author_meta('email'), $size = '20'); ?> displays a 20x20px avatar for the post author.
 
 To get the Avatar without displaying it, omit "echo" in the function call for get_avatar().
 
@@ -642,7 +642,7 @@ get_comment_link() accepts two arguments:
  - $args: ampersand (&) linked array of options. See Codex for full list.
 
 Example:
-<a href="echo get_comment_link();">Comment</a>
+<a href="<?php echo get_comment_link(); ?>">Comment</a>
 
 get_comment_link() must be used from within the Loop, unless the $comment parameter is used.
 
@@ -798,7 +798,7 @@ get_permalink( $id ) accepts one argument:
  - $id: ID of the post for which to return the permalink
 
 Example:
-echo get_permalink($post->post_parent);
+<?php echo get_permalink($post->post_parent); ?>
 Displays the URL to the post parent of the current post.
 
 Used in the following template files:
@@ -907,7 +907,7 @@ get_option() returns, but does not print (output/display) the value requested. T
 print this value, use 'echo get_option()'.
 
 Example:
-echo get_stylesheet_uri(); returns e.g. "http://www.mydomain.tld/wp-content/themes/my-theme/style.css"
+<?php echo get_stylesheet_uri(); ?> returns e.g. "http://www.mydomain.tld/wp-content/themes/my-theme/style.css"
 
 Used in the following template files:
 header.php
@@ -971,7 +971,7 @@ get_the_author_meta( $field, $userID )  accepts two arguments:
  - $userID: UserID for whom data item is displayed. Defaults to Post Author.
 
 Example:
-get_the_author_meta( 'email' ); returns the Post Author's email address.
+<?php get_the_author_meta( 'email' ); ?> returns the Post Author's email address.
 
 To display the author meta information, use 'echo" in the function call
 for get_the_author_meta(), or use the_author_meta() instead.
@@ -1000,7 +1000,7 @@ get_the_category( $id ) accepts one argument:
  - $id: post ID for which to return the category array. Defaults to current post ID.
 
 Example:
-$cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename;
+<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename;?>
 displays the nicename (slug) of the first category returned in the category array.
 
 get_the_category() must be used inside the loop, unless a post ID is passed 
@@ -1037,7 +1037,7 @@ get_the_title( $id ) accepts one argument:
  - $id: ID of the post for which to return the Post Title
 
 Example:
-echo get_the_title($post->post_parent); 
+<?php echo get_the_title($post->post_parent); ?> 
 Displays the Post Title of the current post's parent post. 
 
 Used in the following template files:
@@ -1071,7 +1071,7 @@ returns the URL only, rather than a full HTML anchor-tag link.
 get_trackback_url() accepts no arguments.
 
 Example:
-<a href="get_trackback_url();">Trackback</a>
+<a href="<?php get_trackback_url(); ?>">Trackback</a>
 
 get_trackback_url() must be used within the Loop.
 
@@ -1110,9 +1110,9 @@ get_query_var( $var ) accepts one argument:
  - $var: the query variable to return.
 
 Examples:
-get_query_var('paged');
+<?php get_query_var('paged'); ?>
  - Returns the current page number of an index page (home, archive, etc.)
-get_query_var('page');
+<?php get_query_var('page'); ?>
  - Returns the current page number of a Post or Page
 
 Used in the following template files:
@@ -1132,7 +1132,7 @@ To print/display the search query string, use "echo get_search_query()" or "the_
 get_search_query( $args ) accepts no arguments
 
 Example:
-get_search_query();
+<?php get_search_query(); ?>
 If e.g. "lorem ipsum" was entered as the search query, returns the string "lorem ipsum"
 
 Used in the following template files:
@@ -1150,7 +1150,7 @@ get_userdata( userid ) accepts one argument:
  - userid: the ID of the user for which to return data
 
 Example:
-$user_info = get_userdata($id);
+<?php $user_info = get_userdata($id); ?>
 Returns the following object values (not inclusive):
  - $user_info->user_login
  - $user_info->user_pass
@@ -1228,7 +1228,7 @@ the current query has posts available. It is primarily used in conjunction with 
 as part of the call to the Loop.
 
 Example (the Loop):
-if ( have_posts() ) : while ( have_posts() ) : the_post();
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 Used in the following template files:
 loop.php
@@ -1618,7 +1618,7 @@ next_comments_link( $label, $max_page ) accepts two arguments:
  - $max_page: maximum number of comment pages on which to place the link. Defaults to '0' (no limit)
 
 Example:
-previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' );
+<?php previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' ); ?>
 returns "<- Older Comments" (with an ASCII left-arrow symbol)
 
 next_comments_link() must be used from within the Loop.
@@ -2005,7 +2005,7 @@ posts_nav_link( $sep, $prelabel, $nxtlabel ) accepts 3 arguments:
  - $nxtlabel:  Link text displayed for "Next" link. Defaults to 'Next Page >>'.
 
 Example:
-posts_nav_link('&nbsp;&diams;&nbsp;','&laquo;&laquo; Newer Posts','Older Posts &raquo;&raquo;');
+<?php posts_nav_link('&nbsp;&diams;&nbsp;','&laquo;&laquo; Newer Posts','Older Posts &raquo;&raquo;'); ?>
 Displays '<< Newer Posts' and 'Older Posts >>', with diamonds as a separator.
 
 posts_nav_link() must be used within the Loop.
@@ -2048,7 +2048,7 @@ previous_comments_link( $label, $max_page ) accepts two arguments:
  - $max_page: maximum number of comment pages on which to place the link. Defaults to '0' (no limit)
 
 Example:
-next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' );
+<?php next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' ); ?>
 returns "Newer Comments ->" (with an ASCII right-arrow symbol)
 
 previous_comments_link() must be used from within the Loop.
@@ -2246,7 +2246,7 @@ size_format( $bytes, $decimals ) accepts arguments:
  - $decimals: decimal places to return. Default: '0'.
 
 Example:
-size_format( '1048576' );
+<?php size_format( '1048576' ); ?>
  - returns "1 MB"
 
 Used in the following template files:
@@ -2298,7 +2298,7 @@ the_author() is used to display the Post Author for the current post.
 the_author()  accepts no arguments.
 
 Example:
-the_author();
+<?php the_author(); ?>
 
 To get the Post Author without displaying it, use get_the_author().
 
@@ -2323,7 +2323,7 @@ the_category( $separator, $parents, $postid ) accepts three arguments:
  - $postid: ID of post for which categories to list. Defaults to ID of current post.
 
 Example:
-the_category( ', '); displays: "Category1, Category2, Category3"
+<?php the_category( ', '); ?> displays: "Category1, Category2, Category3"
 
 the_category() prints (displays/outputs) the data requested. To get, but not display/output the data, use get_category() instead.
 
@@ -2345,7 +2345,7 @@ the_content( $more_link_text, $strip_teaser )  accepts two arguments:
  - $strip_teaser: boolean (true/false); 'false' displays the content before <!--more-->; 'false' hides this content on single.php. Defaults to 'false'
 
 Example:
-the_content();
+<?php the_content(); ?>
 
 To get the Post Content without displaying it, use get_the_content().
 
@@ -2366,7 +2366,7 @@ the_date( $d ) accepts one argument:
  -$d: date format (per PHP date() function). Defaults to time format configured in General Settings
 
 Example:
-the_date( 'Y' ); displays the year the post was published, e.g. '2010'.
+<?php the_date( 'Y' ); ?> displays the year the post was published, e.g. '2010'.
 
 the_date() must be used within the Loop.
 
@@ -2384,7 +2384,7 @@ the_excerpt() is used to display the Post Excerpt for the current post.
 the_excerpt()  accepts no arguments.
 
 Example:
-the_excerpt();
+<?php the_excerpt(); ?>
 
 To get the Post Excerpt without displaying it, use get_the_excerpt().
 
@@ -2404,7 +2404,7 @@ the_ID() is used to display the Post ID for the current post.
 the_ID()  accepts no arguments.
 
 Example:
-the_ID();
+<?php the_ID(); ?>
 
 To get the Post ID without displaying it, use get_the_ID().
 
@@ -2425,7 +2425,7 @@ returns only the permalink URL, not a fully formed HTML anchor tag.
 the_permalink() accepts no arguments.
 
 Example:
-<a href="the_permalink();">Permalink</a>
+<a href="<?php the_permalink(); ?>">Permalink</a>
 
 the_permalink() must be used within the Loop.
 
@@ -2442,7 +2442,7 @@ the_post() is used to output the content of each post. It is primarily used in c
 with have_posts() as part of the call to the Loop.
 
 Example (the Loop):
-if ( have_posts() ) : while ( have_posts() ) : the_post();
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 Used in the following template files:
 loop.php
@@ -2468,7 +2468,7 @@ the_post_thumbnail( $size, $attr ) accepts two arguments:
  - $attr: used to override default attributes, such as src, alt, title, or class
 
 Example:
-the_post_thumbnail();
+<?php the_post_thumbnail(); ?>
 
 the_post_thumbnail() must be used within the Loop.
 
@@ -2488,7 +2488,7 @@ the_search_query() displays the current search query entered via the search form
 the_search_query() accepts no arguments.
 
 Example:
-'Search results for "the_search_query();" search' will display (assuming
+'Search results for "<?php the_search_query(); ?>" search' will display (assuming
 the user entered 'lorem ipsum' as the search query): 'Search results for "lorem ipsum" search'
 
 Used in the following template files:
@@ -2512,7 +2512,7 @@ the_shortlink( $text, $title, $before, $after ) accepts four arguments:
  - $after: string to display after the Shortlink. Defaults to no text.
 
 Example:
-the_shortlink( 'Shortlink' ); displays: <a href="[shortlink URL]" title="[Post Title]">Shortlink</a>.
+<?php the_shortlink( 'Shortlink' ); ?> displays: <a href="[shortlink URL]" title="[Post Title]">Shortlink</a>.
 
 the_shortlink() must be used within the Loop.
 
@@ -2533,7 +2533,7 @@ the_tags( $before, $separator, $after ) accepts three arguments:
  - $after: string to display after the tag list. Defaults to no text.
 
 Example:
-the_tags();
+<?php the_tags(); ?>
 
 the_tags() must be used within the Loop.
 
@@ -2552,7 +2552,7 @@ the_time( $d ) accepts one argument:
  -$d: time format (per PHP date() function). Defaults to time format configured in General Settings
 
 Example:
-the_time( 'Y' ); displays the year the post was published, e.g. '2010'.
+<?php the_time( 'Y' ); ?> displays the year the post was published, e.g. '2010'.
 
 the_time() prints the date. To get (return) the date but not print it, use get_the_time().
 
@@ -2575,7 +2575,7 @@ the_title( $before, $after, $echo ) accepts three arguments:
  - $echo: boolean (true/false). 'True' displays the title; 'false' does not (for use in functions, etc.). Defaults to 'true'.
 
 Example:
-the_title();
+<?php the_title(); ?>
 
 the_title() must be used within the Loop.
 
@@ -2808,7 +2808,7 @@ wp_list_comments( array( 'arg1' => 'value' , 'arg2' => 'value' ) ) accepts sever
  - reverse_top_level: if TRUE, will display the newest comments first. Defaults to user-configured setting in Settings -> Discussion.
  
 Example:
-	wp_list_comments( 'type=comment&avatar_size=40' ); displays comments that are "comment" type (no pingbacks or trackbacks),
+<?php	wp_list_comments( 'type=comment&avatar_size=40' ); ?> displays comments that are "comment" type (no pingbacks or trackbacks),
 with an avatar size of 40px.
 
 wp_list_comments() must be used from within the Loop.
@@ -2893,7 +2893,7 @@ wp_register() accepts 3 arguments:
  - $echo: return result boolean (true/false). Defaults to 'true'
 
 Example:
-wp_register( '' , '' ); returns the Registration or Site Admin link, without wrapping
+<?php wp_register( '' , '' ); ?> returns the Registration or Site Admin link, without wrapping
 in <li></li> tags.
 
 Used in the following template files:
@@ -2933,10 +2933,10 @@ wp_upload_dir( $time ) accepts arguments:
  - $time: time, as a string, formatted as 'yyyy/mm'. Default: null.
 
 Example:
-
+<?php
 $upload_dir = wp_upload_dir();
 echo $upload_dir['baseurl'];
-
+?>
  - returns "http://www.mydomain.tld/wp-content/uploads/"
 
 Used in the following template files:

@@ -458,10 +458,8 @@ function oenology_breadcrumb() {
       $currentLocation = single_tag_title( '' , FALSE ); 
  
     } elseif ( is_author() ) { // Define current location for Author Archives
-       global $author;
-      $userdata = get_userdata($author);
       $hierarchy = $delimiter . 'Posts Written by: ';
-	  $currentLocation = $userdata->display_name;  
+	  $currentLocation = get_the_author_meta( 'display_name', get_query_var( 'author' ) );
  
     } elseif ( is_404() ) { // Define current location for 404 Error page
       $hierarchy = $delimiter . 'Error 404: ';

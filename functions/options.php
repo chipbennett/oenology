@@ -195,6 +195,7 @@ add_action('admin_print_styles-appearance_page_oenology-reference', 'oenology_en
 // Admin settings page contextual help markup
 // Separate file for ease of management
 function oenology_get_contextual_help_text() {
+	$tabtext = '';
 	require( get_template_directory() . '/functions/options-help.php' );
 	return $tabtext;
 }
