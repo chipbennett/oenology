@@ -1,6 +1,21 @@
 <?php
 
 /*****************************************************************************************
+* Enqueue comment-reply script
+*******************************************************************************************/
+
+function oenology_enqueue_comment_reply() {
+	// on single blog post pages with comments open and threaded comments
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
+		// enqueue the javascript that performs in-link comment reply fanciness
+		wp_enqueue_script( 'comment-reply' ); 
+	}
+}
+// Hook into wp_enqueue_scripts
+add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
+
+
+/*****************************************************************************************
 * Filter wp_title function
 *******************************************************************************************/
 
@@ -44,6 +59,20 @@ function oenology_filter_wp_title( $title, $separator ) { // taken from TwentyTe
 add_filter( 'wp_title', 'oenology_filter_wp_title', 10, 2 );
 
 /*****************************************************************************************
+* Filter the_title to output '(Untitled)' if no Post Title is provided
+*******************************************************************************************/
+
+// If Post Title is omitted, set a default string
+function oenology_untitled_post( $title ) {
+	if ( '' == $title ) {
+		return '<em>(Untitled)</em>';
+	} else {
+		return $title;
+	}
+}
+add_filter( 'the_title', 'oenology_untitled_post', 10, 1 );
+
+/*****************************************************************************************
 * Display correct number of comments (count only comments, not trackbacks/pingbacks)
 *******************************************************************************************/
 
@@ -61,29 +90,50 @@ return $count;
 add_filter('get_comments_number', 'oenology_comment_count', 0);
 
 /*****************************************************************************************
+* wp_list_comments() Callback function for Pings (Trackbacks/Pingbacks)
+*******************************************************************************************/
+
+function oenology_comment_list_pings( $comment ) {
+	$GLOBALS['comment'] = $comment;
+?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
+<?php }
+
+/*****************************************************************************************
 * Display copyright notice customized according to date of first post
 *******************************************************************************************/
 
 function oenology_copyright() {
-global $wpdb;
-$copyright_dates = $wpdb->get_results("
-SELECT
-YEAR(min(post_date_gmt)) AS firstdate,
-YEAR(max(post_date_gmt)) AS lastdate
-FROM
-$wpdb->posts
-WHERE
-post_status = 'publish'
-");
-$output = '';
-if($copyright_dates) {
-$copyright = "&copy; " . $copyright_dates[0]->firstdate;
-if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
-$copyright .= '-' . $copyright_dates[0]->lastdate;
-}
-$output = $copyright;
-}
-return $output;
+	// check for cached values for copyright dates
+	$copyright_cache = wp_cache_get( 'copyright_dates', 'oenology' );
+	// query the database for first/last copyright dates, if no cache exists
+	if ( false === $copyright_cache ) {	
+		global $wpdb;
+		$copyright_dates = $wpdb->get_results("
+			SELECT
+			YEAR(min(post_date_gmt)) AS firstdate,
+			YEAR(max(post_date_gmt)) AS lastdate
+			FROM
+			$wpdb->posts
+			WHERE
+			post_status = 'publish'
+		");
+		$copyright_cache = $copyright_dates;
+		// add the first/last copyright dates to the cache
+		wp_cache_set( 'copyright_dates', $copyright_cache, 'oenology', '604800' );
+	}
+	// Build the copyright notice, based on cached date values
+	$output = '&copy; ';
+	if( $copyright_cache ) {
+		$copyright = $copyright_cache[0]->firstdate;
+		if( $copyright_cache[0]->firstdate != $copyright_cache[0]->lastdate ) {
+			$copyright .= '-' . $copyright_cache[0]->lastdate;
+		}
+		$output .= $copyright;
+	} else {
+		$output .= date( 'Y' );
+	}
+	return $output;
 }
 
 
@@ -496,11 +546,9 @@ function oenology_breadcrumb() {
 	if ( ! is_singular() ) {
 		if ( function_exists( 'wp_paginate' ) ) {
 			wp_paginate( 'title=' );
-		} else {
-			echo '<div class="postsnavlinks">';
-			posts_nav_link( '&nbsp;' , '&larr;' , '&rarr;' );
-			echo '</div>';
-		}
+		} else { ?>
+			<?php oenology_paginate_archive_page_links( 'list' ); ?>
+		<?php }
 	}
 	
 	if ( is_single() && ! is_attachment() ) {
@@ -514,6 +562,42 @@ function oenology_breadcrumb() {
 
 }
 
+
+/*****************************************************************************************
+* Paginate Archive Index Page Links
+*******************************************************************************************/
+
+function oenology_paginate_archive_page_links( $type = 'plain', $endsize = 1, $midsize = 1 ) {
+	global $wp_query, $wp_rewrite;	
+	$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+	
+	// Sanitize input argument values
+	if ( ! in_array( $type, array( 'plain', 'list', 'array' ) ) ) $type = 'plain';
+	$endsize = (int) $endsize;
+	$midsize = (int) $midsize;
+	
+	// Setup argument array for paginate_links()
+	$pagination = array(
+		'base' => @add_query_arg('page','%#%'),
+		'format' => '',
+		'total' => $wp_query->max_num_pages,
+		'current' => $current,
+		'show_all' => false,
+		'end_size' => $endsize,
+		'mid_size' => $midsize,
+		'type' => $type,
+		'prev_text' => '&lt;&lt;',
+		'next_text' => '&gt;&gt;'
+	);
+
+	if( $wp_rewrite->using_permalinks() )
+		$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+
+	if( !empty($wp_query->query_vars['s']) )
+		$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+
+	echo paginate_links( $pagination );
+}
 
 /*****************************************************************************************
 * Display a Theme credit link in the site footer

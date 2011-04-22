@@ -9,12 +9,6 @@
 	<title><?php wp_title('&raquo;', true, 'right'); ?></title>
 
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="all" />
-	
-	<?php
-		if ( is_singular() && get_option( 'thread_comments' ) ) { // on single blog post pages with threaded comments
-			wp_enqueue_script( 'comment-reply' ); // load the javascript that performs in-link comment reply fanciness
-		}
-	?>
 
 	<?php wp_head(); ?>
 </head>
@@ -74,18 +68,6 @@ Example:
 <?php echo get_stylesheet_uri(); ?> returns e.g. "http://www.mydomain.tld/wp-content/themes/my-theme/style.css"
 
 ***********************
-is_singular()
-----------------------------------
-is_singular() is a WordPress template conditional tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/is_singular
-
-is_singular() is a boolean (returns TRUE or FALSE) conditional tag that returns true if any of the following are true:
-
-	is_single() - a single post ("post" post-type, i.e. a single blog post) is displayed
-	is_page() - a page ("page" post-type) is displayed
-	is_attachment() - an attachment 
-
-***********************
 language_attributes()
 ----------------------------------
 language_attributes() is a WordPress template tag.
@@ -93,19 +75,6 @@ Codex reference: http://codex.wordpress.org/Function_Reference/language_attribut
 
 language_attributes() is added inside the HTML <html> tag, and outputs various HTML
 language attributes, such as language and text-direction.
-
-***********************
-wp_enqueue_script()
-----------------------------------
-wp_enqueue_script() is a WordPress filter hook.
-Codex reference: http://codex.wordpress.org/Function_Reference/wp_enqueue_script
-
-wp_enqueue_script() is used as a safe way to add JavaScript to displayed pages. WordPress 
-maintains a "queue" of javascript files to load when a page is displayed. The wp_enqueue_script()
-filter enables a Theme or Plugin to add its own javascript files to this queue. 
-
-Using wp_enqueue_script() facilitates the addition of javascript files only on pages where they
-are needed, and will ensure that the same javascript file (e.g. jQuery) is not loaded multiple times.
 
 ***********************
 wp_head()

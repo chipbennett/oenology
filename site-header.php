@@ -11,15 +11,15 @@ if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
 	get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. 
 }
 ?>
-
+<div id="site-header-text">
 <div><?php bloginfo('name'); // Displays the blog name, as defined on the General Settings page in the administration panel ?></div>
 <p><?php bloginfo('description'); // Displays the blog description, as defined on the General Settings page in the administration panel ?></p>
-
+</div>
 <?php 
 $oenology_options = get_option( 'theme_oenology_options' );
 if ( 'below' == $oenology_options['header_nav_menu_position'] ) { 
 	get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. ?
-}
+} 
 ?>
 
 <?php /*

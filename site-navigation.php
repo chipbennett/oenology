@@ -55,7 +55,7 @@ returns FALSE if the "Show On Front" option is set to display a static page
 has_nav_menu()
 ----------------------------------
 has_nav_menu() is a WordPress template conditional tag.
-Codex reference: N/A
+Codex reference: http://codex.wordpress.org/Function_Reference/has_nav_menu
 
 has_nav_menu( $menu ) is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
 a nav_menu named $menu has been configured by the user; otherwise it returns false.

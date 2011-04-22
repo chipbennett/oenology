@@ -1,15 +1,7 @@
 <?php if ( ! is_singular() ) { ?>
 <ul id="loop-footer">
 <li id="bottompostnav">
-<?php	
-		if ( function_exists( 'wp_paginate' ) ) {
-			wp_paginate( 'title=' );
-		} else {
-			echo '<div class="postsnavlinks">';
-			posts_nav_link( '&nbsp;' , '&larr;' , '&rarr;' );
-			echo '</div>';
-		}
-?>
+<?php oenology_paginate_archive_page_links( 'list', 1, 3 ); ?>
 </li>
 </ul>
 <?php } 

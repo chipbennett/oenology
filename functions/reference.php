@@ -20,7 +20,8 @@ function oenology_get_reference_page_tabs() {
         'general' => 'General',
         'faq' => 'FAQ',
         'coderef' => 'Code Reference',
-		'changelog' => 'Changelog'
+		'changelog' => 'Changelog',
+		'license' => 'License'
     );
 	return $tabs;
 }

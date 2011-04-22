@@ -29,12 +29,9 @@ dd {
 }
 /* Site Header
   -------------------------------------------- */
-#header div {
+#site-header-text {
   color:#666;
 }
-#header p {
-  color:#777;
-}  
 /* Site Navigation
   -------------------------------------------- */
 .navmenu,
@@ -171,7 +168,9 @@ dd {
   color: #888;
 } 
 #extent #breadcrumbs ol.wp-paginate,
-#extent #loop-footer ol.wp-paginate {   
+#extent #loop-footer ol.wp-paginate,
+#extent #breadcrumbs ul.page-numbers,
+#extent #loop-footer ul.page-numbers {   
 	border: 0; 
 	border-top: 0; 
 	border-bottom: 0; 
@@ -194,21 +193,33 @@ dd {
 #extent #breadcrumbs ol.wp-paginate li a,
 #extent #loop-footer ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .current,
-#extent #loop-footer ol.wp-paginate li a {
+#extent #loop-footer ol.wp-paginate li a,
+#extent #breadcrumbs ul.page-numbers li .gap,
+#extent #breadcrumbs ul.page-numbers li .current,
+#extent #breadcrumbs ul.page-numbers li a,
+#extent #loop-footer ul.page-numbers li .gap,
+#extent #loop-footer ul.page-numbers li .current,
+#extent #loop-footer ul.page-numbers li a {
 	background: none; 
 }
 #extent #breadcrumbs ol.wp-paginate li .gap,
-#extent #loop-footer ol.wp-paginate li .gap { 
+#extent #loop-footer ol.wp-paginate li .gap,
+#extent #breadcrumbs ul.page-numbers li .gap,
+#extent #loop-footer ul.page-numbers li .gap { 
 	color:#999;   
 }  
 #extent #breadcrumbs ol.wp-paginate li .current,
-#extent #loop-footer ol.wp-paginate li .current {
+#extent #loop-footer ol.wp-paginate li .current,
+#extent #breadcrumbs ul.page-numbers li .current,
+#extent #loop-footer ul.page-numbers li .current {
 	border:1px solid #89adcf;
 	color:#fff; 
 	background:#5f87ae; 
 }
 #breadcrumbs ol.wp-paginate li a,
-#loop-footer ol.wp-paginate li a {	
+#loop-footer ol.wp-paginate li a,
+#breadcrumbs ul.page-numbers li a,
+#loop-footer ul.page-numbers li a {	
 	border:1px solid #ccc; 
 	color:#666; 
 	background-color: transparent; 
@@ -216,7 +227,11 @@ dd {
 #breadcrumbs ol.wp-paginate li a:hover,
 #breadcrumbs ol.wp-paginate li a:active,
 #loop-footer ol.wp-paginate li a:hover,
-#loop-footer ol.wp-paginate li a:active {	
+#loop-footer ol.wp-paginate li a:active,
+#extent #breadcrumbs ul.page-numbers li a:hover,
+#extent #breadcrumbs ul.page-numbers li a:active,
+#extent #loop-footer ul.page-numbers li a:hover,
+#extent #loop-footer ul.page-numbers li a:active {	
 	border:1px solid #58a;		
 	color:#fff;  
 	background:#333;
@@ -290,13 +305,13 @@ body.home .post.sticky {
 	background-color:#f6f6f6;
 	border-color: #000;
 }
-body.single-format-image .post,
+/*body.single-format-image .post,
 .post.format-aside,
 .post.format-link,
 .post.format-quote,
 .post.format-status {
   border: 0;
-}
+}*/
 .post.format-aside .post-entry:before,
 .post.format-link .post-entry:before,
 .post.format-quote .post-entry:before,
@@ -395,7 +410,8 @@ body.page .post .post-title {
 .post-entry .update {
   border:1px solid #d8d8d8;
 }
-.post-entry .link-pages a {
+.post-entry .link-pages a,
+.nav-comments a {
 	border: 1px solid #58a;
 }
 /* Post Entry: Gallery
@@ -501,7 +517,7 @@ body.attachment .gallery-nav .gallery-nav-home a:active {
 .commentlist .bypostauthor .comment-author {
 	background-color: #d8d8d8;
 }
-.commentlist li .comment-meta,
+.commentlist li.comment .comment-meta,
 .commentlist .bypostauthor .comment .comment-meta {
 	border-bottom:1px solid #c8c8c8;
 }
@@ -509,8 +525,8 @@ body.attachment .gallery-nav .gallery-nav-home a:active {
 .commentlist .bypostauthor .comment.bypostauthor .comment-meta {
 	border-bottom-color: #808080;
 }
-.commentlist li .comment-author,
-.commentlist li .comment-meta,
+.commentlist li.comment .comment-author,
+.commentlist li.comment .comment-meta,
 .commentlist .bypostauthor .comment .comment-author,
 .commentlist .bypostauthor .comment .comment-meta {
 	background-color:#e8e8e8;
@@ -521,7 +537,7 @@ body.attachment .gallery-nav .gallery-nav-home a:active {
 .commentlist .bypostauthor .comment.bypostauthor .comment-meta {
 	background-color: #c8c8c8;
 }
-.commentlist li .comment-author img.avatar {
+.commentlist li.comment .comment-author img.avatar {
 	border: 1px solid #333;
 }
 .commentlist .comment-author .commentua {
@@ -530,14 +546,14 @@ body.attachment .gallery-nav .gallery-nav-home a:active {
 .commentlist .comment-author .commentua img {
         border: 0px solid gray;
 } 
-ol.commentlist li div blockquote {
+ol.commentlist li.comment div blockquote {
 	border:0;
 	border-left:3px solid #c8c8c8;
 	color:#909090;
 	background-color:transparent;
 }
-ol.commentlist li div p code,
-ol.commentlist li div blockquote p code {
+ol.commentlist li.comment div p code,
+ol.commentlist li.comment div blockquote p code {
 	color:#707070;
 	background-color:#e8e8e8;
 }

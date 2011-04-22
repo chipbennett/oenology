@@ -38,45 +38,6 @@ Activiation and Use
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Oenology Options for Theme Options
 
-== Theme Notes ==
-
-=== Menu Functionality ===
-
-The Theme fully supports WordPress core Navigation Menu functionality. The main site navigation menu is called "Header Navigation", and the left sidebar page navigation is called "Sidebar Navigation".
-
-The Header Navigation menu can optionally be set to display either above or below the Site Title and Description. By default, the Header Navigation menu displays above the Site Title/Description. To change this setting, see Appearance -> Oenology Options.
-
-The Theme defaults to using wp_list_pages() for these menus, which means that you do not have to create your own menus. With the Theme-default functionality, any time you add pages, they will automatically appear in the menus.
-
-The Header Navigation menu shows only top-level Pages. The Sidebar Navigation shows up to four levels of Child Pages, and shows the current Page and its Child Pages. Second-level Child Pages show from the first level, third-level Child Pages show from the second level, and fourth-level Child Pages show from the third level.
-
-Menus are displayed as lists, with each list item being a link displaying a Page Title. The list items are styled so that overly long Page Titles will not break the layout. Long Page Titles will be cut off, and the full Page Title will appear in the tooltip when hovering over the link.
-
-=== Post Thumbnail Functionality ===
-
-The Theme fully supports WordPress core Post Thumbnail functionality. By default, Post Thumbnails will appear in the Post Title for Archive, Taxonomy (Category/Tag), and Search pages.
-
-=== Custom Header Image Functionality ===
-
-The Theme fully supports WordPress core Custom Header Image functionality. The Theme is configured to make the TwentyTen header images available. Custom images will be cropped to 1000x198px when uploaded.
-
-=== Custom Background Functionality ===
-
-The Theme fully supports WordPress core Custom Background functionality. Background image or color is applied to the BODY tag, and will appear outside the Theme content.
-
-=== Post Formats Functionality ===
-
-The Theme fully supports WordPress core Post Formats functionality. Custom layout and style are applied for each of the core Post Format types: Aside, Audio, Chat, Gallery, Image, Link, Status, and Video. Post Format archive pages are linked in the post footer of each post that uses a Post Format other than "standard". Also, the Theme includes a custom Widget to display a list of Post Format types, similar to the Category list or Tag list.
-
-=== Widgets ===
-
-The Theme includes some custom Widgets, that can take the place of their built-in counterparts. In fact, the custom Widgets are essentially identical to the core Widgets, except that the custom Widgets are collapsible. The following Widgets are available:
-  * Archives
-  * Categories
-  * Linkroll by Cat
-  * Post Formats
-  * Recent Posts
-  * Tags
 
 == Frequently Asked Questions ==
 
@@ -85,9 +46,18 @@ The Theme includes some custom Widgets, that can take the place of their built-i
 Each Theme template file includes a considerable amount of inline documentation, explaining the code use. 
 Also, each template file includes a function reference, that lists each function, hook, and tag used in the file, along with a WordPress Codex reference, an explanation of the function, and example usage.
 
-= What is oenology-reference.txt? =
+= What is the Oenology Reference admin page? =
 
-oenology-reference.txt is the master cross-reference file, that contains all of the functions, template tags, and hooks used in the Theme.
+The Oenology Reference admin page contains the latest updates to general Theme notes, the FAQ, Changelog, License,
+ and, perhaps most importantly, the Code Reference.
+
+The Code Reference tab of the Oenology Reference page now replaces the "oenology-reference.txt" file, as
+ the master cross-reference file, that contains all of the functions, template tags, and hooks used in the Theme
+
+= What happened to oenology-reference.txt? =
+
+oenology-reference.txt has been replaced by the "Code Reference" Tab of the "Oenology Reference" admin page. 
+See Dashboard -> Appearance -> Oenology Reference -> Code Reference.
 
 = Why so many template files? =
 
@@ -99,7 +69,6 @@ First and foremost, since Oenology is intended to be a learning tool, the inline
 
 Other features that may be added in the future:
  - Internationalization
- - Theme Options
  - others, as determined by user feedback and demand
 
  = What About SEO? =
@@ -119,40 +88,20 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 
 == Changelog ==
 
+Note: see the "Oenology Reference" admin page for full Changelog details. 
+See Dashboard -> Appearance -> Oenology Reference -> Changelog.
+
 = 1.1 [2011.02.23] =
 * Update Release
-* New Features
-  * Added support for Post Formats (introduced in WordPress 3.1)
-  * Added basic Theme options: 
-    * Header Navigation Menu Position
-    * Header Navigation Menu Depth (up to three levels)
-    * Footer Credit Link (disabled by default)
-  * Added Theme color schemes ("Varietals"): Syrah, Seyval Blanc
-  * Added Theme Reference Admin page (General Information, FAQ, Code Reference, Change Log)
-* Maintenance/Bugfixes
-  * Added check to ensure TwentyTen header images are registered only if TwentyTen is installed
-  * Minor tweak/bugfix to ensure floats are cleared properly on paginated posts
-  * Minor tweaks to comments.php
 
 = 1.0 [2010.12.08] =
 * Maintenance Release
-* Moved all CSS declarations into style.css, and eliminated @import calls
-* Cleaned up un-needed CSS files in css\ and css\fonts\ directories; removed css\fonts\ directory.
-* Fixed a few minor bugs
-* Added Prev/Next page navigation in Loop Footer, to match Infobar navigation
-* Added default Widgets to appear in each sidebar if no widgets are defined by the user
-* Finished adding inline documentation for all functions used in the Theme, including functions.php
-* Added default "(Untitled)" text to appear in place of Title for Posts without a defined Post Title
-* Removed translation strings. Internationalization will be added in a later revision.
 
 = 0.9.2 [2010.11.04] =
 * Minor BugFix release
-* Fixed divide-by-zero PHP notice generated on the attachment page when the image metadata indicates a shutter speed of zero.
-* Fixed minor CSS image dimension bug
-* Updated Theme tags
 
 = 0.9.1 [2010.09.24] =
-Initial Release.
+* Initial Release.
 
 == Upgrade Notice ==
 

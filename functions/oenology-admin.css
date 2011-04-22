@@ -17,3 +17,59 @@
       float:none;
       width:auto;
 }
+
+#wpbody .wrap #oenologycoderef {
+	width: 100%;
+}
+
+#wpbody #oenologycoderef h3 {
+	padding-top:30px;
+}
+
+#wpbody #oenologycoderef  div.coderefdetail {
+	width: 650px;
+	padding: 5px;
+	background-color: #fefefe;
+	border: 1px solid #bbb;
+	-webkit-box-shadow: 4px 4px 4px #999;
+	-moz-box-shadow: 4px 4px 4px #999;
+	box-shadow: 4px 4px 4px #999;
+}
+
+#wpbody #oenologycoderef h3 > div {
+	margin-bottom:50px;
+}
+
+#wpbody #oenologycoderef hr {
+	margin-top:50px;
+}
+
+#wpbody #oenologycoderef code {
+	background: #f8f8f8;
+	color: #777;
+	text-shadow: 1px 1px 0px #ccc;
+}
+
+#wpbody .wrap #oenologycoderef ul {
+	list-style-type:disc;
+	margin-left:25px;
+	line-height:1em;
+}
+
+#wpbody .wrap #oenologycoderef ul li {
+	line-height:1.3em;
+}
+#wpbody .wrap #oenologycoderef ul  ul li {
+	font-size: 0.8em;
+}
+
+#wpbody .wrap #oenologycoderef a {
+	text-decoration: none;
+	background-color: #63afd0;
+	color: #555;
+	padding: 0 2px 0 2px;
+	border: 1px solid #bbb;
+	-webkit-box-shadow: 1px 1px 1px #999;
+	-moz-box-shadow: 1px 1px 1px #999;
+	box-shadow: 1px 1px 1px #999;
+}

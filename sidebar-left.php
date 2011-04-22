@@ -38,7 +38,7 @@ $widgetsidebarleftargs = array(
 );
 
 the_widget( 'oenology_widget_recentposts' , 'title=Oenology Recent Posts' , $widgetsidebarleftargs );
-the_widget( 'oenology_widget_archives' , 'title=Oenology Recent Posts' , $widgetsidebarleftargs );
+the_widget( 'oenology_widget_archives' , 'title=Oenology Archives' , $widgetsidebarleftargs );
 the_widget( 'oenology_widget_categories' , 'title=Oenology Categories' , $widgetsidebarleftargs );
 the_widget( 'oenology_widget_tags' , 'title=Oenology Tags' , $widgetsidebarleftargs );
 the_widget( 'oenology_widget_post_formats' , 'title=Oenology Post Formats' , $widgetsidebarleftargs );
@@ -65,7 +65,7 @@ Dynamic sidebars must be defined and registered. Refer to functions.php for more
 has_nav_menu()
 ----------------------------------
 has_nav_menu() is a WordPress template conditional tag.
-Codex reference: N/A
+Codex reference: http://codex.wordpress.org/Function_Reference/has_nav_menu
 
 has_nav_menu( $menu ) is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
 a nav_menu named $menu has been configured by the user; otherwise it returns false.

@@ -46,8 +46,8 @@ function oenology_settings_varietal_section_text() {
 function oenology_setting_varietal() {
 	$oenology_options = get_option( 'theme_oenology_options' );
 	$oenology_varietals = oenology_get_valid_varietals();
-	$dlstylebase = 'float:left;padding:5px;text-align:center;max-width:160px;';
-	$dlstylecurrent = 'border: 1px solid #999;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
+	$dlstylebase = 'border: 1px solid transparent;float:left;padding:5px;margin-top:5px;margin-bottom:5px;text-align:center;max-width:160px;min-height:250px;max-height:250px;';
+	$dlstylecurrent = 'background-color:#eee;border: 1px solid #999;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
 
 	foreach ( $oenology_varietals as $varietal ) {
 		$currentvarietal = ( $varietal['slug'] == $oenology_options['varietal'] ? true : false );

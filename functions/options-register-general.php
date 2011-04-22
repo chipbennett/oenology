@@ -6,6 +6,9 @@
 // Add a form section for the Header settings
 add_settings_section('oenology_settings_general_header', 'Header Options', 'oenology_settings_general_header_section_text', 'oenology');
 	
+// Add a form section for the Social Network Profile settings
+add_settings_section('oenology_settings_general_social', 'Social Network Profile Options', 'oenology_settings_general_social_section_text', 'oenology');
+	
 // Add a form section for the Footer settings
 add_settings_section('oenology_settings_general_footer', 'Footer Options', 'oenology_settings_general_footer_section_text', 'oenology');
 	
@@ -17,6 +20,25 @@ add_settings_section('oenology_settings_general_footer', 'Footer Options', 'oeno
 add_settings_field('oenology_setting_header_nav_menu_position', 'Header Nav Menu Position', 'oenology_setting_header_nav_menu_position', 'oenology', 'oenology_settings_general_header');	
 // Add Header Navigation Menu Depth setting to the Header section
 add_settings_field('oenology_setting_header_nav_menu_depth', 'Header Nav Menu Depth', 'oenology_setting_header_nav_menu_depth', 'oenology', 'oenology_settings_general_header');
+	
+/*****************************************************************************************
+* Add Form Fields to Social Network Profile Settings Section
+*******************************************************************************************/	
+
+// RSS Feed
+add_settings_field('oenology_setting_rss_feed', 'RSS Feed', 'oenology_setting_rss_feed', 'oenology', 'oenology_settings_general_social');
+// Facebook Profile
+add_settings_field('oenology_setting_facebook_profile', 'Facebook Profile', 'oenology_setting_facebook_profile', 'oenology', 'oenology_settings_general_social');
+// Flickr Profile
+add_settings_field('oenology_setting_flickr_profile', 'Flickr Profile', 'oenology_setting_flickr_profile', 'oenology', 'oenology_settings_general_social');
+// Linked-In Profile
+add_settings_field('oenology_setting_linkedin_profile', 'Linked-In Profile', 'oenology_setting_linkedin_profile', 'oenology', 'oenology_settings_general_social');
+// MySpace Profile
+add_settings_field('oenology_setting_myspace_profile', 'MySpace Profile', 'oenology_setting_myspace_profile', 'oenology', 'oenology_settings_general_social');
+// Twitter Profile
+add_settings_field('oenology_setting_twitter_profile', 'Twitter Profile', 'oenology_setting_twitter_profile', 'oenology', 'oenology_settings_general_social');
+// YouTube Profile
+add_settings_field('oenology_setting_youtube_profile', 'YouTube Profile', 'oenology_setting_youtube_profile', 'oenology', 'oenology_settings_general_social');
 	
 /*****************************************************************************************
 * Add Form Fields to Footer Settings Section
@@ -32,6 +54,11 @@ add_settings_field('oenology_setting_display_footer_credit', 'Footer Credit', 'o
 // Header Settings Section
 function oenology_settings_general_header_section_text() { ?>
 	<p><?php _e( 'Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' ); ?></p>
+<?php }
+
+// Social Network Profile Settings Section
+function oenology_settings_general_social_section_text() { ?>
+	<p><?php _e( 'Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' ); ?></p>
 <?php }
 
 // Footer Settings Section
@@ -53,7 +80,7 @@ function oenology_setting_header_nav_menu_position() {
 	<span class="description">Display header navigation menu above or below the site title/description?</span>
 <?php }
 
-// Navigation Menu Position Depth
+// Navigation Menu Depth Setting
 function oenology_setting_header_nav_menu_depth() {
 	$oenology_options = get_option( 'theme_oenology_options' ); ?>	
 	<select name="theme_oenology_options[header_nav_menu_depth]">
@@ -62,6 +89,83 @@ function oenology_setting_header_nav_menu_depth() {
 		<option <?php selected( 3 == $oenology_options['header_nav_menu_depth'] ); ?> value="3">Three</option>
 	</select>
 	<span class="description">How many levels of Page hierarchy should the Header Navigation Menu display?</span>
+<?php }
+
+// RSS Feed Setting
+function oenology_setting_rss_feed() {
+	$oenology_options = get_option( 'theme_oenology_options' );
+	$oenology_feeds = oenology_get_valid_feeds(); ?>
+	
+	<select name="theme_oenology_options[rss_feed]">
+
+	<?php foreach ( $oenology_feeds as $slug => $name ) { ?>
+		<option <?php selected( $slug == $oenology_options['rss_feed'] ); ?> value="<?php echo $slug; ?>"><?php echo $name; ?></option>
+	<?php } ?>
+	</select>
+	<span class="description">RSS Feed</span>
+	<br />
+	<input type="checkbox" name="theme_oenology_options[display_rss_feed]" <?php checked( $oenology_options['display_rss_feed'] ); ?> />
+	<span class="description">Display in sidebar</span>
+<?php }
+
+// Facebook Profile Setting
+function oenology_setting_facebook_profile() {
+	$oenology_options = get_option( 'theme_oenology_options' ); ?>
+	<input type="text" name="theme_oenology_options[facebook_profile]" value="<?php echo wp_filter_nohtml_kses( $oenology_options['facebook_profile'] ); ?>" />
+	<span class="description">Facebook Username</span>
+	<br />
+	<input type="checkbox" name="theme_oenology_options[display_facebook_profile]" <?php checked( $oenology_options['display_facebook_profile'] ); ?> />
+	<span class="description">Display in sidebar</span>
+<?php }
+
+// Flickr Profile Setting
+function oenology_setting_flickr_profile() {
+	$oenology_options = get_option( 'theme_oenology_options' ); ?>
+	<input type="text" name="theme_oenology_options[flickr_profile]" value="<?php echo wp_filter_nohtml_kses( $oenology_options['flickr_profile'] ); ?>" />
+	<span class="description">Flickr Username</span>
+	<br />
+	<input type="checkbox" name="theme_oenology_options[display_flickr_profile]" <?php checked( $oenology_options['display_flickr_profile'] ); ?> />
+	<span class="description">Display in sidebar</span>
+<?php }
+
+// Linked-In Profile Setting
+function oenology_setting_linkedin_profile() {
+	$oenology_options = get_option( 'theme_oenology_options' ); ?>
+	<input type="text" name="theme_oenology_options[linkedin_profile]" value="<?php echo wp_filter_nohtml_kses( $oenology_options['linkedin_profile'] ); ?>" />
+	<span class="description">Linked-In Username</span>
+	<br />
+	<input type="checkbox" name="theme_oenology_options[display_linkedin_profile]" <?php checked( $oenology_options['display_linkedin_profile'] ); ?> />
+	<span class="description">Display in sidebar</span>
+<?php }
+
+// MySpace Profile Setting
+function oenology_setting_myspace_profile() {
+	$oenology_options = get_option( 'theme_oenology_options' ); ?>
+	<input type="text" name="theme_oenology_options[myspace_profile]" value="<?php echo wp_filter_nohtml_kses( $oenology_options['myspace_profile'] ); ?>" />
+	<span class="description">MySpace Username</span>
+	<br />
+	<input type="checkbox" name="theme_oenology_options[display_myspace_profile]" <?php checked( $oenology_options['display_myspace_profile'] ); ?> />
+	<span class="description">Display in sidebar</span>
+<?php }
+
+// Twitter Profile Setting
+function oenology_setting_twitter_profile() {
+	$oenology_options = get_option( 'theme_oenology_options' ); ?>
+	<input type="text" name="theme_oenology_options[twitter_profile]" value="<?php echo wp_filter_nohtml_kses( $oenology_options['twitter_profile'] ); ?>" />
+	<span class="description">Twitter Profile</span>
+	<br />
+	<input type="checkbox" name="theme_oenology_options[display_twitter_profile]" <?php checked( $oenology_options['display_twitter_profile'] ); ?> />
+	<span class="description">Display in sidebar</span>
+<?php }
+
+// YouTube Profile Setting
+function oenology_setting_youtube_profile() {
+	$oenology_options = get_option( 'theme_oenology_options' ); ?>
+	<input type="text" name="theme_oenology_options[youtube_profile]" value="<?php echo wp_filter_nohtml_kses( $oenology_options['youtube_profile'] ); ?>" />
+	<span class="description">YouTube Username</span>
+	<br />
+	<input type="checkbox" name="theme_oenology_options[display_youtube_profile]" <?php checked( $oenology_options['display_youtube_profile'] ); ?> />
+	<span class="description">Display in sidebar</span>
 <?php }
 
 // Display Footer Credit Setting

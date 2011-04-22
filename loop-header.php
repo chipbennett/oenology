@@ -1,11 +1,13 @@
  <?php if(is_archive()) { 
 	$post = $posts[0]; // Hack. Set $post so that the_date() works.
-	$rssimageurl = get_template_directory_uri() . '/images/subscribewide.png';
+	$colorscheme = oenology_get_color_scheme();
+	$rssiconcolor = ( 'light' == $colorscheme ? 'original' : 'gray' );
+	$rssimageurl = get_template_directory_uri() . '/images/iconsweets2/' . $rssiconcolor . '/rss16.png';
 	if (is_category()) { // If this is a category archive  ?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo home_url(); ?>/category/<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename;?>/feed/">
-				<img src="<?php echo $rssimageurl; ?>" width="120px" height="29" alt="Subscribe to the <?php echo single_cat_title(); ?> category feed" />
-				<?php echo single_cat_title(); ?> category feed</a>
+				<img src="<?php echo $rssimageurl; ?>" width="16px" height="16px" alt="Subscribe to the <?php echo single_cat_title(); ?> feed" /><br />
+				<?php echo single_cat_title(); ?> feed</a>
 		</div>
 		<h2 class="pagetitle"><?php echo single_cat_title(); ?></h2>
 		<div class="cat-description">
@@ -19,8 +21,8 @@
 	<?php }  elseif (is_tag()) { // If this is a tag archive  ?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo get_tag_feed_link( $wp_query->get( 'tag_id' ) ); ?>">
-				<img src="<?php echo $rssimageurl; ?>" width="120px" height="29" alt="Subscribe to the <?php echo single_tag_title(); ?> tag feed" />
-				<?php echo single_tag_title(); ?> tag feed</a>					
+				<img src="<?php echo $rssimageurl; ?>" width="16px" height="16px" alt="Subscribe to the <?php echo single_tag_title(); ?> feed" /><br />
+				<?php echo single_tag_title(); ?> feed</a>
 		</div>
 		<h2 class="pagetitle"><?php echo single_tag_title(); ?></h2>
 			<div class="cat-description">
@@ -37,8 +39,8 @@
 			$termlink = get_post_format_link( $termslug );   ?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo $termlink . '/feed/'; ?>">
-				<img src="<?php echo $rssimageurl; ?>" width="120px" height="29" alt="Subscribe to the <?php echo $termname; ?> Post Format feed" />
-				<?php echo $termname; ?> Post Format feed</a>					
+				<img src="<?php echo $rssimageurl; ?>" width="16px" height="16px" alt="Subscribe to the <?php echo $termname; ?> feed" /><br />
+				<?php echo $termname; ?> feed</a>
 		</div>
 		<h2 class="pagetitle"><?php echo $termname; ?></h2>
 			<div class="cat-description">

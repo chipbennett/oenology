@@ -5,11 +5,11 @@ Description: Oenology is designed to be a simple, minimalist, yet feature-comple
 Version: 1.1
 Author: Chip Bennett
 Author URI: http://www.chipbennett.net/
-Tags: fixed-width, white, black, tan, three-columns, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
+Tags: fixed-width, white, black, tan, green, three-columns, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
 License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
  *
- * Copyright (C) 2010 Chip Bennett
+ * Oenology WordPress Theme, Copyright (C) 2010 Chip Bennett
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,8 @@ License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * 
+ * Note: see the "Oenology Reference" admin page for copyright and license information for bundled resources, including fonts and icons
 */
 
 /* WordPress-Generated CSS Classes
@@ -61,6 +62,54 @@ License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
    ============================================================================================= 
 */
 
+/*************************************************************
+Import Fonts
+**************************************************************/
+
+@font-face {
+    font-family: 'TeXGyreScholaRegular';
+    src: url('fonts/texgyreschola-regular-webfont.eot');
+    src: url('fonts/texgyreschola-regular-webfont.eot?iefix') format('eot'),
+         url('fonts/texgyreschola-regular-webfont.woff') format('woff'),
+         url('fonts/texgyreschola-regular-webfont.ttf') format('truetype'),
+         url('fonts/texgyreschola-regular-webfont.svg#webfontEPwbBXTh') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TeXGyreScholaItalic';
+    src: url('fonts/texgyreschola-italic-webfont.eot');
+    src: url('fonts/texgyreschola-italic-webfont.eot?iefix') format('eot'),
+         url('fonts/texgyreschola-italic-webfont.woff') format('woff'),
+         url('fonts/texgyreschola-italic-webfont.ttf') format('truetype'),
+         url('fonts/texgyreschola-italic-webfont.svg#webfontSxSqjzok') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TeXGyreScholaBold';
+    src: url('fonts/texgyreschola-bold-webfont.eot');
+    src: url('fonts/texgyreschola-bold-webfont.eot?iefix') format('eot'),
+         url('fonts/texgyreschola-bold-webfont.woff') format('woff'),
+         url('fonts/texgyreschola-bold-webfont.ttf') format('truetype'),
+         url('fonts/texgyreschola-bold-webfont.svg#webfontLbvqPRcd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TeXGyreScholaBoldItalic';
+    src: url('fonts/texgyreschola-bolditalic-webfont.eot');
+    src: url('fonts/texgyreschola-bolditalic-webfont.eot?iefix') format('eot'),
+         url('fonts/texgyreschola-bolditalic-webfont.woff') format('woff'),
+         url('fonts/texgyreschola-bolditalic-webfont.ttf') format('truetype'),
+         url('fonts/texgyreschola-bolditalic-webfont.svg#webfontOy4PMnCV') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /****************************************************************
 Font-Family Declarations
 Declare all fonts used in theme
@@ -89,6 +138,7 @@ ol.bnc_related /* Plugin: Yet Another Related Posts Plugin */ {
    font-family: 'Century Gothic', 'URW Gothic L', sans-serif;
 }
 /* Arial/Verdana type font-family */
+body,
 #header .postnav li,
 #leftcol .subnavmenutest .current_page_item li a,
 #leftcol .subnavmenutest .current_page_parent li a,
@@ -130,6 +180,7 @@ table.legend,
 #comments h4,
 #comments-block dd.comment-timestamp,
 .ngg-imagebrowser-desc, /* Plugin: NextGen Gallery */
+#main .postpagenav ul.page-numbers li,
 #main .postpagenav ol.wp-paginate li, /* Plugin: wp-paginate */
 ol.trackbacklist /* Plugin: Trackback */ {
 	font-family: Verdana, Arial, sans-serif;
@@ -163,7 +214,7 @@ h1, h2, h3, h4, h5, h6,
 .post-entry,
 .post-entry li p,
 .commentlist li p {
-	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+	font-family: 'TeXGyreScholaRegular', 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
 }
 /* Georgia type font-family */
 .cat-description em,
@@ -172,7 +223,7 @@ h1, h2, h3, h4, h5, h6,
 .post-entry .update:before,
 .cat-description strong,
 .commentlist li div .authorresponse p {
-	font-family: 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+	font-family: 'TeXGyreScholaRegular', 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
 }
 /* Times New Roman type font family */
 #header p {
@@ -185,6 +236,7 @@ h1, h2, h3, h4, h5, h6,
 /* Mono fonts
 *****************************************************************/
 /* Courier New type font family */
+pre,
 .post.format-chat .post-entry *,
 .post-entry .code,
 .post-entry .code p,
@@ -232,7 +284,6 @@ html {
    background-repeat: repeat-y;
    background-position: top left;
    font-style: normal;
-   font-family: TeXGyreHerosRegular, Arial, Verdana, Trebuchet, sans-serif;
    font-size: 8pt;
    line-height:12pt;
    letter-spacing:0em;
@@ -323,6 +374,9 @@ th {
 tr, td {
    vertical-align: top;
 }
+th, td {
+	padding: 0 2px 2px 0;
+}
 /* Images Default Style Specifications
    --------------------
 */
@@ -343,6 +397,18 @@ dd {
 	padding-left:10px;
 	padding-right:10px;
 }
+/* Miscellaneous Tags Default Style Specifications
+   --------------------
+*/
+pre {
+	padding: 5px;
+	overflow: auto;
+	text-align:left;
+	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not */
+	white-space: pre-wrap; /* css-3 */
+	line-height: 1.5em;
+}
+
 /* 
    ============================================================================================= 
    2 - Layout/Structure Style Specifications
@@ -393,6 +459,17 @@ dd {
 	margin-left:-830px;
 	padding-left:0px;
  }
+#doublecoltop,
+#doublecolbottom {
+  display:inline;
+  width:325px;
+  margin-bottom: 20px;
+  padding:0px;
+  padding-left:10px;
+  float:left;
+  text-align:left;
+  vertical-align:top;
+  }
 #main {
   display:inline;
   width:660px;
@@ -408,7 +485,7 @@ dd {
 }
 body.attachment #main,
 body.single-format-image #main {
-	width: 1000px;
+	width: 995px;
 }
 #page #main {
 	margin-left:170px;
@@ -467,7 +544,7 @@ body.single-format-image #main {
   padding-bottom:10px;
   max-width:100%;
   text-align:center;
-  font-size: 13pt; /* 16pt */
+  font-size: 13pt;
   line-height:2.0em;
   letter-spacing:0em;
 }  
@@ -520,18 +597,23 @@ body.single-format-image #main {
 	float:left;
 }
 #extent #breadcrumbs ol.wp-paginate,
-#extent #loop-footer ol.wp-paginate {  
+#extent #loop-footer ol.wp-paginate,
+#extent #breadcrumbs ul.page-numbers,
+#extent #loop-footer ul.page-numbers {  
 	display: inline;  
 	float:right;
 	margin:0px 0px;  
 	padding:0px 0px; 
 	text-align:left;    
 }  
-#extent #loop-footer ol.wp-paginate {
+#extent #loop-footer ol.wp-paginate,
+#extent #loop-footer ul.page-numbers {
 	float:none;
 }
 #extent #breadcrumbs ol.wp-paginate li,
-#extent #loop-footer ol.wp-paginate li {	
+#extent #loop-footer ol.wp-paginate li,
+#extent #breadcrumbs ul.page-numbers li,
+#extent #loop-footer ul.page-numbers li {	
 	display: inline;
 	list-style: none;
 	margin:0px 0px; 
@@ -551,7 +633,13 @@ body.single-format-image #main {
 #extent #breadcrumbs ol.wp-paginate li a,
 #extent #loop-footer ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .current,
-#extent #loop-footer ol.wp-paginate li a {
+#extent #loop-footer ol.wp-paginate li a,
+#extent #breadcrumbs ul.page-numbers li .gap,
+#extent #breadcrumbs ul.page-numbers .current,
+#extent #breadcrumbs ul.page-numbers a,
+#extent #loop-footer ul.page-numbers li .gap,
+#extent #loop-footer ul.page-numbers li .current,
+#extent #loop-footer ul.page-numbers li a {
 	margin: 0px 0px;
 	padding: 1px 3px; 
 	font-size:7pt;   
@@ -559,7 +647,9 @@ body.single-format-image #main {
 	text-decoration:none;
 }
 #extent #breadcrumbs ol.wp-paginate li .gap,
-#extent #loop-footer ol.wp-paginate li .gap {  
+#extent #loop-footer ol.wp-paginate li .gap,
+#extent #breadcrumbs ul.page-numbers li .gap,
+#extent #loop-footer ul.page-numbers li .gap {  
 	padding: 3px 0px; 
 }  
 #extent .postnav #bottompostnav {
@@ -675,6 +765,16 @@ body.single-format-image #main {
 .widget:first-child {
   margin-top:0px;
 }
+/* Widgets
+   --------------------
+*/
+.showhide span {
+  cursor: pointer;
+  color: #58a;
+}
+.showhide span:hover {
+  background-color: #e8e8e8;
+}
 /* Links
    --------------------
 */
@@ -766,6 +866,17 @@ body.single-format-image #main {
 #wp-calendar #today {
   font-weight:bold;
 }
+/* Social Icons
+   --------------------
+*/
+a.sidebar-social-icon {
+  display:block;
+  float:right;
+  width:40px;
+  height:40px;
+  text-indent:-9999px;
+  overflow:hidden;
+}
 /* 
    6 - Center Column (#main) Style Specifications
    ----------------------------------------------- 
@@ -803,13 +914,21 @@ body.single-format-image #main {
 	max-width:635px;
 	height: auto;
 }
+#content .wp-caption {
+	max-width:635px !important;
+	height: auto;
+}
+body.attachment #content .wp-caption,
+body.single-format-image #content .wp-caption {
+	max-width:888px !important;
+}
 #content .format-image .gallery-thumb img {
 	max-width:150px;
 }
 body.attachment #content img,
 body.term-post-format-image #content img,
 body.single-format-image #content img {
-	max-width: 900px;
+	max-width: 888px;
 }
 /* Margins and Padding
    --------------------
@@ -817,9 +936,6 @@ body.single-format-image #content img {
 #main h4 + p {
   margin-top:0px;
   padding-top:0px;
-}
-#main ol {
-   margin-left:25px;
 }
 /* Miscellaneous
    --------------------
@@ -854,6 +970,7 @@ body.search-results .pagetitle {
 .cat-description {
   display:block;
   float:none;
+  clear:both;
   height:auto;
   margin:0px;
   padding:0px;
@@ -916,12 +1033,12 @@ body.search-results .pagetitle {
 */
 .post {
   display:block;
-  margin-bottom:20px;
+  margin-bottom:40px;
   padding:10px;
   text-align:left;
 }
 body.single-format-image .post {
-  padding: 0;
+  padding: 10px;
 }
 .post.format-aside,
 .post.format-link,
@@ -929,66 +1046,9 @@ body.single-format-image .post {
 .post.format-status {
 	margin-left: 50px;
 	margin-right:50px;
-	padding-top:0px;
 }
 .post.format-aside {
 	text-align: right;
-}
-.post.format-aside .post-entry:before {
-	content: "\007B";
-	float:left;
-	position: relative;
-	left: -50px;
-	top: 70px;
-	font-size:72pt;
-}
-.post.format-aside .post-entry {
-	margin-top:-30px;
-}
-.post.format-chat .post-entry {
-	margin:10px;
-	padding:10px;
-	letter-spacing:0.1em;
-}
-.post.format-chat .post-entry * {
-	margin:0px;
-	font-size: 11pt;
-	line-height:1.7em;
-	text-align:left;
-}
-.post.format-link .post-entry:before {
-	content: "\221E"; 
-	float:left;
-	position: relative;
-	left: -35px;
-	top: 40px;
-	font-size:32pt;
-}
-.post.format-link,
-.post.format-link * {
-	text-align: center;
-}
-.post.format-link .post-entry {
-	margin-top:-30px;
-}
-.post.format-quote .post-entry:before {
-	content: "\201C"; 
-	float:left;
-	position: relative;
-	left: -50px;
-	top: 40px;
-	font-size:72pt;
-}
-.post.format-status {
-	/*border-left: 5px solid #bbb;*/
-}
-.post.format-status .post-entry:before {
-	content: "\0023"; 
-	float:left;
-	position: relative;
-	left: -40px;
-	top: 40px;
-	font-size:32pt;
 }
 /* Post/Page Title Container
        .post-title
@@ -1136,11 +1196,6 @@ body.term-post-format-image .post-title-metadata {
 .post-entry {
 	padding-top:10px;
 }
-.post.format-aside .post-entry,
-.post.format-link .post-entry,
-.post.format-status .post-entry {
-	padding-top:0px;
-}
 body.attachment .post-entry,
 body.term-post-format-image .post-entry {
 	padding-top: 0px;
@@ -1152,6 +1207,46 @@ body.term-post-format-image .post-entry {
 /* Post Entry - Post Formats
    --------------------
 */
+.post.format-aside .post-entry {
+	margin-left:-50px; 
+	padding-left:50px; 
+}
+.post.format-gallery .post-entry { 
+	min-height: 170px;
+}
+.post.format-image .post-entry { 
+	min-height: 170px;
+}
+.post.format-link .post-entry {
+	margin-left:-50px; 
+	padding-left:50px; 
+}
+.post.format-quote .post-entry {
+	margin-left:-50px; 
+	padding-left:50px; 
+}
+.post.format-status .post-entry {
+	margin-left:-50px; 
+	padding-left:50px; 
+}
+.post.format-video .post-title { 
+	min-height:35px;
+}
+.post.format-link,
+.post.format-link * {
+	text-align: center;
+}
+.post.format-chat .post-entry {
+	margin:10px;
+	padding:10px;
+	letter-spacing:0.1em;
+}
+.post.format-chat .post-entry * {
+	margin:0px;
+	font-size: 11pt;
+	line-height:1.7em;
+	text-align:left;
+}
 #content .format-audio ul.audiovideo-meta,
 #content .format-video ul.audiovideo-meta {
 	float:none;
@@ -1196,8 +1291,10 @@ body.term-post-format-image .post-entry {
 .format-gallery .gallery-thumb,
 .format-image .gallery-thumb {
 	float: left;
-	clear:none;
+	clear:both;
 	display:inline;
+	max-width:170px;
+	min-height:170px;
 	margin-right: 20px;
 }
 #content .format-image h2.gallery-title,
@@ -1206,7 +1303,7 @@ body.term-post-format-image .post-entry {
 	display:block;
 	margin:0;
 	clear:right;
-	width:440px;
+	width:420px;
 	line-height:2em;
 }
 #content .format-image p.gallery-description,
@@ -1365,10 +1462,16 @@ dl.gallery-item dd {
 /* Post Entry - Galleries and Post Attachments
    --------------------
 */
+body.attachment .post-entry,
+body.single-format-image .post-entry {
+	display: block;
+	position:relative;
+}
 body.attachment .gallery-nav,
 body.term-post-format-image .gallery-nav,
 body.single-format-image .gallery-nav {
 	float:left;
+	display:inline;
 	width:100px;
 	margin:0;
 	padding:0;
@@ -1438,20 +1541,30 @@ body.attachment .gallery-nav .gallery-nav-next .gallery-nav-caption a:after {
 
 body.attachment .gallery-photo,
 body.single-format-image .gallery-photo {
-	float: left;
+	display:block;
+	float: none;
 	clear: none;
 	margin:0;
+	margin-left: 100px;
 	margin-bottom: 20px;
-	width:900px;
+	width:888px;
 	padding:0;
 	text-align:center;
+}
+body.attachment #content .gallery-photo .wp-caption.aligncenter,
+body.single-format-image #content .gallery-photo .wp-caption.aligncenter {
+	clear: none;
 }
 body.attachment .gallery-photo img,
 body.term-post-format-image .gallery-photo img,
 body.single-format-image .gallery-photo img {
-	margin:0;
+	margin:0px auto;
 	padding:0;
 	clear: none;
+}
+body.single-format-image .gallery-photo a {
+	margin: 0px auto;
+	text-align:center;
 }
 body.attachment .bigcaption,
 body.term-post-format-image .bigcaption,
@@ -1534,9 +1647,47 @@ body.single-format-image dd {
 /* Post Entry - Lists
    --------------------
 */
+.post-entry ol {
+	list-style-type: decimal;
+}
+.post-entry ol ol {
+	list-style-type: upper-alpha;
+	font-size: 0.975em;
+}
+.post-entry ol ol ol {
+	list-style-type: lower-alpha;
+}
+.post-entry ol ol ol ol {
+	list-style-type: upper-roman;
+}
+.post-entry ol ol ol ol ol {
+	list-style-type: lower-roman;
+}
+.post-entry ol ol ol ol ol ol {
+	list-style-type: decimal;
+}
+.post-entry ul {
+	list-style-type: disc;
+}
+.post-entry ul ul {
+	list-style-type: circle;
+	font-size: 0.975em;
+}
+.post-entry ul ul ul {
+	list-style-type: disc;
+}
+.post-entry ul ul ul ul {
+	list-style-type: circle;
+}
 .post-entry li {
-   line-height:1.1em;
-   margin-left: 25px;
+   line-height:1.5em;
+   margin-left: 15px;
+   padding-left: 15px;
+}
+.post-entry li > ul,
+.post-entry li > ol {
+	margin-top:0.5em;
+	margin-bottom: 0.5em;
 }
 .post-entry li > li {
 	margin-top:1.0em;
@@ -1546,8 +1697,8 @@ body.single-format-image dd {
 */
 .post-entry,
 .post-entry li p {
-  font-size:13pt; /* 11pt */
-  line-height:1.4em; /* 1.6em */
+  font-size:11pt; /* 11pt */
+  line-height:1.6em; /* 1.6em */
   letter-spacing:0em;
   text-align:justify;
 }
@@ -1596,6 +1747,7 @@ body.single-format-image dd {
 */
 .postmetadata {
 	clear:both;
+	display:block;
 	margin: 0px;
 	margin-top: 10px;
 	padding: 0px;
@@ -1606,9 +1758,8 @@ body.single-format-image dd {
 }
 .post.format-aside .postmetadata,
 .post.format-link .postmetadata,
-.post.format-quote .postmetadata,
-.post.format-status .postmetadata {
-	margin-top: 10px;
+.post.format-quote .postmetadata {
+	text-align:right;
 }
 .post .postmetadata .post-author-gravatar {
   float:left;
@@ -1624,16 +1775,11 @@ body.single-format-image dd {
 }
 .post .postmetadata .postmetadata-author,
 .post .postmetadata .postmetadata-license {
-	display:block;
+	display:inline;
 	margin:0px;
 	padding:0px;
 	line-height:20px;
 	height:20px;
-}
-.post.format-aside .postmetadata-author,
-.post.format-link .postmetadata-author,
-.post.format-quote .postmetadata-author {
-  float:right;
 }
 /* Posts Navigation
    ----------------------
@@ -1971,6 +2117,22 @@ body.single-format-image dd {
  * http://wp-fun.co.uk/2008/12/10/27-comment-classes/
  * 
  */
+#main .nav-comments {
+	display: block;
+	width:100%;
+	clear:both;
+	margin: 0px auto;
+	text-align:center;
+	font-size:10pt;
+}
+.nav-comments a {
+	margin: 0px 3px 0px 3px;
+	padding: 0px 3px 0px 3px;
+}
+#main .commentlist {
+	display: block;
+	clear:both;
+}
 #main .commentlist,
 #main .commentlist .children {
           margin:0;
@@ -1985,7 +2147,7 @@ body.single-format-image dd {
 	margin-left:20px;
 	margin-right:5px;
 }
-.commentlist li {
+.commentlist li.comment {
           padding: 0px;
           padding-left:0px;
           padding-right:0px;
@@ -1995,7 +2157,7 @@ body.single-format-image dd {
           margin-bottom:15px;
 }
 
-.commentlist li .comment-author {
+.commentlist li.comment .comment-author {
 	display:block;	
 	margin:0;	
 	padding:0;
@@ -2004,17 +2166,17 @@ body.single-format-image dd {
 	background-color:#e8e8e8;
 }
 
-.commentlist li .comment-author img.avatar {
+.commentlist li.comment .comment-author img.avatar {
         float:left;	
 	margin:0;
 	padding:0;
 	position:relative;		
-	left:-7px;	
+	left:-12px;	
 	top:-4px;
 	border: 1px solid #333;
 }
 
-.commentlist li .comment-meta {
+.commentlist li.comment .comment-meta {
 	display:block;	
 	margin:0;	
 	padding:0;
@@ -2028,8 +2190,11 @@ body.single-format-image dd {
 		margin:0;
 		padding:0;
 }
-
-ol.commentlist li div p {
+ol.commentlist li.comment .comment-body * {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+ol.commentlist li.comment div p {
 	margin:0;
 	margin-top:1em;
 	margin-bottom:1em;
@@ -2040,20 +2205,79 @@ ol.commentlist li div p {
 	line-height:1.5em;
 	letter-spacing:0;
 }
-ol.commentlist li div blockquote {
+ol.commentlist li.comment div blockquote {
 	margin-top:0;
 	margin-left:40px;
 	margin-bottom:0;
 	padding:0;
 	padding-left:5px;
 }
-ol.commentlist li div blockquote p {
+ol.commentlist li.comment div blockquote p {
 	margin:0;
 	padding:0;
 }
-ol.commentlist li div p code,
-ol.commentlist li div blockquote p code {
+ol.commentlist li.comment div p code,
+ol.commentlist li.comment div blockquote p code {
 	font-style:normal;
+}
+.commentlist .comment-body ol,
+.commentlist .comment-body ul,
+ol.trackbacklist {
+	list-style-position: outside;
+}
+.commentlist .comment-body ol ,
+ol.trackbacklist {
+	list-style-type: decimal;
+}
+ol.trackbacklist {
+   line-height:1.5em;
+   font-size:0.9em;
+   margin:0;
+   margin-left: 15px;
+   padding-left: 15px;
+}
+.commentlist .comment-body ol ol {
+	list-style-type: upper-alpha;
+	font-size: 0.975em;
+}
+.commentlist .comment-body ol ol ol {
+	list-style-type: lower-alpha;
+}
+.commentlist .comment-body ol ol ol ol {
+	list-style-type: upper-roman;
+}
+.commentlist .comment-body ol ol ol ol ol {
+	list-style-type: lower-roman;
+}
+.commentlist .comment-body ol ol ol ol ol ol {
+	list-style-type: decimal;
+}
+.commentlist .comment-body ul {
+	list-style-type: disc;
+}
+.commentlist .comment-body ul ul {
+	list-style-type: circle;
+	font-size: 0.975em;
+}
+.commentlist .comment-body ul ul ul {
+	list-style-type: disc;
+}
+.commentlist .comment-body ul ul ul ul {
+	list-style-type: circle;
+}
+#main .commentlist .comment-body li {
+   line-height:1.5em;
+   margin:0;
+   margin-left: 15px;
+   padding-left: 15px;
+}
+#main .commentlist .comment-body li > ul,
+#main .commentlist .comment-body li > ol {
+	margin-top:0.5em;
+	margin-bottom: 0.5em;
+}
+#main .commentlist .comment-body li > li {
+	margin-top:1em;
 }
 #commentform {
 	width: 660px;

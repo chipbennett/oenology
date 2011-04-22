@@ -12,12 +12,8 @@ if ( ( ! ( is_home() || is_single() || is_page() || is_attachment() ) ) && funct
 <?php } ?>
 
 <h1><a href="<?php the_permalink(); //link Post Headline (H1) to post permalink ?>">
-<?php if ( get_the_title() ) {
-	the_title(); // set Post Headline (H1) to Post Title 
-} else {
-	echo '<em>(Untitled)</em>'; // set Post headline (H1) to "(Untitled)" if no Post Title is defined
-} ?>
-</a>&nbsp;</h1>
+<?php the_title(); ?>
+</a></h1>
 
 <span class="post-title-metadata">
 	<span id="post-<?php the_ID(); // unique ID for CSS purposes ?>">

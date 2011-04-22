@@ -34,40 +34,14 @@
 
 <?php if ( have_comments() ) : ?>
 
-<?php
-	$postrac = false; // Boolean (true/false) variable indicating if a post has Trackbacks or Pingbacks. Set to 'false' until determined to be true.
-	if ($comments) { // if there are no comments, don't look for Trackbacks
-	
-		foreach ($comments as $comment) { // step through each comment
-			if( get_comment_type() != "comment" ) { 
-				$postrac = true;  // if a comment has a comment_type other than "comment" (i.e. a Trackback or Pingback), set $postrac to 'true'
-				} 
-			}
-			
-		if ( $postrac ) { // if the post has any trackbacks por pingbacks, display them as a list ?>
-			<h3 class='trackbackheader'>Trackbacks</h3>
-                        <ol class='trackbacklist'>
-			<?php foreach ($comments as $comment) { // step through each comment
-				if(get_comment_type() != "comment") { // if the comment is a Trackback or Pingback ?>
-					<li><?php echo comment_author_link(); // display the Comment Author Link (the Trackback/Pingback URL) ?></li>
-				<?php }
-			} ?>
-			</ol>
-		<?php }
-	}
-?>
-
 <h3>Comments <?php if ( ! comments_open() ) { ?> <small>(Comments are closed)</small><?php } ?></h3>
-
-	
 
 <?php $i = 0; ?>
 	<span id="comments-responses" style="font-weight:bold;"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</span>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // If the paged comments setting is enabled, and enough comments exisst to cause comments to be paged ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' ); ?></div>
-				<div class="nav-next"><?php next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' ); ?></div>
+			<div class="nav-comments">
+				<?php paginate_comments_links( array( 'prev_text' => '&lt;&lt;', 'next_text' => '&gt;&gt;' ) ); ?>
 			</div> <!-- .navigation -->
 <?php endif; // check for comment navigation 
 		
@@ -78,11 +52,26 @@
 		<?php }
 
 		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span> Older Comments' ); ?></div>
-				<div class="nav-next"><?php next_comments_link( 'Newer Comments <span class="meta-nav">&rarr;</span>' ); ?></div>
+			<div class="nav-comments">
+				<?php paginate_comments_links( array( 'prev_text' => '&lt;&lt;', 'next_text' => '&gt;&gt;' ) ); ?>
 			</div><!-- .navigation -->
 <?php endif; // check for comment navigation ?>
+
+<?php
+	// if there are no comments, don't look for Trackbacks
+	if ( have_comments() ) { 
+		// if the post has any trackbacks por pingbacks, display them as a list
+		$comments_by_type = $wp_query->comments_by_type;
+		if ( ! empty( $comments_by_type['pings'] ) ) {  ?>
+			<h3 class='trackbackheader'>Trackbacks</h3>
+			<ol class="trackbacklist">
+				<?php wp_list_comments( array( 'type' => 'pings', 'callback' => 'oenology_comment_list_pings' ) ); ?>
+			</ol>
+		<?php }
+	}
+?>
+
+
 
 <?php else : // or, if we don't have comments:
 
@@ -241,7 +230,7 @@ get_option( 'page_comments' ) returns TRUE is the "Paged Comments" option is tru
 have_comments()
 ----------------------------------
 have_comments() is a WordPress conditional tag.
-Codex reference: N/A
+Codex reference: http://codex.wordpress.org/Function_Reference/have_comments
 
 have_comments() is a conditional that returns TRUE if the current post has comments
 associated with it; otherwise, it returns FALSE. The most typical use of this conditional
