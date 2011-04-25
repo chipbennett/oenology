@@ -49,7 +49,9 @@
 		<!-- Begin Left Column (div#leftcol) -->
 		<?php if ( is_home() || ( is_single() && ! is_attachment() && ! has_post_format( 'image' ) ) || is_archive() ) { ?>
 		
-		<?php if ( is_active_sidebar( 'sidebar-column-top' ) || oenology_display_sidebar_icons() ) { ?>
+		<?php 
+		$oenology_options = get_option('theme_oenology_options');
+		if ( is_active_sidebar( 'sidebar-column-top' ) || $oenology_options['display_social_icons'] ) { ?>
 		
 		<div id="doublecoltop">
 		

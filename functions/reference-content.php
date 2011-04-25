@@ -85,6 +85,12 @@ function oenology_reference_page_license() { ?>
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
 	
+	<h3>1.2.1 [2011.04.25]</h3>
+	<p>Bugfix Release</p>
+	<ol>
+	<li>Minor bug with 1.2 release.</li>
+	</ol>
+	
 	<h3>1.2 [2011.04.25]</h3>
 	<p>Update Release</p>
 	<ol>
