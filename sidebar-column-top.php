@@ -3,6 +3,26 @@
 Template Name: Sidebar-Column-Top
 */
 ?>
+<?php
+$oenology_options = get_option( 'theme_oenology_options' );
+if ( $oenology_options['display_social_icons'] ) {
+	$socialprofiles = oenology_get_social_networks();
+	foreach ( $socialprofiles as $profile ) {
+		$profilename = $profile['slug'] . '_profile';
+		if ( ! empty( $oenology_options[$profilename] ) ) { 
+			$baseurl = $profile['baseurl'];
+			$profileurl = $baseurl . '/' . $oenology_options[$profilename]; ?>
+			<a class="sidebar-social-icon" href="<?php echo $profileurl; ?>" title="<?php echo $profile['name']; ?>">
+				<?php echo $profile['name']; ?>
+			</a>
+		<?php }
+	}	
+	if ( 'none' != $oenology_options['rss_feed'] ) {
+		$rssarg = $oenology_options['rss_feed'] . '_url';
+		$rssurl = get_bloginfo( $rssarg ); ?>
+		<a class="sidebar-social-icon" href="<?php echo $rssurl; ?>" title="RSS">RSS</a>
+	<?php }
+} ?>
 
 <!-- Begin Sidebar Top Widget Area-->
 <?php if ( !dynamic_sidebar( 'sidebar-column-top' ) ) {

@@ -13,6 +13,9 @@ body {
   background-color:#9DAE98;
   background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#9DAE98), color-stop(1, #9DAE98));
 }
+#footer a {
+	text-shadow: 1px 1px 0px #4c4c4c;
+}
 /* HTML Tags
   -------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
@@ -37,7 +40,7 @@ code {
   -------------------------------------------- */
 .navmenu,
 .nav-header {
-	background-color: #9DAE98;
+	background-color: #E1EED2;
 }
 .navmenu li,
 .nav-header li,
@@ -61,7 +64,7 @@ code {
      border-bottom-color: #ddd; 
      border-right-color: #ddd;
      background: #ffffe8;
-     background: url(menu-seyval-blanc.gif) #ffffe8 top left repeat-x;
+     background: url(menu-muscat.gif) #eeeeee top left repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#9DAE98), color-stop(1, #9DAE98));
 }
 .navmenu li a:hover,
@@ -118,7 +121,7 @@ code {
 #leftcol .subnavmenu .current_page_ancestor li a {
      border: 1px solid #ddd;
      border-top-color: #ddd; 
-     background: url(menu-syrah.gif) #ffffe8 top left repeat-x;
+     background: url(menu-muscat.gif) #ffffe8 top left repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#9DAE98), color-stop(1, #9DAE98));
 }
 #leftcol .subnavmenu .current_page_item li a:hover,
@@ -184,57 +187,61 @@ code {
   background-color:#9DAE98;
   background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#9DAE98), color-stop(0.8, #9DAE98));
 }
+#extent .postnav li a {
+	text-shadow: 1px 1px 0px #4c4c4c;
+}
 #extent .postnav #breadcrumbs strong {
   color: #000;
   text-shadow: 1px 1px 0px #ccc;
 }
-#extent #breadcrumbs ol.wp-paginate li .gap,
-#extent #breadcrumbs ol.wp-paginate li .current,
-#extent #breadcrumbs ol.wp-paginate li a,
+#extent #infobabrnav ol.wp-paginate li .gap,
+#extent #infobabrnav ol.wp-paginate li .current,
+#extent #infobabrnav ol.wp-paginate li a,
 #extent #loop-footer ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .current,
 #extent #loop-footer ol.wp-paginate li a,
-#extent #breadcrumbs ul.page-numbers li .gap,
-#extent #breadcrumbs ul.page-numbers li .current,
-#extent #breadcrumbs ul.page-numbers li a,
+#extent #infobabrnav ul.page-numbers li .gap,
+#extent #infobabrnav ul.page-numbers li .current,
+#extent #infobabrnav ul.page-numbers li a,
 #extent #loop-footer ul.page-numbers li .gap,
 #extent #loop-footer ul.page-numbers li .current,
 #extent #loop-footer ul.page-numbers li a {
 	background: none; 
 }
-#extent #breadcrumbs ol.wp-paginate li .gap,
+#extent #infobabrnav ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .gap,
-#extent #breadcrumbs ul.page-numbers li .gap,
+#extent #infobabrnav ul.page-numbers li .gap,
 #extent #loop-footer ul.page-numbers li .gap { 
 	color:#999;   
 }  
-#extent #breadcrumbs ol.wp-paginate li .current,
+#extent #infobabrnav ol.wp-paginate li .current,
 #extent #loop-footer ol.wp-paginate li .current,
-#extent #breadcrumbs ul.page-numbers li .current,
+#extent #infobabrnav ul.page-numbers li .current,
 #extent #loop-footer ul.page-numbers li .current {
-	border:1px solid #89adcf;
-	color:#fff; 
-	background:#5f87ae; 
+	border:1px solid #000;
+	color:#ddd; 
+	background: #555; /*#9dae98; */
 }
-#breadcrumbs ol.wp-paginate li a,
+#infobabrnav ol.wp-paginate li a,
 #loop-footer ol.wp-paginate li a,
-#breadcrumbs ul.page-numbers li a,
+#infobabrnav ul.page-numbers li a,
 #loop-footer ul.page-numbers li a {	
-	border:1px solid #ccc; 
+	border:1px solid #777; 
 	color:#666; 
+	text-shadow: 1px 1px 0px #4c4c4c;
 	background-color: transparent; 
 }  
-#breadcrumbs ol.wp-paginate li a:hover,
-#breadcrumbs ol.wp-paginate li a:active,
+#infobabrnav ol.wp-paginate li a:hover,
+#infobabrnav ol.wp-paginate li a:active,
 #loop-footer ol.wp-paginate li a:hover,
 #loop-footer ol.wp-paginate li a:active,
-#extent #breadcrumbs ul.page-numbers li a:hover,
-#extent #breadcrumbs ul.page-numbers li a:active,
+#extent #infobabrnav ul.page-numbers li a:hover,
+#extent #infobabrnav ul.page-numbers li a:active,
 #extent #loop-footer ul.page-numbers li a:hover,
 #extent #loop-footer ul.page-numbers li a:active {	
 	border:1px solid #58a;		
 	color:#fff;  
-	background:#333;
+	background:#58a;
 }
 #extent .postnav #bottompostnav {
   color: #888;
@@ -425,6 +432,13 @@ body.page .post .post-title {
 .nav-comments a {
 	border: 1px solid #58a;
 }
+.post-entry .link-pages a:hover,
+.nav-comments a:hover { 
+   background-color:#fff; 
+	-moz-box-shadow: 0px 0px 4px #111;
+	-webkit-box-shadow: 0px 0px 4px #111;
+	box-shadow: 0px 0px 4px #111;
+}
 /* Post Entry: Gallery
   -------------------------------------------- */ 
 dl.gallery-item dd {
@@ -459,19 +473,20 @@ body.attachment .gallery-nav .gallery-nav-home a:active {
 }
 .post.format-chat .post-entry {
 	background-color: #9DAE98;
+	color: #fff;
 }
 #content .format-audio .post-entry ul.audiovideo-meta a,
 #content .format-video .post-entry ul.audiovideo-meta a,
 #content .format-image .post-entry ul.gallery-meta a,
 #content .format-gallery .post-entry ul.gallery-meta a {
 	border:0;
-	text-shadow: 1px 1px 0px #bbb;
+	text-shadow: 1px 1px 0px #444;
 }
 #content .format-audio .post-entry ul.audiovideo-meta a:hover,
 #content .format-video .post-entry ul.audiovideo-meta a:hover,
 #content .format-image .post-entry ul.gallery-meta a:hover,
 #content .format-gallery .post-entry ul.gallery-meta a:hover { 
-   background-color:#bbb; 
+   background-color:#ddd; 
 }
 }
 /* Post Footer Metadata

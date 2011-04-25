@@ -4,6 +4,9 @@
 	} else {
 		oenology_breadcrumb();
 	} ?>
+	<li id="infobabrnav">
+		<?php oenology_infobar_navigation(); ?>
+	</li>
     <li id="postnavlogin">
     <?php if ( is_user_logged_in() ) {
 		wp_get_current_user();

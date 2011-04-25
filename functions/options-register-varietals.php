@@ -44,19 +44,30 @@ function oenology_settings_varietal_section_text() {
 
 // Varietal Setting
 function oenology_setting_varietal() {
-	$oenology_options = get_option( 'theme_oenology_options' );
 	$oenology_varietals = oenology_get_valid_varietals();
-	$dlstylebase = 'border: 1px solid transparent;float:left;padding:5px;margin-top:5px;margin-bottom:5px;text-align:center;max-width:160px;min-height:250px;max-height:250px;';
-	$dlstylecurrent = 'background-color:#eee;border: 1px solid #999;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
 
-	foreach ( $oenology_varietals as $varietal ) {
+	function oenology_output_varietal( $varietal ) {
+		$oenology_options = get_option( 'theme_oenology_options' );
+		$dlstylebase = 'border: 1px solid transparent;float:left;padding:5px;margin-top:5px;margin-bottom:5px;text-align:center;max-width:160px;';
+		$dlstylecurrent = 'background-color:#eee;border: 1px solid #999;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
 		$currentvarietal = ( $varietal['slug'] == $oenology_options['varietal'] ? true : false );
 		$dlstyle = ( $currentvarietal ? $dlstylebase . $dlstylecurrent : $dlstylebase ); ?>
 		<dl style="<?php echo $dlstyle; ?>">
 		<dt><strong><?php echo $varietal['name']; ?></strong></dt>
-		<dd><img style="border: 1px solid #bbb;" src="<?php echo get_template_directory_uri() . '/varietals/' . $varietal['slug'] . '.png'; ?>" width="150px" height="110px" alt="<?php echo $varietal['name']; ?>" /></dd>
+		<dd><img style="border: 1px solid #bbb;" src="<?php echo get_template_directory_uri() . '/varietals/' . $varietal['slug'] . '.png'; ?>" width="150px" height="110px" alt="<?php echo $varietal['name']; ?>" title="<?php echo $varietal['description']; ?>" /></dd>
 		<dd><input type="radio" name="theme_oenology_options[varietal]" <?php checked( $currentvarietal ); ?> value="<?php echo $varietal['slug']; ?>" /></dd>
-		<dd><small><?php echo $varietal['description']; ?></small></dd>
 		</dl>
-	<?php } 
+	<?php } ?>
+	<h4 style="display:block;clear:both;">White (Light)</h4>
+	<?php foreach ( $oenology_varietals as $varietal ) {
+		if ( 'light' == $varietal['scheme'] ) {
+			oenology_output_varietal( $varietal );
+		}
+	} ?>
+	<h4 style="display:block;clear:both;">Red (Dark)</h4>
+	<?php foreach ( $oenology_varietals as $varietal ) {
+		if ( 'dark' == $varietal['scheme'] ) {
+			oenology_output_varietal( $varietal );
+		}
+	}
 } ?>

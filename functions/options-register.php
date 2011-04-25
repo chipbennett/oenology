@@ -48,39 +48,37 @@ function oenology_options_validate( $input ) {
 	
 	if ( $submit_general ) { // if General Settings Submit
 	
+		// Header Options
 		$valid_input['header_nav_menu_position'] = ( 'below' == $input['header_nav_menu_position'] ? 'below' : 'above' );
 		$valid_input['header_nav_menu_depth'] = ( ( 1 || 2 || 3 ) == $input['header_nav_menu_depth'] ? $input['header_nav_menu_depth'] : $valid_input['header_nav_menu_depth'] );
-		$valid_input['display_rss_feed'] = ( true == $input['display_rss_feed'] ? true : false );
+		// Social Icon Options
+		$valid_input['display_social_icons'] = ( true == $input['display_social_icons'] ? true : false );
 		$valid_rss_feeds = oenology_get_valid_feeds();
 		$valid_input['rss_feed'] = ( array_key_exists( $input['rss_feed'], $valid_rss_feeds ) ? $input['rss_feed'] : $valid_input['rss_feed'] );
-		$valid_input['display_aim_profile'] = ( true == $input['display_aim_profile'] ? true : false );
-		$valid_input['aim_profile'] = wp_filter_nohtml_kses( $input['aim_profile'] );
-		$valid_input['display_facebook_profile'] = ( true == $input['display_facebook_profile'] ? true : false );
-		$valid_input['facebook_profile'] = wp_filter_nohtml_kses( $input['facebook_profile'] );
-		$valid_input['display_flickr_profile'] = ( true == $input['display_flickr_profile'] ? true : false );
-		$valid_input['flickr_profile'] = wp_filter_nohtml_kses( $input['flickr_profile'] );
-		$valid_input['display_linkedin_profile'] = ( true == $input['display_linkedin_profile'] ? true : false );
-		$valid_input['linkedin_profile'] = wp_filter_nohtml_kses( $input['linkedin_profile'] );
-		$valid_input['display_myspace_profile'] = ( true == $input['display_myspace_profile'] ? true : false );
-		$valid_input['myspace_profile'] = wp_filter_nohtml_kses( $input['myspace_profile'] );
-		$valid_input['display_skype_profile'] = ( true == $input['display_skype_profile'] ? true : false );
-		$valid_input['skype_profile'] = wp_filter_nohtml_kses( $input['skype_profile'] );
-		$valid_input['display_twitter_profile'] = ( true == $input['display_twitter_profile'] ? true : false );
-		$valid_input['twitter_profile'] = wp_filter_nohtml_kses( $input['twitter_profile'] );
-		$valid_input['display_yahoo_profile'] = ( true == $input['display_yahoo_profile'] ? true : false );
-		$valid_input['yahoo_profile'] = wp_filter_nohtml_kses( $input['yahoo_profile'] );
-		$valid_input['display_youtube_profile'] = ( true == $input['display_youtube_profile'] ? true : false );
-		$valid_input['youtube_profile'] = wp_filter_nohtml_kses( $input['youtube_profile'] );
+		$socialprofiles = oenology_get_social_networks();
+		foreach ( $socialprofiles as $profile ) {
+			$profilename = $profile['slug'] . '_profile';
+			$valid_input[$profilename] = wp_filter_nohtml_kses( $input[$profilename] );
+		}
+		// Footer Options
 		$valid_input['display_footer_credit'] = ( 'true' == $input['display_footer_credit'] ? true : false );
 		
 	} elseif ( $reset_general ) { // if General Settings Reset Defaults
 	
 		$oenology_default_options = oenology_get_default_options();
+		// Header Options
 		$valid_input['header_nav_menu_position'] = $oenology_default_options['header_nav_menu_position'];
 		$valid_input['header_nav_menu_depth'] = $oenology_default_options['header_nav_menu_depth'];
+		// Social Icon Options
+		$valid_input['display_social_icons'] = $oenology_default_options['display_social_icons'];
+		$valid_input['rss_feed'] = $oenology_default_options['rss_feed'];
+		$socialprofiles = oenology_get_social_networks();
+		foreach ( $socialprofiles as $profile ) {
+			$profilename = $profile['slug'] . '_profile';
+			$valid_input[$profilename] = $oenology_default_options[$profilename];
+		}
+		// Footer Options
 		$valid_input['display_footer_credit'] = $oenology_default_options['display_footer_credit'];
-		$valid_input['display_aim_profile'] = $oenology_default_options['display_aim_profile'];
-		$valid_input['aim_profile'] = $oenology_default_options['aim_profile'];
 		
 	} elseif ( $submit_varietals ) { // if Varietals Settings Submit
 	

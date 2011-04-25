@@ -567,17 +567,18 @@ body.single-format-image #main {
   bottom:0px;
   display: block;
   float:left;
-  font-size:7.5pt;
-  line-height:16pt;
-  height:16pt;
+  font-size:10pt;
+  line-height:25pt;
+  height:25pt;
   letter-spacing: 0em;
   font-weight:normal;
   text-align:left;
 }
 #extent .postnav #postnavlogin {
-	width:248px;
+	width:200px;
 	padding-right:3px;
-	padding-left:3px;
+	padding-left:0px;
+	font-size: 8pt;
 	text-align:right;
 }
 
@@ -588,17 +589,25 @@ body.single-format-image #main {
   ------------------------------------------------------
 */
 #extent .postnav #breadcrumbs {
-  width:540px;
-  min-width:540px;
+  width:396px;
+  min-width:396px;
+  max-width:396px;
   padding-left:3px;
+  overflow: hidden;
+} 
+.single #extent .postnav #breadcrumbs,
+.page #extent .postnav #breadcrumbs {
+  width:536px;
+  min-width:536px;
+  max-width:536px;
 } 
 #extent .postnav #breadcrumbs .crumbs {
 	display: inline;
 	float:left;
 }
-#extent #breadcrumbs ol.wp-paginate,
+#extent #infobabrnav ol.wp-paginate,
 #extent #loop-footer ol.wp-paginate,
-#extent #breadcrumbs ul.page-numbers,
+#extent #infobabrnav ul.page-numbers,
 #extent #loop-footer ul.page-numbers {  
 	display: inline;  
 	float:right;
@@ -610,9 +619,9 @@ body.single-format-image #main {
 #extent #loop-footer ul.page-numbers {
 	float:none;
 }
-#extent #breadcrumbs ol.wp-paginate li,
+#extent #infobabrnav ol.wp-paginate li,
 #extent #loop-footer ol.wp-paginate li,
-#extent #breadcrumbs ul.page-numbers li,
+#extent #infobabrnav ul.page-numbers li,
 #extent #loop-footer ul.page-numbers li {	
 	display: inline;
 	list-style: none;
@@ -628,15 +637,15 @@ body.single-format-image #main {
 	font-weight:normal;  
 	text-align: center; 
 }  
-#extent #breadcrumbs ol.wp-paginate li .gap,
-#extent #breadcrumbs ol.wp-paginate li .current,
-#extent #breadcrumbs ol.wp-paginate li a,
+#extent #infobabrnav ol.wp-paginate li .gap,
+#extent #infobabrnav ol.wp-paginate li .current,
+#extent #infobabrnav ol.wp-paginate li a,
 #extent #loop-footer ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .current,
 #extent #loop-footer ol.wp-paginate li a,
-#extent #breadcrumbs ul.page-numbers li .gap,
-#extent #breadcrumbs ul.page-numbers .current,
-#extent #breadcrumbs ul.page-numbers a,
+#extent #infobabrnav ul.page-numbers li .gap,
+#extent #infobabrnav ul.page-numbers .current,
+#extent #infobabrnav ul.page-numbers a,
 #extent #loop-footer ul.page-numbers li .gap,
 #extent #loop-footer ul.page-numbers li .current,
 #extent #loop-footer ul.page-numbers li a {
@@ -646,9 +655,9 @@ body.single-format-image #main {
 	text-align:center; 
 	text-decoration:none;
 }
-#extent #breadcrumbs ol.wp-paginate li .gap,
+#extent #infobabrnav ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .gap,
-#extent #breadcrumbs ul.page-numbers li .gap,
+#extent #infobabrnav ul.page-numbers li .gap,
 #extent #loop-footer ul.page-numbers li .gap {  
 	padding: 3px 0px; 
 }  
@@ -658,8 +667,8 @@ body.single-format-image #main {
   min-width:660px;
   padding-left:3px;
 } 
-#extent #breadcrumbs .postsnavlinks,
-#extent #breadcrumbs .prevnextpostlinks {
+#extent #infobabrnav .postsnavlinks,
+#extent #infobabrnav .prevnextpostlinks {
 	display: inline;
 	float: right;
 	font-size: 16pt;
@@ -673,6 +682,20 @@ body.single-format-image #main {
 /* Infobar Prev/Next Post Links - Default 
   ------------------------------------------------------
 */
+#extent .postnav #infobabrnav {
+  width:195px;
+  min-width:195px;
+  max-width:195px;
+  padding-left:0;
+  font-size: 8pt;
+  text-align:center;
+} 
+.single #extent .postnav #infobabrnav,
+.page #extent .postnav #infobabrnav {
+  width:55px;
+  min-width:55px;
+  max-width:55px;
+} 
 #extent .postnav .postnavhome {
   width:181px;
   margin:0px auto;
@@ -1817,15 +1840,20 @@ body.single-format-image dd {
 	margin-bottom:10px;
 	text-align:center;
 }
-#extent #loop-footer li {
+#extent #loop-footer #bottompostnav li {
   position:relative;
   bottom:0px;
-  font-size:7.5pt;
-  line-height:16pt;
-  height:16pt;
+  font-size:10pt;
+  line-height:25pt;
+  height:25pt;
   letter-spacing: 0em;
   font-weight:normal;
   text-align:center;
+}
+#extent #loop-footer #bottompostnav ul.page-numbers li .gap, 
+#extent #loop-footer #bottompostnav ul.page-numbers li .current, 
+#extent #loop-footer #bottompostnav ul.page-numbers li a {
+  font-size:9pt;
 }
 /* 
    8 - Footer Section(#footer) Style Specifications

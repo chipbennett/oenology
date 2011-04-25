@@ -6,7 +6,7 @@ Requires at least: 3.1
 Tested up to: 3.1
 Stable tag: 1.1
 
-Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.1.</strong>
+Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in pagination and breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.1.</strong>
 
 == Description ==
 
@@ -91,6 +91,9 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 Note: see the "Oenology Reference" admin page for full Changelog details. 
 See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 
+= 1.2 [2011.04.25] =
+* Update Release
+
 = 1.1 [2011.02.23] =
 * Update Release
 
@@ -105,8 +108,11 @@ See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 
 == Upgrade Notice ==
 
+= 1.2 =
+Update release. Theme Features; Theme options; maintenance; bugfixes; documentation
+
 = 1.1 =
-Maintenance release. Post Formats support; Theme options; bugfixes
+Update release. Post Formats support; Theme options; bugfixes
 
 = 1.0 =
 Maintenance release. Completed inline documentation, added default Widgets, minor bugfixes, CSS clean-up, minor updates

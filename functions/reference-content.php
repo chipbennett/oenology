@@ -85,7 +85,7 @@ function oenology_reference_page_license() { ?>
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
 	
-	<h3>1.2 [2011.MM.DD]</h3>
+	<h3>1.2 [2011.04.25]</h3>
 	<p>Update Release</p>
 	<ol>
 	<li>New Features:
@@ -128,6 +128,8 @@ function oenology_reference_page_changelog() { ?>
 			<li>Fixed handling of user-configured header text color</li>
 			</ol>
 		</li>
+		<li>Stylesheet updates to improve aesthetics</li>
+		<li>Added caching for the oenology_copyright() function database query results</li>
 		<li>Added caching for the oenology_copyright() function database query results</li>
 		<li>Added icons for Post Formats</li>
 		<li>Changed RSS icon in Loop Header</li>
@@ -142,6 +144,7 @@ function oenology_reference_page_changelog() { ?>
 		<li>Replaced previous/next comments page links above/below comment list with native 
 			pagination links, via core function paginate_comments_links()</li>
 		<li>Added oenology_paginate_archive_page_links() custom wrapper function for paginate_links, for use by Child Themes</li>
+		<li>Added @import font: TexGyre Schola</li>
 		</ol>
 	</li>
 	<li>Documentation:

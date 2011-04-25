@@ -52,7 +52,7 @@ code {
   -------------------------------------------- */
 .navmenu,
 .nav-header {
-	background-color: #333;
+	background-color: transparent;
 }
 .navmenu li,
 .nav-header li,
@@ -72,11 +72,11 @@ code {
 .nav-header li a:visited,
 .nav-header li a:hover,
 .nav-header li a:active {
-	 border: 1px solid #444;
-     border-bottom-color: #000; 
-     border-right-color: #000;
+	 border: 1px solid #666;
+     border-bottom-color: #444;
+     border-right-color: #444;
      background: #333;
-     background: url(menu-syrah.gif) #2C362B top left repeat-x;
+     background: url(menu-malbec.gif) #2C362B top left repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#555555), to(#2C362B), color-stop(0.9, #2C362B));
 }
 .navmenu li a:hover,
@@ -133,7 +133,7 @@ code {
 #leftcol .subnavmenu .current_page_ancestor li a {
      border: 1px solid #444;
      border: 1px solid#444; 
-     background: url(menu-syrah.gif) #2C362B top left repeat-x;
+     background: url(menu-malbec.gif) #2C362B top left repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#555555), to(#2C362B), color-stop(0.9, #2C362B));
 }
 #leftcol .subnavmenu .current_page_item li a:hover,
@@ -218,52 +218,53 @@ code {
   color: #fff;
   text-shadow: 1px 1px 0px #111;
 }
-#extent #breadcrumbs ol.wp-paginate li .gap,
-#extent #breadcrumbs ol.wp-paginate li .current,
-#extent #breadcrumbs ol.wp-paginate li a,
+#extent #infobabrnav ol.wp-paginate li .gap,
+#extent #infobabrnav ol.wp-paginate li .current,
+#extent #infobabrnav ol.wp-paginate li a,
 #extent #loop-footer ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .current,
 #extent #loop-footer ol.wp-paginate li a,
-#extent #breadcrumbs ul.page-numbers li .gap,
-#extent #breadcrumbs ul.page-numbers li .current,
-#extent #loop-footer ul.page-numbers li a,
+#extent #infobabrnav ul.page-numbers li .gap,
+#extent #infobabrnav ul.page-numbers li .current,
+#extent #infobabrnav ul.page-numbers li a,
+#extent #loop-footer ul.page-numbers li .gap,
 #extent #loop-footer ul.page-numbers li .current,
 #extent #loop-footer ul.page-numbers li a {
 	background: none; 
 }
-#extent #breadcrumbs ol.wp-paginate li .gap,
+#extent #infobabrnav ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .gap,
-#extent #breadcrumbs ul.page-numbers li .gap,
+#extent #infobabrnav ul.page-numbers li .gap,
 #extent #loop-footer ul.page-numbers li .gap { 
 	color:#999;   
 }  
-#extent #breadcrumbs ol.wp-paginate li .current,
+#extent #infobabrnav ol.wp-paginate li .current,
 #extent #loop-footer ol.wp-paginate li .current,
-#extent #breadcrumbs ul.page-numbers li .current,
+#extent #infobabrnav ul.page-numbers li .current,
 #extent #loop-footer ul.page-numbers li .current {
-	border:1px solid #89adcf;
-	color:#fff; 
-	background:#5f87ae; 
+	border:1px solid #ccc;
+	color:#222; 
+	background:#eee; 
 }
-#breadcrumbs ol.wp-paginate li a,
+#infobabrnav ol.wp-paginate li a,
 #loop-footer ol.wp-paginate li a,
-#breadcrumbs ul.page-numbers li a,
+#infobabrnav ul.page-numbers li a,
 #loop-footer ul.page-numbers li a {	
-	border:1px solid #ccc; 
-	color:#666; 
+	border:1px solid #999; 
+	color:#ccc; 
 	background-color: transparent; 
 }  
-#breadcrumbs ol.wp-paginate li a:hover,
-#breadcrumbs ol.wp-paginate li a:active,
+#infobabrnav ol.wp-paginate li a:hover,
+#infobabrnav ol.wp-paginate li a:active,
 #loop-footer ol.wp-paginate li a:hover,
 #loop-footer ol.wp-paginate li a:active,
-#extent #breadcrumbs ul.page-numbers li a:hover,
-#extent #breadcrumbs ul.page-numbers li a:active,
+#extent #infobabrnav ul.page-numbers li a:hover,
+#extent #infobabrnav ul.page-numbers li a:active,
 #extent #loop-footer ul.page-numbers li a:hover,
 #extent #loop-footer ul.page-numbers li a:active {	
 	border:1px solid #58a;		
 	color:#fff;  
-	background:#333;
+	background:#58a;
 }
 #extent .postnav #bottompostnav {
   color: #888;
@@ -355,16 +356,16 @@ div.post {
 	-webkit-border-radius: 9px; 
 	-moz-border-radius: 9px; 
 	border-radius: 9px; 
-	box-shadow: 3px 3px 5px #555;
-	-moz-box-shadow: 3px 3px 5px #555;
-	-webkit-box-shadow: 3px 3px 5px #555;
+	box-shadow: 3px 3px 5px #777;
+	-moz-box-shadow: 3px 3px 5px #777;
+	-webkit-box-shadow: 3px 3px 5px #777;
 }
 body.home .post.sticky {
 	background-color:#2C362B;
 	border-color: #000;
-	box-shadow: 3px 3px 5px #777;
-	-moz-box-shadow: 3px 3px 5px #777;
-	-webkit-box-shadow: 3px 3px 5px #777;
+	box-shadow: 3px 3px 5px #ccc;
+	-moz-box-shadow: 3px 3px 5px #ccc;
+	-webkit-box-shadow: 3px 3px 5px #ccc;
 }
 /*body.single-format-image .post,
 .post.format-aside,

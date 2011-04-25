@@ -541,6 +541,17 @@ function oenology_breadcrumb() {
 	echo $currentLocationLink; // Output Current Location	
 	echo $crumbPagination; // Output page number, if Post or Page is paginated	
 	echo $containerCrumbEnd; // End of BreadCrumbs
+ 
+    echo $containerAfter; // End of Container
+
+}
+
+
+/*****************************************************************************************
+* Add navigation links to infobar
+*******************************************************************************************/
+
+function oenology_infobar_navigation() {
 	
 	// Start of Pagination
 	if ( ! is_singular() ) {
@@ -557,11 +568,8 @@ function oenology_breadcrumb() {
 		previous_post_link( '%link', ' &rArr;' );
 		echo '</div>';
 	}
- 
-    echo $containerAfter; // End of Container
 
 }
-
 
 /*****************************************************************************************
 * Paginate Archive Index Page Links

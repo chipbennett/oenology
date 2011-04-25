@@ -197,9 +197,9 @@ code {
 #extent .postnav #breadcrumbs {
   color: #888;
 } 
-#extent #breadcrumbs ol.wp-paginate,
+#extent #infobabrnav ol.wp-paginate,
 #extent #loop-footer ol.wp-paginate,
-#extent #breadcrumbs ul.page-numbers,
+#extent #infobabrnav ul.page-numbers,
 #extent #loop-footer ul.page-numbers {   
 	border: 0; 
 	border-top: 0; 
@@ -218,48 +218,48 @@ code {
   color: #fff;
   text-shadow: 1px 1px 0px #111;
 }
-#extent #breadcrumbs ol.wp-paginate li .gap,
-#extent #breadcrumbs ol.wp-paginate li .current,
-#extent #breadcrumbs ol.wp-paginate li a,
+#extent #infobabrnav ol.wp-paginate li .gap,
+#extent #infobabrnav ol.wp-paginate li .current,
+#extent #infobabrnav ol.wp-paginate li a,
 #extent #loop-footer ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .current,
 #extent #loop-footer ol.wp-paginate li a,
-#extent #breadcrumbs ul.page-numbers li .gap,
-#extent #breadcrumbs ul.page-numbers li .current,
-#extent #breadcrumbs ul.page-numbers li a,
+#extent #infobabrnav ul.page-numbers li .gap,
+#extent #infobabrnav ul.page-numbers li .current,
+#extent #infobabrnav ul.page-numbers li a,
 #extent #loop-footer ul.page-numbers li .gap,
 #extent #loop-footer ul.page-numbers li .current,
 #extent #loop-footer ul.page-numbers li a {
 	background: none; 
 }
-#extent #breadcrumbs ol.wp-paginate li .gap,
+#extent #infobabrnav ol.wp-paginate li .gap,
 #extent #loop-footer ol.wp-paginate li .gap,
-#extent #breadcrumbs ul.page-numbers li .gap,
+#extent #infobabrnav ul.page-numbers li .gap,
 #extent #loop-footer ul.page-numbers li .gap { 
 	color:#999;   
 }  
-#extent #breadcrumbs ol.wp-paginate li .current,
+#extent #infobabrnav ol.wp-paginate li .current,
 #extent #loop-footer ol.wp-paginate li .current,
-#extent #breadcrumbs ul.page-numbers li .current,
+#extent #infobabrnav ul.page-numbers li .current,
 #extent #loop-footer ul.page-numbers li .current {
 	border:1px solid #89adcf;
 	color:#fff; 
 	background:#5f87ae; 
 }
-#breadcrumbs ol.wp-paginate li a,
+#infobabrnav ol.wp-paginate li a,
 #loop-footer ol.wp-paginate li a,
-#breadcrumbs ul.page-numbers li a,
+#infobabrnav ul.page-numbers li a,
 #loop-footer ul.page-numbers li a {	
 	border:1px solid #ccc; 
 	color:#666; 
 	background-color: transparent; 
 }  
-#breadcrumbs ol.wp-paginate li a:hover,
-#breadcrumbs ol.wp-paginate li a:active,
+#infobabrnav ol.wp-paginate li a:hover,
+#infobabrnav ol.wp-paginate li a:active,
 #loop-footer ol.wp-paginate li a:hover,
 #loop-footer ol.wp-paginate li a:active,
-#extent #breadcrumbs ul.page-numbers li a:hover,
-#extent #breadcrumbs ul.page-numbers li a:active,
+#extent #infobabrnav ul.page-numbers li a:hover,
+#extent #infobabrnav ul.page-numbers li a:active,
 #extent #loop-footer ul.page-numbers li a:hover,
 #extent #loop-footer ul.page-numbers li a:active {	
 	border:1px solid #58a;		

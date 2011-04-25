@@ -22,25 +22,13 @@ function oenology_get_default_options() {
 		'header_nav_menu_depth' => 1,
         'display_footer_credit' => false,
 		'varietal' => 'cuvee',
-		'display_rss_feed' => true,
+		'display_social_icons' => true,
 		'rss_feed' => 'rss2',
-		'display_aim_profile' => false,
-		'aim_profile' => '',
-		'display_facebook_profile' => false,
 		'facebook_profile' => '',
-		'display_flickr_profile' => false,
 		'flickr_profile' => '',
-		'display_linkedin_profile' => false,
 		'linkedin_profile' => '',
-		'display_myspace_profile' => false,
 		'myspace_profile' => '',
-		'display_skype_profile' => false,
-		'skype_profile' => '',
-		'display_twitter_profile' => false,
 		'twitter_profile' => '',
-		'display_yahoo_profile' => false,
-		'yahoo_profile' => '',
-		'display_youtube_profile' => false,
 		'youtube_profile' => '',
         'theme_version' => '1.2'
     );
@@ -53,7 +41,7 @@ function oenology_get_valid_varietals() {
         'cuvee' => array(
 	      'slug' => 'cuvee',
 	      'name' => 'Cuvee',
-	      'description' => '"Cuvee" is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is the base style for Oenology.',
+	      'description' => 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is the base style for Oenology.',
 	      'scheme' => 'light'
 	      ),
         'seyval-blanc' => array(
@@ -87,6 +75,7 @@ function oenology_get_valid_varietals() {
 function oenology_get_valid_feeds() {
 	
 	$feeds = array( 
+        	'none' => 'Do Not Display',
         	'rdf' => 'RDF/RSS 1.0',
         	'rss' => 'RSS 0.92,',
         	'rss2' => 'RSS 2.0',
@@ -152,23 +141,6 @@ function oenology_get_social_networks() {
 	return $socialnetworks;
 }
 
-function oenology_display_sidebar_icons() {
-
-	$oenology_options = get_option( 'theme_oenology_options' );
-	$display_sidebar_icons = false;
-	if ( $oenology_options['display_rss_feed'] ) $display_sidebar_icons = true;
-	$social_profiles = oenology_get_social_networks();
-	foreach ( $social_profiles as $profile ) {
-		$name = $profile['slug'] . '_profile';
-		$display = 'display_' . $name;
-		if ( $oenology_options[$display] && isset( $oenology_options[$name] ) ) {
-			$display_sidebar_icons = true;
-		}
-	}
-	return $display_sidebar_icons;
-
-}
-
 
 /*****************************************************************************************
 * Setup initial Theme options
@@ -185,17 +157,15 @@ function oenology_options_init() {
 	}
 	update_option( 'theme_oenology_options', $oenology_options );
 	
-	// Update New Options
+	// Update New Options (Version 1.2)
 	if ( '1.2' > $oenology_options['theme_version'] ) {
 		$default_options = oenology_get_default_options();
-		$oenology_options['display_rss_feed'] = $default_options['display_rss_feed'];
+		$oenology_options['display_social_icons'] = $default_options['display_social_icons'];
 		$oenology_options['rss_feed'] = $default_options['rss_feed'];
 		$socialnetworks = oenology_get_social_networks();
 		foreach ( $socialnetworks as $network ) {
 			$profile = $network . '_profile';
 			$oenology_options[$profile] = $default_options[$profile];
-			$displayprofile = 'display_' . $profile;
-			$oenology_options[$displayprofile] = $default_options[$displayprofile];
 		}
 		$oenology_options['theme_version'] = '1.2';
 		update_option( 'theme_oenology_options', $oenology_options );

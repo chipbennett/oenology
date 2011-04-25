@@ -52,31 +52,9 @@
 		<?php if ( is_active_sidebar( 'sidebar-column-top' ) || oenology_display_sidebar_icons() ) { ?>
 		
 		<div id="doublecoltop">
-			
-		<?php
-		$oenology_options = get_option( 'theme_oenology_options' );
-		$socialprofiles = oenology_get_social_networks();
-		foreach ( $socialprofiles as $profile ) {
-			$profilename = $profile['slug'] . '_profile';
-			$display = 'display_' . $profilename;
-			if ( $oenology_options[$display] && ! empty( $oenology_options[$profilename] ) ) { 
-				$baseurl = $profile['baseurl'];
-				$profileurl = $baseurl . '/' . $oenology_options[$profilename]; ?>
-				<a class="sidebar-social-icon" href="<?php echo $profileurl; ?>" title="<?php echo $profile['name']; ?>">
-				<?php echo $profile['name']; ?>
-				</a>
-			<?php }
-		}
-		if ( $oenology_options['display_rss_feed'] ) {
-			$rssarg = $oenology_options['rss_feed'] . '_url';
-			$rssurl = get_bloginfo( $rssarg );
-			?>
-			<a class="sidebar-social-icon" href="<?php echo $rssurl; ?>" title="RSS">
-			RSS
-			</a>
-		<?php } ?>
 		
 			<?php get_sidebar( 'column-top' ); ?>
+			
 		</div>
 		
 		<?php } ?>
