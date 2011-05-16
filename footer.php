@@ -1,16 +1,29 @@
-<span><a href="<?php home_url();  ?>"><?php bloginfo('name'); ?></a></span> <?php
-if ( function_exists( 'oenology_copyright' ) ) { // if the oenology_copyright() function exists, use it to output the copyright date span
-	echo oenology_copyright();  // function to output XXXX-YYYY, where 'XXXX' is the year of the oldest post, and 'YYYY' is the current year
-} else {  // otherwise, just output the current year
-	?>  
-	&copy;  
-	<?php echo date('Y');  // current year
-} ?>  | Powered by <a href="http://wordpress.org" target="_new">WordPress <?php bloginfo('version'); ?></a><?php 
-global $oenology_options;
-if ( 'true' == $oenology_options['display_footer_credit'] ) { // Disabled by default 
-	oenology_footer_credit();  
-}
-	/*
+<!-- Begin Footer (div#footer) -->
+<div id="footer">
+
+	<span><a href="<?php echo home_url();  ?>"><?php bloginfo('name'); ?></a></span> <?php
+	if ( function_exists( 'oenology_copyright' ) ) { // if the oenology_copyright() function exists, use it to output the copyright date span
+		echo oenology_copyright();  // function to output XXXX-YYYY, where 'XXXX' is the year of the oldest post, and 'YYYY' is the current year
+	} else {  // otherwise, just output the current year
+		?>  
+		&copy;  
+		<?php echo date('Y');  // current year
+	} ?>  | Powered by <a href="http://wordpress.org" target="_new">WordPress <?php bloginfo('version'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/iconsweets2/original/wordpress16.png" width="18px" height="17px" alt="WordPress" style="vertical-align:middle;" /></a><?php 
+	global $oenology_options;
+	if ( 'true' == $oenology_options['display_footer_credit'] ) { // Disabled by default 
+		oenology_footer_credit();  
+	} ?>
+
+</div>
+<!-- End Footer (div#footer) -->
+
+</div>
+<!-- End Extent (div#extent) -->
+
+<?php wp_footer(); ?>
+</body>
+</html>
+<?php	/*
 Reference:
 =============================================================================
 The following functions, tags, and hooks are used (or referenced) in this Theme template file:

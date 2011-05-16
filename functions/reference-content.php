@@ -85,6 +85,15 @@ function oenology_reference_page_license() { ?>
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
 	
+	<h3>1.2.2 [2011.05.16]</h3>
+	<p>Bugfix Release</p>
+	<ol>
+	<li>Fixes <a href="https://github.com/chipbennett/oenology/issues/2">Issue #2</a>: Footer link to home_url() does not echo.</li>
+	<li>Fixes <a href="https://github.com/chipbennett/oenology/issues/3">Issue #3</a>: #postnavlogin overflow.</li>
+	<li>Fixes <a href="https://github.com/chipbennett/oenology/issues/4">Issue #4</a>: Tables overflowing content area (props FurciferRising).</li>
+	<li>Fixes <a href="https://github.com/chipbennett/oenology/issues/5">Issue #5</a>: #postnav floats into nav menu.</li>
+	</ol>
+	
 	<h3>1.2.1 [2011.04.25]</h3>
 	<p>Bugfix Release</p>
 	<ol>

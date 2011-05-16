@@ -367,6 +367,7 @@ a:active {
 */
 table { 
    text-align: center;
+   border-collapse:collapse;
 }
 th {
    color: navy;
@@ -509,11 +510,11 @@ body.single-format-image #main {
   bottom:0;
   width:1000px;
   height:25px;
+  line-height:25px;
+  font-size:8pt;
   margin:auto;
   text-align:center;
   vertical-align:baseline;
-  font-size:8pt;
-  line-height:16pt;
   letter-spacing:0em;
 }
 /* 
@@ -557,6 +558,7 @@ body.single-format-image #main {
   bottom:16pt;*/
   list-style-type:none;
   display:block;
+  clear:both;
   width:1000px;
   margin:0px;
   margin-bottom:0px;
@@ -575,10 +577,10 @@ body.single-format-image #main {
   text-align:left;
 }
 #extent .postnav #postnavlogin {
-	width:200px;
-	padding-right:3px;
+	width:218px;
+	padding-right:0px;
 	padding-left:0px;
-	font-size: 8pt;
+	font-size: 7pt;
 	text-align:right;
 }
 
@@ -714,10 +716,11 @@ body.single-format-image #main {
 */
 #extent .postnav #postnavsearch {
 	float:right;
-	width:200px;
+	width:182px;
 	margin:0;
 	padding:0;
 	padding-right:3px;
+	padding-left: 3px;
 	text-align:right;
 }
 #extent .postnav #postnavsearch #searchform {
@@ -734,7 +737,7 @@ body.single-format-image #main {
 	font-weight: normal;
 }
 #extent .postnav #postnavsearch #s {
-	width:145px;
+	width:135px;
 }
 #extent .postnav #postnavsearch #searchsubmit {
 	font-size: 7pt;

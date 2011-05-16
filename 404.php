@@ -93,20 +93,10 @@ get_header();  // MUST come first. Calls the header PHP file. Used in all primar
 	</div>
 	<!-- End Content  (div#content)-->
 
-<div id="container" style="clear:both;">&nbsp;</div>
+	<div id="container" style="clear:both;">&nbsp;</div>
 	
-<!-- Begin Footer (div#footer) -->
-<div id="footer">
 	<?php get_footer(); // Used in all primary template page types (index.php, single.php, archive.php, search.php, page.php) ?>
-</div>
-<!-- End Footer (div#footer) -->
-
-</div>
-<!-- End Extent (div#extent) -->
-
-<?php wp_footer(); ?>
-</body>
-</html>
+	
 <?php /*
 Reference:
 =============================================================================
