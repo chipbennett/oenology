@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: fixed-width, white, black, tan, three-columns, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
 Requires at least: 3.1
 Tested up to: 3.1.2
-Stable tag: 1.2.2
+Stable tag: 2.0
 
 Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in pagination and breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.1.1.</strong>
 
@@ -44,7 +44,7 @@ Activiation and Use
 = So, how do I learn from Oenology? =
 
 Each Theme template file includes a considerable amount of inline documentation, explaining the code use. 
-Also, each template file includes a function reference, that lists each function, hook, and tag used in the file, along with a WordPress Codex reference, an explanation of the function, and example usage.
+Also, the Theme includes a function reference, that lists each function, hook, and tag used in the Theme, along with a WordPress Codex reference, an explanation of the function, and example usage.
 
 = What is the Oenology Reference admin page? =
 
@@ -91,6 +91,9 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 Note: see the "Oenology Reference" admin page for full Changelog details. 
 See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 
+= 2.0 [2011.MM.DD]
+* Major Update Release
+
 = 1.2.2 [2011.05.16] =
 * Minor Bugfix Release
 
@@ -110,9 +113,12 @@ See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 * Minor BugFix release
 
 = 0.9.1 [2010.09.24] =
-* Initial Release.
+* Initial Release
 
 == Upgrade Notice ==
+
+= 2.0 =
+Major update release
 
 = 1.2.2 =
 Minor bugfix release

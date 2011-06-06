@@ -1,187 +1,107 @@
 <?php
-/*
-Template Name: Page
-*/
-get_header();  // MUST come first. Calls the header PHP file. Used in all primary template page types (index.php, single.php, archive.php, search.php, page.php) ?>
-
-<body id="page" <?php body_class(); ?>> 
-
-<!-- Begin Extent (div#extent) -->
-<div id="extent"> 
-<?php 
-	/*
-	All displayed content (including the footer) is contained within div#extent, for which width and position are set via CSS.
-	*/ 
+/**
+ * Default Page template file
+ *
+ * This file is the default Page template file, used to display static
+ * Pages if no custom Page template is defined.
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/get_header 			get_header()
+ * @link 		http://codex.wordpress.org/Function_Reference/get_footer 			get_footer()
+ * @link 		http://codex.wordpress.org/Function_Reference/get_sidebar 			get_sidebar()
+ * @link 		http://codex.wordpress.org/Function_Reference/get_template_part 	get_template_part()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_attachment			is_attachment()
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2010, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
 ?>
 
-	<!-- Begin Header  (div#header)-->
-	<div id="header"> 
-		<!-- Begin Blog Head -->
-		<?php get_template_part('site-header'); // site-header.php contains the Main Navigation Menu, Blog Title and Blog description. ?>
-		<!-- End Blog Head -->
+<?php
+/**
+ * Include the header template part file
+ * 
+ * MUST come first. 
+ * Calls the header PHP file. 
+ * Used in all primary template pages
+ * 
+ * Codex reference: {@link: http://codex.wordpress.org/Function_Reference/get_header get_header}
+ * 
+ * Child Themes can replace this template part file globally, via "header.php",
+ * or in the static Page context only, via "header-page.php"
+ */
+get_header( 'page' );
+?>
 
-	</div>
-	<!-- End Header (div#header) -->
-	
-	<?php get_template_part('infobar'); // infobar.php contains the location/breadcrumb/login/search bar. ?>
-
-	<!-- Begin Content (div#content) -->
-	<div id="content">
+<!-- Begin Main (div#main) -->
+<?php
+/**
+ * div#main contains the center column content of the three-column 
+ * layout, and the left-column content of the two-column layout. 
+ * Generally, this column contains the main content of the page 
+ * (blog post/posts, page content, search results, etc.), and 
+ * contains the WordPress "Loop". For other non-WordPress pages 
+ * (or any page not containing the "Loop") the site structure 
+ * can be kept consistent by replacing "loop.php" with whatever 
+ * file (or static content) is desired.
+ */
+?>
+<div id="main">
 	<?php 
-		/*
-		Main blog content (left column, center column, right column) is contained within div#content.
-		*/ 
+	/**
+	 * Include the loop template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "loop.php", or in the static Page context only, via 
+	 * "loop-page.php"
+	 */
+	get_template_part( 'loop', 'page' ); 
 	?>
+</div>
+<!-- End Main (div#main) -->
 
-		<!-- Begin Main (div#main) -->
-		<div id="main">
-		<?php 
-			/*
-			div#main contains the center column content of the three-column layout. Generally, the center column contains the main content of the page (blog post/posts, 
-			page content, search results, etc.).
-			*/ 
-			get_template_part('loop'); 
-			/* 
-				loop.php is the center column content for all primary template page types (index.php, single.php, archive.php, search.php, page.php), and contains
-			    the WordPress "loop".  For other non-WordPress pages (or any page not containing the "loop", the site structure can be kept consistent by replacing "loop.php"
-				with whatever file is desired.
-			*/ 
-		?>
-		</div>
-		<!-- End Main (div#main) -->
-
-		<?php if ( ! is_attachment() ) { ?>
-			<!-- Begin Left Column (div#leftcol) -->
-			<div id="leftcol">
-			<?php 
-			/*
-			div#leftcol contains the left column content of the three-column layout. 
-			*/ 
-				get_sidebar('left'); 
-				/*
-				sidebar-left.php is the left column content. Used in all primary template page types (index.php, single.php, archive.php, search.php, page.php)
-				For index.php, sidebar-left and sidebar-right both appear to the right of the main content column.
-				For page.php, sidebar-left is to the left, and sidebar-right is to the right, with the main content column in the center.
-				*/ 
-			?>
-			</div>
-			<!-- End Left Column (div#leftcol) -->
-
-			<!-- Begin Right Column (div#rightcol) -->
-			<div id="rightcol">
-			<?php 
-			/*
-			div#rightcol contains the right column content of the three-column layout.
-			*/ 
-				get_sidebar('right'); 
-				/*
-				sidebar-right.php is the right column content. Used in all primary template page types (index.php, single.php, archive.php, search.php, page.php)
-				For index.php, sidebar-left and sidebar-right both appear to the right of the main content column.
-				For page.php, sidebar-left is to the left, and sidebar-right is to the right, with the main content column in the center.
-				*/
-			?>
-			</div>
-			<!-- End Right Column (div#rightcol) -->
-		<?php } ?>
-
-	</div>
-	<!-- End Content  (div#content)-->
-
-	<div id="container" style="clear:both;">&nbsp;</div>
+<?php 
+/**
+ * Include the sidebar template part file
+ * 
+ * Calls a sidebar template part file.
+ * Used in all primary template pages, except static Pages.
+ * 
+ * Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
+ * 
+ * Child Themes can replace this template part file in the 
+ * static Page context, via "sidebar-page.php"
+ */
+get_sidebar( 'page' ); 
+?>
 	
-	<?php get_footer(); // Used in all primary template page types (index.php, single.php, archive.php, search.php, page.php) ?>
-	
-<?php /*
-Reference:
-=============================================================================
-The following functions, tags, and hooks are used (or referenced) in this Theme template file:
-
-***********************
-body_class()
-----------------------------------
-body_class() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Template_Tags/body_class
-
-body_class() is added inside the HTML <body> tag, and outputs various CSS class
-declarations, depending on which page is currently being displayed.
-
-For the full list of CSS classes returned by body_class(), see the Codex.
-
-***********************
-get_footer()
-----------------------------------
-get_footer() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_footer
-
-get_footer() is used to include the footer Theme template file (footer.php) within another. This function facilitates
-re-use of Theme template files, and also facilitates child Theme template files to take precedence
-over parent Theme template files.
-
-get_footer( $foo ) will attempt to include footer-foo.php. If it doesn't exist, the default footer.php will be used.
-
-***********************
-get_header()
-----------------------------------
-get_header() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_header
-
-get_template_part() is used to include the header Theme template file (header.php) within another. This function facilitates
-re-use of Theme template files, and also facilitates child Theme template files to take precedence
-over parent Theme template files.
-
-get_header( $foo ) will attempt to include header-foo.php. If it doesn't exist, the default header.php will be used.
-
-***********************
-get_sidebar()
-----------------------------------
-get_sidebar() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
-
-get_sidebar() is used to include a sidebar template file within another. This function facilitates
-re-use of Theme template files, and also facilitates child Theme template files to take precedence
-over parent Theme template files.
-
-get_sidebar( $name ) will attempt to include sidebar-name.php. The function will attempt to 
-include files in the following order, until it finds one that exists:
- - the Theme's sidebar-name.php
- - the Theme's sidebar.php
- - the parent Theme's sidebar-name.php
- - the parent Theme's sidebar.php
-
-get_sidebar() with no argument passed will attempt to include sidebar.php. The function will
-attempt to include files in the following order, until it finds one that exists:
- - the Theme's sidebar.php
- - the parent Theme's sidebar.php
-
-***********************
-get_template_part()
-----------------------------------
-get_template_part() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_template_part
-
-get_template_part() is used to include a Theme template file within another. This function facilitates
-re-use of Theme template files, and also facilitates child Theme template files to take precedence
-over parent Theme template files.
-
-get_template_part( $file ) will attempt to include file.php. The function will attempt to 
-include files in the following order, until it finds one that exists:
- - the Theme's file.php
- - the parent theme's file.php
-
-get_template_part( $file , $foo ) will attempt to include file-foo.php. The function will
-attempt to include files in the following order, until it finds one that exists:
- - the Theme's file-foo.php
- - the Theme's file.php
- - the parent theme's file-foo.php
- - the parent theme-s file.php
-
-***********************
-wp_footer()
-----------------------------------
-wp_footer() is a WordPress action hook.
-Codex reference: http://codex.wordpress.org/Plugin_API/Action_Reference/wp_footer
-
-wp_footer() is used by themes/plugins, usually to insert content into the WordPress Theme footer.
-
-=============================================================================	
-*/ ?>
+<?php 
+/**
+ * Include the footer template part file
+ * 
+ * MUST come last. 
+ * Calls the footer PHP file. 
+ * Used in all primary template pages
+ * 
+ * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_footer get_footer}
+ * 
+ * Child Themes can replace this template part file globally, via "footer.php",
+ * or in the static Page context only, via "footer-page.php"
+ */
+get_footer( 'page' );  
+?>

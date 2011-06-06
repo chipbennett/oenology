@@ -1,4 +1,19 @@
-<?php 
+<?php
+/**
+ * Template part file that contains the Post entry for Images
+ *
+ * Contains Post entry content for Image mime-type Attachment
+ * Pages
+ * 
+ * @uses		function_name()
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2010, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
+?><?php 
 $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
 
 $total_images = ( $images ? count( $images ) : '0' );

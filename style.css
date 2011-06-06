@@ -1,13 +1,13 @@
 /*  
-Theme Name: Oenology
-Theme URI: http://www.chipbennett.net/themes/oenology
-Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.1.2.</strong>
-Version: 1.2.2
-Author: Chip Bennett
-Author URI: http://www.chipbennett.net/
-Tags: fixed-width, white, black, tan, green, three-columns, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
-License: GNU General Public License, v2 (or newer)
-License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
+Theme Name: 	Oenology
+Theme URI: 		http://www.chipbennett.net/themes/oenology
+Description: 	Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.1.2.</strong>
+Version: 		2.0
+Author: 		Chip Bennett
+Author URI: 	http://www.chipbennett.net/
+Tags: 			fixed-width, white, black, tan, green, three-columns, custom-header, custom-background, custom-menu, editor-style, post-formats, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
+License: 		GNU General Public License, v2 (or newer)
+License URI: 	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
  *
  * Oenology WordPress Theme, Copyright (C) 2010 Chip Bennett
  *
@@ -21,7 +21,8 @@ License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  * 
- * Note: see the "Oenology Reference" admin page for copyright and license information for bundled resources, including fonts and icons
+ * Note: see the "Oenology Reference" admin page for copyright and 
+ * license information for bundled resources, including fonts and icons
 */
 
 /* WordPress-Generated CSS Classes
@@ -166,7 +167,6 @@ body.attachment dd,
 .post .clonetruth a:visited,
 .post .clonetruth a:hover,
 .post .clonetruth a:active,
-.post .postmetadata,
 .post .postmetadata,
 .postpagenav,
 table.review,
@@ -456,6 +456,12 @@ pre {
   text-align:left;
   vertical-align:top;
   }
+#front-page #leftcol {
+	margin-left:660px;
+}
+#front-page.home #leftcol {
+	margin-left:0;
+}
 #page #leftcol {
 	margin-left:-830px;
 	padding-left:0px;
@@ -467,10 +473,16 @@ pre {
   margin-bottom: 20px;
   padding:0px;
   padding-left:10px;
-  float:left;
+  float:right;
   text-align:left;
   vertical-align:top;
-  }
+}
+#doublecolbottom {
+	margin-left: 660px;
+}
+#home #doublecolbottom {
+	margin-left:0;
+}
 #main {
   display:inline;
   width:660px;
@@ -1152,6 +1164,10 @@ body.term-post-format-image .post-title-metadata {
 .page .post-title-metadata {
 	margin-left:0;
 }
+.post-title-category,
+.post-title-tags {
+	display:block;
+}
 .post-title .post-title-category,
 .post-title .post-title-tags {
   display:block;
@@ -1787,25 +1803,26 @@ body.single-format-image dd {
 .post.format-quote .postmetadata {
 	text-align:right;
 }
-.post .postmetadata .post-author-gravatar {
+.post .postmetadata .post-footer-gravatar {
   float:left;
   margin:0px;
   padding:0px;
   padding-right:5px;
 }
-.post.format-aside .postmetadata .post-author-gravatar,
-.post.format-link .postmetadata .post-author-gravatar,
-.post.format-quote .postmetadata .post-author-gravatar {
+.post.format-aside .postmetadata .post-footer-gravatar,
+.post.format-link .postmetadata .post-footer-gravatar,
+.post.format-quote .postmetadata .post-footer-gravatar {
   float:right;
   padding-left: 5px;
 }
-.post .postmetadata .postmetadata-author,
-.post .postmetadata .postmetadata-license {
+.post .postmetadata .post-footer-meta,
+.post .postmetadata .post-footer-license {
 	display:inline;
 	margin:0px;
 	padding:0px;
 	line-height:20px;
 	height:20px;
+	min-height:20px;
 }
 /* Posts Navigation
    ----------------------

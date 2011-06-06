@@ -1,155 +1,284 @@
+<?php
+/**
+ * Template part file that contains the WordPress Loop
+ *
+ * Contains Loop header, Loop content, and Loop footer.
+ * 
+ * @uses 		oenology_hook_loop_footer_after()
+ * @uses 		oenology_hook_loop_footer_before()
+ * @uses 		oenology_hook_loop_header_after()
+ * @uses 		oenology_hook_loop_header_before()
+ * @uses 		oenology_hook_post_after()
+ * @uses 		oenology_hook_post_before()
+ * 
+ * @link 		http://codex.wordpress.org/Function_Reference/comments_open 			comments_open()
+ * @link 		http://codex.wordpress.org/Function_Reference/comments_template 		comments_template()
+ * @link 		http://codex.wordpress.org/Function_Reference/get_template_part 		get_template_part()
+ * @link 		http://codex.wordpress.org/Function_Reference/have_posts 				have_posts()
+ * @link 		http://codex.wordpress.org/Function_Reference/get_post_format 			get_post_format()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_page 					is_page()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_single 				is_single()
+ * @link 		http://codex.wordpress.org/Function_Reference/post_class 				post_class()
+ * @link 		http://codex.wordpress.org/Function_Reference/post_password_required 	post_password_required()
+ * @link 		http://codex.wordpress.org/Function_Reference/the_post 					the_post()
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2010, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
+?>
+<?php
+/**
+ * @todo	convert Loop Header to filter hook
+ */
+?>
+<!-- Begin Loop Header (div#loop-header) -->
+<div id="loop-header">
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_loop_header_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_loop_header_before'
+	 */
+	oenology_hook_loop_header_before(); 
+	?>
+
+	<?php
+	/**
+	 * Include the specified Theme template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "loop-header.php", or in a specific context only, via 
+	 * "loop-header-{context}.php"
+	 */
+	get_template_part( 'loop-header', oenology_get_context() ); 
+	?>
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_loop_header_after' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_loop_header_after'
+	 */
+	oenology_hook_loop_header_after(); 
+	?>
+
+</div>
+<!-- End Loop Header (div#loop-header) -->
+
 <?php 
-
-get_template_part('loop-header'); // loop-header.php contains anything to be displayed before the list of posts
-			
-if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-	<div <?php post_class(); ?>>	
-		
-		<?php
-		// Post Formats: Standard, Gallery, Aside
-		get_template_part( 'post', get_post_format() );
+//
+//
+if ( 
+/**
+ * WordPress conditional tag that returns true if
+ * the current query has results
+ */
+have_posts() 
+) { 
+	while ( 
+	 /**
+	 * WordPress conditional tag that returns true if
+	 * the current query has results
+	 */
+	have_posts() 
+	) { 
+		/**
+		 * Output the content of the current Post within the Loop
+		 * 
+		 * Codex reference: {http://codex.wordpress.org/User:Jefte/the_post the_post}
+		 */
+		the_post(); 
 		?>
 
-	</div>
+		<div <?php 
+		/**
+		 * Output "class" attribute, 
+		 * based on current Post context
+		 * 
+		 * Codex reference: {@link http://codex.wordpress.org/Template_Tags/post_class post_class}
+		 * 
+		 * @param	string|array	$class	additional classes to add; default: none
+		 * @return	string			list of classes
+		 */
+		post_class(); 
+		?>>
+	
+			<?php 
+			/**
+			 * Fire the 'oenology_hook_post_before' custom action hook
+			 * 
+			 * @param	null
+			 * @return	mixed	any output hooked into 'oenology_hook_post_before' 
+			 */
+			oenology_hook_post_before(); 
+			?> 
+		
+			<?php
+			/**
+			 * Include the specified Theme template part file
+			 * 
+			 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+			 * 
+			 * get_template_part( $slug ) will attempt to include $slug.php. 
+			 * The function will attempt to include files in the following 
+			 * order, until it finds one that exists: the Theme's $slug.php, 
+			 * the parent Theme's $slug.php
+			 * 
+			 * get_template_part( $slug , $name ) will attempt to include 
+			 * $slug-$name.php. The function will attempt to include files 
+			 * in the following order, until it finds one that exists: the 
+			 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+			 * Theme's $slug-$name.php, the parent Theme's $slug.php
+			 * 
+			 * Child Themes can replace this template part file globally, 
+			 * via "post-{format}.php"
+			 */
+			get_template_part( 'post', get_post_format() );
+			?>
+			<?php
+			/**
+			 * Output a dynamic sidebar
+			 * 
+			 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/dynamic_sidebar}
+			 * 
+			 * Outputs the specified dynamic sidebar. A dynamic sidebar 
+			 * is used to output Widgets as specified by the user.
+			 */
+			dynamic_sidebar( 'post-below' );
+			?>
+		
+			<?php 
+			/**
+			 * Fire the 'oenology_hook_post_after' custom action hook
+			 * 
+			 * @param	null
+			 * @return	mixed	any output hooked into 'oenology_hook_post_after'
+			 */
+			oenology_hook_post_after(); 
+			?> 
 
-	<!-- Comments Begin -->
-	<?php if ( is_single() || ( is_page() && comments_open() ) ) { // only display the comments on a single blog post or on a Page with open comments
-		comments_template(); /* comments template */
-	} ?>
-	<!-- Comments End -->
+		</div>
 
-<?php endwhile;
+	
+		<?php 
+		/**
+		 * Only display the comments template when displaying a
+		 * Single Blog Post or a Page with comments open, and 
+		 * only if the Post or Page is not password-protected
+		 */
+		if ( 
+			/**
+			 * WordPress conditional tag that returns true if
+			 * the current Post is password-protected
+			 */
+			! post_password_required() 
+		&& ( 
+				/**
+				 * WordPress conditional tag that returns true if
+				 * the current page is a Single Blog Post
+				 */
+				is_single() 
+			|| ( 
+				/**
+				 * WordPress conditional tag that returns true if
+				 * the current page is a static Page
+				 */
+					is_page() 
+				/**
+				 * WordPress conditional tag that returns true if
+				 * comments are open for the current Post
+				 */
+				&& comments_open() 
+				) 
+			) 
+		) {
+			/**
+			 * Output the comments template
+			 */
+			comments_template();
+		}
 
-get_template_part('loop-footer'); // loop-footer.php contains anything to be displayed after the list of posts
-
-else : ?>
+	} 
+	 // endwhile have_posts()
+}
+// Else, if there are no Posts
+else {
+	?>
 
 	<h2 class="center">Not Found</h2>
 
-	<p class="center">
-		<?php _e("Sorry, but you are looking for something that isn't here."); ?>
-	</p>
+	<p class="center">Sorry, but you are looking for something that isn't here.</p>
 
-<?php endif; 
-/*
-Reference:
-=============================================================================
-The following functions, tags, and hooks are used (or referenced) in this Theme template file:
+	<?php 
+} 
+// endif have_posts()
+?>
 
-***********************
-comments_open()
-----------------------------------
-comments_open() is a WordPress template conditional tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/comments_open
+<!-- Begin Loop Footer (div#loop-footer) -->
+<div id="loop-footer">
 
-comments_open() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
-comments are open for the current post.
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_loop_footer_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_loop_footer_before'
+	 */
+	oenology_hook_loop_footer_before(); 
+	?>
 
-comments_open( $postid ) accepts one argument:
- - $postid: PostID of the post being checked. Defaults to the current post.
+	<?php
+	/**
+	 * Include the specified Theme template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "loop-footer.php", or in a specific context only, via 
+	 * "loop-footer-{context}.php"
+	 */
+	get_template_part( 'loop-footer', oenology_get_context() );
+	?> 
 
-comments_open() must be used from within the Loop, unless the $postid parameter is used.
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_loop_footer_after' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_loop_footer_after'
+	 */
+	oenology_hook_loop_footer_after(); 
+	?>
 
-***********************
-get_post_format()
-----------------------------------
-get_post_format() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_post_format
-
-get_post_format() is used to retrieve the Post Format of the current Post
-
-get_post_format() returns the Post Format type, as a string, if the current Post
-has a Post Format (other than "standard") selected; otherwise, it returns NULL.
-
-get_post_format( $postid ) accepts one argument:
- - $postid: the ID of the post for which to return the Post Format type. Defaults to
-   the current post.
-
-***********************
-get_template_part()
-----------------------------------
-get_template_part() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_template_part
-
-get_template_part() is used to include a Theme template file within another. This function facilitates
-re-use of Theme template files, and also facilitates child Theme template files to take precedence
-over parent Theme template files.
-
-get_template_part( $file ) will attempt to include file.php. The function will attempt to 
-include files in the following order, until it finds one that exists:
- - the Theme's file.php
- - the parent theme's file.php
-
-get_template_part( $file , $foo ) will attempt to include file-foo.php. The function will
-attempt to include files in the following order, until it finds one that exists:
- - the Theme's file-foo.php
- - the Theme's file.php
- - the parent theme's file-foo.php
- - the parent theme-s file.php
-
-***********************
-have_posts()
-----------------------------------
-have_posts() is a WordPress template conditional tag.
-Codex reference: http://codex.wordpress.org/User:Samsm/have_posts
-
-have_posts() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
-the current query has posts available. It is primarily used in conjunction with the_post() 
-as part of the call to the Loop.
-
-Example (the Loop):
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-***********************
-is_page()
-----------------------------------
-is_page() is a WordPress template conditional tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/is_page
-
-is_page() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
-a page ("page" post-type) is currently displayed.
-
-A page corresponds to the page.php Theme template file in the
-Theme hierarchy, and if the body_class() hook is used, the <body> tag of an
-page will have class="page".
-
-***********************
-is_single()
-----------------------------------
-is_single() is a WordPress template conditional tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/is_single
-
-is_single() is a boolean (returns TRUE or FALSE) conditional tag that returns true if 
-a single post ("post" post-type, i.e. a single blog post) is currently displayed.
-
-A single post corresponds to the single.php Theme template file in the
-Theme hierarchy, and if the body_class() hook is used, the <body> tag of a 
-single post will have class="single".
-
-***********************
-post_class()
-----------------------------------
-post_class() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Template_Tags/post_class
-
-post_class() is added inside the HTML <div> or <span> tag that contains the post, 
-and outputs various CSS class declarations, depending on which post is currently 
-being displayed.
-
-For the full list of CSS classes returned by post_class(), see the Codex.
-
-***********************
-the_post()
-----------------------------------
-the_post() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/User:Jefte/the_post
-
-the_post() is used to output the content of each post. It is primarily used in conjunction
-with have_posts() as part of the call to the Loop.
-
-Example (the Loop):
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-=============================================================================
-*/ ?>
+</div>
+<!-- End Loop Footer (div#loop-footer) -->

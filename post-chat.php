@@ -1,54 +1,88 @@
+<?php
+/**
+ * Template part file that contains the Chat Post content,
+ * including Post title, Post entry and Post footer
+ *
+ * This file is called by Posts with the "Chat" Post Format
+ * 
+ * @uses		get_template_part()
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2010, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
+?>
+
 <div class="post-title">
-
-	<!-- Post Header Begin -->
-	<?php get_template_part('post-header'); // post-header.php contains the Post TItle and other post meta information ?>
-	<!-- Post Header End -->
-
+	<?php 
+	// Include the specified Theme template part file
+	// 
+	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	// 
+	// get_template_part( $slug ) will attempt to include $slug.php. 
+	// The function will attempt to include files in the following 
+	// order, until it finds one that exists: the Theme's $slug.php, 
+	// the parent Theme's $slug.php
+	// 
+	// get_template_part( $slug , $name ) will attempt to include 
+	// $slug-$name.php. The function will attempt to include files 
+	// in the following order, until it finds one that exists: the 
+	// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	// Theme's $slug-$name.php, the parent Theme's $slug.php
+	// 
+	// Child Themes can replace this template part file globally, 
+	// via "post-header.php", or in a specific context only, via 
+	// "post-header-{context}.php"
+	get_template_part( 'post-header', oenology_get_context() );
+	?>
 </div>
 
 <div class="post-entry">
-
-	<!-- Post Entry Begin -->
-	<?php get_template_part('post-entry'); // post-entry.php contains the post content ?>
-	<!-- Post Entry End -->
-
+	<?php 
+	// Include the specified Theme template part file
+	// 
+	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	// 
+	// get_template_part( $slug ) will attempt to include $slug.php. 
+	// The function will attempt to include files in the following 
+	// order, until it finds one that exists: the Theme's $slug.php, 
+	// the parent Theme's $slug.php
+	// 
+	// get_template_part( $slug , $name ) will attempt to include 
+	// $slug-$name.php. The function will attempt to include files 
+	// in the following order, until it finds one that exists: the 
+	// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	// Theme's $slug-$name.php, the parent Theme's $slug.php
+	// 
+	// Child Themes can replace this template part file globally, 
+	// via "post-entry.php", or in a specific context only, via 
+	// "post-entry-{context}.php"
+	get_template_part( 'post-entry', oenology_get_context() );
+	?>
 </div>
 
 <div class="post-footer">
-
-	<!-- Post footer Begin -->
-	<?php get_template_part('post-footer'); // post-footer.php contains post timestamp and copyright information ?>
-	<!-- Post Footer End -->
-			
+	<?php 
+	// Include the specified Theme template part file
+	// 
+	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	// 
+	// get_template_part( $slug ) will attempt to include $slug.php. 
+	// The function will attempt to include files in the following 
+	// order, until it finds one that exists: the Theme's $slug.php, 
+	// the parent Theme's $slug.php
+	// 
+	// get_template_part( $slug , $name ) will attempt to include 
+	// $slug-$name.php. The function will attempt to include files 
+	// in the following order, until it finds one that exists: the 
+	// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	// Theme's $slug-$name.php, the parent Theme's $slug.php
+	// 
+	// Child Themes can replace this template part file globally, 
+	// via "post-footer.php", or in a specific context only, via 
+	// "post-footer-{context}.php"
+	get_template_part( 'post-footer', oenology_get_context() ); 
+	?>
 </div>
-
-<?php
-/*
-Reference:
-=============================================================================
-The following functions, tags, and hooks are used (or referenced) in this Theme template file:
-
-***********************
-get_template_part()
-----------------------------------
-get_template_part() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_template_part
-
-get_template_part() is used to include a Theme template file within another. This function facilitates
-re-use of Theme template files, and also facilitates child Theme template files to take precedence
-over parent Theme template files.
-
-get_template_part( $file ) will attempt to include file.php. The function will attempt to 
-include files in the following order, until it finds one that exists:
- - the Theme's file.php
- - the parent theme's file.php
-
-get_template_part( $file , $foo ) will attempt to include file-foo.php. The function will
-attempt to include files in the following order, until it finds one that exists:
- - the Theme's file-foo.php
- - the Theme's file.php
- - the parent theme's file-foo.php
- - the parent theme-s file.php
-
-=============================================================================
-*/ ?>

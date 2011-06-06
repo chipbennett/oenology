@@ -560,13 +560,13 @@ body.attachment .gallery-nav .gallery-nav-home a:active {
 .post.format-status .postmetadata {
 	border-top: 0;
 }
-.post .alt {
+.single .postmetadata {
 	border-bottom: 1px solid #777;
 }
-.post.format-aside .alt,
-.post.format-link .alt,
-.post.format-quote .alt,
-.post.format-status .alt {
+.single .post.format-aside .postmetadata,
+.single .post.format-link .postmetadata,
+.single .post.format-quote .postmetadata,
+.single .post.format-status .postmetadata {
 	border-bottom: 0;
 }
 /* Posts Navigation

@@ -1,24 +1,43 @@
-<?php 
-/*
-Site header content (main navigation menu, blog title, and description) is contained within div#header. 
-This content is the same for all primary template page types (index.php, single.php, archive.php, page.php). 
-*/ 
+<?php
+/**
+ * Template part file that contains the site header content,
+ * including main navigation menu, site title, and site description
+ *
+ * This file is called by all primary template pages
+ * 
+ * @uses		get_template_part()
+ * @uses		oenology_hook_site_header()
+ * @uses		oenology_hook_site_header_after()
+ * @uses		oenology_hook_site_header_before()
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2010, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
 ?>
+<?php global $oenology_options; ?>
 
-<?php 
-global $oenology_options;
+<?php
 if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
-	get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. 
+	// site-navigation.php contains the main navigation menu. 
+	get_template_part('site-navigation');  
 }
 ?>
 <div id="site-header-text">
-<div><?php bloginfo('name'); // Displays the blog name, as defined on the General Settings page in the administration panel ?></div>
-<p><?php bloginfo('description'); // Displays the blog description, as defined on the General Settings page in the administration panel ?></p>
+
+	<?php oenology_hook_site_header_before(); ?>
+
+	<?php oenology_hook_site_header(); ?>
+
+	<?php oenology_hook_site_header_after(); ?>
+
 </div>
 <?php 
-$oenology_options = get_option( 'theme_oenology_options' );
 if ( 'below' == $oenology_options['header_nav_menu_position'] ) { 
-	get_template_part('site-navigation');  // site-navigation.php contains the main navigation menu. ?
+	// site-navigation.php contains the main navigation menu.
+	get_template_part('site-navigation');  
 } 
 ?>
 

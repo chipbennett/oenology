@@ -1,18 +1,49 @@
-<?php if ( is_single() ) { ?>
-<div class="post-title">
+<?php
+/**
+ * Template part file that contains the Image Post content,
+ * including Post title, Post entry and Post footer
+ *
+ * This file is called by Posts with the "Image" Post Format
+ * 
+ * @uses		get_template_part()
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2010, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
+?>
 
-	<!-- Post Header Begin -->
-	<h1><a href="<?php the_permalink(); //link Post Headline (H1) to post permalink ?>">
-	<?php if ( get_the_title() ) {
-		the_title(); // set Post Headline (H1) to Post Title 
-	} else {
-		echo '<em>(Untitled)</em>'; // set Post headline (H1) to "(Untitled)" if no Post Title is defined
-	} ?>
-</a>&nbsp;</h1>
-	<!-- Post Header End -->
-
-</div>
-<?php } ?>
+<?php 
+if ( is_single() ) { 
+	?>
+	<div class="post-title">
+		<?php 
+		// Include the specified Theme template part file
+		// 
+		// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+		// 
+		// get_template_part( $slug ) will attempt to include $slug.php. 
+		// The function will attempt to include files in the following 
+		// order, until it finds one that exists: the Theme's $slug.php, 
+		// the parent Theme's $slug.php
+		// 
+		// get_template_part( $slug , $name ) will attempt to include 
+		// $slug-$name.php. The function will attempt to include files 
+		// in the following order, until it finds one that exists: the 
+		// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+		// Theme's $slug-$name.php, the parent Theme's $slug.php
+		// 
+		// Child Themes can replace this template part file globally, 
+		// via "post-header.php", or in a specific context only, via 
+		// "post-header-{context}.php"
+		get_template_part( 'post-header', oenology_get_context() );
+		?>
+	</div>
+	<?php 
+} 
+?>
 
 <div class="post-entry">
 
@@ -48,27 +79,23 @@
 			<p class="gallery-description"><?php echo $thumbcaption; ?></p>
 			<ul class="gallery-meta">	
 				<li>
-					<a href="<?php the_permalink(); // link to post permalink ?>" rel="bookmark" title="Permanent Link to <?php the_title(); // display Post Title in tooltip on hover ?>"> Permalink</a>
-					<?php if ( ! is_attachment() ) { // shortlink isn't generated for attachmets ?>
-						<strong>|</strong>
-						<?php the_shortlink( 'Shortlink' ); // link to post shortlink ?>
-					<?php } ?>
-					<strong>|</strong>
-					<a href="<?php comments_link(); ?>" target="_self" title="Comment on <?php the_title(); ?>">
-					Comments (<?php comments_number('0','1','%'); // Display total number of post comments ?>)
-					</a> 
-					<strong> | </strong>
-					<a href="<?php echo get_trackback_url(); // link to Trackback URL ?>" target="_self" title="Trackback to <?php the_title(); ?>">
-					Trackback
-					</a>
-					<?php if ( is_singular() ) { // only display a Print link on single posts, pages, and attachments ?>
-						<strong>|</strong> <a href="print" onclick="window.print();return false;">Print</a> 
-					<?php } ?>
-					<strong>|</strong>
-					<?php edit_post_link('Edit','',''); // Display "Edit" link for logged-in Admin users ?>
+					<?php 
+					// Fire the 'oenology_hook_post_header_metadata' custom action hook
+					// 
+					// @param	null
+					// @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
+					oenology_hook_post_header_metadata(); 
+					?>
 				</li>	
-				<li>Filed in <?php the_category(', ');  // Display Post Categories ?></li>
-				<li><?php the_tags(); // Display Post Tags ?></li>
+				<li>
+					<?php 
+					// Fire the 'oenology_hook_post_header_taxonomies' custom action hook
+					// 
+					// @param	null
+					// @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'
+					oenology_hook_post_header_taxonomies(); 
+					?>
+				</li>
 			</ul>
 	<?php }
 	?>
@@ -77,40 +104,25 @@
 </div>
 
 <div class="post-footer">
-
-	<!-- Post footer Begin -->
-	<?php get_template_part('post-footer'); // post-footer.php contains post timestamp and copyright information ?>
-	<!-- Post Footer End -->
-			
+	<?php 
+	// Include the specified Theme template part file
+	// 
+	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	// 
+	// get_template_part( $slug ) will attempt to include $slug.php. 
+	// The function will attempt to include files in the following 
+	// order, until it finds one that exists: the Theme's $slug.php, 
+	// the parent Theme's $slug.php
+	// 
+	// get_template_part( $slug , $name ) will attempt to include 
+	// $slug-$name.php. The function will attempt to include files 
+	// in the following order, until it finds one that exists: the 
+	// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	// Theme's $slug-$name.php, the parent Theme's $slug.php
+	// 
+	// Child Themes can replace this template part file globally, 
+	// via "post-footer.php", or in a specific context only, via 
+	// "post-footer-{context}.php"
+	get_template_part( 'post-footer', oenology_get_context() ); 
+	?>
 </div>
-
-<?php
-/*
-Reference:
-=============================================================================
-The following functions, tags, and hooks are used (or referenced) in this Theme template file:
-
-***********************
-get_template_part()
-----------------------------------
-get_template_part() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_template_part
-
-get_template_part() is used to include a Theme template file within another. This function facilitates
-re-use of Theme template files, and also facilitates child Theme template files to take precedence
-over parent Theme template files.
-
-get_template_part( $file ) will attempt to include file.php. The function will attempt to 
-include files in the following order, until it finds one that exists:
- - the Theme's file.php
- - the parent theme's file.php
-
-get_template_part( $file , $foo ) will attempt to include file-foo.php. The function will
-attempt to include files in the following order, until it finds one that exists:
- - the Theme's file-foo.php
- - the Theme's file.php
- - the parent theme's file-foo.php
- - the parent theme-s file.php
-
-=============================================================================
-*/ ?>

@@ -1,86 +1,90 @@
 <?php
 /**
- * The template for displaying Comments.
+ * Template part file the contains the Comments functionality
  *
- * The area of the page that contains both current comments
- * and the comment form.  The actual display of comments is
- * handled by a callback to twentyten_comment which is
- * located in the functions.php file.
+ * This template file includes both the comments list and
+ * the comment reply form. 
+ * 
+ * @uses 		function_name()
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2010, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
  *
- * @package WordPress
- * @subpackage Oenology
- * @since Oenology 1.0
+ * @since 		Oenology 1.0
  */
 ?>
 
-			<div id="comments">
-<?php if ( post_password_required() ) : // don't display comments for password-protected posts ?>
-				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'oenology' ); ?></p>
-			</div><!-- #comments -->
-<?php
-		/* Stop the rest of comments.php from being processed,
-		 * but don't kill the script entirely -- we still have
-		 * to fully load the template.
-		 */
-		return;
-	endif;
-?>
+<!-- Comments Begin (div#comments) -->
+<div id="comments">
 
-<?php
-	// You can start editing here -- including this comment!
-?>
+	<?php oenology_hook_post_comments_before(); ?>
 
-<h2 class="commentsheader">Feedback</h2>
+	<h2 class="commentsheader">Feedback</h2>
 
-<?php if ( have_comments() ) : ?>
+	<?php 
+	if ( 
+	//
+	//
+	have_comments() 
+	) {
+		// Globalize variable that holds comments by type
+		global $comments_by_type;	
+		?>
+		<h3>Comments <?php if ( ! comments_open() ) { ?> <small>(Comments are closed)</small><?php } ?></h3>
 
-<h3>Comments <?php if ( ! comments_open() ) { ?> <small>(Comments are closed)</small><?php } ?></h3>
+		<?php $i = 0; ?>
+		<span id="comments-responses" style="font-weight:bold;"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</span>
 
-<?php $i = 0; ?>
-	<span id="comments-responses" style="font-weight:bold;"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</span>
-
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // If the paged comments setting is enabled, and enough comments exisst to cause comments to be paged ?>
+		<?php 
+		// If the paged comments setting is enabled, and enough comments exisst to cause comments to be paged
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { 
+			?>
 			<div class="nav-comments">
 				<?php paginate_comments_links( array( 'prev_text' => '&lt;&lt;', 'next_text' => '&gt;&gt;' ) ); ?>
 			</div> <!-- .navigation -->
-<?php endif; // check for comment navigation 
+			<?php 
+		} // check for comment navigation 
 		
-		if ( get_comments_number() > '0' ) { ?>
+		if ( get_comments_number() > '0' ) { 
+			?>
 			<ol class="commentlist">
 				<?php	wp_list_comments( 'type=comment&avatar_size=40' ); ?>
 			</ol>
-		<?php }
+			<?php 
+		}
 
-		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		// Are there comments to navigate through?
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
+			?>
 			<div class="nav-comments">
 				<?php paginate_comments_links( array( 'prev_text' => '&lt;&lt;', 'next_text' => '&gt;&gt;' ) ); ?>
-			</div><!-- .navigation -->
-<?php endif; // check for comment navigation ?>
-
-<?php
-	// if there are no comments, don't look for Trackbacks
-	if ( have_comments() ) { 
-		// if the post has any trackbacks por pingbacks, display them as a list
-		$comments_by_type = $wp_query->comments_by_type;
-		if ( ! empty( $comments_by_type['pings'] ) ) {  ?>
+			</div>
+			<?php 
+		} // check for comment navigation 		
+		
+		// if the post has any trackbacks or pingbacks, display them as a list		
+		if ( ! empty( $comments_by_type['pings'] ) ) {  
+			?>
 			<h3 class='trackbackheader'>Trackbacks</h3>
 			<ol class="trackbacklist">
 				<?php wp_list_comments( array( 'type' => 'pings', 'callback' => 'oenology_comment_list_pings' ) ); ?>
 			</ol>
-		<?php }
-	}
-?>
+			<?php 
+		}
+	} else { 
+		// or, if we don't have comments:
+	} 
+	// end have_comments() 
 
+	comment_form();
+	
+	oenology_hook_post_comments_after(); 
+	
+	?>
 
-
-<?php else : // or, if we don't have comments:
-
-endif; // end have_comments() 
-
-comment_form(); 
-?>
-
-</div><!-- #comments -->
+</div>
+<!-- Comments End  (div#comments) -->
 <?php /*
 Reference:
 =============================================================================

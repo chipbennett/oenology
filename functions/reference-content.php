@@ -1,7 +1,19 @@
-<?php 
+<?php
+/**
+ * Oenology Theme Reference Content
+ *
+ * This file defines the reference content for the Oenology Theme.
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2011, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
 
-/* Load Settings Page Tab Content
-*******************************************************************************************/
+/**
+ * Load Settings Page Tab Content
+ */
 
 global $pagenow;
 if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology-reference' == $_GET['page'] ) :
@@ -30,8 +42,9 @@ if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology-reference' 
 endif;
 
 
-/* Reference Page Tab Content
-*******************************************************************************************/
+/**
+ * Reference Page Tab Content
+ */
 
 // FAQ Tab
 function oenology_reference_page_license() { ?>
@@ -84,6 +97,35 @@ function oenology_reference_page_license() { ?>
 
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
+	
+	<h3>2.0 [2011.MM.DD]</h3>
+	<p>Major Update Release</p>
+	<ol>
+	<li>New Features:
+		<ol>
+		<li>Extensive custom action/filter hooks. Nearly all Theme-generated content can now be
+		modified via filter.</li>
+		<li>Added context to all template part function calls, including get_header(), get_footer(),
+		get_sidebar(), and get_template_part(), to facilitate Child Theme over-riding of template parts.</li>
+		</ol>
+	</li>
+	<li>Updates:
+		<ol>
+		<li>Changed handling of sidebar template part files.</li>
+		<li>Significant code re-factoring.</li>
+		</ol>
+	</li>
+	<li>Bugfixes:
+		<ol>
+		<li>Fixes buggy handling of new dynamic sidebars.</li>
+		</ol>
+	</li>
+	<li>Documentation:
+		<ol>
+		<li>All inline documentation changed to PHPdoc standard.</li>
+		</ol>
+	</li>
+	</ol>
 	
 	<h3>1.2.2 [2011.05.16]</h3>
 	<p>Bugfix Release</p>

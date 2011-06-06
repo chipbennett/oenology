@@ -1,18 +1,30 @@
 <?php
-/*****************************************************************************************
-* Theme Reference
-* 
-*  - Define Default Theme Options
-*  - Register/Initialize Theme Options
-*  - Define Admin Settings Page
-*  - Register Contextual Help
-*******************************************************************************************/
+/**
+ * Oenology Theme Reference
+ *
+ * This file defines the Reference for the Oenology Theme.
+ * 
+ * Theme Reference
+ * 
+ *  - Define Default Theme Options
+ *  - Register/Initialize Theme Options
+ *  - Define Admin Settings Page
+ *  - Register Contextual Help
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2011, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
 
+// Globalize the variable that holds
+// the Theme contextual help hook
 global $oenology_admin_reference_hook;
 
-/*****************************************************************************************
-* Helper Functions
-*******************************************************************************************/
+/**
+ * Helper Functions
+ */
 
 function oenology_get_reference_page_tabs() {
 	
@@ -27,9 +39,9 @@ function oenology_get_reference_page_tabs() {
 }
 
 
-/*****************************************************************************************
-* Setup the Theme Admin Reference Page
-*******************************************************************************************/
+/**
+ * Setup the Theme Admin Reference Page
+ */
 
 // Add "Oenology Reference" link to the "Appearance" menu
 function oenology_menu_reference() {
@@ -83,9 +95,9 @@ function oenology_admin_reference_page() { ?>
 <?php }
 
 
-/*****************************************************************************************
-* Enqueue Custom Admin Page Thickbox jQuery
-*******************************************************************************************/
+/**
+ * Enqueue Custom Admin Page Thickbox jQuery
+ */
 
 function oenology_enqueue_admin_thickbox_style() {
 
@@ -106,9 +118,9 @@ function oenology_enqueue_admin_thickbox_scripts() {
 
 
 
-/*****************************************************************************************
-* Setup the Theme Admin Reference Page Contextual help
-*******************************************************************************************/
+/**
+ * Setup the Theme Admin Reference Page Contextual help
+ */
 
 // Admin reference page contextual help markup
 // Separate file for ease of management

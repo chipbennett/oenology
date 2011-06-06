@@ -1,9 +1,35 @@
- <?php if(is_archive()) { 
-	$post = $posts[0]; // Hack. Set $post so that the_date() works.
+<?php
+/**
+ * Template part file that contains the Loop header content
+ *
+ * Contains Archive name (single category title, single tag
+ * title, Archive date, post format title, etc.), search
+ * query, etc., as well as a description of the taxonomy, 
+ * if provided.
+ * 
+ * @uses 		function_name()
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2010, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
+?>
+<?php
+/**
+ * @todo	convert to filter hook
+ * @todo	move documentation inline
+ */
+?>
+  <?php 
+  if( is_archive() ) {
 	$colorscheme = oenology_get_color_scheme();
 	$rssiconcolor = ( 'light' == $colorscheme ? 'original' : 'gray' );
 	$rssimageurl = get_template_directory_uri() . '/images/iconsweets2/' . $rssiconcolor . '/rss16.png';
-	if (is_category()) { // If this is a category archive  ?>
+	// If this is a category archive
+	if ( is_category() ) {
+		?>
 		<div class="cat-subscribe-feed">
 			<a href="<?php echo home_url(); ?>/category/<?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_nicename;?>/feed/">
 				<img src="<?php echo $rssimageurl; ?>" width="16px" height="16px" alt="Subscribe to the <?php echo single_cat_title(); ?> feed" /><br />
@@ -79,7 +105,8 @@
 	<div class="cat-description">
 		<strong>Search:</strong><em>to inquire, investigate, examine, or seek; conduct an examination or investigation.</em>Below are all posts and pages related to the indicated search query.
 	</div>
-<?php }  
+<?php } ?>
+<?php
 /*
 Reference:
 =============================================================================

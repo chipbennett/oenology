@@ -1,5 +1,19 @@
 <?php
+/**
+ * Oenology Theme Options Contextual Help
+ *
+ * This file defines the Theme Options contextual help content 
+ * for the Oenology Theme.
+ * 
+ * @package 	Oenology
+ * @copyright	Copyright (c) 2011, Chip Bennett
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Oenology 1.0
+ */
 
+// Tab-based contextual help
+// 
 if ( isset ( $_GET['tab'] ) ) {
        	$tab = $_GET['tab'];
 } else {
@@ -52,7 +66,7 @@ EOT;
     foreach ( $oenology_varietals as $varietal ) {
 	    $tabtext .= <<<EOT
 		<dl>
-		<dt><strong>{$varietal['name']}</strong></dt>
+		<dt><strong>{$varietal['title']}</strong></dt>
 		<dd>{$varietal['description']}</dd>
 		</dl>
 EOT;
