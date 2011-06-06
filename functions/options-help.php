@@ -62,7 +62,8 @@ function oenology_get_contextual_help_options_varietals() {
 	<h2>Varietals</h2>
 	<p><em>Varietals</em> are the <em>skins</em>, or styles, applied to Oenology.</p>
 EOT;
-    $oenology_varietals = oenology_get_valid_varietals();
+	$default_options = oenology_get_default_options();
+	$oenology_varietals = $default_options['varietal']['valid_options'];
     foreach ( $oenology_varietals as $varietal ) {
 	    $tabtext .= <<<EOT
 		<dl>

@@ -59,6 +59,10 @@ function oenology_get_default_options() {
 				'below' => array(
 					'name' => 'below',
 					'title' => 'Below'
+				),
+				'none' => array(
+					'name' => 'none',
+					'title' => 'Do Not Display'
 				)
 			),
 			'description' => 'Display header navigation menu above or below the site title/description?',
@@ -115,7 +119,38 @@ function oenology_get_default_options() {
 			'name' => 'varietal',
 			'title' => 'Varietal',
 			'type' => 'custom',
-			'valid_options' => oenology_get_valid_varietals(),
+			'valid_options' => array(
+				'cuvee' => array(
+				  'name' => 'cuvee',
+				  'title' => 'Cuvee',
+				  'description' => 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is the base style for Oenology.',
+				  'scheme' => 'light'
+				  ),
+				'seyval-blanc' => array(
+				  'name' => 'seyval-blanc',
+				  'title' => 'Seyval Blanc',
+				  'description' => 'Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral.',
+				  'scheme' => 'light'
+				  ),
+				'muscat' => array(
+				  'name' => 'muscat',
+				  'title' => 'Muscat',
+				  'description' => 'Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet.',
+				  'scheme' => 'light'
+				  ),
+				'syrah' => array(
+				  'name' => 'syrah',
+				  'title' => 'Syrah',
+				  'description' => 'Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma.',
+				  'scheme' => 'dark'
+				  ),
+				'malbec' => array(
+				  'name' => 'malbec',
+				  'title' => 'Malbec',
+				  'description' => 'Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors.',
+				  'scheme' => 'dark'
+				  )
+			),
 			'description' => '',
 			'section' => 'varietal',
 			'tab' => 'varietals',
@@ -136,7 +171,28 @@ function oenology_get_default_options() {
 			'name' => 'rss_feed',
 			'title' => 'RSS Feed',
 			'type' => 'select',
-			'valid_options' => oenology_get_valid_feeds(),
+			'valid_options' => array( 
+				'none' => array(
+					'name' => 'none',
+					'title' => 'Do Not Display'
+				),
+				'rdf' => array(
+					'name' => 'rdf',
+					'title' => 'RDF/RSS 1.0'
+				),
+				'rss' => array(
+					'name' => 'rss',
+					'title' => 'RSS 0.92,'
+				),
+				'rss2' => array(
+					'name' => 'rss2',
+					'title' => 'RSS 2.0'
+				),
+				'atom' => array(
+					'name' => 'atom',
+					'title' => 'Atom'
+				)
+			),
 			'description' => 'RSS Feed',
 			'section' => 'social',
 			'tab' => 'general',
@@ -243,84 +299,6 @@ function oenology_get_settings_by_tab() {
 		}
 	}
 	return $settingsbytab;
-}
-
-/**
- * Oenology Theme Varietals
- * 
- * Array that holds all of the valid varietals
- * (color schemes) for Oenology. The 'scheme'
- * key is used to determine which icon color
- * scheme to use with the varietal.
- */
-function oenology_get_valid_varietals() {
-
-    $varietals = array(
-        'cuvee' => array(
-	      'name' => 'cuvee',
-	      'title' => 'Cuvee',
-	      'description' => 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is the base style for Oenology.',
-	      'scheme' => 'light'
-	      ),
-        'seyval-blanc' => array(
-	      'name' => 'seyval-blanc',
-	      'title' => 'Seyval Blanc',
-	      'description' => 'Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral.',
-	      'scheme' => 'light'
-	      ),
-        'muscat' => array(
-	      'name' => 'muscat',
-	      'title' => 'Muscat',
-	      'description' => 'Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet.',
-	      'scheme' => 'light'
-	      ),
-        'syrah' => array(
-	      'name' => 'syrah',
-	      'title' => 'Syrah',
-	      'description' => 'Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma.',
-	      'scheme' => 'dark'
-	      ),
-        'malbec' => array(
-	      'name' => 'malbec',
-	      'title' => 'Malbec',
-	      'description' => 'Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors.',
-	      'scheme' => 'dark'
-	      )
-    );
-    return $varietals;
-}
-
-/**
- * Oenology Theme RSS Feed Types
- * 
- * Array that holds all of the valid RSS
- * feed types.
- */
-function oenology_get_valid_feeds() {
-	
-	$feeds = array( 
-        	'none' => array(
-				'name' => 'none',
-				'title' => 'Do Not Display'
-			),
-        	'rdf' => array(
-				'name' => 'rdf',
-				'title' => 'RDF/RSS 1.0'
-			),
-        	'rss' => array(
-				'name' => 'rss',
-				'title' => 'RSS 0.92,'
-			),
-        	'rss2' => array(
-				'name' => 'rss2',
-				'title' => 'RSS 2.0'
-			),
-        	'atom' => array(
-				'name' => 'atom',
-				'title' => 'Atom'
-			)
-	);
-	return $feeds;
 }
 
 /**
@@ -500,7 +478,8 @@ add_action('wp_enqueue_scripts', 'oenology_enqueue_varietal_style', 11 );
 function oenology_get_color_scheme() {
 	global $oenology_options;
 	$oenology_options = get_option( 'theme_oenology_options' );
-	$oenology_varietals = oenology_get_valid_varietals();
+	$default_options = oenology_get_default_options();
+	$oenology_varietals = $default_options['varietal']['valid_options'];
 	$oenology_current_varietal = array();
 	foreach ( $oenology_varietals as $varietal ) {
 		if ( $varietal['name'] == $oenology_options['varietal'] ) {
