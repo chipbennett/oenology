@@ -42,9 +42,10 @@ function oenology_get_widget_args() {
 add_action( 'after_setup_theme', 'oenology_setup_widgets', 11 );
 
 /**
- * Register all widget areas (sidebars) (since WordPress 2.8)
+ * Register all widget areas (sidebars)
+ * 
+ * @since	WordPress 2.8
  */
-
 function oenology_setup_widgets() {
 
 register_sidebar(array( // Top full-width widget area
@@ -106,11 +107,10 @@ register_sidebar(array( // Widget area below each Post
 
 
 /**
- * Define all Custom Widgets (since WordPress 2.8)
+ * Define Recent Posts Custom Widget 
+ * 
+ * @since	WordPress 2.8
  */
-
-/* oenology_widget_recentposts */
-
 class oenology_widget_recentposts extends WP_Widget {
 
     function oenology_widget_recentposts() {
@@ -158,8 +158,11 @@ class oenology_widget_recentposts extends WP_Widget {
     }
 } 
 
-/* oenology_widget_archives */
-
+/**
+ * Define Archives Custom Widget 
+ * 
+ * @since	WordPress 2.8
+ */
 class oenology_widget_archives extends WP_Widget {
 
     function oenology_widget_archives() {
@@ -207,8 +210,11 @@ class oenology_widget_archives extends WP_Widget {
     }
 } 
 
-/* oenology_widget_categories */
-
+/**
+ * Define Categories Custom Widget 
+ * 
+ * @since	WordPress 2.8
+ */
 class oenology_widget_categories extends WP_Widget {
 
     function oenology_widget_categories() {
@@ -267,8 +273,11 @@ class oenology_widget_categories extends WP_Widget {
     }
 } 
 
-/* oenology_widget_tags */
-
+/**
+ * Define Tags Custom Widget 
+ * 
+ * @since	WordPress 2.8
+ */
 class oenology_widget_tags extends WP_Widget {
 
     function oenology_widget_tags() {
@@ -327,8 +336,11 @@ class oenology_widget_tags extends WP_Widget {
     }
 } 
 
-/* oenology_widget_linkrollbycat */
-
+/**
+ * Define Linkroll By Cat Custom Widget 
+ * 
+ * @since	WordPress 2.8
+ */
 class oenology_widget_linkrollbycat extends WP_Widget {
 
     function oenology_widget_linkrollbycat() {
@@ -439,8 +451,11 @@ class oenology_widget_linkrollbycat extends WP_Widget {
     }
 } 
 
-/* oenology_widget_post_formats */
-
+/**
+ * Define Post Formats Custom Widget 
+ * 
+ * @since	WordPress 2.8
+ */
 class oenology_widget_post_formats extends WP_Widget {
 
     function oenology_widget_post_formats() {
@@ -503,14 +518,14 @@ class oenology_widget_post_formats extends WP_Widget {
 } 
 
 
-/**
- * Register all Custom Widgets (since WordPress 2.8)
- */
-
 /* Add our function to the widgets_init hook. */
 add_action( 'widgets_init', 'oenology_load_widgets' );
 
-/* Function that registers our widgets. */
+/**
+ * Register all Custom Widgets
+ * 
+ * @since	WordPress 2.8
+ */
 function oenology_load_widgets() {
 	register_widget( 'oenology_widget_recentposts' );
 	unregister_widget('WP_Widget_Recent_Posts');

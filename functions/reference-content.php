@@ -12,9 +12,8 @@
  */
 
 /**
- * Load Settings Page Tab Content
+ * Load Reference Page Tab Content
  */
-
 global $pagenow;
 if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology-reference' == $_GET['page'] ) :
     if ( isset ( $_GET['tab'] ) ) :
@@ -98,7 +97,7 @@ function oenology_reference_page_license() { ?>
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
 	
-	<h3>2.0 [2011.MM.DD]</h3>
+	<h3>2.0 [2011.06.09]</h3>
 	<p>Major Update Release</p>
 	<ol>
 	<li>New Features:
@@ -122,7 +121,7 @@ function oenology_reference_page_changelog() { ?>
 	</li>
 	<li>Documentation:
 		<ol>
-		<li>All inline documentation changed to PHPdoc standard.</li>
+		<li>Most inline documentation changed to PHPdoc standard.</li>
 		</ol>
 	</li>
 	</ol>

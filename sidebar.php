@@ -68,6 +68,9 @@ if (
 		<?php
 		// If Theme option is set to display social icons
 		if ( $oenology_options['display_social_icons'] ) {
+			?>
+			<div class="sidebar-social-icons">
+			<?php
 			// Obtain the list of valid social networks
 			$socialprofiles = oenology_get_social_networks();
 			// Loop through each social network
@@ -88,7 +91,7 @@ if (
 					</a>
 				<?php 
 				}
-			}	
+			}
 			// If the user has not set the RSS feed icon not to display
 			if ( 'none' != $oenology_options['rss_feed'] ) {
 				// holds the WordPress bloginfo() argument name 
@@ -102,6 +105,9 @@ if (
 				<a class="sidebar-social-icon" href="<?php echo $rssurl; ?>" title="RSS">RSS</a>
 			<?php 
 			}
+			?>
+			</div>
+			<?php	
 		} 
 		?>
 		<!-- Begin Sidebar Top Widget Area-->

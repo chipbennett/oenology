@@ -1,11 +1,11 @@
 /*  
 Theme Name: 	Oenology
 Theme URI: 		http://www.chipbennett.net/themes/oenology
-Description: 	Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.1.2.</strong>
+Description: 	Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.2.</strong>
 Version: 		2.0
 Author: 		Chip Bennett
 Author URI: 	http://www.chipbennett.net/
-Tags: 			fixed-width, white, black, tan, green, three-columns, custom-header, custom-background, custom-menu, editor-style, post-formats, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
+Tags: 			fixed-width, white, black, tan, green, three-columns, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-width, left-sidebar, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments
 License: 		GNU General Public License, v2 (or newer)
 License URI: 	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
  *
@@ -907,8 +907,10 @@ body.single-format-image #main {
 /* Social Icons
    --------------------
 */
+.sidebar-social-icon {
+	height:40px;
+}
 a.sidebar-social-icon {
-  display:block;
   float:right;
   width:40px;
   height:40px;
