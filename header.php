@@ -171,25 +171,26 @@ language_attributes();
 </head>
 <!-- End HTML Header -->
 
-<body id="<?php
+<?php
 /**
+ * oenology_get_context()
+ * 
  * Output HTML <body> tag CSS ID attribute content, 
  * based on current page context
  * 
  * @param	null
  * @return	string	current page context; default: "index"
- */
-echo oenology_get_context(); 
-?>" <?php 
-/**
+ *
+ * body_class()
+ *
  * Output HTML <body> tag "class" attribute, 
  * based on current page context
  * 
  * @param	string|array	$class	additional classes to add; default: none
  * @return	string			list of classes
  */
-body_class(); 
-?>> 
+?>
+<body id="<?php echo oenology_get_context(); ?>" <?php body_class(); ?>> 
 
 <!-- Begin Extent (div#extent) -->
 <?php 
