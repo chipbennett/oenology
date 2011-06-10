@@ -420,11 +420,12 @@ function oenology_options_init() {
 	$oenology_options = get_option( 'theme_oenology_options' );
 	
 	if ( false === $oenology_options ) {
-		$options = oenology_get_default_options();
+		$default_options = oenology_get_default_options();
 		$oenology_options = array();
-		foreach ( $options as $option ) {
-			$optiondefault = $option['default'];
-			$oenology_options[] = $optiondefault;
+		foreach ( $default_options as $default_option ) {
+			$optionname = $default_option['name'];
+			$optiondefault = $default_option['default'];
+			$oenology_options[$optionname] = $optiondefault;
 		}
 	}
 	update_option( 'theme_oenology_options', $oenology_options );

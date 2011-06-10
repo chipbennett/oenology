@@ -97,10 +97,16 @@ function oenology_reference_page_license() { ?>
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
 	
-	<h3>2.0 [2011.06.09]</h3>	
+	<h3>2.0.2 [2011.06.10]</h3>	
 	<p>Bugfix Release</p>
 	<ol>
-	<li>Fixes uploader script issue with <code>body_class()</code> not being on same line as .</li>
+	<li>Fixes issue with default options not saving properly on init.</li>
+	</ol>
+	
+	<h3>2.0.1 [2011.06.09]</h3>	
+	<p>Bugfix Release</p>
+	<ol>
+	<li>Fixes uploader script issue with <code>body_class()</code> not being on same line as <code>&lt;body&gt;</code> tag.</li>
 	</ol>
 	
 	<h3>2.0 [2011.06.09]</h3>
