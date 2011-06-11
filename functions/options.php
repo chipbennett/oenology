@@ -101,11 +101,11 @@ function oenology_get_default_options() {
 			'type' => 'select',
 			'valid_options' => array(
 				'false' => array(
-					'name' => false,
+					'name' => 'false',
 					'title' => 'Do Not Display'
 				),
 				'true' => array(
-					'name' => true,
+					'name' => 'true',
 					'title' => 'Display'
 				)
 			),

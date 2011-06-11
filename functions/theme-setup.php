@@ -365,7 +365,7 @@ if ( ! function_exists( 'oenology_setup' ) ):
 			
 <style type="text/css">
 /* Sets header image as background for div#header */
-			<?php if ( HEADER_IMAGE != get_header_image() ) { ?>
+			<?php if ( get_header_image() && HEADER_IMAGE != get_header_image() ) { ?>
 #header {
 	background:url('<?php header_image(); ?>') no-repeat center top;
 	overflow: hidden;
@@ -373,18 +373,7 @@ if ( ! function_exists( 'oenology_setup' ) ):
 #site-header-text {
 	background: rgba(0, 0, 0, 0.2);
 }
-.navmenu,
-.nav-header {
-	background: rgba(0, 0, 0, 0.2);
-}
-			<?php } ?>
-/* Sets text color for div#header p and div */
-			<?php if ( get_header_textcolor() ) { ?>
-#site-header-text {
-	color:#<?php header_textcolor(); ?>;
-}
-			<?php }
-			 
+<?php			 
 				$oenology_options = get_option('theme_oenology_options');
 				if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
 					if ( get_header_image() ) { ?>
@@ -393,7 +382,15 @@ if ( ! function_exists( 'oenology_setup' ) ):
 .nav-header {
 	background-color: rgba(0, 0, 0, 0.2);
 }
-					<?php } ?>
+					<?php }
+					}?>
+			<?php } ?>
+/* Sets text color for div#header p and div */
+			<?php if ( get_header_textcolor() ) { ?>
+#site-header-text {
+	color:#<?php header_textcolor(); ?>;
+}
+			
 .navmenu li {
 	padding-top: 1px;
 }

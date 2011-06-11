@@ -97,6 +97,16 @@ function oenology_reference_page_license() { ?>
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
 	
+	<h3>2.0.3 [2011.06.11]</h3>	
+	<p>Bugfix Release</p>
+	<ol>
+	<li>Fixes issue with Post Titles not displaying with Blog Posts Index on front page.</li>
+	<li>Fixes issue with Posts pagination not working properly when using default permalink structure.</li>
+	<li>Fixes issue with trackback list not being output.</li>
+	<li>Fixes issue with custom nav menus not displaying in "nav-sidebar" Theme location.</li>
+	<li>Fixes issue with footer credit link option not saving properly.</li>
+	</ol>
+	
 	<h3>2.0.2 [2011.06.10]</h3>	
 	<p>Bugfix Release</p>
 	<ol>
@@ -129,6 +139,7 @@ function oenology_reference_page_changelog() { ?>
 	<li>Bugfixes:
 		<ol>
 		<li>Fixes buggy handling of new dynamic sidebars.</li>
+		<li>Fixes <a href="https://github.com/chipbennett/oenology/issues/6">Issue #6</a>: Add ID to register_sidebar calls, for use via is_active_sidebar().</li>
 		</ol>
 	</li>
 	<li>Documentation:

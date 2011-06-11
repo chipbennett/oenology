@@ -104,13 +104,15 @@ code {
 /* SECOND LEVEL: Display second-level list items like subnavmenu */
 #leftcol .subnavmenu .current_page_item li,
 #leftcol .subnavmenu .current_page_parent li,
-#leftcol .subnavmenu .current_page_ancestor li {
+#leftcol .subnavmenu .current_page_ancestor li,
+#leftcol #subnav li {
 	border-bottom:0;
     background-color: #ccc; 
 }
 #leftcol .subnavmenu .current_page_item li ul,
 #leftcol .subnavmenu .current_page_parent li ul,
-#leftcol .subnavmenu .current_page_ancestor li ul {
+#leftcol .subnavmenu .current_page_ancestor li ul,
+#leftcol #subnav ul {
 	border-left: 1px solid #eee;
      border-right: 1px solid #eee;
 }
@@ -118,7 +120,8 @@ code {
 #leftcol .subnavmenu .current_page_item li a,
 #leftcol .subnavmenu .current_page_parent li a,
 #leftcol .subnavmenu .current_page_parent .current_page_item li a,
-#leftcol .subnavmenu .current_page_ancestor li a {
+#leftcol .subnavmenu .current_page_ancestor li a,
+#leftcol #subnav li a {
      border: 1px solid #ddd;
      border-top-color: #ddd; 
      background: url(menu-muscat.gif) #ffffe8 top left repeat-x;
@@ -126,11 +129,14 @@ code {
 }
 #leftcol .subnavmenu .current_page_item li a:hover,
 #leftcol .subnavmenu .current_page_parent li a:hover,
-#leftcol .subnavmenu .current_page_ancestor li a:hover {
+#leftcol .subnavmenu .current_page_ancestor li a:hover,
+#leftcol #subnav li a:hover {
      border: 1px solid #58a;
 }
 #leftcol .subnavmenu .current_page_parent .current_page_item a,
-#leftcol .subnavmenu .current_page_parent .current_page_item a:hover {
+#leftcol .subnavmenu .current_page_parent .current_page_item a:hover,
+#leftcol #subnav li.current_page_item a,
+#leftcol #subnav li.current_page_item a:hover {
      color:#333;
 	 border: 1px solid #ddd;
      border-bottom-color: #000;	 

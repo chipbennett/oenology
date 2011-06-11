@@ -2,7 +2,7 @@
 Theme Name: 	Oenology
 Theme URI: 		http://www.chipbennett.net/themes/oenology
 Description: 	Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.2.</strong>
-Version: 		2.0.2
+Version: 		2.0.3
 Author: 		Chip Bennett
 Author URI: 	http://www.chipbennett.net/
 Tags: 			fixed-width, white, black, tan, green, three-columns, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-width, left-sidebar, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments
@@ -2011,6 +2011,9 @@ body.single-format-image dd {
 .subnavmenu li {
 	display:none;
 }
+#subnav.subnavmenu li {
+	display:inline;
+}
 /* TOP LEVEL: Display current page's second-level menu */
 .subnavmenu .current_page_item,
 .subnavmenu .current_page_item li,
@@ -2080,7 +2083,8 @@ body.single-format-image dd {
 /* TOP LEVEL: Display top-level list items like .title */
 #leftcol .subnavmenu .current_page_item,
 #leftcol .subnavmenu .current_page_parent,
-#leftcol .subnavmenu .current_page_ancestor {
+#leftcol .subnavmenu .current_page_ancestor,
+#leftcol #subnav li a {
 	width:100%;
 	margin: 0px auto;
 	text-align: center;
@@ -2090,7 +2094,8 @@ body.single-format-image dd {
 /* TOP LEVEL: Display top-level page links like .title */
 #leftcol .subnavmenu .current_page_item a,
 #leftcol .subnavmenu .current_page_parent a,
-#leftcol .subnavmenu .current_page_ancestor a {
+#leftcol .subnavmenu .current_page_ancestor a,
+#leftcol #subnav li a {
 	display:block;
 	padding-bottom:5px;
 	font-size:8pt;
@@ -2104,7 +2109,8 @@ body.single-format-image dd {
 #leftcol .subnavmenu .current_page_item li a,
 #leftcol .subnavmenu .current_page_parent li a,
 #leftcol .subnavmenu .current_page_parent .current_page_item li a,
-#leftcol .subnavmenu .current_page_ancestor li a {
+#leftcol .subnavmenu .current_page_ancestor li a,
+#leftcol #subnav li a {
     font-size:9pt;
      line-height: 1.75em; 
 	 height:1.35em;

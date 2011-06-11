@@ -20,8 +20,9 @@
 if ( 
 // WordPress conditional tag that returns true if
 // the current page is the Front Page
-! is_front_page() 
-) { 
+   ! is_front_page() 
+|| 'posts' == get_option( 'show_on_front' )
+) {
 	?>
 	<div class="post-title">
 		<?php 

@@ -214,7 +214,7 @@ have_posts()
 			/**
 			 * Output the comments template
 			 */
-			comments_template();
+			comments_template( '', true );
 		}
 
 	} 

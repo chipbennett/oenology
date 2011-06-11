@@ -67,9 +67,9 @@ has_nav_menu( 'nav-sidebar' )
 	 * @param	array	options defining menu output
 	 */
 	wp_nav_menu( array( 
-		// apply 'id="nav"' to the <ul> tag that 
+		// apply 'id="subnav"' to the <ul> tag that 
 		// contains the menu
-		'menu_id' => 'nav', 
+		'menu_id' => 'subnav', 
 		// apply 'class="nav-header"' to the <ul> 
 		// tag that contains the menu
 		'menu_class' => 'subnavmenu', 

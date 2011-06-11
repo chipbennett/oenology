@@ -64,6 +64,8 @@
 		} // check for comment navigation 		
 		
 		// if the post has any trackbacks or pingbacks, display them as a list		
+		global $comments_by_type;
+		$comments_by_type = &separate_comments( $comments );
 		if ( ! empty( $comments_by_type['pings'] ) ) {  
 			?>
 			<h3 class='trackbackheader'>Trackbacks</h3>

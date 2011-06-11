@@ -99,13 +99,15 @@ dd {
 /* SECOND LEVEL: Display second-level list items like subnavmenu */
 #leftcol .subnavmenu .current_page_item li,
 #leftcol .subnavmenu .current_page_parent li,
-#leftcol .subnavmenu .current_page_ancestor li {
+#leftcol .subnavmenu .current_page_ancestor li,
+#leftcol #subnav li {
 	border-bottom:0;
     background-color: #e0e0e0; /* whitesmoke */
 }
 #leftcol .subnavmenu .current_page_item li ul,
 #leftcol .subnavmenu .current_page_parent li ul,
-#leftcol .subnavmenu .current_page_ancestor li ul {
+#leftcol .subnavmenu .current_page_ancestor li ul,
+#leftcol #subnav ul {
 	border-left: 1px solid silver;
      border-right: 1px solid silver;
 }
@@ -113,7 +115,8 @@ dd {
 #leftcol .subnavmenu .current_page_item li a,
 #leftcol .subnavmenu .current_page_parent li a,
 #leftcol .subnavmenu .current_page_parent .current_page_item li a,
-#leftcol .subnavmenu .current_page_ancestor li a {
+#leftcol .subnavmenu .current_page_ancestor li a,
+#leftcol #subnav li a {
      border: 1px solid silver;
      border-top: 1px solid #f5f5f5; /* whitesmoke */
 	 color:#58a;
@@ -121,10 +124,12 @@ dd {
 }
 #leftcol .subnavmenu .current_page_item li a:hover,
 #leftcol .subnavmenu .current_page_parent li a:hover,
-#leftcol .subnavmenu .current_page_ancestor li a:hover {
+#leftcol .subnavmenu .current_page_ancestor li a:hover,
+#leftcol #subnav li.current_page_item a:hover {
      border: 1px solid #58a;
 }
-#leftcol .subnavmenu .current_page_parent .current_page_item a {
+#leftcol .subnavmenu .current_page_parent .current_page_item a,
+#leftcol #subnav li.current_page_item a {
      color:black;
      border: 1px solid black;
      border-top: 1px solid #f5f5f5; /* whitesmoke */

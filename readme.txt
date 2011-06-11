@@ -91,6 +91,9 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 Note: see the "Oenology Reference" admin page for full Changelog details. 
 See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 
+= 2.0.3 [2011.06.11]
+* Minor Bugfix Release
+
 = 2.0.2 [2011.06.10]
 * Minor Bugfix Release
 
@@ -122,6 +125,9 @@ See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 * Initial Release
 
 == Upgrade Notice ==
+
+= 2.0.3 =
+Minor bugfix release
 
 = 2.0.2 =
 Minor bugfix release

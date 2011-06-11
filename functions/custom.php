@@ -520,7 +520,7 @@ function oenology_get_paginate_archive_page_links( $type = 'plain', $endsize = 1
 	
 	// Setup argument array for paginate_links()
 	$pagination = array(
-		'base' => @add_query_arg('page','%#%'),
+		'base' => @add_query_arg('paged','%#%'),
 		'format' => '',
 		'total' => $wp_query->max_num_pages,
 		'current' => $current,

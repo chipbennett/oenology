@@ -428,7 +428,7 @@ class oenology_widget_linkrollbycat extends WP_Widget {
 			<select id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" class="widefat" style="width:100%;">
 			<?php $link_cats = get_terms( 'link_category'); ?>
 			<?php foreach ( $link_cats as $link_cat ) : ?>
-				<option <?php if ( $link_cat->term_id == $instance['category'] ) echo 'selected="selected"'; ?> value="<?php echo $link_cat->term_id; ?>"><?php echo $link_cat->name; ?></option>
+				<option <?php selected( $link_cat->term_id == $instance['category'] ); ?> value="<?php echo $link_cat->term_id; ?>"><?php echo $link_cat->name; ?></option>
 			<?php endforeach; ?>
 			</select>
 		</p>
