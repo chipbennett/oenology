@@ -1,6 +1,3 @@
-/* Body Default Style Specifications
-   --------------------
-*/
 /* Site Layout
   -------------------------------------------- */
 body {
@@ -21,8 +18,18 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	color: #222;
 }
-a:hover { 
-   background-color: #e8e8e8; 
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+.showhide span {
+  text-shadow: 1px 1px 0px #b8b8b8;
+}
+a:hover,
+.showhide span:hover { 
+   text-shadow: 0px 0px 2px #999999; 
+   text-decoration: underline;
 }
 dd {
 	background-color: #f8f8f8;
@@ -138,9 +145,7 @@ code {
 #leftcol #subnav li.current_page_item a,
 #leftcol #subnav li.current_page_item a:hover {
      color:#333;
-	 border: 1px solid #ddd;
-     border-bottom-color: #000;	 
-     border-right-color: #000;
+	 border: 1px solid #000000;
 }
 /* THIRD LEVEL: Display third-level page links like subsubnavmenu */
 #leftcol .subnavmenu .current_page_parent .current_page_item li a:hover {
@@ -193,9 +198,6 @@ code {
   background-color:#9DAE98;
   background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#9DAE98), color-stop(0.8, #9DAE98));
 }
-#extent .postnav li a {
-	text-shadow: 1px 1px 0px #4c4c4c;
-}
 #extent .postnav #breadcrumbs strong {
   color: #000;
   text-shadow: 1px 1px 0px #ccc;
@@ -228,14 +230,14 @@ code {
 	color:#ddd; 
 	background: #555; /*#9dae98; */
 }
-#infobabrnav ol.wp-paginate li a,
-#loop-footer ol.wp-paginate li a,
-#infobabrnav ul.page-numbers li a,
-#loop-footer ul.page-numbers li a {	
-	border:1px solid #777; 
-	color:#666; 
-	text-shadow: 1px 1px 0px #4c4c4c;
-	background-color: transparent; 
+#extent #infobabrnav ol.wp-paginate li a,
+#extent #loop-footer ol.wp-paginate li a,
+#extent #infobabrnav ul.page-numbers li a,
+#extent #loop-footer ul.page-numbers li a {	
+	border:1px solid #58a; 
+	color:#58a; 
+	text-shadow: 1px 1px 0px #b8b8b8;
+	background-color: #E1EED2; 
 }  
 #infobabrnav ol.wp-paginate li a:hover,
 #infobabrnav ol.wp-paginate li a:active,
@@ -247,7 +249,8 @@ code {
 #extent #loop-footer ul.page-numbers li a:active {	
 	border:1px solid #58a;		
 	color:#fff;  
-	background:#58a;
+	text-shadow: 1px 1px 1px #777;
+	background-color:#58a;
 }
 #extent .postnav #bottompostnav {
   color: #888;
@@ -280,6 +283,15 @@ code {
 #wp-calendar a {
   border: 1px solid #ddd;
   background-color: #bcd99b;
+}
+#wp-calendar a:hover { 
+   background-color:#58a; 
+   color: #ffffff;
+   border-color: #777777;
+   text-decoration:none;
+	-moz-box-shadow: 0px 0px 4px #222;
+	-webkit-box-shadow: 0px 0px 4px #222;
+	box-shadow: 0px 0px 4px #222;
 }
 #wp-calendar #today {
   background-color: #fff; 
@@ -324,16 +336,6 @@ body.home .post.sticky {
 	border-color: #777;
 	background-color:#bcd99b;
 }
-/*body.single-format-image .post,
-.post.format-aside,
-.post.format-link,
-.post.format-quote,
-.post.format-status {
-  border: 0;
-	box-shadow: 0px 0px 0px #444;
-	-moz-box-shadow: 0px 0px 0px #444;
-	-webkit-box-shadow: 0px 0px 0px #444;
-}*/
 .post.format-aside .post-entry:before,
 .post.format-link .post-entry:before,
 .post.format-quote .post-entry:before,
@@ -357,6 +359,10 @@ body.page .post .post-title {
 .post-title h1 a:hover,
 .post-title h1 a:active {
 	color: #444;
+}
+.post-title h1 a:hover {
+	color: #58a;
+	text-shadow: 0px 0px 2px #444;
 }
 /* Post Meta: Date
   -------------------------------------------- */
@@ -403,7 +409,6 @@ body.page .post .post-title {
 }
 .post-entry a:hover {
   border-bottom: 1px solid #58a;
-  background-color:#e8e8e8;
 }
 .post-entry a.thickbox:hover {
   background-color:transparent;
@@ -440,10 +445,18 @@ body.page .post .post-title {
 }
 .post-entry .link-pages a:hover,
 .nav-comments a:hover { 
-   background-color:#fff; 
-	-moz-box-shadow: 0px 0px 4px #111;
-	-webkit-box-shadow: 0px 0px 4px #111;
-	box-shadow: 0px 0px 4px #111;
+	border:1px solid #777777;
+	color:#fff;  
+	text-shadow: 1px 1px 1px #777;
+	background-color:#58a;
+	-moz-box-shadow: 0px 0px 4px #222;
+	-webkit-box-shadow: 0px 0px 4px #222;
+	box-shadow: 0px 0px 4px #222;
+}
+.nav-comments .current {
+	border:1px solid #444;
+	color:#fff; 
+	background:#444; 
 }
 /* Post Entry: Gallery
   -------------------------------------------- */ 
@@ -463,6 +476,11 @@ body.attachment .gallery-nav .gallery-nav-home a:visited,
 body.attachment .gallery-nav .gallery-nav-home a:hover,
 body.attachment .gallery-nav .gallery-nav-home a:active {
 	border:0;
+}
+body.attachment .gallery-nav .gallery-nav-home a:hover,
+body.attachment .gallery-nav .gallery-nav-prev a:hover,
+body.attachment .gallery-nav .gallery-nav-next a:hover {
+	text-decoration: underline;
 }
 /* Post Formats
   -------------------------------------------- */
@@ -492,7 +510,7 @@ body.attachment .gallery-nav .gallery-nav-home a:active {
 #content .format-video .post-entry ul.audiovideo-meta a:hover,
 #content .format-image .post-entry ul.gallery-meta a:hover,
 #content .format-gallery .post-entry ul.gallery-meta a:hover { 
-   background-color:#ddd; 
+   text-decoration: underline; 
 }
 }
 /* Post Footer Metadata

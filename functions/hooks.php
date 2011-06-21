@@ -752,7 +752,7 @@ function oenology_hook_site_header() {
 	$site_header = '';
 
 	// Displays the blog name, as defined on the General Settings page in the administration panel
-	$site_header .= '<div>' . get_bloginfo('name') . '</div>';
+	$site_header .= '<div class="site-header-text">' . get_bloginfo('name') . '</div>';
 	// Displays the blog description, as defined on the General Settings page in the administration panel
 	$site_header .= '<p>' . get_bloginfo('description') . '</p>';
 

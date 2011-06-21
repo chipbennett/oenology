@@ -37,6 +37,9 @@ if ( 'themes.php' == $pagenow && isset( $_GET['page'] ) && 'oenology-reference' 
         case 'license' :
             oenology_reference_page_license();
             break;
+        case 'support' :
+            oenology_reference_page_support();
+            break;
     endswitch;
 endif;
 
@@ -45,7 +48,7 @@ endif;
  * Reference Page Tab Content
  */
 
-// FAQ Tab
+// License Tab
 function oenology_reference_page_license() { ?>
 	
 	<h3>Oenology WordPress Theme</h3>
@@ -93,9 +96,40 @@ function oenology_reference_page_license() { ?>
 	</ol>
 	
 <?php }
+// Support Tab
+function oenology_reference_page_support() { ?>
+
+	<p>For Oenology support, please use one of the following:</p>
+	<ol>
+		<li>Bug Reports: <a href="https://github.com/chipbennett/oenology/issues">Oenology GitHub Repository Issues Tracker</a></li>
+		<li>General Support Queries: <a href="http://wordpress.org/tags/oenology">WordPress.org Oenology Support Forum</a></li>
+	</ol>
+	
+	<p>I will do my best to fix all bug reports as quickly as possible, and to respond to all support queries.</p>
+	
+<?php }
 
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
+	
+	<h3>2.1 [2011.06.21]</h3>	
+	<p>Maintenance Release</p>
+	<ol>
+	<li>New Features:
+		<ol>
+		<li>New Varietal: Chardonnay (light color scheme - new default)</li>
+		<li>New Theme Option: Header Nav Menu Item Width: fluid or fixed</li>
+		</ol>
+	</li>
+	<li>Maintenance:
+		<ol>
+		<li>Converted icon images to image sprites for post format icons and social network profile icons</li>
+		<li>Tweaks to navigation breadcrumb for better handling of static Page as Front Page, and static Page for Blog Posts Index</li>
+		<li>Tweaks site header style for custom header navigation menu</li>
+		<li>Tweaks to all varietals</li>
+		</ol>
+	</li>
+	</ol>
 	
 	<h3>2.0.3 [2011.06.11]</h3>	
 	<p>Bugfix Release</p>
@@ -292,6 +326,16 @@ function oenology_reference_page_changelog() { ?>
 
 // General Tab
 function oenology_reference_page_general() { ?>
+
+	<h3>Custom Theme Hooks</h3>
+	
+	<p>Custom Theme hooks provide an alternate means to modify the Oenology Theme content, without needing to
+	modify template files. Nearly all Theme-defined content can be filtered, and most Theme template locations
+	have associated before and after action hooks, to facilitate injection of content.</p>
+	
+	<p>In the future, Oenology may include more UI around the custom Theme hooks (particularly, the Post-specific
+	hooks); but for now, you can use the <a href="http://wordpress.org/extend/plugins/oenology-hooks/">Oenology 
+	Hooks Plugin</a> for rudimentary UI access to many of the available hooks.</p>
 	
 	<h3>Menu Functionality</h3>
 
@@ -313,6 +357,10 @@ function oenology_reference_page_general() { ?>
 	<p>Menus are displayed as lists, with each list item being a link displaying a Page Title. The list items are 
 	styled so that overly long Page Titles will not break the layout. Long Page Titles will be cut off, and the full 
 	Page Title will appear in the tooltip when hovering over the link.</p>
+	
+	<p><strong>New in Version 2.1!</strong> The menu list items can now be optionally set to "fixed" or "fluid". The
+	"fixed" option behaves as explained above. The "fluid" option allows for long Page Titles not to be cut off; the
+	width of each menu list item will be determined by the length of the Page Title.</p>
 
 	<h3>Post Thumbnail Functionality</h3>
 

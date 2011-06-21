@@ -22,10 +22,12 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  text-shadow: 1px 1px 0px #111;
+  text-shadow: 1px 1px 0px #111111;
 }
-a:hover { 
-   background-color:#111; 
+a:hover,
+.showhide span:hover { 
+   text-shadow: 0px 0px 2px #555555; 
+   text-decoration: underline;
 }
 dd {
 	background-color: #444;
@@ -150,9 +152,7 @@ code {
 #leftcol #subnav li.current_page_item a,
 #leftcol #subnav li.current_page_item a:hover {
      color:#fff;
-	 border:1px solid #444;
-     border-bottom-color: #fff;	 
-     border-right-color: #fff;
+	 border:1px solid #fff;
 }
 /* THIRD LEVEL: Display third-level page links like subsubnavmenu */
 #leftcol .subnavmenu .current_page_parent .current_page_item li a:hover {
@@ -248,16 +248,16 @@ code {
 #extent #loop-footer ol.wp-paginate li .current,
 #extent #infobabrnav ul.page-numbers li .current,
 #extent #loop-footer ul.page-numbers li .current {
-	border:1px solid #89adcf;
-	color:#fff; 
-	background:#5f87ae; 
+	border:1px solid #ffffff;
+	color:#444444; 
+	background:#cccccc; 
 }
 #infobabrnav ol.wp-paginate li a,
 #loop-footer ol.wp-paginate li a,
 #infobabrnav ul.page-numbers li a,
 #loop-footer ul.page-numbers li a {	
-	border:1px solid #ccc; 
-	color:#666; 
+	border:1px solid #58a; 
+	color:#58a; 
 	background-color: transparent; 
 }  
 #infobabrnav ol.wp-paginate li a:hover,
@@ -268,9 +268,10 @@ code {
 #extent #infobabrnav ul.page-numbers li a:active,
 #extent #loop-footer ul.page-numbers li a:hover,
 #extent #loop-footer ul.page-numbers li a:active {	
-	border:1px solid #58a;		
+	border:1px solid #999999;
 	color:#fff;  
-	background:#333;
+	text-shadow: 1px 1px 1px #777;
+	background-color:#58a;
 }
 #extent .postnav #bottompostnav {
   color: #888;
@@ -373,16 +374,6 @@ body.home .post.sticky {
 	-moz-box-shadow: 3px 3px 5px #777;
 	-webkit-box-shadow: 3px 3px 5px #777;
 }
-/*body.single-format-image .post,
-.post.format-aside,
-.post.format-link,
-.post.format-quote,
-.post.format-status {
-  border: 0;
-	box-shadow: 0px 0px 0px #444;
-	-moz-box-shadow: 0px 0px 0px #444;
-	-webkit-box-shadow: 0px 0px 0px #444;
-}*/
 .post.format-aside .post-entry:before,
 .post.format-link .post-entry:before,
 .post.format-quote .post-entry:before,
@@ -406,8 +397,12 @@ body.page .post .post-title {
 .post-title h1 a:hover,
 .post-title h1 a:active {
 	color: #fff;
-  text-shadow: 2px 2px 2px #111;
+  text-shadow: 2px 2px 2px #111111;
 	background-color:transparent;
+}
+.post-title h1 a:hover {
+	color: #58a;
+	text-shadow: 2px 2px 2px #111111;
 }
 /* Post Meta: Date
   -------------------------------------------- */
@@ -458,7 +453,6 @@ body.page .post .post-title {
 }
 .post-entry a:hover {
   border-bottom: 1px solid #58a;
-  background-color:#111;
 }
 .post-entry a.thickbox:hover {
   background-color:transparent;
@@ -480,9 +474,6 @@ body.page .post .post-title {
 	-moz-box-shadow: 0px 0px 4px #ddd;
 	-webkit-box-shadow: 0px 0px 4px #ddd;
 	box-shadow: 0px 0px 4px #ddd;
-}
-.post-entry a.more-link:hover { 
-   background-color:#111; 
 }
 .post-entry blockquote {
   border:0;
@@ -526,6 +517,11 @@ body.attachment .gallery-nav .gallery-nav-home a:hover,
 body.attachment .gallery-nav .gallery-nav-home a:active {
 	border:0;
 }
+body.attachment .gallery-nav .gallery-nav-home a:hover,
+body.attachment .gallery-nav .gallery-nav-prev a:hover,
+body.attachment .gallery-nav .gallery-nav-next a:hover {
+	text-decoration: underline;
+}
 /* Post Formats
   -------------------------------------------- */
 .format-gallery .size-thumbnail img,
@@ -548,9 +544,11 @@ body.attachment .gallery-nav .gallery-nav-home a:active {
 #content .format-gallery .post-entry ul.gallery-meta a {
 	border:0;
 }
-#content .post-entry ul.audiovideo-meta a:hover,
-#content .post-entry ul.gallery-meta a:hover {
-   background-color:#111;
+#content .format-audio .post-entry ul.audiovideo-meta a:hover,
+#content .format-video .post-entry ul.audiovideo-meta a:hover,
+#content .format-image .post-entry ul.gallery-meta a:hover,
+#content .format-gallery .post-entry ul.gallery-meta a:hover {
+	text-decoration: underline;
 }
 /* Post Footer Metadata
    --------------------

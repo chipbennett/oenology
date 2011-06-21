@@ -18,6 +18,11 @@
  */
 
 /**
+ * Remove default gallery shortcode inline styles
+ */
+add_filter( 'use_default_gallery_style', '__return_false' );
+
+/**
  * Enqueue comment-reply script
  */
 function oenology_enqueue_comment_reply() {

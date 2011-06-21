@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: fixed-width, white, black, tan, three-columns, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
 Requires at least: 3.1
 Tested up to: 3.2
-Stable tag: 2.0.2
+Stable tag: 2.1
 
 Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in pagination and breadcrumb navigation, and supports Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.1, and is compatible up to WordPress 3.2.</strong>
 
@@ -91,16 +91,19 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 Note: see the "Oenology Reference" admin page for full Changelog details. 
 See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 
-= 2.0.3 [2011.06.11]
+= 2.1 [2011.06.21] =
+* Maintenance Release
+
+= 2.0.3 [2011.06.11] =
 * Minor Bugfix Release
 
-= 2.0.2 [2011.06.10]
+= 2.0.2 [2011.06.10] =
 * Minor Bugfix Release
 
-= 2.0.1 [2011.06.09]
+= 2.0.1 [2011.06.09] =
 * Minor Bugfix Release
 
-= 2.0 [2011.06.09]
+= 2.0 [2011.06.09] =
 * Major Update Release
 
 = 1.2.2 [2011.05.16] =
@@ -125,6 +128,9 @@ See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 * Initial Release
 
 == Upgrade Notice ==
+
+= 2.1 =
+Maintenance release
 
 = 2.0.3 =
 Minor bugfix release

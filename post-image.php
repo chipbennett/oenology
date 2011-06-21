@@ -47,6 +47,14 @@ if ( is_single() ) {
 
 <div class="post-entry">
 
+	<?php 
+	// Fire the 'oenology_hook_post_entry_before' custom action hook
+	// 
+	// @param	null
+	// @return	mixed	any output hooked into 'oenology_hook_post_entry_before'
+	oenology_hook_post_entry_before(); 
+	?>
+
 	<!-- Post Entry Begin -->
 	<?php 
 	if ( is_single() ) {
@@ -100,6 +108,13 @@ if ( is_single() ) {
 	<?php }
 	?>
 	<!-- Post Entry End -->
+	<?php 
+	// Fire the 'oenology_hook_post_entry_after' custom action hook
+	// 
+	// @param	null
+	// @return	mixed	any output hooked into 'oenology_hook_post_entry_after'
+	oenology_hook_post_entry_after(); 
+	?>
 
 </div>
 
