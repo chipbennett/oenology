@@ -356,6 +356,11 @@ code {
 .cat-subscribe-feed a:hover {
   background-color:transparent;
 }
+.cat-subscribe-feed a:hover img {
+   box-shadow: 0px 0px 10px #58a; 
+   -moz-box-shadow: 0px 0px 10px #58a; 
+   -webkit-box-shadow: 0px 0px 10px #58a; 
+}
 /* Post
   -------------------------------------------- */
 div.post {

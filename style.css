@@ -910,7 +910,7 @@ body.single-format-image #main {
 /* Social Icons
    --------------------
 */
-.sidebar-social-icon {
+.sidebar-social-icons {
 	height:40px;
 }
 a.sidebar-social-icon {
@@ -1182,7 +1182,7 @@ body.search-results .pagetitle {
   line-height:7pt;
 }
 .cat-subscribe-feed a:hover {
-  text-decoration:underline;
+  text-decoration:none;
 }
 /* Post/Page Entry Container
      .post

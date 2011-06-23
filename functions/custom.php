@@ -169,7 +169,7 @@ function oenology_gallery_image_meta() {
 	// image caption handler
 	if ( ! empty( $post->post_excerpt ) ) {
 		$image_meta['caption'] = get_the_excerpt(); // this is the "caption"
-	} elseif ( $attachmentimage->post_excerpt ) {
+	} else if ( is_object( $attachmentimage ) && $attachmentimage->post_excerpt ) {
 		$image_meta['caption'] = $attachmentimage->post_excerpt;
 	}
 	return $image_meta;
