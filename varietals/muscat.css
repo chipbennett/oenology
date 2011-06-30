@@ -70,8 +70,7 @@ code {
     border: 1px solid #ffffe8;
      border-bottom-color: #ddd; 
      border-right-color: #ddd;
-     background: #ffffe8;
-     background: url(menu-muscat.gif) #eeeeee top left repeat-x;
+     background: #eeeeee url(menu-muscat.gif) bottom repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#9DAE98), color-stop(1, #9DAE98));
 }
 .navmenu li a:hover,

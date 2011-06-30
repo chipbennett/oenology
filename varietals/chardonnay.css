@@ -67,8 +67,7 @@ code {
     border: 1px solid #eeeeee;
      border-bottom-color: #ddd; 
      border-right-color: #ddd;
-     background: #f8f8fb;
-     background: url(menu-chardonnay.gif) #f8f8fb top left repeat-x;
+     background: #f8f8fb url(menu-chardonnay.gif) bottom repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#f8f8fb), color-stop(1, #f8f8fb));
 }
 .navmenu li a:hover,

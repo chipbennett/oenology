@@ -67,8 +67,7 @@ code {
     border: 1px solid #ffffe8;
      border-bottom-color: #ddd; 
      border-right-color: #ddd;
-     background: #ffffe8;
-     background: url(menu-seyval-blanc.gif) #ffffe8 top left repeat-x;
+     background: #ffffe8 url(menu-seyval-blanc.gif) bottom repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#ffffe8), color-stop(1, #ffffe8));
 }
 .navmenu li a:hover,

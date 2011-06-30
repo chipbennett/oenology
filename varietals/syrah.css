@@ -77,8 +77,7 @@ code {
 	 border: 1px solid #444;
      border-bottom-color: #000; 
      border-right-color: #000;
-     background: #333;
-     background: url(menu-syrah.gif) #333 top left repeat-x;
+     background: #000 url(menu-syrah.gif) bottom repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#555555), to(#000000), color-stop(0.9, #000000));
 }
 .navmenu li a:hover,
