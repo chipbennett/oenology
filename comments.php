@@ -20,14 +20,15 @@
 
 	<?php oenology_hook_post_comments_before(); ?>
 
-	<h2 class="commentsheader">Feedback</h2>
-
 	<?php 
 	if ( 
 	//
 	//
 	have_comments() 
 	) {
+		?>
+		<h2 class="commentsheader">Feedback</h2>
+		<?php
 		// Globalize variable that holds comments by type
 		global $comments_by_type;	
 		?>
