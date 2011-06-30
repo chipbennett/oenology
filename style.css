@@ -2075,12 +2075,6 @@ body.single-format-image dd {
 	 font-weight:normal;
      text-decoration:none;
 }
-.navmenu li a:hover,
-.nav-header li a:hover {
-     font-size:9pt;
-     letter-spacing:0.15em;
-     /*font-weight:bold;*/
-}
 #home #navhome, 
 #pageforum #navforum,
 #nav .current_page_item a,
