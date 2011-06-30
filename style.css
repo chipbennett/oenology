@@ -1229,6 +1229,7 @@ body.page .post .post-title {
 */
 .post-title h1  {
   margin-left:55px;
+  margin-bottom: 5px;
 }
 body.page .post-title h1,
 body.error404 .post-title h1,
