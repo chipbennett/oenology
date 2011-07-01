@@ -1057,15 +1057,62 @@ function oenology_enqueue_header_nav_menu_style() {
 add_action( 'wp_print_styles', 'oenology_enqueue_header_nav_menu_style', 11 );
 
 /**
+ * Filter Capability for Theme Settings Page
+ * 
+ * This filter implements a WordPress 3.2 fix for
+ * a minor bug, in which add_theme_page() is passed
+ * the "edit_theme_options" capability, but the
+ * settings page form is passed through options.php,
+ * which expects the "manage_options" capability.
+ * 
+ * The "edit_theme_options" capability is part of the
+ * EDITOR user role, while "manage_options" is only
+ * available to the ADMINISTRATOR role. So, users in
+ * the EDITOR user role can access the Theme settings
+ * page, but are unable actually to update/save the
+ * Theme settings.
+ * 
+ * The function is hooked into a hook, introduced in
+ * WordPress 3.2: "option_page_capability_{option_page}",
+ * where {option_page} is the name of the options page,
+ * as defined in the fourth argument of the call to
+ * add_theme_page()
+ * 
+ * The function returns a string consisting of the
+ * appropriate capability for saving Theme settings.
+ */
+function oenology_get_settings_page_cap() {
+	return 'edit_theme_options';
+}
+// Hook into option_page_capability_{option_page}
+add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_page_cap' );
+
+/**
  * Setup the Theme Admin Settings Page
  * 
  * Add "Oenology Options" link to the "Appearance" menu
  */
-function oenology_menu_options() {
-	add_theme_page('Oenology Options', 'Oenology Options', 'edit_theme_options', 'oenology-settings', 'oenology_admin_options_page');
+function oenology_add_theme_page() {
+	add_theme_page(
+		// $page_title
+		// Name displayed in HTML title tag
+		'Oenology Options', 
+		// $menu_title
+		// Name displayed in the Admin Menu
+		'Oenology Options', 
+		// $capability
+		// User capability required to access page
+		oenology_get_settings_page_cap(), 
+		// $menu_slug
+		// String to append to URL after "themes.php"
+		'oenology-settings', 
+		// $callback
+		// Function to define settings page markup
+		'oenology_admin_options_page'
+	);
 }
 // Load the Admin Options page
-add_action('admin_menu', 'oenology_menu_options');
+add_action('admin_menu', 'oenology_add_theme_page');
 
 /**
  * Get current settings page tab
