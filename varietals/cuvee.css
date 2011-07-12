@@ -71,10 +71,19 @@ dd {
 #home #navhome, 
 #pageforum #navforum,
 #nav .current_page_item a,
-#nav .current_page_ancestor a {
+#nav .current_page_ancestor a,
+#nav .current_page_ancestor .menu-item.current_page_item a  {
      color:black;
      border-bottom-color: black;
 	 border-right-color: black;
+}
+#nav .current_page_item .menu-item a,
+#nav .current_page_ancestor .menu-item a,
+#nav .current_page_ancestor .menu-item.current_page_item .menu-item a{
+	color: #58a;
+	border-bottom-color: #58a;
+	border-right-color: #58a;
+	font-weight: normal;
 }
 #nav ul {
 	border-left: 1px solid #bbb;
