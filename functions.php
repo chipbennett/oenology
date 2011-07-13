@@ -31,6 +31,20 @@
  */
 
 /**
+ * Include the Theme Custom Functions File
+ * 
+ * custom.php includes all of the Theme's custom functions
+ * - 404 error handling
+ * - Current page context
+ * - Custom footer copyright notice
+ * - Gallery image links and metadata handling
+ * - Infobar Navigation
+ * - Navigation breadcrumb
+ * - Paginate Archive Index Page links
+ */
+require( get_template_directory() . '/functions/custom.php' );
+
+/**
  * Include the Theme Setup Function File
  * 
  * theme-setup.php includes all of the various Theme setup:
@@ -52,20 +66,6 @@ require( get_template_directory() . '/functions/theme-setup.php' );
  * - filter wp_list_categories
  */
 require( get_template_directory() . '/functions/wordpress-hooks.php' );
-
-/**
- * Include the Theme Custom Functions File
- * 
- * custom.php includes all of the Theme's custom functions
- * - 404 error handling
- * - Current page context
- * - Custom footer copyright notice
- * - Gallery image links and metadata handling
- * - Infobar Navigation
- * - Navigation breadcrumb
- * - Paginate Archive Index Page links
- */
-require( get_template_directory() . '/functions/custom.php' );
 
 /**
  * Include the Widgets Functions File

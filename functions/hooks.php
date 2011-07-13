@@ -352,7 +352,7 @@ function oenology_hook_site_header_before() {
 
 
 /**
- * Define custom action hooks
+ * Define custom filter hooks
  */
 
 /**
@@ -361,15 +361,98 @@ function oenology_hook_site_header_before() {
  * This hook can be used to filter to content that is 
  * output in the div#loop-footer container.
  * 
- * Template file: loop.php
+ * Template file: loop-footer.php
  * 
- * @uses function_name()
+ * @uses apply_filters()
+ * @uses oenology_get_paginate_archive_page_links()
  * 
  * @since Oenology 2.0
  */
 function oenology_hook_loop_footer() {	
 	$loop_footer = oenology_get_paginate_archive_page_links( 'list', 1, 3 );
 	echo apply_filters( 'oenology_hook_loop_footer', $loop_footer );
+}
+
+/**
+ * Hook to filter content displayed in the Loop header
+ * 
+ * This hook can be used to filter to content that is 
+ * output in the div#loop-header container.
+ * 
+ * Template file: loop-header.php
+ * 
+ * @uses apply_filters()
+ * @uses category_description()
+ * @uses get_category_feed_link()
+ * @uses get_post_format()
+ * @uses get_post_format_link()
+ * @uses get_post_format_string()
+ * @uses get_search_query()
+ * @uses get_tag_feed_link()
+ * @uses get_template_directory_uri()
+ * @uses is_archive()
+ * @uses is_category()
+ * @uses is_tag()
+ * @uses is_tax()
+ * @uses is_search()
+ * @uses oenology_get_color_scheme()
+ * @uses tag_description()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_loop_header() {	
+	$loop_header = '';
+	// If this is an archive index
+	if( is_archive() ) {
+		// If this is a taxonomy archive
+		if ( is_category() || is_tag() || is_tax( '', get_post_format() ) ) {
+			// If this is a category or tag archive
+			if ( is_category() || is_tag() ) {
+				$tax = ( is_category() ? 'category' : 'tag' );
+				$taxtitle = ( is_category() ? single_cat_title( '', false ) : single_tag_title( '', false ) );
+				global $wp_query;
+				$taxfeedlink = ( is_category() ? get_category_feed_link( $wp_query->get( 'cat_id' ) ) : get_tag_feed_link( $wp_query->get( 'tag_id' ) ) );
+				$catdescription = ( ( is_category() && category_description() ) ? category_description() : false );
+				$tagdescription = ( ( is_tag() && tag_description() ) ? tag_description() : false );
+				$taxdesc = ( is_category() ? $catdescription : $tagdescription );
+				$taxdescdefault = 'Posts filed under ' . $taxtitle;
+				$taxdescription = ( $taxdesc ? $taxdesc : $taxdescdefault );
+			}
+			// If this is a Post Format archive
+			elseif ( is_tax( '', get_post_format() ) ) {
+				$tax = get_post_format();
+				$taxtitle = get_post_format_string( $tax );
+				$taxfeedlink = get_post_format_link( $tax ) . '/feed/';
+				$taxdescription = false;
+				$formats = oenology_get_post_formats();
+				foreach ( $formats as $format ) {
+					if ( $format['slug'] == $tax ) {
+						$taxdescription = '<em>' . $format['description'] . '</em>';
+					}
+				}
+			}
+			$colorscheme = oenology_get_color_scheme();
+			$rssiconcolor = ( 'light' == $colorscheme ? 'original' : 'gray' );
+			$rssimageurl = get_template_directory_uri() . '/images/iconsweets2/' . $rssiconcolor . '/rss16.png';
+			$rssimagealt = 'Subscribe to the ' . $taxtitle . ' feed';
+			
+			$loop_header .= '<div class="cat-subscribe-feed">';
+			$loop_header .= '<a href="' . $taxfeedlink .'">';
+			$loop_header .= '<img src="' . $rssimageurl . '" width="16px" height="16px" alt="' . $rssimagealt . '" />';
+			$loop_header .= '<br />' . $taxtitle . ' feed</a>';
+			$loop_header .= '</div>';
+			$loop_header .= '<h2 class="pagetitle">' . $taxtitle . '</h2>';
+			$loop_header .= '<div class="cat-description">' . $taxdescription . '</div>';
+		}
+	}
+	// If this is a search results page
+	elseif ( is_search() ) {
+		$loop_header .= '<h2 class="pagetitle">Results for "' . get_search_query() . '" Search</h2>';
+		$loop_header .= '<div class="cat-description">';
+		$loop_header .= '<strong>Search:</strong><em>to inquire, investigate, examine, or seek; conduct an examination or investigation.</em>Below are all posts and pages related to the indicated search query.';
+		$loop_header .= '</div>';
+	}
+	echo apply_filters( 'oenology_hook_loop_header', $loop_header );
 }
 
 /**
@@ -626,7 +709,9 @@ function oenology_hook_post_header_taxonomies() {
 		// Category List
 		$categorylist .= '<span class="post-title-category">Filed in ' . get_the_category_list( ', ' ) . '</span>';
 		// Tag List
-		$taglist .= '<span class="post-title-tags">Tags: ' . get_the_tag_list( '', ', ', '' ) . '</span>';
+		if ( get_the_tag_list() ) {
+			$taglist .= '<span class="post-title-tags">Tags: ' . get_the_tag_list( '', ', ', '' ) . '</span>';
+		}
 	}
 	$post_header_taxonomies = '<span class="post-title-taxonomies">' . $categorylist . $taglist . '</span>';
 	echo apply_filters( 'oenology_hook_post_header_taxonomies', $post_header_taxonomies );

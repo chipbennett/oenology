@@ -103,23 +103,6 @@ if ( ! function_exists( 'oenology_setup' ) ):
 		 * @since	WordPress 3.0.0
 		 */
 		add_editor_style();
-
-		/*
-		 * Define supported Post Format types
-		 * 
-		 * Return an array containing the list of Post Format types
-		 * supported by the Theme.
-		 * 
-		 * @param	none
-		 * @return	array	Post format types supported by the Theme
-		 * @since	Oenology 1.2
-		 */
-		function oenology_get_post_formats() {
-			$postformats = array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' );
-			return $postformats;
-		}
-		// Define a variable to pass to add_theme_support()
-		$postformats = oenology_get_post_formats();
 		
 		/*
 		 * Add Theme support for Post Formats
@@ -134,7 +117,17 @@ if ( ! function_exists( 'oenology_setup' ) ):
 		 * 
 		 * @since	WordPress 3.1.0
 		 */
-		add_theme_support( 'post-formats', $postformats );
+
+		// Define a variable to pass to add_theme_support()
+		$postformats = oenology_get_post_formats();
+		$supportedpostformats = array();
+		foreach ( $postformats as $format ) {
+			$supportedpostformats[] = $format['slug'];
+		}
+		$supportedpostformats = apply_filters( 'oenology_supported_post_formats', $supportedpostformats );
+		
+		// Add Theme support for Post Formats
+		add_theme_support( 'post-formats', $supportedpostformats );
 		
 		/*
 		 * Add Theme support for bbPress

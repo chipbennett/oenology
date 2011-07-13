@@ -80,6 +80,58 @@ function oenology_get_context() {
 	return $context;
 }
 
+/*
+ * Define supported Post Format types
+ * 
+ * Return an array containing the list of Post Format types
+ * supported by the Theme.
+ * 
+ * @param	none
+ * @return	array	Post format types supported by the Theme
+ * @since	Oenology 1.2
+ */
+function oenology_get_post_formats() {
+	$postformats = array( 
+		'aside' => array(
+			'slug' => 'aside',
+			'description' => 'An incidental remark; digression: a message that departs from the main subject.'
+		), 
+		'audio' => array(
+			'slug' => 'audio',
+			'description' => 'A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction.'
+		), 
+		'chat' => array(
+			'slug' => 'chat',
+			'description' => 'Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat.'
+		), 
+		'gallery' => array(
+			'slug' => 'gallery',
+			'description' => 'A collection of art for exhibition.'
+		), 
+		'image' => array(
+			'slug' => 'image',
+			'description' => 'picture: A visual representation (of an object or scene or person or abstraction) produced on a surface.'
+		), 
+		'link' => array(
+			'slug' => 'link',
+			'description' => 'A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document.'
+		), 
+		'quote' => array(
+			'slug' => 'quote',
+			'description' => 'A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else.'
+		), 
+		'status' => array(
+			'slug' => 'status',
+			'description' => 'state or condition of affairs'
+		), 
+		'video'  => array(
+			'slug' => 'video',
+			'description' => 'A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.'
+		)
+	);
+	return $postformats;
+}
+
 /**
  * Image Handling for gallery previous/next links
  * 
