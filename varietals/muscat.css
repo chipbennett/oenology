@@ -92,8 +92,8 @@ code {
 #nav .current_page_ancestor .menu-item a,
 #nav .current_page_ancestor .menu-item.current_page_item .menu-item a{
 	color: #58a;
-	border-bottom-color: #58a;
-	border-right-color: #58a;
+	border-bottom-color: #ddd;
+	border-right-color: #ddd;
 	font-weight: normal;
 }
 #nav ul {
@@ -147,6 +147,7 @@ code {
 #leftcol .subnavmenu .current_page_ancestor li a:hover,
 #leftcol #subnav li a:hover {
      border: 1px solid #58a;
+	 color: #58a;
 }
 #leftcol .subnavmenu .current_page_parent .current_page_item a,
 #leftcol .subnavmenu .current_page_parent .current_page_item a:hover,
@@ -155,9 +156,15 @@ code {
      color:#333;
 	 border: 1px solid #000000;
 }
+/* SECOND LEVEL: Reset display for third-level page links */
+#leftcol .subnavmenu .current_page_parent .current_page_item li a {
+     border: 1px solid #eee;
+	 color: #999;
+}
 /* THIRD LEVEL: Display third-level page links like subsubnavmenu */
 #leftcol .subnavmenu .current_page_parent .current_page_item li a:hover {
 	border:1px solid #58a;
+	color: #58a;
 }
 /* THIRD LEVEL: Set display for current_page_item */
 #leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item a {
