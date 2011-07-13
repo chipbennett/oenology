@@ -493,7 +493,8 @@ function oenology_hook_post_404() {
 function oenology_hook_post_footer_avatar() {	
 	$post_footer_avatar = '';
 	// don't display the author's avatar on Pages
-	if (! is_page() ) { 
+	global $post;
+	if ( ! is_page() && 'page' != $post->post_type ) { 
 		$post_footer_avatar .= '<span class="post-footer-gravatar">';
 		// display a 20px avatar, to fit inside the post footer
 		$post_footer_avatar .= get_avatar( get_the_author_meta('email'), $size = '20' ); 
@@ -560,7 +561,8 @@ function oenology_hook_post_footer_metadata() {
 
 	$post_footer_metadata = '';
 	$post_footer_metadata .= '<span class="post-footer-meta">';
-	if ( ! is_page() ) {
+	global $post;
+	if ( ! is_page() && 'page' != $post->post_type ) {
 		$cbnet_post_format_type = ( get_post_format() ? '<a href="' . get_post_format_link( get_post_format() ) . '">' . get_post_format_string( get_post_format() ) . '</a>' : 'Posted' );
 	
 		$post_footer_metadata .= $cbnet_post_format_type;
@@ -600,9 +602,9 @@ function oenology_hook_post_footer_metadata() {
  */
 function oenology_hook_post_header_date() {	
 	$post_header_date = '';
-
+	global $post;
 	// don't display timestamp on Pages
-	if ( ! is_page() && ! is_attachment() ) {
+	if ( ! is_page() && ! is_attachment() && 'page' != $post->post_type ) {
 		$post_header_date .= '<span class="post-date">';
 		// Post Date: Year
 		$post_header_date .= '<span class="post-date-year">' . get_the_time('Y') . '</span>'; 
@@ -655,7 +657,8 @@ function oenology_hook_post_header_metadata() {
 	$permalink .= '</span>';
 	
 	// Post Metadata Links
-	if ( ! is_page() ) {
+	global $post;
+	if ( ! is_page() && 'page' != $post->post_type ) {
 		if ( ! is_attachment() ) {
 			// Shortlink
 			$shortlink .= ' <strong>|</strong> ';
@@ -705,7 +708,8 @@ function oenology_hook_post_header_taxonomies() {
 	$taglist = '';
 	
 	// Post Taxonomies
-	if ( ! is_page() ) {
+	global $post;
+	if ( ! is_page() && 'page' != $post->post_type ) {
 		// Category List
 		$categorylist .= '<span class="post-title-category">Filed in ' . get_the_category_list( ', ' ) . '</span>';
 		// Tag List
