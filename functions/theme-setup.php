@@ -260,51 +260,6 @@ if ( ! function_exists( 'oenology_setup' ) ):
 		// Default custom headers packaged with the theme. 
 		// %s is a placeholder for the theme template directory URI.
 		
-		// Auto-magically registers the headers included with TwentyTen if it is installed
-		if ( file_exists( get_theme_root() . '/twentyten/style.css' ) ) {
-			register_default_headers( array(
-				'berries' => array(
-					'url' => '%s/../twentyten/images/headers/berries.jpg',
-					'thumbnail_url' => '%s/../twentyten/images/headers/berries-thumbnail.jpg',
-					'description' => 'Berries'
-				),
-				'cherryblossom' => array(
-					'url' => '%s/../twentyten/images/headers/cherryblossoms.jpg',
-					'thumbnail_url' => '%s/../twentyten/images/headers/cherryblossoms-thumbnail.jpg',
-					'description' => 'Cherry Blossoms'
-				),
-				'concave' => array(
-					'url' => '%s/../twentyten/images/headers/concave.jpg',
-					'thumbnail_url' => '%s/../twentyten/images/headers/concave-thumbnail.jpg',
-					'description' => 'Concave'
-				),
-				'fern' => array(
-					'url' => '%s/../twentyten/images/headers/fern.jpg',
-					'thumbnail_url' => '%s/../twentyten/images/headers/fern-thumbnail.jpg',
-					'description' => 'Fern'
-				),
-				'forestfloor' => array(
-					'url' => '%s/../twentyten/images/headers/forestfloor.jpg',
-					'thumbnail_url' => '%s/../twentyten/images/headers/forestfloor-thumbnail.jpg',
-					'description' => 'Forest Floor'
-				),
-				'inkwell' => array(
-					'url' => '%s/../twentyten/images/headers/inkwell.jpg',
-					'thumbnail_url' => '%s/../twentyten/images/headers/inkwell-thumbnail.jpg',
-					'description' => 'Inkwell', 'oenology'
-				),
-				'path' => array(
-					'url' => '%s/../twentyten/images/headers/path.jpg',
-					'thumbnail_url' => '%s/../twentyten/images/headers/path-thumbnail.jpg',
-					'description' => 'Path'
-				),
-				'sunset' => array(
-					'url' => '%s/../twentyten/images/headers/sunset.jpg',
-					'thumbnail_url' => '%s/../twentyten/images/headers/sunset-thumbnail.jpg',
-					'description' => 'Sunset'
-				)
-			) );
-		}
 		// Auto-magically registers the headers included with TwentyEleven if it is installed
 		if ( file_exists( get_theme_root() . '/twentyeleven/style.css' ) ) {
 			register_default_headers( array(
@@ -347,6 +302,51 @@ if ( ! function_exists( 'oenology_setup' ) ):
 					'url' => '%s/../twentyeleven/images/headers/hanoi.jpg',
 					'thumbnail_url' => '%s/../twentyeleven/images/headers/hanoi-thumbnail.jpg',
 					'description' => 'Hanoi Plant'
+				)
+			) );
+		}
+		// Auto-magically registers the headers included with TwentyTen if it is installed
+		if ( file_exists( get_theme_root() . '/twentyten/style.css' ) ) {
+			register_default_headers( array(
+				'berries' => array(
+					'url' => '%s/../twentyten/images/headers/berries.jpg',
+					'thumbnail_url' => '%s/../twentyten/images/headers/berries-thumbnail.jpg',
+					'description' => 'Berries'
+				),
+				'cherryblossom' => array(
+					'url' => '%s/../twentyten/images/headers/cherryblossoms.jpg',
+					'thumbnail_url' => '%s/../twentyten/images/headers/cherryblossoms-thumbnail.jpg',
+					'description' => 'Cherry Blossoms'
+				),
+				'concave' => array(
+					'url' => '%s/../twentyten/images/headers/concave.jpg',
+					'thumbnail_url' => '%s/../twentyten/images/headers/concave-thumbnail.jpg',
+					'description' => 'Concave'
+				),
+				'fern' => array(
+					'url' => '%s/../twentyten/images/headers/fern.jpg',
+					'thumbnail_url' => '%s/../twentyten/images/headers/fern-thumbnail.jpg',
+					'description' => 'Fern'
+				),
+				'forestfloor' => array(
+					'url' => '%s/../twentyten/images/headers/forestfloor.jpg',
+					'thumbnail_url' => '%s/../twentyten/images/headers/forestfloor-thumbnail.jpg',
+					'description' => 'Forest Floor'
+				),
+				'inkwell' => array(
+					'url' => '%s/../twentyten/images/headers/inkwell.jpg',
+					'thumbnail_url' => '%s/../twentyten/images/headers/inkwell-thumbnail.jpg',
+					'description' => 'Inkwell', 'oenology'
+				),
+				'path' => array(
+					'url' => '%s/../twentyten/images/headers/path.jpg',
+					'thumbnail_url' => '%s/../twentyten/images/headers/path-thumbnail.jpg',
+					'description' => 'Path'
+				),
+				'sunset' => array(
+					'url' => '%s/../twentyten/images/headers/sunset.jpg',
+					'thumbnail_url' => '%s/../twentyten/images/headers/sunset-thumbnail.jpg',
+					'description' => 'Sunset'
 				)
 			) );
 		}

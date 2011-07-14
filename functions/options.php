@@ -957,23 +957,23 @@ function oenology_enqueue_post_format_icon_style() {
 	foreach ( $postformats as $postformat ) {
 		$iconlocation = 'entry';
 		$iconposition = 'left';
-		if ( 'audio' == $postformat || 'chat' == $postformat || 'video' == $postformat ) {
+		if ( 'audio' == $postformat['slug'] || 'chat' == $postformat['slug'] || 'video' == $postformat['slug'] ) {
 			$iconlocation = 'title';
 		}
-		if ( 'audio' == $postformat || 'chat' == $postformat || 'gallery' == $postformat || 'image' == $postformat || 'video' == $postformat ) {
+		if ( 'audio' == $postformat['slug'] || 'chat' == $postformat['slug'] || 'gallery' == $postformat['slug'] || 'image' == $postformat['slug'] || 'video' == $postformat['slug'] ) {
 			$iconposition = 'right';
 		}
 		$bgposx = '0';
 		$bgposy = '0';
 		foreach ( $postformatbgposition as $bg ) {
-			if ( $postformat == $bg['name'] ) {
+			if ( $postformat['slug'] == $bg['name'] ) {
 				$bgposx = $bg[$iconcolor]['x'];
 				$bgposy = $bg[$iconcolor]['y'];
 			}
 		}
 	if ( 'entry' == $iconlocation ) {
 			?>
-.post.format-<?php echo $postformat; ?> .post-entry .post-format-icon-container {
+.post.format-<?php echo $postformat['slug']; ?> .post-entry .post-format-icon-container {
 	background: url('<?php echo get_template_directory_uri(); ?>/images/postformaticonsprite.png');
 	background-position: <?php echo $bgposx . 'px ' . $bgposy . 'px'; ?>;
 	float:<?php echo $iconposition; ?>;
@@ -987,7 +987,7 @@ function oenology_enqueue_post_format_icon_style() {
 <?php
 	} else if ( 'title' == $iconlocation ) {
 			?>
-.post.format-<?php echo $postformat; ?> .post-title .post-format-icon-container {
+.post.format-<?php echo $postformat['slug']; ?> .post-title .post-format-icon-container {
 	background: url('<?php echo get_template_directory_uri(); ?>/images/postformaticonsprite.png');
 	background-position: <?php echo $bgposx . 'px ' . $bgposy . 'px'; ?>;
 	float:<?php echo $iconposition; ?>;
@@ -997,7 +997,7 @@ function oenology_enqueue_post_format_icon_style() {
 			<?php 
 	}
 	if ( is_single() && ( 'gallery' == get_post_format() || 'image' == get_post_format() ) ) { ?>
-body.single-format-<?php echo get_post_format(); ?> .post.format-<?php echo get_post_format(); ?> .post-title .post-format-icon-container  {
+body.single-format-<?php echo $postformat['slug']; ?> .post.format-<?php echo get_post_format(); ?> .post-title .post-format-icon-container  {
 	background: url('<?php echo get_template_directory_uri(); ?>/images/postformaticonsprite.png');
 	background-position: <?php echo $bgposx . 'px ' . $bgposy . 'px'; ?>;
 	float:<?php echo $iconposition; ?>;
