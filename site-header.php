@@ -20,68 +20,91 @@
 <?php global $oenology_options; ?>
 
 <?php
-if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
-	// site-navigation.php contains the main navigation menu. 
-	get_template_part('site-navigation');  
+if ( 
+// site-navigation.php contains the main navigation menu. 
+'above' == $oenology_options['header_nav_menu_position'] 
+) {
+	/**
+	 * Include the specified Theme template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "site-navigation.php", or in a specific context only, via 
+	 * "site-navigation-{context}.php"
+	 */
+	get_template_part( 'site-navigation', oenology_get_context() );  
 }
 ?>
 <div id="site-header-text">
 
-	<?php oenology_hook_site_header_before(); ?>
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_site_header_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_site_header_before'
+	 */
+	oenology_hook_site_header_before(); 
+	?>
 
-	<?php oenology_hook_site_header(); ?>
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_site_header' custom filter hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_site_header'
+	 */
+	oenology_hook_site_header(); 
+	?>
 
-	<?php oenology_hook_site_header_after(); ?>
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_site_header_after' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_site_header_after'
+	 */
+	oenology_hook_site_header_after(); 
+	?>
 
 </div>
 <?php 
-if ( 'below' == $oenology_options['header_nav_menu_position'] ) { 
-	// site-navigation.php contains the main navigation menu.
+if ( 
+// site-navigation.php contains the main navigation menu.
+'below' == $oenology_options['header_nav_menu_position'] 
+) { 	
+	/**
+	 * Include the specified Theme template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "site-navigation.php", or in a specific context only, via 
+	 * "site-navigation-{context}.php"
+	 */
 	get_template_part('site-navigation');  
 } 
 ?>
-
-<?php /*
-Reference:
-=============================================================================
-The following functions, tags, and hooks are used (or referenced) in this Theme template file:
-
-***********************
-bloginfo()
-----------------------------------
-bloginfo() is a WordPress template tag.  
-Codex reference: http://codex.wordpress.org/Bloginfo
-
-bloginfo() can be used to print several useful WordPress-related parameters. For example:
-
-	description =  (blog description, as defined on the General Settings page in the administration panel)
-	name =  (blog name, as defined on the General Settings page in the administration panel)
-	
-For the full list of parameters returned by bloginfo(), see the Codex.
-
-bloginfo() prints (displays/outputs) the data requested. To get, but not display/output the data, use get_bloginfo() instead.
-
-***********************
-get_template_part()
-----------------------------------
-get_template_part() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_template_part
-
-get_template_part() is used to include a Theme template file within another. This function facilitates
-re-use of Theme template files, and also facilitates child Theme template files to take precedence
-over parent Theme template files.
-
-get_template_part( $file ) will attempt to include file.php. The function will attempt to 
-include files in the following order, until it finds one that exists:
- - the Theme's file.php
- - the parent theme's file.php
-
-get_template_part( $file , $foo ) will attempt to include file-foo.php. The function will
-attempt to include files in the following order, until it finds one that exists:
- - the Theme's file-foo.php
- - the Theme's file.php
- - the parent theme's file-foo.php
- - the parent theme-s file.php
-
-=============================================================================	
-*/ ?>

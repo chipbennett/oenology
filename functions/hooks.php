@@ -737,8 +737,13 @@ function oenology_hook_post_header_taxonomies() {
 function oenology_hook_post_header_title() {
 	$post_header_title = '';
 	
-	//link Post Headline (H1) to post permalink
-	$post_header_title = '<h1><a href="' . get_permalink() . '">' . get_the_title() . '</a></h1>';
+	if ( has_post_format( 'gallery' ) || has_post_format( 'image' ) ) {
+		// display post title, no link
+		$post_header_title = '<h1 class="gallery-title">' . get_the_title() . '</h1>';	
+	} else {	
+		// link Post Headline (H1) to post permalink
+		$post_header_title = '<h1><a href="' . get_permalink() . '">' . get_the_title() . '</a></h1>';	
+	}
 
 	echo apply_filters( 'oenology_hook_post_header_title', $post_header_title );
 }

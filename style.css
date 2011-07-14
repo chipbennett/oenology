@@ -1228,9 +1228,9 @@ body.page .post .post-title {
   margin-left:55px;
   margin-bottom: 5px;
 }
-body.page .post-title h1,
-body.error404 .post-title h1,
-body.attachment .post-title h1,
+.page .post-title h1,
+.error404 .post-title h1,
+.attachment .post-title h1,
 .post.format-audio .post-title h1,
 body.term-post-format-audio .post-title h1 ,
 .post.format-image .post-title h1,
@@ -1456,8 +1456,8 @@ body.term-post-format-image .post-entry {
 	min-height:170px;
 	margin-right: 20px;
 }
-#content .format-image h2.gallery-title,
-#content .format-gallery h2.gallery-title {
+#content .format-image .gallery-title,
+#content .format-gallery .gallery-title {
 	float:left;
 	display:block;
 	margin:0;

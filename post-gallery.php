@@ -14,7 +14,6 @@
  * @since 		Oenology 1.0
  */
 ?>
-
 <?php 
 if ( is_single() ) { 
 	?>
@@ -70,35 +69,33 @@ if ( is_single() ) {
 			<div class="gallery-thumb">
 				<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 			</div><!-- .gallery-thumb -->
-			<h2 class="gallery-title"><?php if ( get_the_title() ) {
-				the_title(); // set Post Headline (H1) to Post Title 
-			} else {
-				echo '<em>(Untitled)</em>'; // set Post headline (H1) to "(Untitled)" if no Post Title is defined
-			} ?></h2>
+			<?php 
+			// Fire the 'oenology_hook_post_header_title' custom action hook
+			// 
+			// @param	null
+			// @return	mixed	any output hooked into 'oenology_hook_post_header_title'
+			oenology_hook_post_header_title(); 
+			?>
 			<p class="gallery-description"><?php echo get_the_excerpt(); ?></p>
 			<ul class="gallery-meta">
 				<li>
-					<a href="<?php the_permalink(); // link to post permalink ?>" rel="bookmark" title="Permanent Link to <?php the_title(); // display Post Title in tooltip on hover ?>"> Photos: <?php echo $total_images; ?></a>
-					<?php if ( ! is_attachment() ) { // shortlink isn't generated for attachmets ?>
-						<strong>|</strong>
-						<?php the_shortlink( 'Shortlink' ); // link to post shortlink ?>
-					<?php } ?>
-					<strong>|</strong>
-					<a href="<?php comments_link(); ?>" target="_self" title="Comment on <?php the_title(); ?>">
-					Comments (<?php comments_number('0','1','%'); // Display total number of post comments ?>)
-					</a> 
-					<strong> | </strong>
-					<a href="<?php echo get_trackback_url(); // link to Trackback URL ?>" target="_self" title="Trackback to <?php the_title(); ?>">
-					Trackback
-					</a>
-					<?php if ( is_singular() ) { // only display a Print link on single posts, pages, and attachments ?>
-						<strong>|</strong> <a href="print" onclick="window.print();return false;">Print</a> 
-					<?php } ?>
-					<strong>|</strong>
-					<?php edit_post_link('Edit','',''); // Display "Edit" link for logged-in Admin users ?>
+					<?php 
+					// Fire the 'oenology_hook_post_header_metadata' custom action hook
+					// 
+					// @param	null
+					// @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
+					oenology_hook_post_header_metadata(); 
+					?>
 				</li>
-				<li>Filed in <?php the_category(', ');  // Display Post Categories ?></li>
-				<li><?php the_tags(); // Display Post Tags ?></li>
+				<li>
+					<?php 
+					// Fire the 'oenology_hook_post_header_taxonomies' custom action hook
+					// 
+					// @param	null
+					// @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'
+					oenology_hook_post_header_taxonomies(); 
+					?>
+				</li>
 			</ul>
 		<?php 
 		} else { 

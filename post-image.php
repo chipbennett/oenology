@@ -79,11 +79,13 @@ if ( is_single() ) {
 			<div class="gallery-thumb">
 				<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $thumboutput; ?></a>
 			</div><!-- .gallery-thumb -->
-			<h2 class="gallery-title"><?php if ( get_the_title() ) {
-				the_title(); // set Post Headline (H2) to Post Title 
-			} else {
-				echo '<em>(Untitled)</em>'; // set Post headline (H2) to "(Untitled)" if no Post Title is defined
-			} ?></h2>
+			<?php 
+			// Fire the 'oenology_hook_post_header_title' custom action hook
+			// 
+			// @param	null
+			// @return	mixed	any output hooked into 'oenology_hook_post_header_title'
+			oenology_hook_post_header_title(); 
+			?>
 			<p class="gallery-description"><?php echo $thumbcaption; ?></p>
 			<ul class="gallery-meta">	
 				<li>

@@ -29,7 +29,7 @@ if (
 		<li id="bottompostnav">
 		<?php 
 		/**
-		 * Fire the 'oenology_hook_loop_footer' custom action hook
+		 * Fire the 'oenology_hook_loop_footer' custom filter hook
 		 * 
 		 * @param	null
 		 * @return	mixed	any output hooked into 'oenology_hook_loop_footer'

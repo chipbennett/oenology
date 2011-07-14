@@ -101,5 +101,5 @@ get_sidebar( oenology_get_context() );
  * Child Themes can replace this template part file globally, via "footer.php",
  * or in a specific context only, via "footer-{context}.php"
  */
-get_footer( 'front-page' );  
+get_footer( '404' );  
 ?>
