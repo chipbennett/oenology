@@ -94,39 +94,39 @@ function oenology_get_post_formats() {
 	$postformats = array( 
 		'aside' => array(
 			'slug' => 'aside',
-			'description' => 'An incidental remark; digression: a message that departs from the main subject.'
+			'description' => __( 'An incidental remark; digression: a message that departs from the main subject.', 'oenology' )
 		), 
 		'audio' => array(
 			'slug' => 'audio',
-			'description' => 'A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction.'
+			'description' => __('A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction.', 'oenology' )
 		), 
 		'chat' => array(
 			'slug' => 'chat',
-			'description' => 'Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat.'
+			'description' => __('Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat.', 'oenology' )
 		), 
 		'gallery' => array(
 			'slug' => 'gallery',
-			'description' => 'A collection of art for exhibition.'
+			'description' => __('A collection of art for exhibition.', 'oenology' )
 		), 
 		'image' => array(
 			'slug' => 'image',
-			'description' => 'picture: A visual representation (of an object or scene or person or abstraction) produced on a surface.'
+			'description' => __('picture: A visual representation (of an object or scene or person or abstraction) produced on a surface.', 'oenology' )
 		), 
 		'link' => array(
 			'slug' => 'link',
-			'description' => 'A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document.'
+			'description' => __('A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document.', 'oenology' )
 		), 
 		'quote' => array(
 			'slug' => 'quote',
-			'description' => 'A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else.'
+			'description' => __('A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else.', 'oenology' )
 		), 
 		'status' => array(
 			'slug' => 'status',
-			'description' => 'state or condition of affairs'
+			'description' => __('state or condition of affairs', 'oenology' )
 		), 
 		'video'  => array(
 			'slug' => 'video',
-			'description' => 'A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.'
+			'description' => __('A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.', 'oenology' )
 		)
 	);
 	return $postformats;
@@ -242,12 +242,9 @@ function oenology_get_404_content() {
 	// Intro text
 	
 	$oenology_404_intro = '';
-	$oenology_404_intro .= '<p>Oh no, not again.</p>';
-	$oenology_404_intro .= '<p>Well, this is weird. The post, page, or file you requested could not be found. ';
-	$oenology_404_intro .= 'The best laid plans of mice, and all that. Those who study the complex interplay '; 
-	$oenology_404_intro .= 'of cause and effect in the history of the Universe say that this sort of thing is ';
-	$oenology_404_intro .= 'going on all the time.</p>';
-	$oenology_404_intro .= '<p>I apologize for the inconvenience. Let me try to make it up to you!</p>';
+	$oenology_404_intro .= '<p>' . __( 'Oh no, not again.', 'oenology' ) . '</p>';
+	$oenology_404_intro .= '<p>' . __( 'Well, this is weird. The post, page, or file you requested could not be found. The best laid plans of mice, and all that. Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time.', 'oenology' ) . '</p>';
+	$oenology_404_intro .= '<p>' . __( 'I apologize for the inconvenience. Let me try to make it up to you!', 'oenology' ) . '</p>';
 
 	// array to hold suggestions
 	if ( ! isset ( $oenology404suggestions ) ) {
@@ -286,7 +283,7 @@ function oenology_get_404_content() {
 		$suggestedposts = $oenology404postsuggestions;
 		if ( $suggestedposts > 0 ) {
 		
-			$oenology_404_posts .= '<p>Here is a list of posts that you might have been looking for:</p>';
+			$oenology_404_posts .= '<p>' . __( 'Here is a list of posts that you might have been looking for:', 'oenology' ) . '</p>';
 			$oenology_404_posts .= '<ul class="oenology404_suggestions">';
 			
 			foreach ( $suggestedposts as $suggestedpost ) {
@@ -302,7 +299,7 @@ function oenology_get_404_content() {
 				if ( $suggestedpost->post_excerpt ) {
 					$oenology_404_posts .= $suggestedpost->post_excerpt; 
 				} else {
-					$oenology_404_posts .= 'No excerpt available.';
+					$oenology_404_posts .= __( 'No excerpt available.', 'oenology' );
 				}
 						
 				$oenology_404_posts .= '</blockquote>';
@@ -317,7 +314,7 @@ function oenology_get_404_content() {
 		$suggestedpages = $oenology404pagesuggestions;
 		if ( $suggestedpages > 0 ) {
 			
-			$oenology_404_pages .= '<p>Here is a list of pages that you might have been looking for:</p>';
+			$oenology_404_pages .= '<p>' . __( 'Here is a list of pages that you might have been looking for:', 'oenology' ) . '</p>';
 			$oenology_404_pages .= '<ul class="oenology404_suggestions">';
 			
 			foreach ( $suggestedpages as $suggestedpage ) {
@@ -333,7 +330,7 @@ function oenology_get_404_content() {
 							if ( $suggestedpage->post_excerpt ) {
 								$oenology_404_pages .= $suggestedpage->post_excerpt; 
 							} else {
-								$oenology_404_pages .= 'No excerpt available.';
+								$oenology_404_pages .= __( 'No excerpt available.', 'oenology' );
 							}
 						
 				$oenology_404_pages .= '</blockquote>';
@@ -352,7 +349,7 @@ function oenology_get_404_content() {
 	
 		$oenology404nocategories = false;
 			
-		$oenology_404_category .= '<p>Perhaps you were looking for something in one of the following categories?</p>';
+		$oenology_404_category .= '<p>'. __( 'Perhaps you were looking for something in one of the following categories?', 'oenology' ) . '</p>';
 		$oenology_404_category .= '<ul class="oenology404_suggestions">';
 		foreach ( $categories as $category ) {
 			$oenology_404_category .= '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li>';
@@ -367,7 +364,7 @@ function oenology_get_404_content() {
 	
 		$oenology404notags = false;		
 		
-		$oenology_404_tag = '<p>Perhaps you were looking for something with one of the following tags?</p>';
+		$oenology_404_tag = '<p>' . __( 'Perhaps you were looking for something with one of the following tags?', 'oenology' ) . '</p>';
 		$oenology_404_tag = '<ul class="oenology404_suggestions">';
 		foreach ( $tags as $tag ) {
 			$oenology_404_tag = '<li><a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
@@ -376,7 +373,7 @@ function oenology_get_404_content() {
 	}
 
 	$oenology_404_results = '';
-	$oenology_404_noresults = '<p>I apologize. For the life of me, I can\'t figure out what you were trying to find. Perhaps try searching, using the search form in the upper right-hand corner?</p>';
+	$oenology_404_noresults = '<p>' . __( 'I apologize. For the life of me, I can\'t figure out what you were trying to find. Perhaps try searching, using the search form in the upper right-hand corner?', 'oenology' ) . '</p>';
 	$oenology_404_results = $oenology_404_intro . $oenology_404_posts . $oenology_404_pages . $oenology_404_category . $oenology_404_tag;
 	
 	$oenology404noresults = false;
@@ -451,29 +448,29 @@ function oenology_breadcrumb() {
       $thisCat = get_category($thisCat);
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) {
-		$hierarchy = ( $delimiter . 'Category Archive: ' . get_category_parents( $parentCat, TRUE, $delimiter ) );
+		$hierarchy = ( $delimiter . __( 'Category Archive: ', 'oenology' ) . get_category_parents( $parentCat, TRUE, $delimiter ) );
       } else {
-		$hierarchy = $delimiter . 'Category Archive: ';
+		$hierarchy = $delimiter . __( 'Category Archive: ', 'oenology' );
       }
 	  $currentLocation = single_cat_title( '' , FALSE ); // Set $currentLocation to the current category
  
     } elseif ( is_day() ) { // Define Year/Month Hierarchy Crumbs for Day Archive
-      $hierarchy = $delimiter . 'Posts Published in: <a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ' . '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
+      $hierarchy = $delimiter . __( 'Posts Published in: ', 'oenology' ) . '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ' . '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
       $currentLocation = get_the_time('d'); 
  
     } elseif ( is_month() ) { // Define Year Hierarchy Crumb for Month Archive
-      $hierarchy = $delimiter . 'Posts Published in: <a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
+      $hierarchy = $delimiter . __( 'Posts Published in: ', 'oenology' ) . '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       $currentLocation = get_the_time('F'); 
  
     } elseif ( is_year() ) { // Set CurrentLocation for Year Archive
-	  $hierarchy = $delimiter . 'Posts Published in: ';
+	  $hierarchy = $delimiter . __( 'Posts Published in: ', 'oenology' );
       $currentLocation = get_the_time('Y'); 
  
     } elseif ( is_single() && !is_attachment() ) { // Define Category Hierarchy Crumbs for Single Posts
       $cat = get_the_category(); 
 	  $cat = $cat[0];
 	  $hierarchy = $delimiter . get_category_parents( $cat, TRUE, $delimiter );
-	  $currentLocation = (  get_the_title()  ? get_the_title() : '(No Post Title)' );
+	  $currentLocation = (  get_the_title()  ? get_the_title() : __( '(No Post Title)', 'oenology' ) );
 	  
     } elseif ( is_attachment() ) { // Define Category and Parent Post Crumbs for Post Attachments
       $parent = get_post($post->post_parent);
@@ -484,11 +481,11 @@ function oenology_breadcrumb() {
 		$cat_parents = get_category_parents( $cat, TRUE, $delimiter );
 	  }
 	  $hierarchy = $delimiter . $cat_parents . '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter;
-	  $currentLocation = (  get_the_title()  ? get_the_title() : '(No Attachment Title)' ); 
+	  $currentLocation = (  get_the_title()  ? get_the_title() : __( '(No Attachment Title)', 'oenology' ) ); 
  
     } elseif ( ! is_front_page() && is_page() && ! $post->post_parent ) { // Define Current Location for Parent Pages
 	  $hierarchy = $delimiter;
-	  $currentLocation = (  get_the_title()  ? get_the_title() : '(No Page Title)' );
+	  $currentLocation = (  get_the_title()  ? get_the_title() : __( '(No Page Title)', 'oenology' ) );
 	  
     } elseif ( ! is_front_page() && is_page() && $post->post_parent ) { // Define Parent Page Hierarchy Crumbs for Child Pages
       $parent_id  = $post->post_parent;
@@ -503,26 +500,26 @@ function oenology_breadcrumb() {
 		$hierarchy = $hierarchy . $delimiter . $crumb;
 	  }
 	  $hierarchy = $hierarchy . $delimiter;
-	  $currentLocation = (  get_the_title()  ? get_the_title() : '(No Page Title)' ); 
+	  $currentLocation = (  get_the_title()  ? get_the_title() : __( '(No Page Title)', 'oenology' ) ); 
  
     } elseif ( is_search() ) { // Define current location for Search Results page
-      $hierarchy = $delimiter . 'Search Results: ';
+      $hierarchy = $delimiter . __('Search Results: ', 'oenology' );
 	  $currentLocation = get_search_query();
 	  
     } elseif ( is_tag() ) {	  // Define current location for Tag Archives
-      $hierarchy = $delimiter . 'Tag Archive: ';
+      $hierarchy = $delimiter . __( 'Tag Archive: ', 'oenology' );
       $currentLocation = single_tag_title( '' , FALSE ); 
  
     } elseif ( is_author() ) { // Define current location for Author Archives
-      $hierarchy = $delimiter . 'Posts Written by: ';
+      $hierarchy = $delimiter . __( 'Posts Written by: ', 'oenology' );
 	  $currentLocation = get_the_author_meta( 'display_name', get_query_var( 'author' ) );
  
     } elseif ( is_404() ) { // Define current location for 404 Error page
-      $hierarchy = $delimiter . 'Error 404: ';
-      $currentLocation = 'Page Not Found';
+      $hierarchy = $delimiter . __( 'Error 404: ', 'oenology' );
+      $currentLocation = __( 'Page Not Found', 'oenology' );
 	  
     } elseif ( get_post_format() && ! is_home() ) { // Define current location for Post Format Archives
-		$hierarchy = $delimiter . 'Post Format Archive: ';
+		$hierarchy = $delimiter . __( 'Post Format Archive: ', 'oenology' );
 		$currentLocation = get_post_format_string( get_post_format() ) . 's';
 	}
 

@@ -49,23 +49,23 @@ function oenology_get_default_options() {
     $options = array(
         'header_nav_menu_position' => array(
 			'name' => 'header_nav_menu_position',
-			'title' => 'Header Nav Menu Position',
+			'title' => __( 'Header Nav Menu Position', 'oenology' ),
 			'type' => 'select',
 			'valid_options' => array(
 				'above' => array(
 					'name' => 'above',
-					'title' => 'Above'
+					'title' => __( 'Above', 'oenology' )
 				),
 				'below' => array(
 					'name' => 'below',
-					'title' => 'Below'
+					'title' => __( 'Below', 'oenology' )
 				),
 				'none' => array(
 					'name' => 'none',
-					'title' => 'Do Not Display'
+					'title' => __( 'Do Not Display', 'oenology' )
 				)
 			),
-			'description' => 'Display header navigation menu above or below the site title/description?',
+			'description' => __( 'Display header navigation menu above or below the site title/description?', 'oenology' ),
 			'section' => 'header',
 			'tab' => 'general',
 			'since' => '1.1',
@@ -73,23 +73,23 @@ function oenology_get_default_options() {
 		),
 		'header_nav_menu_depth' => array(
 			'name' => 'header_nav_menu_depth',
-			'title' => 'Header Nav Menu Depth',
+			'title' => __( 'Header Nav Menu Depth', 'oenology' ),
 			'type' => 'select',
 			'valid_options' => array(
 				'1' => array(
 					'name' => 1,
-					'title' => 'One'
+					'title' => __( 'One', 'oenology' )
 				),
 				'2' => array(
 					'name' => 2,
-					'title' => 'Two'
+					'title' => __( 'Two', 'oenology' )
 				),
 				'3' => array(
 					'name' => 3,
-					'title' => 'Three'
+					'title' => __( 'Three', 'oenology' )
 				)
 			),
-			'description' => 'How many levels of Page hierarchy should the Header Navigation Menu display?',
+			'description' => __( 'How many levels of Page hierarchy should the Header Navigation Menu display?', 'oenology' ),
 			'section' => 'header',
 			'tab' => 'general',
 			'since' => '1.1',
@@ -97,19 +97,19 @@ function oenology_get_default_options() {
 		),
         'header_nav_menu_item_width' => array(
 			'name' => 'header_nav_menu_item_width',
-			'title' => 'Header Nav Menu Item Width',
+			'title' => __( 'Header Nav Menu Item Width', 'oenology' ),
 			'type' => 'select',
 			'valid_options' => array(
 				'fixed' => array(
 					'name' => 'fixed',
-					'title' => 'Fixed'
+					'title' => __( 'Fixed', 'oenology' )
 				),
 				'fluid' => array(
 					'name' => 'fluid',
-					'title' => 'Fluid'
+					'title' => __( 'Fluid', 'oenology' )
 				)
 			),
-			'description' => 'Should Header Nav Menu items have a fixed or fluid width?',
+			'description' => __( 'Should Header Nav Menu items have a fixed or fluid width?', 'oenology' ),
 			'section' => 'header',
 			'tab' => 'general',
 			'since' => '2.1',
@@ -117,19 +117,19 @@ function oenology_get_default_options() {
 		),
         'display_footer_credit' => array(
 			'name' => 'display_footer_credit',
-			'title' => 'Display Footer Credit',
+			'title' => __( 'Display Footer Credit', 'oenology' ),
 			'type' => 'select',
 			'valid_options' => array(
 				'false' => array(
 					'name' => 'false',
-					'title' => 'Do Not Display'
+					'title' => __( 'Do Not Display', 'oenology' )
 				),
 				'true' => array(
 					'name' => 'true',
-					'title' => 'Display'
+					'title' => __( 'Display', 'oenology' )
 				)
 			),
-			'description' => 'Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it.',
+			'description' => __( 'Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it.', 'oenology' ),
 			'section' => 'footer',
 			'tab' => 'general',
 			'since' => '1.1',
@@ -137,43 +137,43 @@ function oenology_get_default_options() {
 		),
 		'varietal' => array(
 			'name' => 'varietal',
-			'title' => 'Varietal',
+			'title' => __( 'Varietal', 'oenology' ),
 			'type' => 'custom',
 			'valid_options' => array(
 				'cuvee' => array(
 				  'name' => 'cuvee',
-				  'title' => 'Cuvee',
-				  'description' => 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming.',
+				  'title' => __( 'Cuvee', 'oenology' ),
+				  'description' => __( 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming.', 'oenology' ),
 				  'scheme' => 'light'
 				  ),
 				'chardonnay' => array(
 				  'name' => 'chardonnay',
-				  'title' => 'Chardonnay',
-				  'description' => 'Chardonnay is the ubiquitous white wine, produced from a versatile white grape.',
+				  'title' => __( 'Chardonnay', 'oenology' ),
+				  'description' => __( 'Chardonnay is the ubiquitous white wine, produced from a versatile white grape.', 'oenology' ),
 				  'scheme' => 'light'
 				  ),
 				'seyval-blanc' => array(
 				  'name' => 'seyval-blanc',
-				  'title' => 'Seyval Blanc',
-				  'description' => 'Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral.',
+				  'title' => __( 'Seyval Blanc', 'oenology' ),
+				  'description' => __( 'Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral.', 'oenology' ),
 				  'scheme' => 'light'
 				  ),
 				'muscat' => array(
 				  'name' => 'muscat',
-				  'title' => 'Muscat',
-				  'description' => 'Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet.',
+				  'title' => __( 'Muscat', 'oenology' ),
+				  'description' => __( 'Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet.', 'oenology' ),
 				  'scheme' => 'light'
 				  ),
 				'syrah' => array(
 				  'name' => 'syrah',
-				  'title' => 'Syrah',
-				  'description' => 'Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma.',
+				  'title' => __( 'Syrah', 'oenology' ),
+				  'description' => __( 'Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma.', 'oenology' ),
 				  'scheme' => 'dark'
 				  ),
 				'malbec' => array(
 				  'name' => 'malbec',
-				  'title' => 'Malbec',
-				  'description' => 'Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors.',
+				  'title' => __( 'Malbec', 'oenology' ),
+				  'description' => __( 'Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors.', 'oenology' ),
 				  'scheme' => 'dark'
 				  )
 			),
@@ -185,9 +185,9 @@ function oenology_get_default_options() {
 		),
 		'display_social_icons' => array(
 			'name' => 'display_social_icons',
-			'title' => 'Display Social Icons',
+			'title' => __( 'Display Social Icons', 'oenology' ),
 			'type' => 'checkbox',
-			'description' => 'Display social icons in sidebar',
+			'description' => __( 'Display social icons in sidebar', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
@@ -195,12 +195,12 @@ function oenology_get_default_options() {
 		),
 		'rss_feed' => array(
 			'name' => 'rss_feed',
-			'title' => 'RSS Feed',
+			'title' => __( 'RSS Feed', 'oenology' ),
 			'type' => 'select',
 			'valid_options' => array( 
 				'none' => array(
 					'name' => 'none',
-					'title' => 'Do Not Display'
+					'title' => __( 'Do Not Display', 'oenology' )
 				),
 				'rdf' => array(
 					'name' => 'rdf',
@@ -219,7 +219,7 @@ function oenology_get_default_options() {
 					'title' => 'Atom'
 				)
 			),
-			'description' => 'RSS Feed',
+			'description' => __( 'RSS Feed', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
@@ -227,10 +227,10 @@ function oenology_get_default_options() {
 		),
 		'facebook_profile' => array(
 			'name' => 'facebook_profile',
-			'title' => 'Facebook Profile',
+			'title' => __( 'Facebook Profile', 'oenology' ),
 			'type' => 'text',
 			'sanitize' => 'nohtml',
-			'description' => 'Facebook Username',
+			'description' => __( 'Facebook Username', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
@@ -238,10 +238,10 @@ function oenology_get_default_options() {
 		),
 		'flickr_profile' => array(
 			'name' => 'flickr_profile',
-			'title' => 'Flickr Profile',
+			'title' => __( 'Flickr Profile', 'oenology' ),
 			'type' => 'text',
 			'sanitize' => 'nohtml',
-			'description' => 'Flickr Username',
+			'description' => __( 'Flickr Username', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
@@ -249,10 +249,10 @@ function oenology_get_default_options() {
 		),
 		'linkedin_profile' => array(
 			'name' => 'linkedin_profile',
-			'title' => 'Linked-In Profile',
+			'title' => __( 'Linked-In Profile', 'oenology' ),
 			'type' => 'text',
 			'sanitize' => 'nohtml',
-			'description' => 'Linked-In Username',
+			'description' => __( 'Linked-In Username', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
@@ -260,10 +260,10 @@ function oenology_get_default_options() {
 		),
 		'myspace_profile' => array(
 			'name' => 'myspace_profile',
-			'title' => 'MySpace Profile',
+			'title' => __( 'MySpace Profile', 'oenology' ),
 			'type' => 'text',
 			'sanitize' => 'nohtml',
-			'description' => 'MySpace Username',
+			'description' => __( 'MySpace Username', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
@@ -271,10 +271,10 @@ function oenology_get_default_options() {
 		),
 		'twitter_profile' => array(
 			'name' => 'twitter_profile',
-			'title' => 'Twitter Profile',
+			'title' => __( 'Twitter Profile', 'oenology' ),
 			'type' => 'text',
 			'sanitize' => 'nohtml',
-			'description' => 'Twitter Username',
+			'description' => __( 'Twitter Username', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
@@ -282,10 +282,10 @@ function oenology_get_default_options() {
 		),
 		'youtube_profile' => array(
 			'name' => 'youtube_profile',
-			'title' => 'YouTube Profile',
+			'title' => __( 'YouTube Profile', 'oenology' ),
 			'type' => 'text',
 			'sanitize' => 'nohtml',
-			'description' => 'YouTube Username',
+			'description' => __( 'YouTube Username', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
@@ -338,32 +338,32 @@ function oenology_get_social_networks() {
 	$socialnetworks = array( 
         'youtube' => array(
         	'name' => 'youtube',
-        	'title' => 'YouTube',
+        	'title' => __( 'YouTube', 'oenology' ),
         	'baseurl' => 'http://www.youtube.com'
         ),
         'myspace' => array(
         	'name' => 'myspace',
-        	'title' => 'MySpace',
+        	'title' => __( 'MySpace', 'oenology' ),
         	'baseurl' => 'http://www.myspace.com'
         ),
         'linkedin' => array(
         	'name' => 'linkedin',
-        	'title' => 'Linked-In',
+        	'title' => __( 'Linked-In', 'oenology' ),
         	'baseurl' => 'http://www.linkedin.com/in'
         ),
         'flickr' => array(
         	'name' => 'flickr',
-        	'title' => 'Flickr',
+        	'title' => __( 'Flickr', 'oenology' ),
         	'baseurl' => 'http://www.flickr.com/photos'
         ),
         'facebook' => array(
         	'name' => 'facebook',
-        	'title' => 'Facebook',
+        	'title' => __( 'Facebook', 'oenology' ),
         	'baseurl' => 'http://www.facebook.com'
         ),
         'twitter' => array(
         	'name' => 'twitter',
-        	'title' => 'Twitter',
+        	'title' => __( 'Twitter', 'oenology' ),
         	'baseurl' => 'http://www.twitter.com'
         )
     );
@@ -384,32 +384,32 @@ function oenology_get_settings_page_tabs() {
 	$tabs = array( 
         'general' => array(
 			'name' => 'general',
-			'title' => 'General',
+			'title' => __( 'General', 'oenology' ),
 			'sections' => array(
 				'header' => array(
 					'name' => 'header',
-					'title' => 'Header Options',
-					'description' => 'Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.'
+					'title' => __( 'Header Options', 'oenology' ),
+					'description' => __( 'Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
 				),
 				'social' => array(
 					'name' => 'social',
-					'title' => 'Social Network Profile Options',
-					'description' => 'Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.'
+					'title' => __( 'Social Network Profile Options', 'oenology' ),
+					'description' => __( 'Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
 				),
 				'footer' => array(
 					'name' => 'footer',
-					'title' => 'Footer Options',
-					'description' => 'Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.'
+					'title' => __( 'Footer Options', 'oenology' ),
+					'description' => __( 'Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
 				)
 			)
 		),
         'varietals' => array(
 			'name' => 'varietals',
-			'title' => 'Varietals',
+			'title' => __( 'Varietals', 'oenology' ),
 			'sections' => array(
 				'varietal' => array(
 					'name' => 'varietal',
-					'title' => 'Varietal Options',
+					'title' => __( 'Varietal Options', 'oenology' ),
 					'description' => oenology_get_varietal_text()
 				)
 			)
@@ -427,10 +427,10 @@ function oenology_get_settings_page_tabs() {
 function oenology_get_icon_colors() {
 	
 	$iconcolors = array( 
-        'black' => 'Black',
-        'silver' => 'Silver',
-        'gray' => 'Gray',
-        'coffee' => 'Coffee'
+        'black' => __( 'Black', 'oenology' ),
+        'silver' => __( 'Silver', 'oenology' ),
+        'gray' => __( 'Gray', 'oenology' ),
+        'coffee' => __( 'Coffee', 'oenology' )
     );
 	return $iconcolors;
 }
@@ -1170,7 +1170,7 @@ function oenology_admin_options_page() {
 	<div class="wrap">
 		<?php oenology_admin_options_page_tabs(); ?>
 		<?php if ( isset( $_GET['settings-updated'] ) ) {
-    			echo "<div class='updated'><p>Theme settings updated successfully.</p></div>";
+    			echo "<div class='updated'><p>' . __( 'Theme settings updated successfully.', 'oenology' ) . '</p></div>";
 		} ?>
 		<form action="options.php" method="post">
 		<?php 

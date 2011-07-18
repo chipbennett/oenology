@@ -54,6 +54,25 @@ if ( ! function_exists( 'oenology_setup' ) ):
 	 * @uses	register_nav_menus()
 	 */
 	function oenology_setup() {
+		
+		/*
+		 * Enable translation
+		 * 
+		 * Declare Theme textdomain and define
+		 * location for translation files.
+		 * 
+		 * Translations can be added to the /languages
+		 * directory.
+		 *
+		 * @since	Oenology 2.2
+		 */
+		load_theme_textdomain( 'oenology', get_template_directory() . '/languages' );
+		
+		$locale = get_locale();
+		$locale_file = get_template_directory() . "/languages/$locale.php";
+		if ( is_readable( $locale_file ) ) {
+			require_once( $locale_file );
+		}
 
 		/*
 		 * Add Theme support for Automatic Feed Links

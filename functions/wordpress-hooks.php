@@ -88,7 +88,7 @@ add_filter( 'wp_title', 'oenology_filter_wp_title', 10, 2 );
  */
 function oenology_untitled_post( $title ) {
 	if ( '' == $title ) {
-		return '<em>(Untitled)</em>';
+		return '<em>(' . __( 'Untitled', 'oenology' ) . ')</em>';
 	} else {
 		return $title;
 	}

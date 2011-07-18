@@ -415,7 +415,7 @@ function oenology_hook_loop_header() {
 				$catdescription = ( ( is_category() && category_description() ) ? category_description() : false );
 				$tagdescription = ( ( is_tag() && tag_description() ) ? tag_description() : false );
 				$taxdesc = ( is_category() ? $catdescription : $tagdescription );
-				$taxdescdefault = 'Posts filed under ' . $taxtitle;
+				$taxdescdefault = __( 'Posts filed under ', 'oenology' ) . $taxtitle;
 				$taxdescription = ( $taxdesc ? $taxdesc : $taxdescdefault );
 			}
 			// If this is a Post Format archive
@@ -449,7 +449,7 @@ function oenology_hook_loop_header() {
 	elseif ( is_search() ) {
 		$loop_header .= '<h2 class="pagetitle">Results for "' . get_search_query() . '" Search</h2>';
 		$loop_header .= '<div class="cat-description">';
-		$loop_header .= '<strong>Search:</strong><em>to inquire, investigate, examine, or seek; conduct an examination or investigation.</em>Below are all posts and pages related to the indicated search query.';
+		$loop_header .= '<strong>' . __( 'Search', 'oenology' ) . ':</strong><em>' . __( 'to inquire, investigate, examine, or seek; conduct an examination or investigation.', 'oenology' ) . '</em>' . __( 'Below are all posts and pages related to the indicated search query.', 'oenology' );
 		$loop_header .= '</div>';
 	}
 	echo apply_filters( 'oenology_hook_loop_header', $loop_header );
@@ -468,8 +468,8 @@ function oenology_hook_loop_header() {
  */
 function oenology_hook_loop_no_posts() {	
 	$loop_no_posts = '';
-	$loop_no_posts .= '<h2 class="center">Not Found</h2>';
-	$loop_no_posts .= '<p class="center">Sorry, but you are looking for something that isn\'t here.</p>';
+	$loop_no_posts .= '<h2 class="center">' . __( 'Not Found', 'oenology' ) . '</h2>';
+	$loop_no_posts .= '<p class="center">' . __( 'Sorry, but you are looking for something that isn\'t here.', 'oenology' ) . '</p>';
 	echo apply_filters( 'oenology_hook_loop_no_posts', $loop_no_posts );
 }
 
@@ -592,7 +592,7 @@ function oenology_hook_post_footer_metadata() {
 			$post_footer_metadata .= ' (' . get_comments_number() . ') '; 
 			if ( is_user_logged_in() ) {
 				// Display "Edit" link for logged-in Admin users
-				$post_footer_metadata .= '<a href="' . get_edit_post_link() . '">Edit</a>'; 
+				$post_footer_metadata .= '<a href="' . get_edit_post_link() . '">' . __( 'Edit', 'oenology' ) . '</a>'; 
 			}
 		} else {
 			$post_footer_metadata .= get_the_date( get_option( 'date_format' ) ) . ' at ' . get_the_time( get_option( 'time_format' ) );
@@ -671,7 +671,7 @@ function oenology_hook_post_header_metadata() {
 	
 	// Post Permalink
 	$permalink .= '<span id="post-' . get_the_ID() . '">';
-	$permalink .= '<a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to ' . get_the_title() . '">Permalink</a>';
+	$permalink .= '<a href="' . get_permalink() . '" rel="bookmark" title="' . __( 'Permanent Link to ', 'oenology' ) . get_the_title() . '">' . __( 'Permalink', 'oenology' ) . '</a>';
 	$permalink .= '</span>';
 	
 	// Post Metadata Links
@@ -680,16 +680,16 @@ function oenology_hook_post_header_metadata() {
 		if ( ! is_attachment() ) {
 			// Shortlink
 			$shortlink .= ' <strong>|</strong> ';
-			$shortlink .= '<span id="post-' . get_the_ID() . '-shortlink"><a href="' . wp_get_shortlink() . '">Shortlink</a></span>';
+			$shortlink .= '<span id="post-' . get_the_ID() . '-shortlink"><a href="' . wp_get_shortlink() . '">' . __( 'Shortlink', 'oenology' ) . '</a></span>';
 		}
 		// Comments Link
 		$commentslink .= ' <strong>|</strong> ';
-		$commentslink .= '<a href="'. get_comments_link() . '" target="_self" title="Comment on ' . get_the_title() . '">';
-		$commentslink .= 'Comments (' . get_comments_number() . ')';
+		$commentslink .= '<a href="'. get_comments_link() . '" target="_self" title="' . __( 'Comment on ', 'oenology' ) . get_the_title() . '">';
+		$commentslink .= __( 'Comments', 'oenology' ) . ' (' . get_comments_number() . ')';
 		$commentslink .= '</a> ';
 		// Trackback
 		$trackbacklink .= ' <strong>|</strong> ';
-		$trackbacklink .= '<a href="' . get_trackback_url() . '" target="_self" title="Trackback to ' . get_the_title() . '">Trackback</a>';	
+		$trackbacklink .= '<a href="' . get_trackback_url() . '" target="_self" title="Trackback to ' . get_the_title() . '">' . __( 'Trackback', 'oenology' ) . '</a>';	
 	}
 	if ( is_singular() ) { // only display a Print link on single posts, pages, and attachments
 		// Print Link
@@ -698,7 +698,7 @@ function oenology_hook_post_header_metadata() {
 	if ( is_user_logged_in() ) {
 		// Edit Post Link
 		$editlink .= ' <strong>|</strong> ';
-		$editlink .= '<a href="' . get_edit_post_link() . '">Edit</a>'; // Display "Edit" link for logged-in Admin users
+		$editlink .= '<a href="' . get_edit_post_link() . '">' . __( 'Edit', 'oenology' ) . '</a>'; // Display "Edit" link for logged-in Admin users
 	}	
 	$post_header_metadata = '<span class="post-title-metadata">' . $permalink . $shortlink . $commentslink . $trackbacklink . $printlink . $editlink . '</span>';
 	
@@ -837,7 +837,7 @@ function oenology_hook_site_footer() {
 		$site_footer['copyright'] .= '&copy; ' . date('Y');
 	}
 	
-	$site_footer['wordpress'] = 'Powered by <a href="http://wordpress.org" target="_new">WordPress ' . get_bloginfo('version') . '<img src="' . get_template_directory_uri() . '/images/iconsweets2/original/wordpress16.png" width="18px" height="17px" alt="WordPress" style="vertical-align:middle;" /></a>';
+	$site_footer['wordpress'] = __( 'Powered by', 'oenology' ) . ' <a href="http://wordpress.org" target="_new">WordPress ' . get_bloginfo('version') . '<img src="' . get_template_directory_uri() . '/images/iconsweets2/original/wordpress16.png" width="18px" height="17px" alt="WordPress" style="vertical-align:middle;" /></a>';
 	
 	global $oenology_options;
 	if ( 'true' == $oenology_options['display_footer_credit'] ) { 

@@ -29,12 +29,12 @@ global $oenology_admin_reference_hook;
 function oenology_get_reference_page_tabs() {
 	
 	$tabs = array( 
-        'general' => 'General',
-        'faq' => 'FAQ',
-        'coderef' => 'Code Reference',
-		'changelog' => 'Changelog',
-		'license' => 'License',
-		'support' => 'Support'
+        'general' => __( 'General', 'oenology' ),
+        'faq' => __( 'FAQ', 'oenology' ),
+        'coderef' => __( 'Code Reference', 'oenology' ),
+		'changelog' => __( 'Changelog', 'oenology' ),
+		'license' => __( 'License', 'oenology' ),
+		'support' => __( 'Support', 'oenology' )
     );
 	return $tabs;
 }
@@ -47,7 +47,7 @@ function oenology_get_reference_page_tabs() {
 // Add "Oenology Reference" link to the "Appearance" menu
 function oenology_menu_reference() {
 	global $oenology_admin_reference_hook;
-	$oenology_admin_reference_hook = add_theme_page('Oenology Reference', 'Oenology Reference', 'edit_theme_options', 'oenology-reference', 'oenology_admin_reference_page');
+	$oenology_admin_reference_hook = add_theme_page( __( 'Oenology Reference', 'oenology' ), __( 'Oenology Reference', 'oenology' ), 'edit_theme_options', 'oenology-reference', 'oenology_admin_reference_page');
 }
 // Load the Admin Reference page
 add_action('admin_menu', 'oenology_menu_reference');
