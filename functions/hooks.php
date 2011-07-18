@@ -456,6 +456,24 @@ function oenology_hook_loop_header() {
 }
 
 /**
+ * Hook to filter content displayed in the Loop if no Posts are found
+ * 
+ * This hook can be used to filter to content that is 
+ * output in the div#post container when have_posts()
+ * returns false.
+ * 
+ * Template file: loop.php 
+ * 
+ * @since Oenology 2.2
+ */
+function oenology_hook_loop_no_posts() {	
+	$loop_no_posts = '';
+	$loop_no_posts .= '<h2 class="center">Not Found</h2>';
+	$loop_no_posts .= '<p class="center">Sorry, but you are looking for something that isn\'t here.</p>';
+	echo apply_filters( 'oenology_hook_loop_no_posts', $loop_no_posts );
+}
+
+/**
  * Hook to filter content displayed on Error 404 pages
  * 
  * This hook can be used to filter to content that is 

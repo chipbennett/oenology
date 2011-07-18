@@ -222,13 +222,12 @@ have_posts()
 }
 // Else, if there are no Posts
 else {
-	?>
-
-	<h2 class="center">Not Found</h2>
-
-	<p class="center">Sorry, but you are looking for something that isn't here.</p>
-
-	<?php 
+	/**
+	 * Fire the 'oenology_hook_loop_no_posts' hook
+	 *
+	 * @return	mixed	any content hooked into 'oenology_hook_loop_no_posts'
+	 */
+	oenology_hook_loop_no_posts(); 
 } 
 // endif have_posts()
 ?>
