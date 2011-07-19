@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oenology\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-19 08:29-0600\n"
-"PO-Revision-Date: 2011-07-19 08:30-0600\n"
+"POT-Creation-Date: 2011-07-19 09:31-0600\n"
+"PO-Revision-Date: 2011-07-19 09:31-0600\n"
 "Last-Translator: Chip Bennett <chip@chipbennett.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -804,59 +804,73 @@ msgstr "Sorry, but you are looking for something that isn't here."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:595
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:701
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:592
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:694
 msgid "Edit"
 msgstr "Edit"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:674
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:666
 #, php-format
 msgid "Permanent Link to %s"
 msgstr "Permanent Link to %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:674
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:666
 msgid "Permalink"
 msgstr "Permalink"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:683
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:675
 msgid "Shortlink"
 msgstr "Shortlink"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:687
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:679
 #, php-format
 msgid "Comment on %s"
 msgstr "Comment on %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:688
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:680
 msgid "Comments"
 msgstr "Comments"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:692
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:684
 #, php-format
 msgid "Trackback to %s"
 msgstr "Trackback to %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:692
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:684
 msgid "Trackback"
 msgstr "Trackback"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:840
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:723
+#, php-format
+msgid "Filed in %s"
+msgstr "Filed in %s"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:728
+#, php-format
+msgid "Tags: %s"
+msgstr "Tags: %s"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:831
 #, php-format
 msgid "Powered by %s"
 msgstr "Powered by %s"

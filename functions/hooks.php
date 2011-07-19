@@ -509,16 +509,14 @@ function oenology_hook_post_404() {
  * @since Oenology 2.0
  */
 function oenology_hook_post_footer_avatar() {	
-	$post_footer_avatar = '';
 	// don't display the author's avatar on Pages
 	global $post;
 	if ( ! is_page() && 'page' != $post->post_type ) { 
-		$post_footer_avatar .= '<span class="post-footer-gravatar">';
 		// display a 20px avatar, to fit inside the post footer
-		$post_footer_avatar .= get_avatar( get_the_author_meta('email'), $size = '20' ); 
-		$post_footer_avatar .= '</span>';
+		$avatar = get_avatar( get_the_author_meta( 'email' ), $size = '20' );
+		$post_footer_avatar = apply_filters( 'oenology_hook_post_footer_avatar', $avatar ); 
+		echo '<span class="post-footer-gravatar">' . $post_footer_avatar . '</span>';
 	}
-	echo apply_filters( 'oenology_hook_post_footer_avatar', $post_footer_avatar );
 }
 
 /**
@@ -577,31 +575,29 @@ function oenology_hook_post_footer_license() {
  */
 function oenology_hook_post_footer_metadata() {
 
-	$post_footer_metadata = '';
-	$post_footer_metadata .= '<span class="post-footer-meta">';
+	$post_footer_metadata = array();
 	global $post;
 	if ( ! is_page() && 'page' != $post->post_type ) {
-		$cbnet_post_format_type = ( get_post_format() ? '<a href="' . get_post_format_link( get_post_format() ) . '">' . get_post_format_string( get_post_format() ) . '</a>' : 'Posted' );
+		$oenology_post_format_string = ( get_post_format() ? '<a href="' . get_post_format_link( get_post_format() ) . '">' . get_post_format_string( get_post_format() ) . '</a>' : 'Posted' );
 	
-		$post_footer_metadata .= $cbnet_post_format_type;
-		$post_footer_metadata .= ' by ' . get_the_author() . ' ';
+		$post_footer_metadata['post-format-string'] = $oenology_post_format_string;
+		$post_footer_metadata['post-format-string'] .= ' by ' . get_the_author() . ' ';
 	
 		if ( has_post_format( 'aside' ) || has_post_format( 'link' ) || has_post_format( 'quote' ) || has_post_format( 'status' ) ) {
-			$post_footer_metadata .= '<a href="' . get_permalink() . '">' . get_the_date( get_option( 'date_format' ) ) . ' at ' . get_the_time( get_option( 'time_format' ) ) . '</a>';
+			$post_footer_metadata['permalink'] = '<a href="' . get_permalink() . '">' . get_the_date( get_option( 'date_format' ) ) . ' at ' . get_the_time( get_option( 'time_format' ) ) . '</a>';
 			// Display total number of post comments 
-			$post_footer_metadata .= ' (' . get_comments_number() . ') '; 
+			$post_footer_metadata['comments'] = ' (' . get_comments_number() . ') '; 
 			if ( is_user_logged_in() ) {
 				// Display "Edit" link for logged-in Admin users
-				$post_footer_metadata .= '<a href="' . get_edit_post_link() . '">' . __( 'Edit', 'oenology' ) . '</a>'; 
+				$post_footer_metadata['editlink'] = '<a href="' . get_edit_post_link() . '">' . __( 'Edit', 'oenology' ) . '</a>'; 
 			}
 		} else {
-			$post_footer_metadata .= get_the_date( get_option( 'date_format' ) ) . ' at ' . get_the_time( get_option( 'time_format' ) );
+			$post_footer_metadata['timestamp'] = get_the_date( get_option( 'date_format' ) ) . ' at ' . get_the_time( get_option( 'time_format' ) );
 		}
 	} else {
-		$post_footer_metadata .= '&copy; ' . get_bloginfo( 'name' );
+		$post_footer_metadata['copyright'] = '&copy; ' . get_bloginfo( 'name' );
 	}
-	$post_footer_metadata .= '</span>';
-	echo apply_filters( 'oenology_hook_post_footer_metadata', $post_footer_metadata );
+	echo '<span class="post-footer-meta">' . implode( '', apply_filters( 'oenology_hook_post_footer_metadata', $post_footer_metadata ) ) . '</span>';
 }
 
 /**
@@ -609,7 +605,7 @@ function oenology_hook_post_footer_metadata() {
  * 
  * This hook can be used to filter to content that is output in the div#postmetadata container.
  * 
- * Template file: post-footer.php
+ * Template file: post-header.php
  * 
  * @uses apply_filters()
  * @uses get_the_time()
@@ -619,22 +615,24 @@ function oenology_hook_post_footer_metadata() {
  * @since Oenology 2.0
  */
 function oenology_hook_post_header_date() {	
-	$post_header_date = '';
 	global $post;
 	// don't display timestamp on Pages
 	if ( ! is_page() && ! is_attachment() && 'page' != $post->post_type ) {
-		$post_header_date .= '<span class="post-date">';
+		$post_header_date = array();
 		// Post Date: Year
-		$post_header_date .= '<span class="post-date-year">' . get_the_time('Y') . '</span>'; 
+		$post_header_date_year = get_the_time('Y');
+		$post_header_date['year'] = '<span class="post-date-year">' . apply_filters( 'oenology_hook_post_header_date_year', $post_header_date_year ) . '</span>'; 
 		// Post Date: Weekday
-		$post_header_date .= '<span class="post-date-weekday">' . get_the_time('D') . '</span>'; 
+		$post_header_date_weekday = get_the_time('D');
+		$post_header_date['weekday'] = '<span class="post-date-weekday">' . apply_filters( 'oenology_hook_post_header_date_weekday', $post_header_date_weekday ) . '</span>'; 
 		// Post Date: Day of Month
-		$post_header_date .= '<span class="post-date-day">' . get_the_time('d') . '</span>'; 
+		$post_header_date_day = get_the_time('d');
+		$post_header_date['day'] = '<span class="post-date-day">' . apply_filters( 'oenology_hook_post_header_date_day', $post_header_date_day ) . '</span>'; 
 		// Post Date: Month
-		$post_header_date .= '<span class="post-date-month">' . get_the_time('M') . '</span>'; 
-		$post_header_date .= '</span>';
+		$post_header_date_month = get_the_time('M');
+		$post_header_date['month'] = '<span class="post-date-month">' . apply_filters( 'oenology_hook_post_header_date_month', $post_header_date_month ) . '</span>'; 
+		echo '<span class="post-date">' . implode( '', apply_filters( 'oenology_hook_post_header_date', $post_header_date ) ) . '</span>';
 	}
-	echo apply_filters( 'oenology_hook_post_header_date', $post_header_date );
 }
 
 /**
@@ -661,48 +659,42 @@ function oenology_hook_post_header_date() {
  */
 function oenology_hook_post_header_metadata() {	
 
-	$post_header_metadata = '';
-	$permalink = '';
-	$shortlink = '';
-	$commentslink = '';
-	$trackbacklink = '';
-	$printlink = '';
-	$editlink = '';
+	$post_header_metadata = array();	
 	
 	// Post Permalink
-	$permalink .= '<span id="post-' . get_the_ID() . '">';
+	$permalink = '<span id="post-' . get_the_ID() . '">';
 	$permalink .= '<a href="' . get_permalink() . '" rel="bookmark" title="' . sprintf( __( 'Permanent Link to %s', 'oenology' ), esc_attr( get_the_title() ) ) . '">' . __( 'Permalink', 'oenology' ) . '</a>';
 	$permalink .= '</span>';
+	$post_header_metadata['permalink'] = $permalink;
 	
 	// Post Metadata Links
 	global $post;
 	if ( ! is_page() && 'page' != $post->post_type ) {
 		if ( ! is_attachment() ) {
 			// Shortlink
-			$shortlink .= ' <strong>|</strong> ';
-			$shortlink .= '<span id="post-' . get_the_ID() . '-shortlink"><a href="' . wp_get_shortlink() . '">' . __( 'Shortlink', 'oenology' ) . '</a></span>';
+			$shortlink = '<span id="post-' . get_the_ID() . '-shortlink"><a href="' . wp_get_shortlink() . '">' . __( 'Shortlink', 'oenology' ) . '</a></span>';
+			$post_header_metadata['shortlink'] = $shortlink;
 		}
 		// Comments Link
-		$commentslink .= ' <strong>|</strong> ';
-		$commentslink .= '<a href="' . get_comments_link() . '" target="_self" title="' . sprintf( __( 'Comment on %s', 'oenology' ), esc_attr( get_the_title() ) ) . '">';
+		$commentslink = '<a href="' . get_comments_link() . '" target="_self" title="' . sprintf( __( 'Comment on %s', 'oenology' ), esc_attr( get_the_title() ) ) . '">';
 		$commentslink .= __( 'Comments', 'oenology' ) . ' (' . get_comments_number() . ')';
 		$commentslink .= '</a> ';
+		$post_header_metadata['commentslink'] = $commentslink;
 		// Trackback
-		$trackbacklink .= ' <strong>|</strong> ';
-		$trackbacklink .= '<a href="' . get_trackback_url() . '" target="_self" title="' . sprintf( __( 'Trackback to %s', 'oenology' ), esc_attr( get_the_title() ) ) . '">' . __( 'Trackback', 'oenology' ) . '</a>';	
+		$trackbacklink = '<a href="' . get_trackback_url() . '" target="_self" title="' . sprintf( __( 'Trackback to %s', 'oenology' ), esc_attr( get_the_title() ) ) . '">' . __( 'Trackback', 'oenology' ) . '</a>';	
+		$post_header_metadata['trackbacklink'] = $trackbacklink;
 	}
 	if ( is_singular() ) { // only display a Print link on single posts, pages, and attachments
 		// Print Link
-		$printlink .= ' <strong>|</strong> <a href="print" onclick="window.print();return false;">Print</a>';
+		$printlink = '<a href="print" onclick="window.print();return false;">Print</a>';
+		$post_header_metadata['printlink'] = $printlink;
 	}
 	if ( is_user_logged_in() ) {
 		// Edit Post Link
-		$editlink .= ' <strong>|</strong> ';
-		$editlink .= '<a href="' . get_edit_post_link() . '">' . __( 'Edit', 'oenology' ) . '</a>'; // Display "Edit" link for logged-in Admin users
+		$editlink = '<a href="' . get_edit_post_link() . '">' . __( 'Edit', 'oenology' ) . '</a>'; // Display "Edit" link for logged-in Admin users
+		$post_header_metadata['editlink'] = $editlink;
 	}	
-	$post_header_metadata = '<span class="post-title-metadata">' . $permalink . $shortlink . $commentslink . $trackbacklink . $printlink . $editlink . '</span>';
-	
-	echo apply_filters( 'oenology_hook_post_header_metadata', $post_header_metadata );
+	echo '<span class="post-title-metadata">' . implode( ' <strong>|</strong> ', apply_filters( 'oenology_hook_post_header_metadata', $post_header_metadata ) ) . '</span>';
 }
 	
 /**
@@ -721,22 +713,23 @@ function oenology_hook_post_header_metadata() {
  */
 function oenology_hook_post_header_taxonomies() {	
 
-	$post_header_taxonomies = '';	
-	$categorylist = '';
-	$taglist = '';
+	$post_header_taxonomies = array();	
 	
 	// Post Taxonomies
 	global $post;
 	if ( ! is_page() && 'page' != $post->post_type ) {
 		// Category List
-		$categorylist .= '<span class="post-title-category">Filed in ' . get_the_category_list( ', ' ) . '</span>';
+		$post_header_taxonomies['categorylist'] = '<span class="post-title-category">';
+		$post_header_taxonomies['categorylist'] .= sprintf( __( 'Filed in %s', 'oenology' ), get_the_category_list( ', ' ) );
+		$post_header_taxonomies['categorylist'] .= '</span>';
 		// Tag List
 		if ( get_the_tag_list() ) {
-			$taglist .= '<span class="post-title-tags">Tags: ' . get_the_tag_list( '', ', ', '' ) . '</span>';
+			$post_header_taxonomies['taglist'] = '<span class="post-title-tags">';
+			$post_header_taxonomies['taglist'] .= sprintf( __( 'Tags: %s', 'oenology' ), get_the_tag_list( '', ', ', '' ) );
+			$post_header_taxonomies['taglist'] .= '</span>';
 		}
 	}
-	$post_header_taxonomies = '<span class="post-title-taxonomies">' . $categorylist . $taglist . '</span>';
-	echo apply_filters( 'oenology_hook_post_header_taxonomies', $post_header_taxonomies );
+	echo '<span class="post-title-taxonomies">' . implode( '', apply_filters( 'oenology_hook_post_header_taxonomies', $post_header_taxonomies ) ) . '</span>';
 }
 
 /**
@@ -792,12 +785,10 @@ function oenology_hook_post_header_thumbnail() {
 	// don't display for custom Post Formats, since icons are displayed
 	if ( ( ! ( is_home() || is_single() || is_page() || is_attachment() ) ) && has_post_thumbnail() && ! get_post_format() ) { 
 		global $post;
-		$post_header_thumbnail .= '<span class="post-title-thumbnail">';
-		$post_header_thumbnail .= get_the_post_thumbnail( $post->ID, 'post-title-thumbnail' );
-		$post_header_thumbnail .= '</span>';
+		$post_header_thumbnail = get_the_post_thumbnail( $post->ID, 'post-title-thumbnail' );
 	}
 
-	echo apply_filters( 'oenology_hook_post_header_thumbnail', $post_header_thumbnail );
+	echo '<span class="post-title-thumbnail">' . apply_filters( 'oenology_hook_post_header_thumbnail', $post_header_thumbnail ) . '</span>';
 }
 
 /**
