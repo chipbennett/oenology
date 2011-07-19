@@ -242,9 +242,19 @@ function oenology_get_404_content() {
 	// Intro text
 	
 	$oenology_404_intro = '';
-	$oenology_404_intro .= '<p>' . __( 'Oh no, not again.', 'oenology' ) . '</p>';
-	$oenology_404_intro .= '<p>' . __( 'Well, this is weird. The post, page, or file you requested could not be found. The best laid plans of mice, and all that. Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time.', 'oenology' ) . '</p>';
-	$oenology_404_intro .= '<p>' . __( 'I apologize for the inconvenience. Let me try to make it up to you!', 'oenology' ) . '</p>';
+	$oenology_404_intro .= '<p>';
+	$oenology_404_intro .= __( 'Oh no, not again.', 'oenology' );
+	$oenology_404_intro .= '</p>';
+	$oenology_404_intro .= '<p>';
+	$oenology_404_intro .= __( 'Well, this is weird.', 'oenology' ) . ' ' ;
+	$oenology_404_intro .= __( 'The post, page, or file you requested could not be found. ', 'oenology' ) . ' ';
+	$oenology_404_intro .= __( 'The best laid plans of mice, and all that. ', 'oenology' ) . ' ';
+	$oenology_404_intro .= __( 'Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time.', 'oenology' );
+	$oenology_404_intro .= '</p>';
+	$oenology_404_intro .= '<p>';
+	$oenology_404_intro .= __( 'I apologize for the inconvenience.', 'oenology' ) . ' ';
+	$oenology_404_intro .= __( 'Let me try to make it up to you!', 'oenology' );
+	$oenology_404_intro .= '<p>';
 
 	// array to hold suggestions
 	if ( ! isset ( $oenology404suggestions ) ) {
@@ -373,7 +383,11 @@ function oenology_get_404_content() {
 	}
 
 	$oenology_404_results = '';
-	$oenology_404_noresults = '<p>' . __( 'I apologize. For the life of me, I can\'t figure out what you were trying to find. Perhaps try searching, using the search form in the upper right-hand corner?', 'oenology' ) . '</p>';
+	$oenology_404_noresults .= '<p>';
+	$oenology_404_noresults .= __( 'I apologize.', 'oenology' ) . ' ';
+	$oenology_404_noresults .= __( 'For the life of me, I am unable to figure out what you were trying to find.', 'oenology' ) . ' ';
+	$oenology_404_noresults .= __( 'Perhaps try searching, using the search form in the upper right-hand corner?', 'oenology' );
+	$oenology_404_noresults .= '</p>';
 	$oenology_404_results = $oenology_404_intro . $oenology_404_posts . $oenology_404_pages . $oenology_404_category . $oenology_404_tag;
 	
 	$oenology404noresults = false;
@@ -396,29 +410,29 @@ function oenology_get_404_content() {
 */
 function oenology_breadcrumb() {
  
-  $containerBefore = '<li id="breadcrumbs">';
-  $containerAfter = '</li>';
-  $containerCrumb = '<div class="crumbs">';
-  $containerCrumbEnd = '</div>';
-  $delimiter = ' &raquo; ';
-  $name = 'Home'; //text for the 'Home' link
-  $blogname = 'Blog'; //text for the 'Blog' link
-  $baseLink = '';
-  $hierarchy = '';
-  $currentLocation = '';
-  $currentBefore = '<strong>';
-  $currentAfter = '</strong>';
-  $currentLocationLink = '';
-  $crumbPagination = '';
-  
-  global $post;
+	$containerBefore = '<li id="breadcrumbs">';
+	$containerAfter = '</li>';
+	$containerCrumb = '<div class="crumbs">';
+	$containerCrumbEnd = '</div>';
+	$delimiter = ' &raquo; ';
+	$name = 'Home'; //text for the 'Home' link
+	$blogname = 'Blog'; //text for the 'Blog' link
+	$baseLink = '';
+	$hierarchy = '';
+	$currentLocation = '';
+	$currentBefore = '<strong>';
+	$currentAfter = '</strong>';
+	$currentLocationLink = '';
+	$crumbPagination = '';
+
+	global $post;
  
- // Start of Container
+	// Start of Container
     echo $containerBefore;
-// Start of Breadcrumbs
+	// Start of Breadcrumbs
 	echo $containerCrumb;
 
-// Output the Base Link	
+	// Output the Base Link	
 	if ( is_front_page() ) {
 		echo '<strong>' . $name . '</strong>';
 	} else {
@@ -426,100 +440,123 @@ function oenology_breadcrumb() {
 		$baseLink =  '<a href="' . $home . '">' . $name . '</a>';
 		echo $baseLink; 
 	}
-
-// If static Page as Front Page, and on Blog Posts Index
+	// If static Page as Front Page, and on Blog Posts Index
 	if ( is_home() && ( 'page' == get_option( 'show_on_front' ) ) ) {
 		echo $delimiter . '<strong>' . $blogname . '</strong>';
 	}
-
-// If static Page as Front Page, and on Blog, output Blog link
+	// If static Page as Front Page, and on Blog, output Blog link
 	if ( ! is_home() && ! is_page() && ! is_front_page() && ( 'page' == get_option( 'show_on_front' ) ) ) {
 		$blogpageid = get_option( 'page_for_posts' );
 		$bloglink = '<a href="' . get_permalink( $blogpageid ) . '">' . $blogname . '</a>';
 		echo $delimiter . $bloglink;
-	}
- 
- // Define Breadcrumb Hierarchy and Current Location for various page types 
- 
-    if ( is_category() ) { // Define Category Hierarchy Crumbs for Category Archive
-      global $wp_query;
-      $cat_obj = $wp_query->get_queried_object();
-      $thisCat = $cat_obj->term_id;
-      $thisCat = get_category($thisCat);
-      $parentCat = get_category($thisCat->parent);
-      if ($thisCat->parent != 0) {
-		$hierarchy = ( $delimiter . __( 'Category Archive: ', 'oenology' ) . get_category_parents( $parentCat, TRUE, $delimiter ) );
-      } else {
-		$hierarchy = $delimiter . __( 'Category Archive: ', 'oenology' );
-      }
-	  $currentLocation = single_cat_title( '' , FALSE ); // Set $currentLocation to the current category
- 
-    } elseif ( is_day() ) { // Define Year/Month Hierarchy Crumbs for Day Archive
-      $hierarchy = $delimiter . __( 'Posts Published in: ', 'oenology' ) . '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ' . '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-      $currentLocation = get_the_time('d'); 
- 
-    } elseif ( is_month() ) { // Define Year Hierarchy Crumb for Month Archive
-      $hierarchy = $delimiter . __( 'Posts Published in: ', 'oenology' ) . '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      $currentLocation = get_the_time('F'); 
- 
-    } elseif ( is_year() ) { // Set CurrentLocation for Year Archive
-	  $hierarchy = $delimiter . __( 'Posts Published in: ', 'oenology' );
-      $currentLocation = get_the_time('Y'); 
- 
-    } elseif ( is_single() && !is_attachment() ) { // Define Category Hierarchy Crumbs for Single Posts
-      $cat = get_the_category(); 
-	  $cat = $cat[0];
-	  $hierarchy = $delimiter . get_category_parents( $cat, TRUE, $delimiter );
-	  $currentLocation = (  get_the_title()  ? get_the_title() : __( '(No Post Title)', 'oenology' ) );
-	  
-    } elseif ( is_attachment() ) { // Define Category and Parent Post Crumbs for Post Attachments
-      $parent = get_post($post->post_parent);
-	  $cat_parents = '';
-	  if ( get_the_category($parent->ID) ) {
+	} 
+    // Define Category Hierarchy Crumbs for Category Archive
+	if ( is_category() ) { 
+		global $wp_query;
+		$cat_obj = $wp_query->get_queried_object();
+		$thisCat = $cat_obj->term_id;
+		$thisCat = get_category($thisCat);
+		$parentCat = get_category($thisCat->parent);
+		if ($thisCat->parent != 0) {
+			$hierarchy = ( $delimiter . __( 'Category Archive: ', 'oenology' ) . get_category_parents( $parentCat, TRUE, $delimiter ) );
+		} else {
+			$hierarchy = $delimiter . __( 'Category Archive: ', 'oenology' );
+		}
+			// Set $currentLocation to the current category
+			$currentLocation = single_cat_title( '' , FALSE ); 
+	} 
+	// Define Crumbs for Day/Year/Month Date-based Archives
+	elseif ( is_date() ) { 
+		// Define Year/Month Hierarchy Crumbs for Day Archive
+		if  ( is_day() ) {
+			$date_string = '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ' . '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ';
+			$date_string .= $delimiter . ' ';
+			$currentLocation = get_the_time('d'); 
+		} 
+		// Define Year Hierarchy Crumb for Month Archive
+		elseif ( is_month() ) {
+			$date_string = '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ';
+			$date_string .= $delimiter . ' ';
+			$currentLocation = get_the_time('F'); 
+		} 
+		// Set CurrentLocation for Year Archive
+		elseif ( is_year() ) {
+			$date_string = '';
+			$currentLocation = get_the_time('Y'); 
+		}
+		$hierarchy = $delimiter . sprintf( __( 'Posts Published in: %s', 'oenology' ), $date_string ); 
+    } 
+	// Define Category Hierarchy Crumbs for Single Posts
+	elseif ( is_single() && !is_attachment() ) { 
+		$cat = get_the_category(); 
+		$cat = $cat[0];
+		$hierarchy = $delimiter . get_category_parents( $cat, TRUE, $delimiter );
+		// Note: get_the_title() is filtered to output a
+		// default title if none is specified
+		$currentLocation = get_the_title();	  
+    } 
+	// Define Category and Parent Post Crumbs for Post Attachments
+	elseif ( is_attachment() ) { 
+		$parent = get_post($post->post_parent);
+		$cat_parents = '';
+		if ( get_the_category($parent->ID) ) {
 		$cat = get_the_category($parent->ID); 
 		$cat = $cat[0];
 		$cat_parents = get_category_parents( $cat, TRUE, $delimiter );
-	  }
-	  $hierarchy = $delimiter . $cat_parents . '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter;
-	  $currentLocation = (  get_the_title()  ? get_the_title() : __( '(No Attachment Title)', 'oenology' ) ); 
- 
-    } elseif ( ! is_front_page() && is_page() && ! $post->post_parent ) { // Define Current Location for Parent Pages
-	  $hierarchy = $delimiter;
-	  $currentLocation = (  get_the_title()  ? get_the_title() : __( '(No Page Title)', 'oenology' ) );
-	  
-    } elseif ( ! is_front_page() && is_page() && $post->post_parent ) { // Define Parent Page Hierarchy Crumbs for Child Pages
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-        $parent_id  = $page->post_parent;
-      }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      foreach ($breadcrumbs as $crumb) {
+		}
+		$hierarchy = $delimiter . $cat_parents . '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter;
+		// Note: Titles are forced for attachments; the
+		// filename will be used if none is specified
+		$currentLocation = get_the_title();  
+    } 
+	// Define Current Location for Parent Pages
+	elseif ( ! is_front_page() && is_page() && ! $post->post_parent ) { 
+		$hierarchy = $delimiter;
+		// Note: get_the_title() is filtered to output a
+		// default title if none is specified
+		$currentLocation = get_the_title();	  
+    } 
+	// Define Parent Page Hierarchy Crumbs for Child Pages
+	elseif ( ! is_front_page() && is_page() && $post->post_parent ) { 
+		$parent_id  = $post->post_parent;
+		$breadcrumbs = array();
+		while ($parent_id) {
+		$page = get_page($parent_id);
+		$breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+		$parent_id  = $page->post_parent;
+		}
+		$breadcrumbs = array_reverse($breadcrumbs);
+		foreach ($breadcrumbs as $crumb) {
 		$hierarchy = $hierarchy . $delimiter . $crumb;
-	  }
-	  $hierarchy = $hierarchy . $delimiter;
-	  $currentLocation = (  get_the_title()  ? get_the_title() : __( '(No Page Title)', 'oenology' ) ); 
- 
-    } elseif ( is_search() ) { // Define current location for Search Results page
-      $hierarchy = $delimiter . __('Search Results: ', 'oenology' );
-	  $currentLocation = get_search_query();
-	  
-    } elseif ( is_tag() ) {	  // Define current location for Tag Archives
-      $hierarchy = $delimiter . __( 'Tag Archive: ', 'oenology' );
-      $currentLocation = single_tag_title( '' , FALSE ); 
- 
-    } elseif ( is_author() ) { // Define current location for Author Archives
-      $hierarchy = $delimiter . __( 'Posts Written by: ', 'oenology' );
-	  $currentLocation = get_the_author_meta( 'display_name', get_query_var( 'author' ) );
- 
-    } elseif ( is_404() ) { // Define current location for 404 Error page
-      $hierarchy = $delimiter . __( 'Error 404: ', 'oenology' );
-      $currentLocation = __( 'Page Not Found', 'oenology' );
-	  
-    } elseif ( get_post_format() && ! is_home() ) { // Define current location for Post Format Archives
-		$hierarchy = $delimiter . __( 'Post Format Archive: ', 'oenology' );
+		}
+		$hierarchy = $hierarchy . $delimiter;
+		// Note: get_the_title() is filtered to output a
+		// default title if none is specified
+		$currentLocation = get_the_title(); 
+    } 
+	// Define current location for Search Results page
+	elseif ( is_search() ) { 
+		$hierarchy = $delimiter . __('Search Results:', 'oenology' ) . ' ';
+		$currentLocation = get_search_query();	  
+    } 
+	// Define current location for Tag Archives
+	elseif ( is_tag() ) {	  
+		$hierarchy = $delimiter . __( 'Tag Archive:', 'oenology' ) . ' ';
+		$currentLocation = single_tag_title( '' , FALSE );  
+    } 
+	// Define current location for Author Archives
+	elseif ( is_author() ) { 
+		$hierarchy = $delimiter . __( 'Posts Written by:', 'oenology' ) . ' ';
+		$currentLocation = get_the_author_meta( 'display_name', get_query_var( 'author' ) ); 
+    } 
+	// Define current location for 404 Error page
+	elseif ( is_404() ) { 
+		$hierarchy = $delimiter . __( 'Error 404:', 'oenology' ) . ' ';
+		$currentLocation = __( 'Page Not Found', 'oenology' );	  
+    } 
+	// Define current location for Post Format Archives
+	elseif ( get_post_format() && ! is_home() ) { 
+		$hierarchy = $delimiter . __( 'Post Format Archive:', 'oenology' ) . ' ';
 		$currentLocation = get_post_format_string( get_post_format() ) . 's';
 	}
 

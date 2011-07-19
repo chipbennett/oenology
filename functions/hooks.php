@@ -671,7 +671,7 @@ function oenology_hook_post_header_metadata() {
 	
 	// Post Permalink
 	$permalink .= '<span id="post-' . get_the_ID() . '">';
-	$permalink .= '<a href="' . get_permalink() . '" rel="bookmark" title="' . __( 'Permanent Link to ', 'oenology' ) . get_the_title() . '">' . __( 'Permalink', 'oenology' ) . '</a>';
+	$permalink .= '<a href="' . get_permalink() . '" rel="bookmark" title="' . sprintf( __( 'Permanent Link to %s', 'oenology' ), esc_attr( get_the_title() ) ) . '">' . __( 'Permalink', 'oenology' ) . '</a>';
 	$permalink .= '</span>';
 	
 	// Post Metadata Links
@@ -684,12 +684,12 @@ function oenology_hook_post_header_metadata() {
 		}
 		// Comments Link
 		$commentslink .= ' <strong>|</strong> ';
-		$commentslink .= '<a href="'. get_comments_link() . '" target="_self" title="' . __( 'Comment on ', 'oenology' ) . get_the_title() . '">';
+		$commentslink .= '<a href="' . get_comments_link() . '" target="_self" title="' . sprintf( __( 'Comment on %s', 'oenology' ), esc_attr( get_the_title() ) ) . '">';
 		$commentslink .= __( 'Comments', 'oenology' ) . ' (' . get_comments_number() . ')';
 		$commentslink .= '</a> ';
 		// Trackback
 		$trackbacklink .= ' <strong>|</strong> ';
-		$trackbacklink .= '<a href="' . get_trackback_url() . '" target="_self" title="Trackback to ' . get_the_title() . '">' . __( 'Trackback', 'oenology' ) . '</a>';	
+		$trackbacklink .= '<a href="' . get_trackback_url() . '" target="_self" title="' . sprintf( __( 'Trackback to %s', 'oenology' ), esc_attr( get_the_title() ) ) . '">' . __( 'Trackback', 'oenology' ) . '</a>';	
 	}
 	if ( is_singular() ) { // only display a Print link on single posts, pages, and attachments
 		// Print Link
@@ -837,7 +837,7 @@ function oenology_hook_site_footer() {
 		$site_footer['copyright'] .= '&copy; ' . date('Y');
 	}
 	
-	$site_footer['wordpress'] = __( 'Powered by', 'oenology' ) . ' <a href="http://wordpress.org" target="_new">WordPress ' . get_bloginfo('version') . '<img src="' . get_template_directory_uri() . '/images/iconsweets2/original/wordpress16.png" width="18px" height="17px" alt="WordPress" style="vertical-align:middle;" /></a>';
+	$site_footer['wordpress'] = sprintf( __( 'Powered by %s', 'oenology' ), '<a href="' . esc_url( 'http://wordpress.org' ) . '" target="_new">WordPress ' . get_bloginfo( 'version' ) . ' <img src="' . get_template_directory_uri() . '/images/iconsweets2/original/wordpress16.png" width="18px" height="17px" alt="WordPress" style="vertical-align:middle;" /></a>' );
 	
 	global $oenology_options;
 	if ( 'true' == $oenology_options['display_footer_credit'] ) { 
@@ -848,11 +848,11 @@ function oenology_hook_site_footer() {
 }
 
 /**
- * Hook to filter content within div#postmetadata
+ * Hook to filter content within div#site-header-text
  * 
- * This hook can be used to filter to content that is output in the div#postmetadata container.
+ * This hook can be used to filter to content that is output in the div#site-header-text container.
  * 
- * Template file: post-footer.php
+ * Template file: site-header.php
  * 
  * @uses apply_filters()
  * @uses get_bloginfo()
@@ -864,9 +864,9 @@ function oenology_hook_site_header() {
 	$site_header = '';
 
 	// Displays the blog name, as defined on the General Settings page in the administration panel
-	$site_header .= '<div class="site-header-text">' . get_bloginfo('name') . '</div>';
+	$site_header .= '<div class="site-header-text">' . get_bloginfo( 'name' ) . '</div>';
 	// Displays the blog description, as defined on the General Settings page in the administration panel
-	$site_header .= '<p>' . get_bloginfo('description') . '</p>';
+	$site_header .= '<p>' . get_bloginfo( 'description' ) . '</p>';
 
 	echo apply_filters( 'oenology_hook_site_header', $site_header );
 } 

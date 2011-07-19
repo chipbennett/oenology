@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oenology\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-18 14:59-0600\n"
-"PO-Revision-Date: 2011-07-18 15:12-0600\n"
+"POT-Creation-Date: 2011-07-19 08:29-0600\n"
+"PO-Revision-Date: 2011-07-19 08:30-0600\n"
 "Last-Translator: Chip Bennett <chip@chipbennett.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -81,153 +81,169 @@ msgstr "A recording of both visual and audible components; Electronically captur
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:245
-#: Dropbox\Development\git\oenology\master\functions/custom.php:245
+#: Dropbox\Development\git\oenology\master/functions/custom.php:246
+#: Dropbox\Development\git\oenology\master\functions/custom.php:246
 msgid "Oh no, not again."
 msgstr "Oh no, not again."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:246
-#: Dropbox\Development\git\oenology\master\functions/custom.php:246
-msgid "Well, this is weird. The post, page, or file you requested could not be found. The best laid plans of mice, and all that. Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time."
-msgstr "Well, this is weird. The post, page, or file you requested could not be found. The best laid plans of mice, and all that. Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time."
+#: Dropbox\Development\git\oenology\master/functions/custom.php:249
+#: Dropbox\Development\git\oenology\master\functions/custom.php:249
+msgid "Well, this is weird."
+msgstr "Well, this is weird."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:247
-#: Dropbox\Development\git\oenology\master\functions/custom.php:247
-msgid "I apologize for the inconvenience. Let me try to make it up to you!"
-msgstr "I apologize for the inconvenience. Let me try to make it up to you!"
+#: Dropbox\Development\git\oenology\master/functions/custom.php:250
+#: Dropbox\Development\git\oenology\master\functions/custom.php:250
+msgid "The post, page, or file you requested could not be found. "
+msgstr "The post, page, or file you requested could not be found. "
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:286
-#: Dropbox\Development\git\oenology\master\functions/custom.php:286
+#: Dropbox\Development\git\oenology\master/functions/custom.php:251
+#: Dropbox\Development\git\oenology\master\functions/custom.php:251
+msgid "The best laid plans of mice, and all that. "
+msgstr "The best laid plans of mice, and all that. "
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:252
+#: Dropbox\Development\git\oenology\master\functions/custom.php:252
+msgid "Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time."
+msgstr "Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:255
+#: Dropbox\Development\git\oenology\master\functions/custom.php:255
+msgid "I apologize for the inconvenience."
+msgstr "I apologize for the inconvenience."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:256
+#: Dropbox\Development\git\oenology\master\functions/custom.php:256
+msgid "Let me try to make it up to you!"
+msgstr "Let me try to make it up to you!"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:296
+#: Dropbox\Development\git\oenology\master\functions/custom.php:296
 msgid "Here is a list of posts that you might have been looking for:"
 msgstr "Here is a list of posts that you might have been looking for:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:302
-#: Dropbox\Development\git\oenology\master/functions/custom.php:333
-#: Dropbox\Development\git\oenology\master\functions/custom.php:302
-#: Dropbox\Development\git\oenology\master\functions/custom.php:333
+#: Dropbox\Development\git\oenology\master/functions/custom.php:312
+#: Dropbox\Development\git\oenology\master/functions/custom.php:343
+#: Dropbox\Development\git\oenology\master\functions/custom.php:312
+#: Dropbox\Development\git\oenology\master\functions/custom.php:343
 msgid "No excerpt available."
 msgstr "No excerpt available."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:317
-#: Dropbox\Development\git\oenology\master\functions/custom.php:317
+#: Dropbox\Development\git\oenology\master/functions/custom.php:327
+#: Dropbox\Development\git\oenology\master\functions/custom.php:327
 msgid "Here is a list of pages that you might have been looking for:"
 msgstr "Here is a list of pages that you might have been looking for:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:352
-#: Dropbox\Development\git\oenology\master\functions/custom.php:352
+#: Dropbox\Development\git\oenology\master/functions/custom.php:362
+#: Dropbox\Development\git\oenology\master\functions/custom.php:362
 msgid "Perhaps you were looking for something in one of the following categories?"
 msgstr "Perhaps you were looking for something in one of the following categories?"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:367
-#: Dropbox\Development\git\oenology\master\functions/custom.php:367
+#: Dropbox\Development\git\oenology\master/functions/custom.php:377
+#: Dropbox\Development\git\oenology\master\functions/custom.php:377
 msgid "Perhaps you were looking for something with one of the following tags?"
 msgstr "Perhaps you were looking for something with one of the following tags?"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:376
-#: Dropbox\Development\git\oenology\master\functions/custom.php:376
-msgid "I apologize. For the life of me, I can't figure out what you were trying to find. Perhaps try searching, using the search form in the upper right-hand corner?"
-msgstr "I apologize. For the life of me, I can't figure out what you were trying to find. Perhaps try searching, using the search form in the upper right-hand corner?"
+#: Dropbox\Development\git\oenology\master/functions/custom.php:387
+#: Dropbox\Development\git\oenology\master\functions/custom.php:387
+msgid "I apologize."
+msgstr "I apologize."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:451
-#: Dropbox\Development\git\oenology\master/functions/custom.php:453
-#: Dropbox\Development\git\oenology\master\functions/custom.php:451
-#: Dropbox\Development\git\oenology\master\functions/custom.php:453
+#: Dropbox\Development\git\oenology\master/functions/custom.php:388
+#: Dropbox\Development\git\oenology\master\functions/custom.php:388
+msgid "For the life of me, I am unable to figure out what you were trying to find."
+msgstr "For the life of me, I am unable to figure out what you were trying to find."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:389
+#: Dropbox\Development\git\oenology\master\functions/custom.php:389
+msgid "Perhaps try searching, using the search form in the upper right-hand corner?"
+msgstr "Perhaps try searching, using the search form in the upper right-hand corner?"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:461
+#: Dropbox\Development\git\oenology\master/functions/custom.php:463
+#: Dropbox\Development\git\oenology\master\functions/custom.php:461
+#: Dropbox\Development\git\oenology\master\functions/custom.php:463
 msgid "Category Archive: "
 msgstr "Category Archive: "
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:458
-#: Dropbox\Development\git\oenology\master/functions/custom.php:462
-#: Dropbox\Development\git\oenology\master/functions/custom.php:466
-#: Dropbox\Development\git\oenology\master\functions/custom.php:458
-#: Dropbox\Development\git\oenology\master\functions/custom.php:462
-#: Dropbox\Development\git\oenology\master\functions/custom.php:466
-msgid "Posts Published in: "
-msgstr "Posts Published in: "
+#: Dropbox\Development\git\oenology\master/functions/custom.php:487
+#: Dropbox\Development\git\oenology\master\functions/custom.php:487
+#, php-format
+msgid "Posts Published in: %s"
+msgstr "Posts Published in: %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:473
-#: Dropbox\Development\git\oenology\master\functions/custom.php:473
-msgid "(No Post Title)"
-msgstr "(No Post Title)"
+#: Dropbox\Development\git\oenology\master/functions/custom.php:539
+#: Dropbox\Development\git\oenology\master\functions/custom.php:539
+msgid "Search Results:"
+msgstr "Search Results:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:484
-#: Dropbox\Development\git\oenology\master\functions/custom.php:484
-msgid "(No Attachment Title)"
-msgstr "(No Attachment Title)"
+#: Dropbox\Development\git\oenology\master/functions/custom.php:544
+#: Dropbox\Development\git\oenology\master\functions/custom.php:544
+msgid "Tag Archive:"
+msgstr "Tag Archive:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:488
-#: Dropbox\Development\git\oenology\master/functions/custom.php:503
-#: Dropbox\Development\git\oenology\master\functions/custom.php:488
-#: Dropbox\Development\git\oenology\master\functions/custom.php:503
-msgid "(No Page Title)"
-msgstr "(No Page Title)"
+#: Dropbox\Development\git\oenology\master/functions/custom.php:549
+#: Dropbox\Development\git\oenology\master\functions/custom.php:549
+msgid "Posts Written by:"
+msgstr "Posts Written by:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:506
-#: Dropbox\Development\git\oenology\master\functions/custom.php:506
-msgid "Search Results: "
-msgstr "Search Results: "
+#: Dropbox\Development\git\oenology\master/functions/custom.php:554
+#: Dropbox\Development\git\oenology\master\functions/custom.php:554
+msgid "Error 404:"
+msgstr "Error 404:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:510
-#: Dropbox\Development\git\oenology\master\functions/custom.php:510
-msgid "Tag Archive: "
-msgstr "Tag Archive: "
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:514
-#: Dropbox\Development\git\oenology\master\functions/custom.php:514
-msgid "Posts Written by: "
-msgstr "Posts Written by: "
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:518
-#: Dropbox\Development\git\oenology\master\functions/custom.php:518
-msgid "Error 404: "
-msgstr "Error 404: "
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:519
-#: Dropbox\Development\git\oenology\master\functions/custom.php:519
+#: Dropbox\Development\git\oenology\master/functions/custom.php:555
+#: Dropbox\Development\git\oenology\master\functions/custom.php:555
 msgid "Page Not Found"
 msgstr "Page Not Found"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:522
-#: Dropbox\Development\git\oenology\master\functions/custom.php:522
-msgid "Post Format Archive: "
-msgstr "Post Format Archive: "
+#: Dropbox\Development\git\oenology\master/functions/custom.php:559
+#: Dropbox\Development\git\oenology\master\functions/custom.php:559
+msgid "Post Format Archive:"
+msgstr "Post Format Archive:"
 
 #: U:\My
 #: Documents\My
@@ -796,8 +812,9 @@ msgstr "Edit"
 #: U:\My
 #: Documents\My
 #: Dropbox\Development\git\oenology\master/functions/hooks.php:674
-msgid "Permanent Link to "
-msgstr "Permanent Link to "
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Permanent Link to %s"
 
 #: U:\My
 #: Documents\My
@@ -814,8 +831,9 @@ msgstr "Shortlink"
 #: U:\My
 #: Documents\My
 #: Dropbox\Development\git\oenology\master/functions/hooks.php:687
-msgid "Comment on "
-msgstr "Comment on "
+#, php-format
+msgid "Comment on %s"
+msgstr "Comment on %s"
 
 #: U:\My
 #: Documents\My
@@ -826,14 +844,22 @@ msgstr "Comments"
 #: U:\My
 #: Documents\My
 #: Dropbox\Development\git\oenology\master/functions/hooks.php:692
+#, php-format
+msgid "Trackback to %s"
+msgstr "Trackback to %s"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:692
 msgid "Trackback"
 msgstr "Trackback"
 
 #: U:\My
 #: Documents\My
 #: Dropbox\Development\git\oenology\master/functions/hooks.php:840
-msgid "Powered by"
-msgstr "Powered by"
+#, php-format
+msgid "Powered by %s"
+msgstr "Powered by %s"
 
 #: U:\My
 #: Documents\My
