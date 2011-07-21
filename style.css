@@ -2172,6 +2172,7 @@ body.single-format-image dd {
 #home #navhome, 
 #pageforum #navforum,
 #nav .current_page_item a,
+#nav .current_page_parent a,
 #nav .current_page_ancestor a {
      letter-spacing:0.15em;
      font-weight:bold;
