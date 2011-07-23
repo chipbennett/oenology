@@ -99,13 +99,157 @@ function oenology_reference_page_license() { ?>
 // Support Tab
 function oenology_reference_page_support() { ?>
 
-	<p>For Oenology support, please use one of the following:</p>
-	<ol>
-		<li>Bug Reports: <a href="https://github.com/chipbennett/oenology/issues">Oenology GitHub Repository Issues Tracker</a></li>
-		<li>General Support Queries: <a href="http://wordpress.org/tags/oenology">WordPress.org Oenology Support Forum</a></li>
-	</ol>
+<div id="dashboard-widgets-wrap">
 	
-	<p>I will do my best to fix all bug reports as quickly as possible, and to respond to all support queries.</p>
+	<div id="dashboard-widgets" class="metabox-holder">
+	
+		<div class="postbox-container" style="width:49%;" >
+		
+			<div id="normal-sortables" class="meta-box-sortable ui-sortable">
+			
+				<div class="postbox">
+				
+					<h3><span>Oenology Support Options</span></h3>
+					
+					<div class="inside">
+					
+					<p>For Oenology support, please use one of the below options. I will do my best to fix all bug reports as quickly as possible, and to respond to all support queries.</p>
+					
+					<h4 style="text-align:center;">Bug Reports and Feature Requests:</h4>
+					
+					<p style="text-align:center;">
+					<a style="padding:5px;border:1px solid #999;background-color:#58a;color:#fff;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;" target="_blank" href="https://github.com/chipbennett/oenology/issues/new">
+						<strong>Submit a bug report or feature request</strong>
+					</a>
+					<br /><span style="font-size:11px;"><em>Note: requires a (free) GitHub account.</span></em>
+					</p>
+					<p>Use this option for the following types of issues:</p>
+					<ol style="font-size:11px;">
+						<li style="line-height:1em;">Theme functionality, style, or design is broken</li>
+						<li style="line-height:1em;">Theme functionality, style, or design doesn't work right, or as expected</li>
+						<li style="line-height:1em;">Theme functionality, style, or design could be improved</li>
+						<li style="line-height:1em;">Theme functionality or feature could be added</li>
+					</ol>
+					
+					<h4 style="text-align:center;padding-top:10px;">General Support Requests:</h4>
+					
+					<p style="text-align:center;">					
+					<a style="padding:5px;border:1px solid #999;background-color:#58a;color:#fff;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;" target="_blank" href="http://wordpress.org/tags/oenology?forum_id=5#postform">
+						<strong>Submit a general support request</strong>
+					</a>
+					<br /><span style="font-size:11px;"><em>Note: requires a (free) WordPress.org account.</span></em>
+					</p>
+					<p>Use this option for the following types of issues:</p>
+					<ol style="font-size:11px;">
+						<li style="line-height:1em;">Help with using the Theme</li>
+						<li style="line-height:1em;">Help with Theme options</li>
+						<li style="line-height:1em;">Help with modifying the Theme</li>
+					</ol>
+					
+					</div>
+				
+				</div>
+			
+				<div class="postbox">
+				
+					<h3>
+						<span>Open Oenology Bug Reports</span> 
+						(<a href="https://github.com/chipbennett/oenology/issues/?sort=created&direction=asc&state=open">See All</a>)
+					</h3>
+					
+					<div class="inside">
+					
+						<div class="text-widget">
+
+						<?php echo oenology_get_github_api_data( 'issues', 'open' ); ?>
+						
+						</div>
+					
+					</div>
+				
+				</div>
+			
+				<div class="postbox">
+				
+					<h3>
+						<span>Latest Oenology Support Topics</span> 
+						(<a href="http://wordpress.org/tags/oenology">See All</a>)
+					</h3>
+					
+					<div class="inside">
+					
+						<div class="rss-widget">
+					
+						<?php
+						wp_widget_rss_output( array(
+							'url' => 'http://wordpress.org/support/rss/tags/oenology',
+							'title' => 'Latest Oenology Support Topics',
+							'items' => 5,
+							'show_summary' => 0,
+							'show_author' => 0,
+							'show_date' => 1
+						) );
+						?>
+						
+						</div>
+					
+					</div>
+				
+				</div>
+			
+			</div>
+		
+		</div>
+	
+		<div class="postbox-container" style="width:49%;" >
+		
+			<div id="side-sortables" class="meta-box-sortable ui-sortable">
+			
+				<div class="postbox">
+				
+					<h3>
+						<span>Oenology Bug Reports Closed Since Last Release</span> 
+						(<a href="https://github.com/chipbennett/oenology/issues/?sort=created&direction=asc&state=closed">See All</a>)
+					</h3>
+					
+					<div class="inside">
+					
+						<div class="text-widget">
+
+						<?php echo oenology_get_github_api_data( 'issues', 'closed' ); ?>
+						
+						</div>
+					
+					</div>
+				
+				</div>
+			
+				<div class="postbox">
+				
+					<h3>
+						<span>Oenology Development Commits Since Last Release</span> 
+						(<a href="https://github.com/chipbennett/oenology/issues/?sort=created&direction=asc&state=open">See All</a>)
+					</h3>
+					
+					<div class="inside">
+					
+						<div class="text-widget">
+
+						<?php echo oenology_get_github_api_data( 'commits' ); ?>
+						
+						</div>
+					
+					</div>
+				
+				</div>
+			
+			</div>			
+		
+		</div>
+		
+	</div>
+	
+</div>
 	
 <?php }
 
