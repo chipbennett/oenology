@@ -143,6 +143,10 @@ add_action('contextual_help', 'oenology_contextual_help_reference', 10, 3);
  * Uses the GitHub API (v3) to get information
  * regarding open or closed issues (bug reports)
  * or commits, then outputs them in a table.
+ *
+ * Derived from code originally developed by
+ * Michael Fields (@_mfields):
+ * @link	https://gist.github.com/1061846 Simple Github commit API shortcode for WordPress
  * 
  * @param	string	$context		(required) API data context. Currently supports 'commits' and 'issues'. Default: 'commits'
  * @param	string	$status			(optional) Issue state, either 'open' or 'closed'. Only used for 'commits' context. Default: 'open'
@@ -214,7 +218,7 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 
 	// If the decoded json data is null, return a message
 	// indicating that no data were returned.
-	if ( ! isset( $data ) ) {
+	if ( ! isset( $data ) || empty( $data ) ) {
 		$apidata = $context;
 		if ( 'issues' == $context ) {
 			$apidata = $status . ' ' . $context;

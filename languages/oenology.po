@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oenology\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-19 09:31-0600\n"
-"PO-Revision-Date: 2011-07-19 09:31-0600\n"
+"POT-Creation-Date: 2011-07-25 11:11-0600\n"
+"PO-Revision-Date: 2011-07-25 11:12-0600\n"
 "Last-Translator: Chip Bennett <chip@chipbennett.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -699,6 +699,27 @@ msgstr "Gray"
 #: Dropbox\Development\git\oenology\master\functions/options.php:433
 msgid "Coffee"
 msgstr "Coffee"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:1173
+#: Dropbox\Development\git\oenology\master\functions/options.php:1173
+msgid "Theme settings updated successfully."
+msgstr "Theme settings updated successfully."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:1182
+#: Dropbox\Development\git\oenology\master\functions/options.php:1182
+msgid "Save Settings"
+msgstr "Save Settings"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:1183
+#: Dropbox\Development\git\oenology\master\functions/options.php:1183
+msgid "Reset Defaults"
+msgstr "Reset Defaults"
 
 #: U:\My
 #: Documents\My

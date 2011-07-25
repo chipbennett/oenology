@@ -1170,7 +1170,7 @@ function oenology_admin_options_page() {
 	<div class="wrap">
 		<?php oenology_admin_options_page_tabs(); ?>
 		<?php if ( isset( $_GET['settings-updated'] ) ) {
-    			echo "<div class='updated'><p>' . __( 'Theme settings updated successfully.', 'oenology' ) . '</p></div>";
+    			echo '<div class="updated"><p>' . __( 'Theme settings updated successfully.', 'oenology' ) . '</p></div>';
 		} ?>
 		<form action="options.php" method="post">
 		<?php 
@@ -1179,8 +1179,8 @@ function oenology_admin_options_page() {
 			
 			$tab = ( isset( $_GET['tab'] ) ? $_GET['tab'] : 'general' );
 		?>
-			<input name="theme_oenology_options[submit-<?php echo $tab; ?>]" type="submit" class="button-primary" value="Save Settings" />
-			<input name="theme_oenology_options[reset-<?php echo $tab; ?>]" type="submit" class="button-secondary" value="Reset Defaults" />
+			<?php submit_button( __( 'Save Settings', 'oenology' ), 'primary', 'theme_oenology_options[submit-' . $tab . ']', false ); ?>
+			<?php submit_button( __( 'Reset Defaults', 'oenology' ), 'secondary', 'theme_oenology_options[reset-' . $tab . ']', false ); ?>
 		</form>
 	</div>
 <?php 
