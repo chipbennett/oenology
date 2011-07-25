@@ -70,15 +70,8 @@ function oenology_options_validate( $input ) {
 	foreach ( $tabsettings as $setting ) {
 		// If submit, validate/sanitize $input
 		if ( 'submit' == $submittype ) {
-			$optiondetails = false;
-			// Loop through the array of default options
-			foreach ( $default_options as $default_option ) {
-				// Find the current setting in the array of default options
-				if ( $default_option['name'] == $setting ) {
-					// Pull out the array for the current setting
-					$optiondetails = $default_option;
-				}
-			}
+			// Get the setting details from the defaults array
+			$optiondetails = $default_options[$setting];
 			// Validate checkbox fields
 			if ( 'checkbox' == $optiondetails['type'] ) {
 				// If input value is set and is true, return true; otherwise return false
@@ -186,17 +179,13 @@ foreach ( $oenology_tabs as $tab ) {
  */
 function oenology_sections_callback( $section_passed ) {
 	global $oenology_tabs;
-	$oenology_hooks_tabs = oenology_get_settings_page_tabs();
-	foreach ( $oenology_tabs as $tab ) {
-		$tabname = $tab['name'];
+	$oenology_tabs = oenology_get_settings_page_tabs();
+	foreach ( $oenology_tabs as $tabname => $tab ) {
 		$tabsections = $tab['sections'];
-		foreach ( $tabsections as $section ) {
-			$sectionname = $section['name'];
-			$sectiondescription = $section['description'];
-			$section_callback_id = 'oenology_' . $sectionname . '_section';
-			if ( $section_callback_id == $section_passed['id'] ) {
+		foreach ( $tabsections as $sectionname => $section ) {
+			if ( 'oenology_' . $sectionname . '_section' == $section_passed['id'] ) {
 				?>
-				<p><?php echo $sectiondescription; ?></p>
+				<p><?php echo $section['description']; ?></p>
 				<?php
 			}
 		}
