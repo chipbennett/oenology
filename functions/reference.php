@@ -156,7 +156,7 @@ add_action('contextual_help', 'oenology_contextual_help_reference', 10, 3);
  * 
  * @return	string	table of formatted API data
  */
-function oenology_get_github_api_data( $context = 'commits', $status = 'open', $releasedate = '2011-06-21', $user = 'chipbennett', $repo = 'oenology' ) {
+function oenology_get_github_api_data( $context = 'commits', $status = 'open', $releasedate = '2011-07-25', $user = 'chipbennett', $repo = 'oenology' ) {
 
 	$capability = 'read';
 

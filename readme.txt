@@ -68,8 +68,8 @@ Oenology is likely broken down into more template parts than the average Theme. 
 First and foremost, since Oenology is intended to be a learning tool, the inline and reference documentation will be a continual work-in-progress, based upon user feedback. This documentation is complete as of Oenology Version 1.0, but will continue to be updated and improved.
 
 Other features that may be added in the future:
- - Internationalization
- - others, as determined by user feedback and demand
+
+ - Others, as determined by user feedback and demand
 
  = What About SEO? =
  
@@ -90,6 +90,9 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 
 Note: see the "Oenology Reference" admin page for full Changelog details. 
 See Dashboard -> Appearance -> Oenology Reference -> Changelog.
+
+= 2.2 [2011.07.25] =
+* Maintenance Release
 
 = 2.1 [2011.06.21] =
 * Maintenance Release
@@ -128,6 +131,9 @@ See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 * Initial Release
 
 == Upgrade Notice ==
+
+= 2.2 =
+Maintenance release
 
 = 2.1 =
 Maintenance release

@@ -256,6 +256,42 @@ function oenology_reference_page_support() { ?>
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
 	
+	<h3>2.2 [2011.07.25]</h3>	
+	<p>Maintenance Release</p>
+	<ol>
+	<li>New Features:
+		<ol>
+		<li>Theme has been internationalized; front-end output and Theme Settings Page are entirely translation ready. (<em>Note: contextual help will be internationlaized in a future release; reference content will be internationalized where appropriate.</em>)</li>
+		<li>Admin Page "Oenology Reference", "Support" tab now features display of latest support forum replies, as well as open bug reports, bugs closed since last release, and development commits since last release.</li>
+		</ol>
+	</li>
+	<li>Bugfixes:
+		<ol>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/7">#7</a> (bug): Images without caption or excerpt return error on attachment page</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/8">#87</a> (bug): Missing RSS icon</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/9">#9</a> (bug): Sidebar Social Icons DIV does not clear floats</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/10">#10</a> (enhancement): Some code improvements in options-register.php. Props Andreas Nurbo @andreasnrb</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/12">#12</a> (bug): Emil Uzelac: Post Title Margin-Bottom. Props Emil Uzelac @emiluzelac</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/13">#13</a> (bug): Emil Uzelac: Feedback heading location. Props Emil Uzelac @emiluzelac</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/14">#14</a> (bug): Emil Uzelac: comment form style. Props Emil Uzelac @emiluzelac</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/15">#15</a> (bug): Emil Uzelac: IE7 Rendering. Props Emil Uzelac @emiluzelac</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/16">#16</a> (bug): Emil Uzelac: IE8 Rendering. Props Emil Uzelac @emiluzelac</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/17">#17</a> (bug): Menus: Child Pages of Current Page don't reset CSS</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/18">#18</a> (bug): class .current_page_parent a not highlighting properly</li>
+		<li>Fixed some bugs with display of Post Format icons.</li>
+		</ol>
+	</li>
+	<li>Maintenance:
+		<ol>
+		<li>Implemented core filter to address Settings API manage_theme_options bug that prevented Editors from being able to save options</li>
+		<li>Cleaned up display of static Pages in search results</li>
+		<li>Converted more hard-coded Theme output into filter hooks</li>
+		<li>Updated [gallery] shortcode display/style, and added support for galleries of one to ten columns</li>
+		<li>Style tweaks to all varietals</li>
+		</ol>
+	</li>
+	</ol>
+	
 	<h3>2.1 [2011.06.21]</h3>	
 	<p>Maintenance Release</p>
 	<ol>
