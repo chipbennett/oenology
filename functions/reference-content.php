@@ -209,7 +209,7 @@ function oenology_reference_page_support() { ?>
 				
 					<h3>
 						<span>Oenology Bug Reports Closed Since Last Release</span> 
-						(<a href="https://github.com/chipbennett/oenology/issues/?sort=created&direction=asc&state=closed">See All</a>)
+						(<a href="https://github.com/chipbennett/oenology/commits/master">See All</a>)
 					</h3>
 					
 					<div class="inside">
