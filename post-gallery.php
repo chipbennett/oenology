@@ -57,7 +57,21 @@ if ( is_single() ) {
 	<!-- Post Entry Begin -->
 	<?php 
 	if ( is_single() || post_password_required() ) {
-		the_content();
+		// Output the Post Content
+		// 
+		// Codex reference: {@link http://codex.wordpress.org/Function_Reference/the_content the_content}
+		//
+		// @param	string	$more_link_text	text to use for the "More" link; default: '(more...)'
+		// @param	bool	$strip_teaser	strip text prior to "More" link on Single Post view; default: true
+		the_content('Read the rest of this entry &raquo;'); 
+		// Output the post pagination links
+		// if current post is paginated
+		// 
+		// Codex reference: {@link http://codex.wordpress.org/Function_Reference/wp_link_pages wp_link_pages}
+		wp_link_pages( array(
+			// Apply class="link-pages" to the default <p> tag
+			'before' => '<p class="link-pages">Page: ' 
+		) ); 
 	} else {
 		
 		$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
