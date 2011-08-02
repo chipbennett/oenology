@@ -45,7 +45,10 @@ if (
 	) 
 // WordPress conditional tag that returns true if
 // the current page has an image mime-type attachment
-&& ! wp_attachment_is_image() ) {
+&& ! wp_attachment_is_image()
+// WordPress conditional tag that returns true if
+// the current post has the 'link' post-format type
+&& ! has_post_format( 'link' ) ) {
 	// Output the Post Excerpt
 	//
 	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/the_excerpt}
