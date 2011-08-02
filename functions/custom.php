@@ -174,7 +174,7 @@ function oenology_gallery_image_meta() {
 	$attachmentimage = ( $is_parent ? array_shift( $is_parent ) : false );
 	$imagepost = ( $attachmentimage ? $attachmentimage->ID : $post->ID );
 	$m = get_post_meta( $imagepost, '_wp_attachment_metadata' , true );
-	$image = wp_get_attachment_image( $imagepost, 'large' );
+	$image = wp_get_attachment_image( $imagepost, 'full' );
 	$url = wp_get_attachment_url( $imagepost );
 	$uploaddir = wp_upload_dir();
 	$imagesize = size_format( filesize( $uploaddir['basedir'] . '/' . $m['file'] ) );
