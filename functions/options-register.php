@@ -66,7 +66,7 @@ function oenology_options_validate( $input ) {
 	}
 	
 	// Determine what tab was input
-	$submittab = 'general';	
+	$submittab = 'varietals';	
 	foreach ( $tabs as $tab ) {
 		$submitname = 'submit-' . $tab['name'];
 		$resetname = 'reset-' . $tab['name'];
