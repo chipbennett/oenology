@@ -521,10 +521,14 @@ function oenology_reference_page_general() { ?>
 
 	<p>The Theme fully supports WordPress core Navigation Menu functionality. The main site navigation menu 
 	is called "Header Navigation", and the left sidebar page navigation is called "Sidebar Navigation".</p>
+	
+	<p><strong>New in Version 2.3!</strong> The Theme now includes a footer menu, called "Footer Navigation".</p>
 
 	<p>The Header Navigation menu can optionally be set to display either above or below the Site Title and 
 	Description. By default, the Header Navigation menu displays above the Site Title/Description. To change 
 	this setting, see Appearance -> Oenology Options.</p>
+	
+	<h4>Header/Sidebar Navigation Menus</h4>
 
 	<p>The Theme defaults to using wp_list_pages() for these menus, which means that you do not have to create 
 	your own menus. With the Theme-default functionality, any time you add pages, they will automatically appear 
@@ -538,9 +542,22 @@ function oenology_reference_page_general() { ?>
 	styled so that overly long Page Titles will not break the layout. Long Page Titles will be cut off, and the full 
 	Page Title will appear in the tooltip when hovering over the link.</p>
 	
-	<p><strong>New in Version 2.1!</strong> The menu list items can now be optionally set to "fixed" or "fluid". The
-	"fixed" option behaves as explained above. The "fluid" option allows for long Page Titles not to be cut off; the
-	width of each menu list item will be determined by the length of the Page Title.</p>
+	<p><strong>New in Version 2.1!</strong> The Header Navigation menu list items can now be optionally set to "fixed" 
+	or "fluid". The "fixed" option behaves as explained above. The "fluid" option allows for long Page Titles not to 
+	be cut off; the width of each menu list item will be determined by the length of the Page Title.</p>
+	
+	<h4>Footer Navigation Menu</h4>
+	
+	<p>The Footer Navigation menu defaults to display nothing if no menu is applied to this location. When the Footer 
+	Navigation menu is displayed, it displays on the right side of the footer, and the other footer content displays 
+	on the left side of the footer. If no Footer Navigation menu is displayed, the footer content displays in the 
+	center of the footer, as before.</p>
+	
+	<p>The Footer Navigation menu displays only one level of Page hierarchy.</p>
+	
+	<p>The number of items that can be displayed in the Footer Navigation menu is limited by the available space. 
+	If too many menu items are included, the other footer content may be pushed beneath the footer. If this happens, 
+	simply reduce the number of items included in the menu.</p>
 
 	<h3>Post Thumbnail Functionality</h3>
 
