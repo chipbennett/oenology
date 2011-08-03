@@ -1027,11 +1027,6 @@ function oenology_enqueue_header_nav_menu_style() {
 	if ( 'fluid' == $header_nav_menu_item_width ) {
 	?>
 <style type="text/css">
-.navmenu li a,
-.navmenu li a:link,
-.navmenu li a:visited,
-.navmenu li a:hover,
-.navmenu li a:active,
 .nav-header li a,
 .nav-header li a:link,
 .nav-header li a:visited,
@@ -1055,6 +1050,26 @@ function oenology_enqueue_header_nav_menu_style() {
 	}
 }
 add_action( 'wp_print_styles', 'oenology_enqueue_header_nav_menu_style', 11 );
+
+/**
+ * Enqueue Footer Nav Menu Styles
+ * 
+ * If no menu is assigned to the nav-footer
+ * Theme Location, then set the footer to
+ * center-align content
+ */
+function oenology_enqueue_footer_nav_menu_style() {
+	if ( has_nav_menu( 'nav-footer' ) ) {
+	?>
+<style type="text/css">
+#footer {
+	text-align: left;
+}
+</style>
+	<?php
+	}
+}
+add_action( 'wp_print_styles', 'oenology_enqueue_footer_nav_menu_style', 11 );
 
 /**
  * Filter Capability for Theme Settings Page

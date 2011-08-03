@@ -467,6 +467,7 @@ if ( ! function_exists( 'oenology_setup' ) ):
 		register_nav_menus( array(
 			'nav-header' => 'Header Navigation',
 			'nav-sidebar' => 'Sidebar Navigation',
+			'nav-footer' => 'Footer Navigation'
 		) );
 
 	

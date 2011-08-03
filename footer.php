@@ -35,6 +35,55 @@
 	// and credit links
 	?>
 	<div id="footer">
+	
+		<?php
+		/**
+		 * Output the footer navigation menu
+		 * 
+		 * If the user has defined a custom navigation menu
+		 * and has applied that menu to the 'nav-footer'
+		 * theme location, then output that menu. Otherwise,
+		 * output nothing.
+		 * 
+		 * The menu will output only one level of Page
+		 * hierarchy.
+		 */
+		if ( 
+		/**
+		 * WordPress conditional tag that returns true if
+		 * the user has applied a custom navigation menu 
+		 * to the specified theme location
+		 */
+		has_nav_menu( 'nav-footer' ) 
+		) { 
+			/**
+			 * Output a custom navigation menu
+			 * 
+			 * Output a custom navigation menu
+			 * according to the parameters
+			 * specified by the options array
+			 * 
+			 * @param	array	options defining menu output
+			 */
+			wp_nav_menu( array( 
+				// apply 'id="footernav"' to the <ul> tag that 
+				// contains the menu
+				'menu_id' => 'footernav', 
+				// apply 'class="nav-footer"' to the <ul> 
+				// tag that contains the menu
+				'menu_class' => 'nav-footer', 
+				// Use the default fallback if the user has 
+				// not applied a menu to the specified theme 
+				// location
+				'fallback_cb' => '', 
+				// Apply one level of hierarchical depth
+				'depth' => 1, 
+				// Output the menu the user has applied to
+				// the 'nav-footer' Theme Location
+				'theme_location' => 'nav-footer' 
+			) ); 
+		}
+		?>
 
 		<?php 
 		// Fire the 'oenology_hook_site_footer_before' custom action hook
