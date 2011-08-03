@@ -53,16 +53,26 @@ function oenology_options_validate( $input ) {
 	$settingsbytab = oenology_get_settings_by_tab();
 	// Get the array of default options
 	$default_options = oenology_get_default_options();
+	// Get list of tabs
+	$tabs = oenology_get_settings_page_tabs();
 	
 	// Determine what type of submit was input
-	$submittype = ( 
-		(  ! empty( $input['submit-general'] ) 
-		|| ! empty( $input['submit-varietals'] ) 
-		) ? 'submit' : 'reset' );
+	$submittype = 'submit';	
+	foreach ( $tabs as $tab ) {
+		$resetname = 'reset-' . $tab['name'];
+		if ( ! empty( $input[$resetname] ) ) {
+			$submittype = 'reset';
+		}
+	}
+	
 	// Determine what tab was input
-	$submittab = 'general';
-	if ( ! empty( $input['submit-varietals'] ) || ! empty($input['reset-varietals'] ) ) {
-		$submittab = 'varietals';
+	$submittab = 'general';	
+	foreach ( $tabs as $tab ) {
+		$submitname = 'submit-' . $tab['name'];
+		$resetname = 'reset-' . $tab['name'];
+		if ( ! empty( $input[$submitname] ) || ! empty($input[$resetname] ) ) {
+			$submittab = $tab['name'];
+		}
 	}
 	// Get settings by tab
 	$tabsettings = $settingsbytab[$submittab];
@@ -299,6 +309,13 @@ function oenology_setting_callback( $option ) {
 		foreach ( $valid_options as $valid_option ) {
 			?>
 			<input type="radio" name="<?php echo $fieldname; ?>" <?php checked( $valid_option['name'] == $oenology_options[$optionname] ); ?> value="<?php echo $valid_option['name']; ?>" />
+			<span>
+			<?php echo $valid_option['title']; ?>
+			<?php if ( $valid_option['description'] ) { ?>
+				<span style="padding-left:5px;"><em><?php echo $valid_option['description']; ?></em></span>
+			<?php } ?>
+			</span>
+			<br />
 			<?php
 		}
 	}

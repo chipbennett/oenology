@@ -291,6 +291,39 @@ function oenology_get_default_options() {
 			'since' => '1.2',
 			'default' => ''
 		),
+        'default_static_page_layout' => array(
+			'name' => 'default_static_page_layout',
+			'title' => __( 'Default Static Page Layout', 'oenology' ),
+			'type' => 'radio',
+			'valid_options' => oenology_get_valid_page_layouts(),
+			'description' => __( 'Select the layout to be used as the default for static Pages when the "Default" page template is selected.', 'oenology' ),
+			'section' => 'layouts',
+			'tab' => 'layout',
+			'since' => '2.3',
+			'default' => 'two-column'			
+			),
+        'single_post_layout' => array(
+			'name' => 'single_post_layout',
+			'title' => __( 'Single Post Layout', 'oenology' ),
+			'type' => 'radio',
+			'valid_options' => oenology_get_valid_post_layouts(),
+			'description' => __( 'Select the layout to be used for single Blog Posts.', 'oenology' ),
+			'section' => 'layouts',
+			'tab' => 'layout',
+			'since' => '2.3',
+			'default' => 'two-column-left'			
+			),
+        'post_index_layout' => array(
+			'name' => 'post_index_layout',
+			'title' => __( 'Blog Posts Index Layout', 'oenology' ),
+			'type' => 'radio',
+			'valid_options' => oenology_get_valid_post_layouts(),
+			'description' => __( 'Select the layout to be used for Blog Posts Index pages.', 'oenology' ),
+			'section' => 'layouts',
+			'tab' => 'layout',
+			'since' => '2.3',
+			'default' => 'two-column-left'			
+			),
         'theme_version' => array(
 			'name' => 'theme_version',
 			'title' => 'Theme Version',
@@ -299,10 +332,69 @@ function oenology_get_default_options() {
 			'section' => false,
 			'tab' => false,
 			'since' => '1.2',
-			'default' => '1.2'
+			'default' => '2.3'
 		)
     );
     return $options;
+}
+ 
+/**
+ * Oenology Theme Admin Settings Page Tabs
+ * 
+ * Array that holds all of the tabs for the
+ * Oenology Theme Settings Page. Each tab
+ * key holds an array that defines the 
+ * sections for each tab, including the
+ * description text.
+ */
+function oenology_get_settings_page_tabs() {
+	
+	$tabs = array( 
+        'varietals' => array(
+			'name' => 'varietals',
+			'title' => __( 'Varietals', 'oenology' ),
+			'sections' => array(
+				'varietal' => array(
+					'name' => 'varietal',
+					'title' => __( 'Varietal Options', 'oenology' ),
+					'description' => oenology_get_varietal_text()
+				)
+			)
+		),
+        'layout' => array(
+			'name' => 'layout',
+			'title' => __( 'Layout', 'oenology' ),
+			'sections' => array(
+				'layouts' => array(
+					'name' => 'layouts',
+					'title' => __( 'Layout Options', 'oenology' ),
+					'description' => __( 'Manage layout options for static Pages, single Blog Posts, and Blog Post Index pages', 'oenology' )
+				)
+			)
+		),
+        'general' => array(
+			'name' => 'general',
+			'title' => __( 'General', 'oenology' ),
+			'sections' => array(
+				'header' => array(
+					'name' => 'header',
+					'title' => __( 'Header Options', 'oenology' ),
+					'description' => __( 'Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
+				),
+				'social' => array(
+					'name' => 'social',
+					'title' => __( 'Social Network Profile Options', 'oenology' ),
+					'description' => __( 'Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
+				),
+				'footer' => array(
+					'name' => 'footer',
+					'title' => __( 'Footer Options', 'oenology' ),
+					'description' => __( 'Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
+				)
+			)
+		),
+    );
+	return $tabs;
 }
 
 /**
@@ -371,51 +463,62 @@ function oenology_get_social_networks() {
 }
 
 /**
- * Oenology Theme Admin Settings Page Tabs
+ * Oenology Static Page Layout Templates
  * 
- * Array that holds all of the tabs for the
- * Oenology Theme Settings Page. Each tab
- * key holds an array that defines the 
- * sections for each tab, including the
- * description text.
+ * Array that holds all of the valid static
+ * Page layouts
  */
-function oenology_get_settings_page_tabs() {
-	
-	$tabs = array( 
-        'general' => array(
-			'name' => 'general',
-			'title' => __( 'General', 'oenology' ),
-			'sections' => array(
-				'header' => array(
-					'name' => 'header',
-					'title' => __( 'Header Options', 'oenology' ),
-					'description' => __( 'Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
-				),
-				'social' => array(
-					'name' => 'social',
-					'title' => __( 'Social Network Profile Options', 'oenology' ),
-					'description' => __( 'Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
-				),
-				'footer' => array(
-					'name' => 'footer',
-					'title' => __( 'Footer Options', 'oenology' ),
-					'description' => __( 'Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
-				)
-			)
-		),
-        'varietals' => array(
-			'name' => 'varietals',
-			'title' => __( 'Varietals', 'oenology' ),
-			'sections' => array(
-				'varietal' => array(
-					'name' => 'varietal',
-					'title' => __( 'Varietal Options', 'oenology' ),
-					'description' => oenology_get_varietal_text()
-				)
-			)
-		)
+function oenology_get_valid_page_layouts() {	
+	$layouts = array( 
+        'one-column' => array(
+        	'name' => 'one-column',
+        	'title' => __( '1-Column', 'oenology' ),
+        	'description' => __( 'One column (full-width content)', 'oenology' )
+        ),
+        'two-column' => array(
+        	'name' => 'two-column',
+        	'title' => __( '2-Column', 'oenology' ),
+        	'description' => __( 'Two columns (menu on left, content on right)', 'oenology' )
+        ),
+        'three-column' => array(
+        	'name' => 'three-column',
+        	'title' => __( '3-Column', 'oenology' ),
+        	'description' => __( 'Three columns (menu on left, sidebar on right, content in the center)', 'oenology' )
+        ),
     );
-	return $tabs;
+	return $layouts;
+}
+
+/**
+ * Oenology Static Page Layout Templates
+ * 
+ * Array that holds all of the valid static
+ * Page layouts
+ */
+function oenology_get_valid_post_layouts() {	
+	$layouts = array( 
+        'one-column' => array(
+        	'name' => 'one-column',
+        	'title' => __( '1-Column', 'oenology' ),
+        	'description' => __( 'One column (full-width content)', 'oenology' )
+        ),
+        'two-column-left' => array(
+        	'name' => 'two-column-left',
+        	'title' => __( '2-Column, Left', 'oenology' ),
+        	'description' => __( 'Two columns (content on the left, full-width sidebar on the right)', 'oenology' )
+        ),
+        'two-column-right' => array(
+        	'name' => 'two-column-right',
+        	'title' => __( '2-Column, Right', 'oenology' ),
+        	'description' => __( 'Two columns (content on the right, full-width sidebar on the left)', 'oenology' )
+        ),
+        'three-column' => array(
+        	'name' => 'three-column',
+        	'title' => __( '3-Column', 'oenology' ),
+        	'description' => __( 'Three columns (content in the center, half-width sidebars on the left and right)', 'oenology' )
+        ),
+    );
+	return $layouts;
 }
 
 /**
@@ -484,6 +587,17 @@ function oenology_options_init() {
 		$default_options = oenology_get_default_options();
 		$oenology_options['header_nav_menu_item_width'] = $default_options['header_nav_menu_item_width']['default'];
 		$oenology_options['theme_version'] = '2.1';
+		update_option( 'theme_oenology_options', $oenology_options );
+	}
+	
+	// Update New Options (Version 2.3)
+	$oenology_options = get_option( 'theme_oenology_options' );
+	if ( '2.3' > $oenology_options['theme_version'] ) {
+		$default_options = oenology_get_default_options();
+		$oenology_options['default_static_page_layout'] = $default_options['default_static_page_layout']['default'];
+		$oenology_options['single_post_layout'] = $default_options['single_post_layout']['default'];
+		$oenology_options['post_index_layout'] = $default_options['post_index_layout']['default'];
+		$oenology_options['theme_version'] = '2.3';
 		update_option( 'theme_oenology_options', $oenology_options );
 	}
 }
@@ -1137,7 +1251,7 @@ function oenology_get_current_tab( $current = 'general' ) {
     if ( isset ( $_GET['tab'] ) ) :
         $current = $_GET['tab'];
     else:
-        $current = 'general';
+        $current = 'varietals';
     endif;
 	
 	return $current;
