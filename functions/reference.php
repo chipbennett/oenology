@@ -260,26 +260,4 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	// Return the output
 	return $output;
 }
-
-
-/**
- * Enqueue Custom Admin Page Thickbox jQuery
- */
-
-function oenology_enqueue_admin_thickbox_style() {
-
-	// enqueue style
-	wp_enqueue_style('thickbox'); 
-}
-// Enqueue Admin Stylesheet at admin_print_styles()
-//add_action('admin_print_styles-appearance_page_oenology-reference', 'oenology_enqueue_admin_thickbox_style' );
-
-function oenology_enqueue_admin_thickbox_scripts() {
-
-	// enqueue scripts
-	wp_enqueue_script('jquery'); 
-	wp_enqueue_script('thickbox'); 
-}
-// Enqueue Admin Stylesheet at admin_print_styles()
-//add_action('admin_print_scripts-appearance_page_oenology-reference', 'oenology_enqueue_admin_thickbox_scripts' );
 ?>

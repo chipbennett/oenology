@@ -134,6 +134,8 @@ if ( ! function_exists( 'oenology_setup' ) ):
 		 * taxonomy terms - are defined by function
 		 * oenology_get_post_formats().
 		 * 
+		 * @uses	oenology_get_post_formats()	defined in \functions\custom.php
+		 * 
 		 * @since	WordPress 3.1.0
 		 */
 
@@ -242,34 +244,14 @@ if ( ! function_exists( 'oenology_setup' ) ):
 		 * in the Appearance -> Headers administration screen
 		 */
 		define( 'NO_HEADER_TEXT', false );
-		
-		/**
-		 * Determine Header Text Color Setting
-		 * 
-		 * Determine what color value to pass to the
-		 * HEADER_TEXTCOLOR constant, based on whether a 
-		 * dark or light color scheme is being displayed.
-		 */
-		function oenology_get_header_textcolor() {
-		
-			$headertextcolor = ( get_header_textcolor() ? get_header_textcolor() : false );
-			if ( ! $headertextcolor ) {
-				$colorscheme = oenology_get_color_scheme();
-				
-				if ( 'light' == $colorscheme ) {
-					$headertextcolor = '666666';
-				} elseif ( 'dark' == $colorscheme ) {
-					$headertextcolor = 'dddddd';
-				}
-			}
-			return $headertextcolor;
-		}
 		/**
 		 * Define HEADER_TEXTCOLOR
 		 * 
 		 * HEADER_TEXTCOLOR is the header text color, expressed
 		 * as a Hexadecimal value, without the leading octothorpe
 		 *(#).
+		 * 
+		 * @uses	oenology_get_header_textcolor()	defined in \functions\custom.php
 		 */
 		define( 'HEADER_TEXTCOLOR', oenology_get_header_textcolor() );
 
@@ -369,15 +351,38 @@ if ( ! function_exists( 'oenology_setup' ) ):
 				)
 			) );
 		}
-	
-		if ( ! function_exists( 'oenology_header_style' ) ) :
 
-			function oenology_header_style() { 
-				?>
+		/*
+		 * Define Nav Menus (since WordPress 3.0)
+		 */
+
+		// This theme uses wp_nav_menu() in two locations: main site navigation, and left-colum page navigation.
+		register_nav_menus( array(
+			'nav-header' => 'Header Navigation',
+			'nav-sidebar' => 'Sidebar Navigation',
+			'nav-footer' => 'Footer Navigation'
+		) );
+
+	
+	} // function oenology_setup()
+
+endif; // function_exists( 'oenology_setup' )
+
+/**
+ * Allow Child Themes to override this function entirely. If
+ * a Child Theme includes an oenology_header_style() function, it
+ * will be used in place of this function.
+ */
+if ( ! function_exists( 'oenology_header_style' ) ) :
+
+	function oenology_header_style() { 
+	?>
 			
 <style type="text/css">
 /* Sets header image as background for div#header */
-			<?php if ( get_header_image() && HEADER_IMAGE != get_header_image() ) { ?>
+<?php 
+if ( get_header_image() && HEADER_IMAGE != get_header_image() ) { 
+	?>
 #header {
 	background:url('<?php header_image(); ?>') no-repeat center top;
 	overflow: hidden;
@@ -385,20 +390,25 @@ if ( ! function_exists( 'oenology_setup' ) ):
 #site-header-text {
 	background: rgba(0, 0, 0, 0.2);
 }
-<?php			 
-				$oenology_options = oenology_get_options();
-				if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
-					if ( get_header_image() ) { ?>
+	<?php			 
+	$oenology_options = oenology_get_options();
+	if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
+		if ( get_header_image() ) { 
+			?>
 #nav,
 .navmenu,
 .nav-header {
 	background-color: rgba(0, 0, 0, 0.2);
 }
-					<?php }
-					}?>
-			<?php } ?>
+		<?php
+		}
+	}
+} 
+?>
 /* Sets text color for div#header p and div */
-			<?php if ( get_header_textcolor() ) { ?>
+<?php 
+if ( get_header_textcolor() ) { 
+	?>
 #site-header-text {
 	color:#<?php header_textcolor(); ?>;
 }
@@ -406,18 +416,24 @@ if ( ! function_exists( 'oenology_setup' ) ):
 .navmenu li {
 	padding-top: 1px;
 }
-				<?php }
-			?>
-			</style>
-			<?php
-			}
+	<?php 
+	}
+?>
+</style>
+	<?php
+	}
 
-		endif;
+endif; // function_exists( 'oenology_header_style' )
 
-		if ( ! function_exists( 'oenology_admin_header_style' ) ) :
+/**
+ * Allow Child Themes to override this function entirely. If
+ * a Child Theme includes an oenology_admin_header_style() function, it
+ * will be used in place of this function.
+ */
+if ( ! function_exists( 'oenology_admin_header_style' ) ) :
 
-			function oenology_admin_header_style() {
-			?>
+	function oenology_admin_header_style() {
+	?>
 <style type="text/css">
 #headimg {
 	width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
@@ -454,24 +470,8 @@ if ( ! function_exists( 'oenology_setup' ) ):
   font-family: 'Nimbus Roman No9 L', 'Times New Roman', serif;
 }  
 </style>
-			<?php
-			}
+	<?php
+	}
 	
-		endif;
-
-		/*
-		 * Define Nav Menus (since WordPress 3.0)
-		 */
-
-		// This theme uses wp_nav_menu() in two locations: main site navigation, and left-colum page navigation.
-		register_nav_menus( array(
-			'nav-header' => 'Header Navigation',
-			'nav-sidebar' => 'Sidebar Navigation',
-			'nav-footer' => 'Footer Navigation'
-		) );
-
-	
-	} // function oenology_setup()
-
-endif; // function_exists('oenology_setup')
+endif;  // function_exists( 'oenology_admin_header_style' )
 ?>

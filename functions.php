@@ -113,4 +113,11 @@ require( get_template_directory() . '/functions/reference.php' );
  */
 require( get_template_directory() . '/functions/contextual-help.php' );
 
+/**
+ * Include the Dynamic Style/Script Function File
+ * 
+ * - dynamic-css.php includes the Theme Dynamic Style/Script content
+ */
+require( get_template_directory() . '/functions/dynamic-css.php' );
+
 ?>

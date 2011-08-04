@@ -79,6 +79,28 @@ function oenology_get_context() {
 	
 	return $context;
 }
+		
+/**
+ * Determine Header Text Color Setting
+ * 
+ * Determine what color value to pass to the
+ * HEADER_TEXTCOLOR constant, based on whether a 
+ * dark or light color scheme is being displayed.
+ */
+function oenology_get_header_textcolor() {
+
+	$headertextcolor = ( get_header_textcolor() ? get_header_textcolor() : false );
+	if ( ! $headertextcolor ) {
+		$colorscheme = oenology_get_color_scheme();
+		
+		if ( 'light' == $colorscheme ) {
+			$headertextcolor = '666666';
+		} elseif ( 'dark' == $colorscheme ) {
+			$headertextcolor = 'dddddd';
+		}
+	}
+	return $headertextcolor;
+}
 
 /*
  * Define supported Post Format types

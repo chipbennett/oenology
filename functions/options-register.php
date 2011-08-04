@@ -385,5 +385,4 @@ function oenology_setting_varietal() {
 		}
 	}
 }
-
 ?>
