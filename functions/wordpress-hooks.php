@@ -37,6 +37,31 @@ add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
 
 
 /**
+ * Filter 'body_class'
+ * 
+ * Filter 'body_class' to include
+ * classes for page layout.
+ */
+function oenology_filter_body_class( $classes ) {
+	global $oenology_options;
+	$layout = 'layout-';
+	if ( is_page() ) {
+		global $post;
+		$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true );
+		if ( 'default' == $pagetemplate ) {
+			$layout .= $oenology_options['default_static_page_layout'];
+		} else {
+			$template = substr( $pagetemplate, 0, -4 );
+			$template = substr( $template, 5 );
+			$layout .= $template;
+		}
+		$classes[] = $layout;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'oenology_filter_body_class' );
+
+/**
  * Filter 'wp_title'
  * 
  * Filter 'wp_title' to output contextual content

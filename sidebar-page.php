@@ -55,47 +55,53 @@ if (
 	</div>
 	<!-- End Left Column (div#leftcol) -->
 
-	<!-- Begin Right Column (div#rightcol) -->
 	<?php
-	// div#rightcol contains the right column content of the three-column 
-	// layout. For the Blog Posts Index, div#rightcol and div#leftcol both
-	// appear to the right of the main content column. For static Pages,
-	// including a static Page as Front Page, div#leftcol is to the left, 
-	// and div#rightcol is to the right, with div#main in the center.
-	// 
-	// Includes the 'sidebar-right' dynamic sidebar
-	?>
-	<div id="rightcol">
-		<!-- Begin Right Column Widget Area-->
-		<?php 
-		// Display default sidebar content if the following conditions are true:
-		//  - Dynamic sidebar 'sidebar-right' is not active, AND
-		//  - A static Page as Front Page is not being displayed
-		if ( 
-		   // WordPress conditional tag that returns true if the 
-		   // specified dynamic sidebar is active
-		   ! dynamic_sidebar( 'sidebar-right' ) 
-		&& ! ( 
-			   // WordPress conditional tag that returns true if the 
-			   // current page is the Front Page
-				  is_front_page() 
-			   // Returns true if the Front Page is set to display a 
-			   // static Page
-			   && 'page' == get_option('show_on_front') ) 
-		) {
-			// Calls a sidebar template part file.
-			// Used in all primary template pages.
-			//
-			// Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
-			// 
-			// Child Themes can replace this template part file globally, 
-			// via "sidebar-right.php"
-			get_sidebar( 'right' ); 
-		} 
+	global $post;
+	$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true );
+	if ( 'page-two-column.php' != $pagetemplate || ( 'default' == $pagetemplate && 'two-column' != $oenology_options['default_static_page_layout'] ) ) {
 		?>
-		<!-- End Right Column Widget Area -->
-	</div>
-	<!-- End Right Column (div#rightcol) -->
-	<?php 
+		<!-- Begin Right Column (div#rightcol) -->
+		<?php
+		// div#rightcol contains the right column content of the three-column 
+		// layout. For the Blog Posts Index, div#rightcol and div#leftcol both
+		// appear to the right of the main content column. For static Pages,
+		// including a static Page as Front Page, div#leftcol is to the left, 
+		// and div#rightcol is to the right, with div#main in the center.
+		// 
+		// Includes the 'sidebar-right' dynamic sidebar
+		?>
+		<div id="rightcol">
+			<!-- Begin Right Column Widget Area-->
+			<?php 
+			// Display default sidebar content if the following conditions are true:
+			//  - Dynamic sidebar 'sidebar-right' is not active, AND
+			//  - A static Page as Front Page is not being displayed
+			if ( 
+			   // WordPress conditional tag that returns true if the 
+			   // specified dynamic sidebar is active
+			   ! dynamic_sidebar( 'sidebar-right' ) 
+			&& ! ( 
+				   // WordPress conditional tag that returns true if the 
+				   // current page is the Front Page
+					  is_front_page() 
+				   // Returns true if the Front Page is set to display a 
+				   // static Page
+				   && 'page' == get_option('show_on_front') ) 
+			) {
+				// Calls a sidebar template part file.
+				// Used in all primary template pages.
+				//
+				// Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
+				// 
+				// Child Themes can replace this template part file globally, 
+				// via "sidebar-right.php"
+				get_sidebar( 'right' ); 
+			} 
+			?>
+			<!-- End Right Column Widget Area -->
+		</div>
+		<!-- End Right Column (div#rightcol) -->
+		<?php 
+	}
 }
 ?>
