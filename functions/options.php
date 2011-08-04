@@ -128,11 +128,10 @@ function oenology_get_option_defaults() {
 	// parameters array
 	foreach ( $option_parameters as $option_parameter ) {
 		$name = $option_parameter['name'];
-		$default = $option_parameter['default'];
 		// Add an associative array key
 		// to the defaults array for each
 		// option in the parameters array
-		$option_defaults[$name] = $default;
+		$option_defaults[$name] = $option_parameter['default'];
 	}
 	// Return the defaults array
 	return $option_defaults;
@@ -149,9 +148,6 @@ function oenology_get_option_defaults() {
  * option appears, and the 'section' tab determines
  * the section of the Settings Page tab in which
  * the option appears.
- * 
- * @uses	oenology_get_valid_page_layouts()	defined in \functions\options.php
- * @uses	oenology_get_valid_post_layouts()	defined in \functions\options.php
  * 
  * @return	array	$options	array of arrays of option parameters
  */
@@ -406,7 +402,23 @@ function oenology_get_option_parameters() {
 			'name' => 'default_static_page_layout',
 			'title' => __( 'Default Static Page Layout', 'oenology' ),
 			'type' => 'radio',
-			'valid_options' => oenology_get_valid_page_layouts(),
+			'valid_options' => array(
+				'one-column' => array(
+					'name' => 'one-column',
+					'title' => __( '1-Column', 'oenology' ),
+					'description' => __( 'One column (full-width content)', 'oenology' )
+				),
+				'two-column' => array(
+					'name' => 'two-column',
+					'title' => __( '2-Column', 'oenology' ),
+					'description' => __( 'Two columns (menu on left, content on right)', 'oenology' )
+				),
+				'three-column' => array(
+					'name' => 'three-column',
+					'title' => __( '3-Column', 'oenology' ),
+					'description' => __( 'Three columns (menu on left, sidebar on right, content in the center)', 'oenology' )
+				),
+			),
 			'description' => __( 'Select the layout to be used as the default for static Pages when the "Default" page template is selected.', 'oenology' ),
 			'section' => 'layouts',
 			'tab' => 'layout',
@@ -417,7 +429,28 @@ function oenology_get_option_parameters() {
 			'name' => 'single_post_layout',
 			'title' => __( 'Single Post Layout', 'oenology' ),
 			'type' => 'radio',
-			'valid_options' => oenology_get_valid_post_layouts(),
+			'valid_options' => array(
+				'one-column' => array(
+					'name' => 'one-column',
+					'title' => __( '1-Column', 'oenology' ),
+					'description' => __( 'One column (full-width content)', 'oenology' )
+				),
+				'two-column-left' => array(
+					'name' => 'two-column-left',
+					'title' => __( '2-Column, Left', 'oenology' ),
+					'description' => __( 'Two columns (content on the left, full-width sidebar on the right)', 'oenology' )
+				),
+				'two-column-right' => array(
+					'name' => 'two-column-right',
+					'title' => __( '2-Column, Right', 'oenology' ),
+					'description' => __( 'Two columns (content on the right, full-width sidebar on the left)', 'oenology' )
+				),
+				'three-column' => array(
+					'name' => 'three-column',
+					'title' => __( '3-Column', 'oenology' ),
+					'description' => __( 'Three columns (content in the center, half-width sidebars on the left and right)', 'oenology' )
+				),
+			),
 			'description' => __( 'Select the layout to be used for single Blog Posts.', 'oenology' ),
 			'section' => 'layouts',
 			'tab' => 'layout',
@@ -428,7 +461,28 @@ function oenology_get_option_parameters() {
 			'name' => 'post_index_layout',
 			'title' => __( 'Blog Posts Index Layout', 'oenology' ),
 			'type' => 'radio',
-			'valid_options' => oenology_get_valid_post_layouts(),
+			'valid_options' => array(
+				'one-column' => array(
+					'name' => 'one-column',
+					'title' => __( '1-Column', 'oenology' ),
+					'description' => __( 'One column (full-width content)', 'oenology' )
+				),
+				'two-column-left' => array(
+					'name' => 'two-column-left',
+					'title' => __( '2-Column, Left', 'oenology' ),
+					'description' => __( 'Two columns (content on the left, full-width sidebar on the right)', 'oenology' )
+				),
+				'two-column-right' => array(
+					'name' => 'two-column-right',
+					'title' => __( '2-Column, Right', 'oenology' ),
+					'description' => __( 'Two columns (content on the right, full-width sidebar on the left)', 'oenology' )
+				),
+				'three-column' => array(
+					'name' => 'three-column',
+					'title' => __( '3-Column', 'oenology' ),
+					'description' => __( 'Three columns (content in the center, half-width sidebars on the left and right)', 'oenology' )
+				),
+			),
 			'description' => __( 'Select the layout to be used for Blog Posts Index pages.', 'oenology' ),
 			'section' => 'layouts',
 			'tab' => 'layout',
@@ -603,113 +657,5 @@ function oenology_get_settings_page_tabs() {
 		),
     );
 	return $tabs;
-}
-
-/**
- * Oenology Theme Social Networks
- * 
- * Array that holds all of the valid social
- * networks for Oenology.
- * 
- * @return	array	$socialnetworks	array of arrays of social network parameters
- */
-function oenology_get_social_networks() {
-	
-	$socialnetworks = array( 
-        'youtube' => array(
-        	'name' => 'youtube',
-        	'title' => __( 'YouTube', 'oenology' ),
-        	'baseurl' => 'http://www.youtube.com'
-        ),
-        'myspace' => array(
-        	'name' => 'myspace',
-        	'title' => __( 'MySpace', 'oenology' ),
-        	'baseurl' => 'http://www.myspace.com'
-        ),
-        'linkedin' => array(
-        	'name' => 'linkedin',
-        	'title' => __( 'Linked-In', 'oenology' ),
-        	'baseurl' => 'http://www.linkedin.com/in'
-        ),
-        'flickr' => array(
-        	'name' => 'flickr',
-        	'title' => __( 'Flickr', 'oenology' ),
-        	'baseurl' => 'http://www.flickr.com/photos'
-        ),
-        'facebook' => array(
-        	'name' => 'facebook',
-        	'title' => __( 'Facebook', 'oenology' ),
-        	'baseurl' => 'http://www.facebook.com'
-        ),
-        'twitter' => array(
-        	'name' => 'twitter',
-        	'title' => __( 'Twitter', 'oenology' ),
-        	'baseurl' => 'http://www.twitter.com'
-        )
-    );
-	return $socialnetworks;
-}
-
-/**
- * Oenology Static Page Layout Templates
- * 
- * Array that holds all of the valid static
- * Page layouts
- * 
- * @return	array	$layouts	array of arrays of layout parameters
- */
-function oenology_get_valid_page_layouts() {	
-	$layouts = array( 
-        'one-column' => array(
-        	'name' => 'one-column',
-        	'title' => __( '1-Column', 'oenology' ),
-        	'description' => __( 'One column (full-width content)', 'oenology' )
-        ),
-        'two-column' => array(
-        	'name' => 'two-column',
-        	'title' => __( '2-Column', 'oenology' ),
-        	'description' => __( 'Two columns (menu on left, content on right)', 'oenology' )
-        ),
-        'three-column' => array(
-        	'name' => 'three-column',
-        	'title' => __( '3-Column', 'oenology' ),
-        	'description' => __( 'Three columns (menu on left, sidebar on right, content in the center)', 'oenology' )
-        ),
-    );
-	return $layouts;
-}
-
-/**
- * Oenology Static Page Layout Templates
- * 
- * Array that holds all of the valid static
- * Page layouts
- * 
- * @return	array	$layouts	array of arrays of layout parameters
- */
-function oenology_get_valid_post_layouts() {	
-	$layouts = array( 
-        'one-column' => array(
-        	'name' => 'one-column',
-        	'title' => __( '1-Column', 'oenology' ),
-        	'description' => __( 'One column (full-width content)', 'oenology' )
-        ),
-        'two-column-left' => array(
-        	'name' => 'two-column-left',
-        	'title' => __( '2-Column, Left', 'oenology' ),
-        	'description' => __( 'Two columns (content on the left, full-width sidebar on the right)', 'oenology' )
-        ),
-        'two-column-right' => array(
-        	'name' => 'two-column-right',
-        	'title' => __( '2-Column, Right', 'oenology' ),
-        	'description' => __( 'Two columns (content on the right, full-width sidebar on the left)', 'oenology' )
-        ),
-        'three-column' => array(
-        	'name' => 'three-column',
-        	'title' => __( '3-Column', 'oenology' ),
-        	'description' => __( 'Three columns (content in the center, half-width sidebars on the left and right)', 'oenology' )
-        ),
-    );
-	return $layouts;
 }
 ?>

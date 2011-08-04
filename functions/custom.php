@@ -395,6 +395,51 @@ function oenology_get_page_tab_markup() {
 }
 
 /**
+ * Oenology Theme Social Networks
+ * 
+ * Array that holds all of the valid social
+ * networks for Oenology.
+ * 
+ * @return	array	$socialnetworks	array of arrays of social network parameters
+ */
+function oenology_get_social_networks() {
+	
+	$socialnetworks = array( 
+        'youtube' => array(
+        	'name' => 'youtube',
+        	'title' => __( 'YouTube', 'oenology' ),
+        	'baseurl' => 'http://www.youtube.com'
+        ),
+        'myspace' => array(
+        	'name' => 'myspace',
+        	'title' => __( 'MySpace', 'oenology' ),
+        	'baseurl' => 'http://www.myspace.com'
+        ),
+        'linkedin' => array(
+        	'name' => 'linkedin',
+        	'title' => __( 'Linked-In', 'oenology' ),
+        	'baseurl' => 'http://www.linkedin.com/in'
+        ),
+        'flickr' => array(
+        	'name' => 'flickr',
+        	'title' => __( 'Flickr', 'oenology' ),
+        	'baseurl' => 'http://www.flickr.com/photos'
+        ),
+        'facebook' => array(
+        	'name' => 'facebook',
+        	'title' => __( 'Facebook', 'oenology' ),
+        	'baseurl' => 'http://www.facebook.com'
+        ),
+        'twitter' => array(
+        	'name' => 'twitter',
+        	'title' => __( 'Twitter', 'oenology' ),
+        	'baseurl' => 'http://www.twitter.com'
+        )
+    );
+	return $socialnetworks;
+}
+
+/**
  * Image Handling for gallery previous/next links
  * 
  * function needed because WP gives no easy way to 
