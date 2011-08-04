@@ -81,6 +81,37 @@ function oenology_filter_wp_title( $title, $separator ) { // taken from TwentyTe
 add_filter( 'wp_title', 'oenology_filter_wp_title', 10, 2 );
 
 /**
+ * Filter Capability for Theme Settings Page
+ * 
+ * This filter implements a WordPress 3.2 fix for
+ * a minor bug, in which add_theme_page() is passed
+ * the "edit_theme_options" capability, but the
+ * settings page form is passed through options.php,
+ * which expects the "manage_options" capability.
+ * 
+ * The "edit_theme_options" capability is part of the
+ * EDITOR user role, while "manage_options" is only
+ * available to the ADMINISTRATOR role. So, users in
+ * the EDITOR user role can access the Theme settings
+ * page, but are unable actually to update/save the
+ * Theme settings.
+ * 
+ * The function is hooked into a hook, introduced in
+ * WordPress 3.2: "option_page_capability_{option_page}",
+ * where {option_page} is the name of the options page,
+ * as defined in the fourth argument of the call to
+ * add_theme_page()
+ * 
+ * The function returns a string consisting of the
+ * appropriate capability for saving Theme settings.
+ */
+function oenology_get_settings_page_cap() {
+	return 'edit_theme_options';
+}
+// Hook into option_page_capability_{option_page}
+add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_page_cap' );
+
+/**
  * Filter the_title 
  * 
  * Filter 'the_title' to output '(Untitled)' if 

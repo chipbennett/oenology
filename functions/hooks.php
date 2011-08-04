@@ -549,9 +549,10 @@ function oenology_hook_post_footer_license() {
 }
 
 /**
- * Hook to filter content within div#postmetadata
+ * Hook to filter Post Footer Metadata
  * 
- * This hook can be used to filter to content that is output in the div#postmetadata container.
+ * This hook can be used to filter to content that is 
+ * output in the div#postmetadata container.
  * 
  * Template file: post-footer.php
  * 
@@ -601,9 +602,10 @@ function oenology_hook_post_footer_metadata() {
 }
 
 /**
- * Hook to filter content within div#postmetadata
+ * Hook to filter Post Header Date
  * 
- * This hook can be used to filter to content that is output in the div#postmetadata container.
+ * This hook can be used to filter to content that is 
+ * output in the div#post-title container.
  * 
  * Template file: post-header.php
  * 
@@ -636,11 +638,12 @@ function oenology_hook_post_header_date() {
 }
 
 /**
- * Hook to filter content within div#postmetadata
+ * Hook to filter Post Header Metadata Links
  * 
- * This hook can be used to filter to content that is output in the div#postmetadata container.
+ * This hook can be used to filter to content that is 
+ * output in the div#post-title container.
  * 
- * Template file: post-footer.php
+ * Template file: post-header.php
  * 
  * @uses apply_filters()
  * @uses get_comments_number()
@@ -698,11 +701,12 @@ function oenology_hook_post_header_metadata() {
 }
 	
 /**
- * Hook to filter content within div#postmetadata
+ * Hook to filter Post Header Taxonomies
  * 
- * This hook can be used to filter to content that is output in the div#postmetadata container.
+ * This hook can be used to filter to content that is 
+ * output in the div#post-title container.
  * 
- * Template file: post-footer.php
+ * Template file: post-header.php
  * 
  * @uses apply_filters()
  * @uses get_the_category_list()
@@ -733,11 +737,12 @@ function oenology_hook_post_header_taxonomies() {
 }
 
 /**
- * Hook to filter content within div#postmetadata
+ * Hook to filter Post Header Title
  * 
- * This hook can be used to filter to content that is output in the div#postmetadata container.
+ * This hook can be used to filter to content that is 
+ * output in the div#post-title container.
  * 
- * Template file: post-footer.php
+ * Template file: post-header.php
  * 
  * @uses apply_filters()
  * @uses get_permalink()
@@ -760,11 +765,12 @@ function oenology_hook_post_header_title() {
 }
 
 /**
- * Hook to filter content within div#postmetadata
+ * Hook to filter Post Header Thumbnail
  * 
- * This hook can be used to filter to content that is output in the div#postmetadata container.
+ * This hook can be used to filter to content that is 
+ * output in the div#post-title container.
  * 
- * Template file: post-footer.php
+ * Template file: post-header.php
  * 
  * @uses apply_filters()
  * @uses get_post_format()
@@ -778,25 +784,34 @@ function oenology_hook_post_header_title() {
  * @since Oenology 2.0
  */
 function oenology_hook_post_header_thumbnail() {
-
-	$post_header_thumbnail = '';
 	
 	// display the post thumbnail in the post header for search and archive pages, since they are excerpted
 	// don't display for custom Post Formats, since icons are displayed
 	if ( ( ! ( is_home() || is_single() || is_page() || is_attachment() ) ) && has_post_thumbnail() && ! get_post_format() ) { 
+
+		$post_header_thumbnail = '';
 		global $post;
 		$post_header_thumbnail = get_the_post_thumbnail( $post->ID, 'post-title-thumbnail' );
-	}
 
-	echo '<span class="post-title-thumbnail">' . apply_filters( 'oenology_hook_post_header_thumbnail', $post_header_thumbnail ) . '</span>';
+		echo '<span class="post-title-thumbnail">' . apply_filters( 'oenology_hook_post_header_thumbnail', $post_header_thumbnail ) . '</span>';
+	}
 }
 
 /**
- * Hook to filter content within div#postmetadata
+ * Hook to filter site footer content
  * 
- * This hook can be used to filter to content that is output in the div#postmetadata container.
+ * This hook can be used to filter to content that is 
+ * output in the div#postmetadata container. By default, 
+ * it builds an associative array: 
+ * - $site_footer['copyright'] => the site copyright notice
+ * - $site_footer['wordpress'] => the WordPress credit
+ * - $site_footer['themecredit'] => the Theme credit (if enabled)
  * 
- * Template file: post-footer.php
+ * The filter is passed on the array, before the array 
+ * is imploded. So to modify the output, add, remove, or 
+ * modify the array keys.
+ * 
+ * Template file: footer.php
  * 
  * @uses apply_filters()
  * @uses date()
@@ -839,9 +854,13 @@ function oenology_hook_site_footer() {
 }
 
 /**
- * Hook to filter content within div#site-header-text
+ * Hook to filter site header text content
  * 
- * This hook can be used to filter to content that is output in the div#site-header-text container.
+ * This hook can be used to filter to content that is 
+ * output in the div#site-header-text container. By 
+ * default, it outputs the Site Title inside a DIV with 
+ * a class .site-header-text, and the Site Description 
+ * inside paragraph tags.
  * 
  * Template file: site-header.php
  * 
