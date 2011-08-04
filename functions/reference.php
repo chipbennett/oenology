@@ -18,39 +18,33 @@
  * @since 		Oenology 1.0
  */
 
-// Globalize the variable that holds
-// the Theme contextual help hook
-global $oenology_admin_reference_hook;
+/**
+ * Setup the Theme Admin Reference Page
+ */
+function oenology_menu_reference() {
+	add_theme_page( __( 'Oenology Reference', 'oenology' ), __( 'Oenology Reference', 'oenology' ), 'edit_theme_options', 'oenology-reference', 'oenology_admin_reference_page' );
+}
+// Load the Admin Reference page
+add_action('admin_menu', 'oenology_menu_reference');
+
 
 /**
  * Helper Functions
  */
 
-function oenology_get_reference_page_tabs() {
-	
-	$tabs = array( 
-        'general' => __( 'General', 'oenology' ),
-        'faq' => __( 'FAQ', 'oenology' ),
-        'coderef' => __( 'Code Reference', 'oenology' ),
-		'changelog' => __( 'Changelog', 'oenology' ),
-		'license' => __( 'License', 'oenology' ),
-		'support' => __( 'Support', 'oenology' )
-    );
-	return $tabs;
+
+// Admin reference page markup 
+function oenology_admin_reference_page() { ?>
+
+	<div class="wrap">
+		<?php
+		oenology_admin_reference_page_tabs();
+		require( get_template_directory() . '/functions/reference-content.php' );
+		?>
+		
+	</div>
+<?php 
 }
-
-
-/**
- * Setup the Theme Admin Reference Page
- */
-
-// Add "Oenology Reference" link to the "Appearance" menu
-function oenology_menu_reference() {
-	global $oenology_admin_reference_hook;
-	$oenology_admin_reference_hook = add_theme_page( __( 'Oenology Reference', 'oenology' ), __( 'Oenology Reference', 'oenology' ), 'edit_theme_options', 'oenology-reference', 'oenology_admin_reference_page');
-}
-// Load the Admin Reference page
-add_action('admin_menu', 'oenology_menu_reference');
 
 // Define Reference Page Tabs
 // http://www.onedesigns.com/tutorials/separate-multiple-theme-options-pages-using-tabs
@@ -82,60 +76,18 @@ function oenology_admin_reference_page_tabs( $current = 'general' ) {
     
 }
 
-
-// Admin reference page markup 
-function oenology_admin_reference_page() { ?>
-
-	<div class="wrap">
-		<?php
-		oenology_admin_reference_page_tabs();
-		require( get_template_directory() . '/functions/reference-content.php' );
-		?>
-		
-	</div>
-<?php }
-
-
-/**
- * Enqueue Custom Admin Page Thickbox jQuery
- */
-
-function oenology_enqueue_admin_thickbox_style() {
-
-	// enqueue style
-	wp_enqueue_style('thickbox'); 
+function oenology_get_reference_page_tabs() {
+	
+	$tabs = array( 
+        'general' => __( 'General', 'oenology' ),
+        'faq' => __( 'FAQ', 'oenology' ),
+        'coderef' => __( 'Code Reference', 'oenology' ),
+		'changelog' => __( 'Changelog', 'oenology' ),
+		'license' => __( 'License', 'oenology' ),
+		'support' => __( 'Support', 'oenology' )
+    );
+	return $tabs;
 }
-// Enqueue Admin Stylesheet at admin_print_styles()
-//add_action('admin_print_styles-appearance_page_oenology-reference', 'oenology_enqueue_admin_thickbox_style' );
-
-function oenology_enqueue_admin_thickbox_scripts() {
-
-	// enqueue scripts
-	wp_enqueue_script('jquery'); 
-	wp_enqueue_script('thickbox'); 
-}
-// Enqueue Admin Stylesheet at admin_print_styles()
-//add_action('admin_print_scripts-appearance_page_oenology-reference', 'oenology_enqueue_admin_thickbox_scripts' );
-
-
-
-/**
- * Setup the Theme Admin Reference Page Contextual help
- */
-
-// Admin reference page contextual help markup
-// Separate file for ease of management
-function oenology_contextual_help_reference( $contextual_help, $screen_id, $screen ) {		
-	global $oenology_admin_reference_hook;
-	require( get_template_directory() . '/functions/reference-help.php' );
-	if ( $screen_id == $oenology_admin_reference_hook ) {
-		$contextual_help = $text;
-	}
-	return $contextual_help;
-}
-// Add contextual help to Admin Options page
-add_action('contextual_help', 'oenology_contextual_help_reference', 10, 3);
-
 
 /**
  * Get GitHub API Data
@@ -308,4 +260,26 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	// Return the output
 	return $output;
 }
+
+
+/**
+ * Enqueue Custom Admin Page Thickbox jQuery
+ */
+
+function oenology_enqueue_admin_thickbox_style() {
+
+	// enqueue style
+	wp_enqueue_style('thickbox'); 
+}
+// Enqueue Admin Stylesheet at admin_print_styles()
+//add_action('admin_print_styles-appearance_page_oenology-reference', 'oenology_enqueue_admin_thickbox_style' );
+
+function oenology_enqueue_admin_thickbox_scripts() {
+
+	// enqueue scripts
+	wp_enqueue_script('jquery'); 
+	wp_enqueue_script('thickbox'); 
+}
+// Enqueue Admin Stylesheet at admin_print_styles()
+//add_action('admin_print_scripts-appearance_page_oenology-reference', 'oenology_enqueue_admin_thickbox_scripts' );
 ?>

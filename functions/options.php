@@ -33,9 +33,178 @@ global $oenology_options;
 global $oenology_admin_options_hook;
 
 /**
- * Oenology Theme Default Options
+ * Oenology Theme Settings API Implementation
+ *
+ * Implement the WordPress Settings API for the 
+ * Oenology Theme Settings.
  * 
- * Array that holds all the default options for
+ * @link	http://codex.wordpress.org/Settings_API	Codex Reference: Settings API
+ * @link	http://ottopress.com/2009/wordpress-settings-api-tutorial/	Otto
+ * @link	http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/	Ozh
+ */
+function oenology_register_options(){
+	require( get_template_directory() . '/functions/options-register.php' );
+}
+// Settings API options initilization and validation
+add_action('admin_init', 'oenology_register_options');
+
+/**
+ * Filter Capability for Theme Settings Page
+ * 
+ * This filter implements a WordPress 3.2 fix for
+ * a minor bug, in which add_theme_page() is passed
+ * the "edit_theme_options" capability, but the
+ * settings page form is passed through options.php,
+ * which expects the "manage_options" capability.
+ * 
+ * The "edit_theme_options" capability is part of the
+ * EDITOR user role, while "manage_options" is only
+ * available to the ADMINISTRATOR role. So, users in
+ * the EDITOR user role can access the Theme settings
+ * page, but are unable actually to update/save the
+ * Theme settings.
+ * 
+ * The function is hooked into a hook, introduced in
+ * WordPress 3.2: "option_page_capability_{option_page}",
+ * where {option_page} is the name of the options page,
+ * as defined in the fourth argument of the call to
+ * add_theme_page()
+ * 
+ * The function returns a string consisting of the
+ * appropriate capability for saving Theme settings.
+ */
+function oenology_get_settings_page_cap() {
+	return 'edit_theme_options';
+}
+// Hook into option_page_capability_{option_page}
+add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_page_cap' );
+
+/**
+ * Setup the Theme Admin Settings Page
+ * 
+ * Add "Oenology Options" link to the "Appearance" menu
+ */
+function oenology_add_theme_page() {
+	add_theme_page(
+		// $page_title
+		// Name displayed in HTML title tag
+		'Oenology Options', 
+		// $menu_title
+		// Name displayed in the Admin Menu
+		'Oenology Options', 
+		// $capability
+		// User capability required to access page
+		oenology_get_settings_page_cap(), 
+		// $menu_slug
+		// String to append to URL after "themes.php"
+		'oenology-settings', 
+		// $callback
+		// Function to define settings page markup
+		'oenology_admin_options_page'
+	);
+}
+// Load the Admin Options page
+add_action('admin_menu', 'oenology_add_theme_page');
+
+/**
+ * Oenology Theme Settings Page Markup
+ */
+function oenology_admin_options_page() { 
+	$currenttab = oenology_get_current_tab();
+	$settings_section = 'oenology_' . $currenttab . '_tab';
+	?>
+
+	<div class="wrap">
+		<?php oenology_admin_options_page_tabs(); ?>
+		<?php if ( isset( $_GET['settings-updated'] ) ) {
+    			echo '<div class="updated"><p>';
+				echo __( 'Theme settings updated successfully.', 'oenology' );
+				echo '</p></div>';
+		} ?>
+		<form action="options.php" method="post">
+		<?php 
+			settings_fields('theme_oenology_options');
+			do_settings_sections( $settings_section );
+		?>
+			<?php submit_button( __( 'Save Settings', 'oenology' ), 'primary', 'theme_oenology_options[submit-' . $currenttab . ']', false ); ?>
+			<?php submit_button( __( 'Reset Defaults', 'oenology' ), 'secondary', 'theme_oenology_options[reset-' . $currenttab . ']', false ); ?>
+		</form>
+	</div>
+<?php 
+}
+
+/**
+ * Define Oenology Theme Settings Page Tab Markup
+ * 
+ * @link`http://www.onedesigns.com/tutorials/separate-multiple-theme-options-pages-using-tabs	Daniel Tara
+ */
+function oenology_admin_options_page_tabs() {
+
+    $current = oenology_get_current_tab();
+    
+    $tabs = oenology_get_settings_page_tabs();
+    
+    $links = array();
+    
+    foreach( $tabs as $tab ) :
+		$tabname = $tab['name'];
+		$tabtitle = $tab['title'];
+        if ( $tabname == $current ) :
+            $links[] = "<a class='nav-tab nav-tab-active' href='?page=oenology-settings&tab=$tabname'>$tabtitle</a>";
+        else :
+            $links[] = "<a class='nav-tab' href='?page=oenology-settings&tab=$tabname'>$tabtitle</a>";
+        endif;
+    endforeach;
+    
+    echo '<div id="icon-themes" class="icon32"><br /></div>';
+    echo '<h2 class="nav-tab-wrapper">';
+    foreach ( $links as $link )
+        echo $link;
+    echo '</h2>';
+    
+}
+
+/**
+ * Get current settings page tab
+ */
+function oenology_get_current_tab() {
+
+    if ( isset ( $_GET['tab'] ) ) :
+        $current = $_GET['tab'];
+    else:
+		$oenology_options = get_option( 'theme_oenology_options' );
+        $current = $oenology_options['default_options_tab'];
+    endif;
+	
+	return $current;
+}
+
+/**
+ * Oenology Theme Option Defaults
+ * 
+ * Returns an associative array that holds 
+ * all of the default values for all Theme 
+ * options.
+ * 
+ * @uses	oenology_get_option_parameters()
+ * 
+ * @return	array	$defaults	associative array of option defaults
+ */
+function oenology_get_option_defaults() {
+	$option_parameters = oenology_get_option_parameters();
+	$option_defaults = array();
+	foreach ( $option_parameters as $option_parameter ) {
+		$name = $option_parameter['name'];
+		$default = $option_parameter['default'];
+		$option_defaults[$name] = $default;
+	}
+	return $option_defaults;
+}
+
+/**
+ * Oenology Theme Option Parameters
+ * 
+ * Array that holds parameters for all options for
  * Oenology. The 'type' key is used to generate
  * the proper form field markup and to sanitize
  * the user-input data properly. The 'tab' key
@@ -44,7 +213,7 @@ global $oenology_admin_options_hook;
  * the section of the Settings Page tab in which
  * the option appears.
  */
-function oenology_get_default_options() {
+function oenology_get_option_parameters() {
 
     $options = array(
         'header_nav_menu_position' => array(
@@ -347,6 +516,52 @@ function oenology_get_default_options() {
     );
     return $options;
 }
+
+/**
+ * Get Oenology Theme Options
+ * 
+ * Array that holds all of the defined values
+ * for Oenology Theme options. If the user 
+ * has not specified a value for a given Theme 
+ * option, then the option's default value is
+ * used instead.
+ *
+ * @uses	wp_parse_args()
+ * 
+ * @return	array	$oenology_options	current values for all Theme options
+ */
+function oenology_get_options() {
+	// Get the option defaults
+	$option_defaults = oenology_get_option_defaults();
+	// Globalize the variable that holds the Theme options
+	global $oenology_options;
+	// Parse the stored options with the defaults
+	$oenology_options = wp_parse_args( get_option( 'theme_oenology_options', array() ), $option_defaults );
+	// Return the parsed array
+	return $oenology_options;
+}
+
+/**
+ * Separate settings by tab
+ */
+function oenology_get_settings_by_tab() {
+	$tabs = oenology_get_settings_page_tabs();
+	$tabnames = array();
+	foreach ( $tabs as $tab ) {
+		$tabname = $tab['name'];
+		$tabnames[] = $tabname;
+	}
+	$settingsbytab = $tabnames;
+	$default_options = oenology_get_option_parameters();
+	foreach ( $default_options as $default_option ) {
+		if ( 'internal' != $default_option['type'] ) {
+			$optiontab = $default_option['tab'];
+			$optionname = $default_option['name'];
+			$settingsbytab[$optiontab][] = $optionname;
+		}
+	}
+	return $settingsbytab;
+}
  
 /**
  * Oenology Theme Admin Settings Page Tabs
@@ -405,28 +620,6 @@ function oenology_get_settings_page_tabs() {
 		),
     );
 	return $tabs;
-}
-
-/**
- * Separate settings by tab
- */
-function oenology_get_settings_by_tab() {
-	$tabs = oenology_get_settings_page_tabs();
-	$tabnames = array();
-	foreach ( $tabs as $tab ) {
-		$tabname = $tab['name'];
-		$tabnames[] = $tabname;
-	}
-	$settingsbytab = $tabnames;
-	$default_options = oenology_get_default_options();
-	foreach ( $default_options as $default_option ) {
-		if ( 'internal' != $default_option['type'] ) {
-			$optiontab = $default_option['tab'];
-			$optionname = $default_option['name'];
-			$settingsbytab[$optiontab][] = $optionname;
-		}
-	}
-	return $settingsbytab;
 }
 
 /**
@@ -531,89 +724,21 @@ function oenology_get_valid_post_layouts() {
 	return $layouts;
 }
 
-/**
- * Oenology Theme Icon Color Schemes
- * 
- * Array that holds all of the valid color
- * schems for Oenology icons
- */
-function oenology_get_icon_colors() {
-	
-	$iconcolors = array( 
-        'black' => __( 'Black', 'oenology' ),
-        'silver' => __( 'Silver', 'oenology' ),
-        'gray' => __( 'Gray', 'oenology' ),
-        'coffee' => __( 'Coffee', 'oenology' )
-    );
-	return $iconcolors;
-}
-
 
 /**
- * Setup initial Theme options
+ * Enqueue Custom Admin Page Stylesheet
  */
-function oenology_options_init() {
+function oenology_enqueue_admin_style() {
 
-	// set options equal to defaults
-	global $oenology_options;
-	$oenology_options = get_option( 'theme_oenology_options' );
+	// define admin stylesheet
+	$admin_handle = 'oenology_admin_stylesheet';
+	$admin_stylesheet = get_template_directory_uri() . '/functions/oenology-admin.css';
 	
-	if ( false === $oenology_options ) {
-		$default_options = oenology_get_default_options();
-		$oenology_options = array();
-		foreach ( $default_options as $default_option ) {
-			$optionname = $default_option['name'];
-			$optiondefault = $default_option['default'];
-			$oenology_options[$optionname] = $optiondefault;
-		}
-	}
-	update_option( 'theme_oenology_options', $oenology_options );
-	
-	// Update New Options (Version 1.2)
-	$oenology_options = get_option( 'theme_oenology_options' );
-	if ( '1.2' > $oenology_options['theme_version'] ) {
-		$default_options = oenology_get_default_options();
-		$oenology_options['display_social_icons'] = $default_options['display_social_icons'];
-		$oenology_options['rss_feed'] = $default_options['rss_feed'];
-		$socialnetworks = oenology_get_social_networks();
-		foreach ( $socialnetworks as $network ) {
-			$profile = $network . '_profile';
-			$oenology_options[$profile] = $default_options[$profile];
-		}
-		$oenology_options['theme_version'] = '1.2';
-		update_option( 'theme_oenology_options', $oenology_options );
-	}
-	
-	// Update New Options Structure (Version 2.0)
-	$oenology_options = get_option( 'theme_oenology_options' );
-	if ( '2.0' > $oenology_options['theme_version'] ) {
-		$oenology_options['theme_version'] = '2.0';
-		update_option( 'theme_oenology_options', $oenology_options );
-	}
-	
-	// Update New Options (Version 2.1)
-	$oenology_options = get_option( 'theme_oenology_options' );
-	if ( '2.1' > $oenology_options['theme_version'] ) {
-		$default_options = oenology_get_default_options();
-		$oenology_options['header_nav_menu_item_width'] = $default_options['header_nav_menu_item_width']['default'];
-		$oenology_options['theme_version'] = '2.1';
-		update_option( 'theme_oenology_options', $oenology_options );
-	}
-	
-	// Update New Options (Version 2.3)
-	$oenology_options = get_option( 'theme_oenology_options' );
-	if ( '2.3' > $oenology_options['theme_version'] ) {
-		$default_options = oenology_get_default_options();
-		$oenology_options['default_static_page_layout'] = $default_options['default_static_page_layout']['default'];
-		$oenology_options['single_post_layout'] = $default_options['single_post_layout']['default'];
-		$oenology_options['post_index_layout'] = $default_options['post_index_layout']['default'];
-		$oenology_options['default_options_tab'] = $default_options['default_options_tab']['default'];
-		$oenology_options['theme_version'] = '2.3';
-		update_option( 'theme_oenology_options', $oenology_options );
-	}
+	wp_enqueue_style( $admin_handle, $admin_stylesheet, '', false );
 }
-// Initialize Theme options
-add_action('after_setup_theme', 'oenology_options_init', 9 );
+// Enqueue Admin Stylesheet at admin_print_styles()
+add_action( 'admin_print_styles-appearance_page_oenology-settings', 'oenology_enqueue_admin_style', 11 );
+add_action( 'admin_print_styles-appearance_page_oenology-reference', 'oenology_enqueue_admin_style', 11 );
 
 /**
  * Enqueue Footer Nav Menu Styles
@@ -634,190 +759,6 @@ function oenology_enqueue_footer_nav_menu_style() {
 	}
 }
 add_action( 'wp_print_styles', 'oenology_enqueue_footer_nav_menu_style', 11 );
-
-/**
- * Filter Capability for Theme Settings Page
- * 
- * This filter implements a WordPress 3.2 fix for
- * a minor bug, in which add_theme_page() is passed
- * the "edit_theme_options" capability, but the
- * settings page form is passed through options.php,
- * which expects the "manage_options" capability.
- * 
- * The "edit_theme_options" capability is part of the
- * EDITOR user role, while "manage_options" is only
- * available to the ADMINISTRATOR role. So, users in
- * the EDITOR user role can access the Theme settings
- * page, but are unable actually to update/save the
- * Theme settings.
- * 
- * The function is hooked into a hook, introduced in
- * WordPress 3.2: "option_page_capability_{option_page}",
- * where {option_page} is the name of the options page,
- * as defined in the fourth argument of the call to
- * add_theme_page()
- * 
- * The function returns a string consisting of the
- * appropriate capability for saving Theme settings.
- */
-function oenology_get_settings_page_cap() {
-	return 'edit_theme_options';
-}
-// Hook into option_page_capability_{option_page}
-add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_page_cap' );
-
-/**
- * Setup the Theme Admin Settings Page
- * 
- * Add "Oenology Options" link to the "Appearance" menu
- */
-function oenology_add_theme_page() {
-	add_theme_page(
-		// $page_title
-		// Name displayed in HTML title tag
-		'Oenology Options', 
-		// $menu_title
-		// Name displayed in the Admin Menu
-		'Oenology Options', 
-		// $capability
-		// User capability required to access page
-		oenology_get_settings_page_cap(), 
-		// $menu_slug
-		// String to append to URL after "themes.php"
-		'oenology-settings', 
-		// $callback
-		// Function to define settings page markup
-		'oenology_admin_options_page'
-	);
-}
-// Load the Admin Options page
-add_action('admin_menu', 'oenology_add_theme_page');
-
-/**
- * Get current settings page tab
- */
-function oenology_get_current_tab() {
-
-    if ( isset ( $_GET['tab'] ) ) :
-        $current = $_GET['tab'];
-    else:
-		$oenology_options = get_option( 'theme_oenology_options' );
-        $current = $oenology_options['default_options_tab'];
-    endif;
-	
-	return $current;
-}
-
-/**
- * Define Oenology Theme Settings Page Tab Markup
- * 
- * @link`http://www.onedesigns.com/tutorials/separate-multiple-theme-options-pages-using-tabs	Daniel Tara
- */
-function oenology_admin_options_page_tabs() {
-
-    $current = oenology_get_current_tab();
-    
-    $tabs = oenology_get_settings_page_tabs();
-    
-    $links = array();
-    
-    foreach( $tabs as $tab ) :
-		$tabname = $tab['name'];
-		$tabtitle = $tab['title'];
-        if ( $tabname == $current ) :
-            $links[] = "<a class='nav-tab nav-tab-active' href='?page=oenology-settings&tab=$tabname'>$tabtitle</a>";
-        else :
-            $links[] = "<a class='nav-tab' href='?page=oenology-settings&tab=$tabname'>$tabtitle</a>";
-        endif;
-    endforeach;
-    
-    echo '<div id="icon-themes" class="icon32"><br /></div>';
-    echo '<h2 class="nav-tab-wrapper">';
-    foreach ( $links as $link )
-        echo $link;
-    echo '</h2>';
-    
-}
-
-/**
- * Oenology Theme Settings Page Markup
- */
-function oenology_admin_options_page() { 
-	$currenttab = oenology_get_current_tab();
-	$settings_section = 'oenology_' . $currenttab . '_tab';
-	?>
-
-	<div class="wrap">
-		<?php oenology_admin_options_page_tabs(); ?>
-		<?php if ( isset( $_GET['settings-updated'] ) ) {
-    			echo '<div class="updated"><p>' . __( 'Theme settings updated successfully.', 'oenology' ) . '</p></div>';
-		} ?>
-		<form action="options.php" method="post">
-		<?php 
-			settings_fields('theme_oenology_options');
-			do_settings_sections( $settings_section );
-		?>
-			<?php submit_button( __( 'Save Settings', 'oenology' ), 'primary', 'theme_oenology_options[submit-' . $currenttab . ']', false ); ?>
-			<?php submit_button( __( 'Reset Defaults', 'oenology' ), 'secondary', 'theme_oenology_options[reset-' . $currenttab . ']', false ); ?>
-		</form>
-	</div>
-<?php 
-}
-
-/**
- * Oenology Theme Settings API Implementation
- *
- * Implement the WordPress Settings API for the 
- * Oenology Theme Settings.
- * 
- * @link	http://codex.wordpress.org/Settings_API	Codex Reference: Settings API
- * @link	http://ottopress.com/2009/wordpress-settings-api-tutorial/	Otto
- * @link	http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/	Ozh
- */
-function oenology_register_options(){
-	require( get_template_directory() . '/functions/options-register.php' );
-}
-// Settings API options initilization and validation
-add_action('admin_init', 'oenology_register_options');
-
-
-/**
- * Enqueue Custom Admin Page Stylesheet
- */
-function oenology_enqueue_admin_style() {
-
-	// define admin stylesheet
-	$admin_handle = 'oenology_admin_stylesheet';
-	$admin_stylesheet = get_template_directory_uri() . '/functions/oenology-admin.css';
-	
-	wp_enqueue_style( $admin_handle, $admin_stylesheet, '', false );
-}
-// Enqueue Admin Stylesheet at admin_print_styles()
-add_action( 'admin_print_styles-appearance_page_oenology-settings', 'oenology_enqueue_admin_style', 11 );
-add_action( 'admin_print_styles-appearance_page_oenology-reference', 'oenology_enqueue_admin_style', 11 );
-
-
-/**
- * Oenology Theme Settings Page Contextual Help Content
- * 
- * Admin settings page contextual help markup
- * Separate file for ease of management
- */
-function oenology_get_contextual_help_text() {
-	$tabtext = '';
-	require( get_template_directory() . '/functions/options-help.php' );
-	return $tabtext;
-}
-/**
- * Enqueue Oenology Theme Settings Page Contextual Help
- */
-function oenology_contextual_help() {
-	$oenology_contextual_help_text = oenology_get_contextual_help_text();
-	add_contextual_help( 'appearance_page_oenology-settings', $oenology_contextual_help_text  );
-	add_contextual_help( 'appearance_page_oenology-reference', $oenology_contextual_help_text  );
-}
-// Add contextual help to Admin Options page
-add_action('admin_init', 'oenology_contextual_help', 10, 3);
 
 
 /**
@@ -843,7 +784,7 @@ add_action('wp_enqueue_scripts', 'oenology_enqueue_varietal_style', 11 );
 function oenology_get_color_scheme() {
 	global $oenology_options;
 	$oenology_options = get_option( 'theme_oenology_options' );
-	$default_options = oenology_get_default_options();
+	$default_options = oenology_get_option_parameters();
 	$oenology_varietals = $default_options['varietal']['valid_options'];
 	$oenology_current_varietal = array();
 	foreach ( $oenology_varietals as $varietal ) {

@@ -256,6 +256,28 @@ function oenology_reference_page_support() { ?>
 // Changelog Tab
 function oenology_reference_page_changelog() { ?>
 	
+	<h3>2.3 [2011.MM.DD]</h3>	
+	<p>Maintenance Release</p>
+	<ol>
+	<li>New Features:
+		<ol>
+		<li>Footer Navigation menu added.</li>
+		<li></li>
+		</ol>
+	</li>
+	<li>Bugfixes:
+		<ol>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/#">##</a> (bug): Issue Description</li>
+		</ol>
+	</li>
+	<li>Maintenance:
+		<ol>
+		<li>General documentation cleanup</li>
+		<li>CSS cleanup</li>
+		</ol>
+	</li>
+	</ol>
+	
 	<h3>2.2 [2011.07.25]</h3>	
 	<p>Maintenance Release</p>
 	<ol>

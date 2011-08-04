@@ -386,7 +386,7 @@ if ( ! function_exists( 'oenology_setup' ) ):
 	background: rgba(0, 0, 0, 0.2);
 }
 <?php			 
-				$oenology_options = get_option('theme_oenology_options');
+				$oenology_options = oenology_get_options();
 				if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
 					if ( get_header_image() ) { ?>
 #nav,

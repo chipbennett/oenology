@@ -1,6 +1,6 @@
 <?php
 /**
- * Oenology Theme Options Contextual Help
+ * Oenology Theme Contextual Help
  *
  * This file defines the Theme Options contextual help content 
  * for the Oenology Theme.
@@ -12,20 +12,68 @@
  * @since 		Oenology 1.0
  */
 
-// Tab-based contextual help
-// 
-if ( isset ( $_GET['tab'] ) ) {
-       	$tab = $_GET['tab'];
-} else {
-       	$tab = 'general';
+/**
+ * Enqueue Oenology Theme Settings Page Contextual Help
+ */
+function oenology_contextual_help() {
+	add_contextual_help( 'appearance_page_oenology-settings', oenology_get_options_contextual_help_text()  );
+	add_contextual_help( 'appearance_page_oenology-reference', oenology_get_reference_contextual_help_text()  );
 }
-switch ( $tab ) {
-       	case 'general' :
-       		$tabtext = oenology_get_contextual_help_options_general();
-       		break;
-       	case 'varietals' :
-       		$tabtext = oenology_get_contextual_help_options_varietals();
-       		break;
+// Add contextual help to Admin Options page
+add_action('admin_init', 'oenology_contextual_help', 10, 3);
+ 
+/**
+ * Oenology Options Contextual Help Content
+ * 
+ * Admin settings page contextual help markup
+ * Separate file for ease of management
+ */
+function oenology_get_options_contextual_help_text() {
+	$tabtext = '';
+	if ( isset ( $_GET['tab'] ) ) {
+			$tab = $_GET['tab'];
+	} else {
+			$tab = 'varietals';
+	}
+	switch ( $tab ) {
+			case 'general' :
+				$tabtext = oenology_get_contextual_help_options_general();
+				break;
+			case 'varietals' :
+				$tabtext = oenology_get_contextual_help_options_varietals();
+				break;
+	}
+	return $tabtext;
+}
+ 
+/**
+ * Oenology Reference Contextual Help Content
+ * 
+ * Admin settings page contextual help markup
+ * Separate file for ease of management
+ */
+function oenology_get_reference_contextual_help_text() {
+	$tabtext = '';
+	if ( isset ( $_GET['tab'] ) ) {
+			$tab = $_GET['tab'];
+	} else {
+			$tab = 'general';
+	}
+	switch ( $tab ) {
+			case 'general' :
+				$tabtext .= "General Theme notes";
+				break;
+			case 'faq' :
+				$tabtext .= "Answers to questions frequently (or not-so-frequently) asked";
+				break;
+			case 'coderef' :
+				$tabtext .= "A cross-reference of every WordPress function, hook, and global variable used in the Theme";
+				break;
+			case 'changelog' :
+				$tabtext .= "Log of changes to the Theme";
+				break;
+	}
+	return $tabtext;
 }
 
 function oenology_get_contextual_help_options_general() {
@@ -62,8 +110,8 @@ function oenology_get_contextual_help_options_varietals() {
 	<h2>Varietals</h2>
 	<p><em>Varietals</em> are the <em>skins</em>, or styles, applied to Oenology.</p>
 EOT;
-	$default_options = oenology_get_default_options();
-	$oenology_varietals = $default_options['varietal']['valid_options'];
+	$option_parameters = oenology_get_option_parameters();
+	$oenology_varietals = $option_parameters['varietal']['valid_options'];
     foreach ( $oenology_varietals as $varietal ) {
 	    $tabtext .= <<<EOT
 		<dl>

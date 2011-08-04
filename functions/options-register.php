@@ -51,8 +51,10 @@ function oenology_options_validate( $input ) {
 	$valid_input = get_option( 'theme_oenology_options' );
 	// Get the array of Theme settings, by Settings Page tab
 	$settingsbytab = oenology_get_settings_by_tab();
-	// Get the array of default options
-	$default_options = oenology_get_default_options();
+	// Get the array of option parameters
+	$option_parameters = oenology_get_option_parameters();
+	// Get the array of option defaults
+	$option_defaults = oenology_get_option_defaults();
 	// Get list of tabs
 	$tabs = oenology_get_settings_page_tabs();
 	
@@ -78,10 +80,17 @@ function oenology_options_validate( $input ) {
 	$tabsettings = $settingsbytab[$submittab];
 	// Loop through each tab setting
 	foreach ( $tabsettings as $setting ) {
+		// If no option is selected, set the default
+		$valid_input[$setting] = ( ! isset( $input[$setting] ) ? $option_defaults[$setting] : $input[$setting] );
+		
 		// If submit, validate/sanitize $input
 		if ( 'submit' == $submittype ) {
+		
 			// Get the setting details from the defaults array
-			$optiondetails = $default_options[$setting];
+			$optiondetails = $option_parameters[$setting];
+			// Get the array of valid options, if applicable
+			$valid_options = ( isset( $optiondetails['valid_options'] ) ? $optiondetails['valid_options'] : false );
+			
 			// Validate checkbox fields
 			if ( 'checkbox' == $optiondetails['type'] ) {
 				// If input value is set and is true, return true; otherwise return false
@@ -89,15 +98,11 @@ function oenology_options_validate( $input ) {
 			}
 			// Validate radio button fields
 			else if ( 'radio' == $optiondetails['type'] ) {
-				// Get the list of valid options
-				$valid_options = $optiondetails['valid_options'];
 				// Only update setting if input value is in the list of valid options
 				$valid_input[$setting] = ( array_key_exists( $input[$setting], $valid_options ) ? $input[$setting] : $valid_input[$setting] );
 			}
 			// Validate select fields
 			else if ( 'select' == $optiondetails['type'] ) {
-				// Get the list of valid options
-				$valid_options = $optiondetails['valid_options'];
 				// Only update setting if input value is in the list of valid options
 				$valid_input[$setting] = ( array_key_exists( $input[$setting], $valid_options ) ? $input[$setting] : $valid_input[$setting] );
 			}
@@ -118,8 +123,6 @@ function oenology_options_validate( $input ) {
 			else if ( 'custom' == $optiondetails['type'] ) {
 				// Validate the Varietal setting
 				if ( 'varietal' == $setting ) {
-					// Get the list of valid options
-					$valid_options = $optiondetails['valid_options'];
 					// Only update setting if input value is in the list of valid options
 					$valid_input[$setting] = ( array_key_exists( $input[$setting], $valid_options ) ? $input[$setting] : $valid_input[$setting] );
 				}
@@ -127,10 +130,8 @@ function oenology_options_validate( $input ) {
 		} 
 		// If reset, reset defaults
 		elseif ( 'reset' == $submittype ) {
-			// Get the array for $setting
-			$option = $default_options[$setting];
 			// Set $setting to the default value
-			$valid_input[$setting] = $option['default'];
+			$valid_input[$setting] = $option_defaults[$setting];
 		}
 	}
 	return $valid_input;		
@@ -208,8 +209,8 @@ function oenology_sections_callback( $section_passed ) {
 function oenology_get_varietal_text() {
 
 	$oenology_options = get_option( 'theme_oenology_options' );
-	$default_options = oenology_get_default_options();
-	$oenology_varietals = $default_options['varietal']['valid_options'];
+	$option_parameters = oenology_get_option_parameters();
+	$oenology_varietals = $option_parameters['varietal']['valid_options'];
 	$imgstyle = 'float:left;margin-right:20px;margin-bottom:20px;border: 1px solid #bbb;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
 	foreach ( $oenology_varietals as $varietal ) {
 		if ( $varietal['name'] == $oenology_options['varietal'] ) {
@@ -230,8 +231,8 @@ function oenology_get_varietal_text() {
  * 
  * @global	array	Theme settings definitions
  */
-global $default_options;
-$default_options = oenology_get_default_options();
+global $option_parameters;
+$option_parameters = oenology_get_option_parameters();
 /**
  * Call add_settings_field() for each Setting Field
  * 
@@ -248,7 +249,7 @@ $default_options = oenology_get_default_options();
  * @param	string		$sectionid	ID of the Settings page section to which to add the setting field; passed from add_settings_section()
  * @param	array		$args		Array of arguments to pass to the callback function
  */
-foreach ( $default_options as $option ) {
+foreach ( $option_parameters as $option ) {
 	$optionname = $option['name'];
 	$optiontitle = $option['title'];
 	$optiontab = $option['tab'];
@@ -290,7 +291,7 @@ foreach ( $default_options as $option ) {
  */
 function oenology_setting_callback( $option ) {
 	$oenology_options = get_option( 'theme_oenology_options' );
-	$default_options = oenology_get_default_options();
+	$option_parameters = oenology_get_option_parameters();
 	$optionname = $option['name'];
 	$optiontitle = $option['title'];
 	$optiondescription = $option['description'];
@@ -351,8 +352,8 @@ function oenology_setting_callback( $option ) {
  * Callback for Varietal Setting Custom Form Field Markup
  */
 function oenology_setting_varietal() {
-	$default_options = oenology_get_default_options();
-	$oenology_varietals = $default_options['varietal']['valid_options'];
+	$option_parameters = oenology_get_option_parameters();
+	$oenology_varietals = $option_parameters['varietal']['valid_options'];
 
 	function oenology_output_varietal( $varietal ) {
 		$oenology_options = get_option( 'theme_oenology_options' );

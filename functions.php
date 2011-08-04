@@ -106,4 +106,11 @@ require( get_template_directory() . '/functions/hooks.php' );
  */
 require( get_template_directory() . '/functions/reference.php' );
 
+/**
+ * Include the Theme Contextual Help Function File
+ * 
+ * - contextual-help.php includes the Theme Contextual Help content
+ */
+require( get_template_directory() . '/functions/contextual-help.php' );
+
 ?>

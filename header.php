@@ -56,7 +56,7 @@ global $oenology_options;
  * @param	string	$default	default value to return if null; default: false
  * @return	mixed				value of specified option
  */
-$oenology_options = get_option( 'theme_oenology_options' );
+$oenology_options = oenology_get_options();
 
 ?><!DOCTYPE html 
      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
