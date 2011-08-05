@@ -689,7 +689,7 @@ function oenology_get_404_content() {
 		$oenology_404_tag = '</ul>';
 	}
 
-	$oenology_404_results = '';
+	$oenology_404_noresults = '';
 	$oenology_404_noresults .= '<p>';
 	$oenology_404_noresults .= __( 'I apologize.', 'oenology' ) . ' ';
 	$oenology_404_noresults .= __( 'For the life of me, I am unable to figure out what you were trying to find.', 'oenology' ) . ' ';
