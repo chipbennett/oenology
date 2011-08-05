@@ -49,9 +49,10 @@ if (
 	   // WordPress conditional tag that returns true if the 
 	   // specified dynamic sidebar is active (has Widgets
 	   // assigned to it)
-	   is_active_sidebar( 'sidebar-column-top' ) 
+	   ( is_active_sidebar( 'sidebar-column-top' ) 
 	   // Boolean Theme option
-	|| $oenology_options['display_social_icons'] 
+	|| $oenology_options['display_social_icons'] )
+	&& 'three-column' != $oenology_options['single_post_layout']
 	) { 
 		?>
 		<?php
@@ -214,7 +215,8 @@ if (
 	// WordPress conditional tag that returns true if the 
 	// specified dynamic sidebar is active (has Widgets
 	// assigned to it)
-	is_active_sidebar( 'sidebar-column-bottom' ) 
+	   is_active_sidebar( 'sidebar-column-bottom' ) 
+	&& 'three-column' != $oenology_options['single_post_layout']
 	) { 
 		// div#doublecolbottom is the bottom, right-colum content in the two-column
 		// layout. It displays only on static Pages, including static Page as

@@ -55,8 +55,10 @@ function oenology_filter_body_class( $classes ) {
 			$template = substr( $template, 5 );
 			$layout .= $template;
 		}
-		$classes[] = $layout;
+	} else if ( is_single() ) {
+			$layout .= $oenology_options['single_post_layout'];
 	}
+	$classes[] = $layout;
 	return $classes;
 }
 add_filter( 'body_class', 'oenology_filter_body_class' );
