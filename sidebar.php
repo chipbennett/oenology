@@ -53,7 +53,7 @@ if (
 	   // Boolean Theme option
 	|| $oenology_options['display_social_icons'] )
 	&& ( ! is_single() || 'three-column' != $oenology_options['single_post_layout'] )
-	&& ( ( ! is_home() && ! is_archive() ) || 'three-column' != $oenology_options['post_index_layout'] )
+	&& ( ( ! is_home() && ! is_archive() && ! is_search() && ! is_404() ) || 'three-column' != $oenology_options['post_index_layout'] )
 	) { 
 		?>
 		<?php
@@ -218,7 +218,7 @@ if (
 	// assigned to it)
 	   is_active_sidebar( 'sidebar-column-bottom' ) 
 	&& ( ! is_single() || 'three-column' != $oenology_options['single_post_layout'] )
-	&& ( ( ! is_home() && ! is_archive() ) || 'three-column' != $oenology_options['post_index_layout'] )
+	&& ( ( ! is_home() && ! is_archive() && ! is_search() && ! is_404() ) || 'three-column' != $oenology_options['post_index_layout'] )
 	) { 
 		// div#doublecolbottom is the bottom, right-colum content in the two-column
 		// layout. It displays only on static Pages, including static Page as
