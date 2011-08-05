@@ -469,14 +469,14 @@ pre {
 	margin-left:0;
 }
 #page #leftcol,
-#single.layout-three-column #leftcol {
+.layout-three-column #leftcol {
 	margin-left:-830px;
 	padding-left:0px;
 }
 #page.layout-two-column #leftcol {
 	margin-left:-990px;
 }
-#single.layout-two-column-right #leftcol {
+.layout-two-column-right #leftcol {
 	padding-left:5px;
 }
 #doublecoltop,
@@ -512,23 +512,23 @@ pre {
 body.attachment #main,
 body.single-format-image #main,
 #page.layout-one-column #main,
-#single.layout-one-column #main {
+.layout-one-column #main {
 	width: 995px;
 }
 #page.layout-two-column #main {
 	width: 820px;
 }
 #page #main,
-#single.layout-three-column #main {
+.layout-three-column #main {
 	margin-left:170px;
 }
 #page.attachment #main,
 body.single-format-image #main,
-#single.layout-three-column.single-format-image #main,
+.layout-three-column.single-format-image #main,
 #page.layout-one-column #main {
   margin-left:0;
 }
-#single.layout-two-column-right #main {
+.layout-two-column-right #main {
   float:right;
   margin-left:auto;
   margin-right:0px;
@@ -540,7 +540,7 @@ body.single-format-image #main,
   float:right;
   vertical-align:top;
 }
-#single.layout-two-column-right #rightcol {
+.layout-two-column-right #rightcol {
 	padding-right:5px;
 }
  #container {
@@ -715,8 +715,8 @@ ul.page-numbers li {
 
 #bottompostnav {
   clear:both;
-  width:660px;
-  min-width:660px;
+  /*width:660px;
+  min-width:660px;*/
   padding-left:3px;
 } 
 .postsnavlinks,
@@ -1313,7 +1313,8 @@ body.term-post-format-image .post-entry {
 .post-entry .gallery-meta li a{
 	font-weight:normal;
 }
-.post-entry .gallery-thumb img {
+.post-entry .gallery-thumb img,
+.layout-one-column #main .post-entry .gallery-thumb img {
 	max-width:150px;
 }
 .gallery-thumb span {
@@ -1353,6 +1354,9 @@ body.term-post-format-image .post-entry {
 	margin:0;
 	display:block;
 	text-align:left;
+}
+.layout-one-column .gallery-description {
+	width:740px;
 }
 /* Post Entry - Blockquotes
    --------------------
@@ -1502,7 +1506,6 @@ body.term-post-format-image .post-entry {
 	height: auto;
 }
 body.attachment .post-entry img,
-body.term-post-format-image .post-entry img,
 body.single-format-image .post-entry img {
 	max-width: 888px;
 }
@@ -2011,6 +2014,11 @@ body.single-format-image dd {
 	clear:both;
 	margin:0px auto;
 	margin-bottom:10px;
+	text-align:center;
+}
+#loop-footer ul {
+	list-style-type:none;
+	margin: 0px auto;
 	text-align:center;
 }
 /* 

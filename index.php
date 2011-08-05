@@ -82,20 +82,26 @@ get_header( oenology_get_context() );
 </div>
 <!-- End Main (div#main) -->
 
-<?php 
-/**
- * Include the sidebar template part file
- * 
- * Calls a sidebar template part file.
- * Used in all primary template pages, except static Pages.
- * 
- * Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
- * 
- * Child Themes can replace this template part file globally, 
- * via "sidebar.php", or in a specific context only, via
- * "sidebar-{context}.php"
- */
-get_sidebar( oenology_get_context() ); 
+<?php
+if ( 'one-column' != $oenology_options['post_index_layout'] ) {
+?>
+	<?php 
+	/**
+	 * Include the sidebar template part file
+	 * 
+	 * Calls a sidebar template part file.
+	 * Used in all primary template pages, except static Pages.
+	 * 
+	 * Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "sidebar.php", or in a specific context only, via
+	 * "sidebar-{context}.php"
+	 */
+	get_sidebar( oenology_get_context() ); 
+	?>
+<?php
+}
 ?>
 	
 <?php 

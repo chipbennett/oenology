@@ -57,6 +57,8 @@ function oenology_filter_body_class( $classes ) {
 		}
 	} else if ( is_single() ) {
 			$layout .= $oenology_options['single_post_layout'];
+	} else if ( is_home() || is_archive() ) {
+			$layout .= $oenology_options['post_index_layout'];
 	}
 	$classes[] = $layout;
 	return $classes;

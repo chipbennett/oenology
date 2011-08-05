@@ -25,7 +25,7 @@ if (
 ! is_singular() 
 ) { 
 	?>
-	<ul id="loop-footer">
+	<ul>
 		<li id="bottompostnav">
 		<?php 
 		/**
