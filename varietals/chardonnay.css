@@ -42,42 +42,26 @@ code {
 }
 /* Site Navigation
   -------------------------------------------- */
-.navmenu,
 .nav-header {
 	background-color: #f8f8fb;
 }
-.navmenu li,
 .nav-header li,
-.navmenu ul,
 .nav-header ul,
-.navmenu ul li,
 .nav-header ul li {
 	background-color: #f8f8fb;
 }
-.navmenu li a,
-.navmenu li a:link,
-.navmenu li a:visited,
-.navmenu li a:hover,
-.navmenu li a:active,
-.nav-header li a,
-.nav-header li a:link,
-.nav-header li a:visited,
-.nav-header li a:hover,
-.nav-header li a:active {
+.nav-header li a {
     border: 1px solid #eeeeee;
      border-bottom-color: #ddd; 
      border-right-color: #ddd;
      background: #f8f8fb url(menu-chardonnay.gif) bottom repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#f8f8fb), color-stop(1, #f8f8fb));
 }
-.navmenu li a:hover,
 .nav-header li a:hover {
      border: 1px solid #58a;
      border-top-color: #eee; 
      border-left-color: #eee;
 }
-#home #navhome, 
-#pageforum #navforum,
 #nav .current_page_item a,
 #nav .current_page_parent a,
 #nav .current_page_ancestor a,
@@ -107,170 +91,150 @@ code {
 /* Sidebar Navigation
   -------------------------------------------- */
 /* TOP LEVEL: Display top-level page links like .title */
-#leftcol .subnavmenu .current_page_item a,
-#leftcol .subnavmenu .current_page_parent a,
-#leftcol .subnavmenu .current_page_ancestor a {
+.subnavmenu .current_page_item a,
+.subnavmenu .current_page_parent a,
+.subnavmenu .current_page_ancestor a {
 	border-bottom: 1px dotted #999;
 	color: #999;
 	background-color:transparent;
 }
 /* SECOND LEVEL: Display second-level list items like subnavmenu */
-#leftcol .subnavmenu .current_page_item li,
-#leftcol .subnavmenu .current_page_parent li,
-#leftcol .subnavmenu .current_page_ancestor li,
+.subnavmenu .current_page_item li,
+.subnavmenu .current_page_parent li,
+.subnavmenu .current_page_ancestor li,
 #leftcol #subnav li {
 	border-bottom:0;
     background-color: #ccc; 
 }
-#leftcol .subnavmenu .current_page_item li ul,
-#leftcol .subnavmenu .current_page_parent li ul,
-#leftcol .subnavmenu .current_page_ancestor li ul,
+.subnavmenu .current_page_item li ul,
+.subnavmenu .current_page_parent li ul,
+.subnavmenu .current_page_ancestor li ul,
 #leftcol #subnav ul {
 	border-left: 1px solid #eee;
      border-right: 1px solid #eee;
 }
 /* SECOND LEVEL: Display second-level page links like subnavmenu */
-#leftcol .subnavmenu .current_page_item li a,
-#leftcol .subnavmenu .current_page_parent li a,
-#leftcol .subnavmenu .current_page_parent .current_page_item li a,
-#leftcol .subnavmenu .current_page_ancestor li a,
+.subnavmenu .current_page_item li a,
+.subnavmenu .current_page_parent li a,
+.subnavmenu .current_page_parent .current_page_item li a,
+.subnavmenu .current_page_ancestor li a,
 #leftcol #subnav li a {
      border: 1px solid #ddd;
      border-top-color: #ddd; 
      background: url(menu-seyval-blanc.gif) #ffffff top left repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#f8f8fb), color-stop(1, #f8f8fb));
 }
-#leftcol .subnavmenu .current_page_item li a:hover,
-#leftcol .subnavmenu .current_page_parent li a:hover,
-#leftcol .subnavmenu .current_page_ancestor li a:hover,
+.subnavmenu .current_page_item li a:hover,
+.subnavmenu .current_page_parent li a:hover,
+.subnavmenu .current_page_ancestor li a:hover,
 #leftcol #subnav li a:hover {
      border: 1px solid #58a;
 	 color: #58a;
 }
-#leftcol .subnavmenu .current_page_parent .current_page_item a,
-#leftcol .subnavmenu .current_page_parent .current_page_item a:hover,
+.subnavmenu .current_page_parent .current_page_item a,
+.subnavmenu .current_page_parent .current_page_item a:hover,
 #leftcol #subnav li.current_page_item a,
 #leftcol #subnav li.current_page_item a:hover {
      color:#333;
 	 border: 1px solid #000;
 }
 /* SECOND LEVEL: Reset display for third-level page links */
-#leftcol .subnavmenu .current_page_parent .current_page_item li a {
+.subnavmenu .current_page_parent .current_page_item li a {
      border: 1px solid #eee;
 	 color: #999;
 }
 /* THIRD LEVEL: Display third-level page links like subsubnavmenu */
-#leftcol .subnavmenu .current_page_parent .current_page_item li a:hover {
+.subnavmenu .current_page_parent .current_page_item li a:hover {
 	border:1px solid #58a;
 	color: #58a;
 }
 /* THIRD LEVEL: Set display for current_page_item */
-#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item a {
+.subnavmenu .current_page_ancestor .current_page_parent .current_page_item a {
      color:#000;
      border: 1px solid #000;
 }
 /* THIRD LEVEL: Reset display for fourth-level page links */
-#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a {
+.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a {
      border: 1px solid #eee;
      background: #fff;	
 }
 /* FOURTH LEVEL: Display fourth-level page links like subsubsubnavmenu */
-#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
-#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
-#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a {
+.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a {
 	 background:none;
 	 background-color: #eeeeee;
 }
-#leftcol .subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a:hover,
-#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a:hover,
-#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a:hover {
+.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a:hover,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a:hover,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a:hover {
     border:1px solid #58a;
 }
-#leftcol .subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor .current_page_item a:hover {
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor .current_page_item a:hover {
     border:1px solid #000;
 }
 /* Infobar
   -------------------------------------------- */
-#extent .postnav #breadcrumbs {
+#breadcrumbs {
   color: #888;
 } 
-#extent #infobabrnav ol.wp-paginate,
-#extent #loop-footer ol.wp-paginate,
-#extent #infobabrnav ul.page-numbers,
-#extent #loop-footer ul.page-numbers {   
+ol.wp-paginate,
+ul.page-numbers {   
 	border: 0; 
 	border-top: 0; 
 	border-bottom: 0; 
 	color: #777777;  
 	background: transparent; 
 }  
-#extent .postnav li {
+.postnav li {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   color:#555;
   background-color:#ffffff;
   background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#f8f8fb), color-stop(0.8, #f8f8fb));
 }
-#extent .postnav #breadcrumbs strong {
+#breadcrumbs strong {
   color: #000;
   text-shadow: 1px 1px 0px #ccc;
 }
-#extent #infobabrnav ol.wp-paginate li .gap,
-#extent #infobabrnav ol.wp-paginate li .current,
-#extent #infobabrnav ol.wp-paginate li a,
-#extent #loop-footer ol.wp-paginate li .gap,
-#extent #loop-footer ol.wp-paginate li .current,
-#extent #loop-footer ol.wp-paginate li a,
-#extent #infobabrnav ul.page-numbers li .gap,
-#extent #infobabrnav ul.page-numbers li .current,
-#extent #infobabrnav ul.page-numbers li a,
-#extent #loop-footer ul.page-numbers li .gap,
-#extent #loop-footer ul.page-numbers li .current,
-#extent #loop-footer ul.page-numbers li a {
+.wp-paginate li .gap,
+.wp-paginate li .current,
+.wp-paginate li a,
+.page-numbers li .gap,
+.page-numbers li .current,
+.page-numbers li a {
 	background: none; 
 }
-#extent #infobabrnav ol.wp-paginate li .gap,
-#extent #loop-footer ol.wp-paginate li .gap,
-#extent #infobabrnav ul.page-numbers li .gap,
-#extent #loop-footer ul.page-numbers li .gap { 
+.wp-paginate li .gap,
+.page-numbers li .gap { 
 	color:#999;   
 }  
-#extent #infobabrnav ol.wp-paginate li .current,
-#extent #loop-footer ol.wp-paginate li .current,
-#extent #infobabrnav ul.page-numbers li .current,
-#extent #loop-footer ul.page-numbers li .current {
+.wp-paginate li .current,
+.page-numbers li .current {
 	border:1px solid #444;
 	color:#fff; 
 	background:#444; 
 }
-#infobabrnav ol.wp-paginate li a,
-#loop-footer ol.wp-paginate li a,
-#infobabrnav ul.page-numbers li a,
-#loop-footer ul.page-numbers li a {	
+.wp-paginate li a,
+.page-numbers li a {	
 	border:1px solid #58a; 
 	color:#58a; 
 	background-color: transparent; 
 }  
-#infobabrnav ol.wp-paginate li a:hover,
-#infobabrnav ol.wp-paginate li a:active,
-#loop-footer ol.wp-paginate li a:hover,
-#loop-footer ol.wp-paginate li a:active,
-#extent #infobabrnav ul.page-numbers li a:hover,
-#extent #infobabrnav ul.page-numbers li a:active,
-#extent #loop-footer ul.page-numbers li a:hover,
-#extent #loop-footer ul.page-numbers li a:active {
+.wp-paginate li a:hover,
+.wp-paginate li a:active,
+.page-numbers li a:hover,
+.page-numbers li a:active {
 	border:1px solid #777777;
 	color:#fff;  
 	text-shadow: 1px 1px 1px #777;
 	background-color:#58a;
 }
-#infobabrnav ol.wp-paginate li a:hover,
-#loop-footer ol.wp-paginate li a:hover,
-#loop-footer ol.wp-paginate li a:hover,
-#extent #loop-footer ul.page-numbers li a:hover {
+.wp-paginate li a:hover,
+.page-numbers li a:hover {
 	text-decoration: underline;
 }
-#extent .postnav #bottompostnav {
+#bottompostnav {
   color: #888;
 } 
 #postnavsearch input#s {
@@ -280,7 +244,7 @@ code {
   color: #555;
   background-color: #ffffff;
 }
-#extent #postnavsearch input#searchsubmit {
+#postnavsearch input#searchsubmit {
 	border: 1px solid #ddd;
 	background-color: #ffffff;
 }  
@@ -380,11 +344,7 @@ body.page .post .post-title {
 	border-top:0;
 	background-color:transparent;
 }
-.post-title h1 a,
-.post-title h1 a:link,
-.post-title h1 a:visited,
-.post-title h1 a:hover,
-.post-title h1 a:active {
+.post-title h1 a {
 	color: #444;
 }
 .post-title h1 a:hover {
@@ -425,10 +385,7 @@ body.page .post .post-title {
 }
 /* Post Entry
   -------------------------------------------- */
-.post-entry a:link,
-.post-entry a:visited,
-.post-entry a:hover,
-.post-entry a:active {
+.post-entry a {
   border-bottom: 1px dotted #58a;
   font-weight:bold;
   text-decoration: none;
@@ -490,50 +447,46 @@ dl.gallery-item dd {
 	border-left: 0;
 	background-color: transparent;
 }
-body.attachment .gallery-nav dl dd,
+.gallery-nav dl dd,
 body.term-post-format-image .gallery-nav dl dd,
 body.single-format-image .gallery-nav dl dd {
 	border-left: 0;
 	background-color: transparent;
 }
-body.attachment .gallery-nav .gallery-nav-home a,
-body.attachment .gallery-nav .gallery-nav-home a:link,
-body.attachment .gallery-nav .gallery-nav-home a:visited,
-body.attachment .gallery-nav .gallery-nav-home a:hover,
-body.attachment .gallery-nav .gallery-nav-home a:active {
+.gallery-nav-home a,
+.gallery-nav-home a:hover {
 	border:0;
 }
-body.attachment .gallery-nav .gallery-nav-home a:hover,
-body.attachment .gallery-nav .gallery-nav-prev a:hover,
-body.attachment .gallery-nav .gallery-nav-next a:hover {
+.gallery-nav-home a:hover,
+.gallery-nav-prev a:hover,
+.gallery-nav-next a:hover {
 	text-decoration: underline;
 }
 /* Post Formats
   -------------------------------------------- */
-.format-gallery .size-thumbnail img,
-.format-image .size-thumbnail img,
-.format-image .gallery-thumb span {
+.size-thumbnail img,
+.gallery-thumb span {
 	border: 10px solid #eee;
 }
-#content .format-image ul.gallery-meta,
-#content .format-gallery ul.gallery-meta,
-#content .format-audio ul.audiovideo-meta,
-#content .format-video ul.audiovideo-meta {
+.gallery-meta,
+.audiovideo-meta {
 	background-color:#eeeeee;
 }
-.post.format-chat .post-entry {
+.post.format-chat .post-entry p:nth-child(odd) {
+	font-weight:900;
+	color: #000;
 	background-color: #eeeeee;
 }
-#content .format-audio .post-entry ul.audiovideo-meta a,
-#content .format-video .post-entry ul.audiovideo-meta a,
-#content .format-image .post-entry ul.gallery-meta a,
-#content .format-gallery .post-entry ul.gallery-meta a {
+.post.format-chat .post-entry p:nth-child(even) {
+	color: #777;
+	background-color: #f8f8f8;
+}
+.post-entry .audiovideo-meta a,
+.post-entry .gallery-meta a {
 	border:0;
 }
-#content .format-audio .post-entry ul.audiovideo-meta a:hover,
-#content .format-video .post-entry ul.audiovideo-meta a:hover,
-#content .format-image .post-entry ul.gallery-meta a:hover,
-#content .format-gallery .post-entry ul.gallery-meta a:hover {
+.audiovideo-meta a:hover,
+.gallery-meta a:hover {
 	text-decoration: underline;
 }
 /* Post Footer Metadata

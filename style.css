@@ -1275,14 +1275,19 @@ body.term-post-format-image .post-entry {
 }
 .post.format-chat .post-entry {
 	margin:10px;
-	padding:10px;
+	padding:0;
 	letter-spacing:0.1em;
 }
 .post.format-chat .post-entry * {
 	margin:0px;
+	padding:0px;
 	font-size: 11pt;
 	line-height:1.7em;
 	text-align:left;
+}
+.post.format-chat .post-entry p {
+	margin: 10px 0px;
+	padding: 0px 10px;
 }
 .post-entry .audiovideo-meta,
 .post-entry .gallery-meta {

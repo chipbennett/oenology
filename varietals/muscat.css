@@ -516,9 +516,14 @@ body.attachment .gallery-nav .gallery-nav-next a:hover {
 #content .format-video ul.audiovideo-meta {
 	background-color:#9DAE98;
 }
-.post.format-chat .post-entry {
-	background-color: #9DAE98;
+.post.format-chat .post-entry p:nth-child(odd) {
+	font-weight:900;
 	color: #fff;
+	background-color: #9DAE98;
+}
+.post.format-chat .post-entry p:nth-child(even) {
+	color: #999;
+	background-color: #080808;
 }
 #content .format-audio .post-entry ul.audiovideo-meta a,
 #content .format-video .post-entry ul.audiovideo-meta a,

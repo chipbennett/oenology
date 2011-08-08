@@ -490,8 +490,14 @@ body.attachment .gallery-nav .gallery-nav-next a:hover {
 #content .format-video ul.audiovideo-meta {
 	background-color:#f0f0f0;
 }
-.post.format-chat .post-entry {
+.post.format-chat .post-entry p:nth-child(odd) {
+	font-weight:900;
+	color: #000;
 	background-color: #f0f0f0;
+}
+.post.format-chat .post-entry p:nth-child(even) {
+	color: #777;
+	background-color: #f8f8f8;
 }
 #content .format-audio .post-entry ul.audiovideo-meta a,
 #content .format-video .post-entry ul.audiovideo-meta a,
