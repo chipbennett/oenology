@@ -48,7 +48,8 @@ if (
 && ! wp_attachment_is_image()
 // WordPress conditional tag that returns true if
 // the current post has the 'link' post-format type
-&& ! ( has_post_format( 'link' ) || has_post_format( 'chat' ) ) ) {
+&& ! get_post_format() 
+) {
 	// Output the Post Excerpt
 	//
 	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/the_excerpt}
