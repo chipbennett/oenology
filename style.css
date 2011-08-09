@@ -527,8 +527,7 @@ body.single-format-image #main {
 }
 #page.attachment #main,
 body.single-format-image #main,
-.layout-three-column.single-format-image #main,
-#page.layout-one-column #main {
+.layout-three-column.single-format-image #main {
   margin-left:0;
 }
 .layout-two-column-right #main {

@@ -425,9 +425,9 @@ function oenology_get_option_parameters() {
 			'since' => '2.3',
 			'default' => 'three-column'			
 			),
-        'single_post_layout' => array(
-			'name' => 'single_post_layout',
-			'title' => __( 'Single Post Layout', 'oenology' ),
+        'default_single_post_layout' => array(
+			'name' => 'default_single_post_layout',
+			'title' => __( 'Default Single Post Layout', 'oenology' ),
 			'type' => 'radio',
 			'valid_options' => array(
 				'one-column' => array(
@@ -451,7 +451,7 @@ function oenology_get_option_parameters() {
 					'description' => __( 'Three columns (content in the center, half-width sidebars on the left and right)', 'oenology' )
 				),
 			),
-			'description' => __( 'Select the layout to be used for single Blog Posts.', 'oenology' ),
+			'description' => __( 'Select the default layout to be used for single Blog Posts.', 'oenology' ),
 			'section' => 'layouts',
 			'tab' => 'layout',
 			'since' => '2.3',

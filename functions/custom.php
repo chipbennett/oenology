@@ -81,6 +81,36 @@ function oenology_get_context() {
 }
 
 /**
+ * Get Current Page Layout
+ */
+function oenology_get_current_page_layout() {
+	global $post, $oenology_options;
+	$custom = ( get_post_custom( $post->ID ) ? get_post_custom( $post->ID ) : false );
+	$custom_layout = ( isset( $custom['_oenology_layout'][0] ) ? $custom['_oenology_layout'][0] : 'default' );	
+	$layout = '';
+	if ( is_page() ) {
+		//$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true );
+		if ( 'default' == $custom_layout ) {
+			$layout .= $oenology_options['default_static_page_layout'];
+		} else {
+			//$template = substr( $pagetemplate, 0, -4 );
+			//$template = substr( $template, 5 );
+			//$layout .= $template;
+			$layout .= $custom_layout;
+		}
+	} else if ( is_single() ) {
+		if ( 'default' == $custom_layout ) {
+			$layout .= $oenology_options['default_single_post_layout'];
+		} else {
+			$layout .= $custom_layout;
+		}
+	} else if ( is_home() || is_archive() || is_search() || is_404() ) {
+		$layout .= $oenology_options['post_index_layout'];
+	}
+	return $layout;
+}
+
+/**
  * Get current settings page tab
  */
 function oenology_get_current_tab() {

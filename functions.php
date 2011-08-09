@@ -96,6 +96,13 @@ require( get_template_directory() . '/functions/options.php' );
 require( get_template_directory() . '/functions/hooks.php' );
 
 /**
+ * Include the Post Custom Metadata Function File
+ * 
+ * - post-custom-meta.php includes the Theme custom metadata functions
+ */
+require( get_template_directory() . '/functions/post-custom-meta.php' );
+
+/**
  * Include the Theme Reference Function File
  * 
  * - reference.php includes the Theme Admin Reference page

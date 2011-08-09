@@ -44,16 +44,20 @@ if (
 ) { 
 	// Only display div#doublecoltop if dynamic sidebar 
 	// 'sidebar-column-top is active, or if the Theme is 
-	// set to display social icons
-	if ( 
-	   // WordPress conditional tag that returns true if the 
-	   // specified dynamic sidebar is active (has Widgets
-	   // assigned to it)
-	   ( is_active_sidebar( 'sidebar-column-top' ) 
-	   // Boolean Theme option
-	|| $oenology_options['display_social_icons'] )
-	&& ( ! is_single() || 'three-column' != $oenology_options['single_post_layout'] )
-	&& ( ( ! is_home() && ! is_archive() && ! is_search() && ! is_404() ) || 'three-column' != $oenology_options['post_index_layout'] )
+	// set to display social icons, and the current layout
+	// is not three-columns
+	if 
+	( 
+	   (    
+	        // WordPress conditional tag that returns true if the 
+	        // specified dynamic sidebar is active (has Widgets
+	        // assigned to it)
+	        is_active_sidebar( 'sidebar-column-top' ) 
+	        // Boolean Theme option
+	     || $oenology_options['display_social_icons'] 
+		)
+	      // Current layout is not three-column
+	   && 'three-column' != oenology_get_current_page_layout()
 	) { 
 		?>
 		<?php
@@ -213,12 +217,12 @@ if (
 	<!-- End Right Column (div#rightcol) -->		
 	<?php 
 	if ( 
-	// WordPress conditional tag that returns true if the 
-	// specified dynamic sidebar is active (has Widgets
-	// assigned to it)
+	   // WordPress conditional tag that returns true if the 
+	   // specified dynamic sidebar is active (has Widgets
+	   // assigned to it)
 	   is_active_sidebar( 'sidebar-column-bottom' ) 
-	&& ( ! is_single() || 'three-column' != $oenology_options['single_post_layout'] )
-	&& ( ( ! is_home() && ! is_archive() && ! is_search() && ! is_404() ) || 'three-column' != $oenology_options['post_index_layout'] )
+	   // Current page layout is not three-column
+	&& 'three-column' != oenology_get_current_page_template()
 	) { 
 		// div#doublecolbottom is the bottom, right-colum content in the two-column
 		// layout. It displays only on static Pages, including static Page as

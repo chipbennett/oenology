@@ -76,7 +76,7 @@ get_header( 'single' );
 <!-- End Main (div#main) -->
 
 <?php
-if ( 'one-column' != $oenology_options['single_post_layout'] ) {
+if ( 'one-column' != oenology_get_current_page_layout() ) {
 	?>
 	<?php 
 	/**

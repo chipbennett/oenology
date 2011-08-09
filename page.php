@@ -21,16 +21,94 @@
 
 <?php
 /**
- * Global variable that contains the
- * Theme's options array.
+ * Include the header template part file
  * 
- * @global array	$oenology_options
+ * MUST come first. 
+ * Calls the header PHP file. 
+ * Used in all primary template pages
+ * 
+ * @see {@link: http://codex.wordpress.org/Function_Reference/get_header get_header}
+ * 
+ * Child Themes can replace this template part file globally, via "header.php",
+ * or in a specific context only, via "header-{context}.php"
  */
-global $oenology_options;
-$layout = $oenology_options['default_static_page_layout'];
+get_header( 'page' );
+?>
 
+<!-- Begin Main (div#main) -->
+<?php
 /**
- * Include the template file for the default layout
+ * div#main contains the center column content of the three-column 
+ * layout, and the left-column content of the two-column layout. 
+ * Generally, this column contains the main content of the page 
+ * (blog post/posts, page content, search results, etc.), and 
+ * contains the WordPress "Loop". For other non-WordPress pages 
+ * (or any page not containing the "Loop") the site structure 
+ * can be kept consistent by replacing "loop.php" with whatever 
+ * file (or static content) is desired.
  */
-get_template_part( 'page', $layout );
+?>
+<div id="main">
+	<?php 
+	/**
+	 * Include the loop template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "loop.php", or in a specific context only, via 
+	 * "loop-{context}.php"
+	 */
+	get_template_part( 'loop', 'page' ); 
+	?>
+</div>
+<!-- End Main (div#main) -->
+
+<?php
+if ( 'one-column' != oenology_get_current_page_layout() ) {
+	?>
+	<?php 
+	/**
+	 * Include the sidebar template part file
+	 * 
+	 * Calls a sidebar template part file.
+	 * Used in all primary template pages, except static Pages.
+	 * 
+	 * Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "sidebar.php", or in a specific context only, via
+	 * "sidebar-{context}.php"
+	 */
+	get_sidebar( 'page' ); 
+	?>
+<?php
+}
+?>
+	
+<?php 
+/**
+ * Include the footer template part file
+ * 
+ * MUST come last. 
+ * Calls the footer PHP file. 
+ * Used in all primary template pages
+ * 
+ * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_footer get_footer}
+ * 
+ * Child Themes can replace this template part file globally, via "footer.php",
+ * or in a specific context only, via "footer-{context}.php"
+ */
+get_footer( 'page' );  
 ?>

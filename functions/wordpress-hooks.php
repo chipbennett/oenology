@@ -42,24 +42,9 @@ add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
  * Filter 'body_class' to include
  * classes for page layout.
  */
-function oenology_filter_body_class( $classes ) {
-	global $oenology_options;
+function oenology_filter_body_class( $classes ) {	
 	$layout = 'layout-';
-	if ( is_page() ) {
-		global $post;
-		$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true );
-		if ( 'default' == $pagetemplate ) {
-			$layout .= $oenology_options['default_static_page_layout'];
-		} else {
-			$template = substr( $pagetemplate, 0, -4 );
-			$template = substr( $template, 5 );
-			$layout .= $template;
-		}
-	} else if ( is_single() ) {
-			$layout .= $oenology_options['single_post_layout'];
-	} else if ( is_home() || is_archive() || is_search() || is_404() ) {
-			$layout .= $oenology_options['post_index_layout'];
-	}
+	$layout .= oenology_get_current_page_layout();
 	$classes[] = $layout;
 	return $classes;
 }

@@ -57,10 +57,11 @@ if (
 
 	<?php
 	global $post;
-	$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true );
-	if ( 
+	if ( 'two-column' != oenology_get_current_page_layout()
+	/*
 	   'page-three-column.php' == $pagetemplate 
 	|| ( 'default' == $pagetemplate && 'three-column' == $oenology_options['default_static_page_layout'] )
+	*/
 	) {
 		?>
 		<!-- Begin Right Column (div#rightcol) -->
