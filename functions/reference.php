@@ -24,6 +24,8 @@
 
 /**
  * Setup the Theme Admin Reference Page
+ * 
+ * @uses	add_theme_page()
  */
 function oenology_menu_reference() {
 	add_theme_page( 
@@ -44,21 +46,23 @@ function oenology_menu_reference() {
 		'oenology_admin_reference_page' 
 	);
 }
-// Load the Admin Reference page
+// Hook the Admin Reference page into 'admin_menu'
 add_action( 'admin_menu', 'oenology_menu_reference' );
 
 
 /**
  * Oenology Theme Reference Page Markup
  * 
- * @uses	oenology_get_current_tab()	defined in \functions\custom.php
  * @uses	oenology_get_page_tab_markup()	defined in \functions\custom.php
  */
 function oenology_admin_reference_page() { ?>
 
 	<div class="wrap">
 		<?php
+		// Output the Reference Page tabs
 		oenology_get_page_tab_markup();
+		// Output the Reference page content.
+		// This content is output per-tab.
 		require( get_template_directory() . '/functions/reference-content.php' );
 		?>
 		
@@ -74,7 +78,7 @@ function oenology_admin_reference_page() { ?>
  * 
  * The Reference page does not include a 
  * settings form, so this array only defines 
-  * the name (slug) and title for each tab.
+ * the name (slug) and title for each tab.
  * 
  * @return	array	$tabs	array of arrays of tab parameters
  */

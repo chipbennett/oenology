@@ -14,6 +14,8 @@
 
 /**
  * Add Layout Meta Box
+ * 
+ * @uses	add_meta_box()
  */
 function oenology_add_layout_meta_box( $post ) {
     global $wp_meta_boxes;
@@ -25,10 +27,23 @@ function oenology_add_layout_meta_box( $post ) {
     add_meta_box( 'oenology_layout', __( 'Static Page Layout', 'oenology' ), 'oenology_layout_meta_box', 'page', $context, $priority );
 	
 }
+// Hook meta boxes into 'add_meta_boxes'
 add_action( 'add_meta_boxes', 'oenology_add_layout_meta_box' );
 
 /**
  * Define Layout Meta Box
+ * 
+ * Define the markup for the meta box
+ * for the "layout" post custom meta
+ * data. The metabox will consist of
+ * radio selection options for "default"
+ * and each defined, valid layout
+ * option for single blog posts or
+ * static pages, depending on the 
+ * context.
+ * 
+ * @uses	oenology_get_option_parameters()	Defined in \functions\options.php
+ * @uses	get_post_custom()
  */
 function oenology_layout_meta_box() {
 	global $post;
@@ -55,6 +70,15 @@ function oenology_layout_meta_box() {
 
 /**
  * Validate, sanitize, and save post metadata.
+ * 
+ * Validates the user-submitted post custom 
+ * meta data, ensuring that the selected layout 
+ * option is in the array of valid layout 
+ * options; otherwise, it returns 'default'.
+ * 
+ * @uses	oenology_get_option_parameters()	Defined in \functions\options.php
+ * @uses	array_key_exists()
+ * @uses	update_post_meta()
  */
 function oenology_save_layout_post_metadata(){
 	global $post;
@@ -69,7 +93,8 @@ function oenology_save_layout_post_metadata(){
 
 	update_post_meta( $post->ID, '_oenology_layout', $layout );
 }
-/* Add our function to the publish_{post-type}, draft_{post-type}, and future_{post-type} hooks. */
+// Hook the save layout post custom meta data into
+// publish_{post-type}, draft_{post-type}, and future_{post-type}
 add_action( 'publish_post', 'oenology_save_layout_post_metadata' );
 add_action( 'publish_page', 'oenology_save_layout_post_metadata' );
 add_action( 'draft_post', 'oenology_save_layout_post_metadata' );
