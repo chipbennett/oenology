@@ -19,9 +19,71 @@
  */
 
 /**
+ * Dynamically set $content_width
+ * 
+ * Define $content_width global variable, to keep 
+ * media content from overflowing the Theme's
+ * main content area.
+ * 
+ * @link	Codex reference: is_admin()
+ * 
+ * @uses	oenology_get_current_page_layout()	Defined in \functions\custom.php
+ * @uses	oenology_get_options()	Defined in \functions\options.php
+ */
+function oenology_set_content_width() {
+	global $pagenow;
+	if ( ! is_admin() || ( is_admin() && 'post.php' == $pagenow ) ) {
+
+		// Set variables for each layout/context
+		$width_three_column = 635;
+		$width_two_column = 810;
+		$width_one_column = 815;
+		$width_attachment = 888;
+
+		$layout = oenology_get_current_page_layout();
+
+		// Set default content width
+		//
+		// The default layout is the three-column
+		// layout for static Pages, and the two-
+		// column layout for single posts and post
+		// indexes.
+		//
+		// Note: the width of the *content* area,
+		// which is div#main, is the same for the
+		// three-column static Page layout as for
+		// the two-column post/index layout.
+		$dynamic_width = $width_three_column;
+		
+		// Set content width for attachment pages
+		if ( 'attachment' == $layout ) {
+			$dynamic_width = $width_attachment;
+		} 
+		
+		// Set content width for one-column layout
+		else if ( 'one-column' == $layout ) {
+			$dynamic_width = $width_one_column;
+		} 
+		
+		// Set content width for two-column layout
+		// Note: only applies to static Pages
+		else if ( 'two-column' == $layout ) {
+			$dynamic_width = $width_two_column;
+		}
+		
+		// Apply dynamic width to $content_width
+		global $content_width;
+		$content_width = $dynamic_width;
+	}
+}
+add_action( 'admin_head', 'oenology_set_content_width' );
+add_action( 'wp_head', 'oenology_set_content_width' );
+
+/**
  * Hook oenology_setup() into 'after_setup_theme'
  */
 add_action( 'after_setup_theme', 'oenology_setup', 10 );
+
 /**
  * Allow Child Themes to override this function entirely. If
  * a Child Theme includes an oenology_setup() function, it
@@ -34,24 +96,30 @@ if ( ! function_exists( 'oenology_setup' ) ):
 	 * Add Theme support for and configure various core WordPress 
 	 * functionality, define the Theme's content width, etc.
 	 * 
-	 * @uses	add_theme_support()
-	 * @uses	add_custom_background()
-	 * @uses	add_custom_image_header()
-	 * @uses	add_editor_style()
-	 * @uses	oenology_get_post_formats()
-	 * @uses	add_image_size()
-	 * @uses	set_post_thumbnail_size()
-	 * @uses	apply_filters()
-	 * @uses	get_header_textcolor()
-	 * @uses	oenology_get_color_scheme()
-	 * @uses	file_exists()
-	 * @uses	get_theme_root()
-	 * @uses	register_default_headers()
-	 * @uses	oenology_header_style()
-	 * @uses	get_option()
-	 * @uses	get_header_image()
-	 * @uses	oenology_admin_header_style()
-	 * @uses	register_nav_menus()
+	 * @link	Codex reference: add_custom_background()
+	 * @link	Codex reference: add_custom_image_header()
+	 * @link	Codex reference: add_editor_style()
+	 * @link	Codex reference: add_image_size()
+	 * @link	Codex reference: add_theme_support()
+	 * @link	Codex reference: apply_filters()
+	 * @link	Codex reference: get_header_image()
+	 * @link	Codex reference: get_header_textcolor()
+	 * @link	Codex reference: get_locale()
+	 * @link	Codex reference: get_option()
+	 * @link	Codex reference: get_template_directory()
+	 * @link	Codex reference: get_template_directory_uri()
+	 * @link	Codex reference: get_theme_root()
+	 * @link	Codex reference: is_readable()
+	 * @link	Codex reference: load_theme_textdomain()
+	 * @link	Codex reference: register_default_headers()
+	 * @link	Codex reference: register_nav_menus()
+	 * @link	Codex reference: set_post_thumbnail_size()
+	 * @link	PHP reference: file_exists()
+	 * 
+	 * @uses	oenology_admin_header_style()	Defined in \functions\theme-setup.php
+	 * @uses	oenology_get_post_formats()	Defined in \functions\custom.php
+	 * @uses	oenology_get_color_scheme()	Defined in \functions\dynamic-css.php
+	 * @uses	oenology_header_style()	Defined in \functions\theme-setup.php
 	 */
 	function oenology_setup() {
 		
@@ -164,17 +232,6 @@ if ( ! function_exists( 'oenology_setup' ) ):
 		/**
 		 * @todo	Add bbPress integration/support
 		 */
-		
-
-		/*
-		 * Define $content_width global variable, to keep 
-		 * media content from overflowing the Theme's
-		 * main content area.
-		 */
-		global $content_width;
-		if ( ! isset( $content_width ) ) {
-			$content_width = 640;
-		}
 		
 
 		/**

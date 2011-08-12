@@ -77,10 +77,10 @@ add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_p
  * the site is configured to display threaded 
  * comments.
  * 
- * @uses	is_singular()
- * @uses	comments_open()
- * @uses	get_option()
- * @uses	wp_enqueue_script()
+ * @link	http://codex.wordpress.org/Function_Reference/is_singular	Codex Reference: is_singular()
+ * @link	http://codex.wordpress.org/Function_Reference/comments_open	Codex Reference: comments_open()
+ * @link	http://codex.wordpress.org/Function_Reference/get_option	Codex Reference: get_option()
+ * @link	http://codex.wordpress.org/Function_Reference/wp_enqueue_script	Codex Reference: wp_enqueue_script()
  * 
  * @since	Oenology 2.0
  */
@@ -125,10 +125,10 @@ add_filter( 'body_class', 'oenology_filter_body_class' );
  * number of comments (count only comments, not 
  * trackbacks/pingbacks)
  * 
- * @uses	is_admin()
- * @uses	get_comments()
- * @uses	separate_comments()
- * @uses	count()
+ * @link	http://codex.wordpress.org/Function_Reference/is_admin	Codex Reference: is_admin()
+ * @link	http://codex.wordpress.org/Function_Reference/get_comments	Codex Reference: get_comments()
+ * @link	http://codex.wordpress.org/Function_Reference/separate_comments	Codex Reference: separate_comments()
+ * @link	http://php.net/manual/en/function.count.php	PHP Reference: count()
  * 
  * @link	http://www.wpbeginner.com/wp-tutorials/display-the-most-accurate-comment-count-in-wordpress/ WPBeginner
  * 
@@ -137,8 +137,8 @@ add_filter( 'body_class', 'oenology_filter_body_class' );
 function oenology_comment_count( $count ) {  
 	if ( ! is_admin() ) {
 		global $id;
-		$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
-		return count($comments_by_type['comment']);
+		$comments_by_type = &separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
+		return count( $comments_by_type['comment'] );
 	} else {
 		return $count;
 	}
@@ -198,13 +198,13 @@ function oenology_show_current_cat_on_single($output) {
  
 	if( is_single() ) {
  
-		$categories = wp_get_post_categories($post->ID);
+		$categories = wp_get_post_categories( $post->ID );
  
 		foreach( $categories as $catid ) {
 			$cat = get_category($catid);
 			// Find cat-item-ID in the string
-			if(preg_match('#cat-item-' . $cat->cat_ID . '#', $output)) {
-				$output = str_replace('cat-item-'.$cat->cat_ID, 'cat-item-'.$cat->cat_ID . ' current-cat', $output);
+			if( preg_match( '#cat-item-' . $cat->cat_ID . '#', $output ) ) {
+				$output = str_replace( 'cat-item-' . $cat->cat_ID, 'cat-item-' . $cat->cat_ID . ' current-cat', $output );
 			}
 		}
  
@@ -220,6 +220,15 @@ add_filter('wp_list_categories', 'oenology_show_current_cat_on_single');
  * Filter Hook: wp_title
  * 
  * Filter 'wp_title' to output contextual content
+ * 
+ * @link	Codex reference: is_feed()
+ * @link	Codex reference: is_search()
+ * @link	Codex reference: get_search_query()
+ * @link	Codex reference: get_bloginfo()
+ * @link	Codex reference: is_home()
+ * @link	Codex reference: is_front_page()
+ * @link	PHP reference: max()
+ * @link	PHP reference: sprintf()
  * 
  * @since	Oenology 2.0
  */
@@ -270,6 +279,10 @@ add_filter( 'wp_title', 'oenology_filter_wp_title', 10, 2 );
  * 
  * wp_list_comments() Callback function for 
  * Pings (Trackbacks/Pingbacks)
+ * 
+ * @link	Codex reference: comment_author_link()
+ * @link	Codex reference: comment_class()
+ * @link	Codex reference: comment_ID()
  * 
  * @since	Oenology 2.0
  */

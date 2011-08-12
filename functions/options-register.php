@@ -227,9 +227,9 @@ function oenology_get_varietal_text() {
 
 /**
  * Globalize the variable that holds 
- * the Theme default settings definitions
+ * all the Theme option parameters
  * 
- * @global	array	Theme settings definitions
+ * @global	array	Theme options parameters
  */
 global $option_parameters;
 $option_parameters = oenology_get_option_parameters();
@@ -297,6 +297,7 @@ function oenology_setting_callback( $option ) {
 	$optiondescription = $option['description'];
 	$fieldtype = $option['type'];
 	$fieldname = 'theme_oenology_options[' . $optionname . ']';
+	
 	// Output checkbox form field markup
 	if ( 'checkbox' == $fieldtype ) {
 		?>

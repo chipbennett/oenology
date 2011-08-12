@@ -84,28 +84,50 @@ function oenology_get_context() {
  * Get Current Page Layout
  */
 function oenology_get_current_page_layout() {
-	global $post, $oenology_options;
+	global $post;
+	global $oenology_options;
 	$custom = ( get_post_custom( $post->ID ) ? get_post_custom( $post->ID ) : false );
 	$custom_layout = ( isset( $custom['_oenology_layout'][0] ) ? $custom['_oenology_layout'][0] : 'default' );	
 	$layout = '';
-	if ( is_page() ) {
-		//$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true );
-		if ( 'default' == $custom_layout ) {
-			$layout .= $oenology_options['default_static_page_layout'];
-		} else {
-			//$template = substr( $pagetemplate, 0, -4 );
-			//$template = substr( $template, 5 );
-			//$layout .= $template;
-			$layout .= $custom_layout;
+	if ( ! is_admin() ) {
+		if ( is_attachment() ) {
+			$layout .= 'attachment';
+		} 
+		else if ( is_page() ) {
+			if ( 'default' == $custom_layout ) {
+				$layout .= $oenology_options['default_static_page_layout'];
+			} else {
+				$layout .= $custom_layout;
+			}
+		} 
+		else if ( is_single() ) {
+			if ( 'default' == $custom_layout ) {
+				$layout .= $oenology_options['default_single_post_layout'];
+			} else {
+				$layout .= $custom_layout;
+			}
+		} 
+		else if ( is_home() || is_archive() || is_search() || is_404() ) {
+			$layout .= $oenology_options['post_index_layout'];
 		}
-	} else if ( is_single() ) {
-		if ( 'default' == $custom_layout ) {
-			$layout .= $oenology_options['default_single_post_layout'];
-		} else {
-			$layout .= $custom_layout;
+	} else if ( is_admin() ) {
+		if ( 'attachment' == $post->post_type ) {
+			$layout .= 'attachment';
+		} 
+		else if ( 'page' == $post->post_type ) {
+			if ( 'default' == $custom_layout ) {
+				$layout .= $oenology_options['default_static_page_layout'];
+			} else {
+				$layout .= $custom_layout;
+			}
+		} 
+		else if ( is_single() ) {
+			if ( 'post' == $post->post_type ) {
+				$layout .= $oenology_options['default_single_post_layout'];
+			} else {
+				$layout .= $custom_layout;
+			}
 		}
-	} else if ( is_home() || is_archive() || is_search() || is_404() ) {
-		$layout .= $oenology_options['post_index_layout'];
 	}
 	return $layout;
 }
@@ -151,7 +173,7 @@ function oenology_get_current_tab() {
  * 
  * @return	string	table of formatted API data
  */
-function oenology_get_github_api_data( $context = 'commits', $status = 'open', $releasedate = '2011-07-25', $user = 'chipbennett', $repo = 'oenology' ) {
+function oenology_get_github_api_data( $context = 'commits', $status = 'open', $milestone = '2', $roadmap = false, $currentrelease = '2.3', $releasedate = '2011-07-25', $user = 'chipbennett', $repo = 'oenology' ) {
 
 	$capability = 'read';
 
@@ -162,11 +184,11 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	// Create transient key string. Used to ensure API data are 
 	// pinged only periodically. Different transient keys are
 	// created for commits, open issues, and closed issues.
-	$transient_key = 'gh_';
+	$transient_key = 'gh2_';
 	if ( 'commits' == $context ) {
 		$transient_key .= 'commits' . md5( $branch );
-	} elseif ( 'issues' == $context ) {
-		$transient_key .= 'issues_' . $status . md5( $branch );
+	} else if ( 'issues' == $context ) {
+		$transient_key .= 'issues_' . $status . md5( $branch . $milestone );
 	}
 
 	// If cached (transient) data are used, output an HTML
@@ -178,13 +200,15 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	}
 	
 	// Construct the API request URL, based on $branch and
-	// $context, and for issues, $status
+	// $context, for issues, $status, and $milestone
 	$apiurl = 'https://api.github.com/repos/' . $branch . '/' . $context;
 	if ( 'commits' == $context ) {
-		$apiurl .= '';;
-	} elseif ( 'issues' == $context ) {
+		$apiurl .= '';
+	} else if ( 'issues' == $context ) {
 		$apiurl .= '?state=' . $status;
-	}
+		$apiurl .= '&milestone=' . $milestone;
+		$apiurl .= '&sort=created&direction=asc';
+	}	
 	
 	// Request the API data, using the constructed URL
 	$remote = wp_remote_get( esc_url( $apiurl ) );
@@ -210,6 +234,10 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	// If the API returns a valid response, the data will be
 	// json-encoded; so decode it.
 	$data = json_decode( $remote['body'] );	
+	if ( 'issues' == $context ) {
+		// Test	
+	}
+	usort( $data, 'oenology_sort_github_data' );
 
 	// If the decoded json data is null, return a message
 	// indicating that no data were returned.
@@ -232,7 +260,7 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 		$reportdate = ( 'open' == $status ? 'Reported' : 'Closed' );
 		// $reportobject is used to return the appropriate timestamp
 		$reportobject = ( 'open' == $status ? 'created_at' : 'closed_at' );
-	} elseif ( 'commits' == $context ) {
+	} else if ( 'commits' == $context ) {
 		// $reportdate is used as a table column header
 		$reportdate = 'Date';
 	}
@@ -244,13 +272,13 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 
 	// Begin constructing the table
 	$output = '';
-	$output .= "\n" . '<table class="github-api github-issues">';
+	$output .= "\n" . '<table class="github-api github-' . $context . '">';
 	$output .= "\n" . '<thead>';
-	$output .= "\n\t" . '<tr><th>' . $reportidlabel . '</th><th>' . $reportdate . '</th><th>Issue</th>';
+	$output .= "\n\t" . '<tr><th>' . $reportidlabel . '</th><th>' . $reportdate . '</th>';
 	if ( 'issues' == $context ) {
-		$output .= '<th>Label</th>';
+		$output .= '<th>Milestone</th><th>Label</th>';
 	}
-	$output .= '</tr>';
+	$output .= '<th>Issue</th></tr>';
 	$output .= "\n" . '</thead>';
 	$output .= "\n" . '<tbody>';
 
@@ -265,6 +293,9 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 				$labelname = $label->name;
 				$labelcolor = $label->color;
 			$objecttime = $object->$reportobject;
+			$milestoneobj = $object->milestone;
+			$milestonetitle = $milestoneobj->title;
+			$milestonenumber = $milestoneobj->number;
 		} else if ( 'commits' == $context ) {				
 			$url = $object->url;
 			$reportid = substr( $object->sha, 0, 6 );
@@ -281,14 +312,15 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 		
 		// Only output $data reported/created/closed since 
 		// the last release
-		if ( $time > $datelastrelease ) {
+		if ( ( 'issues' == $context && ( $milestone == $milestonenumber || ( true == $roadmap && $milestonetitle > $currentrelease ) ) ) || ( 'commits' == $context && $time > $datelastrelease ) ) {
 			$output .= "\n\t" . '<tr>';
 			$output .= '<td style="padding:3px 5px;text-align:center;font-weight:bold;"><a href="' . esc_url( $url ) . '">' . $reportid . '</a></td>';
 			$output .= '<td style="padding:3px 5px;text-align:center;color:#999;font-size:12px;"><time title="' . esc_attr( $time_title_attr ) . '" datetime="' . esc_attr( $time_machine ) . '">' . esc_html( $timestamp ) . '</time></td>';
-			$output .= '<td style="padding:3px 5px;font-size:12px;">' . esc_html( $message ) . '</td>';
 			if ( 'issues' == $context ) {
+				$output .= '<td style="padding:3px 5px;text-align:center;color:#999;">' . $milestonetitle . '</td>';
 				$output .= '<td style="padding-left:5px;text-align:center;"><div style="text-shadow:#555 1px 1px 0px;border:1px solid #bbb;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:3px;padding-bottom:5px;padding-top:1px;font-weight:bold;background-color:#ffffff;color:#' . $labelcolor . ';">' . $labelname . '</div></td>';
 			}
+			$output .= '<td style="padding:3px 5px;font-size:12px;">' . esc_html( $message ) . '</td>';
 			$output .= '</tr>';
 		}
 	}
@@ -298,10 +330,41 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	$output .= "\n" . '</table>';
 
 	// Set the transient (cache) for the API data
-	set_transient( $transient_key, $output, 600 );
+	set_transient( $transient_key, $output, 60 );
 
 	// Return the output
 	return $output;
+}
+
+/**
+ * Sort GitHub API Data
+ * 
+ * Callback function for usort() to sort the GitHub 
+ * API (v3) issues data by issue number or commit date
+ * 
+ * @return	object	object of GitHub API data sorted by issue number or commit date
+ */
+function oenology_sort_github_data( $a, $b ) {
+	$sort = 0;
+	$param_a = '';
+	$param_b = '';
+	if ( isset( $a->number ) ) {
+		$param_a = $a->number;
+		$param_b = $b->number;
+	} else if ( isset( $a->committer ) ) {
+		$commit_a = $a->commit;
+		$committer_a = $commit_a->committer;
+		$param_a = $committer_a->date;
+		$commit_b = $b->commit;
+		$committer_b = $commit_b->committer;
+		$param_b = $committer_b->date;
+	}
+	if (  $param_a ==  $param_b ) { 
+		$sort = 0; 
+	} else {
+		$sort = ( $param_a < $param_b ? -1 : 1 );
+	}
+	return $sort;
 }
 		
 /**
