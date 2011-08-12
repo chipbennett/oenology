@@ -299,7 +299,7 @@ function oenology_reference_page_faq() {
  */
 function oenology_reference_page_changelog() { 
 	?>	
-	<h3>2.3 [2011.MM.DD]</h3>	
+	<h3>2.3 [2011.08.12]</h3>	
 	<p>Maintenance Release</p>
 	<ol>
 	<li>New Features:
@@ -331,6 +331,7 @@ function oenology_reference_page_changelog() {
 		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/27">27</a> (enhancement): Rearrange Contextual Help</li>
 		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/28">28</a> (enhancement): Move Dynamic Style/Script Output to Separate File</li>
 		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/30">30</a> (enhancement): Improve styling of Chat Post Format</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/34">34</a> (enhancement): Add Milestone to GitHub API Tables in Support Tab</li>
 		</ol>
 	</li>
 	</ol>

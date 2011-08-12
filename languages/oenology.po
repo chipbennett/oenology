@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oenology\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-25 11:11-0600\n"
-"PO-Revision-Date: 2011-07-25 11:12-0600\n"
+"POT-Creation-Date: 2011-08-12 12:39-0600\n"
+"PO-Revision-Date: 2011-08-12 12:40-0600\n"
 "Last-Translator: Chip Bennett <chip@chipbennett.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,708 +18,859 @@ msgstr ""
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:97
-#: Dropbox\Development\git\oenology\master\functions/custom.php:97
+#: Dropbox\Development\git\oenology\master/functions/custom.php:406
+#: Dropbox\Development\git\oenology\master\functions/custom.php:406
 msgid "An incidental remark; digression: a message that departs from the main subject."
 msgstr "An incidental remark; digression: a message that departs from the main subject."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:101
-#: Dropbox\Development\git\oenology\master\functions/custom.php:101
+#: Dropbox\Development\git\oenology\master/functions/custom.php:410
+#: Dropbox\Development\git\oenology\master\functions/custom.php:410
 msgid "A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction."
 msgstr "A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:105
-#: Dropbox\Development\git\oenology\master\functions/custom.php:105
+#: Dropbox\Development\git\oenology\master/functions/custom.php:414
+#: Dropbox\Development\git\oenology\master\functions/custom.php:414
 msgid "Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat."
 msgstr "Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:109
-#: Dropbox\Development\git\oenology\master\functions/custom.php:109
+#: Dropbox\Development\git\oenology\master/functions/custom.php:418
+#: Dropbox\Development\git\oenology\master\functions/custom.php:418
 msgid "A collection of art for exhibition."
 msgstr "A collection of art for exhibition."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:113
-#: Dropbox\Development\git\oenology\master\functions/custom.php:113
+#: Dropbox\Development\git\oenology\master/functions/custom.php:422
+#: Dropbox\Development\git\oenology\master\functions/custom.php:422
 msgid "picture: A visual representation (of an object or scene or person or abstraction) produced on a surface."
 msgstr "picture: A visual representation (of an object or scene or person or abstraction) produced on a surface."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:117
-#: Dropbox\Development\git\oenology\master\functions/custom.php:117
+#: Dropbox\Development\git\oenology\master/functions/custom.php:426
+#: Dropbox\Development\git\oenology\master\functions/custom.php:426
 msgid "A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document."
 msgstr "A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:121
-#: Dropbox\Development\git\oenology\master\functions/custom.php:121
+#: Dropbox\Development\git\oenology\master/functions/custom.php:430
+#: Dropbox\Development\git\oenology\master\functions/custom.php:430
 msgid "A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else."
 msgstr "A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:125
-#: Dropbox\Development\git\oenology\master\functions/custom.php:125
+#: Dropbox\Development\git\oenology\master/functions/custom.php:434
+#: Dropbox\Development\git\oenology\master\functions/custom.php:434
 msgid "state or condition of affairs"
 msgstr "state or condition of affairs"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:129
-#: Dropbox\Development\git\oenology\master\functions/custom.php:129
+#: Dropbox\Development\git\oenology\master/functions/custom.php:438
+#: Dropbox\Development\git\oenology\master\functions/custom.php:438
 msgid "A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion."
 msgstr "A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:246
-#: Dropbox\Development\git\oenology\master\functions/custom.php:246
+#: Dropbox\Development\git\oenology\master/functions/custom.php:503
+#: Dropbox\Development\git\oenology\master\functions/custom.php:503
+msgid "YouTube"
+msgstr "YouTube"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:508
+#: Dropbox\Development\git\oenology\master\functions/custom.php:508
+msgid "MySpace"
+msgstr "MySpace"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:513
+#: Dropbox\Development\git\oenology\master\functions/custom.php:513
+msgid "Linked-In"
+msgstr "Linked-In"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:518
+#: Dropbox\Development\git\oenology\master\functions/custom.php:518
+msgid "Flickr"
+msgstr "Flickr"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:523
+#: Dropbox\Development\git\oenology\master\functions/custom.php:523
+msgid "Facebook"
+msgstr "Facebook"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:528
+#: Dropbox\Development\git\oenology\master\functions/custom.php:528
+msgid "Twitter"
+msgstr "Twitter"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/custom.php:646
+#: Dropbox\Development\git\oenology\master\functions/custom.php:646
 msgid "Oh no, not again."
 msgstr "Oh no, not again."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:249
-#: Dropbox\Development\git\oenology\master\functions/custom.php:249
+#: Dropbox\Development\git\oenology\master/functions/custom.php:649
+#: Dropbox\Development\git\oenology\master\functions/custom.php:649
 msgid "Well, this is weird."
 msgstr "Well, this is weird."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:250
-#: Dropbox\Development\git\oenology\master\functions/custom.php:250
+#: Dropbox\Development\git\oenology\master/functions/custom.php:650
+#: Dropbox\Development\git\oenology\master\functions/custom.php:650
 msgid "The post, page, or file you requested could not be found. "
 msgstr "The post, page, or file you requested could not be found. "
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:251
-#: Dropbox\Development\git\oenology\master\functions/custom.php:251
+#: Dropbox\Development\git\oenology\master/functions/custom.php:651
+#: Dropbox\Development\git\oenology\master\functions/custom.php:651
 msgid "The best laid plans of mice, and all that. "
 msgstr "The best laid plans of mice, and all that. "
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:252
-#: Dropbox\Development\git\oenology\master\functions/custom.php:252
+#: Dropbox\Development\git\oenology\master/functions/custom.php:652
+#: Dropbox\Development\git\oenology\master\functions/custom.php:652
 msgid "Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time."
 msgstr "Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:255
-#: Dropbox\Development\git\oenology\master\functions/custom.php:255
+#: Dropbox\Development\git\oenology\master/functions/custom.php:655
+#: Dropbox\Development\git\oenology\master\functions/custom.php:655
 msgid "I apologize for the inconvenience."
 msgstr "I apologize for the inconvenience."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:256
-#: Dropbox\Development\git\oenology\master\functions/custom.php:256
+#: Dropbox\Development\git\oenology\master/functions/custom.php:656
+#: Dropbox\Development\git\oenology\master\functions/custom.php:656
 msgid "Let me try to make it up to you!"
 msgstr "Let me try to make it up to you!"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:296
-#: Dropbox\Development\git\oenology\master\functions/custom.php:296
+#: Dropbox\Development\git\oenology\master/functions/custom.php:696
+#: Dropbox\Development\git\oenology\master\functions/custom.php:696
 msgid "Here is a list of posts that you might have been looking for:"
 msgstr "Here is a list of posts that you might have been looking for:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:312
-#: Dropbox\Development\git\oenology\master/functions/custom.php:343
-#: Dropbox\Development\git\oenology\master\functions/custom.php:312
-#: Dropbox\Development\git\oenology\master\functions/custom.php:343
+#: Dropbox\Development\git\oenology\master/functions/custom.php:712
+#: Dropbox\Development\git\oenology\master/functions/custom.php:743
+#: Dropbox\Development\git\oenology\master\functions/custom.php:712
+#: Dropbox\Development\git\oenology\master\functions/custom.php:743
 msgid "No excerpt available."
 msgstr "No excerpt available."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:327
-#: Dropbox\Development\git\oenology\master\functions/custom.php:327
+#: Dropbox\Development\git\oenology\master/functions/custom.php:727
+#: Dropbox\Development\git\oenology\master\functions/custom.php:727
 msgid "Here is a list of pages that you might have been looking for:"
 msgstr "Here is a list of pages that you might have been looking for:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:362
-#: Dropbox\Development\git\oenology\master\functions/custom.php:362
+#: Dropbox\Development\git\oenology\master/functions/custom.php:762
+#: Dropbox\Development\git\oenology\master\functions/custom.php:762
 msgid "Perhaps you were looking for something in one of the following categories?"
 msgstr "Perhaps you were looking for something in one of the following categories?"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:377
-#: Dropbox\Development\git\oenology\master\functions/custom.php:377
+#: Dropbox\Development\git\oenology\master/functions/custom.php:777
+#: Dropbox\Development\git\oenology\master\functions/custom.php:777
 msgid "Perhaps you were looking for something with one of the following tags?"
 msgstr "Perhaps you were looking for something with one of the following tags?"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:387
-#: Dropbox\Development\git\oenology\master\functions/custom.php:387
+#: Dropbox\Development\git\oenology\master/functions/custom.php:787
+#: Dropbox\Development\git\oenology\master\functions/custom.php:787
 msgid "I apologize."
 msgstr "I apologize."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:388
-#: Dropbox\Development\git\oenology\master\functions/custom.php:388
+#: Dropbox\Development\git\oenology\master/functions/custom.php:788
+#: Dropbox\Development\git\oenology\master\functions/custom.php:788
 msgid "For the life of me, I am unable to figure out what you were trying to find."
 msgstr "For the life of me, I am unable to figure out what you were trying to find."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:389
-#: Dropbox\Development\git\oenology\master\functions/custom.php:389
+#: Dropbox\Development\git\oenology\master/functions/custom.php:789
+#: Dropbox\Development\git\oenology\master\functions/custom.php:789
 msgid "Perhaps try searching, using the search form in the upper right-hand corner?"
 msgstr "Perhaps try searching, using the search form in the upper right-hand corner?"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:461
-#: Dropbox\Development\git\oenology\master/functions/custom.php:463
-#: Dropbox\Development\git\oenology\master\functions/custom.php:461
-#: Dropbox\Development\git\oenology\master\functions/custom.php:463
+#: Dropbox\Development\git\oenology\master/functions/custom.php:861
+#: Dropbox\Development\git\oenology\master/functions/custom.php:863
+#: Dropbox\Development\git\oenology\master\functions/custom.php:861
+#: Dropbox\Development\git\oenology\master\functions/custom.php:863
 msgid "Category Archive: "
 msgstr "Category Archive: "
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:487
-#: Dropbox\Development\git\oenology\master\functions/custom.php:487
+#: Dropbox\Development\git\oenology\master/functions/custom.php:887
+#: Dropbox\Development\git\oenology\master\functions/custom.php:887
 #, php-format
 msgid "Posts Published in: %s"
 msgstr "Posts Published in: %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:539
-#: Dropbox\Development\git\oenology\master\functions/custom.php:539
+#: Dropbox\Development\git\oenology\master/functions/custom.php:939
+#: Dropbox\Development\git\oenology\master\functions/custom.php:939
 msgid "Search Results:"
 msgstr "Search Results:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:544
-#: Dropbox\Development\git\oenology\master\functions/custom.php:544
+#: Dropbox\Development\git\oenology\master/functions/custom.php:944
+#: Dropbox\Development\git\oenology\master\functions/custom.php:944
 msgid "Tag Archive:"
 msgstr "Tag Archive:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:549
-#: Dropbox\Development\git\oenology\master\functions/custom.php:549
+#: Dropbox\Development\git\oenology\master/functions/custom.php:949
+#: Dropbox\Development\git\oenology\master\functions/custom.php:949
 msgid "Posts Written by:"
 msgstr "Posts Written by:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:554
-#: Dropbox\Development\git\oenology\master\functions/custom.php:554
+#: Dropbox\Development\git\oenology\master/functions/custom.php:954
+#: Dropbox\Development\git\oenology\master\functions/custom.php:954
 msgid "Error 404:"
 msgstr "Error 404:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:555
-#: Dropbox\Development\git\oenology\master\functions/custom.php:555
+#: Dropbox\Development\git\oenology\master/functions/custom.php:955
+#: Dropbox\Development\git\oenology\master\functions/custom.php:955
 msgid "Page Not Found"
 msgstr "Page Not Found"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/custom.php:559
-#: Dropbox\Development\git\oenology\master\functions/custom.php:559
+#: Dropbox\Development\git\oenology\master/functions/custom.php:959
+#: Dropbox\Development\git\oenology\master\functions/custom.php:959
 msgid "Post Format Archive:"
 msgstr "Post Format Archive:"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:52
-#: Dropbox\Development\git\oenology\master\functions/options.php:52
-msgid "Header Nav Menu Position"
-msgstr "Header Nav Menu Position"
+#: Dropbox\Development\git\oenology\master/functions/options.php:55
+#: Dropbox\Development\git\oenology\master/functions/options.php:58
+#: Dropbox\Development\git\oenology\master\functions/options.php:55
+#: Dropbox\Development\git\oenology\master\functions/options.php:58
+msgid "Oenology Options"
+msgstr "Oenology Options"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:57
-#: Dropbox\Development\git\oenology\master\functions/options.php:57
-msgid "Above"
-msgstr "Above"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:61
-#: Dropbox\Development\git\oenology\master\functions/options.php:61
-msgid "Below"
-msgstr "Below"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:65
-#: Dropbox\Development\git\oenology\master/functions/options.php:125
-#: Dropbox\Development\git\oenology\master/functions/options.php:203
-#: Dropbox\Development\git\oenology\master\functions/options.php:65
-#: Dropbox\Development\git\oenology\master\functions/options.php:125
-#: Dropbox\Development\git\oenology\master\functions/options.php:203
-msgid "Do Not Display"
-msgstr "Do Not Display"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:68
-#: Dropbox\Development\git\oenology\master\functions/options.php:68
-msgid "Display header navigation menu above or below the site title/description?"
-msgstr "Display header navigation menu above or below the site title/description?"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:76
-#: Dropbox\Development\git\oenology\master\functions/options.php:76
-msgid "Header Nav Menu Depth"
-msgstr "Header Nav Menu Depth"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:81
-#: Dropbox\Development\git\oenology\master\functions/options.php:81
-msgid "One"
-msgstr "One"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:85
-#: Dropbox\Development\git\oenology\master\functions/options.php:85
-msgid "Two"
-msgstr "Two"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:89
-#: Dropbox\Development\git\oenology\master\functions/options.php:89
-msgid "Three"
-msgstr "Three"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:92
-#: Dropbox\Development\git\oenology\master\functions/options.php:92
-msgid "How many levels of Page hierarchy should the Header Navigation Menu display?"
-msgstr "How many levels of Page hierarchy should the Header Navigation Menu display?"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:100
-#: Dropbox\Development\git\oenology\master\functions/options.php:100
-msgid "Header Nav Menu Item Width"
-msgstr "Header Nav Menu Item Width"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:105
-#: Dropbox\Development\git\oenology\master\functions/options.php:105
-msgid "Fixed"
-msgstr "Fixed"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:109
-#: Dropbox\Development\git\oenology\master\functions/options.php:109
-msgid "Fluid"
-msgstr "Fluid"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:112
-#: Dropbox\Development\git\oenology\master\functions/options.php:112
-msgid "Should Header Nav Menu items have a fixed or fluid width?"
-msgstr "Should Header Nav Menu items have a fixed or fluid width?"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:120
-#: Dropbox\Development\git\oenology\master\functions/options.php:120
-msgid "Display Footer Credit"
-msgstr "Display Footer Credit"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:129
-#: Dropbox\Development\git\oenology\master\functions/options.php:129
-msgid "Display"
-msgstr "Display"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:132
-#: Dropbox\Development\git\oenology\master\functions/options.php:132
-msgid "Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it."
-msgstr "Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:140
-#: Dropbox\Development\git\oenology\master\functions/options.php:140
-msgid "Varietal"
-msgstr "Varietal"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:145
-#: Dropbox\Development\git\oenology\master\functions/options.php:145
-msgid "Cuvee"
-msgstr "Cuvee"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:146
-#: Dropbox\Development\git\oenology\master\functions/options.php:146
-msgid "Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming."
-msgstr "Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:151
-#: Dropbox\Development\git\oenology\master\functions/options.php:151
-msgid "Chardonnay"
-msgstr "Chardonnay"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:152
-#: Dropbox\Development\git\oenology\master\functions/options.php:152
-msgid "Chardonnay is the ubiquitous white wine, produced from a versatile white grape."
-msgstr "Chardonnay is the ubiquitous white wine, produced from a versatile white grape."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:157
-#: Dropbox\Development\git\oenology\master\functions/options.php:157
-msgid "Seyval Blanc"
-msgstr "Seyval Blanc"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:158
-#: Dropbox\Development\git\oenology\master\functions/options.php:158
-msgid "Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral."
-msgstr "Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:163
-#: Dropbox\Development\git\oenology\master\functions/options.php:163
-msgid "Muscat"
-msgstr "Muscat"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:164
-#: Dropbox\Development\git\oenology\master\functions/options.php:164
-msgid "Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet."
-msgstr "Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:169
-#: Dropbox\Development\git\oenology\master\functions/options.php:169
-msgid "Syrah"
-msgstr "Syrah"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:170
-#: Dropbox\Development\git\oenology\master\functions/options.php:170
-msgid "Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma."
-msgstr "Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:175
-#: Dropbox\Development\git\oenology\master\functions/options.php:175
-msgid "Malbec"
-msgstr "Malbec"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:176
-#: Dropbox\Development\git\oenology\master\functions/options.php:176
-msgid "Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors."
-msgstr "Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:188
-#: Dropbox\Development\git\oenology\master\functions/options.php:188
-msgid "Display Social Icons"
-msgstr "Display Social Icons"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:190
-#: Dropbox\Development\git\oenology\master\functions/options.php:190
-msgid "Display social icons in sidebar"
-msgstr "Display social icons in sidebar"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:198
-#: Dropbox\Development\git\oenology\master/functions/options.php:222
-#: Dropbox\Development\git\oenology\master\functions/options.php:198
-#: Dropbox\Development\git\oenology\master\functions/options.php:222
-msgid "RSS Feed"
-msgstr "RSS Feed"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:230
-#: Dropbox\Development\git\oenology\master\functions/options.php:230
-msgid "Facebook Profile"
-msgstr "Facebook Profile"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:233
-#: Dropbox\Development\git\oenology\master\functions/options.php:233
-msgid "Facebook Username"
-msgstr "Facebook Username"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:241
-#: Dropbox\Development\git\oenology\master\functions/options.php:241
-msgid "Flickr Profile"
-msgstr "Flickr Profile"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:244
-#: Dropbox\Development\git\oenology\master\functions/options.php:244
-msgid "Flickr Username"
-msgstr "Flickr Username"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:252
-#: Dropbox\Development\git\oenology\master\functions/options.php:252
-msgid "Linked-In Profile"
-msgstr "Linked-In Profile"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:255
-#: Dropbox\Development\git\oenology\master\functions/options.php:255
-msgid "Linked-In Username"
-msgstr "Linked-In Username"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:263
-#: Dropbox\Development\git\oenology\master\functions/options.php:263
-msgid "MySpace Profile"
-msgstr "MySpace Profile"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:266
-#: Dropbox\Development\git\oenology\master\functions/options.php:266
-msgid "MySpace Username"
-msgstr "MySpace Username"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:274
-#: Dropbox\Development\git\oenology\master\functions/options.php:274
-msgid "Twitter Profile"
-msgstr "Twitter Profile"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:277
-#: Dropbox\Development\git\oenology\master\functions/options.php:277
-msgid "Twitter Username"
-msgstr "Twitter Username"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:285
-#: Dropbox\Development\git\oenology\master\functions/options.php:285
-msgid "YouTube Profile"
-msgstr "YouTube Profile"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:288
-#: Dropbox\Development\git\oenology\master\functions/options.php:288
-msgid "YouTube Username"
-msgstr "YouTube Username"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:341
-#: Dropbox\Development\git\oenology\master\functions/options.php:341
-msgid "YouTube"
-msgstr "YouTube"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:346
-#: Dropbox\Development\git\oenology\master\functions/options.php:346
-msgid "MySpace"
-msgstr "MySpace"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:351
-#: Dropbox\Development\git\oenology\master\functions/options.php:351
-msgid "Linked-In"
-msgstr "Linked-In"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:356
-#: Dropbox\Development\git\oenology\master\functions/options.php:356
-msgid "Flickr"
-msgstr "Flickr"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:361
-#: Dropbox\Development\git\oenology\master\functions/options.php:361
-msgid "Facebook"
-msgstr "Facebook"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:366
-#: Dropbox\Development\git\oenology\master\functions/options.php:366
-msgid "Twitter"
-msgstr "Twitter"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:387
-#: Dropbox\Development\git\oenology\master/functions/reference.php:32
-#: Dropbox\Development\git\oenology\master\functions/options.php:387
-msgid "General"
-msgstr "General"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:391
-#: Dropbox\Development\git\oenology\master\functions/options.php:391
-msgid "Header Options"
-msgstr "Header Options"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:392
-#: Dropbox\Development\git\oenology\master\functions/options.php:392
-msgid "Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
-msgstr "Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:396
-#: Dropbox\Development\git\oenology\master\functions/options.php:396
-msgid "Social Network Profile Options"
-msgstr "Social Network Profile Options"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:397
-#: Dropbox\Development\git\oenology\master\functions/options.php:397
-msgid "Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
-msgstr "Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:401
-#: Dropbox\Development\git\oenology\master\functions/options.php:401
-msgid "Footer Options"
-msgstr "Footer Options"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:402
-#: Dropbox\Development\git\oenology\master\functions/options.php:402
-msgid "Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
-msgstr "Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:408
-#: Dropbox\Development\git\oenology\master\functions/options.php:408
-msgid "Varietals"
-msgstr "Varietals"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:412
-#: Dropbox\Development\git\oenology\master\functions/options.php:412
-msgid "Varietal Options"
-msgstr "Varietal Options"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:430
-#: Dropbox\Development\git\oenology\master\functions/options.php:430
-msgid "Black"
-msgstr "Black"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:431
-#: Dropbox\Development\git\oenology\master\functions/options.php:431
-msgid "Silver"
-msgstr "Silver"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:432
-#: Dropbox\Development\git\oenology\master\functions/options.php:432
-msgid "Gray"
-msgstr "Gray"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:433
-#: Dropbox\Development\git\oenology\master\functions/options.php:433
-msgid "Coffee"
-msgstr "Coffee"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:1173
-#: Dropbox\Development\git\oenology\master\functions/options.php:1173
+#: Dropbox\Development\git\oenology\master/functions/options.php:90
+#: Dropbox\Development\git\oenology\master\functions/options.php:90
 msgid "Theme settings updated successfully."
 msgstr "Theme settings updated successfully."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:1182
-#: Dropbox\Development\git\oenology\master\functions/options.php:1182
+#: Dropbox\Development\git\oenology\master/functions/options.php:101
+#: Dropbox\Development\git\oenology\master\functions/options.php:101
 msgid "Save Settings"
 msgstr "Save Settings"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/options.php:1183
-#: Dropbox\Development\git\oenology\master\functions/options.php:1183
+#: Dropbox\Development\git\oenology\master/functions/options.php:102
+#: Dropbox\Development\git\oenology\master\functions/options.php:102
 msgid "Reset Defaults"
 msgstr "Reset Defaults"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:159
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:59
+#: Dropbox\Development\git\oenology\master\functions/options.php:159
+msgid "Header Nav Menu Position"
+msgstr "Header Nav Menu Position"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:164
+#: Dropbox\Development\git\oenology\master\functions/options.php:164
+msgid "Above"
+msgstr "Above"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:168
+#: Dropbox\Development\git\oenology\master\functions/options.php:168
+msgid "Below"
+msgstr "Below"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:172
+#: Dropbox\Development\git\oenology\master/functions/options.php:232
+#: Dropbox\Development\git\oenology\master/functions/options.php:310
+#: Dropbox\Development\git\oenology\master\functions/options.php:172
+#: Dropbox\Development\git\oenology\master\functions/options.php:232
+#: Dropbox\Development\git\oenology\master\functions/options.php:310
+msgid "Do Not Display"
+msgstr "Do Not Display"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:175
+#: Dropbox\Development\git\oenology\master\functions/options.php:175
+msgid "Display header navigation menu above or below the site title/description?"
+msgstr "Display header navigation menu above or below the site title/description?"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:183
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:64
+#: Dropbox\Development\git\oenology\master\functions/options.php:183
+msgid "Header Nav Menu Depth"
+msgstr "Header Nav Menu Depth"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:188
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:71
+#: Dropbox\Development\git\oenology\master\functions/options.php:188
+msgid "One"
+msgstr "One"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:192
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:72
+#: Dropbox\Development\git\oenology\master\functions/options.php:192
+msgid "Two"
+msgstr "Two"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:196
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:73
+#: Dropbox\Development\git\oenology\master\functions/options.php:196
+msgid "Three"
+msgstr "Three"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:199
+#: Dropbox\Development\git\oenology\master\functions/options.php:199
+msgid "How many levels of Page hierarchy should the Header Navigation Menu display?"
+msgstr "How many levels of Page hierarchy should the Header Navigation Menu display?"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:207
+#: Dropbox\Development\git\oenology\master\functions/options.php:207
+msgid "Header Nav Menu Item Width"
+msgstr "Header Nav Menu Item Width"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:212
+#: Dropbox\Development\git\oenology\master\functions/options.php:212
+msgid "Fixed"
+msgstr "Fixed"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:216
+#: Dropbox\Development\git\oenology\master\functions/options.php:216
+msgid "Fluid"
+msgstr "Fluid"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:219
+#: Dropbox\Development\git\oenology\master\functions/options.php:219
+msgid "Should Header Nav Menu items have a fixed or fluid width?"
+msgstr "Should Header Nav Menu items have a fixed or fluid width?"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:227
+#: Dropbox\Development\git\oenology\master\functions/options.php:227
+msgid "Display Footer Credit"
+msgstr "Display Footer Credit"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:236
+#: Dropbox\Development\git\oenology\master\functions/options.php:236
+msgid "Display"
+msgstr "Display"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:239
+#: Dropbox\Development\git\oenology\master\functions/options.php:239
+msgid "Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it."
+msgstr "Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:247
+#: Dropbox\Development\git\oenology\master\functions/options.php:247
+msgid "Varietal"
+msgstr "Varietal"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:252
+#: Dropbox\Development\git\oenology\master\functions/options.php:252
+msgid "Cuvee"
+msgstr "Cuvee"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:253
+#: Dropbox\Development\git\oenology\master\functions/options.php:253
+msgid "Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming."
+msgstr "Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:258
+#: Dropbox\Development\git\oenology\master\functions/options.php:258
+msgid "Chardonnay"
+msgstr "Chardonnay"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:259
+#: Dropbox\Development\git\oenology\master\functions/options.php:259
+msgid "Chardonnay is the ubiquitous white wine, produced from a versatile white grape."
+msgstr "Chardonnay is the ubiquitous white wine, produced from a versatile white grape."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:264
+#: Dropbox\Development\git\oenology\master\functions/options.php:264
+msgid "Seyval Blanc"
+msgstr "Seyval Blanc"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:265
+#: Dropbox\Development\git\oenology\master\functions/options.php:265
+msgid "Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral."
+msgstr "Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:270
+#: Dropbox\Development\git\oenology\master\functions/options.php:270
+msgid "Muscat"
+msgstr "Muscat"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:271
+#: Dropbox\Development\git\oenology\master\functions/options.php:271
+msgid "Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet."
+msgstr "Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:276
+#: Dropbox\Development\git\oenology\master\functions/options.php:276
+msgid "Syrah"
+msgstr "Syrah"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:277
+#: Dropbox\Development\git\oenology\master\functions/options.php:277
+msgid "Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma."
+msgstr "Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:282
+#: Dropbox\Development\git\oenology\master\functions/options.php:282
+msgid "Malbec"
+msgstr "Malbec"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:283
+#: Dropbox\Development\git\oenology\master\functions/options.php:283
+msgid "Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors."
+msgstr "Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:295
+#: Dropbox\Development\git\oenology\master\functions/options.php:295
+msgid "Display Social Icons"
+msgstr "Display Social Icons"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:297
+#: Dropbox\Development\git\oenology\master\functions/options.php:297
+msgid "Display social icons in sidebar"
+msgstr "Display social icons in sidebar"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:305
+#: Dropbox\Development\git\oenology\master/functions/options.php:329
+#: Dropbox\Development\git\oenology\master\functions/options.php:305
+#: Dropbox\Development\git\oenology\master\functions/options.php:329
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:337
+#: Dropbox\Development\git\oenology\master\functions/options.php:337
+msgid "Facebook Profile"
+msgstr "Facebook Profile"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:340
+#: Dropbox\Development\git\oenology\master\functions/options.php:340
+msgid "Facebook Username"
+msgstr "Facebook Username"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:348
+#: Dropbox\Development\git\oenology\master\functions/options.php:348
+msgid "Flickr Profile"
+msgstr "Flickr Profile"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:351
+#: Dropbox\Development\git\oenology\master\functions/options.php:351
+msgid "Flickr Username"
+msgstr "Flickr Username"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:359
+#: Dropbox\Development\git\oenology\master\functions/options.php:359
+msgid "Linked-In Profile"
+msgstr "Linked-In Profile"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:362
+#: Dropbox\Development\git\oenology\master\functions/options.php:362
+msgid "Linked-In Username"
+msgstr "Linked-In Username"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:370
+#: Dropbox\Development\git\oenology\master\functions/options.php:370
+msgid "MySpace Profile"
+msgstr "MySpace Profile"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:373
+#: Dropbox\Development\git\oenology\master\functions/options.php:373
+msgid "MySpace Username"
+msgstr "MySpace Username"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:381
+#: Dropbox\Development\git\oenology\master\functions/options.php:381
+msgid "Twitter Profile"
+msgstr "Twitter Profile"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:384
+#: Dropbox\Development\git\oenology\master\functions/options.php:384
+msgid "Twitter Username"
+msgstr "Twitter Username"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:392
+#: Dropbox\Development\git\oenology\master\functions/options.php:392
+msgid "YouTube Profile"
+msgstr "YouTube Profile"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:395
+#: Dropbox\Development\git\oenology\master\functions/options.php:395
+msgid "YouTube Username"
+msgstr "YouTube Username"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:403
+#: Dropbox\Development\git\oenology\master\functions/options.php:403
+msgid "Default Static Page Layout"
+msgstr "Default Static Page Layout"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:408
+#: Dropbox\Development\git\oenology\master/functions/options.php:435
+#: Dropbox\Development\git\oenology\master/functions/options.php:467
+#: Dropbox\Development\git\oenology\master\functions/options.php:408
+#: Dropbox\Development\git\oenology\master\functions/options.php:435
+#: Dropbox\Development\git\oenology\master\functions/options.php:467
+msgid "1-Column"
+msgstr "1-Column"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:409
+#: Dropbox\Development\git\oenology\master/functions/options.php:436
+#: Dropbox\Development\git\oenology\master/functions/options.php:468
+#: Dropbox\Development\git\oenology\master\functions/options.php:409
+#: Dropbox\Development\git\oenology\master\functions/options.php:436
+#: Dropbox\Development\git\oenology\master\functions/options.php:468
+msgid "One column (full-width content)"
+msgstr "One column (full-width content)"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:413
+#: Dropbox\Development\git\oenology\master\functions/options.php:413
+msgid "2-Column"
+msgstr "2-Column"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:414
+#: Dropbox\Development\git\oenology\master\functions/options.php:414
+msgid "Two columns (menu on left, content on right)"
+msgstr "Two columns (menu on left, content on right)"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:418
+#: Dropbox\Development\git\oenology\master/functions/options.php:450
+#: Dropbox\Development\git\oenology\master/functions/options.php:482
+#: Dropbox\Development\git\oenology\master\functions/options.php:418
+#: Dropbox\Development\git\oenology\master\functions/options.php:450
+#: Dropbox\Development\git\oenology\master\functions/options.php:482
+msgid "3-Column"
+msgstr "3-Column"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:419
+#: Dropbox\Development\git\oenology\master\functions/options.php:419
+msgid "Three columns (menu on left, sidebar on right, content in the center)"
+msgstr "Three columns (menu on left, sidebar on right, content in the center)"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:422
+#: Dropbox\Development\git\oenology\master\functions/options.php:422
+msgid "Select the layout to be used as the default for static Pages when the \"Default\" page template is selected."
+msgstr "Select the layout to be used as the default for static Pages when the \"Default\" page template is selected."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:430
+#: Dropbox\Development\git\oenology\master\functions/options.php:430
+msgid "Default Single Post Layout"
+msgstr "Default Single Post Layout"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:440
+#: Dropbox\Development\git\oenology\master/functions/options.php:472
+#: Dropbox\Development\git\oenology\master\functions/options.php:440
+#: Dropbox\Development\git\oenology\master\functions/options.php:472
+msgid "2-Column, Left"
+msgstr "2-Column, Left"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:441
+#: Dropbox\Development\git\oenology\master/functions/options.php:473
+#: Dropbox\Development\git\oenology\master\functions/options.php:441
+#: Dropbox\Development\git\oenology\master\functions/options.php:473
+msgid "Two columns (content on the left, full-width sidebar on the right)"
+msgstr "Two columns (content on the left, full-width sidebar on the right)"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:445
+#: Dropbox\Development\git\oenology\master/functions/options.php:477
+#: Dropbox\Development\git\oenology\master\functions/options.php:445
+#: Dropbox\Development\git\oenology\master\functions/options.php:477
+msgid "2-Column, Right"
+msgstr "2-Column, Right"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:446
+#: Dropbox\Development\git\oenology\master/functions/options.php:478
+#: Dropbox\Development\git\oenology\master\functions/options.php:446
+#: Dropbox\Development\git\oenology\master\functions/options.php:478
+msgid "Two columns (content on the right, full-width sidebar on the left)"
+msgstr "Two columns (content on the right, full-width sidebar on the left)"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:451
+#: Dropbox\Development\git\oenology\master/functions/options.php:483
+#: Dropbox\Development\git\oenology\master\functions/options.php:451
+#: Dropbox\Development\git\oenology\master\functions/options.php:483
+msgid "Three columns (content in the center, half-width sidebars on the left and right)"
+msgstr "Three columns (content in the center, half-width sidebars on the left and right)"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:454
+#: Dropbox\Development\git\oenology\master\functions/options.php:454
+msgid "Select the default layout to be used for single Blog Posts."
+msgstr "Select the default layout to be used for single Blog Posts."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:462
+#: Dropbox\Development\git\oenology\master\functions/options.php:462
+msgid "Blog Posts Index Layout"
+msgstr "Blog Posts Index Layout"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:486
+#: Dropbox\Development\git\oenology\master\functions/options.php:486
+msgid "Select the layout to be used for Blog Posts Index pages."
+msgstr "Select the layout to be used for Blog Posts Index pages."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:617
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:41
+#: Dropbox\Development\git\oenology\master\functions/options.php:617
+msgid "Varietals"
+msgstr "Varietals"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:621
+#: Dropbox\Development\git\oenology\master\functions/options.php:621
+msgid "Varietal Options"
+msgstr "Varietal Options"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:628
+#: Dropbox\Development\git\oenology\master\functions/options.php:628
+msgid "Layout"
+msgstr "Layout"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:632
+#: Dropbox\Development\git\oenology\master\functions/options.php:632
+msgid "Layout Options"
+msgstr "Layout Options"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:633
+#: Dropbox\Development\git\oenology\master\functions/options.php:633
+msgid "Manage layout options for static Pages, single Blog Posts, and Blog Post Index pages"
+msgstr "Manage layout options for static Pages, single Blog Posts, and Blog Post Index pages"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:639
+#: Dropbox\Development\git\oenology\master/functions/reference.php:42
+#: Dropbox\Development\git\oenology\master\functions/options.php:639
+msgid "General"
+msgstr "General"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:643
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:58
+#: Dropbox\Development\git\oenology\master\functions/options.php:643
+msgid "Header Options"
+msgstr "Header Options"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:644
+#: Dropbox\Development\git\oenology\master\functions/options.php:644
+msgid "Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+msgstr "Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:648
+#: Dropbox\Development\git\oenology\master\functions/options.php:648
+msgid "Social Network Profile Options"
+msgstr "Social Network Profile Options"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:649
+#: Dropbox\Development\git\oenology\master\functions/options.php:649
+msgid "Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+msgstr "Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:653
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:75
+#: Dropbox\Development\git\oenology\master\functions/options.php:653
+msgid "Footer Options"
+msgstr "Footer Options"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/options.php:654
+#: Dropbox\Development\git\oenology\master\functions/options.php:654
+msgid "Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+msgstr "Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
 
 #: U:\My
 #: Documents\My
@@ -753,39 +904,178 @@ msgstr "Show Link Rating"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/reference.php:33
+#: Dropbox\Development\git\oenology\master/functions/post-custom-meta.php:26
+msgid "Single Post Layout"
+msgstr "Single Post Layout"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/post-custom-meta.php:27
+msgid "Static Page Layout"
+msgstr "Static Page Layout"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/reference.php:46
 msgid "FAQ"
 msgstr "FAQ"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/reference.php:34
-msgid "Code Reference"
-msgstr "Code Reference"
-
-#: U:\My
-#: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/reference.php:35
+#: Dropbox\Development\git\oenology\master/functions/reference.php:50
 msgid "Changelog"
 msgstr "Changelog"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/reference.php:36
+#: Dropbox\Development\git\oenology\master/functions/reference.php:54
 msgid "License"
 msgstr "License"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/reference.php:37
+#: Dropbox\Development\git\oenology\master/functions/reference.php:58
 msgid "Support"
 msgstr "Support"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/reference.php:50
+#: Dropbox\Development\git\oenology\master/functions/reference.php:62
+msgid "Code Reference"
+msgstr "Code Reference"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/reference.php:79
+#: Dropbox\Development\git\oenology\master/functions/reference.php:82
 msgid "Oenology Reference"
 msgstr "Oenology Reference"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:42
+msgid "Varietals are the skins, or styles, applied to Oenology."
+msgstr "Varietals are the skins, or styles, applied to Oenology."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:54
+msgid "Layouts"
+msgstr "Layouts"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:55
+msgid "Set default layouts for static pages, single blog posts, and blog post indexes."
+msgstr "Set default layouts for static pages, single blog posts, and blog post indexes."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:61
+msgid "The default location of the header navigation menu is above the site title/description."
+msgstr "The default location of the header navigation menu is above the site title/description."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:62
+msgid "Use this setting to display the header navigation menu below the site title/description."
+msgstr "Use this setting to display the header navigation menu below the site title/description."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:66
+msgid "By default, the Header Nav Menu only displays top-level Pages."
+msgstr "By default, the Header Nav Menu only displays top-level Pages."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:67
+msgid "Child Pages are displayed in the Sidebar Nav Menu when the Top-Level Page is displayed."
+msgstr "Child Pages are displayed in the Sidebar Nav Menu when the Top-Level Page is displayed."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:68
+msgid "To change this setting:"
+msgstr "To change this setting:"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:71
+msgid "(default) displays only the top-level Pages in the Header Nav Menu"
+msgstr "(default) displays only the top-level Pages in the Header Nav Menu"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:72
+msgid "displays the top-level Pages in the Header Nav Menu, and displays second-level Pages in a dropdown menu when the top-level Page is hovered."
+msgstr "displays the top-level Pages in the Header Nav Menu, and displays second-level Pages in a dropdown menu when the top-level Page is hovered."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:73
+msgid "displays the top-level Pages in the Header Nav Menu, displays second-level Pages in a dropdown menu when the top-level Page is hovered, and displays third-level Pages in a dropdown menu when the second-level Page is hovered."
+msgstr "displays the top-level Pages in the Header Nav Menu, displays second-level Pages in a dropdown menu when the top-level Page is hovered, and displays third-level Pages in a dropdown menu when the second-level Page is hovered."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:76
+msgid "Footer Credit"
+msgstr "Footer Credit"
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:78
+msgid "This setting controls the display of a footer credit link."
+msgstr "This setting controls the display of a footer credit link."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:79
+msgid "By default, no footer credit link is displayed."
+msgstr "By default, no footer credit link is displayed."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:80
+msgid "You are under no obligation to display a credit link in the footer or anywhere else."
+msgstr "You are under no obligation to display a credit link in the footer or anywhere else."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:103
+msgid "General Theme notes."
+msgstr "General Theme notes."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:106
+msgid "Answers to questions frequently (or not-so-frequently) asked."
+msgstr "Answers to questions frequently (or not-so-frequently) asked."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:109
+msgid "A cross-reference of every WordPress function, hook, and global variable used in the Theme."
+msgstr "A cross-reference of every WordPress function, hook, and global variable used in the Theme."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:112
+msgid "Log of changes to the Theme."
+msgstr "Log of changes to the Theme."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:115
+msgid "License information for the Theme and any bundled resources, such as fonts and icon image files."
+msgstr "License information for the Theme and any bundled resources, such as fonts and icon image files."
+
+#: U:\My
+#: Documents\My
+#: Dropbox\Development\git\oenology\master/functions/contextual-help.php:118
+msgid "Support options and links for the Theme."
+msgstr "Support options and links for the Theme."
 
 #: U:\My
 #: Documents\My
@@ -825,80 +1115,91 @@ msgstr "Sorry, but you are looking for something that isn't here."
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:592
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:694
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:593
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:697
 msgid "Edit"
 msgstr "Edit"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:666
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:669
 #, php-format
 msgid "Permanent Link to %s"
 msgstr "Permanent Link to %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:666
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:669
 msgid "Permalink"
 msgstr "Permalink"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:675
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:678
 msgid "Shortlink"
 msgstr "Shortlink"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:679
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:682
 #, php-format
 msgid "Comment on %s"
 msgstr "Comment on %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:680
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:683
 msgid "Comments"
 msgstr "Comments"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:684
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:687
 #, php-format
 msgid "Trackback to %s"
 msgstr "Trackback to %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:684
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:687
 msgid "Trackback"
 msgstr "Trackback"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:723
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:727
 #, php-format
 msgid "Filed in %s"
 msgstr "Filed in %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:728
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:732
 #, php-format
 msgid "Tags: %s"
 msgstr "Tags: %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/hooks.php:831
+#: Dropbox\Development\git\oenology\master/functions/hooks.php:846
 #, php-format
 msgid "Powered by %s"
 msgstr "Powered by %s"
 
 #: U:\My
 #: Documents\My
-#: Dropbox\Development\git\oenology\master/functions/wordpress-hooks.php:91
+#: Dropbox\Development\git\oenology\master/functions/wordpress-hooks.php:161
 msgid "Untitled"
 msgstr "Untitled"
 
+#~ msgid "Black"
+#~ msgstr "Black"
+
+#~ msgid "Silver"
+#~ msgstr "Silver"
+
+#~ msgid "Gray"
+#~ msgstr "Gray"
+
+#~ msgid "Coffee"
+#~ msgstr "Coffee"

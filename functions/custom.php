@@ -173,7 +173,7 @@ function oenology_get_current_tab() {
  * 
  * @return	string	table of formatted API data
  */
-function oenology_get_github_api_data( $context = 'commits', $status = 'open', $milestone = '2', $roadmap = false, $currentrelease = '2.3', $releasedate = '2011-07-25', $user = 'chipbennett', $repo = 'oenology' ) {
+function oenology_get_github_api_data( $context = 'commits', $status = 'open', $milestone = '4', $roadmap = false, $currentrelease = '2.4', $releasedate = '2011-08-13', $user = 'chipbennett', $repo = 'oenology' ) {
 
 	$capability = 'read';
 
@@ -184,7 +184,7 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	// Create transient key string. Used to ensure API data are 
 	// pinged only periodically. Different transient keys are
 	// created for commits, open issues, and closed issues.
-	$transient_key = 'gh2_';
+	$transient_key = 'gh_';
 	if ( 'commits' == $context ) {
 		$transient_key .= 'commits' . md5( $branch );
 	} else if ( 'issues' == $context ) {
@@ -297,7 +297,7 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 			$milestonetitle = $milestoneobj->title;
 			$milestonenumber = $milestoneobj->number;
 		} else if ( 'commits' == $context ) {				
-			$url = $object->url;
+			$url = 'https://github.com/' . $branch . '/commit/' . $object->sha;
 			$reportid = substr( $object->sha, 0, 6 );
 			$commit = $object->commit;
 				$message = $commit->message;
@@ -330,7 +330,7 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	$output .= "\n" . '</table>';
 
 	// Set the transient (cache) for the API data
-	set_transient( $transient_key, $output, 60 );
+	set_transient( $transient_key, $output, 3600 );
 
 	// Return the output
 	return $output;
@@ -353,11 +353,11 @@ function oenology_sort_github_data( $a, $b ) {
 		$param_b = $b->number;
 	} else if ( isset( $a->committer ) ) {
 		$commit_a = $a->commit;
-		$committer_a = $commit_a->committer;
-		$param_a = $committer_a->date;
 		$commit_b = $b->commit;
+		$committer_a = $commit_a->committer;
 		$committer_b = $commit_b->committer;
-		$param_b = $committer_b->date;
+		$param_a = get_date_from_gmt( date( 'Y-m-d H:i:s', strtotime( $committer_a->date ) ), 'U' );
+		$param_b = get_date_from_gmt( date( 'Y-m-d H:i:s', strtotime( $committer_b->date ) ), 'U' );
 	}
 	if (  $param_a ==  $param_b ) { 
 		$sort = 0; 
