@@ -57,7 +57,7 @@ function oenology_enqueue_varietal_style() {
 
 	// define varietal stylesheet
 	global $oenology_options;
-	$oenology_options = get_option( 'theme_oenology_options' );
+	$oenology_options = oenology_get_options();
 	$varietal_handle = 'oenology_' . $oenology_options['varietal'] . '_stylesheet';
 	$varietal_stylesheet = get_template_directory_uri() . '/varietals/' . $oenology_options['varietal'] . '.css';
 	
@@ -72,7 +72,7 @@ add_action('wp_enqueue_scripts', 'oenology_enqueue_varietal_style', 11 );
  */
 function oenology_get_color_scheme() {
 	global $oenology_options;
-	$oenology_options = get_option( 'theme_oenology_options' );
+	$oenology_options = oenology_get_options();
 	$default_options = oenology_get_option_parameters();
 	$oenology_varietals = $default_options['varietal']['valid_options'];
 	$oenology_current_varietal = array();
@@ -252,7 +252,7 @@ function oenology_enqueue_social_icon_style() {
 		$linkhovercolor = 'silver';
 	}
 	
-	$oenology_options = get_option( 'theme_oenology_options' );
+	$oenology_options = oenology_get_options();
 	
 ?>
 
@@ -581,7 +581,7 @@ add_action( 'wp_print_styles', 'oenology_enqueue_post_format_icon_style', 11 );
  */
 function oenology_enqueue_header_nav_menu_style() {
 	global $oenology_options;
-	$oenology_options = get_option( 'theme_oenology_options' );
+	$oenology_options = oenology_get_options();
 	$header_nav_menu_item_width = $oenology_options['header_nav_menu_item_width'];
 	if ( 'fluid' == $header_nav_menu_item_width ) {
 	?>

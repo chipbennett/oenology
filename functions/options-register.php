@@ -48,7 +48,7 @@ register_setting(
  */
 function oenology_options_validate( $input ) {
 	// This is the "whitelist": current settings
-	$valid_input = get_option( 'theme_oenology_options' );
+	$valid_input = oenology_get_options();
 	// Get the array of Theme settings, by Settings Page tab
 	$settingsbytab = oenology_get_settings_by_tab();
 	// Get the array of option parameters
@@ -208,7 +208,7 @@ function oenology_sections_callback( $section_passed ) {
  */
 function oenology_get_varietal_text() {
 
-	$oenology_options = get_option( 'theme_oenology_options' );
+	$oenology_options = oenology_get_options();
 	$option_parameters = oenology_get_option_parameters();
 	$oenology_varietals = $option_parameters['varietal']['valid_options'];
 	$imgstyle = 'float:left;margin-right:20px;margin-bottom:20px;border: 1px solid #bbb;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
@@ -290,7 +290,7 @@ foreach ( $option_parameters as $option ) {
  * Callback for get_settings_field()
  */
 function oenology_setting_callback( $option ) {
-	$oenology_options = get_option( 'theme_oenology_options' );
+	$oenology_options = oenology_get_options();
 	$option_parameters = oenology_get_option_parameters();
 	$optionname = $option['name'];
 	$optiontitle = $option['title'];
@@ -357,7 +357,7 @@ function oenology_setting_varietal() {
 	$oenology_varietals = $option_parameters['varietal']['valid_options'];
 
 	function oenology_output_varietal( $varietal ) {
-		$oenology_options = get_option( 'theme_oenology_options' );
+		$oenology_options = oenology_get_options();
 		$dlstylebase = 'border: 1px solid transparent;float:left;padding:5px;margin-top:5px;margin-bottom:5px;text-align:center;max-width:160px;';
 		$dlstylecurrent = 'background-color:#eee;border: 1px solid #999;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
 		$currentvarietal = ( $varietal['name'] == $oenology_options['varietal'] ? true : false );
