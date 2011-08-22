@@ -68,6 +68,15 @@ tr:nth-child(even) {
      background: #f8f8fb url(menu-chardonnay.gif) bottom repeat-x;
      background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#f8f8fb), color-stop(1, #f8f8fb));
 }
+.nav-header li:hover a,
+.nav-header li:hover li:hover a,
+.nav-header li:hover li:hover li:hover a {
+	text-shadow: 0px 0px 2px #999999;
+}
+.nav-header li:hover li a,
+.nav-header li:hover li:hover li a {
+	text-shadow: none;
+}
 .nav-header li a:hover {
      border: 1px solid #58a;
      border-top-color: #eee; 

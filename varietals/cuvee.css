@@ -59,6 +59,15 @@ dd {
      border-top: 1px solid #f5f5f5; /* whitesmoke */
      border-left: 1px solid #f5f5f5; /* whitesmoke */
 }
+.nav-header li:hover a,
+.nav-header li:hover li:hover a,
+.nav-header li:hover li:hover li:hover a {
+	text-decoration: underline;
+}
+.nav-header li:hover li a,
+.nav-header li:hover li:hover li a {
+	text-decoration: none;
+}
 #nav .current_page_item a,
 #nav .current_page_parent a,
 #nav .current_page_ancestor a,

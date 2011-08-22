@@ -88,6 +88,15 @@ tr:nth-child(even) {
      border-bottom-color: #000;
      border-right-color: #000;
 }
+.nav-header li:hover a,
+.nav-header li:hover li:hover a,
+.nav-header li:hover li:hover li:hover a {
+	text-shadow: 0px 0px 2px #555555;
+}
+.nav-header li:hover li a,
+.nav-header li:hover li:hover li a {
+	text-shadow: none;
+}
 #nav .current_page_item a,
 #nav .current_page_parent a,
 #nav .current_page_ancestor a,
