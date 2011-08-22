@@ -42,6 +42,17 @@ pre,
 code {
 	background-color: #222;
 }
+table, tr, th, td {
+	border-color: #666;
+}
+th {
+	color: #fff;
+	background-color: #111;
+   border-color: #aaa;
+}
+tr:nth-child(even) {
+	background-color: #444;
+}
 /* Site Header
   -------------------------------------------- */
 #site-header-text {

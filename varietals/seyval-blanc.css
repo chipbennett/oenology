@@ -35,6 +35,17 @@ pre,
 code {
 	background-color: #e0e0e0;
 }
+table, tr, th, td {
+	border-color: #bbb;
+}
+th {
+	color: #000;
+	background-color: #d0d0d0;
+   border-color: #000;
+}
+tr:nth-child(even) {
+	background-color: #f0f0f0;
+}
 /* Site Header
   -------------------------------------------- */
 #site-header-text {
