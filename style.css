@@ -523,8 +523,7 @@ pre {
   line-height:17pt;
   letter-spacing:0em;
 }
-body.attachment #main,
-body.single-format-image #main {
+body.layout-full #main {
 	width: 995px;
 }
 #page.layout-one-column #main,
@@ -540,7 +539,7 @@ body.single-format-image #main {
 	margin-left:170px;
 }
 #page.attachment #main,
-body.single-format-image #main,
+body.layout-full #main,
 .layout-three-column.single-format-image #main {
   margin-left:0;
 }
@@ -1989,6 +1988,86 @@ dl.gallery-item dd {
 #page.layout-two-column .gallery-columns-10 .gallery-caption {
 	min-width: 74px;
 	max-width: 74px;
+	font-size: 0.6em;
+}
+
+.single-format-gallery .gallery-columns-6 {
+	max-width: 900px;
+	width: 900px;
+}
+.single-format-gallery .gallery-columns-7,
+.single-format-gallery .gallery-columns-8,
+.single-format-gallery .gallery-columns-9,
+.single-format-gallery .gallery-columns-10 {
+	max-width: 970px;
+	width: 970px;
+}
+.single-format-gallery .gallery-columns-5 .gallery-item,
+.single-format-gallery .gallery-columns-6 .gallery-item {
+	max-width: 150px;
+	width: 150px;
+}
+.single-format-gallery #main .post-entry  .gallery-columns-5 img,
+.single-format-gallery #main .post-entry  .gallery-columns-6 img { 
+	max-width: 150px;
+	max-height: 150px;
+}
+.single-format-gallery .gallery-columns-5 .gallery-caption,
+.single-format-gallery .gallery-columns-6 .gallery-caption {
+	min-width: 149px;
+	max-width: 149px;
+	font-size: 1em;
+}
+.single-format-gallery .gallery-columns-7 .gallery-item {
+	max-width: 138px;
+	width: 138px;
+}
+.single-format-gallery #main .post-entry  .gallery-columns-7 img { 
+	max-width: 138px;
+	max-height: 138px;
+}
+.single-format-gallery .gallery-columns-7 .gallery-caption {
+	min-width: 137px;
+	max-width: 137px;
+	font-size: 0.8em;
+}
+.single-format-gallery .gallery-columns-8 .gallery-item {
+	max-width: 121px;
+	width: 121px;
+}
+.single-format-gallery #main .post-entry  .gallery-columns-8 img { 
+	max-width: 121px;
+	max-height: 121px;
+}
+.single-format-gallery .gallery-columns-8 .gallery-caption {
+	min-width: 120px;
+	max-width: 120px;
+	font-size: 0.8em;
+}
+.single-format-gallery .gallery-columns-9 .gallery-item {
+	max-width: 107px;
+	width: 107px;
+}
+.single-format-gallery #main .post-entry  .gallery-columns-9 img { 
+	max-width: 107px;
+	max-height: 107px;
+}
+.single-format-gallery .gallery-columns-9 .gallery-caption {
+	min-width: 106px;
+	max-width: 106px;
+	font-size: 0.67em;
+}
+.single-format-gallery .gallery-columns-10 .gallery-item {
+	max-width: 97px;
+	width: 97px;
+}
+.single-format-gallery #main .post-entry  .gallery-columns-10 img { 
+	max-width: 97px;
+	max-height: 97px;
+}
+.single-format-gallery .gallery-columns-10 .gallery-caption {
+	min-width: 96px;
+	max-width: 96px;
 	font-size: 0.6em;
 }
 

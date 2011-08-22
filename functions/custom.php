@@ -101,30 +101,40 @@ function oenology_get_current_page_layout() {
 			}
 		} 
 		else if ( is_single() ) {
-			if ( 'default' == $custom_layout ) {
+			if ( 'gallery' == get_post_format() || 'image' == get_post_format() || 'video' == get_post_format() ) {
+				$layout .= 'full';
+			} 
+			else if ( 'default' == $custom_layout ) {
 				$layout .= $oenology_options['default_single_post_layout'];
-			} else {
+			} 
+			else {
 				$layout .= $custom_layout;
 			}
 		} 
 		else if ( is_home() || is_archive() || is_search() || is_404() ) {
 			$layout .= $oenology_options['post_index_layout'];
 		}
-	} else if ( is_admin() ) {
+	} 
+	else if ( is_admin() ) {
 		if ( 'attachment' == $post->post_type ) {
 			$layout .= 'attachment';
 		} 
 		else if ( 'page' == $post->post_type ) {
 			if ( 'default' == $custom_layout ) {
 				$layout .= $oenology_options['default_static_page_layout'];
-			} else {
+			} 
+			else {
 				$layout .= $custom_layout;
 			}
 		} 
-		else if ( is_single() ) {
-			if ( 'post' == $post->post_type ) {
+		else if ( 'post' == $post->post_type ) {
+			if ( 'gallery' == get_post_format( $post->ID ) || 'image' == get_post_format( $post->ID ) || 'video' == get_post_format( $post->ID ) ) {
+				$layout .= 'full';
+			} 
+			if ( 'default' == $custom_layout ) {
 				$layout .= $oenology_options['default_single_post_layout'];
-			} else {
+			} 
+			else {
 				$layout .= $custom_layout;
 			}
 		}

@@ -39,6 +39,7 @@ function oenology_set_content_width() {
 		$width_two_column = 810;
 		$width_one_column = 815;
 		$width_attachment = 888;
+		$width_full = 975;
 
 		$layout = oenology_get_current_page_layout();
 
@@ -58,6 +59,11 @@ function oenology_set_content_width() {
 		// Set content width for attachment pages
 		if ( 'attachment' == $layout ) {
 			$dynamic_width = $width_attachment;
+		} 
+		
+		// Set content width for full-width pages
+		if ( 'full' == $layout ) {
+			$dynamic_width = $width_full;
 		} 
 		
 		// Set content width for one-column layout

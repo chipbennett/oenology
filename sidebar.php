@@ -27,8 +27,8 @@
 global $oenology_options;
 
 // Do not display sidebars on attachment pages or posts with 
-// format-type "image"
-if ( 
+// format-types "gallery", "image", or "video"
+if (
 	// WordPress conditional tag that returns true if the 
 	// current page is an Attachment Page
    ! is_attachment() 
@@ -39,9 +39,18 @@ if (
 		 // WordPress conditional tag that returns true if a
 		 // Post on the current page has the specified Post 
 		 // Format taxonomy term assigned.
+	  && has_post_format( 'gallery' ) 
+		 // WordPress conditional tag that returns true if a
+		 // Post on the current page has the specified Post 
+		 // Format taxonomy term assigned.
 	  && has_post_format( 'image' ) 
+		 // WordPress conditional tag that returns true if a
+		 // Post on the current page has the specified Post 
+		 // Format taxonomy term assigned.
+	  && has_post_format( 'video' ) 
    ) 
-) { 
+) 
+{ 
 	// Only display div#doublecoltop if dynamic sidebar 
 	// 'sidebar-column-top is active, or if the Theme is 
 	// set to display social icons, and the current layout
