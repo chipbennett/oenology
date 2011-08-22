@@ -299,6 +299,34 @@ function oenology_reference_page_faq() {
  */
 function oenology_reference_page_changelog() { 
 	?>	
+	<h3>2.4 [2011.MM.DD]</h3>	
+	<p>Maintenance Release</p>
+	<ol>
+	<li>Bugfixes:
+		<ol>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/41">41</a> (bug): use oenology_get_options() globally</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/43">43</a> (bug): Header dropdown menu needs persistent contextual style</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/#">#</a> (bug): TITLE</li>
+		</ol>
+	</li>
+	<li>Maintenance:
+		<ol>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/33">33</a> (enhancement): Full-Width Layout for Gallery/Video Formats Single-Post View</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/35">35</a> (enhancement): Make oenology_setup() function non-pluggable
+			<ol>
+			<li><strong>Note: this change will cause breakage for Child Themes that call oenology_setup().</strong></li>
+			<li>Child Themes that call oenology_setup() should rename this function <em>before updating Oenology</em>.</li>
+			</ol>
+		</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/36">36</a> (enhancement): Update editor-style.css</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/37">37</a> (enhancement): Set IMG max-width dynamically using $content_width</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/40">40</a> (enhancement): General Documentation Cleanup</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/42">42</a> (enhancement): Add basic styling to TABLE tag</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/#">#</a> (enhancement): TITLE</li>
+		</ol>
+	</li>
+	</ol>
+	
 	<h3>2.3 [2011.08.12]</h3>	
 	<p>Maintenance Release</p>
 	<ol>

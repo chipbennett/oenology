@@ -194,7 +194,7 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	// Create transient key string. Used to ensure API data are 
 	// pinged only periodically. Different transient keys are
 	// created for commits, open issues, and closed issues.
-	$transient_key = 'gh_';
+	$transient_key = 'oenology_' . $currentrelease . '_github_';
 	if ( 'commits' == $context ) {
 		$transient_key .= 'commits' . md5( $branch );
 	} else if ( 'issues' == $context ) {
@@ -340,7 +340,7 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 	$output .= "\n" . '</table>';
 
 	// Set the transient (cache) for the API data
-	set_transient( $transient_key, $output, 3600 );
+	set_transient( $transient_key, $output, 600 );
 
 	// Return the output
 	return $output;
