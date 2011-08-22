@@ -30,6 +30,27 @@ add_action( 'admin_print_styles-appearance_page_oenology-settings', 'oenology_en
 add_action( 'admin_print_styles-appearance_page_oenology-reference', 'oenology_enqueue_admin_style', 11 );
 
 /**
+ * Enqueue #content img max-width
+ * 
+ * Set the max-width CSS property for
+ * images inside div#content, based on
+ * the $content_width global variable.
+ */
+function oenology_enqueue_content_img_max_width() {
+	global $content_width;
+?>
+<style type="text/css">
+.post-entry img,
+.post-entry .wp-caption {
+	max-width: <?php echo $content_width; ?>px;
+}
+</style>
+<?php
+}
+// Enqueue Varietal Stylesheet at wp_print_styles()
+add_action( 'wp_print_styles', 'oenology_enqueue_content_img_max_width', 11 );
+
+/**
  * Enqueue Footer Nav Menu Styles
  * 
  * If no menu is assigned to the nav-footer

@@ -38,7 +38,7 @@ function oenology_set_content_width() {
 		$width_three_column = 635;
 		$width_two_column = 810;
 		$width_one_column = 815;
-		$width_attachment = 888;
+		$width_attachment = 900;
 		$width_full = 975;
 
 		$layout = oenology_get_current_page_layout();
@@ -85,7 +85,7 @@ function oenology_set_content_width() {
 // Hook oenology_set_content_width() into 'admin_head'
 add_action( 'admin_head', 'oenology_set_content_width' );
 // Hook oenology_set_content_width() into 'wp_head'
-add_action( 'wp_head', 'oenology_set_content_width' );
+add_action( 'wp_head', 'oenology_set_content_width', 0 );
 
 /**
  * Define Theme setup
