@@ -78,10 +78,18 @@ tr:nth-child(even) {
 .nav-header li:hover li:hover a,
 .nav-header li:hover li:hover li:hover a {
 	text-shadow: 0px 0px 2px #999999;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d8d8d8');
+     background: -webkit-radial-gradient( circle, #ffffff, #e8e8e8 );
+     background: -moz-radial-gradient( circle, #ffffff, #e8e8e8 );
+     background: -ms-radial-gradient( circle, #ffffff, #e8e8e8 );
 }
 .nav-header li:hover li a,
 .nav-header li:hover li:hover li a {
 	text-shadow: none;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8fb', endColorstr='#eeeeee');
+     background: -webkit-linear-gradient( bottom, #eeeeee, #f8f8fb );
+     background: -moz-linear-gradient( bottom, #eeeeee, #f8f8fb );
+     background: -ms-linear-gradient( bottom, #eeeeee, #f8f8fb );
 }
 .nav-header li a:hover {
      border: 1px solid #58a;

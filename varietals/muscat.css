@@ -90,10 +90,16 @@ tr:nth-child(even) {
 .nav-header li:hover li:hover a,
 .nav-header li:hover li:hover li:hover a {
 	text-shadow: 0px 0px 2px #999999;
+     background: -webkit-radial-gradient( circle, #9dae98, #ffffff );
+     background: -moz-radial-gradient( circle, #9dae98, #ffffff );
+     background: -ms-radial-gradient( circle, #9dae98, #ffffff );
 }
 .nav-header li:hover li a,
 .nav-header li:hover li:hover li a {
 	text-shadow: none;
+     background: -webkit-linear-gradient( bottom, #eeeeee, #9dae98 );
+     background: -moz-linear-gradient( bottom, #eeeeee, #9dae98 );
+     background: -ms-linear-gradient( bottom, #eeeeee, #9dae98 );
 }
 #nav .current_page_item a,
 #nav .current_page_parent a,

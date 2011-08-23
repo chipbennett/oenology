@@ -83,10 +83,16 @@ tr:nth-child(even) {
 .nav-header li:hover li:hover a,
 .nav-header li:hover li:hover li:hover a {
 	text-shadow: 0px 0px 2px #999999;
+     background: -webkit-radial-gradient( circle, #ffffff, #eeeeee );
+     background: -moz-radial-gradient( circle, #ffffff, #eeeeee );
+     background: -ms-radial-gradient( circle, #ffffff, #eeeeee );
 }
 .nav-header li:hover li a,
 .nav-header li:hover li:hover li a {
 	text-shadow: none;
+     background: -webkit-linear-gradient( bottom, #eeeeee, #ffffe8 );
+     background: -moz-linear-gradient( bottom, #eeeeee, #ffffe8 );
+     background: -ms-linear-gradient( bottom, #eeeeee, #ffffe8 );
 }
 #nav .current_page_item a,
 #nav .current_page_parent a,
