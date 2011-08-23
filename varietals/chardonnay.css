@@ -7,8 +7,11 @@ body {
 #footer {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color:#ffffe8;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#f8f8fb), color-stop(1, #f8f8fb));
+  background-color:#f8f8fb;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dddddd', endColorstr='#f8f8fb');
+	 background: -webkit-linear-gradient( top, #dddddd, #f8f8fb );
+     background: -moz-linear-gradient( top, #dddddd, #f8f8fb );
+     background: -ms-linear-gradient( top, #dddddd, #f8f8fb );
 }
 /* HTML Tags
   -------------------------------------------- */
@@ -65,8 +68,11 @@ tr:nth-child(even) {
     border: 1px solid #eeeeee;
      border-bottom-color: #ddd; 
      border-right-color: #ddd;
-     background: #f8f8fb url(menu-chardonnay.gif) bottom repeat-x;
-     background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#f8f8fb), color-stop(1, #f8f8fb));
+     background: #f8f8fb;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8fb', endColorstr='#eeeeee');
+     background: -webkit-linear-gradient( bottom, #eeeeee, #f8f8fb );
+     background: -moz-linear-gradient( bottom, #eeeeee, #f8f8fb );
+     background: -ms-linear-gradient( bottom, #eeeeee, #f8f8fb );
 }
 .nav-header li:hover a,
 .nav-header li:hover li:hover a,
@@ -141,8 +147,11 @@ tr:nth-child(even) {
 #leftcol #subnav li a {
      border: 1px solid #ddd;
      border-top-color: #ddd; 
-     background: url(menu-seyval-blanc.gif) #ffffff top left repeat-x;
-     background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#f8f8fb), color-stop(1, #f8f8fb));
+     background: #f8f8fb;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8fb', endColorstr='#eeeeee');
+     background: -webkit-linear-gradient( bottom, #eeeeee, #f8f8fb );
+     background: -moz-linear-gradient( bottom, #eeeeee, #f8f8fb );
+     background: -ms-linear-gradient( bottom, #eeeeee, #f8f8fb );
 }
 .subnavmenu .current_page_item li a:hover,
 .subnavmenu .current_page_parent li a:hover,
@@ -210,8 +219,11 @@ ul.page-numbers {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   color:#555;
-  background-color:#ffffff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#f8f8fb), color-stop(0.8, #f8f8fb));
+  background-color:#f8f8fb;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#f8f8fb');
+     background: -webkit-linear-gradient( top, #f0f0f0, #f8f8fb );
+     background: -moz-linear-gradient( top, #f0f0f0, #f8f8fb );
+     background: -ms-linear-gradient( top, #f0f0f0, #f8f8fb );
 }
 #breadcrumbs strong {
   color: #000;

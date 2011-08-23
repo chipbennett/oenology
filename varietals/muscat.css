@@ -8,7 +8,10 @@ body {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color:#9DAE98;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#9DAE98), color-stop(1, #9DAE98));
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#9dae98');
+     background: -webkit-linear-gradient( top, #eeeeee, #9dae98 );
+     background: -moz-linear-gradient( top, #eeeeee, #9dae98 );
+     background: -ms-linear-gradient( top, #eeeeee, #9dae98 );
 }
 #footer a {
 	text-shadow: 1px 1px 0px #4c4c4c;
@@ -72,8 +75,11 @@ tr:nth-child(even) {
     border: 1px solid #ffffe8;
      border-bottom-color: #ddd; 
      border-right-color: #ddd;
-     background: #eeeeee url(menu-muscat.gif) bottom repeat-x;
-     background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#9DAE98), color-stop(1, #9DAE98));
+     background: #eeeeee;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dae98', endColorstr='#eeeeee');
+     background: -webkit-linear-gradient( bottom, #eeeeee, #9dae98 );
+     background: -moz-linear-gradient( bottom, #eeeeee, #9dae98 );
+     background: -ms-linear-gradient( bottom, #eeeeee, #9dae98 );
 }
 .nav-header li a:hover {
      border: 1px solid #58a;
@@ -148,8 +154,11 @@ tr:nth-child(even) {
 #leftcol #subnav li a {
      border: 1px solid #ddd;
      border-top-color: #ddd; 
-     background: url(menu-muscat.gif) #ffffe8 top left repeat-x;
-     background: -webkit-gradient(linear, left bottom, left top, from(#eeeeee), to(#9DAE98), color-stop(1, #9DAE98));
+     background: #9dae98;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dae98', endColorstr='#eeeeee');
+     background: -webkit-linear-gradient( bottom, #eeeeee, #9dae98 );
+     background: -moz-linear-gradient( bottom, #eeeeee, #9dae98 );
+     background: -ms-linear-gradient( bottom, #eeeeee, #9dae98 );
 }
 .subnavmenu .current_page_item li a:hover,
 .subnavmenu .current_page_parent li a:hover,
@@ -218,7 +227,10 @@ tr:nth-child(even) {
   border-bottom: 1px solid #ddd;
   color:#222;
   background-color:#9DAE98;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#9DAE98), color-stop(0.8, #9DAE98));
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#9dae98');
+     background: -webkit-linear-gradient( top, #f0f0f0, #9dae98 );
+     background: -moz-linear-gradient( top, #f0f0f0, #9dae98 );
+     background: -ms-linear-gradient( top, #f0f0f0, #9dae98 );
 }
 #breadcrumbs strong {
   color: #000;

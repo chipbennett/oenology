@@ -8,7 +8,10 @@ body {
   border-top: 1px solid #444;
   border-bottom: 1px solid #000;
   background-color: #282828;
-  background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#000000), color-stop(1, #000000));
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#000000');
+     background: -webkit-linear-gradient( top, #555555, #000000 );
+     background: -moz-linear-gradient( top, #555555, #000000 );
+     background: -ms-linear-gradient( top, #555555, #000000 );
 }
 /* HTML Tags
   -------------------------------------------- */
@@ -75,8 +78,11 @@ tr:nth-child(even) {
 	 border: 1px solid #444;
      border-bottom-color: #000; 
      border-right-color: #000;
-     background: #000 url(menu-syrah.gif) bottom repeat-x;
-     background: -webkit-gradient(linear, left bottom, left top, from(#555555), to(#000000), color-stop(0.9, #000000));
+     background: #000;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#555555');
+     background: -webkit-linear-gradient( bottom, #555555, #000000 );
+     background: -moz-linear-gradient( bottom, #555555, #000000 );
+     background: -ms-linear-gradient( bottom, #555555, #000000 );
 }
 .nav-header li a:hover {
      border: 1px solid #58a;
@@ -151,8 +157,11 @@ tr:nth-child(even) {
 #leftcol #subnav li a {
      border: 1px solid #444;
      border: 1px solid#444; 
-     background: url(menu-syrah.gif) #333 top left repeat-x;
-     background: -webkit-gradient(linear, left bottom, left top, from(#555555), to(#000000), color-stop(0.9, #000000));
+     background: #333;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#555555');
+     background: -webkit-linear-gradient( bottom, #555555, #000000 );
+     background: -moz-linear-gradient( bottom, #555555, #000000 );
+     background: -ms-linear-gradient( bottom, #555555, #000000 );
 }
 .subnavmenu .current_page_item li a:hover,
 .subnavmenu .current_page_parent li a:hover,
@@ -236,7 +245,10 @@ tr:nth-child(even) {
   border-bottom-color:#000;
   color:#777;
   background-color:#282828;
-  background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#000000), color-stop(1, #000000));
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#000000');
+     background: -webkit-linear-gradient( top, #555555, #000000 );
+     background: -moz-linear-gradient( top, #555555, #000000 );
+     background: -ms-linear-gradient( top, #555555, #000000 );
 }
 #breadcrumbs strong {
   color: #fff;
