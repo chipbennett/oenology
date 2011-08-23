@@ -943,7 +943,7 @@ ul.page-numbers li {
 }
 #wp-calendar th {
    color: #000;
-   border-bottom-width: 2px;
+   border-bottom-width: 1px;
    border-bottom-color: #000;
 }
 #wp-calendar a {
@@ -2568,7 +2568,7 @@ body.single-format-image dd {
      padding:0px; 
 }
 .nav-footer li {
-     display: inline-block;
+     display: inline;
      margin-left:0px;
      padding:0px;
 }
