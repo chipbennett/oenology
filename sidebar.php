@@ -209,7 +209,7 @@ if ( ! in_array( oenology_get_current_page_layout(), array( 'one-column', 'attac
 	   // assigned to it)
 	   is_active_sidebar( 'sidebar-column-bottom' ) 
 	   // Current page layout is not three-column
-	&& 'three-column' != oenology_get_current_page_template()
+	&& 'three-column' != oenology_get_current_page_layout()
 	) { 
 		// div#doublecolbottom is the bottom, right-colum content in the two-column
 		// layout. It displays only on static Pages, including static Page as
