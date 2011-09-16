@@ -85,9 +85,25 @@ add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_p
  * @since	Oenology 2.0
  */
 function oenology_enqueue_comment_reply() {
-	// on single blog post pages with comments open and threaded comments
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
-		// enqueue the javascript that performs in-link comment reply fanciness
+	// Enqueue the comment-reply script on 
+	//single blog post pages with comments 
+	// open and threaded comments
+	if ( 
+			// WordPress conditional the returns true if
+			// the current page is a Single Blog Post, 
+			// Static Page, or Attachment page
+			is_singular() 
+			// WordPress conditional that returns true if
+			// comments are open for the current post
+		 && comments_open() 
+			// Returns the value for the specified option.
+			// 'thread_comments' is a Boolean option where
+			// comments are threaded if TRUE, and flat if 
+			// FALSE
+		 && get_option( 'thread_comments' ) 
+	) { 
+		// enqueue the javascript that performs 
+		//in-link comment reply fanciness
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 }
@@ -135,11 +151,21 @@ add_filter( 'body_class', 'oenology_filter_body_class' );
  * @since	Oenology 2.0
  */
 function oenology_comment_count( $count ) {  
-	if ( ! is_admin() ) {
+	// Only filter the comments number
+	// in the front-end display
+	if ( 
+	// WordPress conditional that returns true if
+	// the current page is in the WP-Admin back-end
+	! is_admin() 
+	) {
 		global $id;
 		$comments_by_type = &separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
 		return count( $comments_by_type['comment'] );
-	} else {
+	} 
+	// Otherwise, when in the WP-Admin
+	// back end, don't filter comments
+	// number
+	else {
 		return $count;
 	}
 }
@@ -221,14 +247,14 @@ add_filter('wp_list_categories', 'oenology_show_current_cat_on_single');
  * 
  * Filter 'wp_title' to output contextual content
  * 
- * @link	Codex reference: is_feed()
- * @link	Codex reference: is_search()
- * @link	Codex reference: get_search_query()
- * @link	Codex reference: get_bloginfo()
- * @link	Codex reference: is_home()
- * @link	Codex reference: is_front_page()
- * @link	PHP reference: max()
- * @link	PHP reference: sprintf()
+ * @link	http://codex.wordpress.org/Function_Reference/get_bloginfo	Codex reference: get_bloginfo()
+ * @link	http://codex.wordpress.org/Function_Reference/get_search_query	Codex reference: get_search_query()
+ * @link	http://codex.wordpress.org/Function_Reference/is_feed	Codex reference: is_feed()
+ * @link	http://codex.wordpress.org/Function_Reference/is_home	Codex reference: is_home()
+ * @link	http://codex.wordpress.org/Function_Reference/is_front_page	Codex reference: is_front_page()
+ * @link	http://codex.wordpress.org/Function_Reference/is_search	Codex reference: is_search()
+ * @link	http://php.net/manual/en/function.max.php	PHP reference: max()
+ * @link	http://php.net/manual/en/function.sprintf.php	PHP reference: sprintf()
  * 
  * @since	Oenology 2.0
  */
@@ -280,9 +306,9 @@ add_filter( 'wp_title', 'oenology_filter_wp_title', 10, 2 );
  * wp_list_comments() Callback function for 
  * Pings (Trackbacks/Pingbacks)
  * 
- * @link	Codex reference: comment_author_link()
- * @link	Codex reference: comment_class()
- * @link	Codex reference: comment_ID()
+ * @link	http://codex.wordpress.org/Function_Reference/comment_author_link	Codex reference: comment_author_link()
+ * @link	http://codex.wordpress.org/Function_Reference/comment_class	Codex reference: comment_class()
+ * @link	http://codex.wordpress.org/Function_Reference/comment_ID	Codex reference: comment_ID()
  * 
  * @since	Oenology 2.0
  */

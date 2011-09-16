@@ -2,7 +2,7 @@
 /**
  * Template part file that contains the sidebar content for static Pages
  *
- * This file is called by all primary template pages
+ * This file is called by page.php
  * 
  * @uses		dynamic_sidebar()
  * @uses		get_option()
@@ -18,10 +18,6 @@
  */
 ?>
 <?php 
-// Globalize the variable that contains the
-// Theme's options array.
-global $oenology_options;
-
 // Only output div#leftcol and div#rightcol if
 // the current Page is not an Attachment Page
 if ( 
@@ -58,10 +54,6 @@ if (
 	<?php
 	global $post;
 	if ( 'two-column' != oenology_get_current_page_layout()
-	/*
-	   'page-three-column.php' == $pagetemplate 
-	|| ( 'default' == $pagetemplate && 'three-column' == $oenology_options['default_static_page_layout'] )
-	*/
 	) {
 		?>
 		<!-- Begin Right Column (div#rightcol) -->

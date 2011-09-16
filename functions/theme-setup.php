@@ -34,13 +34,26 @@ function oenology_set_content_width() {
 	global $pagenow;
 	if ( ! is_admin() || ( is_admin() && 'post.php' == $pagenow ) ) {
 
-		// Set variables for each layout/context
+		// Content width for three-
+		// column Page layout, and
+		// for two- and three-
+		// column Post layouts
 		$width_three_column = 635;
+		// Content width for two-
+		// column Page layout
 		$width_two_column = 810;
+		// Content width for one-
+		// column Page and one-
+		// column Post layouts
 		$width_one_column = 815;
+		// Content width for 
+		// attachment pages
 		$width_attachment = 900;
+		// content width for full-
+		// width layout
 		$width_full = 975;
 
+		// Get the current layout
 		$layout = oenology_get_current_page_layout();
 
 		// Set default content width

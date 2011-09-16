@@ -70,7 +70,7 @@ has_nav_menu( 'nav-sidebar' )
 		// apply 'id="subnav"' to the <ul> tag that 
 		// contains the menu
 		'menu_id' => 'subnav', 
-		// apply 'class="nav-header"' to the <ul> 
+		// apply 'class="subnavmenu"' to the <ul> 
 		// tag that contains the menu
 		'menu_class' => 'subnavmenu', 
 		// Use the default fallback if the user has 

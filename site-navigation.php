@@ -5,7 +5,7 @@
  * Template part file that contains the site header navigation 
  * menu.
  * 
- * By default, this neader navigation will output
+ * By default, this header navigation will output
  * the list of top-level static Pages, and depending
  * on the 'header_nav_menu_depth' setting, up to two 
  * additional levels of Page hierarchy. The default menu 
@@ -16,9 +16,9 @@
  * 
  * However, users can override this menu output by 
  * creating a custom navigation menu, and assigning it 
- * to the 'nav-sidebar' Theme location.
+ * to the 'nav-header' Theme location.
  *
- * This file is called by all primary template pages
+ * This file is called by header.php
  * 
  * @link		http://codex.wordpress.org/Function_Reference/get_option 		get_option()
  * @link		http://codex.wordpress.org/Function_Reference/get_permalink 	get_permalink()

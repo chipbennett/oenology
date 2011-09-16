@@ -117,6 +117,9 @@ function oenology_get_reference_contextual_help_text() {
 		case 'support' :
 			$tabtext .= __( 'Support options and links for the Theme.', 'oenology' );
 			break;
+		default :
+			$tabtext .= '';
+			break;
 	}
 	return $tabtext;
 }

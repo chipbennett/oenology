@@ -29,35 +29,35 @@ oenology_hook_post_header_before();
 ?> 
 <!-- Post Header Begin -->
 <?php 
-// Fire the 'oenology_post_header_date' custom action hook
+// Fire the 'oenology_post_header_date' custom filter hook
 // 
 // @param	null
 // @return	mixed	any output hooked into 'oenology_hook_post_header_date'
 oenology_hook_post_header_date(); 
 ?>
 <?php 
-// Fire the 'oenology_hook_post_header_thumbnail' custom action hook
+// Fire the 'oenology_hook_post_header_thumbnail' custom filter hook
 // 
 // @param	null
 // @return	mixed	any output hooked into 'oenology_hook_post_header_thumbnail'
 oenology_hook_post_header_thumbnail(); 
 ?>
 <?php 
-// Fire the 'oenology_hook_post_header_title' custom action hook
+// Fire the 'oenology_hook_post_header_title' custom filter hook
 // 
 // @param	null
 // @return	mixed	any output hooked into 'oenology_hook_post_header_title'
 oenology_hook_post_header_title(); 
 ?>
 <?php 
-// Fire the 'oenology_hook_post_header_metadata' custom action hook
+// Fire the 'oenology_hook_post_header_metadata' custom filter hook
 // 
 // @param	null
 // @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
 oenology_hook_post_header_metadata(); 
 ?>
 <?php 
-// Fire the 'oenology_hook_post_header_taxonomies' custom action hook
+// Fire the 'oenology_hook_post_header_taxonomies' custom filter hook
 // 
 // @param	null
 // @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'

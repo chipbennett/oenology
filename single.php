@@ -76,7 +76,11 @@ get_header( 'single' );
 <!-- End Main (div#main) -->
 
 <?php
-if ( 'one-column' != oenology_get_current_page_layout() ) {
+// The single.php template file is in the template hierarchy for
+// single blog posts as well as attachment pages. Only display
+// sidebars for single blog posts with multi-column layouts. Do
+// not display for layouts 'attachment', 'one-column', or 'full'.
+if ( ! in_array( oenology_get_current_page_layout(), array( 'one-column', 'attachment', 'full' ) ) ) {
 	?>
 	<?php 
 	/**
