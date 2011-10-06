@@ -186,6 +186,8 @@ foreach ( $oenology_tabs as $tab ) {
  * Generic callback to output the section text
  * for each Plugin settings section. 
  * 
+ * @uses	oenology_get_settings_page_tabs()	Defined in /functions/options.php
+ * 
  * @param	array	$section_passed	Array passed from add_settings_section()
  */
 function oenology_sections_callback( $section_passed ) {
