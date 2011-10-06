@@ -299,14 +299,16 @@ function oenology_reference_page_faq() {
  */
 function oenology_reference_page_changelog() { 
 	?>	
-	<h3>2.4 [2011.MM.DD]</h3>	
+	<h3>2.4 [2011.10.06]</h3>	
 	<p>Maintenance Release</p>
 	<ol>
 	<li>Bugfixes:
 		<ol>
 		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/41">41</a> (bug): use oenology_get_options() globally</li>
 		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/43">43</a> (bug): Header dropdown menu needs persistent contextual style</li>
-		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/#">#</a> (bug): TITLE</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/45">45</a> (bug): Update CSS Gradients to be Cross-Browser Compatible</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/46">46</a> (bug): Footer menu displays incorrectly in IE</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/47">47</a> (bug): Error when using 3 columns and put something in sidebar column bottom</li>
 		</ol>
 	</li>
 	<li>Maintenance:
@@ -318,11 +320,9 @@ function oenology_reference_page_changelog() {
 			<li>Child Themes that call oenology_setup() should rename this function <em>before updating Oenology</em>.</li>
 			</ol>
 		</li>
-		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/36">36</a> (enhancement): Update editor-style.css</li>
 		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/37">37</a> (enhancement): Set IMG max-width dynamically using $content_width</li>
-		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/40">40</a> (enhancement): General Documentation Cleanup</li>
 		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/42">42</a> (enhancement): Add basic styling to TABLE tag</li>
-		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/#">#</a> (enhancement): TITLE</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/44">44</a> (enhancement): Remove Menu Background Images</li>
 		</ol>
 	</li>
 	</ol>
