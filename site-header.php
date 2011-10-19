@@ -5,10 +5,12 @@
  *
  * This file is called by all primary template pages
  * 
- * @uses		get_template_part()
- * @uses		oenology_hook_site_header()
- * @uses		oenology_hook_site_header_after()
- * @uses		oenology_hook_site_header_before()
+ * @uses		oenology_get_context()				Defined in /functions/custom.php
+ * @uses		oenology_hook_site_header()			Defined in /functions/hooks.php
+ * @uses		oenology_hook_site_header_after()	Defined in /functions/hooks.php
+ * @uses		oenology_hook_site_header_before()	Defined in /functions/hooks.php
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/get_template_part	get_template_part()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

@@ -4,7 +4,9 @@
  *
  * This file is called by all primary template pages
  * 
- * @uses 		the_widget()
+ * @uses		oenology_get_widget_args()	Defined in /functions/widgets.php
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/the_widget	the_widget()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

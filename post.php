@@ -5,8 +5,11 @@
  *
  * This file is called by all primary template pages
  * 
- * @uses		get_template_part()
- * @uses 		is_front_page()
+ * @uses		oenology_get_context()	Defined in /functions/custom.php
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/get_option		get_option()
+ * @link		http://codex.wordpress.org/Function_Reference/get_template_part	get_template_part()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_front_page		is_front_page()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

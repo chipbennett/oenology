@@ -5,7 +5,9 @@
  *
  * This file is called by Posts with the "Chat" Post Format
  * 
- * @uses		get_template_part()
+ * @uses		oenology_get_context()	Defined in /functions/custom.php
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/get_template_part	get_template_part()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

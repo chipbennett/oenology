@@ -5,7 +5,7 @@
  * This file is the master/default template file, used when no other file matches in
  * the {@link http://codex.wordpress.org/Template_Hierarchy Template Hierarchy}.
  *
- * @uses 		oenology_get_context()
+ * @uses 		oenology_get_context()	Defined in /functions/custom.php
  * 
  * @link		http://codex.wordpress.org/Function_Reference/get_header 			get_header()
  * @link 		http://codex.wordpress.org/Function_Reference/get_footer 			get_footer()

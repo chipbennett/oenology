@@ -5,6 +5,8 @@
  * This file is the default Page template file, used to display static
  * Pages if no custom Page template is defined.
  * 
+ * @uses		oenology_get_current_page_layout()	Defined in /functions/custom.php
+ * 
  * @link		http://codex.wordpress.org/Function_Reference/get_header 			get_header()
  * @link 		http://codex.wordpress.org/Function_Reference/get_footer 			get_footer()
  * @link 		http://codex.wordpress.org/Function_Reference/get_sidebar 			get_sidebar()

@@ -4,16 +4,17 @@
  *
  * Contains Loop header, Loop content, and Loop footer.
  * 
- * @uses		dynamic_sidebar()
- * @uses 		get_template_part()
- * @uses 		is_archive()
- * @uses 		is_search()
- * @uses 		the_content()
- * @uses 		the_excerpt()
- * @uses 		oenology_hook_post_entry_after()
- * @uses 		oenology_hook_post_entry_before()
- * @uses 		wp_attachment_is_image()
- * @uses 		wp_link_pages()
+ * @uses 		oenology_hook_post_entry_after()	Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_entry_before()	Defined in /functions/hooks.php
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/dynamic_sidebar			dynamic_sidebar()
+ * @link 		http://codex.wordpress.org/Function_Reference/get_template_part			get_template_part()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_archive				is_archive()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_search					is_search()
+ * @link 		http://codex.wordpress.org/Function_Reference/the_content				the_content()
+ * @link 		http://codex.wordpress.org/Function_Reference/the_excerpt				the_excerpt()
+ * @link 		http://codex.wordpress.org/Function_Reference/wp_attachment_is_image	wp_attachment_is_image()
+ * @link 		http://codex.wordpress.org/Function_Reference/wp_link_pages				wp_link_pages()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

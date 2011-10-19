@@ -3,8 +3,8 @@
  * Single Blog Post template file
  *
  * This file is the single blog post template file, used to display single blog posts.
- *
- * @uses 		oenology_get_context()
+ * 
+ * @uses		oenology_get_current_page_layout()	Defined in /functions/custom.php
  * 
  * @link		http://codex.wordpress.org/Function_Reference/get_header 			get_header()
  * @link 		http://codex.wordpress.org/Function_Reference/get_footer 			get_footer()

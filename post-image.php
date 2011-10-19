@@ -5,7 +5,14 @@
  *
  * This file is called by Posts with the "Image" Post Format
  * 
- * @uses		get_template_part()
+ * @uses		oenology_get_context()					Defined in /functions/custom.php
+ * @uses		oenology_hook_post_entry_after()		Defined in /functions/hooks.php
+ * @uses		oenology_hook_post_entry_before()		Defined in /functions/hooks.php
+ * @uses		oenology_hook_post_header_metadata()	Defined in /functions/hooks.php
+ * @uses		oenology_hook_post_header_taxonomies()	Defined in /functions/hooks.php
+ * @uses		oenology_hook_post_header_title()		Defined in /functions/hooks.php
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/get_template_part	get_template_part()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

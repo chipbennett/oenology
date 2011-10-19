@@ -4,11 +4,11 @@
  *
  * Contains author avatar, footer metadata, and footer license
  * 
- * @uses 		oenology_hook_post_footer_after()
- * @uses 		oenology_hook_post_footer_avatar()
- * @uses 		oenology_hook_post_footer_before()
- * @uses 		oenology_hook_post_footer_license()
- * @uses 		oenology_hook_post_footer_metadata()
+ * @uses 		oenology_hook_post_footer_after()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_footer_avatar()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_footer_before()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_footer_license()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_footer_metadata()	Defined in /functions/hooks.php
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

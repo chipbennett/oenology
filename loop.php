@@ -4,12 +4,14 @@
  *
  * Contains Loop header, Loop content, and Loop footer.
  * 
- * @uses 		oenology_hook_loop_footer_after()
- * @uses 		oenology_hook_loop_footer_before()
- * @uses 		oenology_hook_loop_header_after()
- * @uses 		oenology_hook_loop_header_before()
- * @uses 		oenology_hook_post_after()
- * @uses 		oenology_hook_post_before()
+ * @uses 		oenology_get_context()				Defined in /functions/custom.php
+ * @uses 		oenology_hook_loop_footer_after()	Defined in /functions/hooks.php
+ * @uses 		oenology_hook_loop_footer_before()	Defined in /functions/hooks.php
+ * @uses 		oenology_hook_loop_header_after()	Defined in /functions/hooks.php
+ * @uses 		oenology_hook_loop_header_before()	Defined in /functions/hooks.php
+ * @uses 		oenology_hook_loop_no_posts()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_after()			Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_before()			Defined in /functions/hooks.php
  * 
  * @link 		http://codex.wordpress.org/Function_Reference/comments_open 			comments_open()
  * @link 		http://codex.wordpress.org/Function_Reference/comments_template 		comments_template()

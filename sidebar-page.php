@@ -4,11 +4,13 @@
  *
  * This file is called by page.php
  * 
- * @uses		dynamic_sidebar()
- * @uses		get_option()
- * @uses		get_sidebar()
- * @uses		is_attachment()
- * @uses 		is_front_page()
+ * @uses		oenology_get_current_page_layout()	Defined in /functions/custom.php
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/dynamic_sidebar	dynamic_sidebar()
+ * @link		http://codex.wordpress.org/Function_Reference/get_option		get_option()
+ * @link		http://codex.wordpress.org/Function_Reference/get_sidebar		get_sidebar()
+ * @link		http://codex.wordpress.org/Function_Reference/is_attachment		is_attachment()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_front_page		is_front_page()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett
