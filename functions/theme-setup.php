@@ -479,6 +479,13 @@ add_action( 'after_setup_theme', 'oenology_setup', 10 );
  * 
  * Callback to define the front-end style 
  * definitions for the custom image header.
+ * 
+ * @uses	oenology_get_options()	Defined in /functions/options.php
+ * 
+ * @link	http://codex.wordpress.org/Function_Reference/get_header_image 		get_header_image() 
+ * @link	http://codex.wordpress.org/Function_Reference/get_header_textcolor	get_header_textcolor()
+ * @link	http://codex.wordpress.org/Function_Reference/header_image 			header_image()
+ * @link	http://codex.wordpress.org/Function_Reference/header_textcolor		header_textcolor()
  */
 function oenology_header_style() {
 ?>			
@@ -491,10 +498,12 @@ if ( get_header_image() && HEADER_IMAGE != get_header_image() ) {
 	background:url('<?php header_image(); ?>') no-repeat center top;
 	overflow: hidden;
 }
+	<?php if ( 'blank' != get_header_textcolor() ) { ?>
 #site-header-text {
 	background: rgba(0, 0, 0, 0.2);
 }
-	<?php			 
+	<?php 
+	}			 
 	$oenology_options = oenology_get_options();
 	if ( 'above' == $oenology_options['header_nav_menu_position'] ) {
 		if ( get_header_image() ) { 
