@@ -148,6 +148,25 @@ function oenology_admin_reference_page() { ?>
  */
 function oenology_reference_page_general() { 
 	?>
+	<h3>Custom Theme Layouts</h3>
+	
+	<p>The Theme provides global and per-post layout options for static pages, single blog posts, and blog 
+	post index pages. Generally, the layout options include one-, two-, and three-column layouts.</p>
+	
+	<p>Static page layouts include a one-column layout with no sidebars, a two-column layout with a half-width 
+	sidebar on the left, and a three-column layout with half-width sidebars on the left and right.</p>
+	
+	<p>Single blog post and blog post index page layouts include a one-column layout with no sidebars, a 
+	two-column layout with a full-width sidebar on either the left or the right, and a three-column layout with 
+	half-width sidebars on the left and right.</p>
+	
+	<p>To configure global Layout settings, see Dashboard -> Appearance -> Oenology Settings -> Layout</p>
+	
+	<p>To configure per-post settings for static pages and blog posts, use the meta box provided on the 
+	Edit Post screen.</p>
+	
+	<p>Note: blog post index pages, including all archive index pages, use the global setting.</p>
+	
 	<h3>Custom Theme Hooks</h3>
 	
 	<p>Custom Theme hooks provide an alternate means to modify the Oenology Theme content, without needing to
