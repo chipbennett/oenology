@@ -4,15 +4,18 @@
  *
  * This file is called by all primary template pages
  * 
- * @uses		dynamic_sidebar()
- * @uses		get_bloginfo()
- * @uses		get_option()
- * @uses		get_sidebar()
- * @uses		has_post_format()
- * @uses		is_active_sidebar()
- * @uses		is_attachment()
- * @uses 		is_front_page()
- * @uses		is_single()
+ * @uses		oenology_get_current_page_layout()	Defined in /functions/custom.php
+ * @uses		oenology_get_social_networks()		Defined in /functions/custom.php
+ * 
+ * @link		http://codex.wordpress.org/Function_Reference/dynamic_sidebar	dynamic_sidebar()
+ * @link		http://codex.wordpress.org/Function_Reference/get_bloginfo		get_bloginfo()
+ * @link		http://codex.wordpress.org/Function_Reference/get_option		get_option()
+ * @link		http://codex.wordpress.org/Function_Reference/get_sidebar		get_sidebar()
+ * @link		http://codex.wordpress.org/Function_Reference/has_post_format	has_post_format()
+ * @link		http://codex.wordpress.org/Function_Reference/is_active_sidebar	is_active_sidebar()
+ * @link		http://codex.wordpress.org/Function_Reference/is_attachment		is_attachment()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_front_page		is_front_page()
+ * @link		http://codex.wordpress.org/Function_Reference/is_single			is_single()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

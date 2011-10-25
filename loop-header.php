@@ -7,7 +7,7 @@
  * query, etc., as well as a description of the taxonomy, 
  * if provided.
  * 
- * @uses 		function_name()
+ * @uses 		oenology_hook_loop_header()	Defined in /functions/hooks.php
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

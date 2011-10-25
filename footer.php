@@ -13,11 +13,14 @@
  * template part file on static Pages, a Child Theme would
  * include the file "footer-page.php".
  * 
- * @uses 		oenology_hook_extent_after()
- * @uses 		oenology_hook_site_footer()
- * @uses 		oenology_hook_site_footer_after()
- * @uses 		oenology_hook_site_footer_before()
- * @uses 		wp_footer()
+ * @uses 		oenology_hook_extent_after()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_site_footer()			Defined in /functions/hooks.php
+ * @uses 		oenology_hook_site_footer_after()	Defined in /functions/hooks.php
+ * @uses 		oenology_hook_site_footer_before()	Defined in /functions/hooks.php
+ * 
+ * @link 		http://codex.wordpress.org/Function_Reference/has_nav_menu	has_nav_menu()
+ * @link 		http://codex.wordpress.org/Function_Reference/wp_footer		wp_footer()
+ * @link 		http://codex.wordpress.org/Function_Reference/wp_nav_menu	wp_nav_menu()
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

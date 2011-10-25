@@ -14,8 +14,10 @@
  * template part file on static Pages, a Child Theme would
  * include the file "header-page.php".
  * 
- * @uses 		oenology_get_context()
- * @uses 		oenology_hook_extent_before()
+ * @uses 		oenology_get_context()			Defined in /functions/custom.php
+ * @uses 		oenology_get_options()			Defined in /functions/options.php
+ * @uses 		oenology_hook_extent_before()	Defined in /functions/hooks.php
+ * 
  * @link 		http://codex.wordpress.org/Function_Reference/bloginfo				bloginfo()
  * @link 		http://codex.wordpress.org/Function_Reference/body_class			body_class()
  * @link 		http://codex.wordpress.org/Function_Reference/get_option			get_option()

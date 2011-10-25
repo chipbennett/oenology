@@ -1,7 +1,5 @@
 <?php
 /**
- * Template Name: Front Page
- * 
  * Front Page template file
  *
  * This file is the Front Page template file, used to display the site

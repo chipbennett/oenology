@@ -873,10 +873,13 @@ function oenology_hook_site_header() {
 	
 	$site_header = '';
 
+	$site_header_name = ( 'blank' != get_header_textcolor() ? get_bloginfo( 'name' ) : '&nbsp;' );
+	$site_header_description = ( 'blank' != get_header_textcolor() ? get_bloginfo( 'description' ) : '&nbsp;' );
+
 	// Displays the blog name, as defined on the General Settings page in the administration panel
-	$site_header .= '<div class="site-header-text">' . get_bloginfo( 'name' ) . '</div>';
+	$site_header .= '<div class="site-header-text">' . $site_header_name . '</div>';
 	// Displays the blog description, as defined on the General Settings page in the administration panel
-	$site_header .= '<p>' . get_bloginfo( 'description' ) . '</p>';
+	$site_header .= '<p>' . $site_header_description . '</p>';
 
 	echo apply_filters( 'oenology_hook_site_header', $site_header );
 } 

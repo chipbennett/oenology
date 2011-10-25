@@ -5,13 +5,13 @@
  * Contains Post date, Post Thumbnail, Post Title, Post
  * Metadata, and Post Taxonomies (Categories and Tags)
  * 
- * @uses 		oenology_hook_post_header_after()
- * @uses 		oenology_hook_post_header_before()
- * @uses 		oenology_hook_post_header_date()
- * @uses 		oenology_hook_post_header_thumbnail()
- * @uses 		oenology_hook_post_header_title()
- * @uses 		oenology_hook_post_header_metadata()
- * @uses 		oenology_hook_post_header_taxonomies()
+ * @uses 		oenology_hook_post_header_after()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_header_before()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_header_date()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_header_thumbnail()	Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_header_title()		Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_header_metadata()	Defined in /functions/hooks.php
+ * @uses 		oenology_hook_post_header_taxonomies()	Defined in /functions/hooks.php
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett

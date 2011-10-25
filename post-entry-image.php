@@ -5,7 +5,8 @@
  * Contains Post entry content for Image mime-type Attachment
  * Pages
  * 
- * @uses		function_name()
+ * @uses		oenology_gallery_image_meta()	Defined in /functions/custom.php
+ * @uses		oenology_gallery_links()		Defined in /functions/custom.php
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett
@@ -129,87 +130,3 @@ if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format s
 </div>
 <?php } ?>
 	<!-- Post Entry End -->
-<?php
-/*
-Reference:
-=============================================================================
-The following functions, tags, and hooks are used (or referenced) in this Theme template file:
-
-***********************
-get_permalink()
-----------------------------------
-get_permalink() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_permalink
-
-get_permalink() is used to return the permalink URL for the current post. This tag
-returns only the permalink URL, not a fully formed HTML anchor tag.
-
-get_permalink() returns, but does not display, the requested post permalink.
-
-get_permalink( $id ) accepts one argument:
- - $id: ID of the post for which to return the permalink
-
-Example:
-<?php echo get_permalink($post->post_parent); ?>
-Displays the URL to the post parent of the current post.
-
-***********************
-get_the_title()
-----------------------------------
-get_the_title() is a WordPress template tag.
-Codex reference: http://codex.wordpress.org/Function_Reference/get_the_title
-
-get_the_title() is used to display the Post Title of the current post.
-
-get_the_title( $id ) accepts one argument:
- - $id: ID of the post for which to return the Post Title
-
-Example:
-<?php echo get_the_title($post->post_parent); ?> 
-Displays the Post Title of the current post's parent post. 
-
-***********************
-oenology_gallery_image_meta()
-----------------------------------
-oenology_gallery_image_meta() is a custom Theme function.
-Codex reference: N/A
-
-oenology_gallery_image_meta() is used to output various metadata related to
-gallery images. oenology_gallery_image_meta() outputs an array containing the
-following values:
- - $image_meta['image']: image output, using wp_get_attachment_image()
- - $image_meta['url']: image attachment url, using wp_get_attachment_url()
- - $image_meta['width']: image width, in px
- - $image_meta['height']: image height, in px
- - $image_meta['dimensions']: image width/height dimensions, in px, displayed as "# x # px"
- - $image_meta['filesize']: image filesize, converted to human-readable size format, displayed as e.g. "### kb"
- - $image_meta['created_timestamp']: image metadata - date/time image taken, displayed as "D MMM YYYY"
- - $image_meta['copyright']: image metadata - copyright statement
- - $image_meta['credit']: image metadata - photographer
- - $image_meta['aperture']: image metadata - camera aperture setting
- - $image_meta['focal_length']: image metadata - camera focal length setting, displayed as "f/###"
- - $image_meta['iso']: image metadata - camera ISO setting
- - $image_meta['shutter_speed']: image metadata - camera shutter speed setting, displayed as e.g. "1/### sec"
- - $image_meta['camera']: image metadata - camera type
- - $image_meta['caption']: the image caption, as defined in image settings
-
-oenology_gallery_image_meta() is defined in functions.php.
-
-***********************
-oenology_gallery_links()
-----------------------------------
-oenology_gallery_links() is a custom Theme function.
-Codex reference: N/A
-
-oenology_gallery_links() is used to output "previous" and "next" links with both text and
-thumbnail images, for use with gallery images. The function outputs an array containing the
-following values:
- - $links['prevlink']: text link to previous gallery image
- - $links['prevthumb']: thumbnail of previous gallery image
- - $links['nextlink']: text link to next gallery image
- - $links['nextthumb']: thumbnail of next gallery image
-
-oenology_gallery_links() is defined in functions.php.
-
-=============================================================================
-*/ ?>

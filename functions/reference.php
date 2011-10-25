@@ -148,6 +148,25 @@ function oenology_admin_reference_page() { ?>
  */
 function oenology_reference_page_general() { 
 	?>
+	<h3>Custom Theme Layouts</h3>
+	
+	<p>The Theme provides global and per-post layout options for static pages, single blog posts, and blog 
+	post index pages. Generally, the layout options include one-, two-, and three-column layouts.</p>
+	
+	<p>Static page layouts include a one-column layout with no sidebars, a two-column layout with a half-width 
+	sidebar on the left, and a three-column layout with half-width sidebars on the left and right.</p>
+	
+	<p>Single blog post and blog post index page layouts include a one-column layout with no sidebars, a 
+	two-column layout with a full-width sidebar on either the left or the right, and a three-column layout with 
+	half-width sidebars on the left and right.</p>
+	
+	<p>To configure global Layout settings, see Dashboard -> Appearance -> Oenology Settings -> Layout</p>
+	
+	<p>To configure per-post settings for static pages and blog posts, use the meta box provided on the 
+	Edit Post screen.</p>
+	
+	<p>Note: blog post index pages, including all archive index pages, use the global setting.</p>
+	
 	<h3>Custom Theme Hooks</h3>
 	
 	<p>Custom Theme hooks provide an alternate means to modify the Oenology Theme content, without needing to
@@ -299,14 +318,16 @@ function oenology_reference_page_faq() {
  */
 function oenology_reference_page_changelog() { 
 	?>	
-	<h3>2.4 [2011.MM.DD]</h3>	
+	<h3>2.4 [2011.10.06]</h3>	
 	<p>Maintenance Release</p>
 	<ol>
 	<li>Bugfixes:
 		<ol>
 		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/41">41</a> (bug): use oenology_get_options() globally</li>
 		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/43">43</a> (bug): Header dropdown menu needs persistent contextual style</li>
-		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/#">#</a> (bug): TITLE</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/45">45</a> (bug): Update CSS Gradients to be Cross-Browser Compatible</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/46">46</a> (bug): Footer menu displays incorrectly in IE</li>
+		<li>Fixed Issue <a href="https://github.com/chipbennett/oenology/issues/47">47</a> (bug): Error when using 3 columns and put something in sidebar column bottom</li>
 		</ol>
 	</li>
 	<li>Maintenance:
@@ -318,11 +339,9 @@ function oenology_reference_page_changelog() {
 			<li>Child Themes that call oenology_setup() should rename this function <em>before updating Oenology</em>.</li>
 			</ol>
 		</li>
-		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/36">36</a> (enhancement): Update editor-style.css</li>
 		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/37">37</a> (enhancement): Set IMG max-width dynamically using $content_width</li>
-		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/40">40</a> (enhancement): General Documentation Cleanup</li>
 		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/42">42</a> (enhancement): Add basic styling to TABLE tag</li>
-		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/#">#</a> (enhancement): TITLE</li>
+		<li>Issue <a href="https://github.com/chipbennett/oenology/issues/44">44</a> (enhancement): Remove Menu Background Images</li>
 		</ol>
 	</li>
 	</ol>

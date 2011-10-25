@@ -4,7 +4,7 @@
  *
  * Contains Posts index pagination links
  * 
- * @uses		oenology_hook_loop_footer()
+ * @uses		oenology_hook_loop_footer()	Defined in /functions/hooks.php
  * 
  * @link 		http://codex.wordpress.org/Function_Reference/is_singular		is_singular()
  * 

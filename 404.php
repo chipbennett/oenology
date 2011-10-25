@@ -5,6 +5,8 @@
  * This file is the Error 404 Page template file, which is output whenever
  * the server encounters a "404 - file not found" error.
  * 
+ * @uses		oenology_hook_post_404()	Defined in /functions/hooks.php
+ * 
  * @link		http://codex.wordpress.org/Function_Reference/get_header 	get_header()
  * @link 		http://codex.wordpress.org/Function_Reference/get_footer 	get_footer()
  * @link 		http://codex.wordpress.org/Function_Reference/get_sidebar 	get_sidebar()
@@ -85,7 +87,7 @@ get_header( '404' );
  * via "sidebar.php", or in the Error 404 Page context only, via
  * "sidebar-404.php"
  */
-get_sidebar( oenology_get_context() ); 
+get_sidebar( '404' ); 
 ?>
 	
 <?php 
