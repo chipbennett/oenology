@@ -172,8 +172,8 @@ ol.trackbacklist /* Plugin: Trackback */ {
 *****************************************************************/
 /* Garamond/Palatino Linotype type font family */
 h1, h2, h3, h4, h5, h6,
-.nav-header .current_page_item a,
-.nav-header .current_page_ancestor a,
+.nav-header .current_page_item > a,
+.nav-header .current_page_ancestor > a,
 .title,
 .widgettitle,
 .pagetitle,
@@ -483,7 +483,8 @@ pre {
 	margin-left:0;
 }
 #page #leftcol,
-.layout-three-column #leftcol {
+.layout-three-column #leftcol,
+#front-page.layout-three-column #leftcol {
 	margin-left:-830px;
 	padding-left:0px;
 }
@@ -2364,9 +2365,9 @@ body.single-format-image dd {
 	 font-weight:normal;
      text-decoration:none;
 }
-#nav .current_page_item a,
-#nav .current_page_parent a,
-#nav .current_page_ancestor a {
+#nav .current_page_item > a,
+#nav .current_page_parent > a,
+#nav .current_page_ancestor > a {
      letter-spacing:0.15em;
      font-weight:bold;
      text-decoration:none;
