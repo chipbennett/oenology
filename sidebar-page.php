@@ -48,8 +48,14 @@ if (
 		// 
 		// Child Themes can replace this template part file globally, 
 		// via "sidebar-navigation.php"
-		get_sidebar('navigation'); 
-	?>
+		get_sidebar( 'navigation' ); 
+		
+		//Display the left-column dynamic
+		//sidebar, if it is in use
+		if ( is_active_sidebar( 'sidebar-left' ) ) {
+			dynamic_sidebar( 'sidebar-left' );
+		}
+		?>
 	</div>
 	<!-- End Left Column (div#leftcol) -->
 
