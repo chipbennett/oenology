@@ -70,8 +70,8 @@ register_sidebar(array( // Right Column widget area
 'name'=>'Sidebar Right',
 'id'=>'sidebar-right',
 'description' => 'Right-column, half-width sidebar in three-column layout',
-'before_widget' => '',
-'after_widget' => '',
+'before_widget' => '<div id="%1$s" class="widget %2$s">',
+'after_widget' => '</div>',
 'before_title' => '<div class="title">',
 'after_title' => '</div>',
 ));
