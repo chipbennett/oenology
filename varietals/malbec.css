@@ -109,10 +109,10 @@ tr:nth-child(even) {
      background: -moz-linear-gradient( bottom, #555555, #2c362b );
      background: -ms-linear-gradient( bottom, #555555, #2c362b );
 }
-#nav .current_page_item a,
-#nav .current_page_parent a,
-#nav .current_page_ancestor a,
-#nav .current_page_ancestor .menu-item.current_page_item a {
+#nav .current_page_item > a,
+#nav .current_page_parent > a,
+#nav .current_page_ancestor > a,
+#nav .current_page_ancestor .menu-item.current_page_item > a {
      color:#bbb;
      border-top-color: #bbb;
 	 border-left-color: #bbb;

@@ -96,10 +96,10 @@ tr:nth-child(even) {
      border-top-color: #eee; 
      border-left-color: #eee;
 }
-#nav .current_page_item a,
-#nav .current_page_parent a,
-#nav .current_page_ancestor a,
-#nav .current_page_ancestor .menu-item.current_page_item a {
+#nav .current_page_item > a,
+#nav .current_page_parent > a,
+#nav .current_page_ancestor > a,
+#nav .current_page_ancestor .menu-item.current_page_item > a {
     color:#000;
     border-bottom-color: #000;
     border-right-color: #000;

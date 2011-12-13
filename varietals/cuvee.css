@@ -68,10 +68,10 @@ dd {
 .nav-header li:hover li:hover li a {
 	text-decoration: none;
 }
-#nav .current_page_item a,
-#nav .current_page_parent a,
-#nav .current_page_ancestor a,
-#nav .current_page_ancestor .menu-item.current_page_item a  {
+#nav .current_page_item > a,
+#nav .current_page_parent > a,
+#nav .current_page_ancestor > a,
+#nav .current_page_ancestor .menu-item.current_page_item > a  {
      color:black;
      border-bottom-color: black;
 	 border-right-color: black;

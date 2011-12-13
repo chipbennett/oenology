@@ -94,10 +94,10 @@ tr:nth-child(even) {
      background: -moz-linear-gradient( bottom, #eeeeee, #ffffe8 );
      background: -ms-linear-gradient( bottom, #eeeeee, #ffffe8 );
 }
-#nav .current_page_item a,
-#nav .current_page_parent a,
-#nav .current_page_ancestor a,
-#nav .current_page_ancestor .menu-item.current_page_item a {
+#nav .current_page_item > a,
+#nav .current_page_parent > a,
+#nav .current_page_ancestor > a,
+#nav .current_page_ancestor .menu-item.current_page_item > a {
     color:#000;
     border-bottom-color: #000;
     border-right-color: #000;
