@@ -457,7 +457,7 @@ function oenology_get_post_formats() {
  * @uses	oenology_get_current_tab()	defined in \functions\options.php
  * @uses	oenology_get_settings_page_tabs()	defined in \functions\options.php
  * 
- * @link`http://www.onedesigns.com/tutorials/separate-multiple-theme-options-pages-using-tabs	Daniel Tara
+ * @link	http://www.onedesigns.com/tutorials/separate-multiple-theme-options-pages-using-tabs	Daniel Tara
  */
 function oenology_get_page_tab_markup() {
 
