@@ -39,7 +39,7 @@ function oenology_register_options(){
 	require( get_template_directory() . '/functions/options-register.php' );
 }
 // Settings API options initilization and validation
-add_action('admin_init', 'oenology_register_options');
+add_action( 'admin_init', 'oenology_register_options' );
 
 /**
  * Setup the Theme Admin Settings Page
@@ -49,7 +49,10 @@ add_action('admin_init', 'oenology_register_options');
  * @uses	oenology_get_settings_page_cap()	defined in \functions\wordpress-hooks.php
  */
 function oenology_add_theme_page() {
-	add_theme_page(
+	// Globalize Theme options page
+	global $oenology_settings_page;
+	// Add Theme options page
+	$oenology_settings_page = add_theme_page(
 		// $page_title
 		// Name displayed in HTML title tag
 		__( 'Oenology Options', 'oenology' ), 
@@ -66,9 +69,11 @@ function oenology_add_theme_page() {
 		// Function to define settings page markup
 		'oenology_admin_options_page'
 	);
+	// Load contextual help
+	add_action( 'load-' . $oenology_settings_page, 'oenology_settings_page_contextual_help' );
 }
 // Load the Admin Options page
-add_action('admin_menu', 'oenology_add_theme_page');
+add_action( 'admin_menu', 'oenology_add_theme_page' );
 
 /**
  * Oenology Theme Settings Page Markup
@@ -420,7 +425,7 @@ function oenology_get_option_parameters() {
 				),
 			),
 			'description' => __( 'Select the layout to be used as the default for static Pages when the "Default" page template is selected.', 'oenology' ),
-			'section' => 'layouts',
+			'section' => 'default_layouts',
 			'tab' => 'layout',
 			'since' => '2.3',
 			'default' => 'three-column'			
@@ -452,7 +457,7 @@ function oenology_get_option_parameters() {
 				),
 			),
 			'description' => __( 'Select the default layout to be used for single Blog Posts.', 'oenology' ),
-			'section' => 'layouts',
+			'section' => 'default_layouts',
 			'tab' => 'layout',
 			'since' => '2.3',
 			'default' => 'two-column-left'			
@@ -484,11 +489,35 @@ function oenology_get_option_parameters() {
 				),
 			),
 			'description' => __( 'Select the layout to be used for Blog Posts Index pages.', 'oenology' ),
-			'section' => 'layouts',
+			'section' => 'default_layouts',
 			'tab' => 'layout',
 			'since' => '2.3',
 			'default' => 'two-column-left'			
 			),
+        'static_page_submenu_display' => array(
+			'name' => 'static_page_submenu_display',
+			'title' => __( 'Static Page Submenu Display', 'oenology' ),
+			'type' => 'select',
+			'valid_options' => array(
+				'always' => array(
+					'name' => 'always',
+					'title' => __( 'Always Display', 'oenology' )
+				),
+				'hierarchical' => array(
+					'name' => 'hierarchical',
+					'title' => __( 'Display Only on Hierarchical Pages', 'oenology' )
+				),
+				'never' => array(
+					'name' => 'never',
+					'title' => __( 'Never Display', 'oenology' )
+				)
+			),
+			'description' => __( 'Display the static Page left-column submenu?', 'oenology' ),
+			'section' => 'static_page_layout_options',
+			'tab' => 'layout',
+			'since' => '2.5',
+			'default' => 'always'
+		),
         'default_options_tab' => array(
 			'name' => 'default_options_tab',
 			'title' => 'Default Options Page Tab',
@@ -627,10 +656,15 @@ function oenology_get_settings_page_tabs() {
 			'name' => 'layout',
 			'title' => __( 'Layout', 'oenology' ),
 			'sections' => array(
-				'layouts' => array(
-					'name' => 'layouts',
-					'title' => __( 'Layout Options', 'oenology' ),
-					'description' => __( 'Manage layout options for static Pages, single Blog Posts, and Blog Post Index pages', 'oenology' )
+				'default_layouts' => array(
+					'name' => 'default_layouts',
+					'title' => __( 'Default Layouts', 'oenology' ),
+					'description' => __( 'Manage default layouts for static Pages, single Blog Posts, and Blog Post Index pages', 'oenology' )
+				),
+				'static_page_layout_options' => array(
+					'name' => 'static_page_layout_options',
+					'title' => __( 'Static Page Layout Options', 'oenology' ),
+					'description' => __( 'Manage options related to static Page layout', 'oenology' )
 				)
 			)
 		),
