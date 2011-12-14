@@ -103,17 +103,6 @@ require( get_template_directory() . '/functions/hooks.php' );
 require( get_template_directory() . '/functions/post-custom-meta.php' );
 
 /**
- * Include the Theme Reference Function File
- * 
- * - reference.php includes the Theme Admin Reference page
- * - General Theme Notes
- * - FAQ
- * - Code Reference
- * - Changelog
- */
-require( get_template_directory() . '/functions/reference.php' );
-
-/**
  * Include the Theme Contextual Help Function File
  * 
  * - contextual-help.php includes the Theme Contextual Help content

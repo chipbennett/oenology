@@ -1,32 +1,41 @@
 /* Admin CSS
   -------------------------------------------- */
 
-#wpbody .wrap ul.codereflinklist {
+#wpbody .wrap ul.codereflinklist,
+#contextual-help-columns ul.codereflinklist {
       clear:both;
+	  margin: 0;
 }
-#wpbody .wrap ul.codereflinklist li {
+#wpbody .wrap ul.codereflinklist li ,
+#contextual-help-columns ul.codereflinklist li{
       display:inline;
       float:left;
       width:25%;
+	  margin: 0;
 }
-#wpbody .wrap ul.codereflinklist li ul {
+#wpbody .wrap ul.codereflinklist li ul,
+#contextual-help-columns ul.codereflinklist li ul{
       font-size:8pt;
 }
-#wpbody .wrap ul.codereflinklist li ul li {
+#wpbody .wrap ul.codereflinklist li ul li,
+#contextual-help-columns ul.codereflinklist li ul li {
       display:block;
       float:none;
       width:auto;
 }
 
-#wpbody .wrap #oenologycoderef {
+#wpbody .wrap #oenologycoderef,
+#contextual-help-columns #oenologycoderef {
 	width: 100%;
 }
 
-#wpbody #oenologycoderef h3 {
+#wpbody #oenologycoderef h3,
+#contextual-help-columns #oenologycoderef h3 {
 	padding-top:30px;
 }
 
-#wpbody #oenologycoderef  div.coderefdetail {
+#wpbody #oenologycoderef  div.coderefdetail,
+#contextual-help-columns #oenologycoderef div.coderefdetail {
 	width: 650px;
 	padding: 5px;
 	background-color: #fefefe;
@@ -36,34 +45,41 @@
 	box-shadow: 4px 4px 4px #999;
 }
 
-#wpbody #oenologycoderef h3 > div {
+#wpbody #oenologycoderef h3 > div,
+#contextual-help-columns #oenologycoderef h3 > div {
 	margin-bottom:50px;
 }
 
-#wpbody #oenologycoderef hr {
+#wpbody #oenologycoderef hr,
+#contextual-help-columns #oenologycoderef hr {
 	margin-top:50px;
 }
 
-#wpbody #oenologycoderef code {
+#wpbody #oenologycoderef code,
+#contextual-help-columns #oenologycoderef code {
 	background: #f8f8f8;
 	color: #777;
 	text-shadow: 1px 1px 0px #ccc;
 }
 
-#wpbody .wrap #oenologycoderef ul {
+#wpbody .wrap #oenologycoderef ul,
+#contextual-help-columns #oenologycoderef ul {
 	list-style-type:disc;
 	margin-left:25px;
 	line-height:1em;
 }
 
-#wpbody .wrap #oenologycoderef ul li {
+#wpbody .wrap #oenologycoderef ul li,
+#contextual-help-columns #oenologycoderef ul li {
 	line-height:1.3em;
 }
-#wpbody .wrap #oenologycoderef ul  ul li {
+#wpbody .wrap #oenologycoderef ul ul li,
+#contextual-help-columns #oenologycoderef ul ul li{
 	font-size: 0.8em;
 }
 
-#wpbody .wrap #oenologycoderef a {
+#wpbody .wrap #oenologycoderef a,
+#contextual-help-columns #oenologycoderef a {
 	text-decoration: none;
 	background-color: #63afd0;
 	color: #555;
