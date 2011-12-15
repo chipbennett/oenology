@@ -1,6 +1,50 @@
 /* Admin CSS
   -------------------------------------------- */
 
+.oenology-varietal-thumb {
+	float:left;
+	margin-right:20px;
+	margin-bottom:20px;
+	border: 1px solid #bbb;
+	-moz-box-shadow: 2px 2px 2px #777;
+	-webkit-box-shadow: 2px 2px 2px #777;
+	box-shadow: 2px 2px 2px #777;
+}
+.oenology-varietal {
+	border: 1px solid transparent;
+	float:left;
+	padding:5px;
+	margin-top:5px;
+	margin-bottom:5px;
+	text-align:center;
+	max-width:160px;
+}
+.oenology-varietal-current {
+	background-color:#eee;
+	border: 1px solid #999;
+	-moz-box-shadow: 2px 2px 2px #777;
+	-webkit-box-shadow: 2px 2px 2px #777;
+	box-shadow: 2px 2px 2px #777;
+}
+.oenology-varietal dd {
+	margin-left:0;
+}
+.oenology-varietal dd img {
+	border: 1px solid #bbb;
+}
+
+#contextual-help-columns .oenology-support-submit {
+	padding:5px;
+	border:1px solid #999;
+	background-color:#58a;
+	color:#fff;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
 #wpbody .wrap ul.codereflinklist,
 #contextual-help-columns ul.codereflinklist {
       clear:both;
