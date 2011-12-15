@@ -27,7 +27,6 @@ function oenology_enqueue_admin_style() {
 }
 // Enqueue Admin Stylesheet at admin_print_styles()
 add_action( 'admin_print_styles-appearance_page_oenology-settings', 'oenology_enqueue_admin_style', 11 );
-add_action( 'admin_print_styles-appearance_page_oenology-reference', 'oenology_enqueue_admin_style', 11 );
 
 /**
  * Enqueue #content img max-width

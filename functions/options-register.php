@@ -213,7 +213,6 @@ function oenology_get_varietal_text() {
 	$oenology_options = oenology_get_options();
 	$option_parameters = oenology_get_option_parameters();
 	$oenology_varietals = $option_parameters['varietal']['valid_options'];
-	$imgstyle = 'float:left;margin-right:20px;margin-bottom:20px;border: 1px solid #bbb;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
 	foreach ( $oenology_varietals as $varietal ) {
 		if ( $varietal['name'] == $oenology_options['varietal'] ) {
 		      $oenology_current_varietal = $varietal;
@@ -221,7 +220,7 @@ function oenology_get_varietal_text() {
 	}
 	$text = '';
 	$text .= '<p>"Varietal" refers to wine made from exclusively or predominantly one variety of grape. Each varietal has unique flavor and aromatic characteristics. Refer to the contextual help screen for descriptions and help regarding each theme option.</p>';
-	$text .= '<img style="' . $imgstyle . '" src="' . get_template_directory_uri() . '/varietals/' . $oenology_options['varietal'] . '.png' . '" width="150px" height="110px" alt="' . $oenology_options['varietal'] . '" />';
+	$text .= '<img class="oenology-varietal-thumb" src="' . get_template_directory_uri() . '/varietals/' . $oenology_options['varietal'] . '.png' . '" width="150px" height="110px" alt="' . $oenology_options['varietal'] . '" />';
 	$text .= '<h4>Current Varietal</h4>';
 	$text .= '<dl><dt><strong>' . $oenology_current_varietal['title'] . '</strong></dt><dd>' . $oenology_current_varietal['description'] . '</dd></dl>';
 	return $text;
@@ -360,13 +359,12 @@ function oenology_setting_varietal() {
 
 	function oenology_output_varietal( $varietal ) {
 		$oenology_options = oenology_get_options();
-		$dlstylebase = 'border: 1px solid transparent;float:left;padding:5px;margin-top:5px;margin-bottom:5px;text-align:center;max-width:160px;';
-		$dlstylecurrent = 'background-color:#eee;border: 1px solid #999;-moz-box-shadow: 2px 2px 2px #777;-webkit-box-shadow: 2px 2px 2px #777;box-shadow: 2px 2px 2px #777;';
 		$currentvarietal = ( $varietal['name'] == $oenology_options['varietal'] ? true : false );
-		$dlstyle = ( $currentvarietal ? $dlstylebase . $dlstylecurrent : $dlstylebase ); ?>
-		<dl style="<?php echo $dlstyle; ?>">
+		$dlclass = ( $currentvarietal ? 'oenology-varietal oenology-varietal-current' : 'oenology-varietal' );
+		?>
+		<dl class="<?php echo $dlclass; ?>">
 		<dt><strong><?php echo $varietal['title']; ?></strong></dt>
-		<dd><img style="border: 1px solid #bbb;" src="<?php echo get_template_directory_uri() . '/varietals/' . $varietal['name'] . '.png'; ?>" width="150px" height="110px" alt="<?php echo $varietal['title']; ?>" title="<?php echo $varietal['description']; ?>" /></dd>
+		<dd><img src="<?php echo get_template_directory_uri() . '/varietals/' . $varietal['name'] . '.png'; ?>" width="150px" height="110px" alt="<?php echo $varietal['title']; ?>" title="<?php echo $varietal['description']; ?>" /></dd>
 		<dd><input type="radio" name="theme_oenology_options[varietal]" <?php checked( $currentvarietal ); ?> value="<?php echo $varietal['name']; ?>" /></dd>
 		</dl>
 	<?php
