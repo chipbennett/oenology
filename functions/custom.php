@@ -183,7 +183,7 @@ function oenology_get_current_tab() {
  * 
  * @return	string	table of formatted API data
  */
-function oenology_get_github_api_data( $context = 'commits', $status = 'open', $milestone = '6', $roadmap = false, $currentrelease = '2.5', $releasedate = '2011-10-06', $user = 'chipbennett', $repo = 'oenology' ) {
+function oenology_get_github_api_data( $context = 'commits', $status = 'open', $milestone = '7', $roadmap = false, $currentrelease = '2.6', $releasedate = '2011-12-16', $user = 'chipbennett', $repo = 'oenology' ) {
 
 	$capability = 'read';
 
