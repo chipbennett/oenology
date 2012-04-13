@@ -243,8 +243,10 @@ class oenology_widget_categories extends WP_Widget {
 		 $catrssurl = get_template_directory_uri() . $catrssimg;
 		 $customcatlist ='';
 		 $customcats=  get_categories();
-		 foreach($customcats as $customcat) {
-		 	$customcatlist = '<li><a title="Subscribe to the '.$customcat->name.' news feed" href="'.home_url().'/category/'.$customcat->category_nicename.'/feed/"><img src="'.$catrssurl.'" alt="feed" /></a><a href="'.home_url().'/category/'.$customcat->category_nicename.'/">'.$customcat->name.'</a> ('.$customcat->count.')</li>';
+		 foreach( $customcats as $customcat ) {
+			$customcathref = get_category_link( $customcat->term_id );
+			$customcatfeedlink = get_category_feed_link( $customcat->term_id );
+		 	$customcatlist = '<li><a title="Subscribe to the ' . $customcat->name . ' news feed" href="' . $customcatfeedlink . '"><img src="' . $catrssurl . '" alt="feed" /></a><a href="' . $customcathref . '">' . $customcat->name . '</a> (' . $customcat->count . ')</li>';
 			echo $customcatlist;
 		 }
 		?>
@@ -306,8 +308,10 @@ class oenology_widget_tags extends WP_Widget {
 		 $tagrssurl = get_template_directory_uri() . $tagrssimg;
 		 $customtaglist ='';
 		 $customtags =  get_tags();
-		 foreach($customtags as $customtag) {
-		 	$customtaglist = '<li><a title="Subscribe to the '.$customtag->name.' feed" href="'.home_url().'/tag/'.$customtag->slug.'/feed/"><img src="'.$tagrssurl.'" alt="feed" /></a><a href="'.home_url().'/tag/'.$customtag->slug.'/">'.$customtag->name.'</a> ('.$customtag->count.')</li>';
+		 foreach( $customtags as $customtag ) {
+			$customtaghref = get_tag_link( $customtag->term_id );
+			$customtagfeedlink = get_tag_feed_link( $customtag->term_id );
+		 	$customtaglist = '<li><a title="Subscribe to the ' . $customtag->name . ' feed" href="' . $customtagfeedlink . '"><img src="' . $tagrssurl . '" alt="feed" /></a><a href="' . $customtaghref . '">' . $customtag->name . '</a> (' . $customtag->count . ')</li>';
 			echo $customtaglist;
 		 } 
 	?>
