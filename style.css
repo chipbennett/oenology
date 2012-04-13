@@ -741,12 +741,6 @@ ul.page-numbers li {
 .postsnavlinks,
 .prevnextpostlinks {
 	display: inline;
-	float: right;
-	font-size: 16pt;
-}
-.postsnavlinks,
-.prevnextpostlinks {
-	display: inline;
 	float: none;
 	font-size: 16pt;
 }
