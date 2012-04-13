@@ -32,6 +32,12 @@ GNU General Public License for more details.</p>
 	<li>License URI: <a href="<?php echo get_template_directory_uri(); ?>/fonts/GUST-FONT-LICENSE.txt">/fonts/GUST-FONT-LICENSE.txt</a></li>
 </ol>
 
+<h3>Bundled Images</h3>
+<ol>
+	<li>Image sprites are custom-created, using bundled icons, listed below.</li>
+	<li>pxwhite.jpg is a single-pixel image, and not copyrightable</li>
+</ol>
+
 <h3>Bundled Icons</h3>
 
 <p>IconSweets2 Icons, Copyright 2010 YummyGum</p>

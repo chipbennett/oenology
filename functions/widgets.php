@@ -239,8 +239,7 @@ class oenology_widget_categories extends WP_Widget {
 	<ul class="leftcolcatlist">
 
 		<?php
-		 $catrssimg = "/images/rss.png";
-		 $catrssurl = get_template_directory_uri() . $catrssimg;
+		 $catrssurl = includes_url() . '/images/rss.png';
 		 $customcatlist ='';
 		 $customcats=  get_categories();
 		 foreach( $customcats as $customcat ) {
@@ -304,8 +303,7 @@ class oenology_widget_tags extends WP_Widget {
 	<ul class="leftcolcatlist">
 
 	<?php
-		 $tagrssimg = "/images/rss.png";
-		 $tagrssurl = get_template_directory_uri() . $tagrssimg;
+		 $tagrssurl = includes_url() . '/images/rss.png';
 		 $customtaglist ='';
 		 $customtags =  get_tags();
 		 foreach( $customtags as $customtag ) {
@@ -484,8 +482,7 @@ class oenology_widget_post_formats extends WP_Widget {
 	<ul class="leftcolcatlist">
 
 		<?php
-		 $postformatrssimg = "/images/rss.png";
-		 $postformatrssurl = get_template_directory_uri() . $postformatrssimg;
+		 $postformatrssurl = includes_url() . '/images/rss.png';
 		 $postformatterms = get_terms( 'post_format' );
 		 foreach( $postformatterms as $term ) {
 			$termslug = substr( $term->slug, 12 );

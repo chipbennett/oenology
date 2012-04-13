@@ -878,11 +878,12 @@ ul.page-numbers li {
 }
 
 .leftcolcatlist li {
+  display:block;
   clear:both;
   padding:0px;
   margin:0px;
   margin-bottom:0px;
-  height:1.5em;
+  min-height:1.5em;
   line-height:1.5em;
   border:0px solid black;
 }
@@ -898,7 +899,6 @@ ul.page-numbers li {
   margin:0px;
   padding:0px;
   padding-right:5px;
-  height:1.5em;
   line-height:1em;
 }
 .listarchives li {
