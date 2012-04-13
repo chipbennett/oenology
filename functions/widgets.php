@@ -48,60 +48,60 @@ add_action( 'after_setup_theme', 'oenology_setup_widgets', 11 );
  */
 function oenology_setup_widgets() {
 
-register_sidebar(array( // Top full-width widget area
-'name'=>'Sidebar Column Top',
-'id'=>'sidebar-column-top',
-'description' => 'Top, full-width sidebar in two-column layout',
-'before_widget' => '<div id="%1$s" class="widget %2$s">',
-'after_widget' => '</div>',
-'before_title' => '<div class="title widgettitle">',
-'after_title' => '</div>',
-));
-register_sidebar(array( // Left Column widget area
-'name'=>'Sidebar Left',
-'id'=>'sidebar-left',
-'description' => 'Left-column, half-width sidebar in three-column layout',
-'before_widget' => '<div id="%1$s" class="widget %2$s">',
-'after_widget' => '</div>',
-'before_title' => '<div class="title widgettitle">',
-'after_title' => '</div>',
-));
-register_sidebar(array( // Right Column widget area
-'name'=>'Sidebar Right',
-'id'=>'sidebar-right',
-'description' => 'Right-column, half-width sidebar in three-column layout',
-'before_widget' => '<div id="%1$s" class="widget %2$s">',
-'after_widget' => '</div>',
-'before_title' => '<div class="title">',
-'after_title' => '</div>',
-));
-register_sidebar(array( // Bottom full-width widget area
-'name'=>'Sidebar Column Bottom',
-'id'=>'sidebar-column-bottom',
-'description' => 'Bottom, full-width sidebar in two-column layout',
-'before_widget' => '<div id="%1$s" class="widget %2$s">',
-'after_widget' => '</div>',
-'before_title' => '<div class="title widgettitle">',
-'after_title' => '</div>',
-));
-register_sidebar(array( // Widget area beneath each Post content
-'name'=>'Post Entry Below',
-'id'=>'post-entry-below',
-'description' => 'Beneath Post content, before Post footer',
-'before_widget' => '<div id="%1$s" class="widget %2$s">',
-'after_widget' => '</div>',
-'before_title' => '<div class="title widgettitle">',
-'after_title' => '</div>',
-));
-register_sidebar(array( // Widget area below each Post
-'name'=>'Post Below',
-'id'=>'post-below',
-'description' => 'Beneath Post',
-'before_widget' => '<div id="%1$s" class="widget %2$s aligncenter">',
-'after_widget' => '</div>',
-'before_title' => '<div class="title widgettitle">',
-'after_title' => '</div>',
-));
+register_sidebar( array( // Top full-width widget area
+	'name'=>'Sidebar Column Top',
+	'id'=>'sidebar-column-top',
+	'description' => 'Top, full-width sidebar in two-column layout',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="title widgettitle">',
+	'after_title' => '</div>',
+) );
+register_sidebar( array( // Left Column widget area
+	'name'=>'Sidebar Left',
+	'id'=>'sidebar-left',
+	'description' => 'Left-column, half-width sidebar in three-column layout',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="title widgettitle">',
+	'after_title' => '</div>',
+) );
+register_sidebar( array( // Right Column widget area
+	'name'=>'Sidebar Right',
+	'id'=>'sidebar-right',
+	'description' => 'Right-column, half-width sidebar in three-column layout',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="title">',
+	'after_title' => '</div>',
+) );
+register_sidebar( array( // Bottom full-width widget area
+	'name'=>'Sidebar Column Bottom',
+	'id'=>'sidebar-column-bottom',
+	'description' => 'Bottom, full-width sidebar in two-column layout',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="title widgettitle">',
+	'after_title' => '</div>',
+) );
+register_sidebar( array( // Widget area beneath each Post content
+	'name'=>'Post Entry Below',
+	'id'=>'post-entry-below',
+	'description' => 'Beneath Post content, before Post footer',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="title widgettitle">',
+	'after_title' => '</div>',
+) );
+register_sidebar( array( // Widget area below each Post
+	'name'=>'Post Below',
+	'id'=>'post-below',
+	'description' => 'Beneath Post',
+	'before_widget' => '<div id="%1$s" class="widget %2$s aligncenter">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="title widgettitle">',
+	'after_title' => '</div>',
+) );
 
 } // function oenology_widget_setup()
 
