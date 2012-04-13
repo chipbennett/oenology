@@ -411,7 +411,7 @@ function oenology_hook_loop_header() {
 				$tax = ( is_category() ? 'category' : 'tag' );
 				$taxtitle = ( is_category() ? single_cat_title( '', false ) : single_tag_title( '', false ) );
 				global $wp_query;
-				$taxfeedlink = ( is_category() ? get_category_feed_link( $wp_query->get( 'cat_id' ) ) : get_tag_feed_link( $wp_query->get( 'tag_id' ) ) );
+				$taxfeedlink = ( is_category() ? get_category_feed_link( $wp_query->get( 'cat' ) ) : get_tag_feed_link( $wp_query->get( 'tag_id' ) ) );
 				$catdescription = ( ( is_category() && category_description() ) ? category_description() : false );
 				$tagdescription = ( ( is_tag() && tag_description() ) ? tag_description() : false );
 				$taxdesc = ( is_category() ? $catdescription : $tagdescription );
