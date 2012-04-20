@@ -84,11 +84,18 @@ function oenology_get_context() {
  * Get Current Page Layout
  */
 function oenology_get_current_page_layout() {
+	
+	// Use default layout for 404 pages
+	if ( is_404() ) {
+		return 'default';
+	}
+	
+	// Otherwise, determine appropriate layout
+	$layout = '';
 	global $post;
 	global $oenology_options;
 	$custom = ( get_post_custom( $post->ID ) ? get_post_custom( $post->ID ) : false );
 	$custom_layout = ( isset( $custom['_oenology_layout'][0] ) ? $custom['_oenology_layout'][0] : 'default' );	
-	$layout = '';
 	if ( ! is_admin() ) {
 		if ( is_attachment() ) {
 			$layout .= 'attachment';
