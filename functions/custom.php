@@ -792,22 +792,25 @@ function oenology_get_404_content() {
 		$oenology_404_tag .= '</ul>';
 	}
 
+	// Define "no results" output
 	$oenology_404_noresults = '';
 	$oenology_404_noresults .= '<p>';
 	$oenology_404_noresults .= __( 'I apologize.', 'oenology' ) . ' ';
 	$oenology_404_noresults .= __( 'For the life of me, I am unable to figure out what you were trying to find.', 'oenology' ) . ' ';
 	$oenology_404_noresults .= __( 'Perhaps try searching, using the search form in the upper right-hand corner?', 'oenology' );
 	$oenology_404_noresults .= '</p>';
-	$oenology_404_results = $oenology_404_intro . $oenology_404_posts . $oenology_404_pages . $oenology_404_category . $oenology_404_tag;
+	
+	// Concatenate "results" output
+	$oenology_404_results = apply_filters( 'oenology_404_intro', $oenology_404_intro ) . apply_filters( 'oenology_404_posts', $oenology_404_posts ) . apply_filters( 'oenology_404_pages', $oenology_404_pages ) . apply_filters( 'oenology_404_category', $oenology_404_category ) . apply_filters( 'oenology_404_tag', $oenology_404_tag );
 	
 	$oenology404noresults = false;
 
 	if ( $oenology404nopostsorpages && $oenology404nocategories && $oenology404notags ) {
 		$oenology404noresults = true;
 	}	
-	$oenology_404 = ( $oenology404noresults ? $oenology_404_noresults : $oenology_404_results );
+	$oenology_404 = ( $oenology404noresults ? apply_filters( 'oenology_404_noresults', $oenology_404_noresults ) : apply_filters( 'oenology_404_results', $oenology_404_results ) );
 	
-	return $oenology_404;
+	return apply_filters( 'oenology_404', $oenology_404 );
 }
 
 
