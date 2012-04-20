@@ -702,6 +702,8 @@ function oenology_get_404_content() {
 
 	if ( ! isset ( $oenology404suggestions ) || ! is_array( $oenology404suggestions ) || count( $oenology404suggestions ) == 0 )  { 
 		$oenology404nopostsorpages = true;
+		$oenology_404_posts = '';
+		$oenology_404_pages = '';
 	} else { 
 		$oenology404nopostsorpages = false;
 		
