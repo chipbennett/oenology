@@ -656,9 +656,17 @@ function oenology_get_404_content() {
 	// Variable to hold function output
 	$oenology_404 = '';
 	
+	// Variables to hold contextual output parts
+	$oenology_404_intro = '';
+	$oenology_404_posts = '';
+	$oenology_404_pages = '';
+	$oenology_404_category = '';
+	$oenology_404_tag = '';
+	$oenology_404_results = '';
+	$oenology_404_noresults = '';
+	
 	// Intro text
 	
-	$oenology_404_intro = '';
 	$oenology_404_intro .= '<p>';
 	$oenology_404_intro .= __( 'Oh no, not again.', 'oenology' );
 	$oenology_404_intro .= '</p>';
@@ -702,13 +710,10 @@ function oenology_get_404_content() {
 
 	if ( ! isset ( $oenology404suggestions ) || ! is_array( $oenology404suggestions ) || count( $oenology404suggestions ) == 0 )  { 
 		$oenology404nopostsorpages = true;
-		$oenology_404_posts = '';
-		$oenology_404_pages = '';
 	} else { 
 		$oenology404nopostsorpages = false;
 		
 		// Display list of post suggestions
-		$oenology_404_posts = '';
 		$suggestedposts = $oenology404postsuggestions;
 		if ( $suggestedposts > 0 ) {
 		
@@ -739,7 +744,6 @@ function oenology_get_404_content() {
 		}
 		
 		// Display list of page suggestions
-		$oenology_404_pages = '';
 		$suggestedpages = $oenology404pagesuggestions;
 		if ( $suggestedpages > 0 ) {
 			
@@ -771,7 +775,6 @@ function oenology_get_404_content() {
 	}
 		
 	// See if we've matched a category
-	$oenology_404_category = '';
 	$oenology404nocategories = true;
 	$categories = get_categories( array ( "name__like" => $search ) );
 	if ( count( $categories ) > 0 ) { 
@@ -786,7 +789,6 @@ function oenology_get_404_content() {
 		$oenology_404_category .= '</ul>';
 	}
 	// See if we've matched a tag
-	$oenology_404_tag = '';
 	$oenology404notags = true;
 	$tags = get_tags( array ( "name__like" => $search ) );
 	if ( count( $tags ) > 0 ) { 
@@ -802,7 +804,6 @@ function oenology_get_404_content() {
 	}
 
 	// Define "no results" output
-	$oenology_404_noresults = '';
 	$oenology_404_noresults .= '<p>';
 	$oenology_404_noresults .= __( 'I apologize.', 'oenology' ) . ' ';
 	$oenology_404_noresults .= __( 'For the life of me, I am unable to figure out what you were trying to find.', 'oenology' ) . ' ';
