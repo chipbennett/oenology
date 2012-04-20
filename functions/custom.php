@@ -785,11 +785,11 @@ function oenology_get_404_content() {
 		$oenology404notags = false;		
 		
 		$oenology_404_tag = '<p>' . __( 'Perhaps you were looking for something with one of the following tags?', 'oenology' ) . '</p>';
-		$oenology_404_tag = '<ul class="oenology404_suggestions">';
+		$oenology_404_tag .= '<ul class="oenology404_suggestions">';
 		foreach ( $tags as $tag ) {
-			$oenology_404_tag = '<li><a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
+			$oenology_404_tag .= '<li><a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
 		}
-		$oenology_404_tag = '</ul>';
+		$oenology_404_tag .= '</ul>';
 	}
 
 	$oenology_404_noresults = '';
