@@ -692,4 +692,25 @@ function oenology_get_settings_page_tabs() {
     );
 	return $tabs;
 }
+
+/**
+ * Add Section Text for the Varietal Settings Section
+ */
+function oenology_get_varietal_text() {
+
+	$oenology_options = oenology_get_options();
+	$option_parameters = oenology_get_option_parameters();
+	$oenology_varietals = $option_parameters['varietal']['valid_options'];
+	foreach ( $oenology_varietals as $varietal ) {
+		if ( $varietal['name'] == $oenology_options['varietal'] ) {
+		      $oenology_current_varietal = $varietal;
+		}
+	}
+	$text = '';
+	$text .= '<p>"Varietal" refers to wine made from exclusively or predominantly one variety of grape. Each varietal has unique flavor and aromatic characteristics. Refer to the contextual help screen for descriptions and help regarding each theme option.</p>';
+	$text .= '<img class="oenology-varietal-thumb" src="' . get_template_directory_uri() . '/varietals/' . $oenology_options['varietal'] . '.png' . '" width="150px" height="110px" alt="' . $oenology_options['varietal'] . '" />';
+	$text .= '<h4>Current Varietal</h4>';
+	$text .= '<dl><dt><strong>' . $oenology_current_varietal['title'] . '</strong></dt><dd>' . $oenology_current_varietal['description'] . '</dd></dl>';
+	return $text;
+}
 ?>

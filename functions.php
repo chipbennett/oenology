@@ -89,6 +89,15 @@ require( get_template_directory() . '/functions/widgets.php' );
 require( get_template_directory() . '/functions/options.php' );
 
 /**
+ * Include the Theme Options Theme Customizer Function File
+ * 
+ * options-customizer.php includes the functions required to 
+ * integrate the Theme options into the WordPress Theme
+ * Customizer.
+ */
+require( get_template_directory() . '/functions/options-customizer.php' );
+
+/**
  * Include the Theme Custom Hooks Function File
  * 
  * hooks.php includes the Theme's custom hooks
