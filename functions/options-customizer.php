@@ -34,8 +34,6 @@ function oenology_register_theme_customizer( $wp_customize ){
 
 	// Get the array of option parameters
 	$option_parameters = oenology_get_option_parameters();
-	// Get the array of option defaults
-	$option_defaults = oenology_get_option_defaults();
 	// Get list of tabs
 	$tabs = oenology_get_settings_page_tabs();
 

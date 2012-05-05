@@ -33,8 +33,9 @@ register_setting(
 	'oenology_options_validate' 
 );
 
+
 /**
- * Theme register_settin() sanitize callback
+ * Theme register_setting() sanitize callback
  * 
  * Validate and whitelist user-input data before updating Theme 
  * Options in the database. Only whitelisted options are passed
@@ -76,8 +77,9 @@ function oenology_options_validate( $input ) {
 			$submittab = $tab['name'];
 		}
 	}
+	global $wp_customize;
 	// Get settings by tab
-	$tabsettings = $settingsbytab[$submittab];
+	$tabsettings = ( isset ( $wp_customize ) ? $settingsbytab['all'] : $settingsbytab[$submittab] );
 	// Loop through each tab setting
 	foreach ( $tabsettings as $setting ) {
 		// If no option is selected, set the default

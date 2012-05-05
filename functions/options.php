@@ -518,36 +518,6 @@ function oenology_get_option_parameters() {
 			'since' => '2.5',
 			'default' => 'always'
 		),
-        'default_options_tab' => array(
-			'name' => 'default_options_tab',
-			'title' => 'Default Options Page Tab',
-			'type' => 'internal',
-			'description' => '',
-			'section' => false,
-			'tab' => false,
-			'since' => '2.3',
-			'default' => 'varietals'
-		),
-        'default_reference_tab' => array(
-			'name' => 'default_reference_tab',
-			'title' => 'Default Reference Page Tab',
-			'type' => 'internal',
-			'description' => '',
-			'section' => false,
-			'tab' => false,
-			'since' => '2.3',
-			'default' => 'general'
-		),
-        'theme_version' => array(
-			'name' => 'theme_version',
-			'title' => 'Theme Version',
-			'type' => 'internal',
-			'description' => '',
-			'section' => false,
-			'tab' => false,
-			'since' => '1.2',
-			'default' => '2.3'
-		)
     );
     return $options;
 }
@@ -610,15 +580,13 @@ function oenology_get_settings_by_tab() {
 	// Loop through the option parameters
 	// array
 	foreach ( $option_parameters as $option_parameter ) {
-		// Ignore "internal" type options
-		if ( 'internal' != $option_parameter['type'] ) {
-			$optiontab = $option_parameter['tab'];
-			$optionname = $option_parameter['name'];
-			// Add an indexed array key to the 
-			// settings-by-tab array for each
-			// setting associated with each tab
-			$settingsbytab[$optiontab][] = $optionname;
-		}
+		$optiontab = $option_parameter['tab'];
+		$optionname = $option_parameter['name'];
+		// Add an indexed array key to the 
+		// settings-by-tab array for each
+		// setting associated with each tab
+		$settingsbytab[$optiontab][] = $optionname;
+		$settingsbytab['all'][] = $optionname;
 	}
 	// Return the settings-by-tab
 	// array
