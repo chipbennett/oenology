@@ -306,13 +306,13 @@ function oenology_get_github_api_data( $context = 'commits', $status = 'open', $
 			$reportid = $object->number;
 			$message = $object->title;
 			$label = $object->labels;
-			$label = $label[0];
-				$labelname = $label->name;
-				$labelcolor = $label->color;
+			$label = ( isset( $label[0] ) ? $label[0] : 'n/a' );
+				$labelname = ( isset( $label->name ) ? $label->name : 'n/a' );
+				$labelcolor = ( isset( $label->color ) ? $label->color : 'n/a' );
 			$objecttime = $object->$reportobject;
 			$milestoneobj = $object->milestone;
-			$milestonetitle = $milestoneobj->title;
-			$milestonenumber = $milestoneobj->number;
+			$milestonetitle = ( isset( $milestoneobj->title ) ? $milestoneobj->title : 'n/a' );
+			$milestonenumber = ( isset( $milestoneobj->number ) ? $milestoneobj->number : 'n/a' );
 		} else if ( 'commits' == $context ) {				
 			$url = 'https://github.com/' . $branch . '/commit/' . $object->sha;
 			$reportid = substr( $object->sha, 0, 6 );
@@ -468,21 +468,11 @@ function oenology_get_post_formats() {
  */
 function oenology_get_page_tab_markup() {
 
-	$page = 'oenology-settings';	
-	
-	if ( isset( $_GET['page'] ) && 'oenology-reference' == $_GET['page'] ) {
-		$page = 'oenology-reference';
-	}
+	$page = 'oenology-settings';
 
     $current = oenology_get_current_tab();
 	
-	$tabs = array();
-	
-	if ( 'oenology-settings' == $page ) {
-        $tabs = oenology_get_settings_page_tabs();
-	} else if ( 'oenology-reference' == $page ) {
-        $tabs = oenology_get_reference_page_tabs();
-	}
+	$tabs = oenology_get_settings_page_tabs();
     
     $links = array();
     
