@@ -46,7 +46,7 @@ function oenology_enqueue_content_img_max_width() {
 </style>
 <?php
 }
-// Enqueue Varietal Stylesheet at wp_print_styles()
+// Enqueue Varietal Stylesheet at wp_print_styles
 add_action( 'wp_print_styles', 'oenology_enqueue_content_img_max_width', 11 );
 
 /**
@@ -83,7 +83,7 @@ function oenology_enqueue_varietal_style() {
 	
 	wp_enqueue_style( $varietal_handle, $varietal_stylesheet );
 }
-// Enqueue Varietal Stylesheet at wp_print_styles()
+// Enqueue Varietal Stylesheet at wp_print_styles
 add_action('wp_enqueue_scripts', 'oenology_enqueue_varietal_style', 11 );
 
 
@@ -108,7 +108,16 @@ function oenology_get_color_scheme() {
 /**
  * Enqueue Social Icon Styles
  */
-function oenology_enqueue_social_icon_style() { 
+function oenology_enqueue_social_icon_style() {
+	
+	// Get Theme options
+	$oenology_options = oenology_get_options();
+
+	// If we're not displaying social icons,
+	// no need to proceed
+	if( false == $oenology_options['display_social_icons'] ) {
+        return;
+	}
 	
 	$socialiconbgposition = array(
 		'aim' => array(
@@ -272,37 +281,34 @@ function oenology_enqueue_social_icon_style() {
 		$linkhovercolor = 'silver';
 	}
 	
-	$oenology_options = oenology_get_options();
-	
 ?>
 
 <style type="text/css">
+<?php 
+	if ( 'none' != $oenology_options['rss_feed'] ) { 
+		?>
 a[class="sidebar-social-icon"][title ^="RSS"] {
-	background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
-	background-position: <?php echo $socialiconbgposition['rss'][$linkcolor]['x'] . 'px ' . $socialiconbgposition['rss'][$linkcolor]['y'] . 'px'; ?>;
+    background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
+    background-position: <?php echo $socialiconbgposition['rss'][$linkcolor]['x'] . 'px ' . $socialiconbgposition['rss'][$linkcolor]['y'] . 'px'; ?>;
 }
 a[class="sidebar-social-icon"][title ^="RSS"]:hover {
-	background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
-	background-position: <?php echo $socialiconbgposition['rss'][$linkhovercolor]['x'] . 'px ' . $socialiconbgposition['rss'][$linkhovercolor]['y'] . 'px'; ?>;
+    background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
+    background-position: <?php echo $socialiconbgposition['rss'][$linkhovercolor]['x'] . 'px ' . $socialiconbgposition['rss'][$linkhovercolor]['y'] . 'px'; ?>;
 }
-<?php 
-foreach ( $socialnetworks as $network ) { 
-
-	$linkposx = '0';
-	$linkposy = '0';
-	$hoverposx = '0';
-	$hoverposy = '0';
-	foreach ( $socialiconbgposition as $bg ) {
-		if ( $network['name'] == $bg['name'] ) {
-			$linkposx = $bg[$linkcolor]['x'];
-			$linkposy = $bg[$linkcolor]['y'];
-			$hoverposx = $bg[$linkhovercolor]['x'];
-			$hoverposy = $bg[$linkhovercolor]['y'];
-		}
+		<?php 
 	}
-	$profile = $network['name'] . '_profile';
-	if ( isset( $oenology_options[$profile] ) ) {
-?>
+	foreach ( $socialnetworks as $network ) {
+
+		$profile = $network['name'] . '_profile';
+
+		if ( isset( $oenology_options[$profile] ) && '' != $oenology_options[$profile] ) {
+			// Get background link and hover positions
+			$linkposx = $socialiconbgposition[$network['name']][$linkcolor]['x'];
+			$linkposy = $socialiconbgposition[$network['name']][$linkcolor]['y'];
+			$hoverposx = $socialiconbgposition[$network['name']][$linkhovercolor]['x'];
+			$hoverposy = $socialiconbgposition[$network['name']][$linkhovercolor]['y'];
+			
+		?>
 a[class="sidebar-social-icon"][title ^="<?php echo $network['title']; ?>"] {
 	background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
 	background-position: <?php echo $linkposx . 'px ' . $linkposy . 'px'; ?>;
@@ -311,15 +317,16 @@ a[class="sidebar-social-icon"][title ^="<?php echo $network['title']; ?>"]:hover
 	background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
 	background-position: <?php echo $hoverposx . 'px ' . $hoverposy . 'px'; ?>;
 }
-<?php 
-	} 
-}
-?>
+		<?php 
+		} 
+	}
+	?>
 </style>
 	
-<?php }
-// Enqueue Varietal Stylesheet at wp_print_styles()
-add_action('wp_print_styles', 'oenology_enqueue_social_icon_style', 11 );
+<?php 
+}
+// Enqueue Varietal Stylesheet at wp_print_styles
+add_action( 'wp_print_styles', 'oenology_enqueue_social_icon_style', 11 );
 
 /**
  * Return Post Formats whose icons display in the Post Entry
@@ -593,7 +600,7 @@ body.single-format-<?php echo get_post_format(); ?> .post.format-<?php echo get_
 	
 <?php 
 }
-// Enqueue Varietal Stylesheet at wp_print_styles()
+// Enqueue Varietal Stylesheet at wp_print_styles
 add_action( 'wp_print_styles', 'oenology_enqueue_post_format_icon_style', 11 );
 
 /**
