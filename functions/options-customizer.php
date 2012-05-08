@@ -49,7 +49,7 @@ function oenology_register_theme_customizer( $wp_customize ){
 	foreach ( $option_parameters as $option_parameter ) {
 		// Add $option_parameter setting
 		$wp_customize->add_setting( 'theme_oenology_options[' . $option_parameter['name'] . ']', array(
-			'default'        => $oenology_options[$option_parameter['name']],
+			'default'        => $option_parameter['default'],
 			'type'           => 'option',
 		) );
 
