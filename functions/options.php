@@ -519,7 +519,7 @@ function oenology_get_option_parameters() {
 			'default' => 'always'
 		),
     );
-    return $options;
+    return apply_filters( 'oenology_get_option_parameters', $options );
 }
 
 /**
@@ -658,7 +658,7 @@ function oenology_get_settings_page_tabs() {
 			)
 		),
     );
-	return $tabs;
+	return apply_filters( 'oenology_get_settings_page_tabs', $tabs );
 }
 
 /**
