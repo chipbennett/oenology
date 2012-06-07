@@ -8,8 +8,8 @@
  * and Settings API functions
  * 
  * Action Hooks:
+ * - comment_form_before
  * - option_page_capability_{page}
- * - wp_enqueue_scripts
  * 
  * Filter Hooks
  * - body_class
@@ -68,7 +68,7 @@ add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_p
 /**
  * Enqueue comment-reply script
  * 
- * Action Hook: wp_enqueue_scripts
+ * Action Hook: comment_form_before
  * 
  * Enqueues the comment-reply script only
  * when appropriate; i.e. when the current
@@ -77,9 +77,20 @@ add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_p
  * the site is configured to display threaded 
  * comments.
  * 
- * @link	http://codex.wordpress.org/Function_Reference/is_singular	Codex Reference: is_singular()
- * @link	http://codex.wordpress.org/Function_Reference/comments_open	Codex Reference: comments_open()
- * @link	http://codex.wordpress.org/Function_Reference/get_option	Codex Reference: get_option()
+ * Since Oenology 2.6, this callback is hooked
+ * into 'comment_form_before' instead of being 
+ * hooked into 'wp_enqueue_scripts'. Using the 
+ * 'comment_form_before' hook, which fires as 
+ * part of the comment_form() template tag 
+ * output, eliminates the need for the comments_open() 
+ * and is_singluar() conditional checks, since the
+ * comment_form() template tag only outputs on 
+ * singular pages with comments open. Using the 
+ * 'comment_form_before' hook to call wp_enqueue_script() 
+ * requires WordPress 3.3, in order to perform 
+ * inline script enqueueing.
+ * 
+ * @link	http://codex.wordpress.org/Function_Reference/get_option		Codex Reference: get_option()
  * @link	http://codex.wordpress.org/Function_Reference/wp_enqueue_script	Codex Reference: wp_enqueue_script()
  * 
  * @since	Oenology 2.0
@@ -89,26 +100,19 @@ function oenology_enqueue_comment_reply() {
 	//single blog post pages with comments 
 	// open and threaded comments
 	if ( 
-			// WordPress conditional the returns true if
-			// the current page is a Single Blog Post, 
-			// Static Page, or Attachment page
-			is_singular() 
-			// WordPress conditional that returns true if
-			// comments are open for the current post
-		 && comments_open() 
-			// Returns the value for the specified option.
-			// 'thread_comments' is a Boolean option where
-			// comments are threaded if TRUE, and flat if 
-			// FALSE
-		 && get_option( 'thread_comments' ) 
+		// Returns the value for the specified option.
+		// 'thread_comments' is a Boolean option where
+		// comments are threaded if TRUE, and flat if 
+		// FALSE
+		get_option( 'thread_comments' ) 
 	) { 
 		// enqueue the javascript that performs 
 		//in-link comment reply fanciness
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 }
-// Hook into wp_enqueue_scripts
-add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
+// Hook into comment_form_before
+add_action( 'comment_form_before', 'oenology_enqueue_comment_reply' );
 
 
 /**
@@ -131,6 +135,32 @@ function oenology_filter_body_class( $classes ) {
 }
 // Hook custom classes into 'body_class'
 add_filter( 'body_class', 'oenology_filter_body_class' );
+
+
+
+/**
+ * Filter Widget Title
+ * 
+ * Filter Hook: widget_title
+ * 
+ * Filter 'widget_title' to output
+ * a non-breaking space (&nbsp;) if
+ * no title is defined. This output 
+ * is necessary in order for the 
+ * custom $after_widget output, that 
+ * wraps the Widget content in a 
+ * show/hide container, to be rendered.
+ * 
+ * @since	Oenology 2.6
+ */
+function oenology_filter_widget_title( $title ) {
+	if ( $title ) {
+		return $title;
+	} else {
+		return '&nbsp';
+	}
+}
+add_filter( 'widget_title', 'oenology_filter_widget_title' );
 
 /**
  * Output number of comments, excluding pings
