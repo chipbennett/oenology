@@ -15,6 +15,7 @@
 /**
  * Add Layout Meta Box
  * 
+ * @uses	__()
  * @uses	add_meta_box()
  */
 function oenology_add_layout_meta_box( $post ) {
@@ -23,8 +24,22 @@ function oenology_add_layout_meta_box( $post ) {
 	$context = 'side'; // 'normal', 'side', 'advanced'
 	$priority = 'default'; // 'high', 'core', 'low', 'default'
 
-    add_meta_box( 'oenology_layout', __( 'Single Post Layout', 'oenology' ), 'oenology_layout_meta_box', 'post', $context, $priority );
-    add_meta_box( 'oenology_layout', __( 'Static Page Layout', 'oenology' ), 'oenology_layout_meta_box', 'page', $context, $priority );
+    add_meta_box( 
+		'oenology_layout', 
+		__( 'Single Post Layout', 'oenology' ), 
+		'oenology_layout_meta_box', 
+		'post', 
+		$context, 
+		$priority 
+	);
+    add_meta_box( 
+		'oenology_layout', 
+		__( 'Static Page Layout', 'oenology' ), 
+		'oenology_layout_meta_box', 
+		'page', 
+		$context, 
+		$priority 
+	);
 	
 }
 // Hook meta boxes into 'add_meta_boxes'
@@ -43,6 +58,7 @@ add_action( 'add_meta_boxes', 'oenology_add_layout_meta_box' );
  * context.
  * 
  * @uses	oenology_get_option_parameters()	Defined in \functions\options.php
+ * @uses	checked()
  * @uses	get_post_custom()
  */
 function oenology_layout_meta_box() {
