@@ -33,8 +33,6 @@
 //
 // Calls the core "Calendar" Widget, with no Title
 the_widget('WP_Widget_Calendar' , 'title=' , oenology_get_widget_args() );
-// Calls the custom Widget "Oenology Links by Cat", with Widget name as Title
-the_widget( 'oenology_widget_linkrollbycat' , 'title=Oenology Links by Cat' , oenology_get_widget_args() );
 // Calls the core "Meta" Widget, with "Meta" as Title
 the_widget('WP_Widget_Meta' , 'title=Meta' , oenology_get_widget_args() );
 ?>
