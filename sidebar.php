@@ -31,23 +31,28 @@ global $oenology_options;
 
 // Do not display sidebars on attachment pages or posts with 
 // format-types "gallery", "image", or "video"
-if ( ! in_array( oenology_get_current_page_layout(), array( 'one-column', 'attachment', 'full' ) ) ) { 
+if ( in_array( oenology_get_current_page_layout(), array( 'one-column', 'attachment', 'full' ) ) ) { 
+	return;
+}
+
+// Current layout is not three-column
+if ( 'three-column' != oenology_get_current_page_layout() ) {
+
+	?>
+	<div id="sidebar-doublecol">
+	<?php
+
 	// Only display div#doublecoltop if dynamic sidebar 
 	// 'sidebar-column-top is active, or if the Theme is 
-	// set to display social icons, and the current layout
-	// is not three-columns
+	// set to display social icons
 	if 
 	( 
-	   (    
-	        // WordPress conditional tag that returns true if the 
-	        // specified dynamic sidebar is active (has Widgets
-	        // assigned to it)
-	        is_active_sidebar( 'sidebar-column-top' ) 
-	        // Boolean Theme option
-	     || $oenology_options['display_social_icons'] 
-		)
-	      // Current layout is not three-column
-	   && 'three-column' != oenology_get_current_page_layout()
+		// WordPress conditional tag that returns true if the 
+		// specified dynamic sidebar is active (has Widgets
+		// assigned to it)
+		is_active_sidebar( 'sidebar-column-top' ) 
+		// Boolean Theme option
+	 || $oenology_options['display_social_icons'] 
 	) { 
 		?>
 		<?php
@@ -119,101 +124,101 @@ if ( ! in_array( oenology_get_current_page_layout(), array( 'one-column', 'attac
 		<!-- End Sidebar Top Widget Area-->
 		</div>
 		<?php 
+	}
+}
+?>
+
+<!-- Begin Left Column (div#leftcol) -->
+<?php
+// div#leftcol contains the left column content of the three-column 
+// layout. For the Blog Posts Index, div#rightcol and div#leftcol both
+// appear to the right of the main content column. For static Pages,
+// including a static Page as Front Page, div#leftcol is to the left, 
+// and div#rightcol is to the right, with div#main in the center.
+// 
+// Includes the 'sidebar-left' dynamic sidebar
+?>
+<div id="leftcol">
+<!-- Begin Left Column Widget Area-->
+	<?php 
+	// Display default sidebar content if the following conditions are true:
+	//  - Dynamic sidebar 'sidebar-right' is not active, AND
+	//  - A static Page as Front Page is not being displayed
+	if ( 
+	// WordPress conditional tag that returns true if the 
+	// specified dynamic sidebar is active
+	! dynamic_sidebar( 'sidebar-left' ) 
+	&& ! ( 
+		// WordPress conditional tag that returns true if 
+		// the current page is the Front Page
+			is_front_page() 
+		// Returns true if the Front Page is set to display a 
+		// static Page
+		&& 'page' == get_option('show_on_front') ) 
+	) {
+		// Calls a sidebar template part file.
+		// Used in all primary template pages.
+		//
+		// Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
+		// 
+		// Child Themes can replace this template part file globally, 
+		// via "sidebar-left.php"
+		get_sidebar( 'left' ); 
 	} 
 	?>
-	
-	<!-- Begin Left Column (div#leftcol) -->
-	<?php
-	// div#leftcol contains the left column content of the three-column 
-	// layout. For the Blog Posts Index, div#rightcol and div#leftcol both
-	// appear to the right of the main content column. For static Pages,
-	// including a static Page as Front Page, div#leftcol is to the left, 
-	// and div#rightcol is to the right, with div#main in the center.
-	// 
-	// Includes the 'sidebar-left' dynamic sidebar
-	?>
-	<div id="leftcol">
-	<!-- Begin Left Column Widget Area-->
-		<?php 
-		// Display default sidebar content if the following conditions are true:
-		//  - Dynamic sidebar 'sidebar-right' is not active, AND
-		//  - A static Page as Front Page is not being displayed
-		if ( 
-		// WordPress conditional tag that returns true if the 
-		// specified dynamic sidebar is active
-		! dynamic_sidebar( 'sidebar-left' ) 
-		&& ! ( 
-			// WordPress conditional tag that returns true if 
-			// the current page is the Front Page
-				is_front_page() 
-			// Returns true if the Front Page is set to display a 
-			// static Page
-			&& 'page' == get_option('show_on_front') ) 
-		) {
-			// Calls a sidebar template part file.
-			// Used in all primary template pages.
-			//
-			// Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
-			// 
-			// Child Themes can replace this template part file globally, 
-			// via "sidebar-left.php"
-			get_sidebar( 'left' ); 
-		} 
-		?>
-		<!-- End Left Column Widget Area-->
-	</div>
-	<!-- End Left Column (div#leftcol) -->
+	<!-- End Left Column Widget Area-->
+</div>
+<!-- End Left Column (div#leftcol) -->
 
-	<!-- Begin Right Column (div#rightcol) -->
-	<?php
-	// div#rightcol contains the right column content of the three-column 
-	// layout. For the Blog Posts Index, div#rightcol and div#leftcol both
-	// appear to the right of the main content column. For static Pages,
-	// including a static Page as Front Page, div#leftcol is to the left, 
-	// and div#rightcol is to the right, with div#main in the center.
-	// 
-	// Includes the 'sidebar-right' dynamic sidebar
-	?>
-	<div id="rightcol">
-	<!-- Begin Right Column Widget Area-->
-		<?php 
-		// Display default sidebar content if the following conditions are true:
-		//  - Dynamic sidebar 'sidebar-right' is not active, AND
-		//  - A static Page as Front Page is not being displayed
-		if ( 
-		   // WordPress conditional tag that returns true if the 
-		   // specified dynamic sidebar is active
-		   ! dynamic_sidebar( 'sidebar-right' ) 
-		&& ! ( 
-			   // WordPress conditional tag that returns true if the 
-			   // current page is the Front Page
-				  is_front_page() 
-			   // Returns true if the Front Page is set to display a 
-			   // static Page
-			   && 'page' == get_option('show_on_front') ) 
-		) {
-			// Calls a sidebar template part file.
-			// Used in all primary template pages.
-			//
-			// Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
-			// 
-			// Child Themes can replace this template part file globally, 
-			// via "sidebar-right.php"
-			get_sidebar( 'right' ); 
-		} 
-		?>
-		<!-- End Right Column Widget Area -->
-	</div>
-	<!-- End Right Column (div#rightcol) -->		
+<!-- Begin Right Column (div#rightcol) -->
+<?php
+// div#rightcol contains the right column content of the three-column 
+// layout. For the Blog Posts Index, div#rightcol and div#leftcol both
+// appear to the right of the main content column. For static Pages,
+// including a static Page as Front Page, div#leftcol is to the left, 
+// and div#rightcol is to the right, with div#main in the center.
+// 
+// Includes the 'sidebar-right' dynamic sidebar
+?>
+<div id="rightcol">
+<!-- Begin Right Column Widget Area-->
 	<?php 
+	// Display default sidebar content if the following conditions are true:
+	//  - Dynamic sidebar 'sidebar-right' is not active, AND
+	//  - A static Page as Front Page is not being displayed
 	if ( 
 	   // WordPress conditional tag that returns true if the 
-	   // specified dynamic sidebar is active (has Widgets
-	   // assigned to it)
-	   is_active_sidebar( 'sidebar-column-bottom' ) 
-	   // Current page layout is not three-column
-	&& 'three-column' != oenology_get_current_page_layout()
-	) { 
+	   // specified dynamic sidebar is active
+	   ! dynamic_sidebar( 'sidebar-right' ) 
+	&& ! ( 
+		   // WordPress conditional tag that returns true if the 
+		   // current page is the Front Page
+			  is_front_page() 
+		   // Returns true if the Front Page is set to display a 
+		   // static Page
+		   && 'page' == get_option('show_on_front') ) 
+	) {
+		// Calls a sidebar template part file.
+		// Used in all primary template pages.
+		//
+		// Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
+		// 
+		// Child Themes can replace this template part file globally, 
+		// via "sidebar-right.php"
+		get_sidebar( 'right' ); 
+	} 
+	?>
+	<!-- End Right Column Widget Area -->
+</div>
+<!-- End Right Column (div#rightcol) -->		
+<?php 
+// Current page layout is not three-column
+if ( 'three-column' != oenology_get_current_page_layout() ) {
+
+	// WordPress conditional tag that returns true if the 
+	// specified dynamic sidebar is active (has Widgets
+	// assigned to it)
+	if ( is_active_sidebar( 'sidebar-column-bottom' ) ) {
 		// div#doublecolbottom is the bottom, right-colum content in the two-column
 		// layout. It displays only on static Pages, including static Page as
 		// Front Page, and is a double-width column, and displays above the 
@@ -236,6 +241,9 @@ if ( ! in_array( oenology_get_current_page_layout(), array( 'one-column', 'attac
 			<!-- End Sidebar Bottom Widget Area-->
 		</div>		
 		<?php 
-	} 
-} 
+	}
+	?>
+	</div>
+	<?php
+}
 ?>
