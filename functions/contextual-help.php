@@ -40,7 +40,8 @@
  * @link 		http://codex.wordpress.org/Function_Reference/get_current_screen		get_current_screen()
  * @link 		http://codex.wordpress.org/Function_Reference/get_template_directory	get_template_directory()
  * 
- * @link 		http://php.net/manual/en/function.file-get-contents.php					file_get_contents()
+ * @link 		http://php.net/manual/en/function.file.php								file()
+ * @link 		http://php.net/manual/en/function.implode.php							implode()
  * @link 		http://php.net/manual/en/function.include.php							include()
  * 
  * @since	Oenology 2.5
@@ -61,7 +62,7 @@ function oenology_settings_page_contextual_help() {
 		// Tab Title
 		'title'   => __( 'Settings - Varietals', 'oenology' ),
 		// Tab content
-		'content' => file_get_contents( get_template_directory() . '/help/settings-varietal.htm' ),
+		'content' => implode( '', file( get_template_directory() . '/help/settings-varietal.htm' ) ),
 	) );
 	// Add Settings - Layout help screen tab
 	$screen->add_help_tab( array(
@@ -70,7 +71,7 @@ function oenology_settings_page_contextual_help() {
 		// Tab title
 		'title'   => __( 'Settings - Layout', 'oenology' ),
 		// Tab content
-		'content' => file_get_contents( get_template_directory() . '/help/settings-layout.htm' ),
+		'content' => implode( '', file( get_template_directory() . '/help/settings-layout.htm' ) ),
 	) );
 	// Add Settings - General help screen tab
 	$screen->add_help_tab( array(
@@ -79,7 +80,7 @@ function oenology_settings_page_contextual_help() {
 		// Tab Title
 		'title'   => __( 'Settings - General', 'oenology' ),
 		// Tab content
-		'content' => file_get_contents( get_template_directory() . '/help/settings-general.htm' ),
+		'content' => implode( '', file( get_template_directory() . '/help/settings-general.htm' ) ),
 	) );
 	// Add Theme Features help screen tab
 	$screen->add_help_tab( array(
@@ -88,7 +89,7 @@ function oenology_settings_page_contextual_help() {
 		// Tab title
 		'title'   => __( 'Theme Features', 'oenology' ),
 		// Tab content
-		'content' => file_get_contents( get_template_directory() . '/help/features.htm' ),
+		'content' => implode( '', file( get_template_directory() . '/help/features.htm' ) ),
 	) );
 	// Add FAQ Reference help screen tab
 	$screen->add_help_tab( array(
@@ -97,7 +98,7 @@ function oenology_settings_page_contextual_help() {
 		// Tab title
 		'title'   => __( 'FAQ', 'oenology' ),
 		// Tab content
-		'content' => file_get_contents( get_template_directory() . '/help/faq.htm' ),
+		'content' => implode( '', file( get_template_directory() . '/help/faq.htm' ) ),
 	) );
 	// Add Code Ref Reference help screen tab
 	$screen->add_help_tab( array(
@@ -106,14 +107,14 @@ function oenology_settings_page_contextual_help() {
 		// Tab title
 		'title'   => __( 'Code Reference', 'oenology' ),
 		// Tab content
-		'content' => file_get_contents( get_template_directory() . '/help/coderef.htm' ), 
+		'content' => implode( '', file( get_template_directory() . '/help/coderef.htm' ) ), 
 	) );
 	// Add Change Log Reference help screen tab
 	$screen->add_help_tab( array(
 		// HTML ID attribute
 		'id'      => 'oenology-changelog',
 		'title'   => __( 'Change Log', 'oenology' ),
-		'content' => file_get_contents( get_template_directory() . '/help/changelog.htm' ),
+		'content' => implode( '', file( get_template_directory() . '/help/changelog.htm' ) ),
 	) );
 	// Add License Reference help screen tab
 	$screen->add_help_tab( array(
@@ -122,7 +123,7 @@ function oenology_settings_page_contextual_help() {
 		// Tab title
 		'title'   => __( 'License', 'oenology' ),
 		// Tab content
-		'content' => file_get_contents( get_template_directory() . '/help/license.htm' ),
+		'content' => implode( '', file( get_template_directory() . '/help/license.htm' ) ),
 	) );
 	// Add Support Reference help screen tab
 	$screen->add_help_tab( array(
