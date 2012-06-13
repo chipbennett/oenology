@@ -469,7 +469,8 @@ pre {
 }
 #leftcol {
   display:inline;
-  width:165px;
+  width:160px;
+  margin-bottom: 20px;
   padding:0px;
   padding-left:10px;
   float:left;
@@ -494,22 +495,21 @@ pre {
 .layout-two-column-right #leftcol {
 	padding-left:5px;
 }
+#sidebar-doublecol {
+	float: right;
+	width: 335px;
+}
 #doublecoltop,
 #doublecolbottom {
   display:inline;
   width:325px;
   margin-bottom: 20px;
+  margin-left: 0px;
   padding:0px;
   padding-left:10px;
   float:right;
   text-align:left;
   vertical-align:top;
-}
-#doublecolbottom {
-	margin-left: 660px;
-}
-#home #doublecolbottom {
-	margin-left:0;
 }
 #main {
   display:inline;
@@ -555,6 +555,7 @@ body.layout-full #main,
 #rightcol {
   display:inline;
   width:160px;
+  margin-bottom: 20px;
   padding-left: 5px;
   float:right;
   vertical-align:top;
