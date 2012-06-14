@@ -240,7 +240,7 @@ function oenology_get_custom_tag_list() {
  * 
  * @return	string	table of formatted API data
  */
-function oenology_get_github_api_data( $context = 'commits', $status = 'open', $milestone = '7', $roadmap = false, $currentrelease = '2.6', $releasedate = '2011-12-16', $user = 'chipbennett', $repo = 'oenology' ) {
+function oenology_get_github_api_data( $context = 'commits', $status = 'open', $milestone = '8', $roadmap = false, $currentrelease = '2.7', $releasedate = '2012-06-15', $user = 'chipbennett', $repo = 'oenology' ) {
 
 	$capability = 'read';
 
