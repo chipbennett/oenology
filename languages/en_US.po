@@ -1,0 +1,883 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: oenology\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-14 08:54-0600\n"
+"PO-Revision-Date: 2012-06-14 08:55-0600\n"
+"Last-Translator: Chip Bennett <chip@chipbennett.net>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SearchPath-0: /home/chipbennett/Development/WordPress/themes/oenology/git\n"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:12
+msgid "Support options and links for Oenology"
+msgstr "Support options and links for Oenology"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:15
+msgid "Oenology Support Options"
+msgstr "Oenology Support Options"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:17
+msgid "For Oenology support, please use one of the below options. I will do my best to fix all bug reports as quickly as possible, and to respond to all support queries."
+msgstr "An incidental remark; digression: a message that departs from the main subject."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:18
+msgid "Bug Reports and Feature Requests:"
+msgstr "Bug Reports and Feature Requests:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:21
+msgid "Submit a bug report or feature request"
+msgstr "Submit a bug report or feature request"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:23
+msgid "Note: requires a (free) GitHub account."
+msgstr "Note: requires a (free) GitHub account."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:25
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:39
+msgid "Use this option for the following types of issues:"
+msgstr "Use this option for the following types of issues:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:27
+msgid "Theme functionality, style, or design is broken"
+msgstr "Theme functionality, style, or design is broken"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:28
+msgid "Theme functionality, style, or design doesn't work right, or as expected"
+msgstr "Theme functionality, style, or design doesn't work right, or as expected"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:29
+msgid "Theme functionality, style, or design could be improved"
+msgstr "Theme functionality, style, or design could be improved"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:30
+msgid "Theme functionality or feature could be added"
+msgstr "Theme functionality or feature could be added"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:32
+msgid "General Support Requests:"
+msgstr "General Support Requests:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:35
+msgid "Submit a general support request"
+msgstr "Submit a general support request"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:37
+msgid "Note: requires a (free) WordPress.org account."
+msgstr "Note: requires a (free) WordPress.org account."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:41
+msgid "Help with using the Theme"
+msgstr "Help with using the Theme"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:42
+msgid "Help with Theme options"
+msgstr "Help with Theme options"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:43
+msgid "Help with modifying the Theme"
+msgstr "Help with modifying the Theme"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:49
+msgid "Open Oenology Bug Reports"
+msgstr "Open Oenology Bug Reports"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:50
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:59
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:76
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:85
+msgid "See All"
+msgstr "See All"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:58
+msgid "Latest Oenology Support Topics"
+msgstr "Latest Oenology Support Topics"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:62
+msgid "Coming back soon)"
+msgstr "Coming back soon)"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:67
+msgid "Oenology Roadmap"
+msgstr "Oenology Roadmap"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:75
+msgid "Oenology Bug Reports Closed Since Last Release"
+msgstr "Oenology Bug Reports Closed Since Last Release"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/help/support.php:84
+msgid "Oenology Development Commits Since Last Release"
+msgstr "Oenology Development Commits Since Last Release"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/post-custom-meta.php:29
+msgid "Single Post Layout"
+msgstr "Single Post Layout"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/post-custom-meta.php:37
+msgid "Static Page Layout"
+msgstr "Static Page Layout"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/wordpress-hooks.php:217
+msgid "Untitled"
+msgstr "Untitled"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:63
+msgid "Settings - Varietals"
+msgstr "Settings - Varietals"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:72
+msgid "Settings - Layout"
+msgstr "Settings - Layout"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:81
+msgid "Settings - General"
+msgstr "Settings - General"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:90
+msgid "Theme Features"
+msgstr "Theme Features"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:99
+msgid "FAQ"
+msgstr "FAQ"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:108
+msgid "Code Reference"
+msgstr "Code Reference"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:116
+msgid "Change Log"
+msgstr "Change Log"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:124
+msgid "License"
+msgstr "License"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/contextual-help.php:133
+msgid "Theme Support"
+msgstr "Theme Support"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:418
+msgid "Posts filed under "
+msgstr "Posts filed under "
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:452
+msgid "Search"
+msgstr "Search"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:452
+msgid "to inquire, investigate, examine, or seek; conduct an examination or investigation."
+msgstr "to inquire, investigate, examine, or seek; conduct an examination or investigation."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:452
+msgid "Below are all posts and pages related to the indicated search query."
+msgstr "Below are all posts and pages related to the indicated search query."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:471
+msgid "Not Found"
+msgstr "Not Found"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:472
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "Sorry, but you are looking for something that isn't here."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:593
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:697
+msgid "Edit"
+msgstr "Edit"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:669
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Permanent Link to %s"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:669
+msgid "Permalink"
+msgstr "Permalink"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:678
+msgid "Shortlink"
+msgstr "Shortlink"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:682
+#, php-format
+msgid "Comment on %s"
+msgstr "Comment on %s"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:683
+msgid "Comments"
+msgstr "Comments"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:687
+#, php-format
+msgid "Trackback to %s"
+msgstr "Trackback to %s"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:687
+msgid "Trackback"
+msgstr "Trackback"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:727
+#, php-format
+msgid "Filed in %s"
+msgstr "Filed in %s"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:732
+#, php-format
+msgid "Tags: %s"
+msgstr "Tags: %s"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/hooks.php:846
+#, php-format
+msgid "Powered by %s"
+msgstr "Powered by %s"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:58
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:61
+msgid "Oenology Options"
+msgstr "Oenology Options"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:95
+msgid "Theme settings updated successfully."
+msgstr "Theme settings updated successfully."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:106
+msgid "Save Settings"
+msgstr "Save Settings"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:107
+msgid "Reset Defaults"
+msgstr "Reset Defaults"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:164
+msgid "Header Nav Menu Position"
+msgstr "Header Nav Menu Position"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:169
+msgid "Above"
+msgstr "Above"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:173
+msgid "Below"
+msgstr "Below"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:177
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:237
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:315
+msgid "Do Not Display"
+msgstr "Do Not Display"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:180
+msgid "Display header navigation menu above or below the site title/description?"
+msgstr "Display header navigation menu above or below the site title/description?"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:188
+msgid "Header Nav Menu Depth"
+msgstr "Header Nav Menu Depth"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:193
+msgid "One"
+msgstr "One"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:197
+msgid "Two"
+msgstr "Two"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:201
+msgid "Three"
+msgstr "Three"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:204
+msgid "How many levels of Page hierarchy should the Header Navigation Menu display?"
+msgstr "How many levels of Page hierarchy should the Header Navigation Menu display?"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:212
+msgid "Header Nav Menu Item Width"
+msgstr "Header Nav Menu Item Width"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:217
+msgid "Fixed"
+msgstr "Fixed"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:221
+msgid "Fluid"
+msgstr "Fluid"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:224
+msgid "Should Header Nav Menu items have a fixed or fluid width?"
+msgstr "Should Header Nav Menu items have a fixed or fluid width?"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:232
+msgid "Display Footer Credit"
+msgstr "Display Footer Credit"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:241
+msgid "Display"
+msgstr "Display"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:244
+msgid "Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it."
+msgstr "Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:252
+msgid "Varietal"
+msgstr "Varietal"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:257
+msgid "Cuvee"
+msgstr "Cuvee"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:258
+msgid "Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming."
+msgstr "Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:263
+msgid "Chardonnay"
+msgstr "Chardonnay"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:264
+msgid "Chardonnay is the ubiquitous white wine, produced from a versatile white grape."
+msgstr "Chardonnay is the ubiquitous white wine, produced from a versatile white grape."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:269
+msgid "Seyval Blanc"
+msgstr "Seyval Blanc"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:270
+msgid "Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral."
+msgstr "Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:275
+msgid "Muscat"
+msgstr "Muscat"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:276
+msgid "Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet."
+msgstr "Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:281
+msgid "Syrah"
+msgstr "Syrah"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:282
+msgid "Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma."
+msgstr "Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:287
+msgid "Malbec"
+msgstr "Malbec"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:288
+msgid "Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors."
+msgstr "Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:300
+msgid "Display Social Icons"
+msgstr "Display Social Icons"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:302
+msgid "Display social icons in sidebar"
+msgstr "Display social icons in sidebar"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:310
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:334
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:342
+msgid "Facebook Profile"
+msgstr "Facebook Profile"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:345
+msgid "Facebook Username"
+msgstr "Facebook Username"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:353
+msgid "Flickr Profile"
+msgstr "Flickr Profile"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:356
+msgid "Flickr Username"
+msgstr "Flickr Username"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:364
+msgid "Linked-In Profile"
+msgstr "Linked-In Profile"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:367
+msgid "Linked-In Username"
+msgstr "Linked-In Username"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:375
+msgid "MySpace Profile"
+msgstr "MySpace Profile"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:378
+msgid "MySpace Username"
+msgstr "MySpace Username"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:386
+msgid "Twitter Profile"
+msgstr "Twitter Profile"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:389
+msgid "Twitter Username"
+msgstr "Twitter Username"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:397
+msgid "YouTube Profile"
+msgstr "YouTube Profile"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:400
+msgid "YouTube Username"
+msgstr "YouTube Username"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:408
+msgid "Default Static Page Layout"
+msgstr "Default Static Page Layout"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:413
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:440
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:472
+msgid "1-Column"
+msgstr "1-Column"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:414
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:441
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:473
+msgid "One column (full-width content)"
+msgstr "One column (full-width content)"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:418
+msgid "2-Column"
+msgstr "2-Column"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:419
+msgid "Two columns (menu on left, content on right)"
+msgstr "Two columns (menu on left, content on right)"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:423
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:455
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:487
+msgid "3-Column"
+msgstr "3-Column"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:424
+msgid "Three columns (menu on left, sidebar on right, content in the center)"
+msgstr "Three columns (menu on left, sidebar on right, content in the center)"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:427
+msgid "Select the layout to be used as the default for static Pages when the \"Default\" page template is selected."
+msgstr "Select the layout to be used as the default for static Pages when the \"Default\" page template is selected."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:435
+msgid "Default Single Post Layout"
+msgstr "Default Single Post Layout"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:445
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:477
+msgid "2-Column, Left"
+msgstr "2-Column, Left"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:446
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:478
+msgid "Two columns (content on the left, full-width sidebar on the right)"
+msgstr "Two columns (content on the left, full-width sidebar on the right)"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:450
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:482
+msgid "2-Column, Right"
+msgstr "2-Column, Right"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:451
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:483
+msgid "Two columns (content on the right, full-width sidebar on the left)"
+msgstr "Two columns (content on the right, full-width sidebar on the left)"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:456
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:488
+msgid "Three columns (content in the center, half-width sidebars on the left and right)"
+msgstr "Three columns (content in the center, half-width sidebars on the left and right)"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:459
+msgid "Select the default layout to be used for single Blog Posts."
+msgstr "Select the default layout to be used for single Blog Posts."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:467
+msgid "Blog Posts Index Layout"
+msgstr "Blog Posts Index Layout"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:491
+msgid "Select the layout to be used for Blog Posts Index pages."
+msgstr "Select the layout to be used for Blog Posts Index pages."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:499
+msgid "Static Page Submenu Display"
+msgstr "Static Page Submenu Display"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:504
+msgid "Always Display"
+msgstr "Always Display"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:508
+msgid "Display Only on Hierarchical Pages"
+msgstr "Display Only on Hierarchical Pages"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:512
+msgid "Never Display"
+msgstr "Never Display"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:515
+msgid "Display the static Page left-column submenu?"
+msgstr "Display the static Page left-column submenu?"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:614
+msgid "Varietals"
+msgstr "Varietals"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:618
+msgid "Varietal Options"
+msgstr "Varietal Options"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:625
+msgid "Layout"
+msgstr "Layout"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:629
+msgid "Default Layouts"
+msgstr "Default Layouts"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:630
+msgid "Manage default layouts for static Pages, single Blog Posts, and Blog Post Index pages"
+msgstr "Manage default layouts for static Pages, single Blog Posts, and Blog Post Index pages"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:634
+msgid "Static Page Layout Options"
+msgstr "Static Page Layout Options"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:635
+msgid "Manage options related to static Page layout"
+msgstr "Manage options related to static Page layout"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:641
+msgid "General"
+msgstr "General"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:645
+msgid "Header Options"
+msgstr "Header Options"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:646
+msgid "Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+msgstr "Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:650
+msgid "Social Network Profile Options"
+msgstr "Social Network Profile Options"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:651
+msgid "Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+msgstr "Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:655
+msgid "Footer Options"
+msgstr "Footer Options"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/options.php:656
+msgid "Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+msgstr "Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:473
+msgid "An incidental remark; digression: a message that departs from the main subject."
+msgstr "An incidental remark; digression: a message that departs from the main subject."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:477
+msgid "A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction."
+msgstr "A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:481
+msgid "Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat."
+msgstr "Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:485
+msgid "A collection of art for exhibition."
+msgstr "A collection of art for exhibition."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:489
+msgid "picture: A visual representation (of an object or scene or person or abstraction) produced on a surface."
+msgstr "picture: A visual representation (of an object or scene or person or abstraction) produced on a surface."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:493
+msgid "A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document."
+msgstr "A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:497
+msgid "A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else."
+msgstr "A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:501
+msgid "state or condition of affairs"
+msgstr "state or condition of affairs"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:505
+msgid "A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion."
+msgstr "A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:560
+msgid "YouTube"
+msgstr "YouTube"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:565
+msgid "MySpace"
+msgstr "MySpace"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:570
+msgid "Linked-In"
+msgstr "Linked-In"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:575
+msgid "Flickr"
+msgstr "Flickr"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:580
+msgid "Facebook"
+msgstr "Facebook"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:585
+msgid "Twitter"
+msgstr "Twitter"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:711
+msgid "Oh no, not again."
+msgstr "Oh no, not again."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:714
+msgid "Well, this is weird."
+msgstr "Well, this is weird."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:715
+msgid "The post, page, or file you requested could not be found. "
+msgstr "The post, page, or file you requested could not be found. "
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:716
+msgid "The best laid plans of mice, and all that. "
+msgstr "The best laid plans of mice, and all that. "
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:717
+msgid "Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time."
+msgstr "Those who study the complex interplay of cause and effect in the history of the Universe say that this sort of thing is going on all the time."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:720
+msgid "I apologize for the inconvenience."
+msgstr "I apologize for the inconvenience."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:721
+msgid "Let me try to make it up to you!"
+msgstr "Let me try to make it up to you!"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:760
+msgid "Here is a list of posts that you might have been looking for:"
+msgstr "Here is a list of posts that you might have been looking for:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:776
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:806
+msgid "No excerpt available."
+msgstr "No excerpt available."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:790
+msgid "Here is a list of pages that you might have been looking for:"
+msgstr "Here is a list of pages that you might have been looking for:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:824
+msgid "Perhaps you were looking for something in one of the following categories?"
+msgstr "Perhaps you were looking for something in one of the following categories?"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:838
+msgid "Perhaps you were looking for something with one of the following tags?"
+msgstr "Perhaps you were looking for something with one of the following tags?"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:848
+msgid "I apologize."
+msgstr "I apologize."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:849
+msgid "For the life of me, I am unable to figure out what you were trying to find."
+msgstr "For the life of me, I am unable to figure out what you were trying to find."
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:850
+msgid "Perhaps try searching, using the search form in the upper right-hand corner?"
+msgstr "Perhaps try searching, using the search form in the upper right-hand corner?"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:924
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:926
+msgid "Category Archive: "
+msgstr "Category Archive: "
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:950
+#, php-format
+msgid "Posts Published in: %s"
+msgstr "Posts Published in: %s"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:1002
+msgid "Search Results:"
+msgstr "Search Results:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:1007
+msgid "Tag Archive:"
+msgstr "Tag Archive:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:1012
+msgid "Posts Written by:"
+msgstr "Posts Written by:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:1017
+msgid "Error 404:"
+msgstr "Error 404:"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:1018
+msgid "Page Not Found"
+msgstr "Page Not Found"
+
+#: /home/chipbennett/Development/WordPress/themes/oenology/git/functions/custom.php:1022
+msgid "Post Format Archive:"
+msgstr "Post Format Archive:"
+
+#~ msgid "Layout Options"
+#~ msgstr "Layout Options"
+
+#~ msgid "View Inline (Unchecked: Hidden)"
+#~ msgstr "View Inline (Unchecked: Hidden)"
+
+#~ msgid "Show Link Image"
+#~ msgstr "Show Link Image"
+
+#~ msgid "Show Link Name"
+#~ msgstr "Show Link Name"
+
+#~ msgid "Show Link Description"
+#~ msgstr "Show Link Description"
+
+#~ msgid "Show Link Rating"
+#~ msgstr "Show Link Rating"
+
+#~ msgid "Oenology Reference"
+#~ msgstr "Oenology Reference"
+
+#~ msgid "Varietals are the skins, or styles, applied to Oenology."
+#~ msgstr "Varietals are the skins, or styles, applied to Oenology."
+
+#~ msgid "Layouts"
+#~ msgstr "Layouts"
+
+#~ msgid ""
+#~ "Set default layouts for static pages, single blog posts, and blog post "
+#~ "indexes."
+#~ msgstr ""
+#~ "Set default layouts for static pages, single blog posts, and blog post "
+#~ "indexes."
+
+#~ msgid ""
+#~ "The default location of the header navigation menu is above the site "
+#~ "title/description."
+#~ msgstr ""
+#~ "The default location of the header navigation menu is above the site "
+#~ "title/description."
+
+#~ msgid ""
+#~ "Use this setting to display the header navigation menu below the site "
+#~ "title/description."
+#~ msgstr ""
+#~ "Use this setting to display the header navigation menu below the site "
+#~ "title/description."
+
+#~ msgid "By default, the Header Nav Menu only displays top-level Pages."
+#~ msgstr "By default, the Header Nav Menu only displays top-level Pages."
+
+#~ msgid ""
+#~ "Child Pages are displayed in the Sidebar Nav Menu when the Top-Level Page "
+#~ "is displayed."
+#~ msgstr ""
+#~ "Child Pages are displayed in the Sidebar Nav Menu when the Top-Level Page "
+#~ "is displayed."
+
+#~ msgid "To change this setting:"
+#~ msgstr "To change this setting:"
+
+#~ msgid "(default) displays only the top-level Pages in the Header Nav Menu"
+#~ msgstr "(default) displays only the top-level Pages in the Header Nav Menu"
+
+#~ msgid ""
+#~ "displays the top-level Pages in the Header Nav Menu, and displays second-"
+#~ "level Pages in a dropdown menu when the top-level Page is hovered."
+#~ msgstr ""
+#~ "displays the top-level Pages in the Header Nav Menu, and displays second-"
+#~ "level Pages in a dropdown menu when the top-level Page is hovered."
+
+#~ msgid ""
+#~ "displays the top-level Pages in the Header Nav Menu, displays second-"
+#~ "level Pages in a dropdown menu when the top-level Page is hovered, and "
+#~ "displays third-level Pages in a dropdown menu when the second-level Page "
+#~ "is hovered."
+#~ msgstr ""
+#~ "displays the top-level Pages in the Header Nav Menu, displays second-"
+#~ "level Pages in a dropdown menu when the top-level Page is hovered, and "
+#~ "displays third-level Pages in a dropdown menu when the second-level Page "
+#~ "is hovered."
+
+#~ msgid "Footer Credit"
+#~ msgstr "Footer Credit"
+
+#~ msgid "This setting controls the display of a footer credit link."
+#~ msgstr "This setting controls the display of a footer credit link."
+
+#~ msgid "By default, no footer credit link is displayed."
+#~ msgstr "By default, no footer credit link is displayed."
+
+#~ msgid ""
+#~ "You are under no obligation to display a credit link in the footer or "
+#~ "anywhere else."
+#~ msgstr ""
+#~ "You are under no obligation to display a credit link in the footer or "
+#~ "anywhere else."
+
+#~ msgid "General Theme notes."
+#~ msgstr "General Theme notes."
+
+#~ msgid "Answers to questions frequently (or not-so-frequently) asked."
+#~ msgstr "Answers to questions frequently (or not-so-frequently) asked."
+
+#~ msgid ""
+#~ "A cross-reference of every WordPress function, hook, and global variable "
+#~ "used in the Theme."
+#~ msgstr ""
+#~ "A cross-reference of every WordPress function, hook, and global variable "
+#~ "used in the Theme."
+
+#~ msgid "Log of changes to the Theme."
+#~ msgstr "Log of changes to the Theme."
+
+#~ msgid ""
+#~ "License information for the Theme and any bundled resources, such as "
+#~ "fonts and icon image files."
+#~ msgstr ""
+#~ "License information for the Theme and any bundled resources, such as "
+#~ "fonts and icon image files."
+
+#~ msgid "Black"
+#~ msgstr "Black"
+
+#~ msgid "Silver"
+#~ msgstr "Silver"
+
+#~ msgid "Gray"
+#~ msgstr "Gray"
+
+#~ msgid "Coffee"
+#~ msgstr "Coffee"
