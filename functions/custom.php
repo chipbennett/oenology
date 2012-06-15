@@ -182,7 +182,7 @@ function oenology_get_custom_category_list() {
 	foreach( $customcats as $customcat ) {
 		$customcathref = get_category_link( $customcat->term_id );
 		$customcatfeedlink = get_category_feed_link( $customcat->term_id );
-		$customcatlist .= '<li><a title="Subscribe to the ' . $customcat->name . ' news feed" href="' . $customcatfeedlink . '"><img src="' . $catrssurl . '" alt="feed" /></a><a href="' . $customcathref . '">' . $customcat->name . '</a> (' . $customcat->count . ')</li>';
+		$customcatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Category Name', 'oenology' ), $customcat->name ) ) . '" href="' . $customcatfeedlink . '"><img src="' . $catrssurl . '" alt="feed" /></a><a href="' . $customcathref . '">' . $customcat->name . '</a> (' . $customcat->count . ')</li>';
 	}
 	return $customcatlist;
 }
@@ -197,10 +197,8 @@ function oenology_get_custom_post_format_list() {
 	$postformatlist = '';
 	foreach( $postformatterms as $term ) {
 		$termslug = substr( $term->slug, 12 );
-		$termname = $term->name;
 		$termlink = get_post_format_link( $termslug );
-		$termcount = $term->count;
-		$postformatlist .= '<li><a title="Subscribe to the '. $termname .' news feed" href="' . $termlink .'feed/"><img src="'.$postformatrssurl.'" alt="feed" /></a><a href="'. $termlink .'">' . $termname . '</a> (' . $termcount . ')</li>';
+		$postformatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Post Format', 'oenology' ), $term->name ) ) . '" href="' . $termlink .'feed/"><img src="'.$postformatrssurl.'" alt="feed" /></a><a href="'. $termlink .'">' . $term->name . '</a> (' . $term->count . ')</li>';
 	}
 	return $postformatlist;
 }
@@ -216,7 +214,7 @@ function oenology_get_custom_tag_list() {
 	foreach( $customtags as $customtag ) {
 		$customtaghref = get_tag_link( $customtag->term_id );
 		$customtagfeedlink = get_tag_feed_link( $customtag->term_id );
-		$customtaglist .= '<li><a title="Subscribe to the ' . $customtag->name . ' feed" href="' . $customtagfeedlink . '"><img src="' . $tagrssurl . '" alt="feed" /></a><a href="' . $customtaghref . '">' . $customtag->name . '</a> (' . $customtag->count . ')</li>';
+		$customtaglist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s feed', 'Tag Name', 'oenology' ), $customtag->name ) ) . '" href="' . $customtagfeedlink . '"><img src="' . $tagrssurl . '" alt="feed" /></a><a href="' . $customtaghref . '">' . $customtag->name . '</a> (' . $customtag->count . ')</li>';
 	} 
 	return $customtaglist;
 }
