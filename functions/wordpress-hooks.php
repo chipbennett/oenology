@@ -252,7 +252,7 @@ function oenology_show_current_cat_on_single($output) {
 
 	global $post;
  
-	if( is_single() ) {
+	if( is_singular( 'post' ) ) {
  
 		$categories = wp_get_post_categories( $post->ID );
  
