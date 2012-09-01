@@ -988,14 +988,14 @@ function oenology_breadcrumb() {
 	elseif ( ! is_front_page() && is_page() && $post->post_parent ) { 
 		$parent_id  = $post->post_parent;
 		$breadcrumbs = array();
-		while ($parent_id) {
-		$page = get_page($parent_id);
-		$breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-		$parent_id  = $page->post_parent;
+		while ( $parent_id ) {
+			$page = get_page($parent_id);
+			$breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+			$parent_id  = $page->post_parent;
 		}
-		$breadcrumbs = array_reverse($breadcrumbs);
-		foreach ($breadcrumbs as $crumb) {
-		$hierarchy = $hierarchy . $delimiter . $crumb;
+		$breadcrumbs = array_reverse( $breadcrumbs );
+		foreach ( $breadcrumbs as $crumb ) {
+			$hierarchy .= $delimiter . $crumb;
 		}
 		$hierarchy = $hierarchy . $delimiter;
 		// Note: get_the_title() is filtered to output a
