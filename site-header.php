@@ -53,12 +53,12 @@ if (
 
 	<?php 
 	/**
-	 * Fire the 'oenology_hook_site_header_before' custom action hook
+	 * Fire the 'oenology_hook_site_header_text_before' custom action hook
 	 * 
 	 * @param	null
-	 * @return	mixed	any output hooked into 'oenology_hook_site_header_before'
+	 * @return	mixed	any output hooked into 'oenology_hook_site_header_text_before'
 	 */
-	oenology_hook_site_header_before(); 
+	oenology_hook_site_header_text_before(); 
 	?>
 
 	<?php 
@@ -73,12 +73,12 @@ if (
 
 	<?php 
 	/**
-	 * Fire the 'oenology_hook_site_header_after' custom action hook
+	 * Fire the 'oenology_hook_site_header_text_after' custom action hook
 	 * 
 	 * @param	null
-	 * @return	mixed	any output hooked into 'oenology_hook_site_header_after'
+	 * @return	mixed	any output hooked into 'oenology_hook_site_header_text_after'
 	 */
-	oenology_hook_site_header_after(); 
+	oenology_hook_site_header_text_after(); 
 	?>
 
 </div>

@@ -39,7 +39,29 @@ if ( in_array( oenology_get_current_page_layout(), array( 'one-column', 'attachm
 if ( 'three-column' != oenology_get_current_page_layout() ) {
 
 	?>
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_sidebars_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_sidebars_before'
+	 */
+	oenology_hook_sidebars_before(); 
+	?>
+
 	<div id="sidebar-doublecol">
+
+		<?php 
+		/**
+		* Fire the 'oenology_hook_sidebars_top' custom action hook
+		* 
+		* @param	null
+		* @return	mixed	any output hooked into 'oenology_hook_sidebars_top'
+		*/
+		oenology_hook_sidebars_top(); 
+		?>
+
 	<?php
 
 	// Only display div#doublecoltop if dynamic sidebar 
@@ -243,7 +265,29 @@ if ( 'three-column' != oenology_get_current_page_layout() ) {
 		<?php 
 	}
 	?>
+
+		<?php 
+		/**
+		* Fire the 'oenology_hook_sidebars_bottom' custom action hook
+		* 
+		* @param	null
+		* @return	mixed	any output hooked into 'oenology_hook_sidebars_bottom'
+		*/
+		oenology_hook_sidebars_bottom(); 
+		?>
+
 	</div>
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_sidebars_after' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_sidebars_after'
+	 */
+	oenology_hook_sidebars_after(); 
+	?>
+
 	<?php
 }
 ?>

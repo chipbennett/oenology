@@ -98,6 +98,15 @@ require( get_template_directory() . '/functions/options.php' );
 require( get_template_directory() . '/functions/options-customizer.php' );
 
 /**
+ * Include Theme Hooks Alliance Hooks
+ *
+ * @link 	https://github.com/zamoose/themehookalliance
+ * 
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ */
+require( get_template_directory() . '/tha/tha-theme-hooks.php' );
+
+/**
  * Include the Theme Custom Hooks Function File
  * 
  * hooks.php includes the Theme's custom hooks

@@ -212,15 +212,25 @@ language_attributes();
 ?>
 <div id="extent"> 
 
-<?php 
-/**
- * Fire the 'oenology_hook_extent_before' custom action hook
- * 
- * @param	null
- * @return	mixed	any output hooked into 'oenology_hook_extent_before'
- */
-oenology_hook_extent_before(); 
-?>
+	<?php 
+	/**
+	* Fire the 'oenology_hook_extent_before' custom action hook
+	* 
+	* @param	null
+	* @return	mixed	any output hooked into 'oenology_hook_extent_before'
+	*/
+	oenology_hook_extent_before(); 
+	?>
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_site_header_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_site_header_before'
+	 */
+	oenology_hook_site_header_before(); 
+	?>
 
 	<!-- Begin Header  (div#header)-->
 	<?php
@@ -259,6 +269,16 @@ oenology_hook_extent_before();
 		
 	</div>
 	<!-- End Header (div#header) -->
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_site_header_after' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_site_header_after'
+	 */
+	oenology_hook_site_header_after(); 
+	?>
 	
 	<!-- Begin Infobar (div#infobar) -->
 	<?php
@@ -293,6 +313,16 @@ oenology_hook_extent_before();
 		?>
 	</div>
 	<!-- End Infobar (div#infobar) -->
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_content_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_content_before'
+	 */
+	oenology_hook_content_before(); 
+	?>
 
 	<!-- Begin Content (div#content) -->
 	<?php 

@@ -31,6 +31,26 @@
 ?>
 	</div>
 	<!-- End Content  (div#content)-->
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_content_after' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_content_after'
+	 */
+	oenology_hook_content_after(); 
+	?>
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_site_footer_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_site_footer_before'
+	 */
+	oenology_hook_site_footer_before(); 
+	?>
 	
 	<!-- Begin Footer (div#footer) -->
 	<?php
@@ -89,11 +109,11 @@
 		?>
 
 		<?php 
-		// Fire the 'oenology_hook_site_footer_before' custom action hook
+		// Fire the 'oenology_hook_site_footer_text_before' custom action hook
 		// 
 		// @param	null
-		// @return	mixed	any output hooked into 'oenology_hook_site_footer_before'
-		oenology_hook_site_footer_before(); 
+		// @return	mixed	any output hooked into 'oenology_hook_site_footer_text_before'
+		oenology_hook_site_footer_text_before(); 
 		?>
 
 		<?php 
@@ -105,15 +125,25 @@
 		?>
 
 		<?php 
-		// Fire the 'oenology_hook_site_footer_after' custom action hook
+		// Fire the 'oenology_hook_site_footer_text_after' custom action hook
 		// 
 		// @param	null
-		// @return	mixed	any output hooked into 'oenology_hook_site_footer_after'
-		oenology_hook_site_footer_after(); 
+		// @return	mixed	any output hooked into 'oenology_hook_site_footer_text_after'
+		oenology_hook_site_footer_text_after(); 
 		?>
 	
 	</div>
 	<!-- End Footer (div#footer) -->
+
+	<?php 
+	/**
+	 * Fire the 'oenology_hook_site_footer_after' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_site_footer_after'
+	 */
+	oenology_hook_site_footer_after(); 
+	?>
 
 <?php 
 // Fire the 'oenology_hook_extent_after' custom action hook

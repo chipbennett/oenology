@@ -110,6 +110,16 @@ have_posts()
 		 */
 		the_post(); 
 		?>
+	
+		<?php 
+		/**
+			* Fire the 'oenology_hook_post_before' custom action hook
+			* 
+			* @param	null
+			* @return	mixed	any output hooked into 'oenology_hook_post_before' 
+			*/
+		oenology_hook_post_before(); 
+		?> 
 
 		<div <?php 
 		/**
@@ -126,12 +136,12 @@ have_posts()
 	
 			<?php 
 			/**
-			 * Fire the 'oenology_hook_post_before' custom action hook
+			 * Fire the 'oenology_hook_post_top' custom action hook
 			 * 
 			 * @param	null
-			 * @return	mixed	any output hooked into 'oenology_hook_post_before' 
+			 * @return	mixed	any output hooked into 'oenology_hook_post_top' 
 			 */
-			oenology_hook_post_before(); 
+			oenology_hook_post_top(); 
 			?> 
 		
 			<?php
@@ -170,15 +180,25 @@ have_posts()
 		
 			<?php 
 			/**
-			 * Fire the 'oenology_hook_post_after' custom action hook
+			 * Fire the 'oenology_hook_post_bottom' custom action hook
 			 * 
 			 * @param	null
-			 * @return	mixed	any output hooked into 'oenology_hook_post_after'
+			 * @return	mixed	any output hooked into 'oenology_hook_post_bottom'
 			 */
-			oenology_hook_post_after(); 
+			oenology_hook_post_bottom(); 
 			?> 
 
 		</div>
+		
+		<?php 
+		/**
+			* Fire the 'oenology_hook_post_after' custom action hook
+			* 
+			* @param	null
+			* @return	mixed	any output hooked into 'oenology_hook_post_after'
+			*/
+		oenology_hook_post_after(); 
+			?> 
 
 	
 		<?php 
