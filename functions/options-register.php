@@ -237,7 +237,7 @@ foreach ( $option_parameters as $option ) {
 	$optiontab = $option['tab'];
 	$optionsection = $option['section'];
 	$optiontype = $option['type'];
-	if ( 'internal' != $optiontype && 'custom' != $optiontype ) {
+	if ( 'custom' != $optiontype ) {
 		add_settings_field(
 			// $settingid
 			'oenology_setting_' . $optionname,
