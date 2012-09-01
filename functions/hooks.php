@@ -31,6 +31,40 @@
  */
 
 /**
+ * Action hook after div#content
+ * 
+ * This action hook fires after the div#content container. It
+ * can be used to add content after div#content is output.
+ * 
+ * Template file: footer.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_content_after() {
+	do_action( 'oenology_hook_content_after' );
+	tha_content_after();
+}
+
+/**
+ * Action hook before div#content
+ * 
+ * This action hook fires before the div#content container. It
+ * can be used to add content before div#content is output.
+ * 
+ * Template file: header.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_content_before() {
+	do_action( 'oenology_hook_content_before' );
+	tha_content_before();
+}
+
+/**
  * Action hook after content within div#extent
  * 
  * This action hook fires after content is output in the div#extent container. It
@@ -76,6 +110,7 @@ function oenology_hook_extent_before() {
  */
 function oenology_hook_loop_footer_after() {
 	do_action( 'oenology_hook_loop_footer_after' );
+	tha_content_bottom();
 }
 
 /**
@@ -124,6 +159,41 @@ function oenology_hook_loop_header_after() {
  */
 function oenology_hook_loop_header_before() {
 	do_action( 'oenology_hook_loop_header_before' );
+	tha_content_top();
+}
+
+/**
+ * Action hook after div.post
+ * 
+ * This action hook fires after the div.post container. It
+ * can be used to add content after post content is output.
+ * 
+ * Template file: loop.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_post_after() {
+	do_action( 'oenology_hook_post_after' );
+	tha_entry_after();
+}
+
+/**
+ * Action hook before div.post
+ * 
+ * This action hook fires before the div.post container. It
+ * can be used to add content before post content is output.
+ * 
+ * Template file: loop.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_post_before() {
+	do_action( 'oenology_hook_post_before' );
+	tha_entry_before();
 }
 
 /**
@@ -138,8 +208,9 @@ function oenology_hook_loop_header_before() {
  * 
  * @since Oenology 2.0
  */
-function oenology_hook_post_after() {
-	do_action( 'oenology_hook_post_after' );
+function oenology_hook_post_bottom() {
+	do_action( 'oenology_hook_post_bottom' );
+	tha_entry_bottom();
 }
 
 /**
@@ -154,8 +225,9 @@ function oenology_hook_post_after() {
  * 
  * @since Oenology 2.0
  */
-function oenology_hook_post_before() {
-	do_action( 'oenology_hook_post_before' );
+function oenology_hook_post_top() {
+	do_action( 'oenology_hook_post_top' );
+	tha_entry_top();
 }
 
 /**
@@ -172,6 +244,7 @@ function oenology_hook_post_before() {
  */
 function oenology_hook_post_comments_after() {
 	do_action( 'oenology_hook_post_comments_after' );
+	tha_comments_after();
 }
 
 /**
@@ -188,6 +261,7 @@ function oenology_hook_post_comments_after() {
  */
 function oenology_hook_post_comments_before() {
 	do_action( 'oenology_hook_post_comments_before' );
+	tha_comments_before();
 }
 
 /**
@@ -285,6 +359,107 @@ function oenology_hook_post_header_after() {
 function oenology_hook_post_header_before() {
 	do_action( 'oenology_hook_post_header_before' );
 }
+/**
+ * Action hook after div#sidebar-doublecol
+ * 
+ * This action hook fires after the div#sidebar-doublecol container. It
+ * can be used to add content after post content is output.
+ * 
+ * Template file: sidebar.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_sidebars_after() {
+	do_action( 'oenology_hook_sidebars_after' );
+	tha_sidebars_after();
+}
+
+/**
+ * Action hook before div#sidebar-doublecol
+ * 
+ * This action hook fires before the div#sidebar-doublecol container. It
+ * can be used to add content before post content is output.
+ * 
+ * Template file: sidebar.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_sidebars_before() {
+	do_action( 'oenology_hook_sidebars_before' );
+	tha_sidebars_before();
+}
+
+/**
+ * Action hook after content within div#sidebar-doublecol
+ * 
+ * This action hook fires after content is output in the div#sidebar-doublecol container. It
+ * can be used to add content after post content is output.
+ * 
+ * Template file: sidebar.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_sidebars_bottom() {
+	do_action( 'oenology_hook_sidebars_bottom' );
+	tha_sidebar_bottom();
+}
+
+/**
+ * Action hook before content within div#sidebar-doublecol
+ * 
+ * This action hook fires before content is output in the div#sidebar-doublecol container. It
+ * can be used to add content before post content is output.
+ * 
+ * Template file: sidebar.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_sidebars_top() {
+	do_action( 'oenology_hook_sidebars_top' );
+	tha_sidebar_top();
+}
+
+/**
+ * Action hook after div#footer
+ * 
+ * This action hook fires after the div#footer container. It
+ * can be used to add content after site footer is output.
+ * 
+ * Template file: footer.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_site_footer_after() {
+	do_action( 'oenology_hook_site_footer_after' );
+	tha_footer_after();
+}
+
+/**
+ * Action hook before div#footer
+ * 
+ * This action hook fires before the div#footer container. It
+ * can be used to add content before site footer is output.
+ * 
+ * Template file: footer.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_site_footer_before() {
+	do_action( 'oenology_hook_site_footer_before' );
+	tha_footer_before();
+}
 
 /**
  * Action hook after content within div#footer
@@ -298,8 +473,9 @@ function oenology_hook_post_header_before() {
  * 
  * @since Oenology 2.0
  */
-function oenology_hook_site_footer_after() {
-	do_action( 'oenology_hook_site_footer_after' );
+function oenology_hook_site_footer_text_after() {
+	do_action( 'oenology_hook_site_footer_text_after' );
+	tha_footer_bottom();
 }
 
 /**
@@ -314,15 +490,16 @@ function oenology_hook_site_footer_after() {
  * 
  * @since Oenology 2.0
  */
-function oenology_hook_site_footer_before() {
-	do_action( 'oenology_hook_site_footer_before' );
+function oenology_hook_site_footer_text_before() {
+	do_action( 'oenology_hook_site_footer_text_before' );
+	tha_footer_top();
 }
 
 /**
- * Action hook after content within div#site-header-text
+ * Action hook after div#header
  * 
- * This action hook fires after content is output in the div#site-header-text container. It
- * can be used to add content after site header text is output.
+ * This action hook fires after the div#header container. It
+ * can be used to add content after site header is output.
  * 
  * Template file: header.php
  * 
@@ -332,13 +509,14 @@ function oenology_hook_site_footer_before() {
  */
 function oenology_hook_site_header_after() {
 	do_action( 'oenology_hook_site_header_after' );
+	tha_header_after();
 }
 
 /**
- * Action hook before content within div#site-header-text
+ * Action hook before div#header
  * 
- * This action hook fires before content is output in the div#site-header-text container. It
- * can be used to add content before site header text is output.
+ * This action hook fires before the div#header container. It
+ * can be used to add content before site header is output.
  * 
  * Template file: header.php
  * 
@@ -348,6 +526,41 @@ function oenology_hook_site_header_after() {
  */
 function oenology_hook_site_header_before() {
 	do_action( 'oenology_hook_site_header_before' );
+	tha_header_before();
+}
+
+/**
+ * Action hook after content within div#site-header-text
+ * 
+ * This action hook fires after content is output in the div#site-header-text container. It
+ * can be used to add content after site header text is output.
+ * 
+ * Template file: site-header.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_site_header_text_after() {
+	do_action( 'oenology_hook_site_header_text_after' );
+	tha_header_bottom();
+}
+
+/**
+ * Action hook before content within div#site-header-text
+ * 
+ * This action hook fires before content is output in the div#site-header-text container. It
+ * can be used to add content before site header text is output.
+ * 
+ * Template file: site-header.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 2.0
+ */
+function oenology_hook_site_header_text_before() {
+	do_action( 'oenology_hook_site_header_text_before' );
+	tha_header_top();
 }
 
 
@@ -405,7 +618,7 @@ function oenology_hook_loop_header() {
 	// If this is an archive index
 	if( is_archive() ) {
 		// If this is a taxonomy archive
-		if ( is_category() || is_tag() || is_tax( '', get_post_format() ) ) {
+		if ( is_category() || is_tag() || is_tax() ) {
 			// If this is a category or tag archive
 			if ( is_category() || is_tag() ) {
 				$tax = ( is_category() ? 'category' : 'tag' );
@@ -419,7 +632,7 @@ function oenology_hook_loop_header() {
 				$taxdescription = ( $taxdesc ? $taxdesc : $taxdescdefault );
 			}
 			// If this is a Post Format archive
-			elseif ( is_tax( '', get_post_format() ) ) {
+			elseif ( is_tax( 'post_format', 'post-format-' . get_post_format() ) ) {
 				$tax = get_post_format();
 				$taxtitle = get_post_format_string( $tax );
 				$taxfeedlink = get_post_format_link( $tax ) . '/feed/';
@@ -430,6 +643,17 @@ function oenology_hook_loop_header() {
 						$taxdescription = '<em>' . $format['description'] . '</em>';
 					}
 				}
+			}
+			// If this is a Custom Taxonoomy archive
+			elseif ( is_tax() ) {
+				global $wp_query;
+				$tax = $wp_query->query_vars['taxonomy'];
+				$term = $wp_query->query_vars['term'];
+				$taxobject = get_taxonomy( $tax );
+				$termobject = get_term_by( 'slug', $term, $tax );
+				$taxtitle = single_term_title( '', false );
+				$taxfeedlink = get_term_link( $term, $tax ) . '/feed/';
+				$taxdescription = $termobject->description;
 			}
 			$colorscheme = oenology_get_color_scheme();
 			$rssiconcolor = ( 'light' == $colorscheme ? 'original' : 'gray' );
