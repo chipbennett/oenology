@@ -518,6 +518,26 @@ function oenology_get_option_parameters() {
 			'since' => '2.5',
 			'default' => 'always'
 		),
+        'widget_display_default_state' => array(
+			'name' => 'widget_display_default_state',
+			'title' => __( 'Default Widget Display State', 'oenology' ),
+			'type' => 'select',
+			'valid_options' => array(
+				'block' => array(
+					'name' => 'block',
+					'title' => __( 'Display Content', 'oenology' )
+				),
+				'none' => array(
+					'name' => 'none',
+					'title' => __( 'Hide Content', 'oenology' )
+				),
+			),
+			'description' => __( 'The content of each Widget can be displayed or hidden via the "Show/Hide" link. Should Widget content be displayed or hidden by default?', 'oenology' ),
+			'section' => 'widgets',
+			'tab' => 'general',
+			'since' => '3.0',
+			'default' => 'none'
+		),
     );
     return apply_filters( 'oenology_get_option_parameters', $options );
 }
@@ -649,6 +669,11 @@ function oenology_get_settings_page_tabs() {
 					'name' => 'social',
 					'title' => __( 'Social Network Profile Options', 'oenology' ),
 					'description' => __( 'Manage Social Network Profile options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
+				),
+				'widgets' => array(
+					'name' => 'widgets',
+					'title' => __( 'Widget Display Options', 'oenology' ),
+					'description' => __( 'Manage Widget options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
 				),
 				'footer' => array(
 					'name' => 'footer',
