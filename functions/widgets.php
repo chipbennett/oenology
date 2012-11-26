@@ -92,7 +92,7 @@ function oenology_showhide_widget_content_open() {
     $showhide .= 'Click to ';
     $showhide .= '<span style="color:#5588aa;" onclick="d=this.parentElement.nextElementSibling; d.style.display==\'none\' ? d.style.display=\'block\' : d.style.display=\'none\';">view/hide</span>';
     $showhide .= '<br /></span>';
-    $showhide .= '<div>';
+    $showhide .= '<div style="display:none;">';
 
     return $showhide;
 }
