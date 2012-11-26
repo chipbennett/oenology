@@ -88,15 +88,13 @@ register_sidebar( array_merge( array( // Widget area below each Post
 } // function oenology_widget_setup()
 
 function oenology_showhide_widget_content_open() {
-	$showhide_id = 'widget-' . mt_rand();
-	
-	$showhide = '<span class="showhide">';
-	$showhide .= 'Click to <span style="color:#5588aa;" onclick="document.getElementById(\'' . $showhide_id . '\').style.display=\'inline\';">view</span> / <span style="color:#5588aa;" onclick="document.getElementById(\'' . $showhide_id . '\').style.display=\'none\';">hide</span>';
-	$showhide .= '</span>';
-	$showhide .= '<br /><br />';
-	$showhide .= '<div id="' . $showhide_id . '" style="display:none;">';
-	
-	return $showhide;
+    $showhide = '<span class="showhide">';
+    $showhide .= 'Click to ';
+    $showhide .= '<span style="color:#5588aa;" onclick="d=this.parentElement.nextElementSibling; d.style.display==\'none\' ? d.style.display=\'block\' : d.style.display=\'none\';">view/hide</span>';
+    $showhide .= '<br /></span>';
+    $showhide .= '<div>';
+
+    return $showhide;
 }
 
 function oenology_showhide_widget_content_close() {
