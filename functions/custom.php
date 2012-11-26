@@ -943,9 +943,30 @@ function oenology_breadcrumb() {
     } 
 	// Define Category Hierarchy Crumbs for Single Posts
 	elseif ( is_singular( 'post' ) ) { 
-		$cat = get_the_category(); 
-		$cat = $cat[0];
-		$hierarchy = $delimiter . get_category_parents( $cat, TRUE, $delimiter );
+		$cats = get_the_category(); 
+		// Assume the first category is current
+		$current_cat = ( $cats ? $cats[0] : '' );
+		// Determine if category is hierarchical
+		$cat_is_hierarchical = false;
+		foreach ( $cats as $cat ) {
+			if ( '0' != $cat->parent ) {
+				$cat_is_hierarchical = true;
+				break;
+			}
+		}
+		// If category is hierarchical,
+		// ensure we have the correct child category
+		if ( $cat_is_hierarchical ) {
+			foreach ( $cats as $cat ) {
+				$children = get_categories( array( 'parent' => $cat->term_id ) );
+				if ( 0 == count( $children ) ) {
+					$current_cat = $cat;
+					break;
+				}
+			}
+		}
+		// Get the hierarchical list of category links
+		$hierarchy = $delimiter . get_category_parents( $current_cat, TRUE, $delimiter );
 		// Note: get_the_title() is filtered to output a
 		// default title if none is specified
 		$currentLocation = get_the_title();	  
