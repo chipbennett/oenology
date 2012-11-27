@@ -494,6 +494,33 @@ function oenology_get_option_parameters() {
 			'since' => '2.3',
 			'default' => 'two-column-left'			
 			),
+        'default_front_page_layout' => array(
+			'name' => 'default_front_page_layout',
+			'title' => __( 'Default Static Front Page Layout', 'oenology' ),
+			'type' => 'radio',
+			'valid_options' => array(
+				'one-column' => array(
+					'name' => 'one-column',
+					'title' => __( '1-Column', 'oenology' ),
+					'description' => __( 'One column (full-width content)', 'oenology' )
+				),
+				'two-column' => array(
+					'name' => 'two-column',
+					'title' => __( '2-Column', 'oenology' ),
+					'description' => __( 'Two columns (menu on left, content on right)', 'oenology' )
+				),
+				'three-column' => array(
+					'name' => 'three-column',
+					'title' => __( '3-Column', 'oenology' ),
+					'description' => __( 'Three columns (menu on left, sidebar on right, content in the center)', 'oenology' )
+				),
+			),
+			'description' => __( 'Select the layout to be used as the default for a static front page.', 'oenology' ),
+			'section' => 'default_layouts',
+			'tab' => 'layout',
+			'since' => '3.0',
+			'default' => 'one-column'			
+			),
         'static_page_submenu_display' => array(
 			'name' => 'static_page_submenu_display',
 			'title' => __( 'Static Page Submenu Display', 'oenology' ),

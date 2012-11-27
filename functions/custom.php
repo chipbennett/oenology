@@ -103,6 +103,13 @@ function oenology_get_current_page_layout() {
 		if ( is_attachment() ) {
 			$layout .= 'attachment';
 		} 
+		else if ( is_front_page() && ! is_home() ) {
+			if ( 'default' == $custom_layout ) {
+				$layout .= $oenology_options['default_front_page_layout'];
+			} else {
+				$layout .= $custom_layout;
+			}
+		} 
 		else if ( is_page() ) {
 			if ( 'default' == $custom_layout ) {
 				$layout .= $oenology_options['default_static_page_layout'];
