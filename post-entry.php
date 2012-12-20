@@ -47,8 +47,14 @@ if (
 // WordPress conditional tag that returns true if
 // the current page has an image mime-type attachment
 && ! wp_attachment_is_image()
-// WordPress conditional tag that returns true if
-// the current post has the 'link' post-format type
+// WordPress template tag that returns the post format
+// type of the current post, as a string, or FALSE iff 
+// the current post does not have a post format assigned.
+// Here, get_post_format() is used rather than
+// has_post_format(), because has_post_format() requires 
+// a post format to be passed as a parameter, rendering
+// it unsuitable for use to determine if the post has
+// *any* post format assigned.
 && ! get_post_format() 
 ) {
 	// Output the Post Excerpt
