@@ -214,7 +214,7 @@ add_filter('get_comments_number', 'oenology_comment_count', 0);
  */
 function oenology_untitled_post( $title ) {
 	if ( '' == $title ) {
-		return '<em>(' . __( 'Untitled', 'oenology' ) . ')</em>';
+		return apply_filters( 'oenology_untitled_post_title', '<em>(' . __( 'Untitled', 'oenology' ) . ')</em>' );
 	} else {
 		return $title;
 	}

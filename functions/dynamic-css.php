@@ -119,7 +119,7 @@ function oenology_enqueue_social_icon_style() {
         return;
 	}
 	
-	$socialiconbgposition = array(
+	$socialiconbgposition = apply_filters( 'oenology_social_icon_bg_position', array(
 		'aim' => array(
 			'name' => 'aim',
 			'black' => array(
@@ -270,15 +270,15 @@ function oenology_enqueue_social_icon_style() {
 				'y' => '-630'
 			)
 		)
-	);
+	) );
 
 	$socialnetworks = oenology_get_social_networks();
-	$linkcolor = 'silver';
-	$linkhovercolor = 'black';
+	$linkcolor = apply_filters( 'oenology_light_color_scheme_linkcolor', 'silver' );
+	$linkhovercolor = apply_filters( 'oenology_light_color_scheme_linkhovercolor', 'black' );
 	$colorscheme = oenology_get_color_scheme();
 	if ( 'dark' == $colorscheme ) {
-		$linkcolor = 'gray';
-		$linkhovercolor = 'silver';
+		$linkcolor = apply_filters( 'oenology_dark_color_scheme_linkcolor', 'gray' );
+		$linkhovercolor = apply_filters( 'oenology_dark_color_scheme_linknovercolor', 'silver' );
 	}
 	
 ?>
@@ -380,7 +380,7 @@ function oenology_get_post_format_icon_formats() {
 			'position' => 'left'
 		)
 	);
-	return $icons;
+	return apply_filters( 'oenology_get_post_format_icon_formats', $icons );
 }
 
 /**
@@ -426,7 +426,7 @@ add_filter( 'oenology_hook_post_header_before', 'oenology_post_format_title_icon
  */
 function oenology_enqueue_post_format_icon_style() {
 
-	$postformatbgposition = array(
+	$postformatbgposition = apply_filters( 'oenology_post_format_bg_position', array(
 		'aside' => array(
 			'name' => 'aside',
 			'gray' => array(
@@ -526,13 +526,13 @@ function oenology_enqueue_post_format_icon_style() {
 				'y' => '-1376'
 			)
 		)
-	);
+	) );
 
 	$postformats = oenology_get_post_formats();
-	$iconcolor = 'original';
+	$iconcolor = apply_filters( 'oenology_light_color_scheme_postformat_linkcolor', 'original' );
 	$colorscheme = oenology_get_color_scheme();
 	if ( 'dark' == $colorscheme ) {
-		$iconcolor = 'gray';
+		$iconcolor = apply_filters( 'oenology_dark_color_scheme_postformat_linkcolor', 'gray' );
 	}
 	
 ?>

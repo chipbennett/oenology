@@ -21,8 +21,8 @@
 function oenology_add_layout_meta_box( $post ) {
     global $wp_meta_boxes;
 	
-	$context = 'side'; // 'normal', 'side', 'advanced'
-	$priority = 'default'; // 'high', 'core', 'low', 'default'
+	$context = apply_filters( 'oenology_layout_meta_box_context', 'side' ); // 'normal', 'side', 'advanced'
+	$priority = apply_filters( 'oenology_layout_meta_box_priority', 'default' ); // 'high', 'core', 'low', 'default'
 
     add_meta_box( 
 		'oenology_layout', 

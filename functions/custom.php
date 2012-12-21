@@ -34,7 +34,7 @@
  */
 function oenology_get_context() {
 
-	$context = 'index';
+	$context = apply_filters( 'oenology_default_context', 'index' );
 	
 	if ( is_front_page() ) {
 		// Front Page
@@ -80,7 +80,7 @@ function oenology_get_context() {
 		$context = 'home';
 	}
 	
-	return $context;
+	return apply_filters( 'oenology_get_context', $context );
 }
 
 /**
@@ -156,7 +156,7 @@ function oenology_get_current_page_layout() {
 			}
 		}
 	}
-	return $layout;
+	return apply_filters( 'oenology_get_current_page_layout', $layout );
 }
 
 /**
@@ -178,7 +178,7 @@ function oenology_get_current_tab() {
 			$current = $oenology_options['default_reference_tab'];
 		}
     }	
-	return $current;
+	return apply_filters( 'oenology_get_current_tab', $current );
 }
 
 
@@ -194,7 +194,7 @@ function oenology_get_custom_category_list() {
 		$customcatfeedlink = get_category_feed_link( $customcat->term_id );
 		$customcatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Category Name', 'oenology' ), $customcat->name ) ) . '" href="' . $customcatfeedlink . '"><img src="' . $catrssurl . '" alt="feed" /></a><a href="' . $customcathref . '">' . $customcat->name . '</a> (' . $customcat->count . ')</li>';
 	}
-	return $customcatlist;
+	return apply_filters( 'oenology_get_custom_category_list', $customcatlist );
 }
 
 
@@ -210,7 +210,7 @@ function oenology_get_custom_post_format_list() {
 		$termlink = get_post_format_link( $termslug );
 		$postformatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Post Format', 'oenology' ), $term->name ) ) . '" href="' . $termlink .'feed/"><img src="'.$postformatrssurl.'" alt="feed" /></a><a href="'. $termlink .'">' . $term->name . '</a> (' . $term->count . ')</li>';
 	}
-	return $postformatlist;
+	return apply_filters( 'oenology_get_custom_post_format_list', $postformatlist );
 }
 
 
@@ -226,7 +226,7 @@ function oenology_get_custom_tag_list() {
 		$customtagfeedlink = get_tag_feed_link( $customtag->term_id );
 		$customtaglist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s feed', 'Tag Name', 'oenology' ), $customtag->name ) ) . '" href="' . $customtagfeedlink . '"><img src="' . $tagrssurl . '" alt="feed" /></a><a href="' . $customtaghref . '">' . $customtag->name . '</a> (' . $customtag->count . ')</li>';
 	} 
-	return $customtaglist;
+	return apply_filters( 'oenology_get_custom_tag_list', $customtaglist );
 }
 
 /**
@@ -456,9 +456,9 @@ function oenology_get_header_textcolor() {
 		$colorscheme = oenology_get_color_scheme();
 		
 		if ( 'light' == $colorscheme ) {
-			$headertextcolor = '666666';
+			$headertextcolor = apply_filters( 'oenology_light_color_scheme_header_textcolor', '666666' );
 		} elseif ( 'dark' == $colorscheme ) {
-			$headertextcolor = 'dddddd';
+			$headertextcolor = apply_filters( 'oenology_light_color_scheme_header_textcolor', 'dddddd' );
 		}
 	}
 	return $headertextcolor;
@@ -513,7 +513,7 @@ function oenology_get_post_formats() {
 			'description' => __('A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.', 'oenology' )
 		)
 	);
-	return $postformats;
+	return apply_filters( 'oenology_get_post_formats', $postformats );
 }
 
 /**
@@ -594,7 +594,7 @@ function oenology_get_social_networks() {
         	'baseurl' => 'http://www.twitter.com'
         )
     );
-	return $socialnetworks;
+	return apply_filters( 'oenology_get_social_networks', $socialnetworks );
 }
 
 /**
@@ -626,7 +626,7 @@ function oenology_gallery_links() {
 		$links['nextthumb'] = wp_get_attachment_link($attachments[$k-1]->ID, 'attachment-nav-thumbnail', true);
 	}
 
-	return $links;
+	return apply_filters( 'oenology_gallery_links', $links );
 }
 
 /**
@@ -689,7 +689,7 @@ function oenology_gallery_image_meta() {
 	} else if ( is_object( $attachmentimage ) && $attachmentimage->post_excerpt ) {
 		$image_meta['caption'] = $attachmentimage->post_excerpt;
 	}
-	return $image_meta;
+	return apply_filters( 'oenology_gallery_image_meta', $image_meta );
 }
 
 
