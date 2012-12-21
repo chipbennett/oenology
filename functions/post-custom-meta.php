@@ -75,7 +75,7 @@ function oenology_layout_meta_box() {
 	?>
 	<p>
 	<input type="radio" name="_oenology_layout" <?php checked( 'default' == $layout ); ?> value="default" /> 
-	<label>Default</label><br />
+	<label><?php _e( 'Default', 'oenology' ); ?></label><br />
 	<?php foreach ( $valid_layouts as $valid_layout ) { ?>
 		<input type="radio" name="_oenology_layout" <?php checked( $valid_layout['name'] == $layout ); ?> value="<?php echo $valid_layout['name']; ?>" /> 
 		<label><?php echo $valid_layout['title']; ?> <span style="padding-left:5px;"><em><?php echo $valid_layout['description']; ?></em></span></label><br />
