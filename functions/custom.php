@@ -874,11 +874,11 @@ function oenology_get_404_content() {
 
 /**
  * Add navigation breadcrumb function
+ * 
+ * Derived from Dimox breadcrumb code
+ * 
+ * @link 	http://dimox.net/wordpress-breadcrumbs-without-a-plugin/	Dimox
  */
-
-/* Credit: Dimox
-*	http://dimox.net/wordpress-breadcrumbs-without-a-plugin/
-*/
 function oenology_breadcrumb() {
  
 	$containerBefore = apply_filters( 'oenology_breadcrumb_container_before', '<li id="breadcrumbs">' );

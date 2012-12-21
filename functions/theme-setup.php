@@ -106,28 +106,29 @@ add_action( 'wp_head', 'oenology_set_content_width', 0 );
  * Add Theme support for and configure various core WordPress 
  * functionality, define the Theme's content width, etc.
  * 
- * @link	Codex reference: add_editor_style()
- * @link	Codex reference: add_image_size()
- * @link	Codex reference: add_theme_support()
- * @link	Codex reference: apply_filters()
- * @link	Codex reference: get_header_image()
- * @link	Codex reference: get_header_textcolor()
- * @link	Codex reference: get_locale()
- * @link	Codex reference: get_option()
- * @link	Codex reference: get_template_directory()
- * @link	Codex reference: get_template_directory_uri()
- * @link	Codex reference: get_theme_root()
- * @link	Codex reference: is_readable()
- * @link	Codex reference: load_theme_textdomain()
- * @link	Codex reference: register_default_headers()
- * @link	Codex reference: register_nav_menus()
- * @link	Codex reference: set_post_thumbnail_size()
- * @link	PHP reference: file_exists()
+ * @link	http://codex.wordpress.org/Function_Reference/add_editor_style				add_editor_style()
+ * @link	http://codex.wordpress.org/Function_Reference/add_image_size				add_image_size()
+ * @link	http://codex.wordpress.org/Function_Reference/add_theme_support				add_theme_support()
+ * @link	http://codex.wordpress.org/Function_Reference/apply_filters					apply_filters()
+ * @link	http://codex.wordpress.org/Function_Reference/apply_filters					get_header_image()
+ * @link	http://codex.wordpress.org/Function_Reference/get_header_textcolor			get_header_textcolor()
+ * @link	http://codex.wordpress.org/Function_Reference/get_locale					get_locale()
+ * @link	http://codex.wordpress.org/Function_Reference/get_option					get_option()
+ * @link	http://codex.wordpress.org/Function_Reference/get_template_directory		get_template_directory()
+ * @link	http://codex.wordpress.org/Function_Reference/get_template_directory_uri	get_template_directory_uri()
+ * @link	http://codex.wordpress.org/Function_Reference/get_theme_root				get_theme_root()
+ * @link	http://codex.wordpress.org/Function_Reference/is_readable					is_readable()
+ * @link	http://codex.wordpress.org/Function_Reference/load_theme_textdomain			load_theme_textdomain()
+ * @link	http://codex.wordpress.org/Function_Reference/register_default_headers		register_default_headers()
+ * @link	http://codex.wordpress.org/Function_Reference/register_nav_menus			register_nav_menus()
+ * @link	http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size		set_post_thumbnail_size()
+ * 
+ * @link	http://php.net/manual/en/function.file-exists.php							PHP reference: file_exists()
  * 
  * @uses	oenology_admin_header_style()	Defined in \functions\theme-setup.php
- * @uses	oenology_get_post_formats()	Defined in \functions\custom.php
- * @uses	oenology_get_color_scheme()	Defined in \functions\dynamic-css.php
- * @uses	oenology_header_style()	Defined in \functions\theme-setup.php
+ * @uses	oenology_get_post_formats()		Defined in \functions\custom.php
+ * @uses	oenology_get_color_scheme()		Defined in \functions\dynamic-css.php
+ * @uses	oenology_header_style()			Defined in \functions\theme-setup.php
  */
 function oenology_setup() {
 	

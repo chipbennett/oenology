@@ -15,8 +15,8 @@
 /**
  * Add Layout Meta Box
  * 
- * @uses	__()
- * @uses	add_meta_box()
+ * @link	http://codex.wordpress.org/Function_Reference/_2			__()
+ * @link	http://codex.wordpress.org/Function_Reference/add_meta_box	add_meta_box()
  */
 function oenology_add_layout_meta_box( $post ) {
     global $wp_meta_boxes;
@@ -92,9 +92,11 @@ function oenology_layout_meta_box() {
  * option is in the array of valid layout 
  * options; otherwise, it returns 'default'.
  * 
+ * @link	http://codex.wordpress.org/Function_Reference/update_post_meta	update_post_meta()
+ * 
+ * @link	http://php.net/manual/en/function.array-key-exists.php			array_key_exists()
+ * 
  * @uses	oenology_get_option_parameters()	Defined in \functions\options.php
- * @uses	array_key_exists()
- * @uses	update_post_meta()
  */
 function oenology_save_layout_post_metadata(){
 	global $post;
