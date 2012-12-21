@@ -351,7 +351,7 @@ function oenology_setting_varietal() {
 	<?php
 	} 
 	?>
-	<h4 style="display:block;clear:both;">White (Light)</h4>
+	<h4 style="display:block;clear:both;"><?php _e( 'White (Light)', 'oenology' ); ?></h4>
 	<?php 
 	foreach ( $oenology_varietals as $varietal ) {
 		if ( 'light' == $varietal['scheme'] ) {
@@ -359,7 +359,7 @@ function oenology_setting_varietal() {
 		}
 	} 
 	?>
-	<h4 style="display:block;clear:both;">Red (Dark)</h4>
+	<h4 style="display:block;clear:both;"><?php _e( 'Red (Dark)', 'oenology' ); ?></h4>
 	<?php 
 	foreach ( $oenology_varietals as $varietal ) {
 		if ( 'dark' == $varietal['scheme'] ) {
