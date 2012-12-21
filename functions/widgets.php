@@ -48,40 +48,52 @@ add_action( 'after_setup_theme', 'oenology_setup_widgets', 11 );
  */
 function oenology_setup_widgets() {
 
-register_sidebar( array_merge( array( // Top full-width widget area
-	'name'=>'Sidebar Column Top',
-	'id'=>'sidebar-column-top',
-	'description' => 'Top, full-width sidebar in two-column layout' ),
+register_sidebar( array_merge( 
+	array( // Top full-width widget area
+		'name'			=> __( 'Sidebar Column Top', 'oenology' ),
+		'id'			=> 'sidebar-column-top',
+		'description'	=> __( 'Top, full-width sidebar in two-column layout', 'oenology' ) 
+	),
 	oenology_get_widget_args()
 ) );
-register_sidebar( array_merge( array( // Left Column widget area
-	'name'=>'Sidebar Left',
-	'id'=>'sidebar-left',
-	'description' => 'Left-column, half-width sidebar in three-column layout' ),
+register_sidebar( array_merge( 
+	array( // Left Column widget area
+		'name'			=> __( 'Sidebar Left', 'oenology' ),
+		'id'			=> 'sidebar-left',
+		'description'	=> __( 'Left-column, half-width sidebar in three-column layout' , 'oenology' )
+	),
 	oenology_get_widget_args()
 ) );
-register_sidebar( array_merge( array( // Right Column widget area
-	'name'=>'Sidebar Right',
-	'id'=>'sidebar-right',
-	'description' => 'Right-column, half-width sidebar in three-column layout' ),
+register_sidebar( array_merge( 
+	array( // Right Column widget area
+		'name'			=> __( 'Sidebar Right', 'oenology' ),
+		'id'			=> 'sidebar-right',
+		'description'	=> __( 'Right-column, half-width sidebar in three-column layout', 'oenology' )
+	),
 	oenology_get_widget_args()
 ) );
-register_sidebar( array_merge( array( // Bottom full-width widget area
-	'name'=>'Sidebar Column Bottom',
-	'id'=>'sidebar-column-bottom',
-	'description' => 'Bottom, full-width sidebar in two-column layout' ),
+register_sidebar( array_merge( 
+	array( // Bottom full-width widget area
+		'name'			=> __( 'Sidebar Column Bottom', 'oenology' ),
+		'id'			=> 'sidebar-column-bottom',
+		'description'	=> __( 'Bottom, full-width sidebar in two-column layout', 'oenology' ) 
+	),
 	oenology_get_widget_args()
 ) );
-register_sidebar( array_merge( array( // Widget area beneath each Post content
-	'name'=>'Post Entry Below',
-	'id'=>'post-entry-below',
-	'description' => 'Beneath Post content, before Post footer' ),
+register_sidebar( array_merge( 
+	array( // Widget area beneath each Post content
+		'name'			=> __( 'Post Entry Below', 'oenology' ),
+		'id'			=> 'post-entry-below',
+		'description'	=> __( 'Beneath Post content, before Post footer', 'oenology' ) 
+	),
 	oenology_get_widget_args()
 ) );
-register_sidebar( array_merge( array( // Widget area below each Post
-	'name'=>'Post Below',
-	'id'=>'post-below',
-	'description' => 'Beneath Post' ),
+register_sidebar( array_merge( 
+	array( // Widget area below each Post
+		'name'			=> __( 'Post Below', 'oenology' ),
+		'id'			=> 'post-below',
+		'description'	=> __( 'Beneath Post', 'oenology' ) 
+	),
 	oenology_get_widget_args()
 ) );
 
@@ -113,13 +125,13 @@ function oenology_showhide_widget_content_close() {
 class oenology_widget_categories extends WP_Widget {
 
     function oenology_widget_categories() {
-        $widget_ops = array('classname' => 'oenology-widget-categories', 'description' => 'oenology theme widget to display the category list in the left column' );
-        $this->WP_Widget('oenology_categories', 'oenology Categories', $widget_ops);
+        $widget_ops = array('classname' => 'oenology-widget-categories', 'description' => __( 'Oenology theme widget to display the category list in the left column', 'oenology' ) );
+        $this->WP_Widget('oenology_categories', __( 'Oenology Categories', 'oenology' ), $widget_ops);
     }
 
     function widget( $args, $instance ) {
         extract($args);
-        $title = apply_filters('widget_title', empty($instance['title']) ? 'oenology Categories' : $instance['title']);
+        $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Oenology Categories', 'oenology' ) : $instance['title']);
 
         echo $before_widget;
         if ( $title )
@@ -147,7 +159,7 @@ class oenology_widget_categories extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title = strip_tags($instance['title']);
 ?>
-            <p><label for="<?php echo $this->get_field_id('title'); ?>">Title:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'oenology' ); ?>:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 <?php
     }
 } 
@@ -162,13 +174,13 @@ class oenology_widget_categories extends WP_Widget {
 class oenology_widget_tags extends WP_Widget {
 
     function oenology_widget_tags() {
-        $widget_ops = array('classname' => 'oenology-widget-tags', 'description' => 'oenology theme widget to display the tag list in the left column' );
-        $this->WP_Widget('oenology_tags', 'oenology Tags', $widget_ops);
+        $widget_ops = array('classname' => 'oenology-widget-tags', 'description' => __( 'Oenology theme widget to display the tag list in the left column', 'oenology' ) );
+        $this->WP_Widget('oenology_tags', __( 'Oenology Tags', 'oenology' ), $widget_ops);
     }
 
     function widget( $args, $instance ) {
         extract($args);
-        $title = apply_filters('widget_title', empty($instance['title']) ? 'oenology Tags' : $instance['title']);
+        $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Oenology Tags', 'oenology' ) : $instance['title']);
 
         echo $before_widget;
         if ( $title )
@@ -196,7 +208,7 @@ class oenology_widget_tags extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title = strip_tags($instance['title']);
 ?>
-            <p><label for="<?php echo $this->get_field_id('title'); ?>">Title:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'oenology' ); ?>:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 <?php
     }
 } 
@@ -212,13 +224,13 @@ class oenology_widget_tags extends WP_Widget {
 class oenology_widget_post_formats extends WP_Widget {
 
     function oenology_widget_post_formats() {
-        $widget_ops = array('classname' => 'oenology-widget-post-formats', 'description' => 'oenology theme widget to display the Post Format list in the left column' );
-        $this->WP_Widget('oenology_post_formats', 'oenology Post Formats', $widget_ops);
+        $widget_ops = array('classname' => 'oenology-widget-post-formats', 'description' => __( 'Oenology theme widget to display the Post Format list in the left column', 'oenology' ) );
+        $this->WP_Widget('oenology_post_formats', __( 'Oenology Post Formats', 'oenology' ), $widget_ops);
     }
 
     function widget( $args, $instance ) {
         extract($args);
-        $title = apply_filters('widget_title', empty($instance['title']) ? 'oenology Post Formats' : $instance['title']);
+        $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Oenology Post Formats', 'oenology' ) : $instance['title']);
 
         echo $before_widget;
         if ( $title )
@@ -246,7 +258,7 @@ class oenology_widget_post_formats extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title = strip_tags($instance['title']);
 ?>
-            <p><label for="<?php echo $this->get_field_id('title'); ?>">Title:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'oenology' ); ?>:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 <?php
     }
 } 
