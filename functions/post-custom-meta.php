@@ -100,6 +100,9 @@ function oenology_layout_meta_box() {
  */
 function oenology_save_layout_post_metadata(){
 	global $post;
+	if ( ! isset( $post ) || ! is_object( $post ) ) {
+		return;
+	}
 	$option_parameters = oenology_get_option_parameters();
 	$valid_layouts = array();
 	if ( 'post' == $post->post_type ) {
