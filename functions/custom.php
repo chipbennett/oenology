@@ -172,11 +172,7 @@ function oenology_get_current_tab() {
         $current = $_GET['tab'];
     } else {
 		$oenology_options = oenology_get_options();
-		if ( 'oenology-settings' == $page ) {
-			$current = $oenology_options['default_options_tab'];
-		} else if ( 'oenology-reference' == $page ) {
-			$current = $oenology_options['default_reference_tab'];
-		}
+		$current = $oenology_options['default_options_tab'];
     }	
 	return apply_filters( 'oenology_get_current_tab', $current );
 }

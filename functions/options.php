@@ -565,6 +565,14 @@ function oenology_get_option_parameters() {
 			'since' => '3.0',
 			'default' => 'none'
 		),
+		'default_options_tab' => array(
+			'name' => 'default_options_tab',
+			'title' => __( 'Default Options Tab', 'oenology' ),
+			'type' => 'internal',
+			'tab' => false,
+			'section' => false,
+			'default' => 'varietals'
+		),
     );
     return apply_filters( 'oenology_get_option_parameters', $options );
 }
