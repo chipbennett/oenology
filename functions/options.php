@@ -139,8 +139,17 @@ function oenology_get_option_defaults() {
 		$option_defaults[$name] = $option_parameter['default'];
 	}
 	// Return the defaults array
-	return $option_defaults;
+	return apply_filters( 'oenology_option_defaults', $option_defaults );
 }
+
+/**
+ * Define default options tab
+ */
+function oenology_define_default_options_tab( $options ) {
+	$options['default_options_tab'] = 'varietals';
+	return $options;
+}
+add_filter( 'oenology_option_defaults', 'oenology_define_default_options_tab' );
 
 /**
  * Oenology Theme Option Parameters
@@ -564,14 +573,6 @@ function oenology_get_option_parameters() {
 			'tab' => 'general',
 			'since' => '3.0',
 			'default' => 'none'
-		),
-		'default_options_tab' => array(
-			'name' => 'default_options_tab',
-			'title' => __( 'Default Options Tab', 'oenology' ),
-			'type' => 'internal',
-			'tab' => false,
-			'section' => false,
-			'default' => 'varietals'
 		),
     );
     return apply_filters( 'oenology_get_option_parameters', $options );
