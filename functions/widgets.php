@@ -105,7 +105,7 @@ function oenology_showhide_widget_content_open() {
     $showhide .= 'Click to ';
     $showhide .= '<span style="color:#5588aa;" onclick="d=this.parentElement.nextElementSibling; d.style.display==\'none\' ? d.style.display=\'block\' : d.style.display=\'none\';">view/hide</span>';
     $showhide .= '<br /></span>';
-    $showhide .= '<div style="display:' . $options['widget_display_default_state'] . ';">';
+    $showhide .= '<div class="widget-inner" style="display:' . $options['widget_display_default_state'] . ';">';
 
     return $showhide;
 }
