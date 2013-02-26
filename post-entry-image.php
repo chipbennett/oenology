@@ -19,11 +19,20 @@ $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attac
 
 $total_images = ( $images ? count( $images ) : '0' );
 
-if ( is_attachment() || $images ) { ?>
+if ( is_attachment() || $images ) { 	
+	$gallery_image_meta = oenology_gallery_image_meta();
+	$gallery_links = oenology_gallery_links();
+	?>
+
+<div class="gallery-photo">
+	<a href="<?php echo $gallery_image_meta['url']; ?>"><?php echo $gallery_image_meta['image'];  ?></a>
+	<div class="gallery-caption bigcaption">
+		<?php echo $gallery_image_meta['caption']; ?>
+	</div>
+</div>
+
 <div class="gallery-nav"> <!-- Head navigation -->
 <?php 
-$gallery_image_meta = oenology_gallery_image_meta();
-$gallery_links = oenology_gallery_links();
 if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format should only have one image attachment
 ?>
 	<dl>
@@ -103,13 +112,6 @@ if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format s
 
 	</div>
 	
-</div>
-
-<div class="gallery-photo">
-	<a href="<?php echo $gallery_image_meta['url']; ?>"><?php echo $gallery_image_meta['image'];  ?></a>
-	<div class="gallery-caption bigcaption">
-		<?php echo $gallery_image_meta['caption']; ?>
-	</div>
 </div>
 
 <?php } else { ?>

@@ -45,7 +45,7 @@ License URI: 	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
    0 - Font Style Specifications
    1 - Master/Default Style Specifications
    2 - Layout/Structure Style Specifications
-   3 -Section-Specific Style Specifications
+   3 - Section-Specific Style Specifications
         3.1 - Header Section (#header) Style Specifications
         3.2 - Main Content Section (#content) Style Specifications
         3.3 - Left/Right Column (#leftcol/#rightcol) Style Specifications
@@ -55,6 +55,7 @@ License URI: 	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
    4 - Site Navigation Style Specifications
    5 - Comments Style Specifications
    6 - Print Style Specifications
+   7 - Responsive (Mobile) Style Specifications
    ----------------------------------------------- 
 */
 
@@ -128,7 +129,7 @@ Declare all fonts used in theme
 }
 /* Arial/Verdana type font-family */
 body,
-.postnav li,
+.infobar-items li,
 .post-entry .caption,
 #footer,
 .cat-description,
@@ -615,7 +616,11 @@ div.site-header-text {
 /* Infobar
    --------------------
 */
-.postnav {
+#infobar {
+	height: 35px;
+}
+
+.infobar-items {
   list-style-type:none;
   display:block;
   clear:both;
@@ -624,7 +629,7 @@ div.site-header-text {
   margin-bottom:0px;
   text-align:left;
 }
-.postnav li {
+.infobar-items .infobar-item {
   position:relative;
   bottom:0px;
   display: block;
@@ -636,7 +641,7 @@ div.site-header-text {
   font-weight:normal;
   text-align:left;
 }
-#postnavlogin {
+#infobar-login {
 	width:218px;
 	padding-right:0px;
 	padding-left:0px;
@@ -644,10 +649,10 @@ div.site-header-text {
 	text-align:right;
 }
 
-.postnav li a {
+.infobar-items li a {
      text-decoration:none;
 }
-.postnav li a:hover {
+.infobar-items li a:hover {
      text-decoration:underline;
 }
 /* Infobar Breadcrumb Links and Loop Footer Prev/Next Links
@@ -671,7 +676,7 @@ div.site-header-text {
 	float:left;
 }
 
-#infobabrnav {
+#infobar-nav {
   width:195px;
   min-width:195px;
   max-width:195px;
@@ -679,8 +684,8 @@ div.site-header-text {
   font-size: 8pt;
   text-align:center;
 } 
-.single #infobabrnav,
-.page #infobabrnav {
+.single #infobar-nav,
+.page #infobar-nav {
   width:55px;
   min-width:55px;
   max-width:55px;
@@ -759,23 +764,23 @@ ul.page-numbers li {
 /* Infobar Prev/Next Post Links - Default 
   ------------------------------------------------------
 */
-.postnavhome {
+.infobar-itemshome {
   width:181px;
   margin:0px auto;
   text-align:center;
 }
-.postnavnewer {
+.infobar-itemsnewer {
   width:181px;
   text-align:left;
 }
-.postnavolder {
+.infobar-itemsolder {
   width:181px;
   text-align:right;
 }
 /* Infobar Search
    --------------------
 */
-#postnavsearch {
+#infobar-search {
 	float:right;
 	width:182px;
 	margin:0;
@@ -784,24 +789,24 @@ ul.page-numbers li {
 	padding-left: 3px;
 	text-align:right;
 }
-#postnavsearch #searchform {
+#infobar-search #searchform {
 	margin:0;
 	padding:0;
 }
-#postnavsearch form label {
+#infobar-search form label {
 	display:none;
 }
-#postnavsearch input {
+#infobar-search input {
 	margin-top:3px;
 	margin-bottom:3px;
 	font-size: 8pt;
 	font-weight: normal;
 }
-#postnavsearch #searchsubmit {
+#infobar-search #searchsubmit {
 	font-size: 7pt;
 	padding: 0;
 }
-#postnavsearch input#searchsubmit {
+#infobar-search input#searchsubmit {
 	height:15px;
 	padding:0;
 	margin:0;
@@ -852,6 +857,10 @@ ul.page-numbers li {
 .showhide span {
   cursor: pointer;
   color: #58a;
+}
+
+.widget-inner {
+	padding-top: 15px;
 }
 
 /* Lists
@@ -1551,12 +1560,24 @@ body.term-post-format-image .post-entry {
   text-decoration:none;
 }
 .post-entry .wp-caption {
-	max-width:635px;
+	max-width:96%;
 	height: auto;
 }
 body.attachment .post-entry .wp-caption,
 body.single-format-image .post-entry .wp-caption {
 	max-width:900px;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+	height: auto;
+	max-width: 100%;
+    vertical-align: middle;
+}
+
+.post-entry img, .post-entry .wp-caption {
+    max-width: 100% !important;
 }
 
 /* Post Entry - Captions
@@ -1609,6 +1630,7 @@ dl.gallery-item dd {
 .post-entry .gallery {
 	margin: 0px auto;
 	text-align: center;
+	max-width: 96%;
 }
 .post-entry .gallery .gallery-item {
 	position:relative;
@@ -1625,6 +1647,9 @@ dl.gallery-item dd {
 	position:absolute;
 	bottom: 1px;
 	left: 1px;
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
 	max-height:60%;
 	margin: 0px auto;
 	padding: 0;
@@ -1641,422 +1666,59 @@ dl.gallery-item dd {
 	display:block;
 }
 .gallery-columns-1 {
-	max-width: 150px;
 	width: 150px;
-}
-.gallery-columns-1 .gallery-item {
-	max-width: 150px;
-	width: 150px;
-}
-#main .post-entry  .gallery-columns-1 img { 
-	max-width: 150px;
-	height: auto;
-	max-height: 150px;
-}
-.gallery-columns-1 .gallery-caption {
-	min-width: 149px;
-	max-width: 149px;
 }
 .gallery-columns-2 {
-	max-width: 300px;
 	width: 300px;
 }
-.gallery-columns-2 .gallery-item {
-	max-width: 150px;
-	width: 150px;
-}
-#main .post-entry  .gallery-columns-2 img { 
-	max-width: 150px;
-	height: auto;
-	max-height: 150px;
-}
-.gallery-columns-2 .gallery-caption {
-	min-width: 149px;
-	max-width: 149px;
-}
 .gallery-columns-3 {
-	max-width: 450px;
 	width: 450px;
 }
-.gallery-columns-3 .gallery-item {
-	max-width: 150px;
-	width: 150px;
-}
-#main .post-entry  .gallery-columns-3 img { 
-	max-width: 150px;
-	height: auto;
-	max-height: 150px;
-}
-.gallery-columns-3 .gallery-caption {
-	min-width: 149px;
-	max-width: 149px;
-}
 .gallery-columns-4 {
-	max-width: 604px;
 	width: 604px;
 }
-.gallery-columns-4 .gallery-item {
-	max-width: 151px;
-	width: 151px;
-}
-#main .post-entry  .gallery-columns-4 img { 
-	max-width: 150px;
-	height: auto;
-	max-height: 150px;
-}
-.gallery-columns-4 .gallery-caption {
-	min-width: 149px;
-	max-width: 149px;
-}
-.gallery-columns-5 {
-	max-width: 604px;
-	width: 604px;
-}
-.gallery-columns-5 .gallery-item {
-	max-width: 120px;
-	width: 120px;
-}
-#main .post-entry  .gallery-columns-5 img { 
-	max-width: 120px;
-	height: auto;
-	max-height: 120px;
-}
-.gallery-columns-5 .gallery-caption {
-	min-width: 119px;
-	max-width: 119px;
-	font-size: 0.8em;
+.gallery-columns-5{
+	width: 756px;
 }
 .gallery-columns-6 {
-	max-width: 604px;
-	width: 604px;
+	width: 908x;
 }
-.gallery-columns-6 .gallery-item {
-	max-width: 100px;
-	width: 100px;
-}
-#main .post-entry  .gallery-columns-6 img { 
-	max-width: 100px;
-	height: auto;
-	max-height: 100px;
-}
-.gallery-columns-6 .gallery-caption {
-	min-width: 99px;
-	max-width: 99px;
-	font-size: 0.67em;
-}
-.gallery-columns-7 {
-	max-width: 604px;
-	width: 604px;
-}
-.gallery-columns-7 .gallery-item {
-	max-width: 85px;
-	width: 85px;
-}
-#main .post-entry  .gallery-columns-7 img { 
-	max-width: 85px;
-	height: auto;
-	max-height: 85px;
-}
-.gallery-columns-7 .gallery-caption {
-	min-width: 84px;
-	max-width: 84px;
-	font-size: 0.6em;
-}
-.gallery-columns-8 {
-	max-width: 604px;
-	width: 604px;
-}
-.gallery-columns-8 .gallery-item {
-	max-width: 75px;
-	width: 75px;
-}
-#main .post-entry  .gallery-columns-8 img { 
-	max-width: 75px;
-	height: auto;
-	max-height: 75px;
-}
-.gallery-columns-8 .gallery-caption {
-	min-width: 74px;
-	max-width: 74px;
-	font-size: 0.6em;
-}
-.gallery-columns-9 {
-	max-width: 604px;
-	width: 604px;
-}
-.gallery-columns-9 .gallery-item {
-	max-width: 67px;
-	width: 67px;
-}
-#main .post-entry  .gallery-columns-9 img { 
-	max-width: 67px;
-	height: auto;
-	max-height: 67px;
-}
-.gallery-columns-9 .gallery-caption {
-	min-width: 66px;
-	max-width: 66px;
-	font-size: 0.6em;
-}
+.gallery-columns-7,
+.gallery-columns-8,
+.gallery-columns-9,
 .gallery-columns-10 {
-	max-width: 604px;
-	width: 604px;
-}
-.gallery-columns-10 .gallery-item {
-	max-width: 60px;
-	width: 60px;
-}
-#main .post-entry  .gallery-columns-10 img { 
-	max-width: 60px;
-	height: auto;
-	max-height: 60px;
-}
-.gallery-columns-10 .gallery-caption {
-	min-width: 59px;
-	max-width: 59px;
-	font-size: 0.5em;
-}
-.layout-one-column .gallery-columns-5,
-#page.layout-one-column .gallery-columns-5,
-.layout-one-column .gallery-columns-6,
-#page.layout-one-column .gallery-columns-6,
-.layout-one-column .gallery-columns-7,
-#page.layout-one-column .gallery-columns-7,
-.layout-one-column .gallery-columns-8,
-#page.layout-one-column .gallery-columns-8,
-.layout-one-column .gallery-columns-9,
-#page.layout-one-column .gallery-columns-9,
-.layout-one-column .gallery-columns-10,
-#page.layout-one-column .gallery-columns-10 {
-	max-width: 755px;
-	width: 755px;
-}
-.layout-two-column .gallery-columns-5,
-#page.layout-two-column .gallery-columns-5,
-.layout-two-column .gallery-columns-6,
-#page.layout-two-column .gallery-columns-6,
-.layout-two-column .gallery-columns-7,
-#page.layout-two-column .gallery-columns-7,
-.layout-two-column .gallery-columns-8,
-#page.layout-two-column .gallery-columns-8,
-.layout-two-column .gallery-columns-9,
-#page.layout-two-column .gallery-columns-9,
-.layout-two-column .gallery-columns-10,
-#page.layout-two-column .gallery-columns-10 {
-	max-width: 755px;
-	width: 755px;
-}
-.layout-one-column .gallery-columns-5 .gallery-item,
-#page.layout-one-column .gallery-columns-5 .gallery-item,
-.layout-two-column .gallery-columns-5 .gallery-item,
-#page.layout-two-column .gallery-columns-5 .gallery-item {
-	max-width: 150px;
-	width: 150px;
-}
-.layout-one-column #main .post-entry  .gallery-columns-5 img,
-#page.layout-one-column #main .post-entry  .gallery-columns-5 img,
-.layout-two-column #main .post-entry  .gallery-columns-5 img,
-#page.layout-two-column #main .post-entry  .gallery-columns-5 img { 
-	max-width: 150px;
-	max-height: 150px;
-}
-.layout-one-column .gallery-columns-5 .gallery-caption,
-#page.layout-one-column .gallery-columns-5 .gallery-caption,
-.layout-two-column .gallery-columns-5 .gallery-caption,
-#page.layout-two-column .gallery-columns-5 .gallery-caption {
-	min-width: 149px;
-	max-width: 149px;
-	font-size: 1em;
-}
-.layout-one-column .gallery-columns-6 .gallery-item,
-#page.layout-one-column .gallery-columns-6 .gallery-item,
-.layout-two-column .gallery-columns-6 .gallery-item,
-#page.layout-two-column .gallery-columns-6 .gallery-item {
-	max-width: 125px;
-	width: 125px;
-}
-.layout-one-column #main .post-entry  .gallery-columns-6 img,
-#page.layout-one-column #main .post-entry  .gallery-columns-6 img,
-.layout-two-column #main .post-entry  .gallery-columns-6 img,
-#page.layout-two-column #main .post-entry  .gallery-columns-6 img { 
-	max-width: 125px;
-	max-height: 125px;
-}
-.layout-one-column .gallery-columns-6 .gallery-caption,
-#page.layout-one-column .gallery-columns-6 .gallery-caption,
-.layout-two-column .gallery-columns-6 .gallery-caption,
-#page.layout-two-column .gallery-columns-6 .gallery-caption {
-	min-width: 124px;
-	max-width: 124px;
-	font-size: 0.8em;
-}
-.layout-one-column .gallery-columns-7 .gallery-item,
-#page.layout-one-column .gallery-columns-7 .gallery-item,
-.layout-two-column .gallery-columns-7 .gallery-item,
-#page.layout-two-column .gallery-columns-7 .gallery-item {
-	max-width: 107px;
-	width: 107px;
-}
-.layout-one-column #main .post-entry  .gallery-columns-7 img,
-#page.layout-one-column #main .post-entry  .gallery-columns-7 img,
-.layout-two-column #main .post-entry  .gallery-columns-7 img,
-#page.layout-two-column #main .post-entry  .gallery-columns-7 img { 
-	max-width: 107px;
-	max-height: 107px;
-}
-.layout-one-column .gallery-columns-7 .gallery-caption,
-#page.layout-one-column .gallery-columns-7 .gallery-caption,
-.layout-two-column .gallery-columns-7 .gallery-caption,
-#page.layout-two-column .gallery-columns-7 .gallery-caption {
-	min-width: 106px;
-	max-width: 106px;
-	font-size: 0.8em;
-}
-.layout-one-column .gallery-columns-8 .gallery-item,
-#page.layout-one-column .gallery-columns-8 .gallery-item,
-.layout-two-column .gallery-columns-8 .gallery-item,
-#page.layout-two-column .gallery-columns-8 .gallery-item {
-	max-width: 94px;
-	width: 94px;
-}
-.layout-one-column #main .post-entry  .gallery-columns-8 img,
-#page.layout-one-column #main .post-entry  .gallery-columns-8 img,
-.layout-two-column #main .post-entry  .gallery-columns-8 img,
-#page.layout-two-column #main .post-entry  .gallery-columns-8 img { 
-	max-width: 94px;
-	max-height: 94px;
-}
-.layout-one-column .gallery-columns-8 .gallery-caption,
-#page.layout-one-column .gallery-columns-8 .gallery-caption,
-.layout-two-column .gallery-columns-8 .gallery-caption,
-#page.layout-two-column .gallery-columns-8 .gallery-caption {
-	min-width: 93px;
-	max-width: 93px;
-	font-size: 0.67em;
-}
-.layout-one-column .gallery-columns-9 .gallery-item,
-#page.layout-one-column .gallery-columns-9 .gallery-item,
-.layout-two-column .gallery-columns-9 .gallery-item,
-#page.layout-two-column .gallery-columns-9 .gallery-item {
-	max-width: 83px;
-	width: 83px;
-}
-.layout-one-column #main .post-entry  .gallery-columns-9 img,
-#page.layout-one-column #main .post-entry  .gallery-columns-9 img,
-.layout-two-column #main .post-entry  .gallery-columns-9 img,
-#page.layout-two-column #main .post-entry  .gallery-columns-9 img { 
-	max-width: 83px;
-	max-height: 83px;
-}
-.layout-one-column .gallery-columns-9 .gallery-caption,
-#page.layout-one-column .gallery-columns-9 .gallery-caption,
-.layout-two-column .gallery-columns-9 .gallery-caption,
-#page.layout-two-column .gallery-columns-9 .gallery-caption {
-	min-width: 82px;
-	max-width: 82px;
-	font-size: 0.6em;
-}
-.layout-one-column .gallery-columns-10 .gallery-item,
-#page.layout-one-column .gallery-columns-10 .gallery-item,
-.layout-two-column .gallery-columns-10 .gallery-item,
-#page.layout-two-column .gallery-columns-10 .gallery-item {
-	max-width: 75px;
-	width: 75px;
-}
-.layout-one-column #main .post-entry  .gallery-columns-10 img,
-#page.layout-one-column #main .post-entry  .gallery-columns-10 img,
-.layout-two-column #main .post-entry  .gallery-columns-10 img,
-#page.layout-two-column #main .post-entry  .gallery-columns-10 img { 
-	max-width: 75px;
-	max-height: 75px;
-}
-.layout-one-column .gallery-columns-10 .gallery-caption,
-#page.layout-one-column .gallery-columns-10 .gallery-caption,
-.layout-two-column .gallery-columns-10 .gallery-caption,
-#page.layout-two-column .gallery-columns-10 .gallery-caption {
-	min-width: 74px;
-	max-width: 74px;
-	font-size: 0.6em;
+	width: 975px;
 }
 
-.single-format-gallery .gallery-columns-6 {
-	max-width: 900px;
-	width: 900px;
+.gallery-columns-1 .gallery-item  { 
+	max-width: 96%;
 }
-.single-format-gallery .gallery-columns-7,
-.single-format-gallery .gallery-columns-8,
-.single-format-gallery .gallery-columns-9,
-.single-format-gallery .gallery-columns-10 {
-	max-width: 970px;
-	width: 970px;
+.gallery-columns-2 .gallery-item  { 
+	max-width: 48%;
 }
-.single-format-gallery .gallery-columns-5 .gallery-item,
-.single-format-gallery .gallery-columns-6 .gallery-item {
-	max-width: 150px;
-	width: 150px;
+.gallery-columns-3 .gallery-item  { 
+	max-width: 32%;
 }
-.single-format-gallery #main .post-entry  .gallery-columns-5 img,
-.single-format-gallery #main .post-entry  .gallery-columns-6 img { 
-	max-width: 150px;
-	max-height: 150px;
+.gallery-columns-4 .gallery-item  { 
+	max-width: 24%;
 }
-.single-format-gallery .gallery-columns-5 .gallery-caption,
-.single-format-gallery .gallery-columns-6 .gallery-caption {
-	min-width: 149px;
-	max-width: 149px;
-	font-size: 1em;
+.gallery-columns-5 .gallery-item  { 
+	max-width: 19%;
 }
-.single-format-gallery .gallery-columns-7 .gallery-item {
-	max-width: 138px;
-	width: 138px;
+.gallery-columns-6 .gallery-item  { 
+	max-width: 16%;
 }
-.single-format-gallery #main .post-entry  .gallery-columns-7 img { 
-	max-width: 138px;
-	max-height: 138px;
+.gallery-columns-7 .gallery-item  { 
+	max-width: 14%;
 }
-.single-format-gallery .gallery-columns-7 .gallery-caption {
-	min-width: 137px;
-	max-width: 137px;
-	font-size: 0.8em;
+.gallery-columns-8 .gallery-item  { 
+	max-width: 12%;
 }
-.single-format-gallery .gallery-columns-8 .gallery-item {
-	max-width: 121px;
-	width: 121px;
+.gallery-columns-9 .gallery-item  { 
+	max-width: 11%;
 }
-.single-format-gallery #main .post-entry  .gallery-columns-8 img { 
-	max-width: 121px;
-	max-height: 121px;
-}
-.single-format-gallery .gallery-columns-8 .gallery-caption {
-	min-width: 120px;
-	max-width: 120px;
-	font-size: 0.8em;
-}
-.single-format-gallery .gallery-columns-9 .gallery-item {
-	max-width: 107px;
-	width: 107px;
-}
-.single-format-gallery #main .post-entry  .gallery-columns-9 img { 
-	max-width: 107px;
-	max-height: 107px;
-}
-.single-format-gallery .gallery-columns-9 .gallery-caption {
-	min-width: 106px;
-	max-width: 106px;
-	font-size: 0.67em;
-}
-.single-format-gallery .gallery-columns-10 .gallery-item {
-	max-width: 97px;
-	width: 97px;
-}
-.single-format-gallery #main .post-entry  .gallery-columns-10 img { 
-	max-width: 97px;
-	max-height: 97px;
-}
-.single-format-gallery .gallery-columns-10 .gallery-caption {
-	min-width: 96px;
-	max-width: 96px;
-	font-size: 0.6em;
+.gallery-columns-10 .gallery-item  { 
+	max-width: 9.6%;
 }
 
 /* Post Entry - Galleries and Post Attachments
@@ -2071,7 +1733,7 @@ body.single-format-image .post-entry {
 	float:left;
 	display:inline;
 	width:100px;
-	margin:0;
+	margin:0px -900px 0px 0px;
 	padding:0;
 	font-size: 8pt;
 	line-height:1.3em;
@@ -2127,7 +1789,7 @@ body.single-format-image .post-entry {
 }
 .gallery-photo {
 	display:block;
-	float: none;
+	float: right;
 	clear: none;
 	margin:0;
 	margin-left: 100px;
@@ -2328,6 +1990,9 @@ body.single-format-image dd {
 */
 /*    4.1 - Main Navigation Style Specifications   
 ----------------------------------------------- */
+
+.tinynav { display: none; }
+
 .nav-header {
 	display: block;
 	float:left;
@@ -2836,7 +2501,7 @@ ol.trackbacklist {
 ----------------------------------------------- */
 #header,
 #navbar,
-#extent .postnav,
+#extent .infobar-items,
 #leftcol,
 #rightcol {
 	display:none;
@@ -2851,3 +2516,229 @@ ol.trackbacklist {
   width:7.5in;
   }
 } /* End @media print */
+
+
+/* =Forms
+-------------------------------------------------------------- */
+area,
+select,
+textarea
+input[type="text"], 
+input[type="password"] {
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	vertical-align: middle;
+	width: 100%;
+}
+
+/* 
+ * ============================================================================================= 
+ * 7 - Responsive (Mobile) Style Specifications
+ * ============================================================================================= 
+ */
+@media screen and (max-width: 980px) {
+
+	/* Hide things */
+	.nav-header,
+	#infobar-nav {
+		display: none;
+	}
+	
+	/* Set width, position, clear floats */
+    body,
+    #extent,
+	#infobar,
+	.infobar-items,
+	.infobar-item,
+	#infobar #breadcrumbs,
+	.single #breadcrumbs,
+	#breadcrumbs .crumbs,
+	#infobar-nav,
+	body.blog #infobar-nav,
+	body.archive #infobar-nav,
+	body.paged #infobar-nav,
+	body.single #infobar-nav,
+	#infobar-login,
+    #infobar-search,
+	#main,
+	#page.layout-one-column #main,
+	.layout-one-column #main,
+	#page.layout-two-column #main,
+	#page #main, .layout-three-column #main,
+	#page #main,
+	.layout-three-column #main,
+	#page.attachment #main,
+	body.layout-full #main,
+	.layout-three-column.single-format-image #main,
+	.gallery-title,
+	.gallery-description,
+	#leftcol,
+	#page #leftcol,
+	.layout-three-column #leftcol,
+	#front-page.layout-three-column #leftcol,
+	#page.layout-two-column #leftcol,
+	.layout-two-column-right #leftcol,
+    #rightcol,
+    #doublecoltop, 
+    #doublecolbottom,
+    #sidebar-doublecol,
+	.title, .widgettitle,
+    #footer,
+	.nav-footer,
+	.nav-footer li::after	{
+		float: none;
+		display: block;
+		position: relative;
+		width: auto;
+		min-width: auto;
+        max-width: 96%;
+		height: auto;
+        margin: 0 auto;
+		text-align: center;
+        padding: 0;
+    }
+	/* Posts */
+	.post {
+		max-width: 100%;
+		margin-right: 5px;
+	}
+	/* Gallery Photo */
+	.gallery-photo {
+		float: none;
+		max-width: 100%;
+		margin: 0px auto;
+	}
+	.gallery-nav-next {
+		float: right;
+	}
+	.gallery-nav, 
+	.gallery-more {
+		float: none;
+		display: block;
+		margin: 0px auto;
+		width: auto;
+		max-width: 100%;
+	}
+	div.gallery-nav dl,
+	div.gallery-more dl {
+		display: block;
+		float: none;
+		margin: 0px auto;
+		text-align: center;
+	}
+	div.gallery-nav dt,
+	div.gallery-nav dd, 
+	div.gallery-more dt,
+	div.gallery-more dd {
+		width: 100%;
+		text-align: center;
+		margin: 0px auto;
+	}
+	/* Navigation page numbers */	
+	.page-numbers,
+    ol.wp-paginate, ul.page-numbers,
+	#infobar-nav .page-numbers {
+		float: none;
+		display: inline;
+	}
+	#infobar .infobar-items li#infobar-nav li,
+	#infobar-nav .page-numbers li,
+	#loop-footer .wp-paginate li, 
+	#loop-footer .page-numbers li,
+	ul.page-numbers li {
+		float: none;
+		display: inline;
+	}
+	ul.page-numbers li,
+	#infobar .infobar-items ul.page-numbers li {
+		float: none;
+		margin-right: 20px;
+	}
+	/* Embiggen fonts */
+	#infobar .infobar-items li,
+	#loop-footer .wp-paginate li, 
+	#loop-footer .page-numbers li,
+	.title, .widgettitle,
+	#footer,
+	.nav-footer li::after {
+		font-size:14pt;
+		line-height: 2em;
+	}
+	#infobar-search input,
+	#infobar-search input#searchsubmit {
+		height: auto;
+		width: auto;
+		max-width: 100%;
+		font-size:16pt;
+		padding: 5px;
+	}
+	
+	/* Widget Margins */
+	.widget:first-child {
+		margin-top: 20px;
+	}
+    
+	/* Word breaks */
+    h1,
+    div.site-header-text {
+        word-break: normal;
+		word-wrap: break-word;
+    }
+	
+	/* Comments */	
+	#commentform,
+	#commentform textarea,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url ,
+	.comment-form-captcha,
+	#commentform .form-allowed-tags code {
+		max-width: 96%;
+	}
+
+	
+	/* Use TinyNav */
+	.tinynav {
+		display: block;
+		margin-top: 10px;
+		font-size: 24pt;
+		height: 2em;
+	}
+	
+    
+}
+
+@media screen and (max-width: 650px) {
+
+	body {}
+    
+    h1,
+	.post-title,
+	.post-title h1 a {
+        word-break: break-all;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    body {}
+
+}
+
+@media screen and (max-width: 320px) {
+    
+	body {}
+	
+	div.site-header-text {
+		word-break: break-all;
+	}
+
+}
+
+@media screen and (max-width: 240px) {
+    
+    body {
+		word-break: break-all;
+	}
+}

@@ -329,6 +329,110 @@ function oenology_filter_wp_title( $title, $separator ) { // taken from TwentyTe
 add_filter( 'wp_title', 'oenology_filter_wp_title', 10, 2 );
 
 /**
+ * Enqueue respond.js script
+ * 
+ * Action Hook: wp_enqueue_scripts
+ * 
+ * Enqueues the respond.js script.
+ * 
+ * The Respond.js script is copyright 2011, Scott Jehl; www.scottjehl.com, and is licensed
+ * under MIT/GPLv2.
+ * 
+ * @link	https://github.com/scottjehl/Respond							Respond.js script repository
+ * 
+ * @link	http://codex.wordpress.org/Function_Reference/is_admin			Codex Reference: is_admin()
+ * @link	http://codex.wordpress.org/Function_Reference/wp_enqueue_script	Codex Reference: wp_enqueue_script()
+ * 
+ * @since	Oenology 3.1
+ */
+function oenology_enqueue_respond_js() {
+	// Only enqueue script on the front end
+	if ( 
+		// Boolean conditional tag that returns 
+		// TRUE if the current context is the 
+		// WP-Admin, and FALSE if the current 
+		// context is the site front end
+		! is_admin() 
+	) { 
+		// enqueue the javascript that performs 
+		//in-link comment reply fanciness
+		wp_enqueue_script( 'oenology-respond', get_template_directory_uri() . '/js/respond.js/respond.min.js', array('jquery'), '1.2.0', true ); 
+	}
+}
+// Hook into comment_form_before
+add_action( 'wp_enqueue_scripts', 'oenology_enqueue_respond_js' );
+
+/**
+ * Enqueue fitvids.js script
+ * 
+ * Action Hook: wp_enqueue_scripts
+ * 
+ * Enqueues the fitvids.js script.
+ * 
+ * The fitvids.js script is copyright 2011, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com, 
+ * and is licensed under the WTFPL license - http://sam.zoy.org/wtfpl/.
+ * 
+ * @link	https://github.com/davatron5000/FitVids.js						FitVids.js script repository
+ * 
+ * @link	http://codex.wordpress.org/Function_Reference/is_admin			Codex Reference: is_admin()
+ * @link	http://codex.wordpress.org/Function_Reference/wp_enqueue_script	Codex Reference: wp_enqueue_script()
+ * 
+ * @since	Oenology 3.1
+ */
+function oenology_enqueue_fitvids_js() {
+	// Only enqueue script on the front end
+	if ( 
+		// Boolean conditional tag that returns 
+		// TRUE if the current context is the 
+		// WP-Admin, and FALSE if the current 
+		// context is the site front end
+		! is_admin() 
+	) { 
+		// enqueue the fitvids library
+		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.js/jquery.fitvids.min.js', array('jquery'), '1.0.1', true ); 
+		
+		// enqueue the script that instantiates fitvids
+		wp_enqueue_script( 'oenology-fitvids', get_template_directory_uri() . '/js/oenology.fitvids.js', array( 'jquery', 'fitvids' ), '', true );
+	}
+}
+// Hook into comment_form_before
+add_action( 'wp_enqueue_scripts', 'oenology_enqueue_fitvids_js' );
+
+/**
+ * Enqueue responsive menu script
+ * 
+ * Action Hook: wp_enqueue_scripts
+ * 
+ * Enqueues the responsive menu script.
+ * 
+ * The responsive menu script makes the default dropdown hover menu function as
+ * a click menu for mobile devices that can't hover
+ * 
+ * @link	http://webdesign.tutsplus.com/tutorials/site-elements/big-menus-small-screens-responsive-multi-level-navigation/	TutsPlus tutorial
+ * 
+ * @link	http://codex.wordpress.org/Function_Reference/is_admin			Codex Reference: is_admin()
+ * @link	http://codex.wordpress.org/Function_Reference/wp_enqueue_script	Codex Reference: wp_enqueue_script()
+ * 
+ * @since	Oenology 3.1
+ */
+function oenology_enqueue_responsivemenu_js() {
+	// Only enqueue script on the front end
+	if ( 
+		// Boolean conditional tag that returns 
+		// TRUE if the current context is the 
+		// WP-Admin, and FALSE if the current 
+		// context is the site front end
+		! is_admin() 
+	) { 
+		// enqueue the responsive menu script
+		wp_enqueue_script( 'tinynav-library', get_template_directory_uri() . '/js/tinynav.js/tinynav.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'oenology-tinynav', get_template_directory_uri() . '/js/oenology.tinynav.js', array('tinynav-library'), '', true );
+	}
+}
+// Hook into comment_form_before
+add_action( 'wp_enqueue_scripts', 'oenology_enqueue_responsivemenu_js' );
+
+/**
  * Output custom comments list for pings
  * 
  * Callback: wp_list_comments() Pings
