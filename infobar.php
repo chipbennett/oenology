@@ -27,7 +27,7 @@
  * @todo	move documentation inline
  */
 ?>
-<ul class="postnav">
+<ul class="infobar-items">
 	<?php 
 	if ( 
 	//
@@ -36,21 +36,21 @@
 	) {
 		//
 		//
-		yoast_breadcrumb('<li id="breadcrumbs">','</li>');
+		yoast_breadcrumb('<li id="breadcrumbs" class="infobar-item">','</li>');
 	} else {
 		//
 		//
 		oenology_breadcrumb();
 	} 
 	?>
-	<li id="infobabrnav">
+	<li id="infobar-nav" class="infobar-item">
 		<?php 
 		//
 		//
 		oenology_infobar_navigation(); 
 		?>
 	</li>
-    <li id="postnavlogin">
+    <li id="infobar-login" class="infobar-item">
     <?php 
 	if ( 
 	//
@@ -74,7 +74,7 @@
 	//
     wp_loginout(); ?>
     </li>
-    <li id="postnavsearch">
+    <li id="infobar-search" class="infobar-item">
       <?php 
 	  //
 	  //
