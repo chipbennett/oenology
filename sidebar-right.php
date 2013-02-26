@@ -2,7 +2,7 @@
 /**
  * Template part file that contains the default right-column dynamic sidebar content
  *
- * This file is called by all primary template pages
+ * This file is called by sidebar.php
  * 
  * @uses		oenology_get_widget_args()	Defined in /functions/widgets.php
  * 
@@ -31,8 +31,10 @@
 // 
 // @return	mixed	Widget output
 //
-// Calls the core "Calendar" Widget, with no Title
-the_widget('WP_Widget_Calendar' , 'title=' , oenology_get_widget_args() );
-// Calls the core "Meta" Widget, with "Meta" as Title
-the_widget('WP_Widget_Meta' , 'title=Meta' , oenology_get_widget_args() );
+// Calls the core "Calendar" Widget, with "Posts Calendar" as the title
+the_widget('WP_Widget_Calendar' , 'title=Posts Calendar' , oenology_get_widget_args() );
+// Calls the core "Archives" Widget
+the_widget('WP_Widget_Archives' , array(), oenology_get_widget_args() );
+// Calls the core "Recent Posts" Widget
+the_widget('WP_Widget_Recent_Posts' , array(), oenology_get_widget_args() );
 ?>
