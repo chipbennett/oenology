@@ -945,7 +945,7 @@ function oenology_hook_post_header_taxonomies() {
 	
 	// Post Taxonomies
 	global $post;
-	if ( ! is_page() && 'page' != $post->post_type ) {
+	if ( ! is_page() && ! in_array( $post->post_type, array( 'page', 'attachment' ) ) && 'page' != $post->post_type && 'attachment' != $post->post_type ) {
 		// Category List
 		$post_header_taxonomies['categorylist'] = '<span class="post-title-category">';
 		$post_header_taxonomies['categorylist'] .= sprintf( __( 'Filed in %s', 'oenology' ), get_the_category_list( ', ' ) );
