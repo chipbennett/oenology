@@ -877,7 +877,7 @@ function oenology_get_404_content() {
  */
 function oenology_breadcrumb() {
  
-	$containerBefore = apply_filters( 'oenology_breadcrumb_container_before', '<li id="breadcrumbs">' );
+	$containerBefore = apply_filters( 'oenology_breadcrumb_container_before', '<li id="breadcrumbs" class="infobar-item">' );
 	$containerAfter = apply_filters( 'oenology_breadcrumb_container_after', '</li>' );
 	$containerCrumb = apply_filters( 'oenology_breadcrumb_container_open', '<div class="crumbs">' );
 	$containerCrumbEnd = apply_filters( 'oenology_breadcrumb_container_close', '</div>' );
