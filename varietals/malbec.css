@@ -240,6 +240,16 @@ tr:nth-child(even) {
 }
 /* Infobar
   -------------------------------------------- */
+#infobar {
+	border-top-color:#444;
+	border-bottom-color:#000;
+	color:#777;
+	background-color:#2C362B;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#2c362b');
+	background: -webkit-linear-gradient( top, #555555, #2c362b );
+	background: -moz-linear-gradient( top, #555555, #2c362b );
+	background: -ms-linear-gradient( top, #555555, #2c362b );
+}
 #breadcrumbs {
   color: #888;
 } 
@@ -251,16 +261,6 @@ tr:nth-child(even) {
 	color: #777777;  
 	background: transparent; 
 }  
-.postnav li {
-  border-top-color:#444;
-  border-bottom-color:#000;
-  color:#777;
-  background-color:#2C362B;
-     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#2c362b');
-     background: -webkit-linear-gradient( top, #555555, #2c362b );
-     background: -moz-linear-gradient( top, #555555, #2c362b );
-     background: -ms-linear-gradient( top, #555555, #2c362b );
-}
 #breadcrumbs strong {
   color: #fff;
   text-shadow: 1px 1px 0px #111;

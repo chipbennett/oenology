@@ -212,6 +212,18 @@ tr:nth-child(even) {
 }
 /* Infobar
   -------------------------------------------- */
+  
+#infobar {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	color:#555;
+	background-color:#f8f8fb;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#f8f8fb');
+	background: -webkit-linear-gradient( top, #f0f0f0, #f8f8fb );
+	background: -moz-linear-gradient( top, #f0f0f0, #f8f8fb );
+	background: -ms-linear-gradient( top, #f0f0f0, #f8f8fb );
+}
+
 #breadcrumbs {
   color: #888;
 } 
@@ -223,16 +235,6 @@ ul.page-numbers {
 	color: #777777;  
 	background: transparent; 
 }  
-.postnav li {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  color:#555;
-  background-color:#f8f8fb;
-     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#f8f8fb');
-     background: -webkit-linear-gradient( top, #f0f0f0, #f8f8fb );
-     background: -moz-linear-gradient( top, #f0f0f0, #f8f8fb );
-     background: -ms-linear-gradient( top, #f0f0f0, #f8f8fb );
-}
 #breadcrumbs strong {
   color: #000;
   text-shadow: 1px 1px 0px #ccc;

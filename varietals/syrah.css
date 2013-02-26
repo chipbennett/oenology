@@ -235,6 +235,16 @@ tr:nth-child(even) {
 }
 /* Infobar
   -------------------------------------------- */
+#infobar {
+	border-top-color:#444;
+	border-bottom-color:#000;
+	color:#777;
+	background-color:#282828;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#000000');
+	background: -webkit-linear-gradient( top, #555555, #000000 );
+	background: -moz-linear-gradient( top, #555555, #000000 );
+	background: -ms-linear-gradient( top, #555555, #000000 );
+}
 #breadcrumbs {
   color: #888;
 } 
@@ -246,16 +256,6 @@ tr:nth-child(even) {
 	color: #777777;  
 	background: transparent; 
 }  
-.postnav li {
-  border-top-color:#444;
-  border-bottom-color:#000;
-  color:#777;
-  background-color:#282828;
-     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#000000');
-     background: -webkit-linear-gradient( top, #555555, #000000 );
-     background: -moz-linear-gradient( top, #555555, #000000 );
-     background: -ms-linear-gradient( top, #555555, #000000 );
-}
 #breadcrumbs strong {
   color: #fff;
   text-shadow: 1px 1px 0px #111;
