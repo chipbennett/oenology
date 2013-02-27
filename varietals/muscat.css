@@ -643,6 +643,7 @@ ol.commentlist li.comment div blockquote p code {
 #commentform .required {
 	color:maroon;
 }
+input,
 #commentform input,
 #commentform textarea {
 	color: #555;

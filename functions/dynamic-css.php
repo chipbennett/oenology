@@ -77,10 +77,14 @@ function oenology_enqueue_varietal_style() {
 
 	// define varietal stylesheet
 	global $oenology_options;
+	$color_scheme = oenology_get_color_scheme();
+	$scheme_handle = 'oenology_' . $color_scheme . '_stylesheet';
+	$scheme_stylesheet = get_template_directory_uri() . '/varietals/' . $color_scheme . '.css';
 	$oenology_options = oenology_get_options();
 	$varietal_handle = 'oenology_' . $oenology_options['varietal'] . '_stylesheet';
 	$varietal_stylesheet = get_template_directory_uri() . '/varietals/' . $oenology_options['varietal'] . '.css';
 	
+	wp_enqueue_style( $scheme_handle, $scheme_stylesheet );
 	wp_enqueue_style( $varietal_handle, $varietal_stylesheet );
 }
 // Enqueue Varietal Stylesheet at wp_print_styles

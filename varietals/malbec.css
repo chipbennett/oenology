@@ -1,701 +1,110 @@
-/* Site Layout
+/* Body Main Color #445341
   -------------------------------------------- */
+
 body {
 	color: #ccc;
 	background-color: #445341;
-  } 
-#footer {
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #000;
-  background-color: #2C362B;
-     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#2c362b');
-     background: -webkit-linear-gradient( top, #555555, #2c362b );
-     background: -moz-linear-gradient( top, #555555, #2c362b );
-     background: -ms-linear-gradient( top, #555555, #2c362b );
-}
-/* HTML Tags
-  -------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
-	color:#ddd;
-  text-shadow: 2px 2px 0px #111;
-  text-decoration: none;
-}
-a,
-a:link,
-a:visited,
-a:hover,
-a:active,
-.showhide span {
-  text-shadow: 1px 1px 0px #111;
-}
-a:hover,
-.showhide span:hover { 
-   text-shadow: 0px 0px 2px #555555; 
-   text-decoration: underline;
-}
-dd {
-	background-color: #444;
-	border-left: 1px solid #777;
-}
-th {
-  background-color: #000;
-  color:#bbb;
-}
+} 
+
+
+/* Primary accent color - #2c362b */
+
+#infobar,
+#footer,
+th,
 pre,
-code {
-	background-color: #222;
-}
-table, tr, th, td {
-	border-color: #666;
-}
-th {
-	color: #fff;
-	background-color: #111;
-   border-color: #aaa;
-}
-tr:nth-child(even) {
-	background-color: #444;
-}
-/* Site Header
-  -------------------------------------------- */
-#site-header-text {
-  color:#ddd;
-  text-shadow: 2px 2px 2px #111;
-}
-#site-header-text p {
-  text-shadow: 2px 2px 0px #111;
-}
-/* Site Navigation
-  -------------------------------------------- */
-.nav-header {
-	background-color: transparent;
-}
+code,
+body.blog .post.sticky,
+#commentform p code,
 .nav-header li,
 .nav-header ul,
-.nav-header ul li {
-	background-color: #333;
+.nav-header ul li,
+.post-date .post-date-year,
+.showhide span:hover,
+#wp-calendar th {
+	background-color: #2c362b;
 }
-.nav-header li a,
-.nav-header li a:link,
-.nav-header li a:visited,
-.nav-header li a:hover,
-.nav-header li a:active {
-	 border: 1px solid #666;
-     border-bottom-color: #444;
-     border-right-color: #444;
-     background: #2C362B;
-     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2c362b', endColorstr='#555555');
-     background: -webkit-linear-gradient( bottom, #555555, #2c362b );
-     background: -moz-linear-gradient( bottom, #555555, #2c362b );
-     background: -ms-linear-gradient( bottom, #555555, #2c362b );
-}
-.nav-header li a:hover {
-     border: 1px solid #58a;
-     border-bottom-color: #000;
-     border-right-color: #000;
-}
-.nav-header li:hover a,
-.nav-header li:hover li:hover a,
-.nav-header li:hover li:hover li:hover a {
-	text-shadow: 0px 0px 2px #555555;
-     background: -webkit-radial-gradient( circle, #2c362b, #000000 );
-     background: -moz-radial-gradient( circle, #2c362b, #000000 );
-     background: -ms-radial-gradient( circle, #2c362b, #000000 );
-}
-.nav-header li:hover li a,
-.nav-header li:hover li:hover li a {
-	text-shadow: none;
-     background: -webkit-linear-gradient( bottom, #555555, #2c362b );
-     background: -moz-linear-gradient( bottom, #555555, #2c362b );
-     background: -ms-linear-gradient( bottom, #555555, #2c362b );
-}
-#nav .current_page_item > a,
-#nav .current_page_parent > a,
-#nav .current_page_ancestor > a,
-#nav .current_page_ancestor .menu-item.current_page_item > a {
-     color:#bbb;
-     border-top-color: #bbb;
-	 border-left-color: #bbb;
-}
-#nav .current_page_item .menu-item a,
-#nav .current_page_ancestor .menu-item a,
-#nav .current_page_ancestor .menu-item.current_page_item .menu-item a{
-	color: #58a;
-	border-bottom-color: #444;
-	border-right-color: #444;
-	font-weight: normal;
-}
-#nav ul {
-	border-left: 1px solid #444;
-	border-bottom: 1px solid #444;
-	box-shadow: 3px 3px 3px #444;
-	-moz-box-shadow: 3px 3px 3px #444;
-	-webkit-box-shadow: 3px 3px 3px #444;
-}
-#nav ul ul {
-	border-left:0;
-}
-/* Sidebar Navigation
-  -------------------------------------------- */
-/* SECOND LEVEL: Display second-level list items like subnavmenu */
-/* TOP LEVEL: Display top-level page links like .title */
-.subnavmenu .current_page_item a,
-.subnavmenu .current_page_parent a,
-.subnavmenu .current_page_ancestor a {
-	border-bottom: 1px dotted #999;
-	color: #999;
-	background-color:transparent;
-}
-.subnavmenu .current_page_item li,
-.subnavmenu .current_page_parent li,
-.subnavmenu .current_page_ancestor li,
-#leftcol #subnav li {
-	border-bottom:0;
-    background-color: #777; 
-}
-.subnavmenu .current_page_item li ul,
-.subnavmenu .current_page_parent li ul,
-.subnavmenu .current_page_ancestor li ul,
-#leftcol #subnav ul {
-	border-left: 1px solid #444;
-     border-right: 1px solid #444;
-}
-/* SECOND LEVEL: Display second-level page links like subnavmenu */
-.subnavmenu .current_page_item li a,
-.subnavmenu .current_page_parent li a,
-.subnavmenu .current_page_parent .current_page_item li a,
-.subnavmenu .current_page_ancestor li a,
-#leftcol #subnav li a {
-     border: 1px solid #444;
-     border: 1px solid#444; 
-     background: #2C362B;
-     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2c362b', endColorstr='#555555');
-     background: -webkit-linear-gradient( bottom, #555555, #2c362b );
-     background: -moz-linear-gradient( bottom, #555555, #2c362b );
-     background: -ms-linear-gradient( bottom, #555555, #2c362b );
-}
-.subnavmenu .current_page_item li a:hover,
-.subnavmenu .current_page_parent li a:hover,
-.subnavmenu .current_page_ancestor li a:hover,
-#leftcol #subnav li.current_page_item a:hover {
-     border: 1px solid #58a;
-	 color: #58a;
-}
-.subnavmenu .current_page_parent .current_page_item a,
-.subnavmenu .current_page_parent .current_page_item a:hover,
-#leftcol #subnav li.current_page_item a,
-#leftcol #subnav li.current_page_item a:hover {
-     color:#fff;
-	 border:1px solid #ffffff;
-}
-/* SECOND LEVEL: Reset display for third-level page links */
-.subnavmenu .current_page_parent .current_page_item li a {
-     border: 1px solid #444;
-	 color: #999;
-}
-/* THIRD LEVEL: Display third-level page links like subsubnavmenu */
-.subnavmenu .current_page_parent .current_page_item li a:hover {
-	border:1px solid #58a;
-	color: #58a;
-}
-/* THIRD LEVEL: Set display for current_page_item */
-.subnavmenu .current_page_ancestor .current_page_parent .current_page_item a {
-     color:#fff;
-     border: 1px solid #fff;
-}
-/* THIRD LEVEL: Reset display for fourth-level page links */
-.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a {
-     border: 1px solid #444;
-     background: #000;	
-}
-/* FOURTH LEVEL: Display fourth-level page links like subsubsubnavmenu */
-.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a {
-	 background:none;
-	 background-color:#2C362B;
-}
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor .current_page_item a:hover {
-    border:1px solid #fff;
-}
-/* FOURTH LEVEL: Display fourth-level page links like subsubsubnavmenu */
-.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a {
-	 background:none;
-	 background-color:#444;
-}
-.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a:hover,
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a:hover,
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a:hover {
-    border:1px solid #58a;
-}
-.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a:hover,
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a:hover,
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a:hover {
-    border:1px solid #58a;
-}
-.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor .current_page_item a:hover {
-    border:1px solid black;
-}
-/* Infobar
-  -------------------------------------------- */
-#infobar {
-	border-top-color:#444;
-	border-bottom-color:#000;
-	color:#777;
-	background-color:#2C362B;
+
+#infobar,
+#footer {
+	border-bottom-color:#2c362b;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#2c362b');
 	background: -webkit-linear-gradient( top, #555555, #2c362b );
 	background: -moz-linear-gradient( top, #555555, #2c362b );
 	background: -ms-linear-gradient( top, #555555, #2c362b );
 }
-#breadcrumbs {
-  color: #888;
-} 
-.wp-paginate,
-.page-numbers {   
-	border: 0; 
-	border-top: 0; 
-	border-bottom: 0; 
-	color: #777777;  
-	background: transparent; 
-}  
-#breadcrumbs strong {
-  color: #fff;
-  text-shadow: 1px 1px 0px #111;
+.nav-header li a,
+.nav-header li a:link,
+.nav-header li a:visited,
+.nav-header li a:hover,
+.nav-header li a:active,
+.nav-header li:hover li a,
+.nav-header li:hover li:hover li a,
+.subnavmenu .current_page_item li a,
+.subnavmenu .current_page_parent li a,
+.subnavmenu .current_page_parent .current_page_item li a,
+.subnavmenu .current_page_ancestor li a,
+#leftcol #subnav li a {
+     background: #2c362b;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2c362b', endColorstr='#555555');
+     background: -webkit-linear-gradient( bottom, #555555, #2c362b );
+     background: -moz-linear-gradient( bottom, #555555, #2c362b );
+     background: -ms-linear-gradient( bottom, #555555, #2c362b );
 }
-.wp-paginate li .gap,
-.wp-paginate li .current,
-.wp-paginate li a,
-.page-numbers li .gap,
-.page-numbers li .current,
-.page-numbers li a {
-	background: none; 
+.nav-header li:hover a,
+.nav-header li:hover li:hover a,
+.nav-header li:hover li:hover li:hover a {
+     background: -webkit-radial-gradient( circle, #2c362b, #000000 );
+     background: -moz-radial-gradient( circle, #2c362b, #000000 );
+     background: -ms-radial-gradient( circle, #2c362b, #000000 );
 }
-.wp-paginate li .gap,
-.page-numbers li .gap { 
-	color:#999;   
-}  
-.wp-paginate li .current,
-.page-numbers li .current {
-	border:1px solid #ffffff;
-	color:#444444; 
-	background:#cccccc; 
-}
-.wp-paginate li a,
-.page-numbers li a {	
-	border:1px solid #58a; 
-	color:#58a; 
-	background-color: transparent; 
-}  
-.wp-paginate li a:hover,
-.wp-paginate li a:active,
-.page-numbers li a:hover,
-.page-numbers li a:active {	
-	border:1px solid #999999;
-	color:#fff;  
-	text-shadow: 1px 1px 1px #777;
-	background-color:#58a;
-}
-#bottompostnav {
-  color: #888;
-} 
-#postnavsearch input#s {
-  border: 1px solid #666;
-  border-top-color: #333;
-  border-left-color: #333;
-  color: #fff;
-  background-color: #222;
-}
-#postnavsearch input#searchsubmit {
-	border: 1px solid #777;
-	color: #ddd;
-	background-color: #333;
-}  
-/* Sidebar: Custom Widgets
-  -------------------------------------------- */
-.showhide {
-  text-shadow: 1px 1px 0px #111;
-}
-.showhide span:hover {
-  background-color: #111;
-}
-/* Sidebar: Widget Titles
-  -------------------------------------------- */
-.title,
-.widgettitle {
-  border:0;
-  border-bottom: 1px dotted #999;
-  color: #999;
-  text-shadow: 1px 1px 0px #111;
-}
-/* Sidebar: Calendar
-  -------------------------------------------- */
-#wp-calendar {
-  text-shadow: 1px 1px 0px #111;
-}
-#wp-calendar th {
-  background-color: #000;
-  color:#bbb;
-}
-#wp-calendar a {
-  border: 1px solid #777;
-  background-color: #333;
-	-moz-box-shadow: 1px 1px 0px #111;
-	-webkit-box-shadow: 1px 1px 0px #111;
-	box-shadow: 1px 1px 0px #111;
-}
-#wp-calendar a:hover { 
-   background-color:#111; 
-   text-decoration:none;
-	-moz-box-shadow: 0px 0px 4px #ddd;
-	-webkit-box-shadow: 0px 0px 4px #ddd;
-	box-shadow: 0px 0px 4px #ddd;
-}
-#wp-calendar #today {
-  background-color:#666; 
-  border: 1px solid silver;
-}
-#prev a, #next a {
-  border: 1px solid #383838;
-}
-/* Loop Header
-  -------------------------------------------- */
-.pagetitle {
-  color:#ccc;
-}
-.cat-description {
-  color:#ddd;
-}
-.cat-description strong {
-  color:#bbb;
-}
-.cat-description em {
-  color:#bbb;
-}
-.cat-subscribe-feed {
-  border:0;
-  border:0px solid navy;
-}
-.cat-subscribe-feed a:hover {
-  background-color:transparent;
-}
-.cat-subscribe-feed a:hover img {
-   box-shadow: 0px 0px 10px #58a; 
-   -moz-box-shadow: 0px 0px 10px #58a; 
-   -webkit-box-shadow: 0px 0px 10px #58a; 
-}
-/* Post
-  -------------------------------------------- */
-div.post {
-	border: 1px solid #000;
-	-webkit-border-radius: 9px; 
-	-moz-border-radius: 9px; 
-	border-radius: 9px; 
-	box-shadow: 3px 3px 5px #777;
-	-moz-box-shadow: 3px 3px 5px #777;
-	-webkit-box-shadow: 3px 3px 5px #777;
-}
-body.home .post.sticky {
-	background-color:#2C362B;
-	border-color: #000;
-	box-shadow: 3px 3px 5px #ccc;
-	-moz-box-shadow: 3px 3px 5px #ccc;
-	-webkit-box-shadow: 3px 3px 5px #ccc;
-}
-.post.format-aside .post-entry:before,
-.post.format-link .post-entry:before,
-.post.format-quote .post-entry:before,
-.post.format-status .post-entry:before {
-	color: #bbb;
-}
-/* Post Meta: Title
-  -------------------------------------------- */
-.post-title {
-  border:0;
-  border-bottom:2px solid #909090;
-}
-body.single .post .post-title,
-body.page .post .post-title {
-	border-top:0;
-	background-color:transparent;
-}
-.post-title h1 a {
-	color: #fff;
-  text-shadow: 2px 2px 2px #111111;
-	background-color:transparent;
-}
-.post-title h1 a:hover {
-	color: #58a;
-	text-shadow: 2px 2px 2px #111111;
-}
-/* Post Meta: Date
-  -------------------------------------------- */
-.post-title .post-date {
-  border:1px solid #999;
-}
-.post-date .post-date-year {
-  border-bottom:1px solid #999;
-  color:#fff;
-  background-color:#000;
-}
-.post-date .post-date-weekday {
-  color:#ddd;
-  text-shadow: 1px 1px 0px #111;
-  background-color:#666;
-}
-.post-date .post-date-day {
-  color:#ddd;
-  text-shadow: 1px 1px 0px #111;
-  background-color:#666;
-}
-.post-date .post-date-month {
-  color:#ddd;
-  text-shadow: 1px 1px 0px #111;
-  background-color:#666;
-}
-/* Post Meta: Date
-  -------------------------------------------- */ 
-.post-title .post-title-metadata {
-  border:0px solid #b0b0b0;
-  color:#b0b0b0;
-}
-.post-title .post-title-category,
-.post-title .post-title-tags {
-  border:0;
-  color:#777;
-  text-shadow: 1px 1px 0px #111;
-}
-/* Post Entry
-  -------------------------------------------- */
-.post-entry a {
-  border-bottom: 1px dotted #58a;
-  font-weight:bold;
-  text-decoration: none;
-}
-.post-entry a:hover {
-  border-bottom: 1px solid #58a;
-}
-.post-entry a.thickbox:hover {
-  background-color:transparent;
-  border-bottom: 0px solid #58a;
-}
-.post-entry .update {
-  border:1px solid #d8d8d8;
-}
-.post-entry .link-pages a,
-.nav-comments a {
-	border: 1px solid #58a;
-	-moz-box-shadow: 1px 1px 0px #111;
-	-webkit-box-shadow: 1px 1px 0px #111;
-	box-shadow: 1px 1px 0px #111;
-}
-.post-entry .link-pages a:hover,
-.nav-comments a:hover{ 
-   background-color:#111; 
-	-moz-box-shadow: 0px 0px 4px #ddd;
-	-webkit-box-shadow: 0px 0px 4px #ddd;
-	box-shadow: 0px 0px 4px #ddd;
-}
-.post-entry blockquote {
-  border:0;
-  border-top:1px solid silver;
-  border-bottom: 1px solid gray;
-  background-color: #282828; 
-}
-.post-entry .def {
-  border:0;
-  border-left: 3px solid #777;
-  background-color: #f8f8f8;
-}
-.post-entry .code {
-  border:0;
-  border-left: 3px solid gray;
-}
-.post-entry .code,
-.post-entry .code p {
-	color:#444;
-}
-.post-entry blockquote blockquote {
-  border:0px solid gray;
-  border-left:1px solid gray;
-}
-/* Post Entry: Gallery
-  -------------------------------------------- */ 
-dl.gallery-item dd {
-	border-left: 0;
-	background-color: transparent;
-}
-.gallery-nav dl dd,
-body.term-post-format-image .gallery-nav dl dd,
-body.single-format-image .gallery-nav dl dd {
-	border-left: 0;
-	background-color: transparent;
-}
-.gallery-nav-home a,
-.gallery-nav-home a:hover {
-	border:0;
-}
-.gallery-nav-home a:hover,
-.gallery-nav-prev a:hover,
-.gallery-nav-next a:hover {
-	text-decoration: underline;
-}
-/* Post Formats
-  -------------------------------------------- */
-.size-thumbnail img,
-.gallery-thumb span {
-	border: 10px solid #181818;
-}
+
+/* Secondary accent color - #19392C */
+
+#loop-footer li#bottompostnav,
+.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a,
 .gallery-meta,
-.audiovideo-meta {
-	background-color:#2C362B;
+.audiovideo-meta,
+.post.format-chat .post-entry p:nth-child(odd),
+input,
+#commentform input,
+#commentform textarea {
+	background-color:#19392C;
 }
-.post.format-chat .post-entry p:nth-child(odd) {
-	font-weight:900;
-	color: #fff;
-	background-color: #2C362B;
-}
-.post.format-chat .post-entry p:nth-child(even) {
-	color: #000;
-	background-color: #585858;
-}
-.audiovideo-meta a,
-.gallery-meta a {
-	border:0;
-}
-.audiovideo-meta a:hover,
-.gallery-meta a:hover {
-	text-decoration: underline;
-}
-/* Post Footer Metadata
-   --------------------
-*/
-.postmetadata {
-	border-top: 1px solid #777;
-	color: #777;
-  text-shadow: 1px 1px 0px #111;
-}
-.post.format-aside .postmetadata,
-.post.format-link .postmetadata,
-.post.format-quote .postmetadata,
-.post.format-status .postmetadata {
-	border-top: 0;
-}
-.single .postmetadata {
-	border-bottom: 1px solid #777;
-}
-.single .post.format-aside .postmetadata,
-.single .post.format-link .postmetadata,
-.single .post.format-quote .postmetadata,
-.single .post.format-status .postmetadata {
-	border-bottom: 0;
-}
-/* Posts Navigation
-   ----------------------
-*/
-.postpagenav {
-  border-top: 1px dotted #777777;
-  border-bottom: 1px dotted #777777;
-  color: #777777;
-  background-color: #e8e8e8;
-}
-/* Post Query
-   --------------------
-*/
-.query {
-  color: #777;
-}
-/* Loop Footer
-  -------------------------------------------- */
-#loop-footer li {
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  color: #777;
-  background-color:#2C362B;
-}
-/* Comments and Comment Form
-  -------------------------------------------- */
-#main .commentlist,
-#main .commentlist .children {
-          border: 0px solid gray;
-}
-.commentlist li.comment {
-	background: #444;
-    border: 1px solid #222;
-	-webkit-border-radius: 9px; 
-	-moz-border-radius: 9px; 
-	border-radius: 9px; 
-}
-.commentlist .bypostauthor {
-    background-color: #282828;
-	border-color: #333;
-}
-.commentlist li.comment .comment-author {
-	-webkit-border-top-right-radius: 9px; 
-	-moz-border-radius-topright: 9px; 
-	border-top-right-radius: 9px; 
-}
-.commentlist li.comment .comment-meta,
-.commentlist .bypostauthor .comment .comment-meta {
-	border-bottom:1px solid #222;
-}
-.commentlist .bypostauthor .comment-meta,
-.commentlist .bypostauthor .comment.bypostauthor .comment-meta {
-	border-bottom-color: #333;
-}
+
+
+/* Tertiary accent color - #123123 */
+
+.post-entry blockquote,
+dd,
+tr:nth-child(even),
+.commentlist li.bypostauthor,
 .commentlist li.comment .comment-author,
 .commentlist li.comment .comment-meta,
 .commentlist .bypostauthor .comment .comment-author,
 .commentlist .bypostauthor .comment .comment-meta{
-	background-color:#282828;
+	background-color:#123123;
 }
-.commentlist .bypostauthor .comment-author,
-.commentlist .bypostauthor .comment-meta,
-.commentlist .bypostauthor .comment.bypostauthor .comment-author,
-.commentlist .bypostauthor .comment.bypostauthor .comment-meta {
-	background-color: #000;
+
+
+/* Fourth accent color - 282828 */
+
+.commentlist li.bypostauthor .comment-author,
+.commentlist li.bypostauthor .comment-meta,
+.commentlist li.bypostauthor .comment.bypostauthor .comment-author,
+.commentlist li.bypostauthor .comment.bypostauthor .comment-meta {
+	background-color: #282828;
 }
-.commentlist li.comment .comment-author img.avatar {
-	border: 1px solid #ccc;
-	-moz-box-shadow: 4px 4px 4px #777;
-	-webkit-box-shadow: 4px 4px 4px #777;
-	box-shadow: 4px 4px 4px #777;
-}
-.commentlist .comment-author .commentua {
-		color: silver;
-}
-.commentlist .comment-author .commentua img {
-        border: 0px solid gray;
-} 
-ol.commentlist li.comment div blockquote {
-	border:0;
-	border-left:3px solid #c8c8c8;
-	color:#909090;
-	background-color:transparent;
-}
-ol.commentlist li.comment div p code,
-ol.commentlist li.comment div blockquote p code {
-	color:#707070;
-	background-color:#444;
-}
-#commentform .required {
-	color:maroon;
-}
-#commentform input,
-#commentform textarea {
-	color:#fff;
-	background-color:#2C362B;
-}
-#commentform input:focus,
-#commentform textarea:focus {
-	border-color:#58a;
-	-moz-box-shadow: 4px 4px 4px #777;
-	-webkit-box-shadow: 4px 4px 4px #777;
-	box-shadow: 4px 4px 4px #777;
-}
-#commentform p code {
-	color:#bbb;
-	background-color:#444;
+
+
+/* Fifth accent color - #607860 */
+
+#infobar-search input#searchsubmit,
+.commentlist li.comment,
+.post-date .post-date-weekday,
+.post-date .post-date-day,
+.post-date .post-date-month {
+  background-color:#607860;
 }
