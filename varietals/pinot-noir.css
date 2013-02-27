@@ -1,0 +1,110 @@
+/* Body Main Color #4C0009
+  -------------------------------------------- */
+  
+body {
+	color: #ccc;
+	background-color: #4C0009;
+}
+
+
+/* Main accent color #360202 */
+
+#infobar,
+#footer,
+th,
+pre,
+code,
+body.blog .post.sticky,
+#commentform p code,
+.nav-header li,
+.nav-header ul,
+.nav-header ul li,
+.post-date .post-date-year,
+.showhide span:hover,
+#wp-calendar th {
+	background-color: #360202;
+}
+
+#infobar,
+#footer {
+	border-bottom-color:#360202;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#360202');
+	background: -webkit-linear-gradient( top, #555555, #360202 );
+	background: -moz-linear-gradient( top, #555555, #360202 );
+	background: -ms-linear-gradient( top, #555555, #360202 );
+}
+.nav-header li a,
+.nav-header li a:link,
+.nav-header li a:visited,
+.nav-header li a:hover,
+.nav-header li a:active,
+.nav-header li:hover li a,
+.nav-header li:hover li:hover li a,
+.subnavmenu .current_page_item li a,
+.subnavmenu .current_page_parent li a,
+.subnavmenu .current_page_parent .current_page_item li a,
+.subnavmenu .current_page_ancestor li a,
+#leftcol #subnav li a {
+     background: #360202;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#360202', endColorstr='#555555');
+     background: -webkit-linear-gradient( bottom, #555555, #360202 );
+     background: -moz-linear-gradient( bottom, #555555, #360202 );
+     background: -ms-linear-gradient( bottom, #555555, #360202 );
+} 
+.nav-header li:hover a,
+.nav-header li:hover li:hover a,
+.nav-header li:hover li:hover li:hover a {
+     background: -webkit-radial-gradient( circle, #360202, #555555 );
+     background: -moz-radial-gradient( circle, #360202, #555555 );
+     background: -ms-radial-gradient( circle, #360202, #555555 );
+}
+
+/* Secondary accent color #751E1E */
+
+#loop-footer li#bottompostnav,
+.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a,
+.gallery-meta,
+.audiovideo-meta,
+.post.format-chat .post-entry p:nth-child(odd),
+input,
+#commentform input,
+#commentform textarea {
+	background-color:#751E1E;
+}
+
+
+/* Tertiary accent color #63000C */
+
+.post-entry blockquote,
+dd,
+tr:nth-child(even),
+.commentlist li.bypostauthor,
+.commentlist li.comment .comment-author,
+.commentlist li.comment .comment-meta,
+.commentlist .bypostauthor .comment .comment-author,
+.commentlist .bypostauthor .comment .comment-meta{
+	background-color:#63000C;
+}
+
+
+/* Fourth accent color */  /* Other accent color #7A2D46 */
+
+.commentlist .bypostauthor .comment-author,
+.commentlist .bypostauthor .comment-meta,
+.commentlist .bypostauthor .comment.bypostauthor .comment-author,
+.commentlist .bypostauthor .comment.bypostauthor .comment-meta {
+	background-color: #595757;
+}
+
+
+/* Fifth accent color */
+
+#infobar-search input#searchsubmit,
+.commentlist li.comment,
+.post-date .post-date-weekday,
+.post-date .post-date-day,
+.post-date .post-date-month {
+  background-color:#785050;
+}

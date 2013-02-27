@@ -296,6 +296,18 @@ function oenology_get_option_parameters() {
 				  'title' => __( 'Malbec', 'oenology' ),
 				  'description' => __( 'Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors.', 'oenology' ),
 				  'scheme' => 'dark'
+				  ),
+				'pinot-noir' => array(
+				  'name' => 'pinot-noir',
+				  'title' => __( 'Pinot Noir', 'oenology' ),
+				  'description' => __( 'Pinot Noir is an extremely fickle yet versatile red grape from Burgundy.', 'oenology' ),
+				  'scheme' => 'dark'
+				  ),
+				'zinfandel' => array(
+				  'name' => 'zinfandel',
+				  'title' => __( 'Zinfandel', 'oenology' ),
+				  'description' => __( 'Zinfandel is a red grape known for its spicy, peppery, and berry characteristics.', 'oenology' ),
+				  'scheme' => 'dark'
 				  )
 			),
 			'description' => '',
