@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oenology\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-21 10:34-0500\n"
-"PO-Revision-Date: 2012-12-21 10:35-0500\n"
+"POT-Creation-Date: 2013-03-01 14:55-0500\n"
+"PO-Revision-Date: 2013-03-01 14:56-0500\n"
 "Last-Translator: Chip Bennett <chip@chipbennett.net>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -64,79 +64,79 @@ msgid "Theme Support"
 msgstr "Theme Support"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:481
+#: Documents\Dev\GitHub\oenology/functions/custom.php:477
 msgid ""
 "An incidental remark; digression: a message that departs from the main "
 "subject."
 msgstr ""
 "An incidental remark; digression: a message that departs from the main "
 "subject."
+
+#: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/custom.php:481
+msgid ""
+"A sound, or a sound signal; Of or relating to audible sound; Of or relating "
+"to the broadcasting or reproduction of sound, especially high-fidelity "
+"reproduction."
+msgstr ""
+"A sound, or a sound signal; Of or relating to audible sound; Of or relating "
+"to the broadcasting or reproduction of sound, especially high-fidelity "
+"reproduction."
 
 #: C:\Documents and Settings\wbennett\My
 #: Documents\Dev\GitHub\oenology/functions/custom.php:485
 msgid ""
-"A sound, or a sound signal; Of or relating to audible sound; Of or relating "
-"to the broadcasting or reproduction of sound, especially high-fidelity "
-"reproduction."
+"Any kind of communication over the Internet; primarily direct one-on-one "
+"chat or text-based group chat (formally also known as synchronous "
+"conferencing), using tools such as instant messengers and Internet Relay "
+"Chat."
 msgstr ""
-"A sound, or a sound signal; Of or relating to audible sound; Of or relating "
-"to the broadcasting or reproduction of sound, especially high-fidelity "
-"reproduction."
+"Any kind of communication over the Internet; primarily direct one-on-one "
+"chat or text-based group chat (formally also known as synchronous "
+"conferencing), using tools such as instant messengers and Internet Relay "
+"Chat."
 
 #: C:\Documents and Settings\wbennett\My
 #: Documents\Dev\GitHub\oenology/functions/custom.php:489
-msgid ""
-"Any kind of communication over the Internet; primarily direct one-on-one "
-"chat or text-based group chat (formally also known as synchronous "
-"conferencing), using tools such as instant messengers and Internet Relay "
-"Chat."
-msgstr ""
-"Any kind of communication over the Internet; primarily direct one-on-one "
-"chat or text-based group chat (formally also known as synchronous "
-"conferencing), using tools such as instant messengers and Internet Relay "
-"Chat."
-
-#: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:493
 msgid "A collection of art for exhibition."
 msgstr "A collection of art for exhibition."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:497
+#: Documents\Dev\GitHub\oenology/functions/custom.php:493
 msgid ""
 "picture: A visual representation (of an object or scene or person or "
 "abstraction) produced on a surface."
 msgstr ""
 "picture: A visual representation (of an object or scene or person or "
 "abstraction) produced on a surface."
+
+#: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/custom.php:497
+msgid ""
+"A reference to a document that the reader can directly follow, or that is "
+"followed automatically. The reference points to a whole document or to a "
+"specific element within a document."
+msgstr ""
+"A reference to a document that the reader can directly follow, or that is "
+"followed automatically. The reference points to a whole document or to a "
+"specific element within a document."
 
 #: C:\Documents and Settings\wbennett\My
 #: Documents\Dev\GitHub\oenology/functions/custom.php:501
 msgid ""
-"A reference to a document that the reader can directly follow, or that is "
-"followed automatically. The reference points to a whole document or to a "
-"specific element within a document."
+"A quotation, statement attributed to someone else; To refer to (part of) a "
+"statement that has been made by someone else."
 msgstr ""
-"A reference to a document that the reader can directly follow, or that is "
-"followed automatically. The reference points to a whole document or to a "
-"specific element within a document."
+"A quotation, statement attributed to someone else; To refer to (part of) a "
+"statement that has been made by someone else."
 
 #: C:\Documents and Settings\wbennett\My
 #: Documents\Dev\GitHub\oenology/functions/custom.php:505
-msgid ""
-"A quotation, statement attributed to someone else; To refer to (part of) a "
-"statement that has been made by someone else."
-msgstr ""
-"A quotation, statement attributed to someone else; To refer to (part of) a "
-"statement that has been made by someone else."
-
-#: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:509
 msgid "state or condition of affairs"
 msgstr "state or condition of affairs"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:513
+#: Documents\Dev\GitHub\oenology/functions/custom.php:509
 msgid ""
 "A recording of both visual and audible components; Electronically capturing, "
 "recording, processing, storing, transmitting, and reconstructing a sequence "
@@ -147,57 +147,57 @@ msgstr ""
 "of still images representing scenes in motion."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:568
+#: Documents\Dev\GitHub\oenology/functions/custom.php:564
 msgid "YouTube"
 msgstr "YouTube"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:573
+#: Documents\Dev\GitHub\oenology/functions/custom.php:569
 msgid "MySpace"
 msgstr "MySpace"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:578
+#: Documents\Dev\GitHub\oenology/functions/custom.php:574
 msgid "Linked-In"
 msgstr "Linked-In"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:583
+#: Documents\Dev\GitHub\oenology/functions/custom.php:579
 msgid "Flickr"
 msgstr "Flickr"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:588
+#: Documents\Dev\GitHub\oenology/functions/custom.php:584
 msgid "Facebook"
 msgstr "Facebook"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:593
+#: Documents\Dev\GitHub\oenology/functions/custom.php:589
 msgid "Twitter"
 msgstr "Twitter"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:719
+#: Documents\Dev\GitHub\oenology/functions/custom.php:715
 msgid "Oh no, not again."
 msgstr "Oh no, not again."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:722
+#: Documents\Dev\GitHub\oenology/functions/custom.php:718
 msgid "Well, this is weird."
 msgstr "Well, this is weird."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:723
+#: Documents\Dev\GitHub\oenology/functions/custom.php:719
 msgid "The post, page, or file you requested could not be found. "
 msgstr "The post, page, or file you requested could not be found. "
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:724
+#: Documents\Dev\GitHub\oenology/functions/custom.php:720
 msgid "The best laid plans of mice, and all that. "
 msgstr "The best laid plans of mice, and all that. "
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:725
+#: Documents\Dev\GitHub\oenology/functions/custom.php:721
 msgid ""
 "Those who study the complex interplay of cause and effect in the history of "
 "the Universe say that this sort of thing is going on all the time."
@@ -206,111 +206,111 @@ msgstr ""
 "the Universe say that this sort of thing is going on all the time."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:728
+#: Documents\Dev\GitHub\oenology/functions/custom.php:724
 msgid "I apologize for the inconvenience."
 msgstr "I apologize for the inconvenience."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:729
+#: Documents\Dev\GitHub\oenology/functions/custom.php:725
 msgid "Let me try to make it up to you!"
 msgstr "Let me try to make it up to you!"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:768
+#: Documents\Dev\GitHub\oenology/functions/custom.php:764
 msgid "Here is a list of posts that you might have been looking for:"
 msgstr "Here is a list of posts that you might have been looking for:"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:784
-#: Documents\Dev\GitHub\oenology/functions/custom.php:814
+#: Documents\Dev\GitHub\oenology/functions/custom.php:780
+#: Documents\Dev\GitHub\oenology/functions/custom.php:810
 msgid "No excerpt available."
 msgstr "No excerpt available."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:798
+#: Documents\Dev\GitHub\oenology/functions/custom.php:794
 msgid "Here is a list of pages that you might have been looking for:"
 msgstr "Here is a list of pages that you might have been looking for:"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:832
+#: Documents\Dev\GitHub\oenology/functions/custom.php:828
 msgid ""
 "Perhaps you were looking for something in one of the following categories?"
 msgstr ""
 "Perhaps you were looking for something in one of the following categories?"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:846
+#: Documents\Dev\GitHub\oenology/functions/custom.php:842
 msgid "Perhaps you were looking for something with one of the following tags?"
 msgstr "Perhaps you were looking for something with one of the following tags?"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:856
+#: Documents\Dev\GitHub\oenology/functions/custom.php:852
 msgid "I apologize."
 msgstr "I apologize."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:857
+#: Documents\Dev\GitHub\oenology/functions/custom.php:853
 msgid ""
 "For the life of me, I am unable to figure out what you were trying to find."
 msgstr ""
 "For the life of me, I am unable to figure out what you were trying to find."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:858
+#: Documents\Dev\GitHub\oenology/functions/custom.php:854
 msgid ""
 "Perhaps try searching, using the search form in the upper right-hand corner?"
 msgstr ""
 "Perhaps try searching, using the search form in the upper right-hand corner?"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:923
-#: Documents\Dev\GitHub\oenology/functions/custom.php:925
+#: Documents\Dev\GitHub\oenology/functions/custom.php:919
+#: Documents\Dev\GitHub\oenology/functions/custom.php:921
 msgid "Category Archive: "
 msgstr "Category Archive: "
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:949
+#: Documents\Dev\GitHub\oenology/functions/custom.php:945
 #, php-format
 msgid "Posts Published in: %s"
 msgstr "Posts Published in: %s"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:1035
+#: Documents\Dev\GitHub\oenology/functions/custom.php:1031
 msgid "Search Results:"
 msgstr "Search Results:"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:1040
+#: Documents\Dev\GitHub\oenology/functions/custom.php:1036
 msgid "Tag Archive:"
 msgstr "Tag Archive:"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:1052
+#: Documents\Dev\GitHub\oenology/functions/custom.php:1048
 msgid "Archive for:"
 msgstr "Archive for:"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:1057
+#: Documents\Dev\GitHub\oenology/functions/custom.php:1053
 msgid "Posts Written by:"
 msgstr "Posts Written by:"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:1062
+#: Documents\Dev\GitHub\oenology/functions/custom.php:1058
 msgid "Error 404:"
 msgstr "Error 404:"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:1063
+#: Documents\Dev\GitHub\oenology/functions/custom.php:1059
 msgid "Page Not Found"
 msgstr "Page Not Found"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:1067
+#: Documents\Dev\GitHub\oenology/functions/custom.php:1063
 msgid "Post Format Archive:"
 msgstr "Post Format Archive:"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/custom.php:1072
+#: Documents\Dev\GitHub\oenology/functions/custom.php:1068
 msgid "Archive Index for:"
 msgstr "Archive Index for:"
 
@@ -421,6 +421,11 @@ msgid "Red (Dark)"
 msgstr "Red (Dark)"
 
 #: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/options-register.php:370
+msgid "Cuvee (unstyled)"
+msgstr "Cuvee (unstyled)"
+
+#: C:\Documents and Settings\wbennett\My
 #: Documents\Dev\GitHub\oenology/functions/options.php:58
 #: Documents\Dev\GitHub\oenology/functions/options.php:61
 msgid "Oenology Options"
@@ -442,93 +447,93 @@ msgid "Reset Defaults"
 msgstr "Reset Defaults"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:164
+#: Documents\Dev\GitHub\oenology/functions/options.php:173
 msgid "Header Nav Menu Position"
 msgstr "Header Nav Menu Position"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:169
+#: Documents\Dev\GitHub\oenology/functions/options.php:178
 msgid "Above"
 msgstr "Above"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:173
+#: Documents\Dev\GitHub\oenology/functions/options.php:182
 msgid "Below"
 msgstr "Below"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:177
-#: Documents\Dev\GitHub\oenology/functions/options.php:237
-#: Documents\Dev\GitHub\oenology/functions/options.php:315
+#: Documents\Dev\GitHub\oenology/functions/options.php:186
+#: Documents\Dev\GitHub\oenology/functions/options.php:246
+#: Documents\Dev\GitHub\oenology/functions/options.php:336
 msgid "Do Not Display"
 msgstr "Do Not Display"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:180
+#: Documents\Dev\GitHub\oenology/functions/options.php:189
 msgid ""
 "Display header navigation menu above or below the site title/description?"
 msgstr ""
 "Display header navigation menu above or below the site title/description?"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:188
+#: Documents\Dev\GitHub\oenology/functions/options.php:197
 msgid "Header Nav Menu Depth"
 msgstr "Header Nav Menu Depth"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:193
+#: Documents\Dev\GitHub\oenology/functions/options.php:202
 msgid "One"
 msgstr "One"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:197
+#: Documents\Dev\GitHub\oenology/functions/options.php:206
 msgid "Two"
 msgstr "Two"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:201
+#: Documents\Dev\GitHub\oenology/functions/options.php:210
 msgid "Three"
 msgstr "Three"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:204
+#: Documents\Dev\GitHub\oenology/functions/options.php:213
 msgid ""
 "How many levels of Page hierarchy should the Header Navigation Menu display?"
 msgstr ""
 "How many levels of Page hierarchy should the Header Navigation Menu display?"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:212
+#: Documents\Dev\GitHub\oenology/functions/options.php:221
 msgid "Header Nav Menu Item Width"
 msgstr "Header Nav Menu Item Width"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:217
+#: Documents\Dev\GitHub\oenology/functions/options.php:226
 msgid "Fixed"
 msgstr "Fixed"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:221
+#: Documents\Dev\GitHub\oenology/functions/options.php:230
 msgid "Fluid"
 msgstr "Fluid"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:224
+#: Documents\Dev\GitHub\oenology/functions/options.php:233
 msgid "Should Header Nav Menu items have a fixed or fluid width?"
 msgstr "Should Header Nav Menu items have a fixed or fluid width?"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:232
+#: Documents\Dev\GitHub\oenology/functions/options.php:241
 msgid "Display Footer Credit"
 msgstr "Display Footer Credit"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:241
+#: Documents\Dev\GitHub\oenology/functions/options.php:250
 msgid "Display"
 msgstr "Display"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:244
+#: Documents\Dev\GitHub\oenology/functions/options.php:253
 msgid ""
 "Display a credit link in the footer? This option is disabled by default, and "
 "you are under no obligation whatsoever to enable it."
@@ -537,31 +542,17 @@ msgstr ""
 "you are under no obligation whatsoever to enable it."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:252
+#: Documents\Dev\GitHub\oenology/functions/options.php:261
 msgid "Varietal"
 msgstr "Varietal"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:257
-msgid "Cuvee"
-msgstr "Cuvee"
-
-#: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:258
-msgid ""
-"Cuvee is a term often used by wineries to describe a particularly high-"
-"quality batch of wine. Cuvee is suitable for Child-theming."
-msgstr ""
-"Cuvee is a term often used by wineries to describe a particularly high-"
-"quality batch of wine. Cuvee is suitable for Child-theming."
-
-#: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:263
+#: Documents\Dev\GitHub\oenology/functions/options.php:266
 msgid "Chardonnay"
 msgstr "Chardonnay"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:264
+#: Documents\Dev\GitHub\oenology/functions/options.php:267
 msgid ""
 "Chardonnay is the ubiquitous white wine, produced from a versatile white "
 "grape."
@@ -570,12 +561,12 @@ msgstr ""
 "grape."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:269
+#: Documents\Dev\GitHub\oenology/functions/options.php:272
 msgid "Seyval Blanc"
 msgstr "Seyval Blanc"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:270
+#: Documents\Dev\GitHub\oenology/functions/options.php:273
 msgid ""
 "Seyval Blanc is a white grape, typically grown in cooler climates, that "
 "produces a wine with flavors of citrus and mineral."
@@ -584,12 +575,12 @@ msgstr ""
 "produces a wine with flavors of citrus and mineral."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:275
+#: Documents\Dev\GitHub\oenology/functions/options.php:278
 msgid "Muscat"
 msgstr "Muscat"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:276
+#: Documents\Dev\GitHub\oenology/functions/options.php:279
 msgid ""
 "Muscat is a white grape with a pronounced flavor of grapes and spice, that "
 "produces a versatile wine from dry to sweet."
@@ -598,12 +589,12 @@ msgstr ""
 "produces a versatile wine from dry to sweet."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:281
+#: Documents\Dev\GitHub\oenology/functions/options.php:284
 msgid "Syrah"
 msgstr "Syrah"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:282
+#: Documents\Dev\GitHub\oenology/functions/options.php:285
 msgid ""
 "Syrah is a red grape that produces a full-bodied, almost inky-black wine "
 "with a spicy, earthy flavor and aroma."
@@ -612,12 +603,12 @@ msgstr ""
 "with a spicy, earthy flavor and aroma."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:287
+#: Documents\Dev\GitHub\oenology/functions/options.php:290
 msgid "Malbec"
 msgstr "Malbec"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:288
+#: Documents\Dev\GitHub\oenology/functions/options.php:291
 msgid ""
 "Malbec is a red grape that produces exceedingly dark, inky red-violet wins "
 "with intense flavors."
@@ -626,130 +617,170 @@ msgstr ""
 "with intense flavors."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:300
+#: Documents\Dev\GitHub\oenology/functions/options.php:296
+msgid "Pinot Noir"
+msgstr "Pinot Noir"
+
+#: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/options.php:297
+msgid ""
+"Pinot Noir is an extremely fickle yet versatile red grape from Burgundy."
+msgstr ""
+"Pinot Noir is an extremely fickle yet versatile red grape from Burgundy."
+
+#: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/options.php:302
+msgid "Zinfandel"
+msgstr "Zinfandel"
+
+#: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/options.php:303
+msgid ""
+"Zinfandel is a red grape known for its spicy, peppery, and berry "
+"characteristics."
+msgstr ""
+"Zinfandel is a red grape known for its spicy, peppery, and berry "
+"characteristics."
+
+#: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/options.php:308
+msgid "Cuvee"
+msgstr "Cuvee"
+
+#: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/options.php:309
+msgid ""
+"Cuvee is a term often used by wineries to describe a particularly high-"
+"quality batch of wine. Cuvee is suitable for Child-theming."
+msgstr ""
+"Cuvee is a term often used by wineries to describe a particularly high-"
+"quality batch of wine. Cuvee is suitable for Child-theming."
+
+#: C:\Documents and Settings\wbennett\My
+#: Documents\Dev\GitHub\oenology/functions/options.php:321
 msgid "Display Social Icons"
 msgstr "Display Social Icons"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:302
+#: Documents\Dev\GitHub\oenology/functions/options.php:323
 msgid "Display social icons in sidebar"
 msgstr "Display social icons in sidebar"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:310
-#: Documents\Dev\GitHub\oenology/functions/options.php:334
+#: Documents\Dev\GitHub\oenology/functions/options.php:331
+#: Documents\Dev\GitHub\oenology/functions/options.php:355
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:342
+#: Documents\Dev\GitHub\oenology/functions/options.php:363
 msgid "Facebook Profile"
 msgstr "Facebook Profile"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:345
+#: Documents\Dev\GitHub\oenology/functions/options.php:366
 msgid "Facebook Username"
 msgstr "Facebook Username"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:353
+#: Documents\Dev\GitHub\oenology/functions/options.php:374
 msgid "Flickr Profile"
 msgstr "Flickr Profile"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:356
+#: Documents\Dev\GitHub\oenology/functions/options.php:377
 msgid "Flickr Username"
 msgstr "Flickr Username"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:364
+#: Documents\Dev\GitHub\oenology/functions/options.php:385
 msgid "Linked-In Profile"
 msgstr "Linked-In Profile"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:367
+#: Documents\Dev\GitHub\oenology/functions/options.php:388
 msgid "Linked-In Username"
 msgstr "Linked-In Username"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:375
+#: Documents\Dev\GitHub\oenology/functions/options.php:396
 msgid "MySpace Profile"
 msgstr "MySpace Profile"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:378
+#: Documents\Dev\GitHub\oenology/functions/options.php:399
 msgid "MySpace Username"
 msgstr "MySpace Username"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:386
+#: Documents\Dev\GitHub\oenology/functions/options.php:407
 msgid "Twitter Profile"
 msgstr "Twitter Profile"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:389
+#: Documents\Dev\GitHub\oenology/functions/options.php:410
 msgid "Twitter Username"
 msgstr "Twitter Username"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:397
+#: Documents\Dev\GitHub\oenology/functions/options.php:418
 msgid "YouTube Profile"
 msgstr "YouTube Profile"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:400
+#: Documents\Dev\GitHub\oenology/functions/options.php:421
 msgid "YouTube Username"
 msgstr "YouTube Username"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:408
+#: Documents\Dev\GitHub\oenology/functions/options.php:429
 msgid "Default Static Page Layout"
 msgstr "Default Static Page Layout"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:413
-#: Documents\Dev\GitHub\oenology/functions/options.php:440
-#: Documents\Dev\GitHub\oenology/functions/options.php:472
-#: Documents\Dev\GitHub\oenology/functions/options.php:504
+#: Documents\Dev\GitHub\oenology/functions/options.php:434
+#: Documents\Dev\GitHub\oenology/functions/options.php:461
+#: Documents\Dev\GitHub\oenology/functions/options.php:493
+#: Documents\Dev\GitHub\oenology/functions/options.php:525
 msgid "1-Column"
 msgstr "1-Column"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:414
-#: Documents\Dev\GitHub\oenology/functions/options.php:441
-#: Documents\Dev\GitHub\oenology/functions/options.php:473
-#: Documents\Dev\GitHub\oenology/functions/options.php:505
+#: Documents\Dev\GitHub\oenology/functions/options.php:435
+#: Documents\Dev\GitHub\oenology/functions/options.php:462
+#: Documents\Dev\GitHub\oenology/functions/options.php:494
+#: Documents\Dev\GitHub\oenology/functions/options.php:526
 msgid "One column (full-width content)"
 msgstr "One column (full-width content)"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:418
-#: Documents\Dev\GitHub\oenology/functions/options.php:509
+#: Documents\Dev\GitHub\oenology/functions/options.php:439
+#: Documents\Dev\GitHub\oenology/functions/options.php:530
 msgid "2-Column"
 msgstr "2-Column"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:419
-#: Documents\Dev\GitHub\oenology/functions/options.php:510
+#: Documents\Dev\GitHub\oenology/functions/options.php:440
+#: Documents\Dev\GitHub\oenology/functions/options.php:531
 msgid "Two columns (menu on left, content on right)"
 msgstr "Two columns (menu on left, content on right)"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:423
-#: Documents\Dev\GitHub\oenology/functions/options.php:455
-#: Documents\Dev\GitHub\oenology/functions/options.php:487
-#: Documents\Dev\GitHub\oenology/functions/options.php:514
+#: Documents\Dev\GitHub\oenology/functions/options.php:444
+#: Documents\Dev\GitHub\oenology/functions/options.php:476
+#: Documents\Dev\GitHub\oenology/functions/options.php:508
+#: Documents\Dev\GitHub\oenology/functions/options.php:535
 msgid "3-Column"
 msgstr "3-Column"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:424
-#: Documents\Dev\GitHub\oenology/functions/options.php:515
+#: Documents\Dev\GitHub\oenology/functions/options.php:445
+#: Documents\Dev\GitHub\oenology/functions/options.php:536
 msgid "Three columns (menu on left, sidebar on right, content in the center)"
 msgstr "Three columns (menu on left, sidebar on right, content in the center)"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:427
+#: Documents\Dev\GitHub\oenology/functions/options.php:448
 msgid ""
 "Select the layout to be used as the default for static Pages when the "
 "\"Default\" page template is selected."
@@ -758,37 +789,37 @@ msgstr ""
 "\"Default\" page template is selected."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:435
+#: Documents\Dev\GitHub\oenology/functions/options.php:456
 msgid "Default Single Post Layout"
 msgstr "Default Single Post Layout"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:445
-#: Documents\Dev\GitHub\oenology/functions/options.php:477
+#: Documents\Dev\GitHub\oenology/functions/options.php:466
+#: Documents\Dev\GitHub\oenology/functions/options.php:498
 msgid "2-Column, Left"
 msgstr "2-Column, Left"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:446
-#: Documents\Dev\GitHub\oenology/functions/options.php:478
+#: Documents\Dev\GitHub\oenology/functions/options.php:467
+#: Documents\Dev\GitHub\oenology/functions/options.php:499
 msgid "Two columns (content on the left, full-width sidebar on the right)"
 msgstr "Two columns (content on the left, full-width sidebar on the right)"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:450
-#: Documents\Dev\GitHub\oenology/functions/options.php:482
+#: Documents\Dev\GitHub\oenology/functions/options.php:471
+#: Documents\Dev\GitHub\oenology/functions/options.php:503
 msgid "2-Column, Right"
 msgstr "2-Column, Right"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:451
-#: Documents\Dev\GitHub\oenology/functions/options.php:483
+#: Documents\Dev\GitHub\oenology/functions/options.php:472
+#: Documents\Dev\GitHub\oenology/functions/options.php:504
 msgid "Two columns (content on the right, full-width sidebar on the left)"
 msgstr "Two columns (content on the right, full-width sidebar on the left)"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:456
-#: Documents\Dev\GitHub\oenology/functions/options.php:488
+#: Documents\Dev\GitHub\oenology/functions/options.php:477
+#: Documents\Dev\GitHub\oenology/functions/options.php:509
 msgid ""
 "Three columns (content in the center, half-width sidebars on the left and "
 "right)"
@@ -797,72 +828,72 @@ msgstr ""
 "right)"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:459
+#: Documents\Dev\GitHub\oenology/functions/options.php:480
 msgid "Select the default layout to be used for single Blog Posts."
 msgstr "Select the default layout to be used for single Blog Posts."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:467
+#: Documents\Dev\GitHub\oenology/functions/options.php:488
 msgid "Blog Posts Index Layout"
 msgstr "Blog Posts Index Layout"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:491
+#: Documents\Dev\GitHub\oenology/functions/options.php:512
 msgid "Select the layout to be used for Blog Posts Index pages."
 msgstr "Select the layout to be used for Blog Posts Index pages."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:499
+#: Documents\Dev\GitHub\oenology/functions/options.php:520
 msgid "Default Static Front Page Layout"
 msgstr "Default Static Front Page Layout"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:518
+#: Documents\Dev\GitHub\oenology/functions/options.php:539
 msgid "Select the layout to be used as the default for a static front page."
 msgstr "Select the layout to be used as the default for a static front page."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:526
+#: Documents\Dev\GitHub\oenology/functions/options.php:547
 msgid "Static Page Submenu Display"
 msgstr "Static Page Submenu Display"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:531
+#: Documents\Dev\GitHub\oenology/functions/options.php:552
 msgid "Always Display"
 msgstr "Always Display"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:535
+#: Documents\Dev\GitHub\oenology/functions/options.php:556
 msgid "Display Only on Hierarchical Pages"
 msgstr "Display Only on Hierarchical Pages"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:539
+#: Documents\Dev\GitHub\oenology/functions/options.php:560
 msgid "Never Display"
 msgstr "Never Display"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:542
+#: Documents\Dev\GitHub\oenology/functions/options.php:563
 msgid "Display the static Page left-column submenu?"
 msgstr "Display the static Page left-column submenu?"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:550
+#: Documents\Dev\GitHub\oenology/functions/options.php:571
 msgid "Default Widget Display State"
 msgstr "Default Widget Display State"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:555
+#: Documents\Dev\GitHub\oenology/functions/options.php:576
 msgid "Display Content"
 msgstr "Display Content"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:559
+#: Documents\Dev\GitHub\oenology/functions/options.php:580
 msgid "Hide Content"
 msgstr "Hide Content"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:562
+#: Documents\Dev\GitHub\oenology/functions/options.php:583
 msgid ""
 "The content of each Widget can be displayed or hidden via the \"Show/Hide\" "
 "link. Should Widget content be displayed or hidden by default?"
@@ -871,27 +902,27 @@ msgstr ""
 "link. Should Widget content be displayed or hidden by default?"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:661
+#: Documents\Dev\GitHub\oenology/functions/options.php:682
 msgid "Varietals"
 msgstr "Varietals"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:665
+#: Documents\Dev\GitHub\oenology/functions/options.php:686
 msgid "Varietal Options"
 msgstr "Varietal Options"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:672
+#: Documents\Dev\GitHub\oenology/functions/options.php:693
 msgid "Layout"
 msgstr "Layout"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:676
+#: Documents\Dev\GitHub\oenology/functions/options.php:697
 msgid "Default Layouts"
 msgstr "Default Layouts"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:677
+#: Documents\Dev\GitHub\oenology/functions/options.php:698
 msgid ""
 "Manage default layouts for static Pages, single Blog Posts, and Blog Post "
 "Index pages"
@@ -900,27 +931,27 @@ msgstr ""
 "Index pages"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:681
+#: Documents\Dev\GitHub\oenology/functions/options.php:702
 msgid "Static Page Layout Options"
 msgstr "Static Page Layout Options"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:682
+#: Documents\Dev\GitHub\oenology/functions/options.php:703
 msgid "Manage options related to static Page layout"
 msgstr "Manage options related to static Page layout"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:688
+#: Documents\Dev\GitHub\oenology/functions/options.php:709
 msgid "General"
 msgstr "General"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:692
+#: Documents\Dev\GitHub\oenology/functions/options.php:713
 msgid "Header Options"
 msgstr "Header Options"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:693
+#: Documents\Dev\GitHub\oenology/functions/options.php:714
 msgid ""
 "Manage Header options for the Oenology Theme. Refer to the contextual help "
 "screen for descriptions and help regarding each theme option."
@@ -929,12 +960,12 @@ msgstr ""
 "screen for descriptions and help regarding each theme option."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:697
+#: Documents\Dev\GitHub\oenology/functions/options.php:718
 msgid "Social Network Profile Options"
 msgstr "Social Network Profile Options"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:698
+#: Documents\Dev\GitHub\oenology/functions/options.php:719
 msgid ""
 "Manage Social Network Profile options for the Oenology Theme. Refer to the "
 "contextual help screen for descriptions and help regarding each theme option."
@@ -943,12 +974,12 @@ msgstr ""
 "contextual help screen for descriptions and help regarding each theme option."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:702
+#: Documents\Dev\GitHub\oenology/functions/options.php:723
 msgid "Widget Display Options"
 msgstr "Widget Display Options"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:703
+#: Documents\Dev\GitHub\oenology/functions/options.php:724
 msgid ""
 "Manage Widget options for the Oenology Theme. Refer to the contextual help "
 "screen for descriptions and help regarding each theme option."
@@ -957,12 +988,12 @@ msgstr ""
 "screen for descriptions and help regarding each theme option."
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:707
+#: Documents\Dev\GitHub\oenology/functions/options.php:728
 msgid "Footer Options"
 msgstr "Footer Options"
 
 #: C:\Documents and Settings\wbennett\My
-#: Documents\Dev\GitHub\oenology/functions/options.php:708
+#: Documents\Dev\GitHub\oenology/functions/options.php:729
 msgid ""
 "Manage Footer options for the Oenology Theme. Refer to the contextual help "
 "screen for descriptions and help regarding each theme option."
