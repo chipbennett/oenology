@@ -366,5 +366,13 @@ function oenology_setting_varietal() {
 			oenology_output_varietal( $varietal );
 		}
 	}
+	?>
+	<h4 style="display:block;clear:both;"><?php _e( 'Cuvee (unstyled)', 'oenology' ); ?></h4>
+	<?php 
+	foreach ( $oenology_varietals as $varietal ) {
+		if ( 'cuvee' == $varietal['scheme'] ) {
+			oenology_output_varietal( $varietal );
+		}
+	}
 }
 ?>

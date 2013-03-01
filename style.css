@@ -1,15 +1,15 @@
 /*  
 Theme Name: 	Oenology
 Theme URI: 		http://www.chipbennett.net/themes/oenology
-Description: 	Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports the Theme Customizer, Contextual Help, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 3.5.</strong>
-Version: 		3.0
+Description: 	Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. Oenology includes built-in breadcrumb navigation, and supports the Theme Customizer, Contextual Help, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. Oenology features a responsive design, and includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 3.5.1.</strong>
+Version: 		3.1
 Author: 		Chip Bennett
 Author URI: 	http://www.chipbennett.net/
-Tags: 			fixed-width, white, black, tan, green, one-column, two-columns, three-columns, custom-header, custom-background, custom-menu, editor-style, featured-images, full-width-template, left-sidebar, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: 			fixed-width, white, black, tan, green, one-column, two-columns, three-columns, custom-header, custom-background, custom-menu, editor-style, featured-images, flexible-width, full-width-template, left-sidebar, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
 License: 		GNU General Public License, v2 (or newer)
 License URI: 	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
  *
- * Oenology WordPress Theme, Copyright (C) 2010 Chip Bennett
+ * Oenology WordPress Theme, Copyright (C) 2010-2013 Chip Bennett
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,6 @@ License URI: 	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 /* 
    Table of Contents
    -----------------------------------------------
-   0 - Font Style Specifications
    1 - Master/Default Style Specifications
    2 - Layout/Structure Style Specifications
    3 - Section-Specific Style Specifications
@@ -59,173 +58,7 @@ License URI: 	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
    ----------------------------------------------- 
 */
 
-/* 
-   ============================================================================================= 
-   0 - Font Style Specifications
-   ============================================================================================= 
-*/
 
-/*************************************************************
-Import Fonts
-**************************************************************/
-
-@font-face {
-    font-family: 'TeXGyreScholaRegular';
-    src: url('fonts/texgyreschola-regular-webfont.eot');
-    src: url('fonts/texgyreschola-regular-webfont.eot?iefix') format('eot'),
-         url('fonts/texgyreschola-regular-webfont.woff') format('woff'),
-         url('fonts/texgyreschola-regular-webfont.ttf') format('truetype'),
-         url('fonts/texgyreschola-regular-webfont.svg#webfontEPwbBXTh') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'TeXGyreScholaItalic';
-    src: url('fonts/texgyreschola-italic-webfont.eot');
-    src: url('fonts/texgyreschola-italic-webfont.eot?iefix') format('eot'),
-         url('fonts/texgyreschola-italic-webfont.woff') format('woff'),
-         url('fonts/texgyreschola-italic-webfont.ttf') format('truetype'),
-         url('fonts/texgyreschola-italic-webfont.svg#webfontSxSqjzok') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'TeXGyreScholaBold';
-    src: url('fonts/texgyreschola-bold-webfont.eot');
-    src: url('fonts/texgyreschola-bold-webfont.eot?iefix') format('eot'),
-         url('fonts/texgyreschola-bold-webfont.woff') format('woff'),
-         url('fonts/texgyreschola-bold-webfont.ttf') format('truetype'),
-         url('fonts/texgyreschola-bold-webfont.svg#webfontLbvqPRcd') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'TeXGyreScholaBoldItalic';
-    src: url('fonts/texgyreschola-bolditalic-webfont.eot');
-    src: url('fonts/texgyreschola-bolditalic-webfont.eot?iefix') format('eot'),
-         url('fonts/texgyreschola-bolditalic-webfont.woff') format('woff'),
-         url('fonts/texgyreschola-bolditalic-webfont.ttf') format('truetype'),
-         url('fonts/texgyreschola-bolditalic-webfont.svg#webfontOy4PMnCV') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/****************************************************************
-Font-Family Declarations
-Declare all fonts used in theme
-****************************************************************/
-/* Sans fonts 
-*****************************************************************/
-/* Century Gothic type font-family */
-.nav-header li a,
-.post-entry blockquote,
-.post-entry blockquote p,
-.post-entry .link-pages,
-#content #main .count {
-   font-family: 'Century Gothic', 'URW Gothic L', sans-serif;
-}
-/* Arial/Verdana type font-family */
-body,
-.infobar-items li,
-.post-entry .caption,
-#footer,
-.cat-description,
-.cat-subscribe-feed,
-.post-title .post-title-metadata,
-.post-title .post-title-category,
-.post-title .post-title-tags,
-.post-entry .update,
-.post-entry .caption,
-.post-entry .wp-caption,
-.post-entry .wp-caption-text,
-.post-entry .audiovideo-meta,
-.post-entry .gallery-caption,
-.post-entry .gallery-meta,
-.post-entry .def p,
-body.attachment dd,
-.post .clonetruth,
-.post .clonetruth a:link,
-.post .clonetruth a:visited,
-.post .clonetruth a:hover,
-.post .clonetruth a:active,
-.post .postmetadata,
-.postpagenav,
-table.review,
-table.legend,
-.recipecarbs,
-#content #main .recipeingredients,
-#content #main .recipeequip,
-#content #main .recipe,
-.commentlist li .comment-meta,
-#commentform p,
-#comments h4,
-#comments-block dd.comment-timestamp,
-.ngg-imagebrowser-desc, /* Plugin: NextGen Gallery */
-.page-numbers,
-.wp-paginate, /* Plugin: wp-paginate */
-ol.trackbacklist /* Plugin: Trackback */ {
-	font-family: Verdana, Arial, sans-serif;
-}
-/* Serif fonts 
-*****************************************************************/
-/* Garamond/Palatino Linotype type font family */
-h1, h2, h3, h4, h5, h6,
-.nav-header .current_page_item > a,
-.nav-header .current_page_ancestor > a,
-.title,
-.widgettitle,
-.pagetitle,
-.post-title .post-date,
-.post-entry .downloadbutton li a {
-	font-family: 'Palatino Linotype', 'Palatino', 'URW Palladio L', serif;
-}
-#main,
-.post-entry,
-.post-entry li p,
-.commentlist li p {
-	font-family: 'TeXGyreScholaRegular', 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
-}
-/* Georgia type font-family */
-.cat-description em,
-.post-entry  p em,
-.post-entry li p em,
-.post-entry .update:before,
-.cat-description strong,
-.authorresponse p {
-	font-family: 'TeXGyreScholaRegular', 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
-}
-/* Times New Roman type font family */
-#header p {
-	font-family: 'Nimbus Roman No9 L', 'Times New Roman', serif;
-}
-/* Slab-Serif */
-#header div {
-	font-family: slab-serif, serif;
-}
-/* Mono fonts
-*****************************************************************/
-/* Courier New type font family */
-pre,
-.post.format-chat .post-entry *,
-.post-entry .code,
-.post-entry .code p,
-.commentlist li div p code,
-.commentlist li div blockquote p code,
-#commentform p code {
-	font-family: 'Nimbus Mono L', 'Courier New', monospace;
-}
-/* Script fonts
-*****************************************************************/
-/* Brush Script type font family */
-.post-entry blockquote .script {
-	font-family: 'URW Chancery L', 'Brush Script MT', cursive, serif;
-}
-/* Specialty fonts
-*****************************************************************/
-/* None currently defined */
 
 /* 
    ============================================================================================= 
@@ -2013,6 +1846,7 @@ body.single-format-image dd {
      padding:0px;
      padding-left:0px;
      text-align:center;
+	 background-color: #FFFFFF;
 }
 .nav-header li a {
      display:block;
@@ -2024,6 +1858,7 @@ body.single-format-image dd {
      letter-spacing:0.1em; 
 	 font-weight:normal;
      text-decoration:none;
+	 border: 1px solid #FFFFFF;
 }
 #nav .current_page_item > a,
 #nav .current_page_parent > a,
@@ -2301,8 +2136,7 @@ body.single-format-image dd {
 	margin:0;	
 	padding:0;
 	font-style:normal;	
-	height:auto;	
-	background-color:#e8e8e8;
+	height:auto;
 }
 
 .comment-author .avatar {

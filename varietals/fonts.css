@@ -1,0 +1,167 @@
+/* 
+ = ========================*==================================================================== 
+ 0 - Font Style Specifications
+ ============================================================================================= 
+ */
+
+/*************************************************************
+ * I mport Fonts
+ **************************************************************/
+
+@font-face {
+	font-family: 'TeXGyreScholaRegular';
+	src: 	url('../fonts/texgyreschola-regular-webfont.eot');
+	src: 	url('../fonts/texgyreschola-regular-webfont.eot?iefix') format('eot'),
+			url('../fonts/texgyreschola-regular-webfont.woff') format('woff'),
+			url('../fonts/texgyreschola-regular-webfont.ttf') format('truetype'),
+			url('../fonts/texgyreschola-regular-webfont.svg#webfontEPwbBXTh') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TeXGyreScholaItalic';
+	src: 	url('../fonts/texgyreschola-italic-webfont.eot');
+	src: 	url('../fonts/texgyreschola-italic-webfont.eot?iefix') format('eot'),
+			url('../fonts/texgyreschola-italic-webfont.woff') format('woff'),
+			url('../fonts/texgyreschola-italic-webfont.ttf') format('truetype'),
+			url('../fonts/texgyreschola-italic-webfont.svg#webfontSxSqjzok') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TeXGyreScholaBold';
+	src: 	url('../fonts/texgyreschola-bold-webfont.eot');
+	src: 	url('../fonts/texgyreschola-bold-webfont.eot?iefix') format('eot'),
+			url('../fonts/texgyreschola-bold-webfont.woff') format('woff'),
+			url('../fonts/texgyreschola-bold-webfont.ttf') format('truetype'),
+			url('../fonts/texgyreschola-bold-webfont.svg#webfontLbvqPRcd') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TeXGyreScholaBoldItalic';
+	src: 	url('../fonts/texgyreschola-bolditalic-webfont.eot');
+	src: 	url('../fonts/texgyreschola-bolditalic-webfont.eot?iefix') format('eot'),
+			url('../fonts/texgyreschola-bolditalic-webfont.woff') format('woff'),
+			url('../fonts/texgyreschola-bolditalic-webfont.ttf') format('truetype'),
+			url('../fonts/texgyreschola-bolditalic-webfont.svg#webfontOy4PMnCV') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/****************************************************************
+ F ont-Family Declarations    *
+ Declare all fonts used in theme
+ ****************************************************************/
+/* Sans fonts 
+ *****************************************************************/
+/* Century Gothic type font-family */
+.nav-header li a,
+.post-entry blockquote,
+.post-entry blockquote p,
+.post-entry .link-pages,
+#content #main .count {
+	font-family: 'Century Gothic', 'URW Gothic L', sans-serif;
+}
+/* Arial/Verdana type font-family */
+body,
+.infobar-items li,
+.post-entry .caption,
+#footer,
+.cat-description,
+.cat-subscribe-feed,
+.post-title .post-title-metadata,
+.post-title .post-title-category,
+.post-title .post-title-tags,
+.post-entry .update,
+.post-entry .caption,
+.post-entry .wp-caption,
+.post-entry .wp-caption-text,
+.post-entry .audiovideo-meta,
+.post-entry .gallery-caption,
+.post-entry .gallery-meta,
+.post-entry .def p,
+body.attachment dd,
+.post .clonetruth,
+.post .clonetruth a:link,
+.post .clonetruth a:visited,
+.post .clonetruth a:hover,
+.post .clonetruth a:active,
+.post .postmetadata,
+.postpagenav,
+table.review,
+table.legend,
+.recipecarbs,
+#content #main .recipeingredients,
+#content #main .recipeequip,
+#content #main .recipe,
+.commentlist li .comment-meta,
+#commentform p,
+#comments h4,
+#comments-block dd.comment-timestamp,
+.ngg-imagebrowser-desc, /* Plugin: NextGen Gallery */
+.page-numbers,
+.wp-paginate, /* Plugin: wp-paginate */
+ol.trackbacklist /* Plugin: Trackback */ {
+	font-family: Verdana, Arial, sans-serif;
+}
+/* Serif fonts 
+ *****************************************************************/
+/* Garamond/Palatino Linotype type font family */
+h1, h2, h3, h4, h5, h6,
+.nav-header .current_page_item > a,
+.nav-header .current_page_ancestor > a,
+.title,
+.widgettitle,
+.pagetitle,
+.post-title .post-date,
+.post-entry .downloadbutton li a {
+	font-family: 'Palatino Linotype', 'Palatino', 'URW Palladio L', serif;
+}
+#main,
+.post-entry,
+.post-entry li p,
+.commentlist li p {
+	font-family: 'TeXGyreScholaRegular', 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+/* Georgia type font-family */
+.cat-description em,
+.post-entry  p em,
+.post-entry li p em,
+.post-entry .update:before,
+.cat-description strong,
+.authorresponse p {
+	font-family: 'TeXGyreScholaRegular', 'URW Bookman L', 'Garamond', 'Century Schoolbook', 'Bookman Old Style', 'Georgia', serif;
+}
+/* Times New Roman type font family */
+#header p {
+	font-family: 'Nimbus Roman No9 L', 'Times New Roman', serif;
+}
+/* Slab-Serif */
+#header div {
+	font-family: slab-serif, serif;
+}
+/* Mono fonts
+ *****************************************************************/
+/* Courier New type font family */
+pre,
+.post.format-chat .post-entry *,
+.post-entry .code,
+.post-entry .code p,
+.commentlist li div p code,
+.commentlist li div blockquote p code,
+#commentform p code {
+	font-family: 'Nimbus Mono L', 'Courier New', monospace;
+}
+/* Script fonts
+ *****************************************************************/
+/* Brush Script type font family */
+.post-entry blockquote .script {
+	font-family: 'URW Chancery L', 'Brush Script MT', cursive, serif;
+}
+/* Specialty fonts
+ *****************************************************************/
+/* None currently defined */

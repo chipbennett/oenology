@@ -261,12 +261,6 @@ function oenology_get_option_parameters() {
 			'title' => __( 'Varietal', 'oenology' ),
 			'type' => 'custom',
 			'valid_options' => array(
-				'cuvee' => array(
-				  'name' => 'cuvee',
-				  'title' => __( 'Cuvee', 'oenology' ),
-				  'description' => __( 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming.', 'oenology' ),
-				  'scheme' => 'light'
-				  ),
 				'chardonnay' => array(
 				  'name' => 'chardonnay',
 				  'title' => __( 'Chardonnay', 'oenology' ),
@@ -308,7 +302,13 @@ function oenology_get_option_parameters() {
 				  'title' => __( 'Zinfandel', 'oenology' ),
 				  'description' => __( 'Zinfandel is a red grape known for its spicy, peppery, and berry characteristics.', 'oenology' ),
 				  'scheme' => 'dark'
-				  )
+				  ),
+				'cuvee' => array(
+				  'name' => 'cuvee',
+				  'title' => __( 'Cuvee', 'oenology' ),
+				  'description' => __( 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming.', 'oenology' ),
+				  'scheme' => 'cuvee'
+				  ),
 			),
 			'description' => '',
 			'section' => 'varietal',
