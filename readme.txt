@@ -3,10 +3,10 @@ Contributors: Chip Bennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
 Tags: fixed-width, white, black, tan, three-columns, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, left-sidebar, right-sidebar
 Requires at least: 3.5
-Tested up to: 3.5
-Stable tag: 3.0
+Tested up to: 3.5.1
+Stable tag: 3.1
 
-Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. The Theme includes built-in breadcrumb navigation, and supports the Theme Customizer, Contextual Help, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. The Theme includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 3.5.</strong>
+Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. Oenology includes built-in breadcrumb navigation, and supports the Theme Customizer, Contextual Help, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. Oenology features a responsive design, and includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 3.5.1.</strong>
 
 == Description ==
 
@@ -91,6 +91,9 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 Note: see the "Oenology Reference" admin page for full Changelog details. 
 See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 
+= 3.1 [2013.02.27] =
+* Maintenance Release
+
 = 3.0 [2012.12.22] =
 * Maintenance Release
 
@@ -146,6 +149,9 @@ See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 * Initial Release
 
 == Upgrade Notice ==
+
+= 3.1 =
+Maintenance release.
 
 = 3.0 =
 Maintenance release.
