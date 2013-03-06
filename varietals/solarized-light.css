@@ -1,0 +1,150 @@
+/* Main Body Color - #eee8d5 (Base2) */
+body {
+	color: #586e75; /* Base01 */
+	background-color: #eee8d5;
+  }
+  
+  
+  /* Primary accent color - #93a1a1 (Base1) */
+
+#infobar,
+#footer,
+th,
+pre,
+code,
+body.blog .post.sticky,
+#commentform p code,
+.nav-header li,
+.nav-header ul,
+.nav-header ul li,
+.post-date .post-date-year,
+.showhide span:hover,
+#wp-calendar th {
+	background-color: #93a1a1;
+	color: #002b36; /* (Base03) */
+}
+
+#infobar,
+#footer {
+	border-bottom-color:#93a1a1;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#93a1a1');
+	background: -webkit-linear-gradient( top, #f8f8f8, #93a1a1 );
+	background: -moz-linear-gradient( top, #f8f8f8, #93a1a1 );
+	background: -ms-linear-gradient( top, #f8f8f8, #93a1a1 );
+}
+.nav-header li a,
+.nav-header li a:link,
+.nav-header li a:visited,
+.nav-header li a:hover,
+.nav-header li a:active,
+.nav-header li:hover li a,
+.nav-header li:hover li:hover li a,
+.subnavmenu .current_page_item li a,
+.subnavmenu .current_page_parent li a,
+.subnavmenu .current_page_parent .current_page_item li a,
+.subnavmenu .current_page_ancestor li a,
+#leftcol #subnav li a {
+	background: #93a1a1;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#93a1a1', endColorstr='#f8f8f8');
+	background: -webkit-linear-gradient( bottom, #f8f8f8, #93a1a1 );
+	background: -moz-linear-gradient( bottom, #f8f8f8, #93a1a1 );
+	background: -ms-linear-gradient( bottom, #f8f8f8, #93a1a1 );
+}
+.nav-header li:hover a,
+.nav-header li:hover li:hover a,
+.nav-header li:hover li:hover li:hover a {
+	background: -webkit-radial-gradient( circle, #93a1a1, #f8f8f8 );
+	background: -moz-radial-gradient( circle, #93a1a1, #f8f8f8 );
+	background: -ms-radial-gradient( circle, #93a1a1, #f8f8f8 );
+}
+
+
+/* Secondary accent color - #fdf6e3 (Base3) */
+
+#loop-footer li#bottompostnav,
+.subnavmenu .current_page_ancestor .current_page_parent .current_page_item li a,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_parent li a,
+.subnavmenu .current_page_ancestor .current_page_ancestor .current_page_ancestor li a,
+.gallery-meta,
+.audiovideo-meta,
+.post.format-chat .post-entry p:nth-child(even),
+input,
+#commentform input,
+#commentform textarea {
+	background-color:#fdf6e3;
+}
+
+
+/* Tertiary accent color - #fdf6e3 (Base3) */
+
+.post-entry blockquote,
+dd,
+tr:nth-child(even),
+#infobar-search input#searchsubmit,
+.post-date .post-date-weekday,
+.post-date .post-date-day,
+.post-date .post-date-month {
+	background-color:#fdf6e3;
+}
+
+/* Fourth accent color - #93a1a1 (Base1) */
+/* Comment meta color, Bypostauthor base color */
+
+.commentlist li.comment .comment-author,
+.commentlist li.comment .comment-meta {
+	background-color:#93a1a1;
+	color: #002b36; /* (Base03) */
+}
+.commentlist li.comment {
+	border-color: #93a1a1;
+}
+
+/* Fifth accent color - #fdf6e3 (Base3) */
+/* Bypostauthor meta color */
+
+.commentlist li.comment.bypostauthor,
+.commentlist li.comment.bypostauthor {
+	background-color:#fdf6e3;
+}
+
+/* Dark background text shadow */
+
+.sticky a,
+.sticky a:link,
+.sticky a:visited,
+.sticky a:hover,
+.sticky a:active,
+.commentlist li.comment .comment-author a,
+.commentlist li.comment .comment-author a:link,
+.commentlist li.comment .comment-author a:visited,
+.commentlist li.comment .comment-author a:hover,
+.commentlist li.comment .comment-author a:active,
+.commentlist li.comment .comment-meta a,
+.commentlist li.comment .comment-meta a:link,
+.commentlist li.comment .comment-meta a:visited,
+.commentlist li.comment .comment-meta a:hover,
+.commentlist li.comment .comment-meta a:active {
+	text-shadow: 1px 1px 0px #073642; /* (Base02) */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+	color: #2aa198; /* (Cyan) */
+}
+
+/* Links */
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+.showhide span {
+	color: #268bd2; /* (Blue) */
+}
+
+/* Titles */
+.title,
+.widgettitle {
+	color: #859900; /* (Green) */
+}

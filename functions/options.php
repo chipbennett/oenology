@@ -279,6 +279,12 @@ function oenology_get_option_parameters() {
 				  'description' => __( 'Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet.', 'oenology' ),
 				  'scheme' => 'light'
 				  ),
+				'solarized-light' => array(
+				  'name' => 'solarized-light',
+				  'title' => __( 'Solarized Light', 'oenology' ),
+				  'description' => __( 'DESCRIPTION GOES HERE.', 'oenology' ),
+				  'scheme' => 'light'
+				  ),
 				'syrah' => array(
 				  'name' => 'syrah',
 				  'title' => __( 'Syrah', 'oenology' ),
@@ -301,6 +307,12 @@ function oenology_get_option_parameters() {
 				  'name' => 'zinfandel',
 				  'title' => __( 'Zinfandel', 'oenology' ),
 				  'description' => __( 'Zinfandel is a red grape known for its spicy, peppery, and berry characteristics.', 'oenology' ),
+				  'scheme' => 'dark'
+				  ),
+				'solarized-dark' => array(
+				  'name' => 'solarized-dark',
+				  'title' => __( 'Solarized Dark', 'oenology' ),
+				  'description' => __( 'DESCRIPTION GOES HERE.', 'oenology' ),
 				  'scheme' => 'dark'
 				  ),
 				'cuvee' => array(
