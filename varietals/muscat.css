@@ -57,7 +57,6 @@ body.blog .post.sticky,
 	background: -ms-radial-gradient( circle, #9DAE98, #FFFFFF );
 }
 
-
 /* Secondary accent color - #e8e8e8 */
 
 #loop-footer li#bottompostnav,
@@ -79,31 +78,30 @@ input,
 .post-entry blockquote,
 dd,
 tr:nth-child(even),
-.commentlist li.bypostauthor,
-.commentlist li.comment .comment-author,
-.commentlist li.comment .comment-meta,
-.commentlist .bypostauthor .comment .comment-author,
-.commentlist .bypostauthor .comment .comment-meta{
+#infobar-search input#searchsubmit,
+.post-date .post-date-weekday,
+.post-date .post-date-day,
+.post-date .post-date-month {
 	background-color:#f8f8f8;
 }
 
 
 /* Fourth accent color - #CCCCCC */
+/* Comment meta color, Bypostauthor base color */
 
-.commentlist li.bypostauthor .comment-author,
-.commentlist li.bypostauthor .comment-meta,
-.commentlist li.bypostauthor .comment.bypostauthor .comment-author,
-.commentlist li.bypostauthor .comment.bypostauthor .comment-meta {
+.commentlist li.comment .comment-author,
+.commentlist li.comment .comment-meta {
 	background-color: #CCCCCC;
+}
+.commentlist li.comment {
+	border-color: #CCCCCC;
 }
 
 
 /* Fifth accent color - #ffffe8 */
+/* Bypostauthor meta color */
 
-#infobar-search input#searchsubmit,
-.commentlist li.comment,
-.post-date .post-date-weekday,
-.post-date .post-date-day,
-.post-date .post-date-month {
+.commentlist li.comment.bypostauthor,
+.commentlist li.comment.bypostauthor {
 	background-color:#ffffe8;
 }

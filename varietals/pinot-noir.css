@@ -80,31 +80,30 @@ input,
 .post-entry blockquote,
 dd,
 tr:nth-child(even),
-.commentlist li.bypostauthor,
-.commentlist li.comment .comment-author,
-.commentlist li.comment .comment-meta,
-.commentlist .bypostauthor .comment .comment-author,
-.commentlist .bypostauthor .comment .comment-meta{
+#infobar-search input#searchsubmit,
+.post-date .post-date-weekday,
+.post-date .post-date-day,
+.post-date .post-date-month {
 	background-color:#63000C;
 }
 
 
-/* Fourth accent color */  /* Other accent color #7A2D46 */
+/* Fourth accent color - #595757 */
+/* Comment meta color, Bypostauthor base color */
 
-.commentlist .bypostauthor .comment-author,
-.commentlist .bypostauthor .comment-meta,
-.commentlist .bypostauthor .comment.bypostauthor .comment-author,
-.commentlist .bypostauthor .comment.bypostauthor .comment-meta {
+.commentlist li.comment .comment-author,
+.commentlist li.comment .comment-meta {
 	background-color: #595757;
+}
+.commentlist li.comment {
+	border-color: #595757;
 }
 
 
-/* Fifth accent color */
+/* Fifth accent color - #785050 */
+/* Bypostauthor meta color */
 
-#infobar-search input#searchsubmit,
-.commentlist li.comment,
-.post-date .post-date-weekday,
-.post-date .post-date-day,
-.post-date .post-date-month {
+.commentlist li.comment.bypostauthor,
+.commentlist li.comment.bypostauthor {
   background-color:#785050;
 }

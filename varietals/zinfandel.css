@@ -80,31 +80,30 @@ input,
 .post-entry blockquote,
 dd,
 tr:nth-child(even),
-.commentlist li.bypostauthor,
-.commentlist li.comment .comment-author,
-.commentlist li.comment .comment-meta,
-.commentlist .bypostauthor .comment .comment-author,
-.commentlist .bypostauthor .comment .comment-meta{
+#infobar-search input#searchsubmit,
+.post-date .post-date-weekday,
+.post-date .post-date-day,
+.post-date .post-date-month {
 	background-color:#10192A;
 }
 
 
 /* Fourth accent color - #121117 */
+/* Comment meta color, Bypostauthor base color */
 
-.commentlist li.bypostauthor .comment-author,
-.commentlist li.bypostauthor .comment-meta,
-.commentlist li.bypostauthor .comment.bypostauthor .comment-author,
-.commentlist li.bypostauthor .comment.bypostauthor .comment-meta {
+.commentlist li.comment .comment-author,
+.commentlist li.comment .comment-meta {
 	background-color: #121117;
+}
+.commentlist li.comment {
+	border-color: #121117;
 }
 
 
 /* Fifth accent color - #486060 */
+/* Bypostauthor meta color */
 
-#infobar-search input#searchsubmit,
-.commentlist li.comment,
-.post-date .post-date-weekday,
-.post-date .post-date-day,
-.post-date .post-date-month {
+.commentlist li.comment.bypostauthor,
+.commentlist li.comment.bypostauthor {
   background-color:#486060;
 }
