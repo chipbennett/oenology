@@ -80,13 +80,14 @@ function oenology_enqueue_varietal_style() {
 	$oenology_options = oenology_get_options();
 	$color_scheme = oenology_get_color_scheme();
 	if ( 'cuvee' != $color_scheme ) {
-		wp_enqueue_style( 'oenology-fonts', get_template_directory_uri() . '/css/fonts.css' );
+		$fonts_stylesheet = oenology_locate_template_uri( array( 'css/fonts.css' ), false, false );
+		wp_enqueue_style( 'oenology-fonts', $fonts_stylesheet );
 		$scheme_handle = 'oenology_' . $color_scheme . '_stylesheet';
-		$scheme_stylesheet = get_template_directory_uri() . '/varietals/' . $color_scheme . '.css';
+		$scheme_stylesheet = oenology_locate_template_uri( array( 'varietals/' . $color_scheme . '.css' ), false, false );
 		wp_enqueue_style( $scheme_handle, $scheme_stylesheet );
 	}
 	$varietal_handle = 'oenology_' . $oenology_options['varietal'] . '_stylesheet';
-	$varietal_stylesheet = get_template_directory_uri() . '/varietals/' . $oenology_options['varietal'] . '.css';
+	$varietal_stylesheet = oenology_locate_template_uri( array( 'varietals/' . $oenology_options['varietal'] . '.css' ), false, false );
 	
 	wp_enqueue_style( $varietal_handle, $varietal_stylesheet );
 }

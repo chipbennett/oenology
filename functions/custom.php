@@ -1197,3 +1197,32 @@ function oenology_copyright() {
 	}
 	return $output;
 }
+
+/**
+ * Locate the directory URI for a template
+ * 
+ * This function is essentially a rewrite of locate_template()
+ * that searches for directory rather than filepath. Useful for
+ * child-theme overrides of parent Theme resources.
+ */
+function oenology_locate_template_uri( $template_names, $load = false, $require_once = true ) {
+	$located = '';
+	foreach ( (array) $template_names as $template_name ) {
+		if ( ! $template_name ) {
+			continue;
+		}
+		if ( file_exists( get_stylesheet_directory() . '/' . $template_name ) ) {
+			$located = get_stylesheet_directory_uri() . '/' . $template_name;
+			break;
+		} else if ( file_exists( get_template_directory() . '/' . $template_name ) ) {
+			$located = get_template_directory_uri() . '/' . $template_name;
+			break;
+		}
+	}
+
+	if ( $load && '' != $located ) {
+		load_template( $located, $require_once );
+	}
+
+	return $located;
+}
