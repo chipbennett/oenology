@@ -1105,5 +1105,5 @@ function oenology_hook_site_header() {
 	// Displays the blog description, as defined on the General Settings page in the administration panel
 	$site_header .= '<p>' . $site_header_description . '</p>';
 
-	echo apply_filters( 'oenology_hook_site_header', $site_header );
+	echo apply_filters( 'oenology_hook_site_header', $site_header, $site_header_name, $site_header_description );
 } 
