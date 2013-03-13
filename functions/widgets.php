@@ -107,11 +107,11 @@ function oenology_showhide_widget_content_open() {
     $showhide .= '<br /></span>';
     $showhide .= '<div class="widget-inner" style="display:' . $options['widget_display_default_state'] . ';">';
 
-    return $showhide;
+    return apply_filters( 'oenology_showhide_widget_content_open', $showhide );
 }
 
 function oenology_showhide_widget_content_close() {
-	return '</div>';
+	return apply_filters( 'oenology_showhide_widget_content_close', '</div>' );
 }
 
 
