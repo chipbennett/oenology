@@ -370,6 +370,17 @@ function oenology_get_option_parameters() {
 			'since' => '1.2',
 			'default' => 'rss2'
 		),
+		'dribbble_profile' => array(
+			'name' => 'dribbble_profile',
+			'title' => __( 'Dribbble Profile', 'oenology' ),
+			'type' => 'text',
+			'sanitize' => 'nohtml',
+			'description' => __( 'Dribbble Username', 'oenology' ),
+			'section' => 'social',
+			'tab' => 'general',
+			'since' => '3.2',
+			'default' => ''
+		),
 		'facebook_profile' => array(
 			'name' => 'facebook_profile',
 			'title' => __( 'Facebook Profile', 'oenology' ),
@@ -392,6 +403,28 @@ function oenology_get_option_parameters() {
 			'since' => '1.2',
 			'default' => ''
 		),
+		'github_profile' => array(
+			'name' => 'github_profile',
+			'title' => __( 'GitHub Profile', 'oenology' ),
+			'type' => 'text',
+			'sanitize' => 'nohtml',
+			'description' => __( 'GitHub Username', 'oenology' ),
+			'section' => 'social',
+			'tab' => 'general',
+			'since' => '3.2',
+			'default' => ''
+		),
+		'googleplus_profile' => array(
+			'name' => 'googleplus_profile',
+			'title' => __( 'Google+ Profile', 'oenology' ),
+			'type' => 'text',
+			'sanitize' => 'nohtml',
+			'description' => __( 'Google+ Username', 'oenology' ),
+			'section' => 'social',
+			'tab' => 'general',
+			'since' => '3.2',
+			'default' => ''
+		),
 		'linkedin_profile' => array(
 			'name' => 'linkedin_profile',
 			'title' => __( 'Linked-In Profile', 'oenology' ),
@@ -403,15 +436,26 @@ function oenology_get_option_parameters() {
 			'since' => '1.2',
 			'default' => ''
 		),
-		'myspace_profile' => array(
-			'name' => 'myspace_profile',
-			'title' => __( 'MySpace Profile', 'oenology' ),
+		'pinterest_profile' => array(
+			'name' => 'pinterest_profile',
+			'title' => __( 'Pinterest Profile', 'oenology' ),
 			'type' => 'text',
 			'sanitize' => 'nohtml',
-			'description' => __( 'MySpace Username', 'oenology' ),
+			'description' => __( 'Pinterest Username', 'oenology' ),
 			'section' => 'social',
 			'tab' => 'general',
-			'since' => '1.2',
+			'since' => '3.2',
+			'default' => ''
+		),
+		'tumblr_profile' => array(
+			'name' => 'tumblr_profile',
+			'title' => __( 'Tumblr Profile', 'oenology' ),
+			'type' => 'text',
+			'sanitize' => 'nohtml',
+			'description' => __( 'Tumblr Username', 'oenology' ),
+			'section' => 'social',
+			'tab' => 'general',
+			'since' => '3.2',
 			'default' => ''
 		),
 		'twitter_profile' => array(
@@ -423,6 +467,28 @@ function oenology_get_option_parameters() {
 			'section' => 'social',
 			'tab' => 'general',
 			'since' => '1.2',
+			'default' => ''
+		),
+		'vimeo_profile' => array(
+			'name' => 'vimeo_profile',
+			'title' => __( 'Vimeo Profile', 'oenology' ),
+			'type' => 'text',
+			'sanitize' => 'nohtml',
+			'description' => __( 'Vimeo Username', 'oenology' ),
+			'section' => 'social',
+			'tab' => 'general',
+			'since' => '3.2',
+			'default' => ''
+		),
+		'wordpress_profile' => array(
+			'name' => 'wordpress_profile',
+			'title' => __( 'WordPress Profile', 'oenology' ),
+			'type' => 'text',
+			'sanitize' => 'nohtml',
+			'description' => __( 'WordPress Username', 'oenology' ),
+			'section' => 'social',
+			'tab' => 'general',
+			'since' => '3.2',
 			'default' => ''
 		),
 		'youtube_profile' => array(
