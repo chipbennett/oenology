@@ -608,7 +608,6 @@ function oenology_hook_loop_footer() {
  * @uses is_tag()
  * @uses is_tax()
  * @uses is_search()
- * @uses oenology_get_color_scheme()
  * @uses tag_description()
  * 
  * @since Oenology 2.0
@@ -655,14 +654,9 @@ function oenology_hook_loop_header() {
 				$taxfeedlink = get_term_link( $term, $tax ) . '/feed/';
 				$taxdescription = $termobject->description;
 			}
-			$colorscheme = oenology_get_color_scheme();
-			$rssiconcolor = ( 'light' == $colorscheme ? 'original' : 'gray' );
-			$rssimageurl = get_template_directory_uri() . '/images/iconsweets2/' . $rssiconcolor . '/rss16.png';
-			$rssimagealt = 'Subscribe to the ' . $taxtitle . ' feed';
 			
 			$loop_header .= '<div class="cat-subscribe-feed">';
-			$loop_header .= '<a href="' . $taxfeedlink .'">';
-			$loop_header .= '<img src="' . $rssimageurl . '" width="16px" height="16px" alt="' . $rssimagealt . '" />';
+			$loop_header .= '<a href="' . $taxfeedlink .'"><span class="genericon genericon-feed"></span>';
 			$loop_header .= '<br />' . $taxtitle . ' feed</a>';
 			$loop_header .= '</div>';
 			$loop_header .= '<h2 class="pagetitle">' . $taxtitle . '</h2>';
@@ -1067,7 +1061,7 @@ function oenology_hook_site_footer() {
 		$site_footer['copyright'] .= '&copy; ' . date('Y');
 	}
 	
-	$site_footer['wordpress'] = sprintf( __( 'Powered by %s', 'oenology' ), '<a href="' . esc_url( 'http://wordpress.org' ) . '" target="_new">WordPress ' . get_bloginfo( 'version' ) . ' <img src="' . get_template_directory_uri() . '/images/iconsweets2/original/wordpress16.png" width="18px" height="17px" alt="WordPress" style="vertical-align:middle;" /></a>' );
+	$site_footer['wordpress'] = sprintf( __( 'Powered by %s', 'oenology' ), '<a href="' . esc_url( 'http://wordpress.org' ) . '" target="_new" class="wordpress-footer-link"><span class="genericon genericon-wordpress"></span>WordPress ' . get_bloginfo( 'version' ) . '</a>' );
 	
 	global $oenology_options;
 	if ( 'true' == $oenology_options['display_footer_credit'] ) { 

@@ -1152,6 +1152,9 @@ body.term-post-format-image .post-entry {
 	font-size: 12px;
 	padding-right: 2px;
 }
+.wordpress-footer-link .genericon {
+	vertical-align: middle;
+}
 /* Post formats */
 .genericon-standard:before { content: '\f100'; }
 .genericon-aside:before { content: '\f101'; }
