@@ -21,28 +21,12 @@
  * @since 		Oenology 1.0
  */
 
-/**
- * Define default Widget arguments
- */
-
-function oenology_get_widget_args() {
-	$widget_args = array(	
-		// Widget container opening tag, with classes
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		// Widget container closing tag
-		'after_widget' => '</div>' . oenology_showhide_widget_content_close(),
-		// Widget Title container opening tag, with classes
-		'before_title' => '<div class="title widgettitle">',
-		// Widget Title container closing tag
-		'after_title' => '</div>' . oenology_showhide_widget_content_open()
-	);
-	return $widget_args;
-}
-
 add_action( 'after_setup_theme', 'oenology_setup_widgets', 11 );
 
 /**
  * Register all widget areas (sidebars)
+ * 
+ * @uses	oenology_get_widget_args()	Defined in functions/custom.php
  * 
  * @since	WordPress 2.8
  */
@@ -98,21 +82,6 @@ register_sidebar( array_merge(
 ) );
 
 } // function oenology_widget_setup()
-
-function oenology_showhide_widget_content_open() {
-	$options = oenology_get_options();
-    $showhide = '<span class="showhide">';
-    $showhide .= 'Click to ';
-    $showhide .= '<span style="color:#5588aa;" onclick="d=this.parentElement.nextElementSibling; d.style.display==\'none\' ? d.style.display=\'block\' : d.style.display=\'none\';">view/hide</span>';
-    $showhide .= '<br /></span>';
-    $showhide .= '<div class="widget-inner" style="display:' . $options['widget_display_default_state'] . ';">';
-
-    return apply_filters( 'oenology_showhide_widget_content_open', $showhide );
-}
-
-function oenology_showhide_widget_content_close() {
-	return apply_filters( 'oenology_showhide_widget_content_close', '</div>' );
-}
 
 
 /**

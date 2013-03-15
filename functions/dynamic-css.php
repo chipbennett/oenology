@@ -72,6 +72,10 @@ add_action( 'wp_print_styles', 'oenology_enqueue_footer_nav_menu_style', 11 );
 
 /**
  * Enqueue Varietal Stylesheet
+ * 
+ * @uses	oenology_get_options()			Defined in functions/options.php
+ * @uses	oenology_get_color_scheme()		Defined in functions/custom.php
+ * @uses	oenology_locate_template_uri()	Defined in functions/custom.php
  */
 function oenology_enqueue_varietal_style() {
 
@@ -94,97 +98,10 @@ function oenology_enqueue_varietal_style() {
 // Enqueue Varietal Stylesheet at wp_print_styles
 add_action('wp_enqueue_scripts', 'oenology_enqueue_varietal_style', 11 );
 
-
-/**
- * Determine Theme Color Scheme
- */
-function oenology_get_color_scheme() {
-	global $oenology_options;
-	$oenology_options = oenology_get_options();
-	$default_options = oenology_get_option_parameters();
-	$oenology_varietals = $default_options['varietal']['valid_options'];
-	$oenology_current_varietal = array();
-	foreach ( $oenology_varietals as $varietal ) {
-		if ( $varietal['name'] == $oenology_options['varietal'] ) {
-		      $oenology_current_varietal = $varietal;
-		}
-	}
-	$colorscheme = $oenology_current_varietal['scheme'];
-	return $colorscheme;
-}
-
-/**
- * Return Post Formats whose icons display in the Post Entry
- */
-function oenology_get_post_format_icon_formats() {
-
-	$icons = array(
-		'aside' => array(
-			'name' => 'aside',
-			'location' => 'entry',
-			'position' => 'left',
-			'genericon' => '&#f101;'
-		),
-		'audio' => array(
-			'name' => 'audio',
-			'location' => 'title',
-			'position' => 'left',
-			'genericon' => '&#f109;'
-		),
-		'chat' => array(
-			'name' => 'chat',
-			'location' => 'title',
-			'position' => 'left',
-			'genericon' => '&#f108;'
-		),
-		'gallery' => array(
-			'name' => 'gallery',
-			'location' => 'both',
-			'position' => 'left',
-			'genericon' => '&#f103;'
-		),
-		'image' => array(
-			'name' => 'image',
-			'location' => 'both',
-			'position' => 'left',
-			'genericon' => '&#f102;'
-		),
-		'link' => array(
-			'name' => 'link',
-			'location' => 'entry',
-			'position' => 'left',
-			'genericon' => '&#f107;'
-		),
-		'quote' => array(
-			'name' => 'quote',
-			'location' => 'entry',
-			'position' => 'left',
-			'genericon' => '&#f106;'
-		),
-		'status' => array(
-			'name' => 'status',
-			'location' => 'entry',
-			'position' => 'left',
-			'genericon' => '&#f105;'
-		),
-		'video' => array(
-			'name' => 'video',
-			'location' => 'title',
-			'position' => 'left',
-			'genericon' => '&#f104;'
-		),
-		'standard' => array(
-			'name' => 'standard',
-			'location' => 'title',
-			'position' => 'left',
-			'genericon' => '&#f100;'
-		)
-	);
-	return apply_filters( 'oenology_get_post_format_icon_formats', $icons );
-}
-
 /**
  * Add Post-Entry container for Post Format icon
+ * 
+ * @uses	oenology_get_post_format_icon_formats()	Defined in functions/custom.php
  */
 function oenology_post_format_entry_icon_container() {
 	$postformat = ( get_post_format() ? get_post_format() : 'standard' );
@@ -204,6 +121,8 @@ add_filter( 'oenology_hook_post_entry_before', 'oenology_post_format_entry_icon_
 
 /**
  * Add Post-Title container for Post Format icon
+ * 
+ * @uses	oenology_get_post_format_icon_formats()	Defined in functions/custom.php
  */
 function oenology_post_format_title_icon_container() {
 	$postformat = ( get_post_format() ? get_post_format() : 'standard' );
@@ -223,6 +142,8 @@ add_filter( 'oenology_hook_post_header_before', 'oenology_post_format_title_icon
 
 /**
  * Enqueue Post Format Icon Styles
+ * 
+ * @uses	oenology_get_post_formats()	Defined in functions/custom.php
  */
 function oenology_enqueue_post_format_icon_style() {
 
@@ -246,7 +167,7 @@ function oenology_enqueue_post_format_icon_style() {
 			?>
 .post.format-<?php echo $postformat['slug']; ?> .post-entry .post-format-icon-container {
 	float:<?php echo $iconposition; ?>;
-<?php if ( ' left' == $iconposition ) { ?>
+<?php if ( 'left' == $iconposition ) { ?>
 	position: relative;
 	left: -50px; 
 <?php } ?>
@@ -274,6 +195,8 @@ add_action( 'wp_print_styles', 'oenology_enqueue_post_format_icon_style', 11 );
 
 /**
  * Enqueue Header Nav Menu Styles
+ * 
+ * @uses	oenology_get_options()			Defined in functions/options.php
  */
 function oenology_enqueue_header_nav_menu_style() {
 	global $oenology_options;
