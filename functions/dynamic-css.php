@@ -21,7 +21,7 @@ function oenology_enqueue_admin_style() {
 
 	// define admin stylesheet
 	$admin_handle = 'oenology_admin_stylesheet';
-	$admin_stylesheet = get_template_directory_uri() . '/functions/oenology-admin.css';
+	$admin_stylesheet = get_template_directory_uri() . '/css/oenology-admin.css';
 	
 	wp_enqueue_style( $admin_handle, $admin_stylesheet, '', false );
 }
