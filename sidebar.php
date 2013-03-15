@@ -109,8 +109,8 @@ if ( 'three-column' != oenology_get_current_page_layout() ) {
 					$profileurl = $baseurl . '/' . $oenology_options[$profilename];
 					// Output the fully formed social network profile link
 					?>
-					<a class="sidebar-social-icon" href="<?php echo $profileurl; ?>" title="<?php echo $profile['title']; ?>">
-						<?php echo $profile['title']; ?>
+					<a class="sidebar-social-icon genericon" href="<?php echo $profileurl; ?>" title="<?php echo $profile['title']; ?>">
+						<span class="genericon-<?php echo $profile['name']; ?>"></span>
 					</a>
 				<?php 
 				}
@@ -125,7 +125,7 @@ if ( 'three-column' != oenology_get_current_page_layout() ) {
 				$rssurl = get_bloginfo( $rssarg ); 
 				// Output the fully formed RSS feed link
 				?>
-				<a class="sidebar-social-icon" href="<?php echo $rssurl; ?>" title="RSS">RSS</a>
+				<a class="sidebar-social-icon genericon" href="<?php echo $rssurl; ?>" title="RSS"><span class="genericon-feed"></span></a>
 			<?php 
 			}
 			?>

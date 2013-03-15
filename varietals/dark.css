@@ -435,7 +435,8 @@ body.page .post .post-title {
 	box-shadow: 1px 1px 0px #111;
 }
 .post-entry .link-pages a:hover,
-.nav-comments a:hover{ 
+.nav-comments a:hover,
+a.sidebar-social-icon:hover { 
    background-color:#111; 
 	-moz-box-shadow: 0px 0px 4px #ddd;
 	-webkit-box-shadow: 0px 0px 4px #ddd;

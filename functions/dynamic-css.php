@@ -114,229 +114,6 @@ function oenology_get_color_scheme() {
 }
 
 /**
- * Enqueue Social Icon Styles
- */
-function oenology_enqueue_social_icon_style() {
-	
-	// Get Theme options
-	$oenology_options = oenology_get_options();
-
-	// If we're not displaying social icons,
-	// no need to proceed
-	if( false == $oenology_options['display_social_icons'] ) {
-        return;
-	}
-	
-	$socialiconbgposition = apply_filters( 'oenology_social_icon_bg_position', array(
-		'aim' => array(
-			'name' => 'aim',
-			'black' => array(
-				'x' => '0',
-				'y' => '0'
-			),
-			'gray' => array(
-				'x' => '0',
-				'y' => '-90'
-			),
-			'silver' => array(
-				'x' => '0',
-				'y' => '-180'
-			)
-		),
-		'facebook' => array(
-			'name' => 'facebook',
-			'black' => array(
-				'x' => '0',
-				'y' => '-270'
-			),
-			'gray' => array(
-				'x' => '0',
-				'y' => '-360'
-			),
-			'silver' => array(
-				'x' => '0',
-				'y' => '-450'
-			)
-		),
-		'flickr' => array(
-			'name' => 'flickr',
-			'black' => array(
-				'x' => '0',
-				'y' => '-540'
-			),
-			'gray' => array(
-				'x' => '0',
-				'y' => '-630'
-			),
-			'silver' => array(
-				'x' => '0',
-				'y' => '-720'
-			)
-		),
-		'linkedin' => array(
-			'name' => 'linkedin',
-			'black' => array(
-				'x' => '0',
-				'y' => '-810'
-			),
-			'gray' => array(
-				'x' => '0',
-				'y' => '-900'
-			),
-			'silver' => array(
-				'x' => '0',
-				'y' => '-990'
-			)
-		),
-		'myspace' => array(
-			'name' => 'myspace',
-			'black' => array(
-				'x' => '0',
-				'y' => '-1080'
-			),
-			'gray' => array(
-				'x' => '0',
-				'y' => '-1170'
-			),
-			'silver' => array(
-				'x' => '0',
-				'y' => '-1260'
-			)
-		),
-		'rss' => array(
-			'name' => 'rss',
-			'black' => array(
-				'x' => '0',
-				'y' => '-1350'
-			),
-			'gray' => array(
-				'x' => '0',
-				'y' => '-1440'
-			),
-			'silver' => array(
-				'x' => '0',
-				'y' => '-1530'
-			)
-		),
-		'skype' => array(
-			'name' => 'skype',
-			'black' => array(
-				'x' => '0',
-				'y' => '-1620'
-			),
-			'gray' => array(
-				'x' => '0',
-				'y' => '-1710'
-			),
-			'silver' => array(
-				'x' => '0',
-				'y' => '-1800'
-			)
-		),
-		'twitter' => array(
-			'name' => 'twitter',
-			'black' => array(
-				'x' => '0',
-				'y' => '-1890'
-			),
-			'gray' => array(
-				'x' => '-90',
-				'y' => '0'
-			),
-			'silver' => array(
-				'x' => '-90',
-				'y' => '-90'
-			)
-		),
-		'yahoo' => array(
-			'name' => 'yahoo',
-			'black' => array(
-				'x' => '-90',
-				'y' => '-180'
-			),
-			'gray' => array(
-				'x' => '-90',
-				'y' => '-270'
-			),
-			'silver' => array(
-				'x' => '-90',
-				'y' => '-360'
-			)
-		),
-		'youtube' => array(
-			'name' => 'youtube',
-			'black' => array(
-				'x' => '-90',
-				'y' => '-450'
-			),
-			'gray' => array(
-				'x' => '-90',
-				'y' => '-540'
-			),
-			'silver' => array(
-				'x' => '-90',
-				'y' => '-630'
-			)
-		)
-	) );
-
-	$socialnetworks = oenology_get_social_networks();
-	$linkcolor = apply_filters( 'oenology_light_color_scheme_linkcolor', 'silver' );
-	$linkhovercolor = apply_filters( 'oenology_light_color_scheme_linkhovercolor', 'black' );
-	$colorscheme = oenology_get_color_scheme();
-	if ( 'dark' == $colorscheme ) {
-		$linkcolor = apply_filters( 'oenology_dark_color_scheme_linkcolor', 'gray' );
-		$linkhovercolor = apply_filters( 'oenology_dark_color_scheme_linknovercolor', 'silver' );
-	}
-	
-?>
-
-<style type="text/css">
-<?php 
-	if ( 'none' != $oenology_options['rss_feed'] ) { 
-		?>
-a[class="sidebar-social-icon"][title ^="RSS"] {
-    background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
-    background-position: <?php echo $socialiconbgposition['rss'][$linkcolor]['x'] . 'px ' . $socialiconbgposition['rss'][$linkcolor]['y'] . 'px'; ?>;
-}
-a[class="sidebar-social-icon"][title ^="RSS"]:hover {
-    background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
-    background-position: <?php echo $socialiconbgposition['rss'][$linkhovercolor]['x'] . 'px ' . $socialiconbgposition['rss'][$linkhovercolor]['y'] . 'px'; ?>;
-}
-		<?php 
-	}
-	foreach ( $socialnetworks as $network ) {
-
-		$profile = $network['name'] . '_profile';
-
-		if ( isset( $oenology_options[$profile] ) && '' != $oenology_options[$profile] ) {
-			// Get background link and hover positions
-			$linkposx = $socialiconbgposition[$network['name']][$linkcolor]['x'];
-			$linkposy = $socialiconbgposition[$network['name']][$linkcolor]['y'];
-			$hoverposx = $socialiconbgposition[$network['name']][$linkhovercolor]['x'];
-			$hoverposy = $socialiconbgposition[$network['name']][$linkhovercolor]['y'];
-			
-		?>
-a[class="sidebar-social-icon"][title ^="<?php echo $network['title']; ?>"] {
-	background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
-	background-position: <?php echo $linkposx . 'px ' . $linkposy . 'px'; ?>;
-}
-a[class="sidebar-social-icon"][title ^="<?php echo $network['title']; ?>"]:hover {
-	background: url('<?php echo get_template_directory_uri(); ?>/images/socialiconsprite.png');
-	background-position: <?php echo $hoverposx . 'px ' . $hoverposy . 'px'; ?>;
-}
-		<?php 
-		} 
-	}
-	?>
-</style>
-	
-<?php 
-}
-// Enqueue Varietal Stylesheet at wp_print_styles
-add_action( 'wp_print_styles', 'oenology_enqueue_social_icon_style', 11 );
-
-/**
  * Return Post Formats whose icons display in the Post Entry
  */
 function oenology_get_post_format_icon_formats() {
@@ -345,47 +122,62 @@ function oenology_get_post_format_icon_formats() {
 		'aside' => array(
 			'name' => 'aside',
 			'location' => 'entry',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f101;'
 		),
 		'audio' => array(
 			'name' => 'audio',
 			'location' => 'title',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f109;'
 		),
 		'chat' => array(
 			'name' => 'chat',
 			'location' => 'title',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f108;'
 		),
 		'gallery' => array(
 			'name' => 'gallery',
 			'location' => 'both',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f103;'
 		),
 		'image' => array(
 			'name' => 'image',
 			'location' => 'both',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f102;'
 		),
 		'link' => array(
 			'name' => 'link',
 			'location' => 'entry',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f107;'
 		),
 		'quote' => array(
 			'name' => 'quote',
 			'location' => 'entry',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f106;'
 		),
 		'status' => array(
 			'name' => 'status',
 			'location' => 'entry',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f105;'
 		),
 		'video' => array(
 			'name' => 'video',
 			'location' => 'title',
-			'position' => 'left'
+			'position' => 'left',
+			'genericon' => '&#f104;'
+		),
+		'standard' => array(
+			'name' => 'standard',
+			'location' => 'title',
+			'position' => 'left',
+			'genericon' => '&#f100;'
 		)
 	);
 	return apply_filters( 'oenology_get_post_format_icon_formats', $icons );
@@ -395,14 +187,14 @@ function oenology_get_post_format_icon_formats() {
  * Add Post-Entry container for Post Format icon
  */
 function oenology_post_format_entry_icon_container() {
-	$postformat = get_post_format();
+	$postformat = ( get_post_format() ? get_post_format() : 'standard' );
 	$iconformats = oenology_get_post_format_icon_formats();
 	
 	foreach ( $iconformats as $format ) {
 		if ( $postformat == $format['name'] ) {
 			if ( 'entry' == $format['location'] || 'both' == $format['location'] ) {
 				?>
-				<div class="post-format-icon-container"></div>
+				<div class="post-format-icon-container genericon"><span class="genericon-<?php echo $format['name']; ?>"></span></div>
 				<?php
 			}
 		}
@@ -414,14 +206,14 @@ add_filter( 'oenology_hook_post_entry_before', 'oenology_post_format_entry_icon_
  * Add Post-Title container for Post Format icon
  */
 function oenology_post_format_title_icon_container() {
-	$postformat = get_post_format();
+	$postformat = ( get_post_format() ? get_post_format() : 'standard' );
 	$iconformats = oenology_get_post_format_icon_formats();
 	
 	foreach ( $iconformats as $format ) {
 		if ( $postformat == $format['name'] ) {
 			if ( 'title' == $format['location'] || 'both' == $format['location'] ) {
 				?>
-				<div class="post-format-icon-container"></div>
+				<div class="post-format-icon-container genericon"><span class="genericon-<?php echo $format['name']; ?>"></span></div>
 				<?php
 			}
 		}
@@ -434,114 +226,7 @@ add_filter( 'oenology_hook_post_header_before', 'oenology_post_format_title_icon
  */
 function oenology_enqueue_post_format_icon_style() {
 
-	$postformatbgposition = apply_filters( 'oenology_post_format_bg_position', array(
-		'aside' => array(
-			'name' => 'aside',
-			'gray' => array(
-				'x' => '0',
-				'y' => '0'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-83'
-			)
-		),
-		'audio' => array(
-			'name' => 'audio',
-			'gray' => array(
-				'x' => '0',
-				'y' => '-166'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-242'
-			)
-		),
-		'chat' => array(
-			'name' => 'chat',
-			'gray' => array(
-				'x' => '0',
-				'y' => '-318'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-394'
-			)
-		),
-		'gallery' => array(
-			'name' => 'gallery',
-			'gray' => array(
-				'x' => '0',
-				'y' => '-470'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-554'
-			)
-		),
-		'image' => array(
-			'name' => 'image',
-			'gray' => array(
-				'x' => '0',
-				'y' => '-638'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-722'
-			)
-		),
-		'link' => array(
-			'name' => 'link',
-			'gray' => array(
-				'x' => '0',
-				'y' => '-806'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-888'
-			)
-		),
-		'quote' => array(
-			'name' => 'quote',
-			'gray' => array(
-				'x' => '0',
-				'y' => '-970'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-1050'
-			)
-		),
-		'status' => array(
-			'name' => 'status',
-			'gray' => array(
-				'x' => '0',
-				'y' => '-1130'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-1211'
-			)
-		),
-		'video' => array(
-			'name' => 'video',
-			'gray' => array(
-				'x' => '0',
-				'y' => '-1292'
-			),
-			'original' => array(
-				'x' => '0',
-				'y' => '-1376'
-			)
-		)
-	) );
-
 	$postformats = oenology_get_post_formats();
-	$iconcolor = apply_filters( 'oenology_light_color_scheme_postformat_linkcolor', 'original' );
-	$colorscheme = oenology_get_color_scheme();
-	if ( 'dark' == $colorscheme ) {
-		$iconcolor = apply_filters( 'oenology_dark_color_scheme_postformat_linkcolor', 'gray' );
-	}
 	
 ?>
 
@@ -551,29 +236,17 @@ function oenology_enqueue_post_format_icon_style() {
 	foreach ( $postformats as $postformat ) {
 		$iconlocation = 'entry';
 		$iconposition = 'left';
-		if ( 'audio' == $postformat['slug'] || 'chat' == $postformat['slug'] || 'video' == $postformat['slug'] ) {
+		if ( in_array( $postformat['slug'], array( 'audio', 'chat', 'video', 'standard' ) ) ) {
 			$iconlocation = 'title';
 		}
-		if ( 'audio' == $postformat['slug'] || 'chat' == $postformat['slug'] || 'gallery' == $postformat['slug'] || 'image' == $postformat['slug'] || 'video' == $postformat['slug'] ) {
+		if ( in_array( $postformat['slug'], array( 'audio', 'chat', 'gallery', 'image', 'video', 'standard' ) ) ) {
 			$iconposition = 'right';
-		}
-		$bgposx = '0';
-		$bgposy = '0';
-		foreach ( $postformatbgposition as $bg ) {
-			if ( $postformat['slug'] == $bg['name'] ) {
-				$bgposx = $bg[$iconcolor]['x'];
-				$bgposy = $bg[$iconcolor]['y'];
-			}
 		}
 	if ( 'entry' == $iconlocation ) {
 			?>
 .post.format-<?php echo $postformat['slug']; ?> .post-entry .post-format-icon-container {
-	background: url('<?php echo get_template_directory_uri(); ?>/images/postformaticonsprite.png');
-	background-position: <?php echo $bgposx . 'px ' . $bgposy . 'px'; ?>;
 	float:<?php echo $iconposition; ?>;
-	width: 33px; 
-	height: 33px;
-<?php if ( 'left' == $iconposition ) { ?>
+<?php if ( ' left' == $iconposition ) { ?>
 	position: relative;
 	left: -50px; 
 <?php } ?>
@@ -582,25 +255,13 @@ function oenology_enqueue_post_format_icon_style() {
 	} else if ( 'title' == $iconlocation ) {
 			?>
 .post.format-<?php echo $postformat['slug']; ?> .post-title .post-format-icon-container {
-	background: url('<?php echo get_template_directory_uri(); ?>/images/postformaticonsprite.png');
-	background-position: <?php echo $bgposx . 'px ' . $bgposy . 'px'; ?>;
 	float:<?php echo $iconposition; ?>;
-	width: 33px; 
-	height: 33px;
 }
 			<?php 
 	}
 	if ( is_single() && ( 'gallery' == get_post_format() || 'image' == get_post_format() ) ) { ?>
 body.single-format-<?php echo $postformat['slug']; ?> .post.format-<?php echo get_post_format(); ?> .post-title .post-format-icon-container  {
-	background: url('<?php echo get_template_directory_uri(); ?>/images/postformaticonsprite.png');
-	background-position: <?php echo $bgposx . 'px ' . $bgposy . 'px'; ?>;
 	float:<?php echo $iconposition; ?>;
-	width: 33px; 
-	height: 33px;
-	min-height: 33px;
-}
-body.single-format-<?php echo get_post_format(); ?> .post.format-<?php echo get_post_format(); ?> .post-entry .post-format-icon-container {
-	background-image: none;
 }
 	<?php }
 } ?>

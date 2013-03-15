@@ -800,14 +800,16 @@ ul.page-numbers li {
    --------------------
 */
 .sidebar-social-icons {
-	height:40px;
 }
 a.sidebar-social-icon {
   float:right;
-  width:40px;
-  height:40px;
-  text-indent:-9999px;
   overflow:hidden;
+}
+a.sidebar-social-icon:link,
+a.sidebar-social-icon:link,
+a.sidebar-social-icon:link,
+a.sidebar-social-icon:link {
+	text-decoration: none;
 }
 /* 
    6 - Center Column (#main) Style Specifications
@@ -1117,6 +1119,111 @@ body.term-post-format-image .post-entry {
 /* Post Entry - Post Formats
    --------------------
 */
+.genericon {
+	width: 16px;
+	height: 16px;
+	-webkit-font-smoothing: antialiased;
+	font-size: 16px;
+	line-height: 1;
+	font-family: 'Genericons';
+	text-decoration: inherit;
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: top;
+}
+.post-format-icon-container.genericon {
+	width: 32px;
+	height: 32px;
+	font-size: 32px;
+}
+.sidebar-social-icon.genericon {
+	width: 36px;
+	height: 36px;
+	font-size: 32px;
+	margin: 3px;
+	padding: 2px;
+}
+.sidebar-social-icon span:before {
+	padding: 2px;
+}
+.custom-taxonomy-list-feed.genericon {
+	width: 12px;
+	height: 12px;
+	font-size: 12px;
+	padding-right: 2px;
+}
+/* Post formats */
+.genericon-standard:before { content: '\f100'; }
+.genericon-aside:before { content: '\f101'; }
+.genericon-image:before { content: '\f102'; }
+.genericon-gallery:before { content: '\f103'; }
+.genericon-video:before { content: '\f104'; }
+.genericon-status:before { content: '\f105'; }
+.genericon-quote:before { content: '\f106'; }
+.genericon-link:before { content: '\f107'; }
+.genericon-chat:before { content: '\f108'; }
+.genericon-audio:before { content: '\f109'; }
+
+/* Social icons */
+.genericon-github:before { content: '\f200'; }
+.genericon-dribbble:before { content: '\f201'; }
+.genericon-twitter:before { content: '\f202'; }
+.genericon-facebook:before { content: '\f203'; }
+.genericon-facebook-alt:before { content: '\f204'; }
+.genericon-wordpress:before { content: '\f205'; }
+.genericon-googleplus:before { content: '\f206'; }
+.genericon-linkedin:before { content: '\f207'; }
+.genericon-linkedin-alt:before { content: '\f208'; }
+.genericon-pinterest:before { content: '\f209'; }
+.genericon-pinterest-alt:before { content: '\f210'; }
+.genericon-flickr:before { content: '\f211'; }
+.genericon-vimeo:before { content: '\f212'; }
+.genericon-youtube:before { content: '\f213'; }
+.genericon-tumblr:before { content: '\f214'; }
+
+/* Meta icons */
+.genericon-comment:before { content: '\f300'; }
+.genericon-category:before { content: '\f301'; }
+.genericon-tag:before { content: '\f302'; }
+.genericon-time:before { content: '\f303'; }
+.genericon-user:before { content: '\f304'; }
+.genericon-day:before { content: '\f305'; }
+.genericon-week:before { content: '\f306'; }
+.genericon-month:before { content: '\f307'; }
+.genericon-pinned:before { content: '\f308'; }
+
+/* Other icons */
+.genericon-search:before { content: '\f400'; }
+.genericon-unzoom:before { content: '\f401'; }
+.genericon-zoom:before { content: '\f402'; }
+.genericon-show:before { content: '\f403'; }
+.genericon-hide:before { content: '\f404'; }
+.genericon-close:before { content: '\f405'; }
+.genericon-close-alt:before { content: '\f406'; }
+.genericon-trash:before { content: '\f407'; }
+.genericon-star:before { content: '\f408'; }
+.genericon-home:before { content: '\f409'; }
+.genericon-mail:before { content: '\f410'; }
+.genericon-edit:before { content: '\f411'; }
+.genericon-reply:before { content: '\f412'; }
+.genericon-feed:before { content: '\f413'; }
+.genericon-warning:before { content: '\f414'; }
+.genericon-share:before { content: '\f415'; }
+.genericon-attachment:before { content: '\f416'; }
+.genericon-location:before { content: '\f417'; }
+.genericon-checkmark:before { content: '\f418'; }
+.genericon-menu:before { content: '\f419'; }
+.genericon-top:before { content: '\f420'; }
+.genericon-minimize:before { content: '\f421'; }
+.genericon-maximize:before { content: '\f422'; }
+.genericon-404:before { content: '\f423'; }
+
+/* Generic shapes */
+.genericon-uparrow:before { content: '\f500'; }
+.genericon-rightarrow:before { content: '\f501'; }
+.genericon-downarrow:before { content: '\f502'; }
+.genericon-leftarrow:before { content: '\f503'; }
+
 .post.format-aside .post-entry {
 	margin-left:-50px; 
 	padding-left:50px; 
@@ -1853,12 +1960,14 @@ body.single-format-image dd {
 	 overflow:hidden;
      height: 18pt;
      line-height: 18pt;
-     width: 98px; 
      font-size:9pt;
      letter-spacing:0.1em; 
 	 font-weight:normal;
      text-decoration:none;
 	 border: 1px solid #FFFFFF;
+}
+.nav-header li > a {
+	/*width: 98px; */
 }
 #nav .current_page_item > a,
 #nav .current_page_parent > a,
@@ -1872,7 +1981,7 @@ body.single-format-image dd {
 	position: absolute;
 	top: 18pt;
 	left: 0;
-	width: 110px;
+	/*width: 110px;*/
     list-style-type:none;
     margin:0px;
 	margin-top:2px;
@@ -1889,7 +1998,7 @@ body.single-format-image dd {
 #nav ul ul {
 	left:100%;
 	top:0;
-	width: 105px;
+	/*width: 105px;*/
 	margin-top:0px;
 	margin-left:0px;
 }

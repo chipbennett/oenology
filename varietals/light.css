@@ -404,7 +404,8 @@ body.page .post .post-title {
 	border: 1px solid #58a;
 }
 .post-entry .link-pages a:hover,
-.nav-comments a:hover { 
+.nav-comments a:hover,
+a.sidebar-social-icon:hover { 
 	border:1px solid #777777;
 	color:#fff;  
 	text-shadow: 1px 1px 1px #777;

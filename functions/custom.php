@@ -182,13 +182,12 @@ function oenology_get_current_tab() {
  * Get custom category list
  */
 function oenology_get_custom_category_list() {
-	$catrssurl = includes_url() . '/images/rss.png';
 	$customcatlist ='';
 	$customcats=  get_categories();
 	foreach( $customcats as $customcat ) {
 		$customcathref = get_category_link( $customcat->term_id );
 		$customcatfeedlink = get_category_feed_link( $customcat->term_id );
-		$customcatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Category Name', 'oenology' ), $customcat->name ) ) . '" href="' . $customcatfeedlink . '"><img src="' . $catrssurl . '" alt="feed" /></a><a href="' . $customcathref . '">' . $customcat->name . '</a> (' . $customcat->count . ')</li>';
+		$customcatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Category Name', 'oenology' ), $customcat->name ) ) . '" href="' . $customcatfeedlink . '" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="' . $customcathref . '">' . $customcat->name . '</a> (' . $customcat->count . ')</li>';
 	}
 	return apply_filters( 'oenology_get_custom_category_list', $customcatlist );
 }
@@ -198,13 +197,12 @@ function oenology_get_custom_category_list() {
  * Get custom post format list
  */
 function oenology_get_custom_post_format_list() {
-	$postformatrssurl = includes_url() . '/images/rss.png';
 	$postformatterms = get_terms( 'post_format' );
 	$postformatlist = '';
 	foreach( $postformatterms as $term ) {
 		$termslug = substr( $term->slug, 12 );
 		$termlink = get_post_format_link( $termslug );
-		$postformatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Post Format', 'oenology' ), $term->name ) ) . '" href="' . $termlink .'feed/"><img src="'.$postformatrssurl.'" alt="feed" /></a><a href="'. $termlink .'">' . $term->name . '</a> (' . $term->count . ')</li>';
+		$postformatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Post Format', 'oenology' ), $term->name ) ) . '" href="' . $termlink .'feed/" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="'. $termlink .'">' . $term->name . '</a> (' . $term->count . ')</li>';
 	}
 	return apply_filters( 'oenology_get_custom_post_format_list', $postformatlist );
 }
@@ -214,13 +212,12 @@ function oenology_get_custom_post_format_list() {
  * Get custom tag list
  */
 function oenology_get_custom_tag_list() {
-	$tagrssurl = includes_url() . '/images/rss.png';
 	$customtaglist ='';
 	$customtags =  get_tags();
 	foreach( $customtags as $customtag ) {
 		$customtaghref = get_tag_link( $customtag->term_id );
 		$customtagfeedlink = get_tag_feed_link( $customtag->term_id );
-		$customtaglist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s feed', 'Tag Name', 'oenology' ), $customtag->name ) ) . '" href="' . $customtagfeedlink . '"><img src="' . $tagrssurl . '" alt="feed" /></a><a href="' . $customtaghref . '">' . $customtag->name . '</a> (' . $customtag->count . ')</li>';
+		$customtaglist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s feed', 'Tag Name', 'oenology' ), $customtag->name ) ) . '" href="' . $customtagfeedlink . '" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="' . $customtaghref . '">' . $customtag->name . '</a> (' . $customtag->count . ')</li>';
 	} 
 	return apply_filters( 'oenology_get_custom_tag_list', $customtaglist );
 }
@@ -516,6 +513,10 @@ function oenology_get_post_formats() {
 		'video'  => array(
 			'slug' => 'video',
 			'description' => __('A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.', 'oenology' )
+		), 
+		'standard'  => array(
+			'slug' => 'standard',
+			'description' => __('A standard blog post.', 'oenology' )
 		)
 	);
 	return apply_filters( 'oenology_get_post_formats', $postformats );
@@ -571,32 +572,38 @@ function oenology_get_social_networks() {
         'youtube' => array(
         	'name' => 'youtube',
         	'title' => __( 'YouTube', 'oenology' ),
-        	'baseurl' => 'http://www.youtube.com'
+        	'baseurl' => 'http://www.youtube.com',
+			'genericon' => ''
         ),
         'myspace' => array(
         	'name' => 'myspace',
         	'title' => __( 'MySpace', 'oenology' ),
-        	'baseurl' => 'http://www.myspace.com'
+        	'baseurl' => 'http://www.myspace.com',
+			'genericon' => ''
         ),
         'linkedin' => array(
         	'name' => 'linkedin',
         	'title' => __( 'Linked-In', 'oenology' ),
-        	'baseurl' => 'http://www.linkedin.com/in'
+        	'baseurl' => 'http://www.linkedin.com/in',
+			'genericon' => ''
         ),
         'flickr' => array(
         	'name' => 'flickr',
         	'title' => __( 'Flickr', 'oenology' ),
-        	'baseurl' => 'http://www.flickr.com/photos'
+        	'baseurl' => 'http://www.flickr.com/photos',
+			'genericon' => ''
         ),
         'facebook' => array(
         	'name' => 'facebook',
         	'title' => __( 'Facebook', 'oenology' ),
-        	'baseurl' => 'http://www.facebook.com'
+        	'baseurl' => 'http://www.facebook.com',
+			'genericon' => ''
         ),
         'twitter' => array(
         	'name' => 'twitter',
         	'title' => __( 'Twitter', 'oenology' ),
-        	'baseurl' => 'http://www.twitter.com'
+        	'baseurl' => 'http://www.twitter.com',
+			'genericon' => ''
         )
     );
 	return apply_filters( 'oenology_get_social_networks', $socialnetworks );
@@ -1202,7 +1209,7 @@ function oenology_copyright() {
  * Locate the directory URI for a template
  * 
  * This function is essentially a rewrite of locate_template()
- * that searches for directory rather than filepath. Useful for
+ * that searches for filepath and returns file directory. Useful for
  * child-theme overrides of parent Theme resources.
  */
 function oenology_locate_template_uri( $template_names, $load = false, $require_once = true ) {
