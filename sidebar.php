@@ -91,46 +91,7 @@ if ( 'three-column' != oenology_get_current_page_layout() ) {
 		<?php
 		// If Theme option is set to display social icons
 		if ( $oenology_options['display_social_icons'] ) {
-			?>
-			<div class="sidebar-social-icons">
-			<?php
-			// Obtain the list of valid social networks
-			$socialprofiles = oenology_get_social_networks();
-			// Loop through each social network
-			foreach ( $socialprofiles as $profile ) {
-				// holds the profile name for the currentsocial network
-				$profilename = $profile['name'] . '_profile';
-				// if the user has provided a profile name
-				// for the current social network
-				if ( ! empty( $oenology_options[$profilename] ) ) { 
-					// holds the base URL for the current social network
-					$baseurl = $profile['baseurl'];
-					// build the full URL, including base URL and profile name
-					$profileurl = $baseurl . '/' . $oenology_options[$profilename];
-					// Output the fully formed social network profile link
-					?>
-					<a class="sidebar-social-icon genericon" href="<?php echo $profileurl; ?>" title="<?php echo $profile['title']; ?>">
-						<span class="genericon-<?php echo $profile['name']; ?>"></span>
-					</a>
-				<?php 
-				}
-			}
-			// If the user has not set the RSS feed icon not to display
-			if ( 'none' != $oenology_options['rss_feed'] ) {
-				// holds the WordPress bloginfo() argument name 
-				// for the user-selected RSS feed type
-				$rssarg = $oenology_options['rss_feed'] . '_url';
-				// holds the WordPress-defined URL for the
-				// user-selected RSS feed type
-				$rssurl = get_bloginfo( $rssarg ); 
-				// Output the fully formed RSS feed link
-				?>
-				<a class="sidebar-social-icon genericon" href="<?php echo $rssurl; ?>" title="RSS"><span class="genericon-feed"></span></a>
-			<?php 
-			}
-			?>
-			</div>
-			<?php	
+			oenology_social_icons();
 		} 
 		?>
 		<!-- Begin Sidebar Top Widget Area-->
