@@ -1064,76 +1064,6 @@ function oenology_get_paginate_archive_page_links( $type = 'plain', $endsize = 1
 	return paginate_links( $pagination );
 }
 
-/**
- * Return Post Formats whose icons display in the Post Entry
- */
-function oenology_get_post_format_icon_formats() {
-
-	$icons = array(
-		'aside' => array(
-			'name' => 'aside',
-			'location' => 'entry',
-			'position' => 'left',
-			'genericon' => '&#f101;'
-		),
-		'audio' => array(
-			'name' => 'audio',
-			'location' => 'title',
-			'position' => 'left',
-			'genericon' => '&#f109;'
-		),
-		'chat' => array(
-			'name' => 'chat',
-			'location' => 'title',
-			'position' => 'left',
-			'genericon' => '&#f108;'
-		),
-		'gallery' => array(
-			'name' => 'gallery',
-			'location' => 'both',
-			'position' => 'left',
-			'genericon' => '&#f103;'
-		),
-		'image' => array(
-			'name' => 'image',
-			'location' => 'both',
-			'position' => 'left',
-			'genericon' => '&#f102;'
-		),
-		'link' => array(
-			'name' => 'link',
-			'location' => 'entry',
-			'position' => 'left',
-			'genericon' => '&#f107;'
-		),
-		'quote' => array(
-			'name' => 'quote',
-			'location' => 'entry',
-			'position' => 'left',
-			'genericon' => '&#f106;'
-		),
-		'status' => array(
-			'name' => 'status',
-			'location' => 'entry',
-			'position' => 'left',
-			'genericon' => '&#f105;'
-		),
-		'video' => array(
-			'name' => 'video',
-			'location' => 'title',
-			'position' => 'left',
-			'genericon' => '&#f104;'
-		),
-		'standard' => array(
-			'name' => 'standard',
-			'location' => 'title',
-			'position' => 'left',
-			'genericon' => '&#f100;'
-		)
-	);
-	return apply_filters( 'oenology_get_post_format_icon_formats', $icons );
-}
-
 /*
  * Define supported Post Format types
  * 
@@ -1148,43 +1078,63 @@ function oenology_get_post_formats() {
 	$postformats = array( 
 		'aside' => array(
 			'slug' => 'aside',
-			'description' => __( 'An incidental remark; digression: a message that departs from the main subject.', 'oenology' )
+			'description' => __( 'An incidental remark; digression: a message that departs from the main subject.', 'oenology' ),
+			'location' => 'entry',
+			'position' => 'left',
 		), 
 		'audio' => array(
 			'slug' => 'audio',
-			'description' => __('A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction.', 'oenology' )
+			'description' => __('A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction.', 'oenology' ),
+			'location' => 'title',
+			'position' => 'left',
 		), 
 		'chat' => array(
 			'slug' => 'chat',
-			'description' => __('Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat.', 'oenology' )
+			'description' => __('Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat.', 'oenology' ),
+			'location' => 'title',
+			'position' => 'left',
 		), 
 		'gallery' => array(
 			'slug' => 'gallery',
-			'description' => __('A collection of art for exhibition.', 'oenology' )
+			'description' => __('A collection of art for exhibition.', 'oenology' ),
+			'location' => 'both',
+			'position' => 'left',
 		), 
 		'image' => array(
 			'slug' => 'image',
-			'description' => __('picture: A visual representation (of an object or scene or person or abstraction) produced on a surface.', 'oenology' )
+			'description' => __('picture: A visual representation (of an object or scene or person or abstraction) produced on a surface.', 'oenology' ),
+			'location' => 'both',
+			'position' => 'left',
 		), 
 		'link' => array(
 			'slug' => 'link',
-			'description' => __('A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document.', 'oenology' )
+			'description' => __('A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document.', 'oenology' ),
+			'location' => 'entry',
+			'position' => 'left',
 		), 
 		'quote' => array(
 			'slug' => 'quote',
-			'description' => __('A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else.', 'oenology' )
+			'description' => __('A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else.', 'oenology' ),
+			'location' => 'entry',
+			'position' => 'left',
 		), 
 		'status' => array(
 			'slug' => 'status',
-			'description' => __('state or condition of affairs', 'oenology' )
+			'description' => __('state or condition of affairs', 'oenology' ),
+			'location' => 'entry',
+			'position' => 'left',
 		), 
 		'video'  => array(
 			'slug' => 'video',
-			'description' => __('A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.', 'oenology' )
+			'description' => __('A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.', 'oenology' ),
+			'location' => 'title',
+			'position' => 'left',
 		), 
 		'standard'  => array(
 			'slug' => 'standard',
-			'description' => __('A standard blog post.', 'oenology' )
+			'description' => __('A standard blog post.', 'oenology' ),
+			'location' => 'title',
+			'position' => 'left',
 		)
 	);
 	return apply_filters( 'oenology_get_post_formats', $postformats );

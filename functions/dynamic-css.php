@@ -101,17 +101,20 @@ add_action('wp_enqueue_scripts', 'oenology_enqueue_varietal_style', 11 );
 /**
  * Add Post-Entry container for Post Format icon
  * 
- * @uses	oenology_get_post_format_icon_formats()	Defined in functions/custom.php
+ * @uses	oenology_get_post_formats()	Defined in functions/custom.php
  */
 function oenology_post_format_entry_icon_container() {
+	if ( 'post' != get_post_type() ) {
+		return;
+	}
 	$postformat = ( get_post_format() ? get_post_format() : 'standard' );
-	$iconformats = oenology_get_post_format_icon_formats();
+	$iconformats = oenology_get_post_formats();
 	
 	foreach ( $iconformats as $format ) {
-		if ( $postformat == $format['name'] ) {
+		if ( $postformat == $format['slug'] ) {
 			if ( 'entry' == $format['location'] || 'both' == $format['location'] ) {
 				?>
-				<div class="post-format-icon-container genericon"><span class="genericon-<?php echo $format['name']; ?>"></span></div>
+				<div class="post-format-icon-container genericon"><span class="genericon-<?php echo $format['slug']; ?>"></span></div>
 				<?php
 			}
 		}
@@ -122,17 +125,20 @@ add_filter( 'oenology_hook_post_entry_before', 'oenology_post_format_entry_icon_
 /**
  * Add Post-Title container for Post Format icon
  * 
- * @uses	oenology_get_post_format_icon_formats()	Defined in functions/custom.php
+ * @uses	oenology_get_post_formats()	Defined in functions/custom.php
  */
 function oenology_post_format_title_icon_container() {
+	if ( 'post' != get_post_type() ) {
+		return;
+	}
 	$postformat = ( get_post_format() ? get_post_format() : 'standard' );
-	$iconformats = oenology_get_post_format_icon_formats();
+	$iconformats = oenology_get_post_formats();
 	
 	foreach ( $iconformats as $format ) {
-		if ( $postformat == $format['name'] ) {
+		if ( $postformat == $format['slug'] ) {
 			if ( 'title' == $format['location'] || 'both' == $format['location'] ) {
 				?>
-				<div class="post-format-icon-container genericon"><span class="genericon-<?php echo $format['name']; ?>"></span></div>
+				<div class="post-format-icon-container genericon"><span class="genericon-<?php echo $format['slug']; ?>"></span></div>
 				<?php
 			}
 		}
