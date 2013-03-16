@@ -1969,6 +1969,23 @@ body.single-format-image dd {
      text-decoration:none;
 	 border: 1px solid #FFFFFF;
 }
+.menu-item-parent > a:after { 
+	-webkit-font-smoothing: antialiased;
+	font-size: 8px;
+	font-family: 'Genericons';
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: text-bottom;
+	padding-left: 5px;
+	float: right;
+}
+.nav-header > .menu-item-parent > a:after { 
+	content: '\f502';
+}
+.nav-header .sub-menu > .menu-item-parent > a:after { 
+	content: '\f501';
+}
 .nav-header li > a {
 	/*width: 98px; */
 }
