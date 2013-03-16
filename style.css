@@ -957,6 +957,30 @@ body.single-format-image .post {
 .post.format-aside {
 	text-align: right;
 }
+/* Location: entry; Position: left: aside, link, quote, status */
+
+.post.format-aside .post-entry .post-format-icon-container,
+.post.format-link .post-entry .post-format-icon-container,
+.post.format-quote .post-entry .post-format-icon-container,
+.post.format-status .post-entry .post-format-icon-container {
+	float: left;
+	position: relative;
+	left: -50px; 
+}
+
+/* Location: Entry, both; Position: right: gallery, image */
+.post.format-gallery .post-entry .post-format-icon-container,
+.post.format-image .post-entry .post-format-icon-container,
+/* Location: both: gallery, image */
+body.single-format-gallery .post.format-gallery .post-title .post-format-icon-container,
+body.single-format-image .post.format-image .post-title .post-format-icon-container,
+/* Location: Title: audio, chat, video, standard */
+.post.format-audio .post-title .post-format-icon-container,
+.post.format-chat .post-title .post-format-icon-container,
+.post.format-video .post-title .post-format-icon-container,
+.post.format-standard .post-title .post-format-icon-container {
+	float: right;
+}
 /* Post/Page Title Container
        .post-title
    --------------------

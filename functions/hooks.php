@@ -296,6 +296,32 @@ function oenology_hook_post_entry_before() {
 	do_action( 'oenology_hook_post_entry_before' );
 }
 
+
+
+/**
+ * Add Post-Entry container for Post Format icon
+ * 
+ * @uses	oenology_get_post_formats()	Defined in functions/custom.php
+ */
+function oenology_post_format_entry_icon_container() {
+	if ( 'post' != get_post_type() ) {
+		return;
+	}
+	$postformat = ( get_post_format() ? get_post_format() : 'standard' );
+	$iconformats = oenology_get_post_formats();
+	
+	foreach ( $iconformats as $format ) {
+		if ( $postformat == $format['slug'] ) {
+			if ( 'entry' == $format['location'] || ( ! is_single() && 'both' == $format['location'] ) ) {
+				?>
+				<div class="post-format-icon-container genericon"><span class="genericon-<?php echo $format['slug']; ?>"></span></div>
+				<?php
+			}
+		}
+	}
+}
+add_action( 'oenology_hook_post_entry_before', 'oenology_post_format_entry_icon_container' );
+
 /**
  * Action hook after content within div.post-footer
  * 
@@ -343,6 +369,30 @@ function oenology_hook_post_footer_before() {
 function oenology_hook_post_header_after() {
 	do_action( 'oenology_hook_post_header_after' );
 }
+
+/**
+ * Add Post-Title container for Post Format icon
+ * 
+ * @uses	oenology_get_post_formats()	Defined in functions/custom.php
+ */
+function oenology_post_format_title_icon_container() {
+	if ( 'post' != get_post_type() ) {
+		return;
+	}
+	$postformat = ( get_post_format() ? get_post_format() : 'standard' );
+	$iconformats = oenology_get_post_formats();
+	
+	foreach ( $iconformats as $format ) {
+		if ( $postformat == $format['slug'] ) {
+			if ( 'title' == $format['location'] || 'both' == $format['location'] ) {
+				?>
+				<div class="post-format-icon-container genericon"><span class="genericon-<?php echo $format['slug']; ?>"></span></div>
+				<?php
+			}
+		}
+	}
+}
+add_action( 'oenology_hook_post_header_before', 'oenology_post_format_title_icon_container' );
 
 /**
  * Action hook before content within div.post-header
