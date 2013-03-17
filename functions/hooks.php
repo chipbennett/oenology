@@ -1111,13 +1111,16 @@ function oenology_hook_site_footer() {
 		$site_footer['copyright'] .= '&copy; ' . date('Y');
 	}
 	
-	$site_footer['wordpress'] = sprintf( __( 'Powered by %s', 'oenology' ), '<a href="' . esc_url( 'http://wordpress.org' ) . '" target="_new" class="wordpress-footer-link"><span class="genericon genericon-wordpress"></span>WordPress ' . get_bloginfo( 'version' ) . '</a>' );
+	$site_footer['wordpress'] = sprintf( __( 'Powered by %s', 'oenology' ), '<a href="' . esc_url( 'http://wordpress.org' ) . '" target="_new" class="footer-wordpress-link"><span class="genericon genericon-wordpress"></span>WordPress ' . get_bloginfo( 'version' ) . '</a>' );
 	
 	global $oenology_options;
 	if ( 'true' == $oenology_options['display_footer_credit'] ) { 
 		// Disabled by default 
 		$site_footer['themecredit'] = '<a href="http://www.chipbennett.net/themes/oenology">Oenology Theme</a>';  
 	}
+
+	$site_footer['feed'] = '<a class="footer-feed-link genericon" href="' . get_bloginfo( 'rss2_url' ) . '" title="RSS"><span class="genericon-feed"></span></a>';
+
 	echo implode( ' | ', apply_filters( 'oenology_hook_site_footer', $site_footer ) );
 }
 

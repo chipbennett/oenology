@@ -802,7 +802,6 @@ ul.page-numbers li {
 .sidebar-social-icons {
 }
 a.sidebar-social-icon {
-  float:right;
   overflow:hidden;
 }
 a.sidebar-social-icon:link,
@@ -1162,9 +1161,9 @@ body.term-post-format-image .post-entry {
 }
 .sidebar-social-icon.genericon {
 	width: 36px;
-	height: 36px;
+	height: 32px;
 	font-size: 32px;
-	margin: 3px;
+	display: inline-block;
 	padding: 2px;
 }
 .sidebar-social-icon span:before {
@@ -1176,7 +1175,8 @@ body.term-post-format-image .post-entry {
 	font-size: 12px;
 	padding-right: 2px;
 }
-.wordpress-footer-link .genericon {
+.footer-feed-link.genericon,
+.footer-wordpress-link .genericon {
 	vertical-align: middle;
 }
 /* Post formats */

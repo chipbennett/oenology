@@ -338,38 +338,6 @@ function oenology_get_option_parameters() {
 			'since' => '1.2',
 			'default' => true
 		),
-		'rss_feed' => array(
-			'name' => 'rss_feed',
-			'title' => __( 'RSS Feed', 'oenology' ),
-			'type' => 'select',
-			'valid_options' => array( 
-				'none' => array(
-					'name' => 'none',
-					'title' => __( 'Do Not Display', 'oenology' )
-				),
-				'rdf' => array(
-					'name' => 'rdf',
-					'title' => 'RDF/RSS 1.0'
-				),
-				'rss' => array(
-					'name' => 'rss',
-					'title' => 'RSS 0.92,'
-				),
-				'rss2' => array(
-					'name' => 'rss2',
-					'title' => 'RSS 2.0'
-				),
-				'atom' => array(
-					'name' => 'atom',
-					'title' => 'Atom'
-				)
-			),
-			'description' => __( 'RSS Feed', 'oenology' ),
-			'section' => 'social',
-			'tab' => 'general',
-			'since' => '1.2',
-			'default' => 'rss2'
-		),
 		'dribbble_profile' => array(
 			'name' => 'dribbble_profile',
 			'title' => __( 'Dribbble Profile', 'oenology' ),

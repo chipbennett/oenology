@@ -1086,25 +1086,25 @@ function oenology_get_post_formats() {
 			'slug' => 'audio',
 			'description' => __('A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction.', 'oenology' ),
 			'location' => 'title',
-			'position' => 'left',
+			'position' => 'right',
 		), 
 		'chat' => array(
 			'slug' => 'chat',
 			'description' => __('Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat.', 'oenology' ),
 			'location' => 'title',
-			'position' => 'left',
+			'position' => 'right',
 		), 
 		'gallery' => array(
 			'slug' => 'gallery',
 			'description' => __('A collection of art for exhibition.', 'oenology' ),
 			'location' => 'both',
-			'position' => 'left',
+			'position' => 'right',
 		), 
 		'image' => array(
 			'slug' => 'image',
 			'description' => __('picture: A visual representation (of an object or scene or person or abstraction) produced on a surface.', 'oenology' ),
 			'location' => 'both',
-			'position' => 'left',
+			'position' => 'right',
 		), 
 		'link' => array(
 			'slug' => 'link',
@@ -1128,13 +1128,13 @@ function oenology_get_post_formats() {
 			'slug' => 'video',
 			'description' => __('A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion.', 'oenology' ),
 			'location' => 'title',
-			'position' => 'left',
+			'position' => 'right',
 		), 
 		'standard'  => array(
 			'slug' => 'standard',
 			'description' => __('A standard blog post.', 'oenology' ),
 			'location' => 'title',
-			'position' => 'left',
+			'position' => 'right',
 		)
 	);
 	return apply_filters( 'oenology_get_post_formats', $postformats );
@@ -1196,7 +1196,7 @@ function oenology_get_social_networks() {
         'tumblr' => array(
         	'name' => 'tumblr',
         	'title' => __( 'Tumblr', 'oenology' ),
-        	'baseurl' => 'http://tumblr.com',
+        	'baseurl' => 'tumblr.com',
 			'genericon' => ''
         ),
         'twitter' => array(
@@ -1347,7 +1347,7 @@ function oenology_social_icons() {
 			$profileurl = $baseurl . '/' . $oenology_options[$profilename];
 			// Tumblr has to be different
 			if ( 'tumblr' == $profile['name'] ) {
-				$profileurl = 'http://' . $oenology_options[$profilename] . $baseurl;
+				$profileurl = 'http://' . $oenology_options[$profilename] . '.' . $baseurl;
 			}
 			// Output the fully formed social network profile link
 			?>
@@ -1356,19 +1356,6 @@ function oenology_social_icons() {
 			</a>
 		<?php 
 		}
-	}
-	// If the user has not set the RSS feed icon not to display
-	if ( 'none' != $oenology_options['rss_feed'] ) {
-		// holds the WordPress bloginfo() argument name 
-		// for the user-selected RSS feed type
-		$rssarg = $oenology_options['rss_feed'] . '_url';
-		// holds the WordPress-defined URL for the
-		// user-selected RSS feed type
-		$rssurl = get_bloginfo( $rssarg ); 
-		// Output the fully formed RSS feed link
-		?>
-		<a class="sidebar-social-icon genericon" href="<?php echo $rssurl; ?>" title="RSS"><span class="genericon-feed"></span></a>
-	<?php 
 	}
 	?>
 	</div>
