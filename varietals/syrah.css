@@ -4,7 +4,11 @@
 body {
 	color: #ccc;
 	background-color: #333;
-} 
+}
+#tinymce,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a {
+	color: #ccc;
+}
 
 
 /* Primary accent color - #222222 */
@@ -21,7 +25,20 @@ body.blog .post.sticky,
 .nav-header ul li,
 .post-date .post-date-year,
 .showhide span:hover,
-#wp-calendar th {
+#wp-calendar th,
+#bbpress-forums .bbp-topics-front ul.super-sticky,
+#bbpress-forums .bbp-topics ul.super-sticky,
+#bbpress-forums .bbp-topics ul.sticky,
+#bbpress-forums .bbp-forum-content ul.sticky,
+#bbpress-forums div.bbp-topic-header,
+#bbpress-forums li.bbp-header,
+#bbpress-forums .bbp-lead-topic,
+body.page .bbp-reply-form code,
+body.page .bbp-topic-form code,
+body.single-topic .bbp-reply-form code,
+body.single-forum .bbp-topic-form code,
+body.topic-edit .bbp-topic-form code,
+body.reply-edit .bbp-reply-form code {
 	background-color: #222222;
 }
 
@@ -69,6 +86,8 @@ body.blog .post.sticky,
 .audiovideo-meta,
 .post.format-chat .post-entry p:nth-child(odd),
 input,
+textarea,
+select,
 #commentform input,
 #commentform textarea {
 	background-color:#181818;
@@ -83,7 +102,11 @@ tr:nth-child(even),
 #infobar-search input#searchsubmit,
 .post-date .post-date-weekday,
 .post-date .post-date-day,
-.post-date .post-date-month {
+.post-date .post-date-month,
+/*#bbpress-forums div.even,*/
+#bbpress-forums ul.even,
+#bbpress-forums div.bbp-reply-header,
+#bbpress-forums .bbp-lead-topic div.bbp-topic-header {
 	background-color:#282828;
 }
 
@@ -104,6 +127,8 @@ tr:nth-child(even),
 /* Bypostauthor meta color */
 
 .commentlist li.comment.bypostauthor,
-.commentlist li.comment.bypostauthor {
+.commentlist li.comment.bypostauthor,
+div.bbp-template-notice,
+div.indicator-hint {
   background-color:#555555;
 }

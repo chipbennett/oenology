@@ -24,7 +24,19 @@ a:hover,
 	text-shadow: 0px 0px 2px #999999; 
 	text-decoration: underline;
 }
-table, tr, th, td {
+table, tr, th, td,
+#bbpress-forums li.bbp-header,
+#bbpress-forums li.bbp-footer,
+#bbpress-forums li.bbp-body ul.forum,
+#bbpress-forums li.bbp-body ul.topic,
+div.bbp-topic-header,
+div.bbp-reply-header,
+.bbp-topic-pagination a,
+#bbpress-forums fieldset.bbp-form,
+#bbpress-forums .bbp-topic-revision-log,
+#bbpress-forums .bbp-reply-revision-log,
+.activity-list li.bbp_topic_create .activity-content .activity-inner,
+.activity-list li.bbp_reply_create .activity-content .activity-inner {
 	border-color: #bbb;
 }
 th {
@@ -236,13 +248,20 @@ th {
 #infobar-search input#searchsubmit {
 	border: 1px solid #ddd;
 }  
-/* Sidebar: Calendar
+/* Sidebar: Custom Widgets
+  -------------------------------------------- */
+.showhide,
+div.bbp-template-notice p:before {
+  text-shadow: 1px 1px 0px #eee;
+}
+/* Sidebar: Widget Titles
  * -------------------------------------------- */
 .title,
 .widgettitle {
 	border:0;
 	border-bottom: 1px dotted #999;
 	color: #999;
+  text-shadow: 1px 1px 0px #eee;
 }
 /* Sidebar: Calendar
  * -------------------------------------------- */
@@ -297,7 +316,12 @@ th {
 }
 /* Post
  * -------------------------------------------- */
-div.post {
+div.post,
+#bbpress-forums ul.bbp-lead-topic,
+#bbpress-forums ul.bbp-topics,
+#bbpress-forums ul.bbp-forums,
+#bbpress-forums ul.bbp-replies,
+#bbpress-forums fieldset {
 	border: 1px solid #bbb;
 	-webkit-border-radius: 9px; 
 	-moz-border-radius: 9px; 
@@ -306,7 +330,13 @@ div.post {
 	-moz-box-shadow: 3px 3px 5px #777;
 	-webkit-box-shadow: 3px 3px 5px #777;
 }
-body.blog .post.sticky {
+#bbpress-forums fieldset.bbp-form fieldset {
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+body.blog .post.sticky,
+#bbpress-forums ul.bbp-lead-topic {
 	border-color: #777;
 }
 .post.format-aside .post-entry:before,
@@ -545,6 +575,22 @@ body.single-format-image .gallery-nav dl dd {
 	-webkit-box-shadow: 4px 4px 4px #777;
 	box-shadow: 4px 4px 4px #777;
 }
+#bbpress-forums p.bbp-topic-meta img.avatar,
+#bbpress-forums ul.bbp-reply-revision-log img.avatar,
+#bbpress-forums ul.bbp-topic-revision-log img.avatar,
+#bbpress-forums div.bbp-template-notice img.avatar,
+#bbpress-forums .widget_display_topics img.avatar,
+#bbpress-forums .widget_display_replies img.avatar,
+#bbpress-forums p.bbp-topic-meta img.avatar,
+body.topic-edit .bbp-topic-form div.avatar img,
+body.reply-edit .bbp-reply-form div.avatar img,
+body.single-forum .bbp-topic-form div.avatar img,
+body.single-reply .bbp-reply-form div.avatar img {
+	border: 1px solid #333;
+	-moz-box-shadow: 1px 1px 2px #777;
+	-webkit-box-shadow: 1px 1px 2px #777;
+	box-shadow: 1px 1px 2px #777;
+}
 .commentlist .comment-author .commentua {
 	color: silver;
 }
@@ -565,6 +611,8 @@ ol.commentlist li.comment div blockquote p code {
 	color:maroon;
 }
 input,
+textarea,
+select,
 #commentform input,
 #commentform textarea {
 	color: #555;

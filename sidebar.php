@@ -31,7 +31,7 @@ global $oenology_options;
 
 // Do not display sidebars on attachment pages or posts with 
 // format-types "gallery", "image", or "video"
-if ( in_array( oenology_get_current_page_layout(), array( 'one-column', 'attachment', 'full' ) ) ) { 
+if ( in_array( oenology_get_current_page_layout(), array( 'one-column', 'attachment', 'full' ) ) ) {
 	return;
 }
 

@@ -239,7 +239,7 @@ function oenology_breadcrumb() {
 	$breadcrumb = $containerBefore . $containerCrumb . $baselink . $hierarchy . $currentLocationLink . $crumbPagination . $containerCrumbEnd . $containerAfter;
 
 	// Output the result
-	echo apply_filters( 'oenology_breadcrumb', $breadcrumb );
+	echo apply_filters( 'oenology_breadcrumb', $breadcrumb, $containerBefore, $containerAfter, $containerCrumb, $containerCrumbEnd, $delimiter, $name, $blogname, $currentBefore, $currentAfter );
 
 }
 
@@ -685,7 +685,7 @@ function oenology_get_current_page_layout() {
 			else {
 				$layout .= $custom_layout;
 			}
-		} 
+		}
 		else if ( is_home() || is_archive() || is_search() || is_404() ) {
 			$layout .= $oenology_options['post_index_layout'];
 		}

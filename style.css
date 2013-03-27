@@ -491,7 +491,8 @@ div.site-header-text {
 /* Infobar Breadcrumb Links and Loop Footer Prev/Next Links
   ------------------------------------------------------
 */
-#breadcrumbs {
+#breadcrumbs,
+.single.bbp-user-page #breadcrumbs {
   width:396px;
   min-width:396px;
   max-width:396px;
@@ -509,7 +510,8 @@ div.site-header-text {
 	float:left;
 }
 
-#infobar-nav {
+#infobar-nav,
+.single.bbp-user-page #infobar-nav {
   width:195px;
   min-width:195px;
   max-width:195px;
@@ -937,7 +939,11 @@ body.search-results .pagetitle {
      .post
    --------------------
 */
-.post {
+.post,
+#bbpress-forums ul.bbp-lead-topic,
+#bbpress-forums ul.bbp-topics,
+#bbpress-forums ul.bbp-forums,
+#bbpress-forums ul.bbp-replies {
   display:block;
   margin-bottom:40px;
   padding:10px;
@@ -1012,7 +1018,8 @@ body.term-post-format-audio .post-title h1 ,
 .post.format-image .post-title h1,
 body.term-post-format-image .post-title h1,
 .post.format-video .post-title h1,
-body.term-post-format-video .post-title h1 {
+body.term-post-format-video .post-title h1,
+.bbPress .post-title h1 {
 	margin-left:0;
 }
 .post-title h1 a,
@@ -2275,13 +2282,13 @@ body.single-format-image dd {
 	margin-right:5px;
 }
 .comment {
-          padding: 0px;
-          padding-left:0px;
-          padding-right:0px;
-          margin: 0px;
-		  margin-top: 4px;
-          margin-left:7px;
-          margin-bottom:15px;
+	padding: 0px;
+	padding-left:0px;
+	padding-right:0px;
+	margin: 0px;
+	margin-top: 4px;
+	margin-left:7px;
+	margin-bottom:15px;
 }
 
 .comment-author {
@@ -2516,7 +2523,7 @@ input[type="password"] {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	vertical-align: middle;
-	width: 100%;
+	width: auto;
 }
 
 /* 
@@ -2586,7 +2593,11 @@ input[type="password"] {
         padding: 0;
     }
 	/* Posts */
-	.post {
+	.post,
+	#bbpress-forums ul.bbp-lead-topic,
+	#bbpress-forums ul.bbp-topics,
+	#bbpress-forums ul.bbp-forums,
+	#bbpress-forums ul.bbp-replies	{
 		max-width: 100%;
 		margin-right: 5px;
 	}

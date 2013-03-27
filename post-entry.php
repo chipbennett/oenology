@@ -9,7 +9,7 @@
  * 
  * @link		http://codex.wordpress.org/Function_Reference/dynamic_sidebar			dynamic_sidebar()
  * @link 		http://codex.wordpress.org/Function_Reference/get_template_part			get_template_part()
- * @link 		http://codex.wordpress.org/Function_Reference/is_archive				is_archive()
+ * @link 		http://codex.wordpress.org/Function_Reference/is_post_type_archive		is_post_type_archive()
  * @link 		http://codex.wordpress.org/Function_Reference/is_search					is_search()
  * @link 		http://codex.wordpress.org/Function_Reference/the_content				the_content()
  * @link 		http://codex.wordpress.org/Function_Reference/the_excerpt				the_excerpt()
@@ -38,8 +38,8 @@ oenology_hook_post_entry_before();
 if ( 
 	( 
 // WordPress conditional tag that returns true if
-// the current page is an archive index page
-	is_archive() 
+// the current page is a blog posts archive index page
+	is_post_type_archive( 'post' ) 
 // WordPress conditional tag that returns true if
 // the current page is a search results page
 	|| is_search() 

@@ -887,7 +887,7 @@ function oenology_hook_post_footer_metadata() {
 function oenology_hook_post_header_date() {	
 	global $post;
 	// don't display timestamp on Pages
-	if ( ! is_page() && ! is_attachment() && 'page' != $post->post_type ) {
+	if ( 'post' == get_post_type() ) {
 		$post_header_date = array();
 		// Post Date: Year
 		$post_header_date_year = get_the_time('Y');
@@ -940,7 +940,7 @@ function oenology_hook_post_header_metadata() {
 	
 	// Post Metadata Links
 	global $post;
-	if ( ! is_page() && 'page' != $post->post_type ) {
+	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
 		if ( ! is_attachment() ) {
 			// Shortlink
 			$shortlink = '<span id="post-' . get_the_ID() . '-shortlink"><a href="' . wp_get_shortlink() . '">' . __( 'Shortlink', 'oenology' ) . '</a></span>';
@@ -989,7 +989,7 @@ function oenology_hook_post_header_taxonomies() {
 	
 	// Post Taxonomies
 	global $post;
-	if ( ! is_page() && ! in_array( $post->post_type, array( 'page', 'attachment' ) ) ) {
+	if ( 'post' == get_post_type() ) {
 		// Category List
 		$post_header_taxonomies['categorylist'] = '<span class="post-title-category">';
 		$post_header_taxonomies['categorylist'] .= sprintf( __( 'Filed in %s', 'oenology' ), get_the_category_list( ', ' ) );
@@ -1003,6 +1003,7 @@ function oenology_hook_post_header_taxonomies() {
 	}
 	echo '<span class="post-title-taxonomies">' . implode( '', apply_filters( 'oenology_hook_post_header_taxonomies', $post_header_taxonomies ) ) . '</span>';
 }
+
 
 /**
  * Hook to filter Post Header Title

@@ -18,8 +18,13 @@
  *
  * @since 		Oenology 2.0
  */
-?>
-<?php 
+
+// Do not display sidebars on attachment pages or posts with 
+// format-types "gallery", "image", or "video"
+if ( in_array( oenology_get_current_page_layout(), array( 'one-column', 'attachment', 'full' ) ) ) {
+	return;
+}
+
 // Only output div#leftcol and div#rightcol if
 // the current Page is not an Attachment Page
 if ( 

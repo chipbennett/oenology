@@ -29,7 +29,19 @@ a:hover,
 dd {
 	border-left: 1px solid #777;
 }
-table, tr, th, td {
+table, tr, th, td,
+#bbpress-forums li.bbp-header,
+#bbpress-forums li.bbp-footer,
+#bbpress-forums li.bbp-body ul.forum,
+#bbpress-forums li.bbp-body ul.topic,
+div.bbp-topic-header,
+div.bbp-reply-header,
+.bbp-topic-pagination a,
+#bbpress-forums fieldset.bbp-form,
+#bbpress-forums .bbp-topic-revision-log,
+#bbpress-forums .bbp-reply-revision-log,
+.activity-list li.bbp_topic_create .activity-content .activity-inner,
+.activity-list li.bbp_reply_create .activity-content .activity-inner {
 	border-color: #666;
 }
 th {
@@ -267,7 +279,8 @@ th {
 }  
 /* Sidebar: Custom Widgets
   -------------------------------------------- */
-.showhide {
+.showhide,
+div.bbp-template-notice p:before {
   text-shadow: 1px 1px 0px #111;
 }
 /* Sidebar: Widget Titles
@@ -336,7 +349,12 @@ th {
 }
 /* Post
   -------------------------------------------- */
-div.post {
+div.post,
+#bbpress-forums ul.bbp-lead-topic,
+#bbpress-forums ul.bbp-topics,
+#bbpress-forums ul.bbp-forums,
+#bbpress-forums ul.bbp-replies,
+#bbpress-forums fieldset {
 	border: 1px solid #000;
 	-webkit-border-radius: 9px; 
 	-moz-border-radius: 9px; 
@@ -345,7 +363,13 @@ div.post {
 	-moz-box-shadow: 3px 3px 5px #777;
 	-webkit-box-shadow: 3px 3px 5px #777;
 }
-body.blog .post.sticky {
+#bbpress-forums fieldset fieldset {
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+body.blog .post.sticky,
+#bbpress-forums ul.bbp-lead-topic {
 	border-color: #000;
 	box-shadow: 3px 3px 5px #ccc;
 	-moz-box-shadow: 3px 3px 5px #ccc;
@@ -580,6 +604,22 @@ body.single-format-image .gallery-nav dl dd {
 	-webkit-box-shadow: 4px 4px 4px #777;
 	box-shadow: 4px 4px 4px #777;
 }
+#bbpress-forums p.bbp-topic-meta img.avatar,
+#bbpress-forums ul.bbp-reply-revision-log img.avatar,
+#bbpress-forums ul.bbp-topic-revision-log img.avatar,
+#bbpress-forums div.bbp-template-notice img.avatar,
+#bbpress-forums .widget_display_topics img.avatar,
+#bbpress-forums .widget_display_replies img.avatar,
+#bbpress-forums p.bbp-topic-meta img.avatar,
+body.topic-edit .bbp-topic-form div.avatar img,
+body.reply-edit .bbp-reply-form div.avatar img,
+body.single-forum .bbp-topic-form div.avatar img,
+body.single-reply .bbp-reply-form div.avatar img {
+	border: 1px solid #ccc;
+	-moz-box-shadow: 1px 1px 2px #777;
+	-webkit-box-shadow: 1px 1px 2px #777;
+	box-shadow: 1px 1px 2px #777;
+}
 .commentlist .comment-author .commentua {
 		color: silver;
 }
@@ -601,6 +641,8 @@ ol.commentlist li.comment div blockquote p code {
 	color:maroon;
 }
 input,
+textarea,
+select,
 #commentform input,
 #commentform textarea {
 	color:#fff;
