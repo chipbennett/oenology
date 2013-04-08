@@ -3,10 +3,10 @@ Contributors: Chip Bennett
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QP3N9HUSYJPK6
 Tags: fixed-width, white, black, blue, red, tan, green, one-column, two-columns, three-columns, custom-header, custom-background, custom-menu, editor-style, featured-images, flexible-width, full-width-template, left-sidebar, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.5.1
-Stable tag: 3.1
+Tested up to: 3.6
+Stable tag: 3.2
 
-Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. Oenology includes built-in breadcrumb navigation, and supports the Theme Customizer, Contextual Help, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. Oenology features a responsive design, and includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 3.5.1.</strong>
+Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. Oenology includes built-in breadcrumb navigation, and supports the Theme Customizer, Contextual Help, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. Oenology features a responsive design, and includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 3.6.</strong>
 
 == Description ==
 
@@ -91,6 +91,9 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 Note: see the "Oenology Reference" admin page for full Changelog details. 
 See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 
+= 3.2 [2013.04.09] =
+* Maintenance Release
+
 = 3.1 [2013.03.02] =
 * Maintenance Release
 
@@ -149,6 +152,9 @@ See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 * Initial Release
 
 == Upgrade Notice ==
+
+= 3.2 =
+Maintenance release.
 
 = 3.1 =
 Maintenance release.
