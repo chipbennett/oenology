@@ -890,7 +890,7 @@ function oenology_get_github_api_data(
 
 	// If the API returns a valid response, the data will be
 	// json-encoded; so decode it.
-	$data = json_decode( $remote['body'] );	
+	$data = ( ! empty( $remote['body'] ) ? json_decode( $remote['body'] ) : array() );	
 	if ( 'issues' == $context ) {
 		// Test	
 	}
@@ -1225,6 +1225,76 @@ function oenology_get_social_networks() {
         ),
     );
 	return apply_filters( 'oenology_get_social_networks', $socialnetworks );
+}
+
+/**
+ * Get WPORG Support Forum Feed
+ *
+ * @link 	http://codex.wordpress.org/Function_Reference/fetch_feed	fetch_feed()
+ * 
+ * @return	HTML markup for feed list
+ */
+function oenology_get_support_feed() {
+
+	// Create transient key string. Used to ensure API data are 
+	// pinged only periodically. Different transient keys are
+	// created for commits, open issues, and closed issues.
+	$transient_key = 'oenology_support_feed';
+	
+	// If cached (transient) data are used, output an HTML
+	// comment indicating such
+	$cached = get_transient( $transient_key );
+
+	if ( false !== $cached ) {
+		return $cached .= "\n" . '<!--Returned from transient cache.-->';
+	}
+
+	$markup = '';
+	
+	// Load feed functional file
+	include_once( ABSPATH . WPINC . '/feed.php' );
+	
+	// Fetch the feed object
+	$rss = fetch_feed( 'http://wordpress.org/support/rss/theme/oenology' );
+
+	// Error handling
+	if ( ! is_wp_error( $rss ) ) {
+
+		// Figure out how many total items there are, but limit it to 5. 
+		$maxitems = $rss->get_item_quantity( 15 ); 
+
+		// Build an array of all the items, starting with element 0 (first element).
+		$rss_items = $rss->get_items( 0, $maxitems );
+		
+		$markup .= '<table>';
+		
+			if ( $maxitems == 0 ) {
+				$markup .= '<tr><td>' . __( 'No items', 'oenology' ) . '</td></tr>';
+			} else {
+				$markup .= '<thead><tr><th>' . __( 'Topic', 'oenology' ) . '</th><th>' . __( 'Posted', 'oenology' ) . '</th></tr></thead><tbody>';
+				// Loop through each feed item and display each item as a hyperlink.
+				foreach ( $rss_items as $item ) {
+					$markup .= '<tr>';
+						$markup .= '<td style="padding:3px 5px;font-size:12px;">' . esc_html( $item->get_title() ) . '</td>';
+						$markup .= '<td>';
+							$markup .= '<a href="' . esc_url( $item->get_permalink() ) . '">';
+								$markup .= human_time_diff( $item->get_date( 'U' ), current_time( 'timestamp' ) ) . ' ago';
+							$markup .= '</a>';
+						$markup .= '</td>';
+					$markup .= '</tr>';
+				}
+			}
+		
+		$markup .= '</tbody></table>';		
+
+		// Set the transient (cache) for the API data
+		set_transient( $transient_key, $markup, 60*60*24 );
+
+	} else {
+		$markup .= '<p>' . __( 'RSS feed error.', 'oenology' ) . '</p>';
+	}
+	// Return markup
+	return $markup;
 }
 
 /**

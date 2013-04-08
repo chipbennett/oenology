@@ -59,7 +59,7 @@ $tabtext .= '<span>' . __( 'Latest Oenology Support Topics', 'oenology' ) . '</s
 $tabtext .= ' (<a href="http://wordpress.org/tags/oenology">' . __( 'See All', 'oenology' ) . '</a>)';
 $tabtext .= '</h3>';
 $tabtext .= '<div class="postbox"><div class="inside">';
-$tabtext .= '<div class="rss-widget">(' . __( 'Coming back soon)', 'oenology' ) . '</div>';
+$tabtext .= '<div class="rss-widget">' . oenology_get_support_feed() . '</div>';
 $tabtext .= '</div></div>';
 
 // Roadmap
