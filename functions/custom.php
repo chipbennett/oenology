@@ -662,14 +662,20 @@ function oenology_get_current_page_layout() {
 			$layout .= 'attachment';
 		} 
 		else if ( is_front_page() && ! is_home() ) {
-			if ( 'default' == $custom_layout ) {
+			if ( 'templates/template-featured.php' == get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true ) ) {
+				$layout .= 'full';
+			}
+			else if ( 'default' == $custom_layout ) {
 				$layout .= $oenology_options['default_front_page_layout'];
 			} else {
 				$layout .= $custom_layout;
 			}
 		} 
 		else if ( is_page() ) {
-			if ( 'default' == $custom_layout ) {
+			if ( 'templates/template-featured.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+				$layout .= 'full';
+			}
+			 else if ( 'default' == $custom_layout ) {
 				$layout .= $oenology_options['default_static_page_layout'];
 			} else {
 				$layout .= $custom_layout;
@@ -1059,7 +1065,7 @@ function oenology_get_paginate_archive_page_links( $type = 'plain', $endsize = 1
 		$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
 
 	if( !empty($wp_query->query_vars['s']) )
-		$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+		$pagination['add_args'] = array( 's' => urlencode( get_query_var( 's' ) ) );
 
 	return paginate_links( $pagination );
 }
