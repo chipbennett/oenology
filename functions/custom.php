@@ -1147,93 +1147,6 @@ function oenology_get_post_formats() {
 }
 
 /**
- * Oenology Theme Social Networks
- * 
- * Array that holds all of the valid social
- * networks for Oenology.
- * 
- * @return	array	$socialnetworks	array of arrays of social network parameters
- */
-function oenology_get_social_networks() {
-	
-	$socialnetworks = array( 
-        'dribbble' => array(
-        	'name' => 'dribbble',
-        	'title' => __( 'Dribbble', 'oenology' ),
-        	'baseurl' => 'http://www.dribbble.com',
-			'genericon' => ''
-        ),
-        'facebook' => array(
-        	'name' => 'facebook',
-        	'title' => __( 'Facebook', 'oenology' ),
-        	'baseurl' => 'http://www.facebook.com',
-			'genericon' => ''
-        ),
-        'flickr' => array(
-        	'name' => 'flickr',
-        	'title' => __( 'Flickr', 'oenology' ),
-        	'baseurl' => 'http://www.flickr.com/photos',
-			'genericon' => ''
-        ),
-        'github' => array(
-        	'name' => 'github',
-        	'title' => __( 'GitHub', 'oenology' ),
-        	'baseurl' => 'http://www.github.com',
-			'genericon' => ''
-        ),
-        'googleplus' => array(
-        	'name' => 'googleplus',
-        	'title' => __( 'Google+', 'oenology' ),
-        	'baseurl' => 'http://profiles.google.com',
-			'genericon' => ''
-        ),
-        'linkedin' => array(
-        	'name' => 'linkedin',
-        	'title' => __( 'Linked-In', 'oenology' ),
-        	'baseurl' => 'http://www.linkedin.com/in',
-			'genericon' => ''
-        ),
-        'pinterest' => array(
-        	'name' => 'pinterest',
-        	'title' => __( 'Pinterest', 'oenology' ),
-        	'baseurl' => 'http://www.pinterest.com',
-			'genericon' => ''
-        ),
-        'tumblr' => array(
-        	'name' => 'tumblr',
-        	'title' => __( 'Tumblr', 'oenology' ),
-        	'baseurl' => 'tumblr.com',
-			'genericon' => ''
-        ),
-        'twitter' => array(
-        	'name' => 'twitter',
-        	'title' => __( 'Twitter', 'oenology' ),
-        	'baseurl' => 'http://www.twitter.com',
-			'genericon' => ''
-        ),
-        'vimeo' => array(
-        	'name' => 'vimeo',
-        	'title' => __( 'Vimeo', 'oenology' ),
-        	'baseurl' => 'http://www.vimeo.com',
-			'genericon' => ''
-        ),
-        'wordpress' => array(
-        	'name' => 'wordpress',
-        	'title' => __( 'WordPress', 'oenology' ),
-        	'baseurl' => 'http://profiles.wordpress.org',
-			'genericon' => ''
-        ),
-        'youtube' => array(
-        	'name' => 'youtube',
-        	'title' => __( 'YouTube', 'oenology' ),
-        	'baseurl' => 'http://www.youtube.com',
-			'genericon' => ''
-        ),
-    );
-	return apply_filters( 'oenology_get_social_networks', $socialnetworks );
-}
-
-/**
  * Get WPORG Support Forum Feed
  *
  * @link 	http://codex.wordpress.org/Function_Reference/fetch_feed	fetch_feed()
@@ -1405,37 +1318,27 @@ function oenology_showhide_widget_content_close() {
 function oenology_social_icons() {
 	global $oenology_options;
 	$oenology_options = oenology_get_options();
-	?>
-	<div class="sidebar-social-icons">
-	<?php
-	// Obtain the list of valid social networks
-	$socialprofiles = oenology_get_social_networks();
-	// Loop through each social network
-	foreach ( $socialprofiles as $profile ) {
-		// holds the profile name for the currentsocial network
-		$profilename = $profile['name'] . '_profile';
-		// if the user has provided a profile name
-		// for the current social network
-		if ( ! empty( $oenology_options[$profilename] ) ) { 
-			// holds the base URL for the current social network
-			$baseurl = $profile['baseurl'];
-			// build the full URL, including base URL and profile name
-			$profileurl = $baseurl . '/' . $oenology_options[$profilename];
-			// Tumblr has to be different
-			if ( 'tumblr' == $profile['name'] ) {
-				$profileurl = 'http://' . $oenology_options[$profilename] . '.' . $baseurl;
-			}
-			// Output the fully formed social network profile link
+
+	if ( has_nav_menu( 'social' ) ) {
+		?>
+		<div class="sidebar-social-icons">
+			<?php 
+			wp_nav_menu( array(
+				'theme_location' => 'social',
+				'container'       => 'div',
+				'container_id'    => 'menu-social',
+				'container_class' => 'menu',
+				'menu_id'         => 'menu-social-items',
+				'menu_class'      => 'menu-items',
+				'depth'           => 1,
+				'link_before'     => '<span class="screen-reader-text">',
+				'link_after'      => '</span>',
+				'fallback_cb'     => '',
+			) );
 			?>
-			<a class="sidebar-social-icon genericon" href="<?php echo $profileurl; ?>" title="<?php echo $profile['title']; ?>">
-				<span class="genericon-<?php echo $profile['name']; ?>"></span>
-			</a>
-		<?php 
-		}
+		</div>
+		<?php
 	}
-	?>
-	</div>
-	<?php	
 }
 
 /**

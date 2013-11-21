@@ -449,11 +449,12 @@ function oenology_setup() {
 	 * Define Nav Menus (since WordPress 3.0)
 	 */
 
-	// This theme uses wp_nav_menu() in two locations: main site navigation, and left-colum page navigation.
+	// This theme uses wp_nav_menu() in four locations: main site navigation, left-colum page navigation, the footer, and social profile links.
 	register_nav_menus( array(
 		'nav-header' => 'Header Navigation',
 		'nav-sidebar' => 'Sidebar Navigation',
-		'nav-footer' => 'Footer Navigation'
+		'nav-footer' => 'Footer Navigation',
+		'social' => 'Social Profile Links'
 	) );
 
 	/*
