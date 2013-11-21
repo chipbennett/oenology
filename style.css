@@ -94,6 +94,7 @@ html {
    letter-spacing:0em;
    text-align:center;
    counter-reset:update;
+   box-sizing: border-box;
 }
 p + p, 
 ul + p,
@@ -1019,7 +1020,7 @@ body.term-post-format-audio .post-title h1 ,
 body.term-post-format-image .post-title h1,
 .post.format-video .post-title h1,
 body.term-post-format-video .post-title h1,
-.bbPress .post-title h1 {
+.bbpress .post-title h1 {
 	margin-left:0;
 }
 .post-title h1 a,
@@ -2485,6 +2486,91 @@ ol.trackbacklist {
 	clear:none;
 	width:500px;
 }
+
+/* Front Page Featured Content Style Specifications
+ * ------------------------------------------------------------------ 
+ */
+.featured-content-widget,
+#featured-content .featured-content-widget {
+	display: inline-block;
+	position: relative;
+	float: left;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+	width: 33%;
+	max-width: 33%;
+	min-width: 33%;
+	height: auto;
+	min-height: 300px;
+	max-height: 300px;
+	margin: 1px;
+	padding: 0;
+	overflow: hidden;
+	background-color: transparent;
+	text-align: center;
+}
+#featured-content .featured-content-columns-2 .featured-content-widget {
+	width: 66%;
+	max-width: 66%;
+	margin: 1px 2px;
+}
+#featured-content .featured-content-columns-3 .featured-content-widget {
+	width: 99%;
+	max-width: 99%;
+	margin: 1px 3px;
+}
+#featured-content .featured-content-rows-2 .featured-content-widget {
+	height: 450px;
+	max-height: 450px;
+}
+#featured-content .featured-content-rows-3 .featured-content-widget {
+	height: 600px;
+	max-height: 600px;
+}
+#featured-content .featured-content-rows-4 .featured-content-widget {
+	height: 750px;
+	max-height: 750px;
+}
+#featured-content .featured-content-rows-5 .featured-content-widget {
+	height: 900px;
+	max-height: 900px;
+}
+
+#featured-content .post.format-aside,
+#featured-content .post.format-link,
+#featured-content .post.format-quote,
+#featured-content .post.format-status {
+	margin: 0 0 1em;
+	padding: 0px 5px;
+}
+#featured-content .featured-content-image .widgettitle {
+	z-index: 99;
+	background: #000;
+	position: absolute;
+	top: 0;
+	opacity: 0.6;
+}
+#featured-content .cycle-slideshow {
+	position: relative;
+	z-index:0;
+}
+.cycle-slide {
+	position:relative;
+}
+.cycle-prev, .cycle-next { position: absolute; top: 118px; width: 64px; opacity: 0; filter: alpha(opacity=0); z-index: 800; height: 100%; cursor: pointer; font-family: 'Genericons'; }
+.cycle-prev { left: 0; }
+.cycle-next { right: 0; }
+.cycle-prev:hover, .cycle-next:hover { opacity: .7; filter: alpha(opacity=70) }
+
+.disabled { opacity: .5; filter:alpha(opacity=50); }
+
+.cycle-prev .genericon, .cycle-next .genericon {font-size:64px;}
+
+.featured-content-slider-title, .featured-content-slider-excerpt { position: absolute; opacity: .4; filter: alpha(opacity=40); z-index: 400; text-align: center; width: 100%; background: #000; }
+.featured-content-slider-title { top: 0; }
+.featured-content-slider-excerpt { bottom: 0; }
+
 /* 
    ============================================================================================= 
    6 - Print Style Specifications

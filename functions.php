@@ -138,7 +138,7 @@ require( get_template_directory() . '/functions/dynamic-css.php' );
  * Include custom bbPress filters
  */
 if ( function_exists( 'is_bbpress' ) ) {
-	require( get_template_directory() . '/bbpress/bbpress-functions.php' );
+	require( get_template_directory() . '/bbpress/oenology-bbpress-functions.php' );
 }
 
 ?>

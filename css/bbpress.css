@@ -96,8 +96,8 @@
 	float: right;
 }
 
-body.bbPress .post-title-metadata,
-body.bbPress .post-title-tags {
+body.bbpress .post-title-metadata,
+body.bbpress .post-title-tags {
 	margin-left: 0;
 }
 
@@ -110,7 +110,7 @@ body.bbPress .post-title-tags {
 	padding: 0;
 }
 
-.bbPress .post-entry li {
+.bbpress .post-entry li {
 	padding-left: 0;
 }
 

@@ -328,10 +328,25 @@ function oenology_setup() {
 	 * as having dimensions of 45x45px, and will
 	 * be hard-cropped rather than box-resized.
 	 * 
+	 * The 'featured-content-image' image is defined
+	 * as having dimensions of 328x300px, and will
+	 * be hard-cropped rather than box-resized.
+	 * 
 	 * Child Themes can override this setting 
 	 * via add_image_size().
 	 */
 	add_image_size( 'attachment-nav-thumbnail', 45, 45, true );
+	add_image_size( 'post-title-thumbnail', 55, 55, true );
+	add_image_size( 'featured-content-featured-post-thumbnail', 328, 100, true );
+	add_image_size( 'featured-content-slider', 328, 300, true );
+	add_image_size( 'featured-content-slider-two-column', 657, 300, true );
+	add_image_size( 'featured-content-slider-three-column', 985, 300, true );
+	add_image_size( 'featured-content-slider-two-row', 328, 450, true );
+	add_image_size( 'featured-content-slider-two-column-two-row', 657, 450, true );
+	add_image_size( 'featured-content-slider-three-column-two-row', 985, 450, true );
+	add_image_size( 'featured-content-slider-three-row', 328, 600, true );
+	add_image_size( 'featured-content-slider-two-column-three-row', 657, 600, true );
+	add_image_size( 'featured-content-slider-three-column-three-row', 985, 600, true );
 
 	// Add a way for the custom header to be styled in the admin panel that controls
 	// custom headers. See oenology_admin_header_style(), below.
@@ -440,6 +455,11 @@ function oenology_setup() {
 		'nav-sidebar' => 'Sidebar Navigation',
 		'nav-footer' => 'Footer Navigation'
 	) );
+
+	/*
+	 * Add Excerpts to pages (needed for featured content widgets)
+	 */
+	add_post_type_support( 'page', 'excerpt' );
 
 
 }
