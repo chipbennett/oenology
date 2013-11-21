@@ -473,3 +473,16 @@ function oenology_comment_list_pings( $comment ) {
 ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
 <?php }
+
+
+/**
+ * Add skype: and callto: to allowed protocols
+ *
+ * Filter kses_allowed_protocols to add skype: and callto: as 
+ * valid href protocols. This is needed to allow Skype profile 
+ * links in the Social nav menu.
+ */
+function oenology_filter_kses_allowed_protocols( $protocols ) {
+    return array_merge( $protocols, array( 'skype' ) );
+}
+add_filter( 'kses_allowed_protocols', 'oenology_filter_kses_allowed_protocols' );

@@ -905,17 +905,14 @@ color:   #000;
 content: '\f208';
 color:   #0e76a8;
 }
-#menu-social li a[href*="flickr.com"]::before {
-content: '\f211';
-color:   #5588aa;
-}
 #menu-social li a[href*="polldaddy.com"]::before {
 content: '\f217';
 color:   #5588aa;
 }
-#menu-social li a[href*="skype.com"]::before {
-content: '\f220';
-color:   #5588aa;
+#menu-social li a[href*="skype.com"]::before,
+#menu-social li a[href*="skype:"]::before          {
+	content: '\f220'; 
+	color: #00aff0; 
 }
 #menu-social li a[href*="digg.com"]::before {
 content: '\f221';
@@ -923,11 +920,11 @@ color:   #5588aa;
 }
 #menu-social li a[href*="reddit.com"]::before {
 content: '\f222';
-color:   #5588aa;
+color: #336699;
 }
 #menu-social li a[href*="stumbleupon.com"]::before {
 content: '\f223';
-color:   #5588aa;
+color: #ff2618;
 }
 
 
