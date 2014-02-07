@@ -86,6 +86,69 @@ Most of the rest is really up to the user. The Theme is intended to be SEO-neutr
 
 1. Standard Theme Screenshot
 
+== License ==
+
+= Oenology WordPress Theme, Copyright (C) 2010 Chip Bennett =
+
+License: GNU General Public License, v2 (or newer)
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+= Bundled Scripts =
+
+**Cycle2, Copyright 2012 M. Alsup**
+
+Source: http://jquery.malsup.com/cycle2/
+License: MIT and GPLv2
+License URI: /js/cycle2/README.md
+
+**Respond.js, Copyright 2011 Scott Jehl, scottjehl.com**
+
+Source: https://github.com/scottjehl/Respond
+License: Dual-licensed under MIT and GPLv2
+License URI: /js/response.js/readme.md
+
+
+**FitVids.js, Copyright 2011, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.co**
+
+Source: https://github.com/davatron5000/FitVids.js
+License: WTFPL
+License URI: /js/fitvids.js/jquery.fitvids.js
+
+**TinyNav, Copyright (c) 2011-2012 Viljami Salminen, http://viljamis.com/**
+
+Source: https://github.com/viljamis/TinyNav.js
+License: MIT
+License URI: /js/tinynav.js/README.md
+
+
+= Bundled Fonts =
+
+**TexGyre Schola Font, Copyright 2005, 2006 C. R. Holder**
+
+Source: http://www.fontsquirrel.com/fonts/TeX-Gyre-Schola
+License: GUST Font License (GFL) (GPL-compatible)
+License URI: /fonts/GUST-FONT-LICENSE.txt
+
+**Genericons, Copyright 2013 Automattic**
+
+Source: http://www.genericons.com
+License: GNU GPL, Version 2 (or later)
+License URI: /fonts/Genericons-LICENSE.txt
+
+= Bundled Images =
+
+pxwhite.jpg is a single-pixel image, and not copyrightable
+
 == Changelog ==
 
 Note: see the "Oenology Reference" admin page for full Changelog details. 
@@ -150,65 +213,3 @@ See Dashboard -> Appearance -> Oenology Reference -> Changelog.
 
 = 0.9.1 [2010.09.24] =
 * Initial Release
-
-== Upgrade Notice ==
-
-= 3.2 =
-Maintenance release.
-
-= 3.1 =
-Maintenance release.
-
-= 3.0 =
-Maintenance release.
-
-= 2.6 =
-Maintenance release.
-
-= 2.5 =
-Maintenance release.
-
-= 2.4 =
-Maintenance release. Important note: update may cause Child-Theme breakage. See change log.
-
-= 2.3 =
-Maintenance release
-
-= 2.2 =
-Maintenance release
-
-= 2.1 =
-Maintenance release
-
-= 2.0.3 =
-Minor bugfix release
-
-= 2.0.2 =
-Minor bugfix release
-
-= 2.0.1 =
-Minor bugfix release
-
-= 2.0 =
-Major update release
-
-= 1.2.2 =
-Minor bugfix release
-
-= 1.2.1 =
-Minor bugfix release
-
-= 1.2 =
-Update release. Theme Features; Theme options; maintenance; bugfixes; documentation
-
-= 1.1 =
-Update release. Post Formats support; Theme options; bugfixes
-
-= 1.0 =
-Maintenance release. Completed inline documentation, added default Widgets, minor bugfixes, CSS clean-up, minor updates
-
-= 0.9.2 =
-Minor BugFix release
-
-= 0.9.1 =
-Initial Release.
