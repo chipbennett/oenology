@@ -887,7 +887,7 @@ class oenology_widget_call_to_action extends WP_Widget {
 		$columns = ( is_int( (int) $instance['columns'] ) && 0 < $instance['columns'] && 4 > $instance['columns'] ? $instance['columns'] : '1' );
 		$rows = ( is_int( (int) $instance['rows'] ) && 0 < $instance['rows'] && 6 > $instance['rows'] ? $instance['rows'] : '1' );
 
-        echo '<div class="featured-content-columns-' . $columns . ' featured-content-rows-' . $rows . '">' . $before_widget;
+        echo '<div class="featured-content-columns-' . $columns . ' featured-content-rows-' . $rows . ' featured-content-call-to-action">' . $before_widget;
         if ( $title )
             echo $before_title . $title . $after_title;
 ?>

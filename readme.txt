@@ -71,7 +71,7 @@ Other features that may be added in the future:
 
  - Others, as determined by user feedback and demand
 
- = What About SEO? =
+= What About SEO? =
  
 I am a firm believer that the single, most important criterion for SEO is good content. That said, the Theme does take apply some SEO considerations:
 
@@ -81,6 +81,17 @@ I am a firm believer that the single, most important criterion for SEO is good c
 4. The Theme includes plug-and-play support for the following plugins: WP-Paginate, Yoast Breadcrumbs
 
 Most of the rest is really up to the user. The Theme is intended to be SEO-neutral: neither hurting your SEO, nor going out of its way (and adding considerable bloat that is better added via the many good plugins available) to improve it.
+
+= Where did my social icons go? =
+
+In version 3.3, the social profile link icon handling was changed from using Theme options to using a custom navigation menu for storing social profile links. This 
+change will keep your social profile links portable from Theme to Theme, and provides built-in support for other Themes that use this method. To add your social icons:
+
+* Create a new custom navigation menu, and name it, e.g. "Social". (The name isn't important, as long as you remember it!)
+* Add <strong>custom links</strong> to your "Social" menu, under the "Links" metabox, one for each social network profile you wish to include.
+* Save the menu, and assign it to the "Social Profile Links" Theme Location.
+* Now your social profile link icons will appear as they did before.
+
 
 == Screenshots ==
 
