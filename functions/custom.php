@@ -830,10 +830,10 @@ function oenology_get_header_textcolor() {
 function oenology_get_github_api_data( 
 	$context = 'commits', 
 	$status = 'open', 
-	$milestone = '11', 
+	$milestone = '12', 
 	$roadmap = false, 
-	$currentrelease = '3.2', 
-	$releasedate = '2013-04-09', 
+	$currentrelease = '3.3', 
+	$releasedate = '2014-02-17', 
 	$user = 'chipbennett', 
 	$repo = 'oenology' 
 ) {
