@@ -887,7 +887,7 @@ class oenology_widget_call_to_action extends WP_Widget {
 		$columns = ( is_int( (int) $instance['columns'] ) && 0 < $instance['columns'] && 4 > $instance['columns'] ? $instance['columns'] : '1' );
 		$rows = ( is_int( (int) $instance['rows'] ) && 0 < $instance['rows'] && 6 > $instance['rows'] ? $instance['rows'] : '1' );
 
-        echo '<div class="featured-content-columns-' . $columns . ' featured-content-rows-' . $rows . '">' . $before_widget;
+        echo '<div class="featured-content-columns-' . $columns . ' featured-content-rows-' . $rows . ' featured-content-call-to-action">' . $before_widget;
         if ( $title )
             echo $before_title . $title . $after_title;
 ?>
@@ -1024,7 +1024,7 @@ class oenology_widget_featured_page extends WP_Widget {
 
 	<?php if ( 1 < $rows ) { ?>
 	
-		<div class="featured-post-image"><?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'featured-post-thumbnail' ); } ?></div>
+		<div class="featured-post-image"><?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'featured-content-featured-post-thumbnail' ); } ?></div>
 		
 	<?php } ?>
 
@@ -1115,27 +1115,27 @@ class oenology_widget_featured_page extends WP_Widget {
  * 
  * @since	WordPress 2.8
  */
-class oenology_widget_test extends WP_Widget {
+class oenology_widget_text extends WP_Widget {
 
-    function oenology_widget_test() {
-        $widget_ops = array('classname' => 'oenology-widget-test', 'description' => __( 'Oenology theme widget to test', 'oenology' ) );
-        $this->WP_Widget('oenology_test', __( 'Oenology Test', 'oenology' ), $widget_ops);
+    function oenology_widget_text() {
+        $widget_ops = array('classname' => 'oenology-widget-text', 'description' => __( 'Oenology Theme Text Widget', 'oenology' ) );
+        $this->WP_Widget('oenology_text', __( 'Oenology Featured Text', 'oenology' ), $widget_ops);
     }
 
     function widget( $args, $instance ) {
         extract($args);
-        $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Test', 'oenology' ) : $instance['title']);
+        $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'] );
+		$text = apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance['text'] );
 		$columns = ( is_int( (int) $instance['columns'] ) && 0 < $instance['columns'] && 4 > $instance['columns'] ? $instance['columns'] : '1' );
 		$rows = ( is_int( (int) $instance['rows'] ) && 0 < $instance['rows'] && 6 > $instance['rows'] ? $instance['rows'] : '1' );
 
         echo '<div class="featured-content-columns-' . $columns . ' featured-content-rows-' . $rows . '">' . $before_widget;
-        if ( $title )
+        if ( $title ) {
             echo $before_title . $title . $after_title;
+		}
 ?>
 
-<!-- Begin Dummy Content -->
-<p>Test widget test content.</p>
-<!-- End Dummy Content -->
+<div class="textwidget"><?php echo ! empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?></div>
 
 <?php
         echo $after_widget . '</div>';
@@ -1143,7 +1143,13 @@ class oenology_widget_test extends WP_Widget {
 
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
-        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['title'] = strip_tags( $new_instance['title'] );
+		if ( current_user_can( 'unfiltered_html' ) ) {
+			$instance['text'] =  $new_instance['text'];
+		} else {
+			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) );
+		}
+		$instance['filter'] = isset( $new_instance['filter'] );
 		$instance['columns'] = ( is_int( (int) $new_instance['columns'] ) && 0 < $new_instance['columns'] && 4 > $new_instance['columns'] ? $new_instance['columns'] : $instance['columns'] );
 		$instance['rows'] = ( is_int( (int) $new_instance['rows'] ) && 0 < $new_instance['rows'] && 6 > $new_instance['rows'] ? $new_instance['rows'] : $instance['rows'] );
 
@@ -1151,12 +1157,18 @@ class oenology_widget_test extends WP_Widget {
     }
 
     function form( $instance ) {
-        $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'columns' => '1', 'rows' => '1' ) );
-        $title = strip_tags($instance['title']);
-        $columns = strip_tags($instance['columns']);
-        $rows = strip_tags($instance['rows']);
+        $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'text' => '', 'filter' => false, 'columns' => '1', 'rows' => '1' ) );
+        $title = strip_tags( $instance['title'] );
+		$text = esc_textarea( $instance['text'] );
+		$filter = $instance['filter'];
+        $columns = strip_tags( $instance['columns'] );
+        $rows = strip_tags( $instance['rows'] );
 ?>
             <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'oenology' ); ?>:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+			
+			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+			
+			<p><input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked(isset($instance['filter']) ? $instance['filter'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e( 'Automatically add paragraphs', 'oenology' ); ?></label></p>
 
 			<p>
 				<label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e( '# Columns', 'oenology' ); ?>:</label>			
@@ -1209,6 +1221,6 @@ function oenology_load_widgets() {
 	register_widget( 'oenology_widget_featured_content' );
 	register_widget( 'oenology_widget_call_to_action' );
 	register_widget( 'oenology_widget_featured_page' );
-	register_widget( 'oenology_widget_test' );
+	register_widget( 'oenology_widget_text' );
 }
 ?>

@@ -59,7 +59,8 @@ body.reply-edit .bbp-reply-form code {
 .subnavmenu .current_page_parent li a,
 .subnavmenu .current_page_parent .current_page_item li a,
 .subnavmenu .current_page_ancestor li a,
-#leftcol #subnav li a {
+#leftcol #subnav li a,
+.featured-content-cta-button a {
 	background: #E8E8E8;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E8E8E8', endColorstr='#f8f8f8');
 	background: -webkit-linear-gradient( bottom, #f8f8f8, #E8E8E8 );
@@ -68,7 +69,8 @@ body.reply-edit .bbp-reply-form code {
 }
 .nav-header li:hover a,
 .nav-header li:hover li:hover a,
-.nav-header li:hover li:hover li:hover a {
+.nav-header li:hover li:hover li:hover a,
+.featured-content-cta-button:hover a {
 	background: -webkit-radial-gradient( circle, #E8E8E8, #f8f8f8 );
 	background: -moz-radial-gradient( circle, #E8E8E8, #f8f8f8 );
 	background: -ms-radial-gradient( circle, #E8E8E8, #f8f8f8 );

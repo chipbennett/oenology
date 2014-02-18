@@ -1,11 +1,11 @@
 /*  
 Theme Name: 	Oenology
-Theme URI: 		http://www.chipbennett.net/themes/oenology
-Description: 	Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. Oenology includes built-in breadcrumb navigation, and supports the Theme Customizer, Contextual Help, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. Oenology features a responsive design, and includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 3.6.</strong>
-Version: 		3.2
+Theme URI: 		https://www.github.com/chipbennett/oenology
+Description: 	Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. Oenology includes built-in breadcrumb navigation, and supports the Theme Customizer, Contextual Help, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. Oenology features a responsive design, and includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 3.8.</strong>
+Version: 		3.3
 Author: 		Chip Bennett
 Author URI: 	http://www.chipbennett.net/
-Tags: 			fixed-width, white, black, blue, red, tan, green, one-column, two-columns, three-columns, custom-header, custom-background, custom-menu, editor-style, featured-images, flexible-width, full-width-template, left-sidebar, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: 			white, black, blue, red, tan, green, one-column, two-columns, three-columns, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, fluid-layout, full-width-template, left-sidebar, post-formats, responsive-layout, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
 License: 		GNU General Public License, v2 (or newer)
 License URI: 	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html 
 Textdomain:		oenology
@@ -2559,7 +2559,7 @@ ol.trackbacklist {
 	width: 33%;
 	max-width: 33%;
 	min-width: 33%;
-	height: auto;
+	height: 300px;
 	min-height: 300px;
 	max-height: 300px;
 	margin: 1px;
@@ -2628,6 +2628,29 @@ ol.trackbacklist {
 .featured-content-slider-title, .featured-content-slider-excerpt { position: absolute; opacity: .4; filter: alpha(opacity=40); z-index: 400; text-align: center; width: 100%; background: #000; }
 .featured-content-slider-title { top: 0; }
 .featured-content-slider-excerpt { bottom: 0; }
+
+#featured-content .featured-content-call-to-action .oenology-widget-call-to-action {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.featured-content-cta-button a {
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 1px 1px #666666;
+	-moz-box-shadow: 0px 1px 1px #666666;
+	box-shadow: 0px 1px 1px #666666;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	display: block;
+	display: inline-block;
+}
 
 /* 
    ============================================================================================= 
