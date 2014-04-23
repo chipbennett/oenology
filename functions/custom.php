@@ -276,7 +276,7 @@ function oenology_copyright() {
 	} else {
 		$output .= date( 'Y' );
 	}
-	return $output;
+	return apply_filters( 'oenology_copyright', $output );
 }
 
 /**
