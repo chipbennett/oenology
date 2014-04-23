@@ -70,7 +70,7 @@ get_header( 'single' );
 	 * via "loop.php", or in a specific context only, via 
 	 * "loop-{context}.php"
 	 */
-	get_template_part( 'loop', 'single' ); 
+	get_template_part( 'template-parts/loop', 'single' ); 
 	?>
 </div>
 <!-- End Main (div#main) -->

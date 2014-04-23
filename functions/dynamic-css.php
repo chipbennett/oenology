@@ -28,110 +28,102 @@ function oenology_enqueue_admin_style() {
 // Enqueue Admin Stylesheet at admin_print_styles()
 add_action( 'admin_print_styles-appearance_page_oenology-settings', 'oenology_enqueue_admin_style', 11 );
 
+
 /**
- * Enqueue #content img max-width
+ * Enqueue main style sheet
  * 
- * Set the max-width CSS property for
- * images inside div#content, based on
- * the $content_width global variable.
- */
-function oenology_enqueue_content_img_max_width() {
-	global $content_width;
-?>
-<style type="text/css">
-.post-entry img,
-.post-entry .wp-caption {
-	max-width: <?php echo $content_width; ?>px;
-}
-</style>
-<?php
-}
-// Enqueue Varietal Stylesheet at wp_print_styles
-add_action( 'wp_print_styles', 'oenology_enqueue_content_img_max_width', 11 );
-
-/**
- * Enqueue Footer Nav Menu Styles
- * 
- * If no menu is assigned to the nav-footer
- * Theme Location, then set the footer to
- * center-align content
- */
-function oenology_enqueue_footer_nav_menu_style() {
-	if ( has_nav_menu( 'nav-footer' ) ) {
-	?>
-<style type="text/css">
-#footer {
-	text-align: left;
-}
-</style>
-	<?php
-	}
-}
-add_action( 'wp_print_styles', 'oenology_enqueue_footer_nav_menu_style', 11 );
-
-
-/**
- * Enqueue Varietal Stylesheet
+ * Enqueue main style sheet, in order to append dynamic styles
  * 
  * @uses	oenology_get_options()			Defined in functions/options.php
  * @uses	oenology_get_color_scheme()		Defined in functions/custom.php
  * @uses	oenology_locate_template_uri()	Defined in functions/custom.php
  */
-function oenology_enqueue_varietal_style() {
-
-	// define varietal stylesheet
+function oenology_enqueue_front_end_stylesheets() {
+	// Fetch Theme options
 	global $oenology_options;
 	$oenology_options = oenology_get_options();
-	$color_scheme = oenology_get_color_scheme();
-	if ( 'cuvee' != $color_scheme ) {
-		$fonts_stylesheet = oenology_locate_template_uri( array( 'css/fonts.css' ), false, false );
-		wp_enqueue_style( 'oenology-fonts', $fonts_stylesheet );
-		$scheme_handle = 'oenology_' . $color_scheme . '_stylesheet';
-		$scheme_stylesheet = oenology_locate_template_uri( array( 'varietals/' . $color_scheme . '.css' ), false, false );
-		wp_enqueue_style( $scheme_handle, $scheme_stylesheet );
+	// Add main stylesheet
+	wp_enqueue_style( 
+		// Stylesheet handle
+		'oenology-main', 		 
+		/**
+		 * Return the URL for the default stylesheet
+		 * 
+		 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_stylesheet_uri get_stylesheet_uri}
+		 * 
+		 * Returns the value for the URI of the Theme default style sheet (style.css).
+		 * 
+		 * @param	null 
+		 * @return	string	URL of default stylesheet
+		 */
+		get_stylesheet_uri() 
+	);
+	/**
+	 * Add dynmamic image max width style
+	 * 
+	 * Set the max-width CSS property for
+	 * images inside div#content, based on
+	 * the $content_width global variable.
+	 */
+	global $content_width;
+	$content_img_max_width = '.post-entry img, .post-entry .wp-caption { max-width: ' . $content_width . 'px; }';
+	wp_add_inline_style( 'oenology-main', $content_img_max_width );
+	/**
+	 * Add footer nav style
+	 * 
+	 * If no menu is assigned to the nav-footer
+	 * Theme Location, then set the footer to
+	 * center-align content
+	 */
+	if ( has_nav_menu( 'nav-footer' ) ) {
+		$footer_nav_menu = '#footer { text-align: left; }';
+		wp_add_inline_style( 'oenology-main', $footer_nav_menu );
 	}
-	$varietal_handle = 'oenology_' . $oenology_options['varietal'] . '_stylesheet';
+	/** 
+	 * Add header nav style
+	 */
+	if ( 'fluid' == $oenology_options['header_nav_menu_item_width'] ) {
+		$header_nav_menu = '.nav-header li a, .nav-header li a:link, .nav-header li a:visited, .nav-header li a:hover, .nav-header li a:active { width: auto; padding: 0px 10px; }';
+		$header_nav_menu .= '#nav ul { width: auto; }';
+		$header_nav_menu .= '#nav ul li a { width: auto; min-width: 100px; }';
+		$header_nav_menu .= '#nav ul ul { width: auto; }';
+		wp_add_inline_style( 'oenology-main', $header_nav_menu );
+	}
+
+	// Fetch color scheme
+	$color_scheme = oenology_get_color_scheme();
+
+	/**
+	 * Only add font and dark/light color scheme stylesheets
+	 * if the Cuvee (blank) varietal is not selected
+	 */
+	if ( 'cuvee' != $color_scheme ) {
+
+		/**
+		 * Add font color scheme
+		 */
+		wp_enqueue_style( 
+			'oenology-fonts', 
+			oenology_locate_template_uri( array( 'css/fonts.css' ), false, false ) 
+		);
+
+		/**
+		 * Add font color scheme
+		 */
+		wp_enqueue_style( 
+			// Handle
+			'oenology_' . $color_scheme . '_stylesheet', 
+			// URL
+			oenology_locate_template_uri( array( 'varietals/' . $color_scheme . '.css' ), false, false ) 
+		);
+	}
+
+	/**
+	 * Enqueue varietal stylesheet
+	 */
 	$varietal_stylesheet = oenology_locate_template_uri( array( 'varietals/' . $oenology_options['varietal'] . '.css' ), false, false );
 	
-	wp_enqueue_style( $varietal_handle, $varietal_stylesheet );
+	wp_enqueue_style( 'oenology_' . $oenology_options['varietal'] . '_stylesheet', $varietal_stylesheet );
 }
-// Enqueue Varietal Stylesheet at wp_print_styles
-add_action('wp_enqueue_scripts', 'oenology_enqueue_varietal_style', 11 );
-
-
-/**
- * Enqueue Header Nav Menu Styles
- * 
- * @uses	oenology_get_options()			Defined in functions/options.php
- */
-function oenology_enqueue_header_nav_menu_style() {
-	global $oenology_options;
-	$oenology_options = oenology_get_options();
-	$header_nav_menu_item_width = $oenology_options['header_nav_menu_item_width'];
-	if ( 'fluid' == $header_nav_menu_item_width ) {
-	?>
-<style type="text/css">
-.nav-header li a,
-.nav-header li a:link,
-.nav-header li a:visited,
-.nav-header li a:hover,
-.nav-header li a:active {
-     width: auto; 
-	 padding: 0px 10px;
-}
-#nav ul {
-	width: auto;
-}
-#nav ul li a {
-	width: auto;
-	min-width: 100px;
-}
-#nav ul ul {
-	width: auto;
-}
-</style>
-	<?php
-	}
-}
-add_action( 'wp_print_styles', 'oenology_enqueue_header_nav_menu_style', 11 );
+add_action( 'wp_enqueue_scripts', 'oenology_enqueue_front_end_stylesheets' );
 ?>

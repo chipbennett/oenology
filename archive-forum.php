@@ -65,7 +65,7 @@ get_header( oenology_get_context() );
 		<h2 class="pagetitle"><?php bbp_forum_archive_title(); ?></h2>
 		<div class="entry-content">
 
-			<?php bbp_get_template_part( 'content', 'archive-forum' ); ?>
+			<?php bbp_get_template_part( 'template-parts/content', 'archive-forum' ); ?>
 
 		</div>
 	</div><!-- #forum-front -->
