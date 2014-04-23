@@ -72,7 +72,7 @@ get_header( 'page' );
 	 * via "loop.php", or in a specific context only, via 
 	 * "loop-{context}.php"
 	 */
-	get_template_part( 'loop', 'page' ); 
+	get_template_part( 'template-parts/loop', 'page' ); 
 	?>
 </div>
 <!-- End Main (div#main) -->

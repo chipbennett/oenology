@@ -148,20 +148,6 @@ language_attributes();
 	wp_title( '&raquo;', true, 'right' ); 
 	?></title>
 
-	<link rel="stylesheet" href="<?php 
-	/**
-	 * Return the URL for the default stylesheet
-	 * 
-	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_stylesheet_uri get_stylesheet_uri}
-	 * 
-	 * Returns the value for the URI of the Theme default style sheet (style.css).
-	 * 
-	 * @param	null 
-	 * @return	string	URL of default stylesheet
-	 */
-	echo get_stylesheet_uri(); 
-	?>" type="text/css" media="all" />
-
 	<?php 
 	/**
 	 * Fire the 'wp_head' action hook
@@ -263,7 +249,7 @@ language_attributes();
 		 * via "site-header.php", or in a specific context only, via 
 		 * "site-header-{context}.php"
 		 */
-		get_template_part( 'site-header', oenology_get_context() ); 
+		get_template_part( 'template-parts/site-header', oenology_get_context() ); 
 		?>
 		<!-- End Blog Head -->
 		
@@ -309,7 +295,7 @@ language_attributes();
 		 * via "infobar.php", or in a specific context only, via 
 		 * "infobar-{context}.php"
 		 */
-		get_template_part( 'infobar', oenology_get_context() ); 
+		get_template_part( 'template-parts/infobar', oenology_get_context() ); 
 		?>
 	</div>
 	<!-- End Infobar (div#infobar) -->

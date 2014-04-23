@@ -77,7 +77,7 @@ get_header( oenology_get_context() );
 	 * via "loop.php", or in a specific context only, via 
 	 * "loop-{context}.php"
 	 */
-	get_template_part( 'loop', oenology_get_context() ); 
+	get_template_part( 'template-parts/loop', oenology_get_context() ); 
 	?>
 </div>
 <!-- End Main (div#main) -->
