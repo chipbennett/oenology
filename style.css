@@ -372,7 +372,8 @@ body.layout-full #main {
 	width: 835px;
 	margin-left:85px;
 }
-#page.layout-two-column #main {
+#page.layout-two-column #main,
+#page.layout-two-column-right-sidebar #main {
 	width: 820px;
 }
 #page #main,
@@ -388,6 +389,10 @@ body.layout-full #main,
   float:right;
   margin-left:auto;
   margin-right:0px;
+}
+#page.layout-two-column-right-sidebar #main {
+	margin-left: auto;
+	margin-right:0px;
 }
 #rightcol {
   display:inline;

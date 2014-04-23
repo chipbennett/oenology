@@ -343,6 +343,11 @@ function oenology_get_option_parameters() {
 					'title' => __( '2-Column', 'oenology' ),
 					'description' => __( 'Two columns (menu on left, content on right)', 'oenology' )
 				),
+				'two-column-right-sidebar' => array(
+					'name' => 'two-column-right-sidebar',
+					'title' => __( '2-Column, Right', 'oenology' ),
+					'description' => __( 'Two columns (content on left, sidebar on right)', 'oenology' )
+				),
 				'three-column' => array(
 					'name' => 'three-column',
 					'title' => __( '3-Column', 'oenology' ),

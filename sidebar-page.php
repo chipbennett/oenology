@@ -31,40 +31,42 @@ if (
 // WordPress conditional tag that returns true if
 // the current page is an Attachment Page
 ! is_attachment() 
-) { 
-	?>
-	
-	<!-- Begin Left Column (div#leftcol) -->
-	<?php
-	// div#leftcol contains the left column content of the three-column 
-	// layout. For the Blog Posts Index, div#rightcol and div#leftcol both
-	// appear to the right of the main content column. For static Pages,
-	// including a static Page as Front Page, div#leftcol is to the left, 
-	// and div#rightcol is to the right, with div#main in the center.
-	// 
-	// Includes the 'sidebar-left' dynamic sidebar
-	?>
-	<div id="leftcol">
-		<?php 
-		// Calls a sidebar template part file.
-		// Used in all primary template pages
-		// 
-		// Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
-		// 
-		// Child Themes can replace this template part file globally, 
-		// via "sidebar-navigation.php"
-		get_sidebar( 'navigation' ); 
-		
-		//Display the left-column dynamic
-		//sidebar, if it is in use
-		if ( is_active_sidebar( 'sidebar-left' ) ) {
-			dynamic_sidebar( 'sidebar-left' );
-		}
+) {
+	if ( 'two-column-right-sidebar' != oenology_get_current_page_layout() ) {
 		?>
-	</div>
-	<!-- End Left Column (div#leftcol) -->
+		
+		<!-- Begin Left Column (div#leftcol) -->
+		<?php
+		// div#leftcol contains the left column content of the three-column 
+		// layout. For the Blog Posts Index, div#rightcol and div#leftcol both
+		// appear to the right of the main content column. For static Pages,
+		// including a static Page as Front Page, div#leftcol is to the left, 
+		// and div#rightcol is to the right, with div#main in the center.
+		// 
+		// Includes the 'sidebar-left' dynamic sidebar
+		?>
+		<div id="leftcol">
+			<?php 
+			// Calls a sidebar template part file.
+			// Used in all primary template pages
+			// 
+			// Codex reference: http://codex.wordpress.org/Function_Reference/get_sidebar
+			// 
+			// Child Themes can replace this template part file globally, 
+			// via "sidebar-navigation.php"
+			get_sidebar( 'navigation' ); 
+			
+			//Display the left-column dynamic
+			//sidebar, if it is in use
+			if ( is_active_sidebar( 'sidebar-left' ) ) {
+				dynamic_sidebar( 'sidebar-left' );
+			}
+			?>
+		</div>
+		<!-- End Left Column (div#leftcol) -->
 
-	<?php
+		<?php
+	}
 	global $post;
 	if ( 'two-column' != oenology_get_current_page_layout()
 	) {
