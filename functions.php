@@ -130,13 +130,6 @@ require( get_template_directory() . '/functions/hooks.php' );
 require( get_template_directory() . '/functions/post-custom-meta.php' );
 
 /**
- * Include the Theme Contextual Help Function File
- * 
- * - contextual-help.php includes the Theme Contextual Help content
- */
-require( get_template_directory() . '/functions/contextual-help.php' );
-
-/**
  * Include the Dynamic Style/Script Function File
  * 
  * - dynamic-css.php includes the Theme Dynamic Style/Script content

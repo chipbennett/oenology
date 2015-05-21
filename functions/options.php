@@ -42,75 +42,6 @@ function oenology_register_options(){
 add_action( 'admin_init', 'oenology_register_options' );
 
 /**
- * Setup the Theme Admin Settings Page
- * 
- * Add "Oenology Options" link to the "Appearance" menu
- * 
- * @uses	oenology_get_settings_page_cap()	defined in \functions\wordpress-hooks.php
- */
-function oenology_add_theme_page() {
-	// Globalize Theme options page
-	global $oenology_settings_page;
-	// Add Theme options page
-	$oenology_settings_page = add_theme_page(
-		// $page_title
-		// Name displayed in HTML title tag
-		__( 'Oenology Options', 'oenology' ), 
-		// $menu_title
-		// Name displayed in the Admin Menu
-		__( 'Oenology Options', 'oenology' ), 
-		// $capability
-		// User capability required to access page
-		oenology_get_settings_page_cap(), 
-		// $menu_slug
-		// String to append to URL after "themes.php"
-		'oenology-settings', 
-		// $callback
-		// Function to define settings page markup
-		'oenology_admin_options_page'
-	);
-	// Load contextual help
-	add_action( 'load-' . $oenology_settings_page, 'oenology_settings_page_contextual_help' );
-}
-// Load the Admin Options page
-add_action( 'admin_menu', 'oenology_add_theme_page' );
-
-/**
- * Oenology Theme Settings Page Markup
- * 
- * @uses	oenology_get_current_tab()	defined in \functions\custom.php
- * @uses	oenology_get_page_tab_markup()	defined in \functions\custom.php
- */
-function oenology_admin_options_page() { 
-	// Determine the current page tab
-	$currenttab = oenology_get_current_tab();
-	// Define the page section accordingly
-	$settings_section = 'oenology_' . $currenttab . '_tab';
-	?>
-
-	<div class="wrap">
-		<?php oenology_get_page_tab_markup(); ?>
-		<?php if ( isset( $_GET['settings-updated'] ) ) {
-    			echo '<div class="updated"><p>';
-				echo __( 'Theme settings updated successfully.', 'oenology' );
-				echo '</p></div>';
-		} ?>
-		<form action="options.php" method="post">
-		<?php 
-			// Implement settings field security, nonces, etc.
-			settings_fields('theme_oenology_options');
-			// Output each settings section, and each
-			// Settings field in each section
-			do_settings_sections( $settings_section );
-		?>
-			<?php submit_button( __( 'Save Settings', 'oenology' ), 'primary', 'theme_oenology_options[submit-' . $currenttab . ']', false ); ?>
-			<?php submit_button( __( 'Reset Defaults', 'oenology' ), 'secondary', 'theme_oenology_options[reset-' . $currenttab . ']', false ); ?>
-		</form>
-	</div>
-<?php 
-}
-
-/**
  * Oenology Theme Option Defaults
  * 
  * Returns an associative array that holds 
@@ -141,15 +72,6 @@ function oenology_get_option_defaults() {
 	// Return the defaults array
 	return apply_filters( 'oenology_option_defaults', $option_defaults );
 }
-
-/**
- * Define default options tab
- */
-function oenology_define_default_options_tab( $options ) {
-	$options['default_options_tab'] = 'varietals';
-	return $options;
-}
-add_filter( 'oenology_option_defaults', 'oenology_define_default_options_tab' );
 
 /**
  * Oenology Theme Option Parameters
