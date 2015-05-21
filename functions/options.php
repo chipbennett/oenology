@@ -259,67 +259,77 @@ function oenology_get_option_parameters() {
 		'varietal' => array(
 			'name' => 'varietal',
 			'title' => __( 'Varietal', 'oenology' ),
-			'type' => 'custom',
+			'type' => 'radio-image',
 			'valid_options' => array(
 				'chardonnay' => array(
 				  'name' => 'chardonnay',
 				  'title' => __( 'Chardonnay', 'oenology' ),
 				  'description' => __( 'Chardonnay is the ubiquitous white wine, produced from a versatile white grape.', 'oenology' ),
-				  'scheme' => 'light'
+				  'scheme' => 'light',
+				  'image' => get_template_directory_uri() . '/varietals/chardonnay.png'
 				  ),
 				'seyval-blanc' => array(
 				  'name' => 'seyval-blanc',
 				  'title' => __( 'Seyval Blanc', 'oenology' ),
 				  'description' => __( 'Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral.', 'oenology' ),
-				  'scheme' => 'light'
+				  'scheme' => 'light',
+				  'image' => get_template_directory_uri() . '/varietals/seyval-blanc.png'
 				  ),
 				'muscat' => array(
 				  'name' => 'muscat',
 				  'title' => __( 'Muscat', 'oenology' ),
 				  'description' => __( 'Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet.', 'oenology' ),
-				  'scheme' => 'light'
+				  'scheme' => 'light',
+				  'image' => get_template_directory_uri() . '/varietals/muscat.png'
 				  ),
 				'solarized-light' => array(
 				  'name' => 'solarized-light',
 				  'title' => __( 'Solarized Light', 'oenology' ),
 				  'description' => __( 'DESCRIPTION GOES HERE.', 'oenology' ),
-				  'scheme' => 'light'
+				  'scheme' => 'light',
+				  'image' => get_template_directory_uri() . '/varietals/solarized-light.png'
 				  ),
 				'syrah' => array(
 				  'name' => 'syrah',
 				  'title' => __( 'Syrah', 'oenology' ),
 				  'description' => __( 'Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma.', 'oenology' ),
-				  'scheme' => 'dark'
+				  'scheme' => 'dark',
+				  'image' => get_template_directory_uri() . '/varietals/syrah.png'
 				  ),
 				'malbec' => array(
 				  'name' => 'malbec',
 				  'title' => __( 'Malbec', 'oenology' ),
 				  'description' => __( 'Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors.', 'oenology' ),
-				  'scheme' => 'dark'
+				  'scheme' => 'dark',
+				  'image' => get_template_directory_uri() . '/varietals/malbec.png'
 				  ),
 				'pinot-noir' => array(
 				  'name' => 'pinot-noir',
 				  'title' => __( 'Pinot Noir', 'oenology' ),
 				  'description' => __( 'Pinot Noir is an extremely fickle yet versatile red grape from Burgundy.', 'oenology' ),
-				  'scheme' => 'dark'
+				  'scheme' => 'dark',
+				  'image' => get_template_directory_uri() . '/varietals/pinot-noir.png'
 				  ),
 				'zinfandel' => array(
 				  'name' => 'zinfandel',
 				  'title' => __( 'Zinfandel', 'oenology' ),
 				  'description' => __( 'Zinfandel is a red grape known for its spicy, peppery, and berry characteristics.', 'oenology' ),
-				  'scheme' => 'dark'
+				  'scheme' => 'dark',
+				  'image' => get_template_directory_uri() . '/varietals/zinfandel.png'
 				  ),
 				'solarized-dark' => array(
 				  'name' => 'solarized-dark',
 				  'title' => __( 'Solarized Dark', 'oenology' ),
 				  'description' => __( 'DESCRIPTION GOES HERE.', 'oenology' ),
-				  'scheme' => 'dark'
+				  'scheme' => 'dark',
+				  'image' => get_template_directory_uri() . '/varietals/solarized-dark.png'
 				  ),
 				'cuvee' => array(
 				  'name' => 'cuvee',
 				  'title' => __( 'Cuvee', 'oenology' ),
 				  'description' => __( 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming.', 'oenology' ),
-				  'scheme' => 'cuvee'
+				  'scheme' => 'cuvee',
+				  'image' => get_template_directory_uri() . '/varietals/cuvee.png'
 				  ),
 			),
 			'description' => '',

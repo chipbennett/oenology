@@ -112,24 +112,22 @@ function oenology_register_theme_customizer( $wp_customize ){
 				'type'    => 'select',
 				'choices'    => $valid_options,
 			) );
-		} else if ( 'custom' == $option_parameter['type'] ) {
+		} else if ( 'radio-image' == $option_parameter['type'] ) {
 			$valid_options = array();
 			foreach ( $option_parameter['valid_options'] as $valid_option ) {
-				$valid_options[$valid_option['name']] = $valid_option['title'];
+				$valid_options[$valid_option['name']] = $valid_option['image'];
 			}
-			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
+			$wp_customize->add_control( new Oenology_Custom_Radio_Image_Control( $wp_customize, 'oenology_' . $option_parameter['name'], array(
 				'label'   => $option_parameter['title'],
 				'section' => 'oenology_' . $option_parameter['tab'],
 				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
-				'type'    => 'select',
+				'type'    => 'radio-image',
 				'choices'    => $valid_options,
-			) );
-		}
+			) ) );
+
+		} 
 	}
 
 }
 // Settings API options initilization and validation
 add_action( 'customize_register', 'oenology_register_theme_customizer' );
-
-
-?>

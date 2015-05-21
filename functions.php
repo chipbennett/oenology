@@ -89,6 +89,15 @@ require( get_template_directory() . '/functions/widgets.php' );
 require( get_template_directory() . '/functions/options.php' );
 
 /**
+ * Register Theme Customizer Custom Controls Function File
+ * 
+ * options-customizer-custom-controls.php includes the functions required to 
+ * add custom controls for the WordPress Theme Customizer. This file MUST be
+ * included before the file that registers the Theme options into the Custsomizer
+ */
+require( get_template_directory() . '/functions/options-customizer-custom-controls.php' );
+
+/**
  * Include the Theme Options Theme Customizer Function File
  * 
  * options-customizer.php includes the functions required to 

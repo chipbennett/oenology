@@ -99,7 +99,7 @@ function oenology_options_validate( $input ) {
 				$valid_input[$setting] = ( ( isset( $input[$setting] ) && true == $input[$setting] ) ? true : false );
 			}
 			// Validate radio button fields
-			else if ( 'radio' == $optiondetails['type'] ) {
+			else if ( 'radio' == $optiondetails['type'] || 'radio-image' == $optiondetails['type'] ) {
 				// Only update setting if input value is in the list of valid options
 				$valid_input[$setting] = ( array_key_exists( $input[$setting], $valid_options ) ? $input[$setting] : $valid_input[$setting] );
 			}
@@ -237,7 +237,7 @@ foreach ( $option_parameters as $option ) {
 	$optiontab = $option['tab'];
 	$optionsection = $option['section'];
 	$optiontype = $option['type'];
-	if ( 'custom' != $optiontype ) {
+	if ( 'radio-image' != $optiontype ) {
 		add_settings_field(
 			// $settingid
 			'oenology_setting_' . $optionname,
@@ -252,7 +252,7 @@ foreach ( $option_parameters as $option ) {
 			// $args
 			$option
 		);
-	} if ( 'custom' == $optiontype ) {
+	} if ( 'radio-image' == $optiontype ) {
 		add_settings_field(
 			// $settingid
 			'oenology_setting_' . $optionname,
