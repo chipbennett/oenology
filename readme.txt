@@ -158,6 +158,15 @@ License URI: /fonts/Genericons-LICENSE.txt
 
 = Bundled Images =
 
+**Kirki Customizer Framework, Copyright @aristath**
+
+Source: https://github.com/reduxframework/kirki/
+License: GNU GPL Version 2 (or later)
+
+Image files in /images/layouts
+
+**No Copyright**
+
 pxwhite.jpg is a single-pixel image, and not copyrightable
 
 == Changelog ==

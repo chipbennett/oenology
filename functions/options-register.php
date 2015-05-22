@@ -50,38 +50,18 @@ register_setting(
 function oenology_options_validate( $input ) {
 	// This is the "whitelist": current settings
 	$valid_input = oenology_get_options();
-	// Get the array of Theme settings, by Settings Page tab
-	$settingsbytab = oenology_get_settings_by_tab();
+	// Get the array of Theme settings
+	$settings = oenology_get_settings();
 	// Get the array of option parameters
 	$option_parameters = oenology_get_option_parameters();
 	// Get the array of option defaults
 	$option_defaults = oenology_get_option_defaults();
-	// Get list of tabs
-	$tabs = oenology_get_settings_page_tabs();
 	
 	// Determine what type of submit was input
-	$submittype = 'submit';	
-	foreach ( $tabs as $tab ) {
-		$resetname = 'reset-' . $tab['name'];
-		if ( ! empty( $input[$resetname] ) ) {
-			$submittype = 'reset';
-		}
-	}
+	$submittype = ( ! empty( $input['reset'] ) ? 'reset' : 'submit' );
 	
-	// Determine what tab was input
-	$submittab = 'varietals';	
-	foreach ( $tabs as $tab ) {
-		$submitname = 'submit-' . $tab['name'];
-		$resetname = 'reset-' . $tab['name'];
-		if ( ! empty( $input[$submitname] ) || ! empty($input[$resetname] ) ) {
-			$submittab = $tab['name'];
-		}
-	}
-	global $wp_customize;
-	// Get settings by tab
-	$tabsettings = ( isset ( $wp_customize ) ? $settingsbytab['all'] : $settingsbytab[$submittab] );
-	// Loop through each tab setting
-	foreach ( $tabsettings as $setting ) {
+	// Loop through each setting
+	foreach ( $settings as $setting ) {
 		// If no option is selected, set the default
 		$valid_input[$setting] = ( ! isset( $input[$setting] ) ? $option_defaults[$setting] : $input[$setting] );
 		
@@ -98,7 +78,7 @@ function oenology_options_validate( $input ) {
 				// If input value is set and is true, return true; otherwise return false
 				$valid_input[$setting] = ( ( isset( $input[$setting] ) && true == $input[$setting] ) ? true : false );
 			}
-			// Validate radio button fields
+			// Validate radio button and radio image fields
 			else if ( 'radio' == $optiondetails['type'] || 'radio-image' == $optiondetails['type'] ) {
 				// Only update setting if input value is in the list of valid options
 				$valid_input[$setting] = ( array_key_exists( $input[$setting], $valid_options ) ? $input[$setting] : $valid_input[$setting] );

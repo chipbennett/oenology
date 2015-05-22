@@ -49,7 +49,9 @@ function oenology_customizer_custom_controls( $wp_customize ){
 		 */
 		public function label() {
 			// The label has already been sanitized in the Fields class, no need to re-sanitize it.
+			echo '<span class="customize-control-title">';
 			echo $this->label;
+			echo '</span>';
 		}
 
 		/**
@@ -68,10 +70,8 @@ function oenology_customizer_custom_controls( $wp_customize ){
 		 * Markup for the field's title
 		 */
 		public function title() {
-			echo '<span class="customize-control-title">';
-				$this->label();
-				$this->description();
-			echo '</span>';
+			$this->label();
+			$this->description();
 		}
 
 		public function render_content() {
@@ -88,7 +88,7 @@ function oenology_customizer_custom_controls( $wp_customize ){
 				<?php foreach ( $this->choices as $value => $label ) : ?>
 					<input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" id="<?php echo $this->id . $value; ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
 						<label for="<?php echo $this->id . $value; ?>">
-							<img src="<?php echo esc_html( $label ); ?>">
+							<img src="<?php echo esc_html( $label ); ?>" alt="<?php echo esc_attr( $value ); ?> title="<?php echo esc_attr( $value ); ?>">
 						</label>
 					</input>
 				<?php endforeach; ?>
@@ -135,10 +135,12 @@ function oenology_customizer_custom_control_css() {
 		line-height: 35px; 
 	}
 	.customize-control-radio-image label img {
-		width: 50px;
-		height: auto;
 		border: 1px solid #bbb;
 		opacity: 0.5;
+	}
+	#customize-controls .customize-control-radio-image label img {
+		max-width: 50px;
+		height: auto;
 	}
 	.customize-control-radio-image label.ui-state-active img {
 		background: #dedede; 

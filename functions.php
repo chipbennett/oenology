@@ -80,31 +80,12 @@ require( get_template_directory() . '/functions/widgets.php' );
 /**
  * Include the Theme Options Function File
  * 
- * options.php includes the Theme options and Admin Settings page
+ * options.php includes the Theme options and Customizer
  * - Define default Theme Options
- * - Register/Initialize Theme Options
- * - Admin Settings Page
- * - Contextual Help
+ * - Register Theme Options
+ * - Customizer integration
  */
 require( get_template_directory() . '/functions/options.php' );
-
-/**
- * Register Theme Customizer Custom Controls Function File
- * 
- * options-customizer-custom-controls.php includes the functions required to 
- * add custom controls for the WordPress Theme Customizer. This file MUST be
- * included before the file that registers the Theme options into the Custsomizer
- */
-require( get_template_directory() . '/functions/options-customizer-custom-controls.php' );
-
-/**
- * Include the Theme Options Theme Customizer Function File
- * 
- * options-customizer.php includes the functions required to 
- * integrate the Theme options into the WordPress Theme
- * Customizer.
- */
-require( get_template_directory() . '/functions/options-customizer.php' );
 
 /**
  * Include Theme Hooks Alliance Hooks

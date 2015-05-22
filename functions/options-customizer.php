@@ -11,6 +11,16 @@
  *
  * @since 		Oenology 2.6
  */
+ 
+
+/**
+ * Register Theme Customizer Custom Controls Function File
+ * 
+ * options-customizer-custom-controls.php includes the functions required to 
+ * add custom controls for the WordPress Theme Customizer. This file MUST be
+ * included before the file that registers the Theme options into the Custsomizer
+ */
+require( get_template_directory() . '/functions/options-customizer-custom-controls.php' );
 
 /**
  * Oenology Theme Settings Theme Customizer Implementation
@@ -29,38 +39,38 @@ function oenology_register_theme_customizer( $wp_customize ){
 		return;
 	}
 
-	global $oenology_options;
-	$oenology_options = oenology_get_options();
-
-	// Get the array of option parameters
-	$option_parameters = oenology_get_option_parameters();
-	// Get list of tabs
-	$tabs = oenology_get_settings_page_tabs();
+	// Get list of panels
+	$panels = oenology_get_customizer_panels();
 	
-	// Add Panel
-	$wp_customize->add_panel( 
-		'oenology', 
-		array(
-			'priority' 			=> 10,
-			'capability' 		=> 'edit_theme_options',
-			'theme_supports'	=> '',
-			'title' 			=> __( 'Oenology Theme', 'oenology' ),
-			'description' 		=> __( 'Oenology Theme Settings', 'oenology' ),
-		) 
-	);
-
-	// Add Sections
-	foreach ( $tabs as $tab ) {
-		// Add $tab section
-		$wp_customize->add_section( 
-			'oenology_' . $tab['name'], 
+	// Add Panels
+	foreach ( $panels as $panel ) {
+		// Add $panel panel
+		$wp_customize->add_panel( 
+			'oenology_' . $panel['name'], 
 			array(
-				'title'			=> 'Oenology ' . $tab['title'] . ' Settings',
-				'description'	=> __( '', 'oenology' ),
-				'panel'			=> 'oenology'
+				'priority' 			=> 10,
+				'capability' 		=> 'edit_theme_options',
+				'theme_supports'	=> '',
+				'title' 			=> $panel['title'],
+				'description' 		=> __( '', 'oenology' ),
 			) 
 		);
+		// Add Sections
+		foreach ( $panel['sections'] as $section ) {
+			// Add $section sections
+			$wp_customize->add_section( 
+				'oenology_' . $section['name'], 
+				array(
+					'title'			=> $section['title'],
+					'description'	=> $section['description'],
+					'panel'			=> 'oenology_' . $panel['name']
+				) 
+			);
+		}
 	}
+	
+	// Get the array of option parameters
+	$option_parameters = oenology_get_option_parameters();
 
 	// Add Settings
 	foreach ( $option_parameters as $option_parameter ) {
@@ -74,17 +84,21 @@ function oenology_register_theme_customizer( $wp_customize ){
 		if ( 'text' == $option_parameter['type'] ) {
 			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
 				'label'		=> $option_parameter['title'],
-				'section'	=> 'oenology_' . $option_parameter['tab'],
+				'section'	=> 'oenology_' . $option_parameter['section'],
 				'settings'	=> 'theme_oenology_options['. $option_parameter['name'] . ']',
 				'type'		=> 'text',
+				'label'		=> $option_parameter['title'],
+				'description' => $option_parameter['description'],
 			) );
 
 		} else if ( 'checkbox' == $option_parameter['type'] ) {
 			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
 				'label'   => $option_parameter['title'],
-				'section' => 'oenology_' . $option_parameter['tab'],
+				'section' => 'oenology_' . $option_parameter['section'],
 				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
 				'type'    => 'checkbox',
+				'label'		=> $option_parameter['title'],
+				'description' => $option_parameter['description'],
 			) );
 
 		} else if ( 'radio' == $option_parameter['type'] ) {
@@ -94,9 +108,11 @@ function oenology_register_theme_customizer( $wp_customize ){
 			}
 			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
 				'label'   => $option_parameter['title'],
-				'section' => 'oenology_' . $option_parameter['tab'],
+				'section' => 'oenology_' . $option_parameter['section'],
 				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
 				'type'    => 'radio',
+				'label'		=> $option_parameter['title'],
+				'description' => $option_parameter['description'],
 				'choices'    => $valid_options,
 			) );
 
@@ -107,9 +123,11 @@ function oenology_register_theme_customizer( $wp_customize ){
 			}
 			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
 				'label'   => $option_parameter['title'],
-				'section' => 'oenology_' . $option_parameter['tab'],
+				'section' => 'oenology_' . $option_parameter['section'],
 				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
 				'type'    => 'select',
+				'label'		=> $option_parameter['title'],
+				'description' => $option_parameter['description'],
 				'choices'    => $valid_options,
 			) );
 		} else if ( 'radio-image' == $option_parameter['type'] ) {
@@ -119,9 +137,11 @@ function oenology_register_theme_customizer( $wp_customize ){
 			}
 			$wp_customize->add_control( new Oenology_Custom_Radio_Image_Control( $wp_customize, 'oenology_' . $option_parameter['name'], array(
 				'label'   => $option_parameter['title'],
-				'section' => 'oenology_' . $option_parameter['tab'],
+				'section' => 'oenology_' . $option_parameter['section'],
 				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
 				'type'    => 'radio-image',
+				'label'		=> $option_parameter['title'],
+				'description' => $option_parameter['description'],
 				'choices'    => $valid_options,
 			) ) );
 

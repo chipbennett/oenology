@@ -8,8 +8,7 @@
  * 
  *  - Define Default Theme Options
  *  - Register/Initialize Theme Options
- *  - Define Admin Settings Page
- *  - Register Contextual Help
+ *  - Integrate Options into Theme Customizer
  * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2011, Chip Bennett
@@ -26,410 +25,38 @@
 global $oenology_options;
 
 /**
- * Oenology Theme Settings API Implementation
+ * Oenology Theme Options API Implementation
  *
- * Implement the WordPress Settings API for the 
+ * Implement the WordPress Options API for the 
  * Oenology Theme Settings.
  * 
- * @link	http://codex.wordpress.org/Settings_API	Codex Reference: Settings API
+ * @link	http://codex.wordpress.org/Options_API	Codex Reference: Options API
  * @link	http://ottopress.com/2009/wordpress-settings-api-tutorial/	Otto
  * @link	http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/	Ozh
  */
 function oenology_register_options(){
 	require( get_template_directory() . '/functions/options-register.php' );
 }
-// Settings API options initilization and validation
+// Options API options initialization and validation
 add_action( 'admin_init', 'oenology_register_options' );
 
 /**
- * Oenology Theme Option Defaults
+ * Include the Theme Options Configuration Function File
  * 
- * Returns an associative array that holds 
- * all of the default values for all Theme 
- * options.
- * 
- * @uses	oenology_get_option_parameters()	defined in \functions\options.php
- * 
- * @return	array	$defaults	associative array of option defaults
+ * options-config.php includes the functions that return
+ * the parameters for Theme options and Customizer Panels.
  */
-function oenology_get_option_defaults() {
-	// Get the array that holds all
-	// Theme option parameters
-	$option_parameters = oenology_get_option_parameters();
-	// Initialize the array to hold
-	// the default values for all
-	// Theme options
-	$option_defaults = array();
-	// Loop through the option
-	// parameters array
-	foreach ( $option_parameters as $option_parameter ) {
-		$name = $option_parameter['name'];
-		// Add an associative array key
-		// to the defaults array for each
-		// option in the parameters array
-		$option_defaults[$name] = $option_parameter['default'];
-	}
-	// Return the defaults array
-	return apply_filters( 'oenology_option_defaults', $option_defaults );
-}
+require( get_template_directory() . '/functions/options-config.php' );
 
 /**
- * Oenology Theme Option Parameters
+ * Include the Theme Options Theme Customizer Function File
  * 
- * Array that holds parameters for all options for
- * Oenology. The 'type' key is used to generate
- * the proper form field markup and to sanitize
- * the user-input data properly. The 'tab' key
- * determines the Settings Page on which the
- * option appears, and the 'section' tab determines
- * the section of the Settings Page tab in which
- * the option appears.
- * 
- * @return	array	$options	array of arrays of option parameters
+ * options-customizer.php includes the functions required to 
+ * integrate the Theme options into the WordPress Theme
+ * Customizer.
  */
-function oenology_get_option_parameters() {
+require( get_template_directory() . '/functions/options-customizer.php' );
 
-    $options = array(
-        'header_nav_menu_position' => array(
-			'name' => 'header_nav_menu_position',
-			'title' => __( 'Header Nav Menu Position', 'oenology' ),
-			'type' => 'select',
-			'valid_options' => array(
-				'above' => array(
-					'name' => 'above',
-					'title' => __( 'Above', 'oenology' )
-				),
-				'below' => array(
-					'name' => 'below',
-					'title' => __( 'Below', 'oenology' )
-				),
-				'none' => array(
-					'name' => 'none',
-					'title' => __( 'Do Not Display', 'oenology' )
-				)
-			),
-			'description' => __( 'Display header navigation menu above or below the site title/description?', 'oenology' ),
-			'section' => 'header',
-			'tab' => 'general',
-			'since' => '1.1',
-			'default' => 'above'
-		),
-		'header_nav_menu_depth' => array(
-			'name' => 'header_nav_menu_depth',
-			'title' => __( 'Header Nav Menu Depth', 'oenology' ),
-			'type' => 'select',
-			'valid_options' => array(
-				'1' => array(
-					'name' => 1,
-					'title' => __( 'One', 'oenology' )
-				),
-				'2' => array(
-					'name' => 2,
-					'title' => __( 'Two', 'oenology' )
-				),
-				'3' => array(
-					'name' => 3,
-					'title' => __( 'Three', 'oenology' )
-				)
-			),
-			'description' => __( 'How many levels of Page hierarchy should the Header Navigation Menu display?', 'oenology' ),
-			'section' => 'header',
-			'tab' => 'general',
-			'since' => '1.1',
-			'default' => 1
-		),
-        'header_nav_menu_item_width' => array(
-			'name' => 'header_nav_menu_item_width',
-			'title' => __( 'Header Nav Menu Item Width', 'oenology' ),
-			'type' => 'select',
-			'valid_options' => array(
-				'fixed' => array(
-					'name' => 'fixed',
-					'title' => __( 'Fixed', 'oenology' )
-				),
-				'fluid' => array(
-					'name' => 'fluid',
-					'title' => __( 'Fluid', 'oenology' )
-				)
-			),
-			'description' => __( 'Should Header Nav Menu items have a fixed or fluid width?', 'oenology' ),
-			'section' => 'header',
-			'tab' => 'general',
-			'since' => '2.1',
-			'default' => 'fluid'
-		),
-        'display_footer_credit' => array(
-			'name' => 'display_footer_credit',
-			'title' => __( 'Display Footer Credit', 'oenology' ),
-			'type' => 'select',
-			'valid_options' => array(
-				'false' => array(
-					'name' => 'false',
-					'title' => __( 'Do Not Display', 'oenology' )
-				),
-				'true' => array(
-					'name' => 'true',
-					'title' => __( 'Display', 'oenology' )
-				)
-			),
-			'description' => __( 'Display a credit link in the footer? This option is disabled by default, and you are under no obligation whatsoever to enable it.', 'oenology' ),
-			'section' => 'footer',
-			'tab' => 'general',
-			'since' => '1.1',
-			'default' => false
-		),
-		'varietal' => array(
-			'name' => 'varietal',
-			'title' => __( 'Varietal', 'oenology' ),
-			'type' => 'radio-image',
-			'valid_options' => array(
-				'chardonnay' => array(
-				  'name' => 'chardonnay',
-				  'title' => __( 'Chardonnay', 'oenology' ),
-				  'description' => __( 'Chardonnay is the ubiquitous white wine, produced from a versatile white grape.', 'oenology' ),
-				  'scheme' => 'light',
-				  'image' => get_template_directory_uri() . '/varietals/chardonnay.png'
-				  ),
-				'seyval-blanc' => array(
-				  'name' => 'seyval-blanc',
-				  'title' => __( 'Seyval Blanc', 'oenology' ),
-				  'description' => __( 'Seyval Blanc is a white grape, typically grown in cooler climates, that produces a wine with flavors of citrus and mineral.', 'oenology' ),
-				  'scheme' => 'light',
-				  'image' => get_template_directory_uri() . '/varietals/seyval-blanc.png'
-				  ),
-				'muscat' => array(
-				  'name' => 'muscat',
-				  'title' => __( 'Muscat', 'oenology' ),
-				  'description' => __( 'Muscat is a white grape with a pronounced flavor of grapes and spice, that produces a versatile wine from dry to sweet.', 'oenology' ),
-				  'scheme' => 'light',
-				  'image' => get_template_directory_uri() . '/varietals/muscat.png'
-				  ),
-				'solarized-light' => array(
-				  'name' => 'solarized-light',
-				  'title' => __( 'Solarized Light', 'oenology' ),
-				  'description' => __( 'DESCRIPTION GOES HERE.', 'oenology' ),
-				  'scheme' => 'light',
-				  'image' => get_template_directory_uri() . '/varietals/solarized-light.png'
-				  ),
-				'syrah' => array(
-				  'name' => 'syrah',
-				  'title' => __( 'Syrah', 'oenology' ),
-				  'description' => __( 'Syrah is a red grape that produces a full-bodied, almost inky-black wine with a spicy, earthy flavor and aroma.', 'oenology' ),
-				  'scheme' => 'dark',
-				  'image' => get_template_directory_uri() . '/varietals/syrah.png'
-				  ),
-				'malbec' => array(
-				  'name' => 'malbec',
-				  'title' => __( 'Malbec', 'oenology' ),
-				  'description' => __( 'Malbec is a red grape that produces exceedingly dark, inky red-violet wins with intense flavors.', 'oenology' ),
-				  'scheme' => 'dark',
-				  'image' => get_template_directory_uri() . '/varietals/malbec.png'
-				  ),
-				'pinot-noir' => array(
-				  'name' => 'pinot-noir',
-				  'title' => __( 'Pinot Noir', 'oenology' ),
-				  'description' => __( 'Pinot Noir is an extremely fickle yet versatile red grape from Burgundy.', 'oenology' ),
-				  'scheme' => 'dark',
-				  'image' => get_template_directory_uri() . '/varietals/pinot-noir.png'
-				  ),
-				'zinfandel' => array(
-				  'name' => 'zinfandel',
-				  'title' => __( 'Zinfandel', 'oenology' ),
-				  'description' => __( 'Zinfandel is a red grape known for its spicy, peppery, and berry characteristics.', 'oenology' ),
-				  'scheme' => 'dark',
-				  'image' => get_template_directory_uri() . '/varietals/zinfandel.png'
-				  ),
-				'solarized-dark' => array(
-				  'name' => 'solarized-dark',
-				  'title' => __( 'Solarized Dark', 'oenology' ),
-				  'description' => __( 'DESCRIPTION GOES HERE.', 'oenology' ),
-				  'scheme' => 'dark',
-				  'image' => get_template_directory_uri() . '/varietals/solarized-dark.png'
-				  ),
-				'cuvee' => array(
-				  'name' => 'cuvee',
-				  'title' => __( 'Cuvee', 'oenology' ),
-				  'description' => __( 'Cuvee is a term often used by wineries to describe a particularly high-quality batch of wine. Cuvee is suitable for Child-theming.', 'oenology' ),
-				  'scheme' => 'cuvee',
-				  'image' => get_template_directory_uri() . '/varietals/cuvee.png'
-				  ),
-			),
-			'description' => '',
-			'section' => 'varietal',
-			'tab' => 'varietals',
-			'since' => '1.1',
-			'default' => 'chardonnay'
-		),
-        'default_static_page_layout' => array(
-			'name' => 'default_static_page_layout',
-			'title' => __( 'Default Static Page Layout', 'oenology' ),
-			'type' => 'radio',
-			'valid_options' => array(
-				'one-column' => array(
-					'name' => 'one-column',
-					'title' => __( '1-Column', 'oenology' ),
-					'description' => __( 'One column (full-width content)', 'oenology' )
-				),
-				'two-column' => array(
-					'name' => 'two-column',
-					'title' => __( '2-Column', 'oenology' ),
-					'description' => __( 'Two columns (menu on left, content on right)', 'oenology' )
-				),
-				'two-column-right-sidebar' => array(
-					'name' => 'two-column-right-sidebar',
-					'title' => __( '2-Column, Right', 'oenology' ),
-					'description' => __( 'Two columns (content on left, sidebar on right)', 'oenology' )
-				),
-				'three-column' => array(
-					'name' => 'three-column',
-					'title' => __( '3-Column', 'oenology' ),
-					'description' => __( 'Three columns (menu on left, sidebar on right, content in the center)', 'oenology' )
-				),
-			),
-			'description' => __( 'Select the layout to be used as the default for static Pages when the "Default" page template is selected.', 'oenology' ),
-			'section' => 'default_layouts',
-			'tab' => 'layout',
-			'since' => '2.3',
-			'default' => 'three-column'			
-			),
-        'default_single_post_layout' => array(
-			'name' => 'default_single_post_layout',
-			'title' => __( 'Default Single Post Layout', 'oenology' ),
-			'type' => 'radio',
-			'valid_options' => array(
-				'one-column' => array(
-					'name' => 'one-column',
-					'title' => __( '1-Column', 'oenology' ),
-					'description' => __( 'One column (full-width content)', 'oenology' )
-				),
-				'two-column-left' => array(
-					'name' => 'two-column-left',
-					'title' => __( '2-Column, Left', 'oenology' ),
-					'description' => __( 'Two columns (content on the left, full-width sidebar on the right)', 'oenology' )
-				),
-				'two-column-right' => array(
-					'name' => 'two-column-right',
-					'title' => __( '2-Column, Right', 'oenology' ),
-					'description' => __( 'Two columns (content on the right, full-width sidebar on the left)', 'oenology' )
-				),
-				'three-column' => array(
-					'name' => 'three-column',
-					'title' => __( '3-Column', 'oenology' ),
-					'description' => __( 'Three columns (content in the center, half-width sidebars on the left and right)', 'oenology' )
-				),
-			),
-			'description' => __( 'Select the default layout to be used for single Blog Posts.', 'oenology' ),
-			'section' => 'default_layouts',
-			'tab' => 'layout',
-			'since' => '2.3',
-			'default' => 'two-column-left'			
-			),
-        'post_index_layout' => array(
-			'name' => 'post_index_layout',
-			'title' => __( 'Blog Posts Index Layout', 'oenology' ),
-			'type' => 'radio',
-			'valid_options' => array(
-				'one-column' => array(
-					'name' => 'one-column',
-					'title' => __( '1-Column', 'oenology' ),
-					'description' => __( 'One column (full-width content)', 'oenology' )
-				),
-				'two-column-left' => array(
-					'name' => 'two-column-left',
-					'title' => __( '2-Column, Left', 'oenology' ),
-					'description' => __( 'Two columns (content on the left, full-width sidebar on the right)', 'oenology' )
-				),
-				'two-column-right' => array(
-					'name' => 'two-column-right',
-					'title' => __( '2-Column, Right', 'oenology' ),
-					'description' => __( 'Two columns (content on the right, full-width sidebar on the left)', 'oenology' )
-				),
-				'three-column' => array(
-					'name' => 'three-column',
-					'title' => __( '3-Column', 'oenology' ),
-					'description' => __( 'Three columns (content in the center, half-width sidebars on the left and right)', 'oenology' )
-				),
-			),
-			'description' => __( 'Select the layout to be used for Blog Posts Index pages.', 'oenology' ),
-			'section' => 'default_layouts',
-			'tab' => 'layout',
-			'since' => '2.3',
-			'default' => 'two-column-left'			
-			),
-        'default_front_page_layout' => array(
-			'name' => 'default_front_page_layout',
-			'title' => __( 'Default Static Front Page Layout', 'oenology' ),
-			'type' => 'radio',
-			'valid_options' => array(
-				'one-column' => array(
-					'name' => 'one-column',
-					'title' => __( '1-Column', 'oenology' ),
-					'description' => __( 'One column (full-width content)', 'oenology' )
-				),
-				'two-column' => array(
-					'name' => 'two-column',
-					'title' => __( '2-Column', 'oenology' ),
-					'description' => __( 'Two columns (menu on left, content on right)', 'oenology' )
-				),
-				'three-column' => array(
-					'name' => 'three-column',
-					'title' => __( '3-Column', 'oenology' ),
-					'description' => __( 'Three columns (menu on left, sidebar on right, content in the center)', 'oenology' )
-				),
-			),
-			'description' => __( 'Select the layout to be used as the default for a static front page.', 'oenology' ),
-			'section' => 'default_layouts',
-			'tab' => 'layout',
-			'since' => '3.0',
-			'default' => 'one-column'			
-			),
-        'static_page_submenu_display' => array(
-			'name' => 'static_page_submenu_display',
-			'title' => __( 'Static Page Submenu Display', 'oenology' ),
-			'type' => 'select',
-			'valid_options' => array(
-				'always' => array(
-					'name' => 'always',
-					'title' => __( 'Always Display', 'oenology' )
-				),
-				'hierarchical' => array(
-					'name' => 'hierarchical',
-					'title' => __( 'Display Only on Hierarchical Pages', 'oenology' )
-				),
-				'never' => array(
-					'name' => 'never',
-					'title' => __( 'Never Display', 'oenology' )
-				)
-			),
-			'description' => __( 'Display the static Page left-column submenu?', 'oenology' ),
-			'section' => 'static_page_layout_options',
-			'tab' => 'layout',
-			'since' => '2.5',
-			'default' => 'always'
-		),
-        'widget_display_default_state' => array(
-			'name' => 'widget_display_default_state',
-			'title' => __( 'Default Widget Display State', 'oenology' ),
-			'type' => 'select',
-			'valid_options' => array(
-				'block' => array(
-					'name' => 'block',
-					'title' => __( 'Display Content', 'oenology' )
-				),
-				'none' => array(
-					'name' => 'none',
-					'title' => __( 'Hide Content', 'oenology' )
-				),
-			),
-			'description' => __( 'The content of each Widget can be displayed or hidden via the "Show/Hide" link. Should Widget content be displayed or hidden by default?', 'oenology' ),
-			'section' => 'widgets',
-			'tab' => 'general',
-			'since' => '3.0',
-			'default' => 'none'
-		),
-    );
-    return apply_filters( 'oenology_get_option_parameters', $options );
-}
 
 /**
  * Get Oenology Theme Options
@@ -448,147 +75,56 @@ function oenology_get_option_parameters() {
  * @return	array	$oenology_options	current values for all Theme options
  */
 function oenology_get_options() {
-	// Get the option defaults
-	$option_defaults = oenology_get_option_defaults();
-	// Globalize the variable that holds the Theme options
-	global $oenology_options;
-	// Parse the stored options with the defaults
-	$oenology_options = wp_parse_args( get_option( 'theme_oenology_options', array() ), $option_defaults );
-	// Return the parsed array
-	return $oenology_options;
+	// Return the array of stored options parsed with the defaults
+	return wp_parse_args( get_option( 'theme_oenology_options', array() ), oenology_get_option_defaults() );
 }
 
 /**
- * Separate settings by tab
+ * Return list of settings
  * 
- * Returns an array of tabs, each of
- * which is an indexed array of settings
- * included with the specified tab.
+ * Returns an array of settings.
  *
  * @uses	oenology_get_option_parameters()	defined in \functions\options.php
- * @uses	oenology_get_settings_page_tabs()	defined in \functions\options.php
  * 
- * @return	array	$settingsbytab	array of arrays of settings by tab
+ * @return	array	$settings	array of arrays of settings
  */
-function oenology_get_settings_by_tab() {
-	// Get the list of settings page tabs
-	$tabs = oenology_get_settings_page_tabs();
+function oenology_get_settings() {
 	// Initialize an array to hold
-	// an indexed array of tabnames
-	$settingsbytab = array();
-	// Loop through the array of tabs
-	foreach ( $tabs as $tab ) {
-		$tabname = $tab['name'];
-		// Add an indexed array key
-		// to the settings-by-tab 
-		// array for each tab name
-		$settingsbytab[] = $tabname;
+	// a list of settings
+	$settings = array();
+	// Loop through the option parameters array
+	foreach ( oenology_get_option_parameters() as $option_parameter ) {
+		// Add each setting to the array
+		$settings[] = $option_parameter['name'];
 	}
-	// Get the array of option parameters
-	$option_parameters = oenology_get_option_parameters();
-	// Loop through the option parameters
-	// array
-	foreach ( $option_parameters as $option_parameter ) {
-		$optiontab = $option_parameter['tab'];
-		$optionname = $option_parameter['name'];
-		// Add an indexed array key to the 
-		// settings-by-tab array for each
-		// setting associated with each tab
-		$settingsbytab[$optiontab][] = $optionname;
-		$settingsbytab['all'][] = $optionname;
-	}
-	// Return the settings-by-tab
-	// array
-	return $settingsbytab;
-}
- 
-/**
- * Oenology Theme Admin Settings Page Tabs
- * 
- * Array that holds all of the tabs for the
- * Oenology Theme Settings Page. Each tab
- * key holds an array that defines the 
- * sections for each tab, including the
- * description text.
- * 
- * @uses	oenology_get_varietal_text()	defined in \functions\options-register.php
- * 
- * @return	array	$tabs	array of arrays of tab parameters
- */
-function oenology_get_settings_page_tabs() {
-	
-	$tabs = array( 
-        'varietals' => array(
-			'name' => 'varietals',
-			'title' => __( 'Varietals', 'oenology' ),
-			'sections' => array(
-				'varietal' => array(
-					'name' => 'varietal',
-					'title' => __( 'Varietal Options', 'oenology' ),
-					'description' => oenology_get_varietal_text()
-				)
-			)
-		),
-        'layout' => array(
-			'name' => 'layout',
-			'title' => __( 'Layout', 'oenology' ),
-			'sections' => array(
-				'default_layouts' => array(
-					'name' => 'default_layouts',
-					'title' => __( 'Default Layouts', 'oenology' ),
-					'description' => __( 'Manage default layouts for static Pages, single Blog Posts, and Blog Post Index pages', 'oenology' )
-				),
-				'static_page_layout_options' => array(
-					'name' => 'static_page_layout_options',
-					'title' => __( 'Static Page Layout Options', 'oenology' ),
-					'description' => __( 'Manage options related to static Page layout', 'oenology' )
-				)
-			)
-		),
-        'general' => array(
-			'name' => 'general',
-			'title' => __( 'General', 'oenology' ),
-			'sections' => array(
-				'header' => array(
-					'name' => 'header',
-					'title' => __( 'Header Options', 'oenology' ),
-					'description' => __( 'Manage Header options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
-				),
-				'widgets' => array(
-					'name' => 'widgets',
-					'title' => __( 'Widget Display Options', 'oenology' ),
-					'description' => __( 'Manage Widget options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
-				),
-				'footer' => array(
-					'name' => 'footer',
-					'title' => __( 'Footer Options', 'oenology' ),
-					'description' => __( 'Manage Footer options for the Oenology Theme. Refer to the contextual help screen for descriptions and help regarding each theme option.', 'oenology' )
-				)
-			)
-		),
-    );
-	return apply_filters( 'oenology_get_settings_page_tabs', $tabs );
+	// Return the settings array
+	return $settings;
 }
 
 /**
- * Add Section Text for the Varietal Settings Section
+ * Oenology Theme Option Defaults
+ * 
+ * Returns an associative array that holds 
+ * all of the default values for all Theme 
+ * options.
+ * 
+ * @uses	oenology_get_option_parameters()	defined in \functions\options.php
+ * 
+ * @return	array	$defaults	associative array of option defaults
  */
-function oenology_get_varietal_text() {
-
-	$oenology_options = oenology_get_options();
-	$option_parameters = oenology_get_option_parameters();
-	$oenology_varietals = $option_parameters['varietal']['valid_options'];
-	foreach ( $oenology_varietals as $varietal ) {
-		if ( $varietal['name'] == $oenology_options['varietal'] ) {
-		      $oenology_current_varietal = $varietal;
-		}
+function oenology_get_option_defaults() {
+	// Initialize the array to hold
+	// the default values for all
+	// Theme options
+	$option_defaults = array();
+	// Loop through the option parameters array
+	foreach ( oenology_get_option_parameters() as $option_parameter ) {
+		$name = $option_parameter['name'];
+		// Add an associative array key
+		// to the defaults array for each
+		// option in the parameters array
+		$option_defaults[$option_parameter['name']] = $option_parameter['default'];
 	}
-	$varietal_thumbnail_url = oenology_locate_template_uri( array( 'varietals/' . $oenology_options['varietal'] . '.png' ), false, false ); 
-	$text = '';
-	$text .= '<p>"Varietal" refers to wine made from exclusively or predominantly one variety of grape. Each varietal has unique flavor and aromatic characteristics. Refer to the contextual help screen for descriptions and help regarding each theme option.</p>';
-	$text .= '<img class="oenology-varietal-thumb" src="' . $varietal_thumbnail_url . '" width="150px" height="110px" alt="' . $oenology_options['varietal'] . '" />';
-	$text .= '<h4>Current Varietal</h4>';
-	$text .= '<dl><dt><strong>' . $oenology_current_varietal['title'] . '</strong></dt><dd>' . $oenology_current_varietal['description'] . '</dd></dl>';
-	return $text;
+	// Return the defaults array
+	return apply_filters( 'oenology_option_defaults', $option_defaults );
 }
-?>
