@@ -17,7 +17,6 @@
  * - the_title
  * - use_default_gallery_style
  * - wp_list_categories
- * - wp_title
  * 
  * Callbacks
  * - wp_list_comments
@@ -291,64 +290,6 @@ function oenology_show_current_cat_on_single($output) {
 }
 // Hook current_cat function into 'wp_list_categories'
 add_filter('wp_list_categories', 'oenology_show_current_cat_on_single');
-
-/**
- * Output optimized document titles
- * 
- * Filter Hook: wp_title
- * 
- * Filter 'wp_title' to output contextual content
- * 
- * @link	http://codex.wordpress.org/Function_Reference/get_bloginfo	Codex reference: get_bloginfo()
- * @link	http://codex.wordpress.org/Function_Reference/get_search_query	Codex reference: get_search_query()
- * @link	http://codex.wordpress.org/Function_Reference/is_feed	Codex reference: is_feed()
- * @link	http://codex.wordpress.org/Function_Reference/is_home	Codex reference: is_home()
- * @link	http://codex.wordpress.org/Function_Reference/is_front_page	Codex reference: is_front_page()
- * @link	http://codex.wordpress.org/Function_Reference/is_search	Codex reference: is_search()
- * @link	http://php.net/manual/en/function.max.php	PHP reference: max()
- * @link	http://php.net/manual/en/function.sprintf.php	PHP reference: sprintf()
- * 
- * @since	Oenology 2.0
- */
-function oenology_filter_wp_title( $title, $separator ) { // taken from TwentyTen 1.0
-	// Don't affect wp_title() calls in feeds.
-	if ( is_feed() )
-		return $title;
-
-	// The $paged global variable contains the page number of a listing of posts.
-	// The $page global variable contains the page number of a single post that is paged.
-	// We'll display whichever one applies, if we're not looking at the first page.
-	global $paged, $page;
-
-	if ( is_search() ) {
-		// If we're a search, let's start over:
-		$title = sprintf( 'Search results for %s', '"' . get_search_query() . '"' );
-		// Add a page number if we're on page 2 or more:
-		if ( $paged >= 2 )
-			$title .= " $separator " . sprintf( 'Page %s', $paged );
-		// Add the site name to the end:
-		$title .= " $separator " . get_bloginfo( 'name', 'display' );
-		// We're done. Let's send the new title back to wp_title():
-		return $title;
-	}
-
-	// Otherwise, let's start by adding the site name to the end:
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// If we have a site description and we're on the home/front page, add the description:
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title .= " $separator " . $site_description;
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $separator " . sprintf( 'Page %s', max( $paged, $page ) );
-
-	// Return the new title to wp_title():
-	return $title;
-}
-// Hook into 'wp_title'
-add_filter( 'wp_title', 'oenology_filter_wp_title', 10, 2 );
 
 /**
  * Enqueue respond.js script

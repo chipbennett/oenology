@@ -62,7 +62,6 @@ require( get_template_directory() . '/functions/theme-setup.php' );
  * - filter get_comments_number
  * - filter the_title
  * - filter wp_enqueue_scripts
- * - filter wp_title
  * - filter wp_list_categories
  */
 require( get_template_directory() . '/functions/wordpress-hooks.php' );

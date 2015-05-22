@@ -271,6 +271,20 @@ function oenology_setup() {
 	
 	// Add Theme support for Post Formats
 	add_theme_support( 'post-formats', $supportedpostformats );
+
+	/*
+	 * Add Theme support for Title tag
+	 * 
+	 * Let core handle the document title
+	 * 
+	 * Note: as of WordPress 4.1, 
+	 * add_theme_support( 'title-tag' ) replaces
+	 * use of the wp_title() template tag
+	 * in the document head, in header.php.
+	 * 
+	 * @since	WordPress 4.1
+	 */
+	add_theme_support( 'title-tag' );
 	
 	/*
 	 * Add Theme support for bbPress

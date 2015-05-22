@@ -120,34 +120,6 @@ language_attributes();
 	bloginfo( 'charset' ); 
 	?>" />
 
-	<title><?php 
-	/**
-	 * Output HTML <title> tag content,
-	 * based on current page context
-	 * 
-	 * Codex reference: {@link http://codex.wordpress.org/Template_Tags/wp_title wp_title}
-	 * 
-	 * Outputs HTML <title> tag content, including context-specific content, 
-	 * such as the Post Title for single posts, the Date for date-based archive, 
-	 * Category for category archive, etc.
-	 * 
-	 * This content can be filtered, via the 'wp_title' filter. Modifying output via this filter 
-	 * rather than hard-coding output inside the <title> tags is the best-practice approach, as 
-	 * this approach facilitates modification of the title content by Plugins (or by future core 
-	 * changes). Oenology applies custom content using this filter, via the oenology_filter_wp_title() 
-	 * function in \functions\wordpress-hooks.php.
-	 * 
-	 * @see		oenology_filter_wp_title()
-	 * 
-	 * @param	string	$sep			separator to use before/after Post Title; default: '&raquo;'
-	 * @param	bool	$echo			whether to echo or return output; default: true
-	 * @param	string	$seplocation	location of separator, left or right of Post Title; default: none (left)
-	 * 
-	 * @return	string
-	 */
-	wp_title( '&raquo;', true, 'right' ); 
-	?></title>
-
 	<?php 
 	/**
 	 * Fire the 'wp_head' action hook
