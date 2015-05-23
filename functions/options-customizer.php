@@ -76,76 +76,57 @@ function oenology_register_theme_customizer( $wp_customize ){
 	foreach ( $option_parameters as $option_parameter ) {
 		// Add $option_parameter setting
 		$wp_customize->add_setting( 'theme_oenology_options[' . $option_parameter['name'] . ']', array(
-			'default'        => $option_parameter['default'],
-			'type'           => 'option',
+			'default'			=> $option_parameter['default'],
+			'type'				=> 'option',
 		) );
-
-		// Add $option_parameter control
-		if ( 'text' == $option_parameter['type'] ) {
-			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
-				'label'		=> $option_parameter['title'],
-				'section'	=> 'oenology_' . $option_parameter['section'],
-				'settings'	=> 'theme_oenology_options['. $option_parameter['name'] . ']',
-				'type'		=> 'text',
-				'label'		=> $option_parameter['title'],
-				'description' => $option_parameter['description'],
-			) );
-
-		} else if ( 'checkbox' == $option_parameter['type'] ) {
-			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
-				'label'   => $option_parameter['title'],
-				'section' => 'oenology_' . $option_parameter['section'],
-				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
-				'type'    => 'checkbox',
-				'label'		=> $option_parameter['title'],
-				'description' => $option_parameter['description'],
-			) );
-
-		} else if ( 'radio' == $option_parameter['type'] ) {
-			$valid_options = array();
+		
+		// Control parameters array
+		$customizer_control_parameters = array(
+			'label'		=> $option_parameter['title'],
+			'section'	=> 'oenology_' . $option_parameter['section'],
+			'settings'	=> 'theme_oenology_options['. $option_parameter['name'] . ']',
+			'type'		=> $option_parameter['type'],
+			'label'		=> $option_parameter['title'],
+			'description' => $option_parameter['description'],
+		);
+		// Add choices parameter for control types
+		// that require it (select, radio, and custom variants)
+		if ( in_array( $option_parameter['type'], array( 'select', 'radio', 'radio-image' ) ) ) {
+			// Get valid options
+			$choices = array();
 			foreach ( $option_parameter['valid_options'] as $valid_option ) {
-				$valid_options[$valid_option['name']] = $valid_option['title'];
+				// Choices are an associatave array, as 
+				// name => title
+				if ( in_array( $option_parameter['type'], array( 'select', 'radio' ) ) ) {
+					$choices[$valid_option['name']] = $valid_option['title'];
+				}
+				// Choices are an associatave array, as 
+				// name => image
+				else if ( in_array( $option_parameter['type'], array( 'radio-image' ) ) ) {
+					$choices[$valid_option['name']] = $valid_option['image'];
+				}
 			}
-			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
-				'label'   => $option_parameter['title'],
-				'section' => 'oenology_' . $option_parameter['section'],
-				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
-				'type'    => 'radio',
-				'label'		=> $option_parameter['title'],
-				'description' => $option_parameter['description'],
-				'choices'    => $valid_options,
-			) );
+			$customizer_control_parameters['choices'] = $choices;
+		}
+		
+		// Add $option_parameter controls for built-in control types		
+		if ( in_array( $option_parameter['type'], array( 'text', 'checkbox', 'radio', 'select', 'dropdown_pages', 'textarea' ) ) ) {
+			$wp_customize->add_control( 
+				'oenology_' . $option_parameter['name'], 
+				$customizer_control_parameters 
+			);
+		}
+		// Add $option_parameter control for custom radio-image type
+		else if ( 'radio-image' == $option_parameter['type'] ) {
+			$wp_customize->add_control( 
+				new Oenology_Custom_Radio_Image_Control( 
+					$wp_customize, 
+					'oenology_' . $option_parameter['name'], 
+					$customizer_control_parameters 
+				) 
+			);
+		}
 
-		} else if ( 'select' == $option_parameter['type'] ) {
-			$valid_options = array();
-			foreach ( $option_parameter['valid_options'] as $valid_option ) {
-				$valid_options[$valid_option['name']] = $valid_option['title'];
-			}
-			$wp_customize->add_control( 'oenology_' . $option_parameter['name'], array(
-				'label'   => $option_parameter['title'],
-				'section' => 'oenology_' . $option_parameter['section'],
-				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
-				'type'    => 'select',
-				'label'		=> $option_parameter['title'],
-				'description' => $option_parameter['description'],
-				'choices'    => $valid_options,
-			) );
-		} else if ( 'radio-image' == $option_parameter['type'] ) {
-			$valid_options = array();
-			foreach ( $option_parameter['valid_options'] as $valid_option ) {
-				$valid_options[$valid_option['name']] = $valid_option['image'];
-			}
-			$wp_customize->add_control( new Oenology_Custom_Radio_Image_Control( $wp_customize, 'oenology_' . $option_parameter['name'], array(
-				'label'   => $option_parameter['title'],
-				'section' => 'oenology_' . $option_parameter['section'],
-				'settings'   => 'theme_oenology_options['. $option_parameter['name'] . ']',
-				'type'    => 'radio-image',
-				'label'		=> $option_parameter['title'],
-				'description' => $option_parameter['description'],
-				'choices'    => $valid_options,
-			) ) );
-
-		} 
 	}
 
 }
