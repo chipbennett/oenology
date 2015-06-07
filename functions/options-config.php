@@ -32,6 +32,7 @@ function oenology_get_option_parameters() {
 			'name' => 'header_nav_menu_position',
 			'title' => __( 'Header Nav Menu Position', 'oenology' ),
 			'type' => 'select',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'above' => array(
 					'name' => 'above',
@@ -56,6 +57,7 @@ function oenology_get_option_parameters() {
 			'name' => 'header_nav_menu_depth',
 			'title' => __( 'Header Nav Menu Depth', 'oenology' ),
 			'type' => 'select',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'1' => array(
 					'name' => 1,
@@ -80,6 +82,7 @@ function oenology_get_option_parameters() {
 			'name' => 'header_nav_menu_item_width',
 			'title' => __( 'Header Nav Menu Item Width', 'oenology' ),
 			'type' => 'select',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'fixed' => array(
 					'name' => 'fixed',
@@ -100,6 +103,7 @@ function oenology_get_option_parameters() {
 			'name' => 'display_footer_credit',
 			'title' => __( 'Display Footer Credit', 'oenology' ),
 			'type' => 'select',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'false' => array(
 					'name' => 'false',
@@ -120,6 +124,7 @@ function oenology_get_option_parameters() {
 			'name' => 'varietal',
 			'title' => __( 'Varietal', 'oenology' ),
 			'type' => 'radio-image',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'chardonnay' => array(
 				  'name' => 'chardonnay',
@@ -203,6 +208,7 @@ function oenology_get_option_parameters() {
 			'name' => 'default_static_page_layout',
 			'title' => __( 'Default Static Page Layout', 'oenology' ),
 			'type' => 'radio-image',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'one-column' => array(
 					'name' => 'one-column',
@@ -239,6 +245,7 @@ function oenology_get_option_parameters() {
 			'name' => 'default_single_post_layout',
 			'title' => __( 'Default Single Post Layout', 'oenology' ),
 			'type' => 'radio-image',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'one-column' => array(
 					'name' => 'one-column',
@@ -275,6 +282,7 @@ function oenology_get_option_parameters() {
 			'name' => 'post_index_layout',
 			'title' => __( 'Blog Posts Index Layout', 'oenology' ),
 			'type' => 'radio-image',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'one-column' => array(
 					'name' => 'one-column',
@@ -311,6 +319,7 @@ function oenology_get_option_parameters() {
 			'name' => 'default_front_page_layout',
 			'title' => __( 'Default Static Front Page Layout', 'oenology' ),
 			'type' => 'radio-image',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'one-column' => array(
 					'name' => 'one-column',
@@ -341,6 +350,7 @@ function oenology_get_option_parameters() {
 			'name' => 'static_page_submenu_display',
 			'title' => __( 'Static Page Submenu Display', 'oenology' ),
 			'type' => 'select',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'always' => array(
 					'name' => 'always',
@@ -365,6 +375,7 @@ function oenology_get_option_parameters() {
 			'name' => 'widget_display_default_state',
 			'title' => __( 'Default Widget Display State', 'oenology' ),
 			'type' => 'select',
+			'sanitize' => 'select',
 			'valid_options' => array(
 				'block' => array(
 					'name' => 'block',
@@ -403,6 +414,7 @@ function oenology_get_customizer_panels() {
         'varietals' => array(
 			'name' => 'varietals',
 			'title' => __( 'Theme Color Options', 'oenology' ),
+			'description' => __( 'Manage the color scheme for the Oenology Theme.', 'oenology' ),
 			'sections' => array(
 				'varietal' => array(
 					'name' => 'varietal',
@@ -414,6 +426,7 @@ function oenology_get_customizer_panels() {
         'layout' => array(
 			'name' => 'layout',
 			'title' => __( 'Theme Layout Options', 'oenology' ),
+			'description' => __( 'Manage layout options for static pages, single posts, and the blog posts index for the Oenology Theme.', 'oenology' ),
 			'sections' => array(
 				'default_layouts' => array(
 					'name' => 'default_layouts',
@@ -430,6 +443,7 @@ function oenology_get_customizer_panels() {
         'general' => array(
 			'name' => 'general',
 			'title' => __( 'Theme General Options', 'oenology' ),
+			'description' => __( 'Manage header, widget, and footer options for the Oenology Theme.', 'oenology' ),
 			'sections' => array(
 				'header' => array(
 					'name' => 'header',

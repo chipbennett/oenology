@@ -25,42 +25,6 @@
 global $oenology_options;
 
 /**
- * Oenology Theme Options API Implementation
- *
- * Implement the WordPress Options API for the 
- * Oenology Theme Settings.
- * 
- * @link	http://codex.wordpress.org/Options_API	Codex Reference: Options API
- * @link	http://ottopress.com/2009/wordpress-settings-api-tutorial/	Otto
- * @link	http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/	Ozh
- */
-function oenology_register_options(){
-
-	/**
-	 * Register Theme Settings
-	 * 
-	 * Register theme_oenology_options array to hold
-	 * all Theme options.
-	 * 
-	 * @link	http://codex.wordpress.org/Function_Reference/register_setting	Codex Reference: register_setting()
-	 * 
-	 * @param	string		$option_group		Unique Settings API identifier; passed to settings_fields() call
-	 * @param	string		$option_name		Name of the wp_options database table entry
-	 * @param	callback	$sanitize_callback	Name of the callback function in which user input data are sanitized
-	 */
-	register_setting( 
-		// $option_group
-		'theme_oenology_options', 
-		// $option_name
-		'theme_oenology_options', 
-		// $sanitize_callback
-		'oenology_options_validate' 
-	);
-}
-// Options API options initialization and validation
-add_action( 'admin_init', 'oenology_register_options' );
-
-/**
  * Include the Theme Options Configuration Function File
  * 
  * options-config.php includes the functions that return
@@ -151,79 +115,39 @@ function oenology_get_option_defaults() {
 
 
 /**
- * Theme register_setting() sanitize callback
- * 
- * Validate and whitelist user-input data before updating Theme 
- * Options in the database. Only whitelisted options are passed
- * back to the database, and user-input data for all whitelisted
- * options are sanitized.
- * 
- * @link	http://codex.wordpress.org/Data_Validation	Codex Reference: Data Validation
- * 
- * @param	array	$input	Raw user-input data submitted via the Theme Settings page
- * @return	array	$input	Sanitized user-input data passed to the database
+ * Sanitize Checkbox (True/False) Settings
  */
-function oenology_options_validate( $input ) {
-	// This is the "whitelist": current settings
-	$valid_input = oenology_get_options();
-	// Get the array of Theme settings
-	$settings = oenology_get_settings();
-	// Get the array of option parameters
-	$option_parameters = oenology_get_option_parameters();
-	// Get the array of option defaults
-	$option_defaults = oenology_get_option_defaults();
-	
-	// Determine what type of submit was input
-	$submittype = ( ! empty( $input['reset'] ) ? 'reset' : 'submit' );
-	
-	// Loop through each setting
-	foreach ( $settings as $setting ) {
-		// If no option is selected, set the default
-		$valid_input[$setting] = ( ! isset( $input[$setting] ) ? $option_defaults[$setting] : $input[$setting] );
-		
-		// If submit, validate/sanitize $input
-		if ( 'submit' == $submittype ) {
-		
-			// Get the setting details from the defaults array
-			$optiondetails = $option_parameters[$setting];
-			// Get the array of valid options, if applicable
-			$valid_options = ( isset( $optiondetails['valid_options'] ) ? $optiondetails['valid_options'] : false );
-			
-			// Validate checkbox fields
-			if ( 'checkbox' == $optiondetails['type'] ) {
-				// If input value is set and is true, return true; otherwise return false
-				$valid_input[$setting] = ( ( isset( $input[$setting] ) && true == $input[$setting] ) ? true : false );
-			}
-			// Validate radio button and radio image fields
-			else if ( 'radio' == $optiondetails['type'] || 'radio-image' == $optiondetails['type'] ) {
-				// Only update setting if input value is in the list of valid options
-				$valid_input[$setting] = ( array_key_exists( $input[$setting], $valid_options ) ? $input[$setting] : $valid_input[$setting] );
-			}
-			// Validate select fields
-			else if ( 'select' == $optiondetails['type'] ) {
-				// Only update setting if input value is in the list of valid options
-				$valid_input[$setting] = ( array_key_exists( $input[$setting], $valid_options ) ? $input[$setting] : $valid_input[$setting] );
-			}
-			// Validate text input and textarea fields
-			else if ( ( 'text' == $optiondetails['type'] || 'textarea' == $optiondetails['type'] ) ) {
-				// Validate no-HTML content
-				if ( 'nohtml' == $optiondetails['sanitize'] ) {
-					// Pass input data through the wp_filter_nohtml_kses filter
-					$valid_input[$setting] = wp_filter_nohtml_kses( $input[$setting] );
-				}
-				// Validate HTML content
-				if ( 'html' == $optiondetails['sanitize'] ) {
-					// Pass input data through the wp_filter_kses filter
-					$valid_input[$setting] = wp_filter_kses( $input[$setting] );
-				}
-			}
-		} 
-		// If reset, reset defaults
-		elseif ( 'reset' == $submittype ) {
-			// Set $setting to the default value
-			$valid_input[$setting] = $option_defaults[$setting];
-		}
-	}
-	return $valid_input;		
+function oenology_sanitize_checkbox( $input ) {
+	return ( ( isset( $input ) && true == $input ) ? true : false );
+}
 
+
+/**
+ * Sanitize HTML Text Settings
+ */
+function oenology_sanitize_html( $input ) {
+	return wp_filter_kses( $input );
+}
+
+
+/**
+ * Sanitize No-HTML Text Settings
+ */
+function oenology_sanitize_nohtml( $input ) {
+	return wp_filter_nohtml_kses( $input );
+}
+
+
+/**
+ * Sanitize: Select
+ */
+function oenology_sanitize_select( $input, $setting ) {
+	// Ensure input is a slug
+	$input = sanitize_key( $input );
+	// Get list of choices from the control
+	// associated with the setting
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+	// If the input is a valid key, return it;
+	// otherwise, return the default
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }

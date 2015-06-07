@@ -52,7 +52,7 @@ function oenology_register_theme_customizer( $wp_customize ){
 				'capability' 		=> 'edit_theme_options',
 				'theme_supports'	=> '',
 				'title' 			=> $panel['title'],
-				'description' 		=> __( '', 'oenology' ),
+				'description' 		=> $panel['description'],
 			) 
 		);
 		// Add Sections
@@ -75,10 +75,14 @@ function oenology_register_theme_customizer( $wp_customize ){
 	// Add Settings
 	foreach ( $option_parameters as $option_parameter ) {
 		// Add $option_parameter setting
-		$wp_customize->add_setting( 'theme_oenology_options[' . $option_parameter['name'] . ']', array(
-			'default'			=> $option_parameter['default'],
-			'type'				=> 'option',
-		) );
+		$wp_customize->add_setting( 
+			'theme_oenology_options[' . $option_parameter['name'] . ']', 
+			array(
+				'default'			=> $option_parameter['default'],
+				'type'				=> 'option',
+				'sanitize_callback'	=> 'oenology_sanitize_' . $option_parameter['sanitize']
+			) 
+		);
 		
 		// Control parameters array
 		$customizer_control_parameters = array(
@@ -95,12 +99,12 @@ function oenology_register_theme_customizer( $wp_customize ){
 			// Get valid options
 			$choices = array();
 			foreach ( $option_parameter['valid_options'] as $valid_option ) {
-				// Choices are an associatave array, as 
+				// Choices are an associative array, as 
 				// name => title
 				if ( in_array( $option_parameter['type'], array( 'select', 'radio' ) ) ) {
 					$choices[$valid_option['name']] = $valid_option['title'];
 				}
-				// Choices are an associatave array, as 
+				// Choices are an associative array, as 
 				// name => image
 				else if ( in_array( $option_parameter['type'], array( 'radio-image' ) ) ) {
 					$choices[$valid_option['name']] = $valid_option['image'];
@@ -112,7 +116,7 @@ function oenology_register_theme_customizer( $wp_customize ){
 		// Add $option_parameter controls for built-in control types		
 		if ( in_array( $option_parameter['type'], array( 'text', 'checkbox', 'radio', 'select', 'dropdown_pages', 'textarea' ) ) ) {
 			$wp_customize->add_control( 
-				'oenology_' . $option_parameter['name'], 
+				'theme_oenology_options[' . $option_parameter['name'] . ']', 
 				$customizer_control_parameters 
 			);
 		}
@@ -121,7 +125,7 @@ function oenology_register_theme_customizer( $wp_customize ){
 			$wp_customize->add_control( 
 				new Oenology_Custom_Radio_Image_Control( 
 					$wp_customize, 
-					'oenology_' . $option_parameter['name'], 
+					'theme_oenology_options[' . $option_parameter['name'] . ']', 
 					$customizer_control_parameters 
 				) 
 			);
