@@ -91,7 +91,7 @@ function oenology_breadcrumb() {
 			$date_string = '';
 			$currentLocation = get_the_time('Y'); 
 		}
-		$hierarchy = $delimiter . sprintf( __( 'Posts Published in: %s', 'oenology' ), $date_string ); 
+		$hierarchy = $delimiter . __( sprintf( 'Posts Published in: %s', $date_string ), 'oenology' ); 
     } 
 	// Define Category Hierarchy Crumbs for Single Posts
 	elseif ( is_singular( 'post' ) ) { 
@@ -751,7 +751,7 @@ function oenology_get_custom_category_list() {
 	foreach( $customcats as $customcat ) {
 		$customcathref = get_category_link( $customcat->term_id );
 		$customcatfeedlink = get_category_feed_link( $customcat->term_id );
-		$customcatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Category Name', 'oenology' ), $customcat->name ) ) . '" href="' . $customcatfeedlink . '" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="' . $customcathref . '">' . $customcat->name . '</a> (' . $customcat->count . ')</li>';
+		$customcatlist .= '<li><a title="' . esc_attr_x( sprintf( 'Subscribe to the %s news feed', $customcat->name ), 'Category Name', 'oenology' ) . '" href="' . $customcatfeedlink . '" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="' . $customcathref . '">' . $customcat->name . '</a> (' . $customcat->count . ')</li>';
 	}
 	return apply_filters( 'oenology_get_custom_category_list', $customcatlist );
 }
@@ -766,7 +766,7 @@ function oenology_get_custom_post_format_list() {
 	foreach( $postformatterms as $term ) {
 		$termslug = substr( $term->slug, 12 );
 		$termlink = get_post_format_link( $termslug );
-		$postformatlist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s news feed', 'Post Format', 'oenology' ), $term->name ) ) . '" href="' . $termlink .'feed/" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="'. $termlink .'">' . $term->name . '</a> (' . $term->count . ')</li>';
+		$postformatlist .= '<li><a title="' . esc_attr_x( sprintf( 'Subscribe to the %s news feed', $term->name ), 'Post Format', 'oenology' ) . '" href="' . $termlink .'feed/" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="'. $termlink .'">' . $term->name . '</a> (' . $term->count . ')</li>';
 	}
 	return apply_filters( 'oenology_get_custom_post_format_list', $postformatlist );
 }
@@ -781,7 +781,7 @@ function oenology_get_custom_tag_list() {
 	foreach( $customtags as $customtag ) {
 		$customtaghref = get_tag_link( $customtag->term_id );
 		$customtagfeedlink = get_tag_feed_link( $customtag->term_id );
-		$customtaglist .= '<li><a title="' . esc_attr( sprintf( _x( 'Subscribe to the %s feed', 'Tag Name', 'oenology' ), $customtag->name ) ) . '" href="' . $customtagfeedlink . '" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="' . $customtaghref . '">' . $customtag->name . '</a> (' . $customtag->count . ')</li>';
+		$customtaglist .= '<li><a title="' . esc_attr_x( sprintf( 'Subscribe to the %s feed', $customtag->name ), 'Tag Name', 'oenology' ) . '" href="' . $customtagfeedlink . '" class="custom-taxonomy-list-feed genericon"><span class="genericon-feed"></span></a><a href="' . $customtaghref . '">' . $customtag->name . '</a> (' . $customtag->count . ')</li>';
 	} 
 	return apply_filters( 'oenology_get_custom_tag_list', $customtaglist );
 }
@@ -1226,7 +1226,7 @@ function oenology_get_support_feed() {
 function oenology_get_widget_args() {
 	$widget_args = array(	
 		// Widget container opening tag, with classes
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div class="widget %s">',
 		// Widget container closing tag
 		'after_widget' => '</div>' . oenology_showhide_widget_content_close(),
 		// Widget Title container opening tag, with classes

@@ -32,9 +32,9 @@
 // @return	mixed	Widget output
 //
 // Calls the custom Widget "Oenology Categories", with Widget name as Title
-the_widget( 'oenology_widget_categories' , 'title=Oenology Categories' , oenology_get_widget_args() );
+the_widget( 'oenology_widget_categories' , array( 'title=Oenology Categories' ), oenology_get_widget_args() );
 // Calls the custom Widget "Oenology Tags", with Widget name as Title
-the_widget( 'oenology_widget_tags' , 'title=Oenology Tags' , oenology_get_widget_args() );
+the_widget( 'oenology_widget_tags' , array( 'title=Oenology Tags' ), oenology_get_widget_args() );
 // Calls the custom Widget "Oenology Post Formats", with Widget name as Title
-the_widget( 'oenology_widget_post_formats' , 'title=Oenology Post Formats' , oenology_get_widget_args() );
+the_widget( 'oenology_widget_post_formats' , array( 'title=Oenology Post Formats' ), oenology_get_widget_args() );
 ?>
