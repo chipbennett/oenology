@@ -88,6 +88,14 @@ function oenology_enqueue_front_end_stylesheets() {
 		$header_nav_menu .= '#nav ul li a { width: auto; min-width: 100px; }';
 		$header_nav_menu .= '#nav ul ul { width: auto; }';
 		wp_add_inline_style( 'oenology-main', $header_nav_menu );
+
+		/**
+		 * Add fonts
+		 */
+		wp_enqueue_style( 
+			'oenology-fonts', 
+			oenology_locate_template_uri( array( 'css/fonts.css' ), false, false ) 
+		);
 	}
 
 	// Fetch color scheme
@@ -98,14 +106,6 @@ function oenology_enqueue_front_end_stylesheets() {
 	 * if the Cuvee (blank) varietal is not selected
 	 */
 	if ( 'cuvee' != $color_scheme ) {
-
-		/**
-		 * Add font color scheme
-		 */
-		wp_enqueue_style( 
-			'oenology-fonts', 
-			oenology_locate_template_uri( array( 'css/fonts.css' ), false, false ) 
-		);
 
 		/**
 		 * Add font color scheme
