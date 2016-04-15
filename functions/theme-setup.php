@@ -285,6 +285,26 @@ function oenology_setup() {
 	 * @since	WordPress 4.1
 	 */
 	add_theme_support( 'title-tag' );
+
+	/*
+	 * Add Theme support for Custom Logo
+	 * 
+	 * Allow users to specify a custom logo. The 
+	 * logo can be configured in the Customizer, via 
+	 * Appearance -> Customize -> Site Identity -> Site Logo
+	 * 
+	 * @since	WordPress 4.5
+	 */
+	add_theme_support( 'custom-logo', array( 
+		// Logo height, in pixels
+		'height'		=> 100,
+		// Logo width, in pixels
+		'width'			=> 200,
+		// Allow logos with flexible (i.e. larger) heights
+		'flex-height'	=> false,
+		// Allow logos with flexible (i.e. larger) widths
+		'flex-width'	=> false
+	) );
 	
 	/*
 	 * Add Theme support for bbPress

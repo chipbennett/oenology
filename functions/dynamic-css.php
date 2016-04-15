@@ -89,7 +89,14 @@ function oenology_enqueue_front_end_stylesheets() {
 		$header_nav_menu .= '#nav ul ul { width: auto; }';
 		wp_add_inline_style( 'oenology-main', $header_nav_menu );
 	}
-
+	/** 
+	 * Add logo style
+	 */
+	if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		$custom_logo = 'img.custom-logo { max-height: 100px; width: auto; float: left; padding-right: 10px; }';
+		$custom_logo .= '#header #site-header-text, #header p { text-align: left; }';
+		wp_add_inline_style( 'oenology-main', $custom_logo );
+	}
 	/**
 	 * Add fonts
 	 */
