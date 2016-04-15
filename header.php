@@ -60,11 +60,15 @@ global $oenology_options;
  */
 $oenology_options = oenology_get_options();
 
-?><!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+/**
+* Fire the 'oenology_hook_html_before' custom action hook
+* 
+* @param	null
+* @return	mixed	any output hooked into 'oenology_hook_html_before'
+*/
+oenology_hook_html_before(); 
 
-<html xmlns="http://www.w3.org/1999/xhtml" <?php 
+?><html xmlns="http://www.w3.org/1999/xhtml" <?php 
 /**
  * Output language attributes for the <html> tag
  * 

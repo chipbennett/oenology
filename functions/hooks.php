@@ -78,6 +78,7 @@ function oenology_hook_content_before() {
  */
 function oenology_hook_extent_after() {
 	do_action( 'oenology_hook_extent_after' );
+	tha_body_bottom();
 }
 
 /**
@@ -94,7 +95,39 @@ function oenology_hook_extent_after() {
  */
 function oenology_hook_extent_before() {
 	do_action( 'oenology_hook_extent_before' );
+	tha_body_top();
 }
+
+/**
+ * Action hook before html
+ * 
+ * This action hook fires before the HTML container tag. It
+ * is a special case, useful for <DOCTYPE>, etc.
+ * 
+ * Template file: header.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 3.5
+ */
+function oenology_hook_html_before() {
+	do_action( 'oenology_hook_html_before' );
+	tha_html_before();
+}
+
+
+
+/**
+ * Add DOCTYPE
+ */
+function oenology_doctype() {
+	?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<?php
+}
+add_action( 'oenology_hook_html_before', 'oenology_doctype' );
 
 /**
  * Action hook after content within div#loop-footer
@@ -160,6 +193,40 @@ function oenology_hook_loop_header_after() {
 function oenology_hook_loop_header_before() {
 	do_action( 'oenology_hook_loop_header_before' );
 	tha_content_top();
+}
+
+/**
+ * Action hook before while loop if ( have_posts() )
+ * 
+ * This action hook fires after Loop content is output. It
+ * can be used to add content after the Loop content is output.
+ * 
+ * Template file: loop.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 3.5
+ */
+function oenology_hook_loop_while_after() {
+	do_action( 'oenology_hook_loop_while_after' );
+	tha_content_while_after();
+}
+
+/**
+ * Action hook after while loop if ( have_posts() )
+ * 
+ * This action hook fires before Loop content is output. It
+ * can be used to add content before the Loop content is output.
+ * 
+ * Template file: loop.php
+ * 
+ * @uses do_action()
+ * 
+ * @since Oenology 3.5
+ */
+function oenology_hook_loop_while_before() {
+	do_action( 'oenology_hook_loop_while_before' );
+	tha_content_while_before();
 }
 
 /**
@@ -278,6 +345,7 @@ function oenology_hook_post_comments_before() {
  */
 function oenology_hook_post_entry_after() {
 	do_action( 'oenology_hook_post_entry_after' );
+	tha_entry_content_after();
 }
 
 /**
@@ -294,6 +362,7 @@ function oenology_hook_post_entry_after() {
  */
 function oenology_hook_post_entry_before() {
 	do_action( 'oenology_hook_post_entry_before' );
+	tha_entry_content_before();
 }
 
 

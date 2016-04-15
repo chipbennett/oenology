@@ -96,6 +96,14 @@ if (
  */
 have_posts() 
 ) { 
+	/**
+	 * Fire the 'oenology_hook_loop_while_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_loop_while_before'
+	 */
+	oenology_hook_loop_while_before(); 
+	
 	while ( 
 	 /**
 	 * WordPress conditional tag that returns true if
@@ -241,6 +249,14 @@ have_posts()
 
 	} 
 	 // endwhile have_posts()
+	 
+	/**
+	 * Fire the 'oenology_hook_loop_while_after' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_loop_while_after'
+	 */
+	oenology_hook_loop_while_after(); 
 }
 // Else, if there are no Posts
 else {
