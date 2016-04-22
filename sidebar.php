@@ -73,8 +73,6 @@ if ( 'three-column' != oenology_get_current_page_layout() ) {
 		// specified dynamic sidebar is active (has Widgets
 		// assigned to it)
 		is_active_sidebar( 'sidebar-column-top' ) 
-		// Boolean Theme option
-	 || $oenology_options['display_social_icons'] 
 	) { 
 		?>
 		<?php
@@ -83,17 +81,11 @@ if ( 'three-column' != oenology_get_current_page_layout() ) {
 		// Front Page, and is a double-width column, and displays above the 
 		// single-width columns div#leftcol and div#rightcol.
 		// 
-		// Includes social icons, and the 'sidebar-column-top' dynamic sidebar,
+		// Includes the 'sidebar-column-top' dynamic sidebar,
 		// and displays only if this dynamic sidebar is active (has Widgets 
 		// assigned to it), or if the Theme is set to display social icons.
 		?>
 		<div id="doublecoltop">
-		<?php
-		// If Theme option is set to display social icons
-		if ( $oenology_options['display_social_icons'] ) {
-			oenology_social_icons();
-		} 
-		?>
 		<!-- Begin Sidebar Top Widget Area-->
 		<?php 
 		// Output a dynamic sidebar

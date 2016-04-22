@@ -391,7 +391,7 @@ function oenology_get_option_parameters() {
 			'panel' => 'general',
 			'since' => '3.0',
 			'default' => 'none'
-		),
+		)
     );
     return apply_filters( 'oenology_get_option_parameters', $options );
 }

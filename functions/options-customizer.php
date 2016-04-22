@@ -86,7 +86,6 @@ function oenology_register_theme_customizer( $wp_customize ){
 		
 		// Control parameters array
 		$customizer_control_parameters = array(
-			'label'		=> $option_parameter['title'],
 			'section'	=> 'oenology_' . $option_parameter['section'],
 			'settings'	=> 'theme_oenology_options['. $option_parameter['name'] . ']',
 			'type'		=> $option_parameter['type'],

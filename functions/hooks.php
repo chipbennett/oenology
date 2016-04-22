@@ -546,6 +546,19 @@ function oenology_hook_sidebars_top() {
 	tha_sidebar_top();
 }
 
+
+
+/**
+ * Output social icons
+ * 
+ * Outputs social icons at the top of the 
+ * main/double-wide sidebar.
+ */
+function oenology_display_social_icons() {
+	oenology_social_icons();
+}
+add_action( 'oenology_hook_sidebars_top', 'oenology_display_social_icons' );
+
 /**
  * Action hook after div#footer
  * 
