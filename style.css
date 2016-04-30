@@ -1556,6 +1556,7 @@ body.term-post-format-image .post-entry {
   line-height:1.6em; /* 1.6em */
   letter-spacing:0em;
   text-align:justify;
+  overflow: hidden;
 }
 .post-entry li p {
 	line-height:1.1em;
