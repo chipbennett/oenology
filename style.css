@@ -233,6 +233,8 @@ ol ol ol ol ol ol {
 }
 ul {
 	list-style-type: disc;
+	overflow: hidden;
+	padding-left: 5px;
 }
 ul ul {
 	list-style-type: circle;
@@ -895,12 +897,15 @@ vertical-align: top;
 }
 #content .alignleft {
   float:left;
+  padding-right: 15px;
 }
 #content .alignright {
   float:right;
+  padding-left: 15px;
 }
 #content .alignnone {
 	display:block;
+	padding: 15px;
 }
 /* Margins and Padding
    --------------------
