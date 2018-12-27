@@ -2,7 +2,7 @@
 /**
  * Oenology Theme custom functions
  *
- * Contains all of the Theme's custom functions, which include
+ * Contains all of the Theme's custom functions, including
  * helper functions and various filters.
  * 
  * @package 	Oenology
@@ -1198,7 +1198,7 @@ function oenology_infobar_navigation() {
  * that searches for filepath and returns file directory. Useful for
  * child-theme overrides of parent Theme resources.
  */
-function oenology_locate_template_uri( $template_names, $load = false, $require_once = true ) {
+function oenology_locate_template_uri( $template_names, $load = false, $requireonce = true ) {
 	$located = '';
 	foreach ( (array) $template_names as $template_name ) {
 		if ( ! $template_name ) {
@@ -1214,7 +1214,7 @@ function oenology_locate_template_uri( $template_names, $load = false, $require_
 	}
 
 	if ( $load && '' != $located ) {
-		load_template( $located, $require_once );
+		load_template( $located, $requireonce );
 	}
 
 	return $located;
