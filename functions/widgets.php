@@ -107,7 +107,7 @@ register_sidebar( array(
  */
 class oenology_widget_categories extends WP_Widget {
 
-    function oenology_widget_categories() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-categories', 'description' => __( 'Oenology theme widget to display the category list in the left column', 'oenology' ) );
         parent::__construct('oenology_categories', __( 'Oenology Categories', 'oenology' ), $widget_ops);
     }
@@ -156,7 +156,7 @@ class oenology_widget_categories extends WP_Widget {
  */
 class oenology_widget_tags extends WP_Widget {
 
-    function oenology_widget_tags() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-tags', 'description' => __( 'Oenology theme widget to display the tag list in the left column', 'oenology' ) );
         parent::__construct('oenology_tags', __( 'Oenology Tags', 'oenology' ), $widget_ops);
     }
@@ -206,7 +206,7 @@ class oenology_widget_tags extends WP_Widget {
  */
 class oenology_widget_post_formats extends WP_Widget {
 
-    function oenology_widget_post_formats() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-post-formats', 'description' => __( 'Oenology theme widget to display the Post Format list in the left column', 'oenology' ) );
         parent::__construct('oenology_post_formats', __( 'Oenology Post Formats', 'oenology' ), $widget_ops);
     }
@@ -255,7 +255,7 @@ class oenology_widget_post_formats extends WP_Widget {
  */
 class oenology_widget_social_icons extends WP_Widget {
 
-    function oenology_widget_social_icons() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-social-icons', 'description' => __( 'Oenology theme widget to display social network icons', 'oenology' ) );
         parent::__construct('oenology_social_icons', __( 'Oenology Social Icons', 'oenology' ), $widget_ops);
     }
@@ -304,7 +304,7 @@ class oenology_widget_social_icons extends WP_Widget {
  */
 class oenology_widget_featured_post_formats extends WP_Widget {
 
-    function oenology_widget_featured_post_formats() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-featured-post-formats', 'description' => __( 'Oenology theme widget to display a list of featured posts from any post format', 'oenology' ) );
         parent::__construct('oenology_featured_post_formats', __( 'Oenology Post Formats Feature', 'oenology' ), $widget_ops);
     }
@@ -545,7 +545,7 @@ wp_reset_postdata();
  */
 class oenology_widget_featured_content extends WP_Widget {
 
-    function oenology_widget_featured_content() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-featured-content', 'description' => __( 'Oenology theme widget to display a featured content slider', 'oenology' ) );
         parent::__construct('oenology_featured_content', __( 'Oenology Featured Content Slider', 'oenology' ), $widget_ops);
     }
@@ -873,7 +873,7 @@ wp_reset_postdata();
  */
 class oenology_widget_call_to_action extends WP_Widget {
 
-    function oenology_widget_call_to_action() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-call-to-action', 'description' => __( 'Oenology theme widget to display a Call To Action', 'oenology' ) );
         parent::__construct('oenology_call_to_action', __( 'Oenology Call To Action', 'oenology' ), $widget_ops);
     }
@@ -994,7 +994,7 @@ class oenology_widget_call_to_action extends WP_Widget {
  */
 class oenology_widget_featured_page extends WP_Widget {
 
-    function oenology_widget_featured_page() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-featured-page', 'description' => __( 'Oenology theme widget to display a featured page', 'oenology' ) );
         parent::__construct('oenology_featured_page', __( 'Oenology Featured Page', 'oenology' ), $widget_ops);
     }
@@ -1117,7 +1117,7 @@ class oenology_widget_featured_page extends WP_Widget {
  */
 class oenology_widget_text extends WP_Widget {
 
-    function oenology_widget_text() {
+    function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-text', 'description' => __( 'Oenology Theme Text Widget', 'oenology' ) );
         parent::__construct('oenology_text', __( 'Oenology Featured Text', 'oenology' ), $widget_ops);
     }
