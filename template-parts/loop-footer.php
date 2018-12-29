@@ -14,8 +14,7 @@
  *
  * @since 		Oenology 1.0
  */
-?>
-<?php 
+
 if ( 
 /**
  * WordPress conditional tag that returns true if
@@ -39,5 +38,4 @@ if (
 		</li>
 	</ul>
 	<?php 
-} 
-?>
+}

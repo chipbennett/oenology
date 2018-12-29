@@ -21,6 +21,7 @@
  *
  * @since 		Oenology 1.0
  */
+
 ?>
 
 <!-- Comments Begin (div#comments) -->
@@ -30,14 +31,13 @@
 
 	<?php 
 	if ( 
-	//
-	//
+	// If there are comments, output them.
 	have_comments() 
 	) {
 		?>
 		<h2 class="commentsheader">Feedback</h2>
 		<?php
-		// Globalize variable that holds comments by type
+		// Globalize variable that holds comments by type.
 		global $comments_by_type;	
 		?>
 		<h3>Comments <?php if ( ! comments_open() ) { ?> <small>(Comments are closed)</small><?php } ?></h3>
@@ -46,7 +46,7 @@
 		<span id="comments-responses" style="font-weight:bold;"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</span>
 
 		<?php 
-		// If the paged comments setting is enabled, and enough comments exisst to cause comments to be paged
+		// If the paged comments setting is enabled, and enough comments exisst to cause comments to be paged.
 		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { 
 			?>
 			<div class="nav-comments">
@@ -72,7 +72,7 @@
 			<?php 
 		} // check for comment navigation 		
 		
-		// if the post has any trackbacks or pingbacks, display them as a list		
+		// If the post has any trackbacks or pingbacks, display them as a list.	
 		global $comments_by_type;
 		$comments_by_type = &separate_comments( $comments );
 		if ( ! empty( $comments_by_type['pings'] ) ) {  
@@ -84,10 +84,9 @@
 			<?php 
 		}
 	} else { 
-		// or, if we don't have comments:
+		// Or, if we don't have comments, don't do anything.
 	} 
-	// end have_comments() 
-
+	// End of have_comments() conditional output. Output the comment form.
 	comment_form();
 	
 	oenology_hook_post_comments_after(); 

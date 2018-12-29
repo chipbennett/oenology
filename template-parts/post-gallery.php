@@ -20,30 +20,34 @@
  *
  * @since 		Oenology 1.0
  */
-?>
-<?php 
+
+/**
+ * Include post title container for single posts
+ */
 if ( is_single() ) { 
 	?>
 	<div class="post-title">
 		<?php 
-		// Include the specified Theme template part file
-		// 
-		// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
-		// 
-		// get_template_part( $slug ) will attempt to include $slug.php. 
-		// The function will attempt to include files in the following 
-		// order, until it finds one that exists: the Theme's $slug.php, 
-		// the parent Theme's $slug.php
-		// 
-		// get_template_part( $slug , $name ) will attempt to include 
-		// $slug-$name.php. The function will attempt to include files 
-		// in the following order, until it finds one that exists: the 
-		// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
-		// Theme's $slug-$name.php, the parent Theme's $slug.php
-		// 
-		// Child Themes can replace this template part file globally, 
-		// via "post-header.php", or in a specific context only, via 
-		// "post-header-{context}.php"
+		/**
+		 * Include the specified Theme template part file
+		 * 
+		 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+		 * 
+		 * get_template_part( $slug ) will attempt to include $slug.php. 
+		 * The function will attempt to include files in the following 
+		 * order, until it finds one that exists: the Theme's $slug.php, 
+		 * the parent Theme's $slug.php
+		 * 
+		 * get_template_part( $slug , $name ) will attempt to include 
+		 * $slug-$name.php. The function will attempt to include files 
+		 * in the following order, until it finds one that exists: the 
+		 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+		 * Theme's $slug-$name.php, the parent Theme's $slug.php
+		 * 
+		 * Child Themes can replace this template part file globally, 
+		 * via "post-header.php", or in a specific context only, via 
+		 * "post-header-{context}.php".
+		 */
 		get_template_part( 'template-parts/post-header', oenology_get_context() );
 		?>
 	</div>
@@ -54,29 +58,34 @@ if ( is_single() ) {
 <div class="post-entry">
 
 	<?php 
-	// Fire the 'oenology_hook_post_entry_before' custom action hook
-	// 
-	// @param	null
-	// @return	mixed	any output hooked into 'oenology_hook_post_entry_before'
+	/**
+	 * Fire the 'oenology_hook_post_entry_before' custom action hook
+	 * 
+	 * @return	mixed	any output hooked into 'oenology_hook_post_entry_before'
+	 */
 	oenology_hook_post_entry_before(); 
 	?>
 
 	<!-- Post Entry Begin -->
 	<?php 
 	if ( is_single() || post_password_required() ) {
-		// Output the Post Content
-		// 
-		// Codex reference: {@link http://codex.wordpress.org/Function_Reference/the_content the_content}
-		//
-		// @param	string	$more_link_text	text to use for the "More" link; default: '(more...)'
-		// @param	bool	$strip_teaser	strip text prior to "More" link on Single Post view; default: true
+		/**
+		 * Output the Post Content
+		 * 
+		 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/the_content the_content}
+		 *
+		 * @param	string	$more_link_text	text to use for the "More" link; default: '(more...)'
+		 * @param	bool	$strip_teaser	strip text prior to "More" link on Single Post view; default: true
+		 */
 		the_content('Read the rest of this entry &raquo;'); 
-		// Output the post pagination links
-		// if current post is paginated
-		// 
-		// Codex reference: {@link http://codex.wordpress.org/Function_Reference/wp_link_pages wp_link_pages}
+		/**
+		 * Output the post pagination links
+		 * if current post is paginated.
+		 * 
+		 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/wp_link_pages wp_link_pages}
+		 */
 		wp_link_pages( array(
-			// Apply class="link-pages" to the default <p> tag
+			// Apply class="link-pages" to the default <p> tag.
 			'before' => '<p class="link-pages">Page: ' 
 		) ); 
 	} else {
@@ -91,29 +100,32 @@ if ( is_single() ) {
 				<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 			</div><!-- .gallery-thumb -->
 			<?php 
-			// Fire the 'oenology_hook_post_header_title' custom action hook
-			// 
-			// @param	null
-			// @return	mixed	any output hooked into 'oenology_hook_post_header_title'
+			/**
+			 * Fire the 'oenology_hook_post_header_title' custom action hook
+			 * 
+			 * @return	mixed	any output hooked into 'oenology_hook_post_header_title'
+			 */
 			oenology_hook_post_header_title(); 
 			?>
 			<p class="gallery-description"><?php echo get_the_excerpt(); ?></p>
 			<ul class="gallery-meta">
 				<li>
 					<?php 
-					// Fire the 'oenology_hook_post_header_metadata' custom action hook
-					// 
-					// @param	null
-					// @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
+					/**
+					 * Fire the 'oenology_hook_post_header_metadata' custom action hook
+					 * 
+					 * @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
+					 */
 					oenology_hook_post_header_metadata(); 
 					?>
 				</li>
 				<li>
 					<?php 
-					// Fire the 'oenology_hook_post_header_taxonomies' custom action hook
-					// 
-					// @param	null
-					// @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'
+					/**
+					 * Fire the 'oenology_hook_post_header_taxonomies' custom action hook
+					 * 
+					 * @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'
+					 */
 					oenology_hook_post_header_taxonomies(); 
 					?>
 				</li>
@@ -121,15 +133,16 @@ if ( is_single() ) {
 		<?php 
 		} else { 
 			the_content();
-		} // if $images
-	} // if is_single or post_password_required 
+		} // if $images.
+	} // if is_single or post_password_required.
 	?>
 	<!-- Post Entry End -->
 	<?php 
-	// Fire the 'oenology_hook_post_entry_after' custom action hook
-	// 
-	// @param	null
-	// @return	mixed	any output hooked into 'oenology_hook_post_entry_after'
+	/**
+	 * Fire the 'oenology_hook_post_entry_after' custom action hook
+	 * 
+	 * @return	mixed	any output hooked into 'oenology_hook_post_entry_after'
+	 */
 	oenology_hook_post_entry_after(); 
 	?>
 
@@ -137,24 +150,26 @@ if ( is_single() ) {
 
 <div class="post-footer">
 	<?php 
-	// Include the specified Theme template part file
-	// 
-	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
-	// 
-	// get_template_part( $slug ) will attempt to include $slug.php. 
-	// The function will attempt to include files in the following 
-	// order, until it finds one that exists: the Theme's $slug.php, 
-	// the parent Theme's $slug.php
-	// 
-	// get_template_part( $slug , $name ) will attempt to include 
-	// $slug-$name.php. The function will attempt to include files 
-	// in the following order, until it finds one that exists: the 
-	// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
-	// Theme's $slug-$name.php, the parent Theme's $slug.php
-	// 
-	// Child Themes can replace this template part file globally, 
-	// via "post-footer.php", or in a specific context only, via 
-	// "post-footer-{context}.php"
+	/**
+	 * Include the specified Theme template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "post-footer.php", or in a specific context only, via 
+	 * "post-footer-{context}.php".
+	 */
 	get_template_part( 'template-parts/post-footer', oenology_get_context() ); 
 	?>
 </div>

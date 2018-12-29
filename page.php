@@ -19,6 +19,7 @@
  *
  * @since 		Oenology 1.0
  */
+
 ?>
 
 <?php
@@ -40,7 +41,7 @@ get_header( 'page' );
 <!-- Begin Main (div#main) -->
 <?php
 /**
- * div#main contains the center column content of the three-column 
+ * Container div#main contains the center column content of the three-column 
  * layout, and the left-column content of the two-column layout. 
  * Generally, this column contains the main content of the page 
  * (blog post/posts, page content, search results, etc.), and 

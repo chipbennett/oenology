@@ -29,12 +29,10 @@
  * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
  *
  * @since 		Oenology 1.0
- */
-?>
-<?php
-/**
+ * 
  * @todo	convert Loop Header to filter hook
  */
+ 
 ?>
 <!-- Begin Loop Header (div#loop-header) -->
 <div id="loop-header">
@@ -43,7 +41,6 @@
 	/**
 	 * Fire the 'oenology_hook_loop_header_before' custom action hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_loop_header_before'
 	 */
 	oenology_hook_loop_header_before(); 
@@ -77,7 +74,6 @@
 	/**
 	 * Fire the 'oenology_hook_loop_header_after' custom action hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_loop_header_after'
 	 */
 	oenology_hook_loop_header_after(); 
@@ -87,8 +83,6 @@
 <!-- End Loop Header (div#loop-header) -->
 
 <?php 
-//
-//
 if ( 
 /**
  * WordPress conditional tag that returns true if
@@ -99,7 +93,6 @@ have_posts()
 	/**
 	 * Fire the 'oenology_hook_loop_while_before' custom action hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_loop_while_before'
 	 */
 	oenology_hook_loop_while_before(); 
@@ -123,7 +116,6 @@ have_posts()
 		/**
 			* Fire the 'oenology_hook_post_before' custom action hook
 			* 
-			* @param	null
 			* @return	mixed	any output hooked into 'oenology_hook_post_before' 
 			*/
 		oenology_hook_post_before(); 
@@ -146,7 +138,6 @@ have_posts()
 			/**
 			 * Fire the 'oenology_hook_post_top' custom action hook
 			 * 
-			 * @param	null
 			 * @return	mixed	any output hooked into 'oenology_hook_post_top' 
 			 */
 			oenology_hook_post_top(); 
@@ -190,7 +181,6 @@ have_posts()
 			/**
 			 * Fire the 'oenology_hook_post_bottom' custom action hook
 			 * 
-			 * @param	null
 			 * @return	mixed	any output hooked into 'oenology_hook_post_bottom'
 			 */
 			oenology_hook_post_bottom(); 
@@ -200,11 +190,10 @@ have_posts()
 		
 		<?php 
 		/**
-			* Fire the 'oenology_hook_post_after' custom action hook
-			* 
-			* @param	null
-			* @return	mixed	any output hooked into 'oenology_hook_post_after'
-			*/
+		 * Fire the 'oenology_hook_post_after' custom action hook
+		 * 
+		 * @return	mixed	any output hooked into 'oenology_hook_post_after'
+		 */
 		oenology_hook_post_after(); 
 			?> 
 
@@ -247,18 +236,16 @@ have_posts()
 			comments_template( '', true );
 		}
 
-	} 
-	 // endwhile have_posts()
+	} // end while have_posts().
 	 
 	/**
 	 * Fire the 'oenology_hook_loop_while_after' custom action hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_loop_while_after'
 	 */
 	oenology_hook_loop_while_after(); 
 }
-// Else, if there are no Posts
+// Else, if there are no Posts.
 else {
 	/**
 	 * Fire the 'oenology_hook_loop_no_posts' hook
@@ -267,7 +254,7 @@ else {
 	 */
 	oenology_hook_loop_no_posts(); 
 } 
-// endif have_posts()
+// end if have_posts().
 ?>
 
 <!-- Begin Loop Footer (div#loop-footer) -->
@@ -277,7 +264,6 @@ else {
 	/**
 	 * Fire the 'oenology_hook_loop_footer_before' custom action hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_loop_footer_before'
 	 */
 	oenology_hook_loop_footer_before(); 
@@ -311,7 +297,6 @@ else {
 	/**
 	 * Fire the 'oenology_hook_loop_footer_after' custom action hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_loop_footer_after'
 	 */
 	oenology_hook_loop_footer_after(); 

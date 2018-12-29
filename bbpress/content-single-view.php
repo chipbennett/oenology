@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Single View Content Part
  *

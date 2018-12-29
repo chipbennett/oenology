@@ -18,10 +18,12 @@
  *
  * @since 		Oenology 1.0
  */
-?>
-<?php global $oenology_options; ?>
 
-<?php
+/**
+ * Instantiate Theme options
+ */
+global $oenology_options; 
+
 if ( 
 // site-navigation.php contains the main navigation menu. 
 'above' == $oenology_options['header_nav_menu_position'] 
@@ -44,7 +46,7 @@ if (
 	 * 
 	 * Child Themes can replace this template part file globally, 
 	 * via "site-navigation.php", or in a specific context only, via 
-	 * "site-navigation-{context}.php"
+	 * "site-navigation-{context}.php".
 	 */
 	get_template_part( 'template-parts/site-navigation', oenology_get_context() );  
 }
@@ -55,7 +57,6 @@ if (
 	/**
 	 * Fire the 'oenology_hook_site_header_text_before' custom action hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_site_header_text_before'
 	 */
 	oenology_hook_site_header_text_before(); 
@@ -65,7 +66,6 @@ if (
 	/**
 	 * Fire the 'oenology_hook_site_header' custom filter hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_site_header'
 	 */
 	oenology_hook_site_header(); 
@@ -75,7 +75,6 @@ if (
 	/**
 	 * Fire the 'oenology_hook_site_header_text_after' custom action hook
 	 * 
-	 * @param	null
 	 * @return	mixed	any output hooked into 'oenology_hook_site_header_text_after'
 	 */
 	oenology_hook_site_header_text_after(); 
@@ -105,7 +104,7 @@ if (
 	 * 
 	 * Child Themes can replace this template part file globally, 
 	 * via "site-navigation.php", or in a specific context only, via 
-	 * "site-navigation-{context}.php"
+	 * "site-navigation-{context}.php".
 	 */
 	get_template_part('template-parts/site-navigation');  
 } 

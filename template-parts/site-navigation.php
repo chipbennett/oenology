@@ -35,8 +35,7 @@
  *
  * @since 		Oenology 1.0
  */
-?>
-<?php 
+
 /**
  * Global variable that contains the
  * Theme's options array.
@@ -80,21 +79,15 @@ has_nav_menu( 'nav-header' )
 	 * @param	array	options defining menu output
 	 */
 	wp_nav_menu( array( 
-		// apply 'id="nav"' to the <ul> tag that 
-		// contains the menu
+		// apply 'id="nav"' to the <ul> tag that contains the menu.
 		'menu_id' => 'nav', 
-		// apply 'class="nav-header"' to the <ul> 
-		// tag that contains the menu
+		// apply 'class="nav-header"' to the <ul> tag that contains the menu.
 		'menu_class' => 'nav-header', 
-		// Use the default fallback if the user has 
-		// not applied a menu to the specified theme 
-		// location
+		// Use the default fallback if the user has not applied a menu to the specified theme location.
 		'fallback_cb' => '', 
-		// Apply hierarchical depth per the Theme
-		// setting 'header_nav_menu_depth'
+		// Apply hierarchical depth per the Theme setting 'header_nav_menu_depth'.
 		'depth' => $oenology_options['header_nav_menu_depth'], 
-		// Output the menu the user has applied to
-		// the 'nav-header' Theme Location
+		// Output the menu the user has applied to the 'nav-header' Theme Location.
 		'theme_location' => 'nav-header' 
 	) ); 
 } else { 
@@ -122,39 +115,25 @@ has_nav_menu( 'nav-header' )
 			<li><a id="navhome" href="<?php echo home_url(); ?>">Home</a></li>
 			<?php 
 		} else {
-			// By default, do not exclude any 
-			// static Pages
+			// By default, do not exclude any static Pages.
 			$list_pages_exclude = '';
-			// Determine if a static Page is 
-			// currently set to display the 
-			// site Front Page
+			// Determine if a static Page is currently set to display the site Front Page.
 			$page_on_front = ( get_option( 'page_on_front' ) ? get_option( 'page_on_front' ) : false );
-			// Determine if a static Page is 
-			// currently set to display the 
-			// Blog Posts index
+			// Determine if a static Page is currently set to display the Blog Posts index.
 			$page_for_posts = ( get_option( 'page_for_posts' ) ? get_option( 'page_for_posts' ) : false );
-			// If static Pages are set to
-			// display both the Front Page
-			// and the Blog Posts Index
+			// If static Pages are set to display both the Front Page and the Blog Posts Index.
 			if ( $page_on_front && $page_for_posts ) {
-				// Exclude both static Pages from 
-				// the 'wp_list_pages()'
+				// Exclude both static Pages from the 'wp_list_pages()'.
 				$list_pages_exclude = $page_on_front . ',' . $page_for_posts;
 			} 
-			// Otherwise, if a static Page
-			// is set to display the site
-			// Front page
+			// Otherwise, if a static Page is set to display the site Front page.
 			else if ( $page_on_front ) {
-				// Exclude this static Page from 
-				// the 'wp_list_pages()'
+				// Exclude this static Page from the 'wp_list_pages()'.
 				$list_pages_exclude = $page_on_front;
 			} 
-			// Otherwise, if a static Page
-			// is set to display the Blog
-			// Posts Index
+			// Otherwise, if a static Page is set to display the Blog Posts Index.
 			else if ( $page_for_posts ) {
-				// Exclude this static Page from 
-				// the 'wp_list_pages()'
+				// Exclude this static Page from the 'wp_list_pages()'.
 				$list_pages_exclude = $page_for_posts;
 			} 
 			/**
@@ -187,19 +166,13 @@ has_nav_menu( 'nav-header' )
 		 * @param	array	options defining menu output
 		 */
 		wp_list_pages( array( 
-			// Display levels of Page hierarchy (i.e. levels 
-			// of child pages) as specified by Theme setting 
-			// 'header_nav_menu_depth'
+			// Display levels of Page hierarchy (i.e. levels of child pages) as specified by Theme setting 'header_nav_menu_depth'.
 			'depth' => $oenology_options['header_nav_menu_depth'],
-			// Sort pages as defined by the user 
-			// in the Pages administration panel			
+			// Sort pages as defined by the user in the Pages administration panel.		
 			'sort_column' => 'menu_order', 
-			// Do not wrap list in <ul> tags, and
-			// do not give the menu a title <li>
+			// Do not wrap list in <ul> tags, and do not give the menu a title <li>.
 			'title_li' => '', 
-			// Exclude static Pages used for the Front Page
-			// and for the Blog Posts Index, as these are
-			// added explicitly already, if they exist
+			// Exclude static Pages used for the Front Page and for the Blog Posts Index, as these are added explicitly already, if they exist.
 			'exclude' => $list_pages_exclude 
 		) ); 
 		?>

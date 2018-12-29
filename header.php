@@ -145,7 +145,7 @@ language_attributes();
 
 <?php
 /**
- * oenology_get_context()
+ * Output oenology_get_context()
  * 
  * Output HTML <body> tag CSS ID attribute content, 
  * based on current page context
@@ -167,7 +167,7 @@ language_attributes();
 <!-- Begin Extent (div#extent) -->
 <?php 
 /**
- * div#extent contains all displayed content, 
+ * Container div#extent contains all displayed content, 
  * including the site header, main content,
  * sidebars, and sitefooter.
  */
@@ -176,11 +176,11 @@ language_attributes();
 
 	<?php 
 	/**
-	* Fire the 'oenology_hook_extent_before' custom action hook
-	* 
-	* @param	null
-	* @return	mixed	any output hooked into 'oenology_hook_extent_before'
-	*/
+	 * Fire the 'oenology_hook_extent_before' custom action hook
+	 * 
+	 * @param	null
+	 * @return	mixed	any output hooked into 'oenology_hook_extent_before'
+	 */
 	oenology_hook_extent_before(); 
 	?>
 
@@ -197,7 +197,7 @@ language_attributes();
 	<!-- Begin Header  (div#header)-->
 	<?php
 	/**
-	 * div#header contains the Main Navigation Menu, 
+	 * Container div#header contains the Main Navigation Menu, 
 	 * Blog Title and Blog description.
 	 */
 	?>
@@ -245,7 +245,7 @@ language_attributes();
 	<!-- Begin Infobar (div#infobar) -->
 	<?php
 	/**
-	 * div#infobar contains the site breadcrumb navigation,
+	 * Container div#infobar contains the site breadcrumb navigation,
 	 * login/admin links, and search form.
 	 */
 	?>
@@ -289,7 +289,7 @@ language_attributes();
 	<!-- Begin Content (div#content) -->
 	<?php 
 	/**
-	 * div#content contains the site main content 
+	 * Container div#content contains the site main content 
 	 * (left column, center column, right column).
 	 */
 	?>

@@ -13,19 +13,18 @@
  * @since 		Oenology 2.3
  */
 
-
 /**
  * Enqueue Custom Admin Page Stylesheet
  */
 function oenology_enqueue_admin_style() {
 
-	// define admin stylesheet
+	// Define admin stylesheet.
 	$admin_handle = 'oenology_admin_stylesheet';
 	$admin_stylesheet = get_template_directory_uri() . '/css/oenology-admin.css';
 	
 	wp_enqueue_style( $admin_handle, $admin_stylesheet, '', false );
 }
-// Enqueue Admin Stylesheet at admin_print_styles()
+// Enqueue Admin Stylesheet at admin_print_styles().
 add_action( 'admin_print_styles-appearance_page_oenology-settings', 'oenology_enqueue_admin_style', 11 );
 
 
@@ -39,12 +38,12 @@ add_action( 'admin_print_styles-appearance_page_oenology-settings', 'oenology_en
  * @uses	oenology_locate_template_uri()	Defined in functions/custom.php
  */
 function oenology_enqueue_front_end_stylesheets() {
-	// Fetch Theme options
+	// Fetch Theme options.
 	global $oenology_options;
 	$oenology_options = oenology_get_options();
-	// Add main stylesheet
+	// Add main stylesheet.
 	wp_enqueue_style( 
-		// Stylesheet handle
+		// Stylesheet handle.
 		'oenology-main', 		 
 		/**
 		 * Return the URL for the default stylesheet
@@ -105,7 +104,7 @@ function oenology_enqueue_front_end_stylesheets() {
 		oenology_locate_template_uri( array( 'css/fonts.css' ), false, false ) 
 	);
 
-	// Fetch color scheme
+	// Fetch color scheme.
 	$color_scheme = oenology_get_color_scheme();
 
 	/**
@@ -118,9 +117,9 @@ function oenology_enqueue_front_end_stylesheets() {
 		 * Add font color scheme
 		 */
 		wp_enqueue_style( 
-			// Handle
+			// Handle.
 			'oenology_' . $color_scheme . '_stylesheet', 
-			// URL
+			// URL.
 			oenology_locate_template_uri( array( 'varietals/' . $color_scheme . '.css' ), false, false ) 
 		);
 	}

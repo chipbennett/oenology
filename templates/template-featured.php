@@ -20,9 +20,7 @@
  *
  * @since 		Oenology 2.0
  */
-?>
 
-<?php
 /**
  * Include the header template part file
  * 
@@ -33,7 +31,7 @@
  * Codex reference: {@link: http://codex.wordpress.org/Function_Reference/get_header get_header}
  * 
  * Child Themes can replace this template part file globally, via "header.php",
- * or in the Front Page context only, via "header-front-page.php"
+ * or in the Front Page context only, via "header-front-page.php".
  */
 get_header( 'template-featured' );
 ?>
@@ -41,7 +39,7 @@ get_header( 'template-featured' );
 <!-- Begin Main (div#main) -->
 <?php
 /**
- * div#main contains the center column content of the three-column 
+ * Container div#main contains the center column content of the three-column 
  * layout, and the left-column content of the two-column layout. 
  * Generally, this column contains the main content of the page 
  * (blog post/posts, page content, search results, etc.), and 
@@ -73,7 +71,7 @@ get_header( 'template-featured' );
  * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_footer get_footer}
  * 
  * Child Themes can replace this template part file globally, via "footer.php",
- * or in the Front Page context only, via "footer-front-page.php"
+ * or in the Front Page context only, via "footer-front-page.php".
  */
 get_footer( 'template-featured' );  
 ?>

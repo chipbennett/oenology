@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Forums Loop - Single Forum
  *

@@ -17,12 +17,16 @@
  * 
  * @link	http://codex.wordpress.org/Function_Reference/_2			__()
  * @link	http://codex.wordpress.org/Function_Reference/add_meta_box	add_meta_box()
+ * 
+ * @param obj $post	Post object.
  */
 function oenology_add_meta_boxes( $post ) {
     global $wp_meta_boxes;
 	
-	$layout_context = apply_filters( 'oenology_layout_meta_box_context', 'side' ); // 'normal', 'side', 'advanced'
-	$layout_priority = apply_filters( 'oenology_layout_meta_box_priority', 'default' ); // 'high', 'core', 'low', 'default'
+	// Layout context must be 'normal', 'side', or 'advanced'.
+	$layout_context = apply_filters( 'oenology_layout_meta_box_context', 'side' );
+	// Layout priority must be 'high', 'core', 'low', or 'default'.
+	$layout_priority = apply_filters( 'oenology_layout_meta_box_priority', 'default' );
 
     add_meta_box( 
 		'oenology_layout', 
@@ -41,8 +45,10 @@ function oenology_add_meta_boxes( $post ) {
 		$layout_priority 
 	);
 	
-	$featured_content_context = apply_filters( 'oenology_featured_content_meta_box_context', 'side' ); // 'normal', 'side', 'advanced'
-	$featured_content_priority = apply_filters( 'oenology_featured_content_meta_box_priority', 'high' ); // 'high', 'core', 'low', 'default'
+	// Layout context must be 'normal', 'side', or 'advanced'.
+	$featured_content_context = apply_filters( 'oenology_featured_content_meta_box_context', 'side' );
+	// Layout priority must be 'high', 'core', 'low', or 'default'.
+	$featured_content_priority = apply_filters( 'oenology_featured_content_meta_box_priority', 'high' );
 
     add_meta_box( 
 		'oenology_featured_content', 
@@ -62,7 +68,7 @@ function oenology_add_meta_boxes( $post ) {
 	);
 	
 }
-// Hook meta boxes into 'add_meta_boxes'
+// Hook meta boxes into 'add_meta_boxes'.
 add_action( 'add_meta_boxes', 'oenology_add_meta_boxes' );
 
 /**
@@ -152,13 +158,13 @@ function oenology_featured_content_meta_box() {
  * @uses	oenology_get_option_parameters()	Defined in \functions\options.php
  */
 function oenology_save_custom_post_metadata(){
-	// Don't break on quick edit
+	// Don't break on quick edit.
 	global $post;
 	if ( ! isset( $post ) || ! is_object( $post ) ) {
 		return;
 	}
 	
-	// Layout - Sanitize
+	// Layout - Sanitize.
 	$option_parameters = oenology_get_option_parameters();
 	$valid_layouts = array();
 	if ( 'post' == $post->post_type ) {
@@ -168,19 +174,18 @@ function oenology_save_custom_post_metadata(){
 	}
 	$layout = ( isset( $_POST['_oenology_layout'] ) && array_key_exists( $_POST['_oenology_layout'], $valid_layouts ) ? $_POST['_oenology_layout'] : 'default' );
 
-	// Layout - Update
+	// Layout - Update.
 	update_post_meta( $post->ID, '_oenology_layout', $layout );
 	
-	// Featured Content - Sanitize
+	// Featured Content - Sanitize.
 	$featured_content = ( isset( $_POST['_oenology_featured_content'] ) ? 'true' : 'false' );
 	$featured_content_order = ( isset( $_POST['_oenology_featured_content'] ) && is_int( (int) $_POST['_oenology_featured_content'] ) ? $_POST['_oenology_featured_content'] : '0' );
 	
-	// Featured Content - Sanitize
+	// Featured Content - Sanitize.
 	update_post_meta( $post->ID, '_oenology_featured_content', $featured_content );
 	update_post_meta( $post->ID, '_oenology_featured_content_order', $featured_content_order );
 }
-// Hook the save post custom meta data into
-// publish_{post-type}, draft_{post-type}, and future_{post-type}
+// Hook the save post custom meta data into publish_{post-type}, draft_{post-type}, and future_{post-type}.
 add_action( 'publish_post', 'oenology_save_custom_post_metadata' );
 add_action( 'publish_page', 'oenology_save_custom_post_metadata' );
 add_action( 'draft_post', 'oenology_save_custom_post_metadata' );

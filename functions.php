@@ -33,7 +33,7 @@
 /**
  * Include the Theme Custom Functions File
  * 
- * custom.php includes all of the Theme's custom functions
+ * File custom.php includes all of the Theme's custom functions.
  * - 404 error handling
  * - Current page context
  * - Custom footer copyright notice
@@ -47,7 +47,7 @@ require( get_template_directory() . '/functions/custom.php' );
 /**
  * Include the Theme Setup Function File
  * 
- * theme-setup.php includes all of the various Theme setup:
+ * File theme-setup.php includes all of the various Theme setup:
  * add_theme_support()
  * $content_width
  * Define custom image sizes, custom headers, nav menus
@@ -57,7 +57,7 @@ require( get_template_directory() . '/functions/theme-setup.php' );
 /**
  * Include the WordPress Hooks Function File
  * 
- * wordpress-hooks.php includes all of the functions 
+ * File wordpress-hooks.php includes all of the functions 
  * hook into core WordPress action/filter hooks:
  * - filter get_comments_number
  * - filter the_title
@@ -69,7 +69,7 @@ require( get_template_directory() . '/functions/wordpress-hooks.php' );
 /**
  * Include the Widgets Functions File
  * 
- * widgets.php includes the Theme's Widgetized sidebars and custom Widgets
+ * File widgets.php includes the Theme's Widgetized sidebars and custom Widgets.
  * - register_sidebar
  * - define custom widgets
  * - register_widget
@@ -79,7 +79,7 @@ require( get_template_directory() . '/functions/widgets.php' );
 /**
  * Include the Theme Options Function File
  * 
- * options.php includes the Theme options and Customizer
+ * File options.php includes the Theme options and Customizer.
  * - Define default Theme Options
  * - Register Theme Options
  * - Customizer integration
@@ -96,14 +96,14 @@ require( get_template_directory() . '/functions/options.php' );
 require( get_template_directory() . '/tha/tha-theme-hooks.php' );
 
 /**
- * Include the Theme Custom Hooks Function File
+ * Include the Theme Custom Hooks Function File.
  * 
- * hooks.php includes the Theme's custom hooks
+ * File hooks.php includes the Theme's custom hooks
  */
 require( get_template_directory() . '/functions/hooks.php' );
 
 /**
- * Include the Post Custom Metadata Function File
+ * Include the Post Custom Metadata Function File.
  * 
  * - post-custom-meta.php includes the Theme custom metadata functions
  */
@@ -112,7 +112,7 @@ require( get_template_directory() . '/functions/post-custom-meta.php' );
 /**
  * Include the Dynamic Style/Script Function File
  * 
- * - dynamic-css.php includes the Theme Dynamic Style/Script content
+ * File dynamic-css.php includes the Theme Dynamic Style/Script content.
  */
 require( get_template_directory() . '/functions/dynamic-css.php' );
 

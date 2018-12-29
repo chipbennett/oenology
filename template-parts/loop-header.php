@@ -15,13 +15,11 @@
  *
  * @since 		Oenology 1.0
  */
-?>
-<?php 
+
 /**
  * Fire the 'oenology_hook_loop_header' custom action hook
  * 
  * @param	null
  * @return	mixed	any output hooked into 'oenology_hook_loop_header'
  */
-oenology_hook_loop_header(); 
-?>
+oenology_hook_loop_header();

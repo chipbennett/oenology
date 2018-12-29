@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Archive Forum Content Part
  *

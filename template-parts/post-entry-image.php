@@ -14,9 +14,11 @@
  *
  * @since 		Oenology 1.0
  */
-?><?php 
+ 
+// Get post images.
 $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
 
+// Count total post images.
 $total_images = ( $images ? count( $images ) : '0' );
 
 if ( is_attachment() || $images ) { 	
@@ -33,7 +35,7 @@ if ( is_attachment() || $images ) {
 
 <div class="gallery-nav"> <!-- Head navigation -->
 <?php 
-if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format should only have one image attachment
+if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format should only have one image attachment.
 ?>
 	<dl>
 	<dt>Gallery</dt>
@@ -42,18 +44,18 @@ if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format s
 	</dd>
 	<dd>
 	<div class="gallery-nav-prev">
-	<?php if ( $prevlink = $gallery_links['prevlink'] ) { // if a previous gallery image exists, display thumbnail and link ?>
+	<?php if ( $prevlink = $gallery_links['prevlink'] ) { // if a previous gallery image exists, display thumbnail and link. ?>
 		<div class="gallery-nav-thumb"><?php echo $gallery_links['prevthumb']; ?></div>
 		<div class="gallery-nav-caption"><a href="<?php echo $prevlink; ?>">Prev</a></div>
-	<?php } else { // otherwise, display a blank space ?>
+	<?php } else { // otherwise, display a blank space. ?>
 		&nbsp;
 	<?php } ?>
 	</div>
 	<div class="gallery-nav-next">
-	<?php if ( $nextlink = $gallery_links['nextlink'] ) { // if a next gallery image exists, display thumbnail and link ?>
+	<?php if ( $nextlink = $gallery_links['nextlink'] ) { // if a next gallery image exists, display thumbnail and link. ?>
 		<div class="gallery-nav-thumb"><?php echo $gallery_links['nextthumb']; ?></div>
 		<div class="gallery-nav-caption"><a href="<?php echo $nextlink; ?>">Next</a></div>
-	<?php } else { // otherwise, display a blank space ?>
+	<?php } else { // otherwise, display a blank space. ?>
 		&nbsp;
 	<?php } ?>
 	</div>
@@ -65,40 +67,40 @@ if ( ! has_post_format( 'image', $post->post_parent ) ) { // image Post Format s
 
 	<dl class="photo-tech">
 	<dt>Full Size</dt>
-	<?php if ( $gallery_image_meta['dimensions'] ) { // if image dimensions are defined, display them ?>
+	<?php if ( $gallery_image_meta['dimensions'] ) { // if image dimensions are defined, display them. ?>
 		<dd><a href="<?php echo $gallery_image_meta['url']; ?>"><?php echo $gallery_image_meta['dimensions']; ?></a></dd>
 	<?php } ?>
 	<dd>(<?php echo $gallery_image_meta['filesize']; ?>)</dd>
-		<?php if ( $gallery_image_meta['created_timestamp'] ) { // if image created_timestamp is defined, display it ?>
+		<?php if ( $gallery_image_meta['created_timestamp'] ) { // if image created_timestamp is defined, display it. ?>
 		<dt>Taken</dt>
 		<dd><?php echo $gallery_image_meta['created_timestamp']; ?></dd>
 	<?php } ?>
-	<?php if ( $gallery_image_meta['copyright'] || $gallery_image_meta['credit'] ) { // if image copyright or credit are defined, display ?>
+	<?php if ( $gallery_image_meta['copyright'] || $gallery_image_meta['credit'] ) { // if image copyright or credit are defined, display. ?>
 		<dt>Owner</dt>
-		<?php if ( $gallery_image_meta['copyright'] ) { // if image copyright is defined, display it ?>
+		<?php if ( $gallery_image_meta['copyright'] ) { // if image copyright is defined, display it. ?>
 			<dd>&copy;<?php echo $gallery_image_meta['copyright'] ?></dd>
 		<?php } ?>
-		<?php if ( $gallery_image_meta['credit'] ) { // if image credit is defined, display it ?>
+		<?php if ( $gallery_image_meta['credit'] ) { // if image credit is defined, display it. ?>
 			<dd><?php echo $gallery_image_meta['credit'] ?></dd>
 		<?php } ?>
 	<?php } ?>
-	<?php if ( $gallery_image_meta['aperture'] ) { // if image aperture is defined, display it ?>
+	<?php if ( $gallery_image_meta['aperture'] ) { // if image aperture is defined, display it. ?>
 		<dt>Aperture</dt>
 		<dd><?php echo $gallery_image_meta['aperture']; ?></dd>
 	<?php } ?>
-	<?php if ( $gallery_image_meta['focal_length'] ) { // if image focal_length is defined, display it ?>
+	<?php if ( $gallery_image_meta['focal_length'] ) { // if image focal_length is defined, display it. ?>
 		<dt>Focal Length</dt>
 		<dd><?php echo $gallery_image_meta['focal_length']; ?>mm</dd>
 	<?php } ?>
-	<?php if ( $gallery_image_meta['iso'] ) { // if image ISO is defined, display it ?>
+	<?php if ( $gallery_image_meta['iso'] ) { // if image ISO is defined, display it. ?>
 		<dt>ISO</dt>
 		<dd><?php echo $gallery_image_meta['iso']; ?></dd>
 	<?php } ?>
-	<?php if ( $gallery_image_meta['shutter_speed'] ) { // if image shutter_speed is defined, display it ?>
+	<?php if ( $gallery_image_meta['shutter_speed'] ) { // if image shutter_speed is defined, display it. ?>
 		<dt>Shutter</dt>
 		<dd><?php echo $gallery_image_meta['shutter_speed']; ?></dd>
 	<?php } ?>
-	<?php if ( $gallery_image_meta['camera'] ) { // if image camera is defined, display it ?>
+	<?php if ( $gallery_image_meta['camera'] ) { // if image camera is defined, display it. ?>
 		<dt>Camera</dt>
 		<dd><?php echo $gallery_image_meta['camera']; ?></dd>
 	<?php }

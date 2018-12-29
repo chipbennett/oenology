@@ -32,70 +32,76 @@ add_action( 'after_setup_theme', 'oenology_setup_widgets', 11 );
  */
 function oenology_setup_widgets() {
 
-register_sidebar( array_merge( 
-	array( // Top full-width widget area
-		'name'			=> __( 'Sidebar Column Top', 'oenology' ),
-		'id'			=> 'sidebar-column-top',
-		'description'	=> __( 'Top, full-width sidebar in two-column layout', 'oenology' ) 
-	),
-	oenology_get_widget_args()
-) );
-register_sidebar( array_merge( 
-	array( // Left Column widget area
-		'name'			=> __( 'Sidebar Left', 'oenology' ),
-		'id'			=> 'sidebar-left',
-		'description'	=> __( 'Left-column, half-width sidebar in three-column layout' , 'oenology' )
-	),
-	oenology_get_widget_args()
-) );
-register_sidebar( array_merge( 
-	array( // Right Column widget area
-		'name'			=> __( 'Sidebar Right', 'oenology' ),
-		'id'			=> 'sidebar-right',
-		'description'	=> __( 'Right-column, half-width sidebar in three-column layout', 'oenology' )
-	),
-	oenology_get_widget_args()
-) );
-register_sidebar( array_merge( 
-	array( // Bottom full-width widget area
-		'name'			=> __( 'Sidebar Column Bottom', 'oenology' ),
-		'id'			=> 'sidebar-column-bottom',
-		'description'	=> __( 'Bottom, full-width sidebar in two-column layout', 'oenology' ) 
-	),
-	oenology_get_widget_args()
-) );
-register_sidebar( array_merge( 
-	array( // Widget area beneath each Post content
-		'name'			=> __( 'Post Entry Below', 'oenology' ),
-		'id'			=> 'post-entry-below',
-		'description'	=> __( 'Beneath Post content, before Post footer', 'oenology' ) 
-	),
-	oenology_get_widget_args()
-) );
-register_sidebar( array_merge( 
-	array( // Widget area below each Post
-		'name'			=> __( 'Post Below', 'oenology' ),
-		'id'			=> 'post-below',
-		'description'	=> __( 'Beneath Post', 'oenology' ) 
-	),
-	oenology_get_widget_args()
-) );
-register_sidebar( array( 
-	// Featured Content template
-	'name'			=> __( 'Featured Content', 'oenology' ),
-	'id'			=> 'featured-content',
-	'description'	=> __( 'Featured content template Widgets', 'oenology' ),
-	// Widget container opening tag, with classes
-	'before_widget' => '<div class="featured-content-widget"><div id="%1$s" class="widget %2$s">',
-	// Widget container closing tag
-	'after_widget' => '</div></div>',
-	// Widget Title container opening tag, with classes
-	'before_title' => '<div class="title widgettitle">',
-	// Widget Title container closing tag
-	'after_title' => '</div>'
-) );
+	register_sidebar( array_merge( 
+		// Top full-width widget area.
+		array(
+			'name'			=> __( 'Sidebar Column Top', 'oenology' ),
+			'id'			=> 'sidebar-column-top',
+			'description'	=> __( 'Top, full-width sidebar in two-column layout', 'oenology' ) 
+		),
+		oenology_get_widget_args()
+	) );
+	register_sidebar( array_merge( 
+		// Left Column widget area.
+		array(
+			'name'			=> __( 'Sidebar Left', 'oenology' ),
+			'id'			=> 'sidebar-left',
+			'description'	=> __( 'Left-column, half-width sidebar in three-column layout' , 'oenology' )
+		),
+		oenology_get_widget_args()
+	) );
+	register_sidebar( array_merge( 
+		// Right Column widget area.
+		array(
+			'name'			=> __( 'Sidebar Right', 'oenology' ),
+			'id'			=> 'sidebar-right',
+			'description'	=> __( 'Right-column, half-width sidebar in three-column layout', 'oenology' )
+		),
+		oenology_get_widget_args()
+	) );
+	register_sidebar( array_merge( 
+		// Bottom full-width widget area.
+		array(
+			'name'			=> __( 'Sidebar Column Bottom', 'oenology' ),
+			'id'			=> 'sidebar-column-bottom',
+			'description'	=> __( 'Bottom, full-width sidebar in two-column layout', 'oenology' ) 
+		),
+		oenology_get_widget_args()
+	) );
+	register_sidebar( array_merge( 
+		// Widget area beneath each Post content.
+		array(
+			'name'			=> __( 'Post Entry Below', 'oenology' ),
+			'id'			=> 'post-entry-below',
+			'description'	=> __( 'Beneath Post content, before Post footer', 'oenology' ) 
+		),
+		oenology_get_widget_args()
+	) );
+	register_sidebar( array_merge( 
+		// Widget area below each Post.
+		array(
+			'name'			=> __( 'Post Below', 'oenology' ),
+			'id'			=> 'post-below',
+			'description'	=> __( 'Beneath Post', 'oenology' ) 
+		),
+		oenology_get_widget_args()
+	) );
+	register_sidebar( array( 
+		// Featured Content template.
+		'name'			=> __( 'Featured Content', 'oenology' ),
+		'id'			=> 'featured-content',
+		'description'	=> __( 'Featured content template Widgets', 'oenology' ),
+		// Widget container opening tag, with classes.
+		'before_widget' => '<div class="featured-content-widget"><div id="%1$s" class="widget %2$s">',
+		// Widget container closing tag.
+		'after_widget' => '</div></div>',
+		// Widget Title container opening tag, with classes.
+		'before_title' => '<div class="title widgettitle">',
+		// Widget Title container closing tag.
+		'after_title' => '</div>'
+	) );
 
-} // function oenology_widget_setup()
+}
 
 
 /**
@@ -107,11 +113,20 @@ register_sidebar( array(
  */
 class oenology_widget_categories extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-categories', 'description' => __( 'Oenology theme widget to display the category list in the left column', 'oenology' ) );
         parent::__construct('oenology_categories', __( 'Oenology Categories', 'oenology' ), $widget_ops);
     }
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
         $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Oenology Categories', 'oenology' ) : $instance['title']);
@@ -131,6 +146,12 @@ class oenology_widget_categories extends WP_Widget {
         echo $after_widget;
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -138,6 +159,11 @@ class oenology_widget_categories extends WP_Widget {
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title = strip_tags($instance['title']);
@@ -156,11 +182,20 @@ class oenology_widget_categories extends WP_Widget {
  */
 class oenology_widget_tags extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-tags', 'description' => __( 'Oenology theme widget to display the tag list in the left column', 'oenology' ) );
         parent::__construct('oenology_tags', __( 'Oenology Tags', 'oenology' ), $widget_ops);
     }
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
         $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Oenology Tags', 'oenology' ) : $instance['title']);
@@ -180,6 +215,12 @@ class oenology_widget_tags extends WP_Widget {
         echo $after_widget;
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -187,6 +228,11 @@ class oenology_widget_tags extends WP_Widget {
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title = strip_tags($instance['title']);
@@ -206,11 +252,20 @@ class oenology_widget_tags extends WP_Widget {
  */
 class oenology_widget_post_formats extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-post-formats', 'description' => __( 'Oenology theme widget to display the Post Format list in the left column', 'oenology' ) );
         parent::__construct('oenology_post_formats', __( 'Oenology Post Formats', 'oenology' ), $widget_ops);
     }
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
         $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Oenology Post Formats', 'oenology' ) : $instance['title']);
@@ -230,6 +285,12 @@ class oenology_widget_post_formats extends WP_Widget {
         echo $after_widget;
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -237,6 +298,11 @@ class oenology_widget_post_formats extends WP_Widget {
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title = strip_tags($instance['title']);
@@ -255,11 +321,20 @@ class oenology_widget_post_formats extends WP_Widget {
  */
 class oenology_widget_social_icons extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-social-icons', 'description' => __( 'Oenology theme widget to display social network icons', 'oenology' ) );
         parent::__construct('oenology_social_icons', __( 'Oenology Social Icons', 'oenology' ), $widget_ops);
     }
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
         $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Social Networks', 'oenology' ) : $instance['title']);
@@ -279,6 +354,12 @@ class oenology_widget_social_icons extends WP_Widget {
         echo $after_widget;
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -286,6 +367,11 @@ class oenology_widget_social_icons extends WP_Widget {
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title = strip_tags($instance['title']);
@@ -304,16 +390,28 @@ class oenology_widget_social_icons extends WP_Widget {
  */
 class oenology_widget_featured_post_formats extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-featured-post-formats', 'description' => __( 'Oenology theme widget to display a list of featured posts from any post format', 'oenology' ) );
         parent::__construct('oenology_featured_post_formats', __( 'Oenology Post Formats Feature', 'oenology' ), $widget_ops);
     }
 	
+	/**
+	 * Pre-defined post formats
+	 */
 	function get_post_formats() {
 		$formats = array( 'status', 'quote', 'image' );
 		return $formats;
 	}
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
 		$formats = $this->get_post_formats();
@@ -352,7 +450,7 @@ if ( $format_posts->have_posts() ) :
 
 	switch ( $format ) {
 				
-		// Status post format
+		// Status post format.
 		case ( 'status' ) :
 			?>
 			<ul class="status-list">
@@ -381,7 +479,7 @@ if ( $format_posts->have_posts() ) :
 			<?php
 			break;
 			
-		// Quote post format
+		// Quote post format.
 		case ( 'quote' ) :
 			?>
 			<ul class="quote-list">
@@ -409,7 +507,7 @@ if ( $format_posts->have_posts() ) :
 			<?php
 			break;
 			
-		// Image post format
+		// Image post format.
 		case( 'image' ) :
 			?>
 			<div class="cycle-slideshow">
@@ -431,7 +529,7 @@ if ( $format_posts->have_posts() ) :
 			wp_enqueue_script( 'cycle2', get_template_directory_uri() . '/js/cycle2/jquery.cycle2.min.js', array( 'jquery' ) );
 			break;
 		
-	} // Switch
+	} // Switch.
 
 endif; 
 wp_reset_postdata();
@@ -442,6 +540,12 @@ wp_reset_postdata();
         echo $after_widget . '</div>';
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
 		$formats = $this->get_post_formats();
@@ -455,6 +559,11 @@ wp_reset_postdata();
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => __( 'Post Formats Feature', 'oenology' ), 'format' => 'status', 'number_posts' => '3', 'orderby' => 'date', 'columns' => '1', 'rows' => '1' ) );
 		$formats = $this->get_post_formats();
@@ -545,11 +654,17 @@ wp_reset_postdata();
  */
 class oenology_widget_featured_content extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-featured-content', 'description' => __( 'Oenology theme widget to display a featured content slider', 'oenology' ) );
         parent::__construct('oenology_featured_content', __( 'Oenology Featured Content Slider', 'oenology' ), $widget_ops);
     }
 
+	/**
+	 * Pre-defined valid slider transitions
+	 */
 	function get_valid_slider_transitions() {
 	
 		return apply_filters( 'oenology_valid_slider_transitions', array(
@@ -562,6 +677,9 @@ class oenology_widget_featured_content extends WP_Widget {
 		) );
 	}
 
+	/**
+	 * Pre-defined valid slider directions
+	 */
 	function get_valid_slider_directions() {
 		return apply_filters( 'oenology_valid_slider_directions', array(
 			'horizontal' => __( 'Horizontal', 'oenology' ),
@@ -569,6 +687,9 @@ class oenology_widget_featured_content extends WP_Widget {
 		) );
 	}
 
+	/**
+	 * Pre-defined valid slider timeouts
+	 */
 	function get_valid_slider_timeouts() {
 	
 		return apply_filters( 'oenology_valid_slider_timeouts', array(
@@ -585,6 +706,9 @@ class oenology_widget_featured_content extends WP_Widget {
 		) );
 	}
 
+	/**
+	 * Pre-defined valud slider speeds
+	 */
 	function get_valid_slider_speeds() {
 	
 		return apply_filters( 'oenology_valid_slider_speeds', array(
@@ -595,17 +719,23 @@ class oenology_widget_featured_content extends WP_Widget {
 		) );
 	}
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
-		// title
+		// title.
         $title = ( ! $instance['title'] ? false : apply_filters( 'widget_title', $instance['title'] ) );
 
-		// Slider Options
+		// Slider Options.
 		$valid_transitions = $this->get_valid_slider_transitions();
 		$fx = ( isset( $instance['fx'] ) && array_key_exists( $instance['fx'], $valid_transitions ) ? $instance['fx'] : 'fade' );
 		$valid_directions = $this->get_valid_slider_directions();
 		$direction = ( isset( $instance['direction'] ) && array_key_exists( $instance['direction'], $valid_directions ) ? $instance['direction'] : 'horizontal' );
-		// Scroll direction
+		// Scroll direction.
 		if ( 'scroll' == $fx ) { $fx .= ( 'horizontal' == $direction ? 'Horz' : 'Vert' ); }
 		$valid_timeouts = $this->get_valid_slider_timeouts();
 		$timeout = ( isset( $instance['timeout'] ) && array_key_exists( $instance['timeout'], $valid_timeouts ) ? $instance['timeout'] : '4000' );
@@ -613,7 +743,7 @@ class oenology_widget_featured_content extends WP_Widget {
 		$speed = ( isset( $instance['speed'] ) && array_key_exists( $instance['speed'], $valid_speeds ) ? $instance['speed'] : '500' );
 		$reverse = ( isset( $instance['reverse'] ) && 'true' == $instance['reverse'] ? 'true' : 'false' );
 
-		// Columns & Rows
+		// Columns & Rows.
 		$columns = ( is_int( (int) $instance['columns'] ) && 0 < $instance['columns'] && 4 > $instance['columns'] ? $instance['columns'] : '1' );
 		$rows = ( is_int( (int) $instance['rows'] ) && 0 < $instance['rows'] && 6 > $instance['rows'] ? $instance['rows'] : '1' );
 
@@ -628,26 +758,13 @@ $featured_content_query_args = array(
 	'post_type' => array( 'post', 'page' ),
 	'posts_per_page' => -1,
 	'ignore_sticky_posts' => true,
-	/*
-	'meta_query' => array(
-		array(
-			'key' => '_oenology_featured_content',
-			'value' => 'true',
-			'compare' => '=',
-		)
-	),
-	*/
 	'meta_key' => '_oenology_featured_content',
 	'meta_value' => 'true',
-	'meta_compare' => '=',
-	/*
-	'orderby' => 'meta_value_num',
-	'order' => 'ASC'
-	*/
+	'meta_compare' => '='
 );
 $featured_content = new WP_Query( $featured_content_query_args );
 
-// Image size
+// Image size.
 $image_size = 'featured-content-slider';
 if ( 1 < $columns ) {
 	$image_size .= ( 2 < $columns ? '-three-column' : '-two-column' );
@@ -715,13 +832,19 @@ wp_reset_postdata();
         echo $after_widget . '</div>';
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
 
-		// Title
+		// Title.
         $instance['title'] = '' != $new_instance['title'] ? strip_tags( $new_instance['title'] ) : false;
 
-		// Slider Effects
+		// Slider Effects.
 		$valid_transitions = $this->get_valid_slider_transitions();
 		$instance['fx'] = ( array_key_exists( $new_instance['fx'], $valid_transitions ) ? $new_instance['fx'] : $instance['fx'] );
 		$valid_directions = $this->get_valid_slider_directions();
@@ -732,13 +855,18 @@ wp_reset_postdata();
 		$instance['speed'] = ( array_key_exists( $new_instance['speed'], $valid_speeds ) ? $new_instance['speed'] : $instance['speed'] );		
 		$instance['reverse'] = ( isset( $new_instance['reverse'] ) && 'true' == $new_instance['reverse'] ? 'true' : 'false' );
 
-		// Columns and Rows
+		// Columns and Rows.
 		$instance['columns'] = ( is_int( (int) $new_instance['columns'] ) && 0 < $new_instance['columns'] && 4 > $new_instance['columns'] ? $new_instance['columns'] : $instance['columns'] );
 		$instance['rows'] = ( is_int( (int) $new_instance['rows'] ) && 0 < $new_instance['rows'] && 6 > $new_instance['rows'] ? $new_instance['rows'] : $instance['rows'] );
 
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 
 			'title' => '', 
@@ -751,10 +879,10 @@ wp_reset_postdata();
 			'rows' => '1' 
 		) );
 
-		// Title
+		// Title.
         $title = strip_tags( $instance['title'] );
 
-		// Slider Effects
+		// Slider Effects.
 		$valid_transitions = $this->get_valid_slider_transitions();
 		$fx = ( array_key_exists( $instance['fx'], $valid_transitions ) ? $instance['fx'] : 'fade' );
 		$valid_directions = $this->get_valid_slider_directions();
@@ -765,7 +893,7 @@ wp_reset_postdata();
 		$speed = ( array_key_exists( $instance['speed'], $valid_speeds ) ? $instance['speed'] : '500' );
 		$reverse = ( isset( $instance['reverse'] ) && 'true' == $instance['reverse'] ? 'true' : 'false' );
 
-		// Columns and Rows
+		// Columns and Rows.
         $columns = strip_tags( $instance['columns'] );
         $rows = strip_tags( $instance['rows'] );
 ?>
@@ -873,11 +1001,20 @@ wp_reset_postdata();
  */
 class oenology_widget_call_to_action extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-call-to-action', 'description' => __( 'Oenology theme widget to display a Call To Action', 'oenology' ) );
         parent::__construct('oenology_call_to_action', __( 'Oenology Call To Action', 'oenology' ), $widget_ops);
     }
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
         $title = ( ! $instance['title'] ? false : apply_filters( 'widget_title', $instance['title'] ) );
@@ -903,6 +1040,12 @@ class oenology_widget_call_to_action extends WP_Widget {
         echo $after_widget . '</div>';
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
         $instance['title'] = '' != $new_instance['title'] ? strip_tags( $new_instance['title'] ) : false;
@@ -915,6 +1058,11 @@ class oenology_widget_call_to_action extends WP_Widget {
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => __( 'Call To Action', 'oenology' ), 'cta_text' => '', 'cta_button_text' => '', 'cta_button_page_id' => '', 'columns' => '1', 'rows' => '1' ) );
         $title = strip_tags( $instance['title'] );
@@ -994,11 +1142,20 @@ class oenology_widget_call_to_action extends WP_Widget {
  */
 class oenology_widget_featured_page extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-featured-page', 'description' => __( 'Oenology theme widget to display a featured page', 'oenology' ) );
         parent::__construct('oenology_featured_page', __( 'Oenology Featured Page', 'oenology' ), $widget_ops);
     }
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
         $title = ( ! $instance['title'] ? false : apply_filters( 'widget_title', $instance['title'] ) );
@@ -1042,6 +1199,12 @@ class oenology_widget_featured_page extends WP_Widget {
         echo $after_widget . '</div>';
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
         $instance['title'] = '' != $new_instance['title'] ? strip_tags( $new_instance['title'] ) : false;
@@ -1052,6 +1215,11 @@ class oenology_widget_featured_page extends WP_Widget {
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => __( 'Featured Page', 'oenology' ), 'page_id' => '', 'columns' => '1', 'rows' => '1' ) );
         $title = strip_tags( $instance['title'] );
@@ -1117,11 +1285,20 @@ class oenology_widget_featured_page extends WP_Widget {
  */
 class oenology_widget_text extends WP_Widget {
 
+	/**
+	 * Widget constructor
+	 */
     function __construct() {
         $widget_ops = array('classname' => 'oenology-widget-text', 'description' => __( 'Oenology Theme Text Widget', 'oenology' ) );
         parent::__construct('oenology_text', __( 'Oenology Featured Text', 'oenology' ), $widget_ops);
     }
 
+	/**
+	 * Widget output function
+	 * 
+	 * @param array $args		Widget arguments.
+	 * @param obj   $instance	Widget instance object.
+	 */
     function widget( $args, $instance ) {
         extract($args);
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'] );
@@ -1141,6 +1318,12 @@ class oenology_widget_text extends WP_Widget {
         echo $after_widget . '</div>';
     }
 
+	/**
+	 * Widget update function
+	 * 
+	 * @param obj $new_instance		New widget instance.
+	 * @param obj $old_instance		Old widget instance.
+	 */
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
         $instance['title'] = strip_tags( $new_instance['title'] );
@@ -1156,6 +1339,11 @@ class oenology_widget_text extends WP_Widget {
         return $instance;
     }
 
+	/**
+	 * Widget form function
+	 * 
+	 * @param obj $instance	Widget instance.
+	 */
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'text' => '', 'filter' => false, 'columns' => '1', 'rows' => '1' ) );
         $title = strip_tags( $instance['title'] );

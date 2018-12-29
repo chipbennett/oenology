@@ -12,9 +12,7 @@
  * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
  *
  * @since 		Oenology 1.0
- */
-
-/**
+ * 
  * @todo	complete inline documentation
  */
 
@@ -34,70 +32,64 @@ function oenology_set_content_width() {
 	global $pagenow;
 	if ( ! is_admin() || ( is_admin() && 'post.php' == $pagenow ) ) {
 
-		// Content width for three-
-		// column Page layout, and
-		// for two- and three-
-		// column Post layouts
+		// Content width for three-column Page layout, and for two- and three-column Post layouts.
 		$width_three_column = 635;
 		// Content width for two-
-		// column Page layout
+		// column Page layout.
 		$width_two_column = 810;
-		// Content width for one-
-		// column Page and one-
-		// column Post layouts
+		// Content width for one-column Page and one-column Post layouts.
 		$width_one_column = 815;
-		// Content width for 
-		// attachment pages
+		// Content width for attachment pages.
 		$width_attachment = 900;
-		// content width for full-
-		// width layout
+		// content width for full-width layout.
 		$width_full = 975;
 
-		// Get the current layout
+		// Get the current layout.
 		$layout = oenology_get_current_page_layout();
 
-		// Set default content width
-		//
-		// The default layout is the three-column
-		// layout for static Pages, and the two-
-		// column layout for single posts and post
-		// indexes.
-		//
-		// Note: the width of the *content* area,
-		// which is div#main, is the same for the
-		// three-column static Page layout as for
-		// the two-column post/index layout.
+		/**
+		 * Set default content width
+		 * 
+		 * The default layout is the three-column
+		 * layout for static Pages, and the two-
+		 * column layout for single posts and post
+		 * indexes.
+		 * 
+		 * Note: the width of the *content* area,
+		 * which is div#main, is the same for the
+		 * three-column static Page layout as for
+		 * the two-column post/index layout.
+		 */
 		$dynamic_width = $width_three_column;
 		
-		// Set content width for attachment pages
+		// Set content width for attachment pages.
 		if ( 'attachment' == $layout ) {
 			$dynamic_width = $width_attachment;
 		} 
 		
-		// Set content width for full-width pages
+		// Set content width for full-width pages.
 		if ( 'full' == $layout ) {
 			$dynamic_width = $width_full;
 		} 
 		
-		// Set content width for one-column layout
+		// Set content width for one-column layout.
 		else if ( 'one-column' == $layout ) {
 			$dynamic_width = $width_one_column;
 		} 
 		
-		// Set content width for two-column layout
-		// Note: only applies to static Pages
+		// Set content width for two-column layout. Note: only applies to static Pages.
 		else if ( 'two-column' == $layout ) {
 			$dynamic_width = $width_two_column;
 		}
 		
-		// Apply dynamic width to $content_width
+		// Apply dynamic width to $content_width.
 		global $content_width;
 		$content_width = $dynamic_width;
 	}
 }
-// Hook oenology_set_content_width() into 'admin_head'
+// Hook oenology_set_content_width() into 'admin_head'.
 add_action( 'admin_head', 'oenology_set_content_width' );
-// Hook oenology_set_content_width() into 'wp_head'
+// Hook oenology_set_content_width() into 'wp_head'.
 add_action( 'wp_head', 'oenology_set_content_width', 0 );
 
 /**
@@ -132,7 +124,7 @@ add_action( 'wp_head', 'oenology_set_content_width', 0 );
  */
 function oenology_setup() {
 	
-	/*
+	/**
 	 * Enable translation
 	 * 
 	 * Declare Theme textdomain and define
@@ -145,7 +137,7 @@ function oenology_setup() {
 	 */
 	load_theme_textdomain( 'oenology', get_template_directory() . '/languages' );
 
-	/*
+	/**
 	 * Add Theme support for Automatic Feed Links
 	 * 
 	 * Automatically add RSS feed links to document header.
@@ -157,7 +149,7 @@ function oenology_setup() {
 	 */
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
+	/**
 	 * Add Theme support for Post Thumbnails
 	 * 
 	 * Allow users to specify "featured" images for Posts.
@@ -169,7 +161,7 @@ function oenology_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' ); 
 
-	/*
+	/**
 	 * Add Theme support for Custom Backgrounds
 	 * 
 	 * Allow users to specify a custom background image
@@ -185,7 +177,7 @@ function oenology_setup() {
 	 */
 	add_theme_support( 'custom-background' );
 
-	/*
+	/**
 	 * Add Theme support for Custom Header Images
 	 * 
 	 * Allow users to specify a custom header image.
@@ -196,25 +188,26 @@ function oenology_setup() {
 	 * can remove support for this feature via
 	 * remove_theme_support( 'custom-header' ).
 	 * 
+	 * Legacy: add_custom_image_header( 'oenology_header_style', 'oenology_admin_header_style' );
+	 * 
 	 * @since	WordPress 3.0.0
 	 */
-	//add_custom_image_header( 'oenology_header_style', 'oenology_admin_header_style' );
 	add_theme_support( 'custom-header', array( 
-		// Header image default
+		// Header image default.
 		'default-image'			=> get_template_directory_uri() . '/images/headers/pxwhite.jpg',
-		// Header text display default
+		// Header text display default.
 		'header-text'			=> false,
-		// Header text color default
+		// Header text color default.
 		'default-text-color'	=> oenology_get_header_textcolor(),
-		// Header image width (in pixels)
+		// Header image width (in pixels).
 		'width'					=> apply_filters( 'oenology_header_image_width', 1000 ),
-		// Header image height (in pixels)
+		// Header image height (in pixels).
 		'height'				=> apply_filters( 'oenology_header_image_height', 198 ),
-		// Header image random rotation default
+		// Header image random rotation default.
 		'random-default'		=> false,
-		// Template header style callback
+		// Template header style callback.
 		'wp-head-callback'		=> 'oenology_header_style',
-		// Admin header style callback
+		// Admin header style callback.
 		'admin-head-callback'	=> 'oenology_admin_header_style'
 	) );
 
@@ -261,7 +254,7 @@ function oenology_setup() {
 	 * @since	WordPress 3.1.0
 	 */
 
-	// Define a variable to pass to add_theme_support()
+	// Define a variable to pass to add_theme_support().
 	$postformats = oenology_get_post_formats();
 	$supportedpostformats = array();
 	foreach ( $postformats as $format ) {
@@ -269,7 +262,7 @@ function oenology_setup() {
 	}
 	$supportedpostformats = apply_filters( 'oenology_supported_post_formats', $supportedpostformats );
 	
-	// Add Theme support for Post Formats
+	// Add Theme support for Post Formats.
 	add_theme_support( 'post-formats', $supportedpostformats );
 
 	/*
@@ -296,13 +289,13 @@ function oenology_setup() {
 	 * @since	WordPress 4.5
 	 */
 	add_theme_support( 'custom-logo', array( 
-		// Logo height, in pixels
+		// Logo height, in pixels.
 		'height'		=> 100,
-		// Logo width, in pixels
+		// Logo width, in pixels.
 		'width'			=> 200,
-		// Allow logos with flexible (i.e. larger) heights
+		// Allow logos with flexible (i.e. larger) heights.
 		'flex-height'	=> false,
-		// Allow logos with flexible (i.e. larger) widths
+		// Allow logos with flexible (i.e. larger) widths.
 		'flex-width'	=> false
 	) );
 	
@@ -318,10 +311,8 @@ function oenology_setup() {
 	 * remove_theme_support( 'bbpress' ).
 	 * 
 	 * @since	bbPress 2.0
-	 */
-	//add_theme_support( 'bbpress' );
-	/**
-	 * @todo	Add bbPress integration/support
+	 * 
+	 * @todo	Add bbPress integration/support: add_theme_support( 'bbpress' );
 	 */
 	
 
@@ -382,13 +373,15 @@ function oenology_setup() {
 	add_image_size( 'featured-content-slider-two-column-three-row', 657, 600, true );
 	add_image_size( 'featured-content-slider-three-column-three-row', 985, 600, true );
 
-	// Add a way for the custom header to be styled in the admin panel that controls
-	// custom headers. See oenology_admin_header_style(), below.
-
-	// Default custom headers packaged with the theme. 
-	// %s is a placeholder for the theme template directory URI.
-	
-	// Auto-magically registers the headers included with TwentyEleven if it is installed
+	/**
+	 * Add a way for the custom header to be styled in the admin panel that controls
+	 * custom headers. See oenology_admin_header_style(), below.
+	 * 
+	 * Default custom headers packaged with the theme. 
+	 * %s is a placeholder for the theme template directory URI.
+	 * 
+	 * Auto-magically registers the headers included with TwentyEleven if it is installed
+	 */
 	if ( file_exists( get_theme_root() . '/twentyeleven/style.css' ) ) {
 		register_default_headers( array(
 			'wheel' => array(
@@ -433,7 +426,7 @@ function oenology_setup() {
 			)
 		) );
 	}
-	// Auto-magically registers the headers included with TwentyTen if it is installed
+	// Auto-magically registers the headers included with TwentyTen if it is installed.
 	if ( file_exists( get_theme_root() . '/twentyten/style.css' ) ) {
 		register_default_headers( array(
 			'berries' => array(
@@ -498,7 +491,7 @@ function oenology_setup() {
 
 
 }
-// Hook oenology_setup() into 'after_setup_theme'
+// Hook oenology_setup() into 'after_setup_theme'.
 add_action( 'after_setup_theme', 'oenology_setup', 10 );
 
 /**

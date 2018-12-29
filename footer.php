@@ -28,6 +28,7 @@
  *
  * @since 		Oenology 1.0
  */
+ 
 ?>
 	</div>
 	<!-- End Content  (div#content)-->
@@ -54,8 +55,7 @@
 	
 	<!-- Begin Footer (div#footer) -->
 	<?php
-	// div#footer contains the site copyright notice
-	// and credit links
+	// The div#footer contains the site copyright notice and credit links.
 	?>
 	<div id="footer">
 	
@@ -89,46 +89,47 @@
 			 * @param	array	options defining menu output
 			 */
 			wp_nav_menu( array( 
-				// apply 'id="footernav"' to the <ul> tag that 
-				// contains the menu
+				// Apply 'id="footernav"' to the <ul> tag that contains the menu.
 				'menu_id' => 'footernav', 
-				// apply 'class="nav-footer"' to the <ul> 
-				// tag that contains the menu
+				// Apply 'class="nav-footer"' to the <ul> tag that contains the menu.
 				'menu_class' => 'nav-footer', 
-				// Use the default fallback if the user has 
-				// not applied a menu to the specified theme 
-				// location
+				// Use the default fallback if the user has not applied a menu to the specified theme location.
 				'fallback_cb' => '', 
-				// Apply one level of hierarchical depth
+				// Apply one level of hierarchical depth.
 				'depth' => 1, 
-				// Output the menu the user has applied to
-				// the 'nav-footer' Theme Location
+				// Output the menu the user has applied to the 'nav-footer' Theme Location.
 				'theme_location' => 'nav-footer' 
 			) ); 
 		}
 		?>
 
 		<?php 
-		// Fire the 'oenology_hook_site_footer_text_before' custom action hook
-		// 
-		// @param	null
-		// @return	mixed	any output hooked into 'oenology_hook_site_footer_text_before'
+		/**
+		 * Fire the 'oenology_hook_site_footer_text_before' custom action hook
+		 * 
+		 * @param	null
+		 * @return	mixed	any output hooked into 'oenology_hook_site_footer_text_before'
+		 */
 		oenology_hook_site_footer_text_before(); 
 		?>
 
 		<?php 
-		// Fire the 'oenology_hook_site_footer' custom filter hook
-		// 
-		// @param	null
-		// @return	mixed	filtered output of 'oenology_hook_site_footer'
+		/**
+		 * Fire the 'oenology_hook_site_footer' custom filter hook
+		 * 
+		 * @param	null
+		 * @return	mixed	filtered output of 'oenology_hook_site_footer'
+		 */
 		oenology_hook_site_footer(); 
 		?>
 
 		<?php 
-		// Fire the 'oenology_hook_site_footer_text_after' custom action hook
-		// 
-		// @param	null
-		// @return	mixed	any output hooked into 'oenology_hook_site_footer_text_after'
+		/**
+		 * Fire the 'oenology_hook_site_footer_text_after' custom action hook
+		 * 
+		 * @param	null
+		 * @return	mixed	any output hooked into 'oenology_hook_site_footer_text_after'
+		 */
 		oenology_hook_site_footer_text_after(); 
 		?>
 	
@@ -146,10 +147,12 @@
 	?>
 
 <?php 
-// Fire the 'oenology_hook_extent_after' custom action hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_extent_after'
+/**
+ * Fire the 'oenology_hook_extent_after' custom action hook
+ * 
+ * @param	null
+ * @return	mixed	any output hooked into 'oenology_hook_extent_after'
+ */
 oenology_hook_extent_after(); 
 ?>
 
@@ -157,17 +160,19 @@ oenology_hook_extent_after();
 <!-- End Extent (div#extent) -->
 
 <?php 
-// Fire the 'wp_footer' action hook
-// 
-// Codex reference: {@link http://codex.wordpress.org/Hook_Reference/wp_footer wp_footer}
-// 
-// This hook is used by WordPress core, Themes, and Plugins to 
-// add scripts, CSS styles, meta tags, etc. to the document footer.
-// 
-// MUST come immediately before the closing </body> tag
-// 
-// @param	null
-// @return	mixed	any output hooked into 'wp_footer'
+/**
+ * Fire the 'wp_footer' action hook
+ * 
+ * Codex reference: {@link http://codex.wordpress.org/Hook_Reference/wp_footer wp_footer}
+ * 
+ * This hook is used by WordPress core, Themes, and Plugins to 
+ * add scripts, CSS styles, meta tags, etc. to the document footer.
+ * 
+ * MUST come immediately before the closing </body> tag
+ * 
+ * @param	null
+ * @return	mixed	any output hooked into 'wp_footer'
+ */
 wp_footer(); 
 ?>
 </body>

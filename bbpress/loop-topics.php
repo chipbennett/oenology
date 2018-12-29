@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Topics Loop
  *

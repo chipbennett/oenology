@@ -5,7 +5,7 @@
  * Contains all of the Theme's functions that 
  * hook into core action/filter hooks, other 
  * than Theme Setup functions, Widget functions, 
- * and Settings API functions
+ * and Settings API functions.
  * 
  * Action Hooks:
  * - comment_form_before
@@ -21,7 +21,6 @@
  * Callbacks
  * - wp_list_comments
  * 
- * 
  * @package 	Oenology
  * @copyright	Copyright (c) 2010, Chip Bennett
  * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
@@ -31,6 +30,8 @@
 
 /**
  * Add parent class to wp_nav_menu parent list items
+ * 
+ * @param array $items	Navigation menu items.
  */
 function oenology_add_menu_parent_class( $items ) {
 	
@@ -83,7 +84,7 @@ add_filter( 'wp_nav_menu_objects', 'oenology_add_menu_parent_class' );
 function oenology_get_settings_page_cap() {
 	return 'edit_theme_options';
 }
-// Hook into option_page_capability_{option_page}
+// Hook into option_page_capability_{option_page}.
 add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_page_cap' );
 
 /**
@@ -117,22 +118,16 @@ add_action( 'option_page_capability_oenology-settings', 'oenology_get_settings_p
  * @since	Oenology 2.0
  */
 function oenology_enqueue_comment_reply() {
-	// Enqueue the comment-reply script on 
-	//single blog post pages with comments 
-	// open and threaded comments
+	// Enqueue the comment-reply script on single blog post pages with comments open and threaded comments.
 	if ( 
-		// Returns the value for the specified option.
-		// 'thread_comments' is a Boolean option where
-		// comments are threaded if TRUE, and flat if 
-		// FALSE
+		// Returns the value for the specified option. 'thread_comments' is a Boolean option where comments are threaded if TRUE, and flat if FALSE.
 		get_option( 'thread_comments' ) 
 	) { 
-		// enqueue the javascript that performs 
-		//in-link comment reply fanciness
+		// enqueue the javascript that performs in-link comment reply fanciness.
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 }
-// Hook into comment_form_before
+// Hook into comment_form_before.
 add_action( 'comment_form_before', 'oenology_enqueue_comment_reply' );
 
 
@@ -146,6 +141,8 @@ add_action( 'comment_form_before', 'oenology_enqueue_comment_reply' );
  * 
  * @uses	oenology_get_current_page_layout()	Defined in \functions\custom.php
  * 
+ * @param array $classes Body class array.
+ * 
  * @since	Oenology 2.0
  */
 function oenology_filter_body_class( $classes ) {	
@@ -154,7 +151,7 @@ function oenology_filter_body_class( $classes ) {
 	$classes[] = $layout;
 	return $classes;
 }
-// Hook custom classes into 'body_class'
+// Hook custom classes into 'body_class'.
 add_filter( 'body_class', 'oenology_filter_body_class' );
 
 
@@ -171,6 +168,8 @@ add_filter( 'body_class', 'oenology_filter_body_class' );
  * custom $after_widget output, that 
  * wraps the Widget content in a 
  * show/hide container, to be rendered.
+ * 
+ * @param string $title Title text.
  * 
  * @since	Oenology 2.6
  */
@@ -199,14 +198,14 @@ add_filter( 'widget_title', 'oenology_filter_widget_title' );
  * 
  * @link	http://www.wpbeginner.com/wp-tutorials/display-the-most-accurate-comment-count-in-wordpress/ WPBeginner
  * 
+ * @param int $count	Count (number) of comments.
+ * 
  * @since	Oenology 2.0
  */
 function oenology_comment_count( $count ) {  
-	// Only filter the comments number
-	// in the front-end display
+	// Only filter the comments number in the front-end display.
 	if ( 
-	// WordPress conditional that returns true if
-	// the current page is in the WP-Admin back-end
+	// WordPress conditional that returns true if the current page is in the WP-Admin back-end.
 	! is_admin() 
 	) {
 		global $id;
@@ -214,14 +213,12 @@ function oenology_comment_count( $count ) {
 		$comments_by_type = separate_comments( $comments );
 		return count( $comments_by_type['comment'] );
 	} 
-	// Otherwise, when in the WP-Admin
-	// back end, don't filter comments
-	// number
+	// Otherwise, when in the WP-Admin back end, don't filter comments number.
 	else {
 		return $count;
 	}
 }
-// Hook custom comment number into 'get_comments_number'
+// Hook custom comment number into 'get_comments_number'.
 add_filter('get_comments_number', 'oenology_comment_count', 0);
 
 /**
@@ -231,6 +228,8 @@ add_filter('get_comments_number', 'oenology_comment_count', 0);
  * 
  * Filter 'the_title' to output '(Untitled)' if 
  * no Post Title is provided
+ * 
+ * @param string $title Title text.
  * 
  * @since	Oenology 2.0
  */
@@ -268,9 +267,11 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  * 
  * @link	http://www.studiograsshopper.ch/code-snippets/dynamic-category-menu-highlighting-for-single-posts/ StudioGrasshopper
  * 
+ * @param string $output	Text displaying category on single post.
+ * 
  * @since	Oenology 2.0
  */
-function oenology_show_current_cat_on_single($output) { 
+function oenology_show_current_cat_on_single( $output ) { 
 
 	global $post;
  
@@ -280,7 +281,7 @@ function oenology_show_current_cat_on_single($output) {
  
 		foreach( $categories as $catid ) {
 			$cat = get_category($catid);
-			// Find cat-item-ID in the string
+			// Find cat-item-ID in the string.
 			if( preg_match( '#cat-item-' . $cat->cat_ID . '#', $output ) ) {
 				$output = str_replace( 'cat-item-' . $cat->cat_ID, 'cat-item-' . $cat->cat_ID . ' current-cat', $output );
 			}
@@ -289,7 +290,7 @@ function oenology_show_current_cat_on_single($output) {
 	}
 	return $output;
 }
-// Hook current_cat function into 'wp_list_categories'
+// Hook current_cat function into 'wp_list_categories'.
 add_filter('wp_list_categories', 'oenology_show_current_cat_on_single');
 
 /**
@@ -310,20 +311,16 @@ add_filter('wp_list_categories', 'oenology_show_current_cat_on_single');
  * @since	Oenology 3.1
  */
 function oenology_enqueue_respond_js() {
-	// Only enqueue script on the front end
+	// Only enqueue script on the front end.
 	if ( 
-		// Boolean conditional tag that returns 
-		// TRUE if the current context is the 
-		// WP-Admin, and FALSE if the current 
-		// context is the site front end
+		// Boolean conditional tag that returns TRUE if the current context is the WP-Admin, and FALSE if the current context is the site front end.
 		! is_admin() 
 	) { 
-		// enqueue the javascript that performs 
-		//in-link comment reply fanciness
+		// enqueue the javascript that performs in-link comment reply fanciness.
 		wp_enqueue_script( 'oenology-respond', get_template_directory_uri() . '/js/respond.js/respond.min.js', array('jquery'), '1.2.0', true ); 
 	}
 }
-// Hook into comment_form_before
+// Hook into comment_form_before.
 add_action( 'wp_enqueue_scripts', 'oenology_enqueue_respond_js' );
 
 /**
@@ -344,22 +341,19 @@ add_action( 'wp_enqueue_scripts', 'oenology_enqueue_respond_js' );
  * @since	Oenology 3.1
  */
 function oenology_enqueue_fitvids_js() {
-	// Only enqueue script on the front end
+	// Only enqueue script on the front end.
 	if ( 
-		// Boolean conditional tag that returns 
-		// TRUE if the current context is the 
-		// WP-Admin, and FALSE if the current 
-		// context is the site front end
+		// Boolean conditional tag that returns TRUE if the current context is the WP-Admin, and FALSE if the current context is the site front end.
 		! is_admin() 
 	) { 
-		// enqueue the fitvids library
+		// enqueue the fitvids library.
 		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.js/jquery.fitvids.min.js', array('jquery'), '1.0.1', true ); 
 		
-		// enqueue the script that instantiates fitvids
+		// enqueue the script that instantiates fitvids.
 		wp_enqueue_script( 'oenology-fitvids', get_template_directory_uri() . '/js/oenology.fitvids.js', array( 'jquery', 'fitvids' ), '', true );
 	}
 }
-// Hook into comment_form_before
+// Hook into comment_form_before.
 add_action( 'wp_enqueue_scripts', 'oenology_enqueue_fitvids_js' );
 
 /**
@@ -380,20 +374,17 @@ add_action( 'wp_enqueue_scripts', 'oenology_enqueue_fitvids_js' );
  * @since	Oenology 3.1
  */
 function oenology_enqueue_responsivemenu_js() {
-	// Only enqueue script on the front end
+	// Only enqueue script on the front end.
 	if ( 
-		// Boolean conditional tag that returns 
-		// TRUE if the current context is the 
-		// WP-Admin, and FALSE if the current 
-		// context is the site front end
+		// Boolean conditional tag that returns TRUE if the current context is the WP-Admin, and FALSE if the current context is the site front end.
 		! is_admin() 
 	) { 
-		// enqueue the responsive menu script
+		// enqueue the responsive menu script.
 		wp_enqueue_script( 'tinynav-library', get_template_directory_uri() . '/js/tinynav.js/tinynav.min.js', array('jquery'), '', true );
 		wp_enqueue_script( 'oenology-tinynav', get_template_directory_uri() . '/js/oenology.tinynav.js', array('tinynav-library'), '', true );
 	}
 }
-// Hook into comment_form_before
+// Hook into comment_form_before.
 add_action( 'wp_enqueue_scripts', 'oenology_enqueue_responsivemenu_js' );
 
 /**
@@ -407,6 +398,8 @@ add_action( 'wp_enqueue_scripts', 'oenology_enqueue_responsivemenu_js' );
  * @link	http://codex.wordpress.org/Function_Reference/comment_author_link	Codex reference: comment_author_link()
  * @link	http://codex.wordpress.org/Function_Reference/comment_class	Codex reference: comment_class()
  * @link	http://codex.wordpress.org/Function_Reference/comment_ID	Codex reference: comment_ID()
+ * 
+ * @param obj $comment Comment object.
  * 
  * @since	Oenology 2.0
  */
@@ -423,6 +416,8 @@ function oenology_comment_list_pings( $comment ) {
  * Filter kses_allowed_protocols to add skype: and callto: as 
  * valid href protocols. This is needed to allow Skype profile 
  * links in the Social nav menu.
+ * 
+ * @param array $protocols Valid href protocols.
  */
 function oenology_filter_kses_allowed_protocols( $protocols ) {
     return array_merge( $protocols, array( 'skype' ) );

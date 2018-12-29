@@ -27,7 +27,7 @@ global $oenology_options;
 /**
  * Include the Theme Options Configuration Function File
  * 
- * options-config.php includes the functions that return
+ * File options-config.php includes the functions that return
  * the parameters for Theme options and Customizer Panels.
  */
 require( get_template_directory() . '/functions/options-config.php' );
@@ -35,7 +35,7 @@ require( get_template_directory() . '/functions/options-config.php' );
 /**
  * Include the Theme Options Theme Customizer Function File
  * 
- * options-customizer.php includes the functions required to 
+ * File options-customizer.php includes the functions required to 
  * integrate the Theme options into the WordPress Theme
  * Customizer.
  */
@@ -59,7 +59,7 @@ require( get_template_directory() . '/functions/options-customizer.php' );
  * @return	array	$oenology_options	current values for all Theme options
  */
 function oenology_get_options() {
-	// Return the array of stored options parsed with the defaults
+	// Return the array of stored options parsed with the defaults.
 	return wp_parse_args( get_option( 'theme_oenology_options', array() ), oenology_get_option_defaults() );
 }
 
@@ -73,15 +73,14 @@ function oenology_get_options() {
  * @return	array	$settings	array of arrays of settings
  */
 function oenology_get_settings() {
-	// Initialize an array to hold
-	// a list of settings
+	// Initialize an array to hold a list of settings.
 	$settings = array();
-	// Loop through the option parameters array
+	// Loop through the option parameters array.
 	foreach ( oenology_get_option_parameters() as $option_parameter ) {
-		// Add each setting to the array
+		// Add each setting to the array.
 		$settings[] = $option_parameter['name'];
 	}
-	// Return the settings array
+	// Return the settings array.
 	return $settings;
 }
 
@@ -97,25 +96,23 @@ function oenology_get_settings() {
  * @return	array	$defaults	associative array of option defaults
  */
 function oenology_get_option_defaults() {
-	// Initialize the array to hold
-	// the default values for all
-	// Theme options
+	// Initialize the array to hold the default values for all Theme options.
 	$option_defaults = array();
-	// Loop through the option parameters array
+	// Loop through the option parameters array.
 	foreach ( oenology_get_option_parameters() as $option_parameter ) {
 		$name = $option_parameter['name'];
-		// Add an associative array key
-		// to the defaults array for each
-		// option in the parameters array
+		// Add an associative array key to the defaults array for each option in the parameters array.
 		$option_defaults[$option_parameter['name']] = $option_parameter['default'];
 	}
-	// Return the defaults array
+	// Return the defaults array.
 	return apply_filters( 'oenology_option_defaults', $option_defaults );
 }
 
 
 /**
  * Sanitize Checkbox (True/False) Settings
+ * 
+ * @param bool $input	Input true/false.
  */
 function oenology_sanitize_checkbox( $input ) {
 	return ( ( isset( $input ) && true == $input ) ? true : false );
@@ -124,6 +121,8 @@ function oenology_sanitize_checkbox( $input ) {
 
 /**
  * Sanitize HTML Text Settings
+ * 
+ * @param string $input	Input arbitrary text string with HTML.
  */
 function oenology_sanitize_html( $input ) {
 	return wp_filter_kses( $input );
@@ -132,6 +131,8 @@ function oenology_sanitize_html( $input ) {
 
 /**
  * Sanitize No-HTML Text Settings
+ * 
+ * @param string $input	Input arbitrary text string with no HTML.
  */
 function oenology_sanitize_nohtml( $input ) {
 	return wp_filter_nohtml_kses( $input );
@@ -140,14 +141,15 @@ function oenology_sanitize_nohtml( $input ) {
 
 /**
  * Sanitize: Select
+ * 
+ * @param string $input	    Input select value.
+ * @param string $setting	Current setting value for select option.
  */
 function oenology_sanitize_select( $input, $setting ) {
-	// Ensure input is a slug
+	// Ensure input is a slug.
 	$input = sanitize_key( $input );
-	// Get list of choices from the control
-	// associated with the setting
+	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
-	// If the input is a valid key, return it;
-	// otherwise, return the default
+	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }

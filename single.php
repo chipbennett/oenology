@@ -17,6 +17,7 @@
  *
  * @since 		Oenology 2.3
  */
+
 ?>
 
 <?php
@@ -38,7 +39,7 @@ get_header( 'single' );
 <!-- Begin Main (div#main) -->
 <?php
 /**
- * div#main contains the center column content of the three-column 
+ * Container div#main contains the center column content of the three-column 
  * layout, and the left-column content of the two-column layout. 
  * Generally, this column contains the main content of the page 
  * (blog post/posts, page content, search results, etc.), and 
@@ -76,10 +77,12 @@ get_header( 'single' );
 <!-- End Main (div#main) -->
 
 <?php
-// The single.php template file is in the template hierarchy for
-// single blog posts as well as attachment pages. Only display
-// sidebars for single blog posts with multi-column layouts. Do
-// not display for layouts 'attachment', 'one-column', or 'full'.
+/**
+ * The single.php template file is in the template hierarchy for
+ * single blog posts as well as attachment pages. Only display
+ * sidebars for single blog posts with multi-column layouts. Do
+ * not display for layouts 'attachment', 'one-column', or 'full'.
+ */
 if ( ! in_array( oenology_get_current_page_layout(), array( 'one-column', 'attachment', 'full' ) ) ) {
 	?>
 	<?php 

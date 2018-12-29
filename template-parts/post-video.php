@@ -17,28 +17,31 @@
  *
  * @since 		Oenology 1.0
  */
+ 
 ?>
 
 <div class="post-title">
 	<?php 
-	// Include the specified Theme template part file
-	// 
-	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
-	// 
-	// get_template_part( $slug ) will attempt to include $slug.php. 
-	// The function will attempt to include files in the following 
-	// order, until it finds one that exists: the Theme's $slug.php, 
-	// the parent Theme's $slug.php
-	// 
-	// get_template_part( $slug , $name ) will attempt to include 
-	// $slug-$name.php. The function will attempt to include files 
-	// in the following order, until it finds one that exists: the 
-	// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
-	// Theme's $slug-$name.php, the parent Theme's $slug.php
-	// 
-	// Child Themes can replace this template part file globally, 
-	// via "post-header.php", or in a specific context only, via 
-	// "post-header-{context}.php"
+	/**
+	 * Include the specified Theme template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "post-header.php", or in a specific context only, via 
+	 * "post-header-{context}.php".
+	 */
 	get_template_part( 'template-parts/post-header', oenology_get_context() );
 	?>
 </div>
@@ -50,19 +53,21 @@
 	<ul class="audiovideo-meta">
 		<li>
 			<?php 
-			// Fire the 'oenology_hook_post_header_metadata' custom action hook
-			// 
-			// @param	null
-			// @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
+			/**
+			 * Fire the 'oenology_hook_post_header_metadata' custom action hook
+			 * 
+			 * @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
+			 */
 			oenology_hook_post_header_metadata(); 
 			?>
 		</li>	
 		<li>
 			<?php 
-			// Fire the 'oenology_hook_post_header_taxonomies' custom action hook
-			// 
-			// @param	null
-			// @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'
+			/**
+			 * Fire the 'oenology_hook_post_header_taxonomies' custom action hook
+			 * 
+			 * @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'
+			 */
 			oenology_hook_post_header_taxonomies(); 
 			?>
 		</li>
@@ -73,24 +78,26 @@
 
 <div class="post-footer">
 	<?php 
-	// Include the specified Theme template part file
-	// 
-	// Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
-	// 
-	// get_template_part( $slug ) will attempt to include $slug.php. 
-	// The function will attempt to include files in the following 
-	// order, until it finds one that exists: the Theme's $slug.php, 
-	// the parent Theme's $slug.php
-	// 
-	// get_template_part( $slug , $name ) will attempt to include 
-	// $slug-$name.php. The function will attempt to include files 
-	// in the following order, until it finds one that exists: the 
-	// Theme's $slug-$name.php, the Theme's $slug.php, the parent 
-	// Theme's $slug-$name.php, the parent Theme's $slug.php
-	// 
-	// Child Themes can replace this template part file globally, 
-	// via "post-footer.php", or in a specific context only, via 
-	// "post-footer-{context}.php"
+	/**
+	 * Include the specified Theme template part file
+	 * 
+	 * Codex reference: {@link http://codex.wordpress.org/Function_Reference/get_template_part get_template_part}
+	 * 
+	 * get_template_part( $slug ) will attempt to include $slug.php. 
+	 * The function will attempt to include files in the following 
+	 * order, until it finds one that exists: the Theme's $slug.php, 
+	 * the parent Theme's $slug.php
+	 * 
+	 * get_template_part( $slug , $name ) will attempt to include 
+	 * $slug-$name.php. The function will attempt to include files 
+	 * in the following order, until it finds one that exists: the 
+	 * Theme's $slug-$name.php, the Theme's $slug.php, the parent 
+	 * Theme's $slug-$name.php, the parent Theme's $slug.php
+	 * 
+	 * Child Themes can replace this template part file globally, 
+	 * via "post-footer.php", or in a specific context only, via 
+	 * "post-footer-{context}.php".
+	 */
 	get_template_part( 'template-parts/post-footer', oenology_get_context() ); 
 	?>
 </div>

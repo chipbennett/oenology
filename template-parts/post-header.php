@@ -19,56 +19,57 @@
  *
  * @since 		Oenology 1.0
  */
-?>
-<?php 
-// Fire the 'oenology_hook_post_header_before' custom action hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_header_before'
-oenology_hook_post_header_before(); 
+
+/**
+ * Fire the 'oenology_hook_post_header_before' custom action hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_header_before'
+ */
+oenology_hook_post_header_before();
 ?> 
 <!-- Post Header Begin -->
 <?php 
-// Fire the 'oenology_post_header_date' custom filter hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_header_date'
-oenology_hook_post_header_date(); 
-?>
-<?php 
-// Fire the 'oenology_hook_post_header_thumbnail' custom filter hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_header_thumbnail'
-oenology_hook_post_header_thumbnail(); 
-?>
-<?php 
-// Fire the 'oenology_hook_post_header_title' custom filter hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_header_title'
-oenology_hook_post_header_title(); 
-?>
-<?php 
-// Fire the 'oenology_hook_post_header_metadata' custom filter hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
-oenology_hook_post_header_metadata(); 
-?>
-<?php 
-// Fire the 'oenology_hook_post_header_taxonomies' custom filter hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'
-oenology_hook_post_header_taxonomies(); 
+/**
+ * Fire the 'oenology_post_header_date' custom filter hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_header_date'
+ */
+oenology_hook_post_header_date();
+
+/**
+ * Fire the 'oenology_hook_post_header_thumbnail' custom filter hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_header_thumbnail'
+ */
+oenology_hook_post_header_thumbnail();
+
+/**
+ * Fire the 'oenology_hook_post_header_title' custom filter hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_header_title'
+ */
+oenology_hook_post_header_title();
+
+/**
+ * Fire the 'oenology_hook_post_header_metadata' custom filter hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_header_metadata'
+ */
+oenology_hook_post_header_metadata();
+
+/**
+ * Fire the 'oenology_hook_post_header_taxonomies' custom filter hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_header_taxonomies'
+ */
+oenology_hook_post_header_taxonomies();
 ?>
 <!-- Post Header End -->
 
 <?php 
-// Fire the 'oenology_hook_post_header_after' custom action hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_header_after'
-oenology_hook_post_header_after(); 
-?> 
+/**
+ * Fire the 'oenology_hook_post_header_after' custom action hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_header_after'
+ */
+oenology_hook_post_header_after();

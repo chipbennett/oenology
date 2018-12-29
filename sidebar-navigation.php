@@ -30,6 +30,7 @@
  *
  * @since 		Oenology 2.0
  */
+
 ?>
 <!-- Page Subnavigation Menu -->
 <?php
@@ -67,22 +68,15 @@ has_nav_menu( 'nav-sidebar' )
 	 * @param	array	options defining menu output
 	 */
 	wp_nav_menu( array( 
-		// apply 'id="subnav"' to the <ul> tag that 
-		// contains the menu
+		// apply 'id="subnav"' to the <ul> tag that contains the menu.
 		'menu_id' => 'subnav', 
-		// apply 'class="subnavmenu"' to the <ul> 
-		// tag that contains the menu
+		// apply 'class="subnavmenu"' to the <ul> tag that contains the menu.
 		'menu_class' => 'subnavmenu', 
-		// Use the default fallback if the user has 
-		// not applied a menu to the specified theme 
-		// location
+		// Use the default fallback if the user has not applied a menu to the specified theme location.
 		'fallback_cb' => '', 
-		// Apply four levels hierarchical depth, 
-		// i.e. Parent Page plus three levels of
-		// descendant Child Pages
+		// Apply four levels hierarchical depth, i.e. Parent Page plus three levels of descendant Child Pages.
 		'depth' => 4, 
-		// Output the menu the user has applied to
-		// the 'nav-sidebar' Theme Location
+		// Output the menu the user has applied to the 'nav-sidebar' Theme Location.
 		'theme_location' => 'nav-sidebar' 
 	) ); 
 } 
@@ -105,14 +99,11 @@ else {
 		 * @param	array	options defining menu output
 		 */
 		wp_list_pages( array(
-			// Display four levels of Page hierarchy
-			// i.e. three levels of child pages)
+			// Display four levels of Page hierarchy i.e. three levels of child pages).
 			'depth' => 4,
-			// Sort pages as defined by the user 
-			// in the Pages administration panel
+			// Sort pages as defined by the user in the Pages administration panel.
 			'sort_column' => 'menu_order',
-			// Do not wrap list in <ul> tags, and
-			// do not give the menu a title <li>
+			// Do not wrap list in <ul> tags, and do not give the menu a title <li>.
 			'title_li' => ''
 		) );
 		?>

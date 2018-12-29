@@ -16,43 +16,44 @@
  *
  * @since 		Oenology 1.0
  */
-?>
-<?php 
-// Fire the 'oenology_hook_post_footer_before' custom action hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_footer_before'
+
+/**
+ * Fire the 'oenology_hook_post_footer_before' custom action hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_footer_before'
+ */
 oenology_hook_post_footer_before(); 
 ?>
 <!-- Post footer Begin -->
 <div class="postmetadata">
 	<?php 
-	// Fire the 'oenology_hook_post_footer_avatar' custom action hook
-	// 
-	// @param	null
-	// @return	mixed	any output hooked into 'oenology_hook_post_footer_avatar'
+	/**
+	 * Fire the 'oenology_hook_post_footer_avatar' custom action hook
+	 * 
+	 * @return	mixed	any output hooked into 'oenology_hook_post_footer_avatar'
+	 */
 	oenology_hook_post_footer_avatar(); 
-	?>
-	<?php 
-	// Fire the 'oenology_hook_post_footer_metadata' custom action hook
-	// 
-	// @param	null
-	// @return	mixed	any output hooked into 'oenology_hook_post_footer_metadata'
+	
+	/**
+	 * Fire the 'oenology_hook_post_footer_metadata' custom action hook
+	 * 
+	 * @return	mixed	any output hooked into 'oenology_hook_post_footer_metadata'
+	 */
 	oenology_hook_post_footer_metadata(); 
-	?>
-	<?php 
-	// Fire the 'oenology_hook_post_footer_license' custom action hook
-	// 
-	// @param	null
-	// @return	mixed	any output hooked into 'oenology_hook_post_footer_license'
+	
+	/**
+	 * Fire the 'oenology_hook_post_footer_license' custom action hook
+	 * 
+	 * @return	mixed	any output hooked into 'oenology_hook_post_footer_license'
+	 */
 	oenology_hook_post_footer_license(); 
 	?>
 </div>
 <!-- Post Footer End -->
 <?php 
-// Fire the 'oenology_hook_post_footer_after' custom action hook
-// 
-// @param	null
-// @return	mixed	any output hooked into 'oenology_hook_post_footer_after'
+/**
+ * Fire the 'oenology_hook_post_footer_after' custom action hook
+ * 
+ * @return	mixed	any output hooked into 'oenology_hook_post_footer_after'
+ */
 oenology_hook_post_footer_after(); 
-?>
