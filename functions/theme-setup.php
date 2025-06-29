@@ -512,7 +512,7 @@ function oenology_header_style() {
 <style type="text/css">
 /* Sets header image as background for div#header */
 <?php 
-if ( get_header_image() && HEADER_IMAGE != get_header_image() ) { 
+if ( get_header_image() ) { 
 	?>
 #header {
 	background:url('<?php header_image(); ?>') no-repeat center top;
@@ -566,8 +566,8 @@ function oenology_admin_header_style() {
 ?>
 <style type="text/css">
 #headimg {
-	width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-	height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+	width: <?php echo absint( get_custom_header()->width ); ?>px;
+	height: <?php echo absint( get_custom_header()->height ); ?>px;
 	text-align: center;
 }
 #headimg h1,
