@@ -11,7 +11,7 @@
 	<?php do_action( 'bbp_template_before_user_replies' ); ?>
 
 	<div id="bbp-user-replies-created" class="bbp-user-replies-created">
-		<h2 class="entry-title"><?php _e( 'Forum Replies Created', 'bbpress' ); ?></h2>
+		<h2 class="entry-title"><?php _e( 'Forum Replies Created', 'oenology' ); ?></h2>
 		<div class="bbp-user-section">
 
 			<?php if ( bbp_get_user_replies_created() ) : ?>
@@ -20,7 +20,7 @@
 
 			<?php else : ?>
 
-				<p><?php bbp_is_user_home() ? _e( 'You have not replied to any topics.', 'bbpress' ) : _e( 'This user has not replied to any topics.', 'bbpress' ); ?></p>
+				<p><?php bbp_is_user_home() ? _e( 'You have not replied to any topics.', 'oenology' ) : _e( 'This user has not replied to any topics.', 'oenology' ); ?></p>
 
 			<?php endif; ?>
 

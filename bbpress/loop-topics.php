@@ -16,12 +16,12 @@
 
 		<ul class="forum-titles">
 			<li class="bbp-topic-title">
-				<?php _e( 'Topic', 'bbpress' ); ?>
+				<?php _e( 'Topic', 'oenology' ); ?>
 				<?php bbp_get_template_part( 'pagination', 'topics'    ); ?>
 			</li>
-			<li class="bbp-topic-voice-count"><?php _e( 'Voices', 'bbpress' ); ?></li>
-			<li class="bbp-topic-reply-count"><?php bbp_show_lead_topic() ? _e( 'Replies', 'bbpress' ) : _e( 'Posts', 'bbpress' ); ?></li>
-			<li class="bbp-topic-freshness"><?php _e( 'Freshness', 'bbpress' ); ?></li>
+			<li class="bbp-topic-voice-count"><?php _e( 'Voices', 'oenology' ); ?></li>
+			<li class="bbp-topic-reply-count"><?php bbp_show_lead_topic() ? _e( 'Replies', 'oenology' ) : _e( 'Posts', 'oenology' ); ?></li>
+			<li class="bbp-topic-freshness"><?php _e( 'Freshness', 'oenology' ); ?></li>
 		</ul>
 
 	</li>
