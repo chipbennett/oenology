@@ -2,7 +2,7 @@
 /**
  * User Profile
  *
- * @package bbPress
+ * @package Oenology
  * @subpackage Theme
  */
 

@@ -2,7 +2,7 @@
 /**
  * User Replies Created
  *
- * @package bbPress
+ * @package Oenology
  * @subpackage Theme
  */
 

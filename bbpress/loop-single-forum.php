@@ -2,7 +2,7 @@
 /**
  * Forums Loop - Single Forum
  *
- * @package bbPress
+ * @package Oenology
  * @subpackage Theme
  */
 

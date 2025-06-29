@@ -2,7 +2,7 @@
 /**
  * Single View Content Part
  *
- * @package bbPress
+ * @package Oenology
  * @subpackage Theme
  */
 

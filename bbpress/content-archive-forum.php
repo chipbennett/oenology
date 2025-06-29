@@ -2,7 +2,7 @@
 /**
  * Archive Forum Content Part
  *
- * @package bbPress
+ * @package Oenology
  * @subpackage Theme
  */
 

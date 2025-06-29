@@ -112,7 +112,7 @@ has_nav_menu( 'nav-header' )
 		) {  
 			$list_pages_exclude = ''; 
 			?>
-			<li><a id="navhome" href="<?php echo home_url(); ?>">Home</a></li>
+			<li><a id="navhome" href="<?php echo esc_url( home_url() ); ?>">Home</a></li>
 			<?php 
 		} else {
 			// By default, do not exclude any static Pages.
@@ -142,7 +142,7 @@ has_nav_menu( 'nav-header' )
 			 */
 			if ( $page_on_front ) {
 				?>
-				<li class="page_item<?php if ( is_front_page() ) echo ' current_page_item'; ?>"><a href="<?php echo home_url(); ?>"><?php echo get_the_title( $page_on_front ); ?></a></li>
+				<li class="page_item<?php if ( is_front_page() ) echo ' current_page_item'; ?>"><a href="<?php echo esc_url( home_url() ); ?>"><?php echo get_the_title( $page_on_front ); ?></a></li>
 				<?php
 			}
 			/**

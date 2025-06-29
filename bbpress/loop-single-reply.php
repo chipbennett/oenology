@@ -2,7 +2,7 @@
 /**
  * Replies Loop - Single Reply
  *
- * @package bbPress
+ * @package Oenology
  * @subpackage Theme
  */
 

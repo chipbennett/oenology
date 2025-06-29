@@ -193,6 +193,7 @@ function oenology_hook_loop_header_after() {
 function oenology_hook_loop_header_before() {
 	do_action( 'oenology_hook_loop_header_before' );
 	tha_content_top();
+	wp_body_open();
 }
 
 /**
