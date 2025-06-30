@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: fixed-width, white, black, blue, red, tan, green, one-column, two-columns, three-columns, custom-header, custom-background, custom-menu, editor-style, featured-images, flexible-width, full-width-template, left-sidebar, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 6.8
-Stable tag: 3.5.1
+Stable tag: 3.5.2
 
 Description: Oenology is designed to be a simple, minimalist, yet feature-complete and fully documented Theme intended to serve as a base for child Themes and as an educational reference for Theme development using WordPress functions, action/filter hooks, and template tags. Oenology includes built-in breadcrumb navigation, and supports the Customizer, Custom Logo, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. Oenology features a responsive design, and includes plug-and-play support for the WP-Paginate and Yoast Breadcrumbs plugins. <strong>Requires WordPress 3.5, and is compatible up to WordPress 6.8.1.</strong>
 
@@ -271,6 +271,18 @@ Activiation and Use
 == Changelog ==
 
 Note: see changelog.txt file for change details.
+
+= 3.5.1 [2025.06.29] =
+* Maintenance Release
+* Diff: https://github.com/chipbennett/oenology/compare/v3.5.1...3.5.2
+
+= 3.5.1 [2025.06.29] =
+* Maintenance Release
+* Diff: https://github.com/chipbennett/oenology/compare/v3.5...3.5.1
+
+= 3.5 [2025.06.29] =
+* Maintenance Release
+* Diff: https://github.com/chipbennett/oenology/compare/v3.4...3.5
 
 = 3.4 [2016.04.15] =
 * Maintenance Release
